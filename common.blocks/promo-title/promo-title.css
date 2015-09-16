@@ -1,0 +1,19 @@
+.promo-title
+{
+	font-size: 36px;
+	font-weight: normal;
+
+	clear: both;
+
+	margin: 2em 0 1em 213px;
+}
+
+.promo-title__em
+{
+	font-style: normal;
+
+	display: inline-block;
+	padding: 0 0.2em;
+
+	background: rgb(255, 206, 0);
+}
