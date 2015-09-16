@@ -14,8 +14,28 @@ module.exports = {
             type: 'bemjson'
         },
         {
+            url: '/methodology/solved-problems/',
+            title: 'Какие проблемы решает',
+            source: 'Применение БЭМ-методологии для решения задач веб-разработки — примеры решения распространенных проблем с помощью соглашения по именованию БЭМ-сущностей.'
+        },
+        {
+            url: '/methodology/definitions/',
+            title: 'Основные понятия',
+            source: 'Основные понятия БЭМ-методологии'
+        },
+        {
+            url: '/methodology/naming/',
+            title: 'Соглашение по именованию',
+            source: 'Соглашение по именованию '
+        },
+        {
             url: '/methodology/filesystem/',
             title: 'Файловая система',
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
+        },
+        {
+            url: '/methodology/build/',
+            title: 'Сборка',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
         },
         {
@@ -118,8 +138,28 @@ module.exports = {
             type: 'bemjson'
         },
         {
+            url: '/methodology/solved-problems/',
+            title: 'Solved problems',
+            source: 'Применение БЭМ-методологии для решения задач веб-разработки — примеры решения распространенных проблем с помощью соглашения по именованию БЭМ-сущностей.'
+        },
+        {
+            url: '/methodology/definitions/',
+            title: 'Key concepts',
+            source: 'Основные понятия БЭМ-методологии'
+        },
+        {
+            url: '/methodology/naming/',
+            title: 'Naming convention',
+            source: 'Соглашение по именованию '
+        },
+        {
             url: '/methodology/filesystem/',
             title: 'Filesystem',
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
+        },
+        {
+            url: '/methodology/build/',
+            title: 'Building',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
         },
         {

@@ -6,9 +6,6 @@ module.exports = [
         rootUrl: '/methodology/'
     },
     {
-        rootUrl: '/methodology/naming/'
-    },
-    {
         rootUrl: '/platform/'
     },
     {
