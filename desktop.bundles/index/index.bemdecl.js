@@ -1,5 +1,1 @@
-exports.blocks = [
-    {
-        "name": "root"
-    }
-];
+exports.blocks = [{ name: 'root' }];
