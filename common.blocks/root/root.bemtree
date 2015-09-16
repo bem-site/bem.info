@@ -1,0 +1,26 @@
+// TODO: keep it simple
+match(function() {
+    return !this._root;
+})(function() {
+    var ctx = this.ctx,
+        rootUrl = ctx.data.rootUrl,
+        site = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+
+    return applyNext({
+        _root: true,
+        data: ctx.data,
+        ctx: {
+            block: 'page',
+            title: ctx.title,
+            head: [
+                { elem: 'css', url: '/index.min.css' }
+            ],
+            scripts: [
+                { elem: 'js', url: '/index.min.js' }
+            ],
+            mods: {
+                site: site
+            }
+        }
+    });
+});

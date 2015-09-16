@@ -1,0 +1,61 @@
+.promo-header
+{
+	font-weight: normal;
+
+	position: relative;
+
+	height: 420px;
+	margin: -1px 0 0 0;
+
+	overflow: hidden;
+
+	text-align: center;
+	white-space: nowrap;
+}
+
+.promo-header__main
+{
+	display: inline-block;
+
+	height: 302px;
+	margin: 40px 0 0 -100px;
+	padding-left: 310px;
+
+	text-align: left;
+
+	background: no-repeat 0 0;
+}
+
+.promo-header__title
+{
+	font-size: 120px;
+
+	display: block;
+
+	text-transform: lowercase;
+}
+
+.promo-header__subtitle
+{
+	font-size: 40px;
+
+	display: inline-block;
+	margin-left: -20px;
+	padding: 13px 26px;
+
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	color: #fff;
+	background: #000;
+}
+
+.promo-header_site_methodology
+{
+    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, url(_site/promo-header_site_methodology.png);
+}
+
+.promo-header_site_methodology .promo-header__main
+{
+	background-image: url(__logo/promo-header__logo_site_methodology.png);
+}

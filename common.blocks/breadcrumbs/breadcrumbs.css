@@ -1,0 +1,39 @@
+.breadcrumbs
+{
+    display: inline-block;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+
+.breadcrumbs__item
+{
+    display: inline-block;
+
+    margin-right: 6px;
+
+    letter-spacing: 0.15em;
+
+    color: #fff;
+}
+
+.breadcrumbs__item::before
+{
+    position: relative;
+    top: -1px;
+
+    margin-right: 5px;
+
+    content: "→";
+
+    color: rgb(157, 167, 173);
+}
+
+.breadcrumbs .link
+{
+    color: rgb(157, 167, 173);
+    text-decoration: none;
+}

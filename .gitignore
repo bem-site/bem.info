@@ -1,0 +1,22 @@
+libs/
+node_modules/
+.DS_Store
+.idea
+.project
+.svn
+npm-debug.log
+
+# bem
+.bem/cache/
+.enb/tmp/
+*bundles*/*/*.*
+!*bundles*/*/*.bemdecl.js
+*bundles*/*/*.bemhtml.bemdecl.js
+!*bundles*/.bem/*
+*pages*/*/*.*
+!*pages*/*/*.bemdecl.js
+*pages*/*/*.bemhtml.bemdecl.js
+!*pages*/.bem/*
+
+raw-data
+output-*

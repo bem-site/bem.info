@@ -1,0 +1,28 @@
+block('page').content()(function() {
+    var blocks = [
+        {
+            block: 'header'
+        },
+        {
+            block: 'nav'
+        }    
+    ];
+
+    if (this.data.page.type === 'bemjson') {
+        blocks.push(this.data.content);
+    } else {
+        blocks.push(
+            {
+                block: 'main'
+            }
+        );
+    }
+
+    blocks.push(
+        {
+            block: 'footer'
+        }
+    );
+
+    return blocks;
+});

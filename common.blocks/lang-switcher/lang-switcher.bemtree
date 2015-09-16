@@ -1,0 +1,12 @@
+block('lang-switcher').content()(function() {
+    return {
+        block : 'select',
+        mods : { mode : 'radio', theme : 'islands', size : 'm' },
+        name : 'lang',
+        val : 'ru',
+        options : [
+            { val : 'ru', text : 'RU' },
+            { val : 'en', text : 'EN' }
+        ]
+    };
+});

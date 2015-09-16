@@ -1,0 +1,24 @@
+block('breadcrumbs').content()(function() {
+    var data = this.data,
+        rootUrl = data.rootUrl,
+        lang = data.lang;
+
+    return data.model.filter(function(item) {
+        if (item.url === '/') return;
+        if (/^\/forum/.test(item.url)) return;
+        if (!new RegExp('^' + item.url).test(rootUrl)) return;
+        return item.url.split('/').length <= data.rootUrl.split('/').length;
+    }).map(function(item, idx) {
+        var title = typeof item.title === 'string' ? item.title : item.title[lang];
+
+        return {
+            elem: 'item',
+            elemMods: { level: idx + 1 },
+            content: this.data.url === item.url ? title : {
+                block: 'link',
+                url: item.url,
+                content: title
+            }
+        };
+    }, this);
+});

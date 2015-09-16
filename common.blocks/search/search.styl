@@ -1,0 +1,48 @@
+.search
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 20px 24px 0 0;
+
+    vertical-align: top;
+}
+
+.search__icon
+{
+    width: 32px;
+    height: 32px;
+    background: url(search.svg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.search__switcher
+{
+}
+
+.search_opened .search__switcher
+{
+    display: none;
+}
+
+.search__form
+{
+    position: absolute;
+    top: 0;
+    right: -10px;
+
+    display: none;
+
+    width: 270px;
+}
+
+.search_opened .search__form
+{
+    display: block;
+}
+
+.search__input
+{
+    width: 228px;
+}

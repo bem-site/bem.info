@@ -1,0 +1,14 @@
+{
+  "name": "bem.info",
+  "version": "1.0.0",
+  "description": "",
+  "bugs": "https://github.com/vithar/bem.info/issues",
+  "ignore": [
+    ".bem/cache",
+    "node_modules",
+    "libs"
+  ],
+  "dependencies": {
+    "bem-components": "2.3.0"
+  }
+}

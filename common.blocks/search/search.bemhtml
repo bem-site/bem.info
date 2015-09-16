@@ -1,0 +1,3 @@
+block('search')(
+    js()(true)
+);

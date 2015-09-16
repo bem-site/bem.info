@@ -1,0 +1,9 @@
+.logo
+{
+    display: inline-block;
+
+    width: 74px;
+    height: 70px;
+
+    background: url(logo.svg) no-repeat 50% 50% / 50px auto;
+}
