@@ -5,7 +5,7 @@
 	bottom: 0;
 
 	width: 100%;
-	height: 92px;
+	height: 64px;
 }
 
 .promo-header__lego
@@ -33,11 +33,6 @@
 }
 
 .promo-header__lego_height_3
-{
-	background-position: 0 56px;
-}
-
-.promo-header__lego_height_4
 {
 	background: none;
 }
