@@ -14,7 +14,7 @@ block('breadcrumbs').content()(function() {
         return {
             elem: 'item',
             elemMods: { level: idx + 1 },
-            content: this.data.url === item.url ? title : {
+            content: this.data.page.url === item.url ? title : {
                 block: 'link',
                 url: item.url,
                 content: title

@@ -8,7 +8,7 @@ block('nav').content()(function() {
         if (!new RegExp('^' + rootUrl).test(item.url)) return;
         return item.url.split('/').length === rootUrl.split('/').length + 1;
     }).map(function(item) {
-        var isCurrent = this.data.url === item.url,
+        var isCurrent = this.data.page.url === item.url,
             title = typeof item.title === 'string' ? item.title : item.title[lang];
 
         return {

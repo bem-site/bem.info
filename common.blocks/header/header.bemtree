@@ -1,5 +1,5 @@
 block('header').content()(function() {
-    var url = this.data.url;
+    var url = this.data.page.url;
 
     return [
         {
