@@ -17,15 +17,6 @@ var fs = require('fs'),
     rawFolder = config.rawFolder,
     outputFolder = config.outputFolder;
 
-langs.map(function(lang) {
-    var path = outputFolder + lang;
-//    rimraf.sync(path);
-    mkdirp.sync(path);
-    ['index.min.css', 'index.min.js'].forEach(function(file) {
-        fs.createReadStream('desktop.bundles/index/' + file).pipe(fs.createWriteStream(path + '/' + file));
-    });
-});
-
 var sites = require('../content/sites.js'),
     model = require('../content/model.js');
 
