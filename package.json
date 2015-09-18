@@ -36,7 +36,7 @@
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true",
     "deps": "bower i",
     "start": "cd output-en && python -m SimpleHTTPServer",
-    "build": "mkdir -p raw-data && rm -rf raw-data/* && enb make && node bin/get-data.js && node bin/render.js && node bin/make.js",
+    "build": "mkdir -p raw-data && rm -rf raw-data/* && enb make && node bin/get-data.js && node bin/render.js && node bin/make.js && cp content/robots.txt output-en && cp favicon.ico output-en",
     "watch": "watch-run -i -p '{*.blocks/**,content/**,bin/**,.enb/make.js}' 'npm run build'"
   },
   "private": true
