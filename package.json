@@ -36,7 +36,7 @@
   "scripts": {
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true",
     "deps": "bower i",
-    "start": "browser-sync start --server output-en --port 8008 --files "output-en/*.css"",
+    "start": "browser-sync start --server output-en --port 8008 --files 'output-en/**' --browser 'firefox' --no-online --no-notify --startPath /methodology",
     "build": "mkdir -p raw-data && rm -rf raw-data/* && enb make && node bin/get-data.js && node bin/render.js && node bin/make.js && cp content/robots.txt output-en && cp favicon.ico output-en",
     "watch": "watch-run -i -p '{*.blocks/**,content/**,bin/**,.enb/make.js}' 'npm run build'"
   },
