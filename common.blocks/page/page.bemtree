@@ -1,10 +1,15 @@
 block('page').content()(function() {
+    var rootUrl = this.data.page.site,
+        site = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+
     var blocks = [
         {
-            block: 'header'
+            block: 'header',
+            mods: { 'site': site }
         },
         {
-            block: 'nav'
+            block: 'nav',
+            mods: { 'site': site === 'index' ? site : undefined }
         }    
     ];
     if (this.data.page.type === 'bemjson') {

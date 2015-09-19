@@ -8,27 +8,27 @@
     white-space: nowrap;
 }
 
-.page_site_index .header
+.header_site_index
 {
     background: #eee;
 }
 
-.page_site_methodology .header
+.header_site_methodology
 {
     background: rgb(0, 36, 52);;
 }
 
-.page_site_platform .header
+.header_site_platform
 {
     background: #E5F8E0;
 }
 
-.page_site_community .header
+.header_site_community
 {
     background: #fa9;
 }
 
-.page_site_forum .header
+.header_site_forum
 {
     background: #aaa;
 }

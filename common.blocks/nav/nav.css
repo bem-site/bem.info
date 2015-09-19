@@ -46,7 +46,7 @@
     text-decoration: none;
 }
 
-.page_site_index .nav
+.nav_site_index 
 {
     position: relative;
 
@@ -59,8 +59,7 @@
     border: none;
 }
 
-
-.page_site_index .nav__item
+.nav_site_index .nav__item
 {
     display: inline-block;
 
