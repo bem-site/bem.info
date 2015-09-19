@@ -18,14 +18,14 @@ var fs = require('fs'),
     outputFolder = config.outputFolder;
 
 var sites = require('../content/sites.js'),
-    model = require('../content/model.js');
+    pages = require('../content/pages.js');
 
 sites.forEach(function(site) {
     var rootUrl = site.rootUrl;
 
     langs.forEach(function(lang) {
         // make output content
-        model[lang].forEach(function(page) {
+        pages[lang].forEach(function(page) {
             if (!new RegExp('^' + rootUrl).test(page.url)) return;
 
             if (page.type === 'index') {
@@ -52,7 +52,7 @@ function writeResult(page, content, lang, rootUrl) {
         data: {
             page: page,
             rootUrl: rootUrl,
-            model: model[lang],
+            pages: pages[lang],
             lang: lang,
             content: content.toString('utf8')
         }
@@ -68,7 +68,7 @@ function writeResult(page, content, lang, rootUrl) {
 }
 
 function makeList(page, parent, rootUrl) {
-    var children = model.filter(function(item) {
+    var children = pages.filter(function(item) {
         return item.url !== parent && item.url.indexOf(parent) === 0;
     });
 

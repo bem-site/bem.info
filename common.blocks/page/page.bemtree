@@ -7,9 +7,8 @@ block('page').content()(function() {
             block: 'nav'
         }    
     ];
-
     if (this.data.page.type === 'bemjson') {
-        blocks.push(this.data.content);
+        blocks.push(this.data.page.content);
     } else {
         blocks.push(
             {
@@ -17,7 +16,6 @@ block('page').content()(function() {
             }
         );
     }
-
     blocks.push(
         {
             block: 'footer'

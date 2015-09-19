@@ -1,13 +1,13 @@
 block('breadcrumbs').content()(function() {
     var data = this.data,
-        rootUrl = data.rootUrl,
+        site = data.page.site,
         lang = data.lang;
 
-    return data.model.filter(function(item) {
+    return data.pages.filter(function(item) {
         if (item.url === '/') return;
         if (/^\/forum/.test(item.url)) return;
-        if (!new RegExp('^' + item.url).test(rootUrl)) return;
-        return item.url.split('/').length <= data.rootUrl.split('/').length;
+        if (!new RegExp('^' + item.url).test(site)) return;
+        return item.url.split('/').length <= data.page.site.split('/').length;
     }).map(function(item, idx) {
         var title = typeof item.title === 'string' ? item.title : item.title[lang];
 

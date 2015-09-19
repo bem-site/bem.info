@@ -1,3 +1,4 @@
+
 <section class="section">
     <h1 class="section__title section__title_main">БЭМ-методология в коде</h1>
     <div class="section__description">Технологии, инструменты и готовые библиотеки  блоков для быстрой и масштабируемой web-разработки по БЭМ-методологии:</div>

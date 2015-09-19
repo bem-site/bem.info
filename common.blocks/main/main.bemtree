@@ -32,7 +32,7 @@ block('main').content()(function() {
                     //     content: 'i-bem.js: Руководство пользователя'
                     // },
                     {
-                        content: this.data.content
+                        content: this.data.page.content
                     }
                 ]
             }

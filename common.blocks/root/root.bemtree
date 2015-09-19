@@ -1,26 +1,19 @@
-// TODO: keep it simple
-match(function() {
-    return !this._root;
-})(function() {
-    var ctx = this.ctx,
-        rootUrl = ctx.data.rootUrl,
-        site = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+block('root').replace()(function() {
+    var data = this.data = this.ctx.data,
+        rootUrl = data.page.site,
+        site = rootUrl === '/' ? 'index' : rootUrl.split('/')[1],
+        title = data.page.url !== '/' ? data.page.title + ' / ' : '';
 
-    return applyNext({
-        _root: true,
-        data: ctx.data,
-        ctx: {
-            block: 'page',
-            title: ctx.title,
-            head: [
-                { elem: 'css', url: '/index.min.css' }
-            ],
-            scripts: [
-                { elem: 'js', url: '/index.min.js' }
-            ],
-            mods: {
-                site: site
-            }
-        }
-    });
+        title += data.pages[0].title;
+
+    return {
+        block: 'page',
+        title: title,
+        head: [
+            { elem: 'css', url: '/index.min.css' }
+        ],
+        scripts: [
+            { elem: 'js', url: '/index.min.js' }
+        ]
+    };
 });

@@ -1,28 +1,52 @@
 var fs = require('fs'),
     vm = require('vm'),
-    glob = require('glob'),
+    _ = require('lodash'),
     marked = require('marked'),
+    mkdirp = require('mkdirp'),
+    config = require('../content/config.js'),
+    pages = require('../content/pages.js'),
     bemhtml = require('../desktop.bundles/index/index.bemhtml.js').BEMHTML,
-    config = require('../content/config.js'),
-    rawFolder = config.rawFolder;
+    bemtree = require('../desktop.bundles/index/index.bemtree.js').BEMTREE;
 
-glob(rawFolder + '/*.{md,bemjson.js}', function(err, files) {
-    if (err) return;
+function md(vinyl) {
+    marked(vinyl.contents.toString('utf-8'), function(err, html) {
+        fs.writeFileSync(vinyl.path.replace(/md$/, 'html'), html);
+    });
+}
 
-    files.forEach(function(file) {
-        var content = fs.readFileSync(file, 'utf8');
+function bemjson(vinyl) {
+    fs.writeFileSync(
+        vinyl.path.replace(/bemjson\.js$/, 'html'),
+        bemhtml.apply(vm.runInNewContext(vinyl.contents.toString('utf-8')))
+    );
+}
 
-        if (/md$/.test(file)) {
-            marked(content, function(err, html) {
-                if (err) return;
+function html(vinyl) {
+    var path = vinyl.path,
+        re = new RegExp('(.*)\/' + config.rawFolder + '(.*)index\.(.*)\.html$'),
+        lang = path.replace(re, '$3'),
+        pageUrl = path.replace(re, '$2'),
+        page = _.where(pages[lang], { url: pageUrl })[0];
 
-                fs.writeFileSync(file.replace(/md$/, 'html'), html);
-            });
-        } else {
-            fs.writeFileSync(
-                file.replace(/bemjson\.js$/, 'html'),
-                bemhtml.apply(vm.runInNewContext(content))
-            );
+    page.content = vinyl.contents.toString('utf-8');
+
+    bemtree.apply({
+        block: 'root',
+        data: {
+            page: page,
+            pages: pages[lang],
+            lang: lang
         }
-    });
-});
+    }).then(function(bemjson) {
+        bemjson.block = 'page';
+
+        var dirName = config.outputFolder + lang + pageUrl;
+
+        mkdirp.sync(dirName);
+        fs.writeFileSync(dirName + '/index.html', bemhtml.apply(bemjson));
+    }).fail(function(e){
+        console.log('Error:', e);
+    });
+}
+
+module.exports = { md: md, bemjson: bemjson, html: html };

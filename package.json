@@ -30,7 +30,10 @@
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
-    "watch-run": "^1.2.2",
+    "gulp": "^3.9.0",
+    "gulp-batch": "^1.0.5",
+    "gulp-watch": "https://github.com/floatdrop/gulp-watch/archive/v4.2.6.tar.gz",
+    "lodash": "^3.10.1",
     "ym": "^0.1.2"
   },
   "scripts": {
@@ -38,7 +41,7 @@
     "pre": "rm -rf output-{en,ru} && mkdir -p output-{en,ru} && ln -fs ../desktop.bundles/index/index.min.{css,js} output-en && ln -fs ../desktop.bundles/index/index.min.{css,js} output-ru && cp content/robots.txt output-en && cp favicon.ico output-en && cp content/robots.txt output-ru && cp favicon.ico output-ru",
     "deps": "bower i",
     "start": "browser-sync start --server output-en --port 8008 --files 'output-en/**' --browser 'firefox' --no-online --no-notify --startPath /methodology",
-    "build-data": "mkdir -p raw-data && rm -rf raw-data/* && node bin/get-data.js && node bin/render.js && node bin/make.js",
+    "build-data": "node bin/render.js && node bin/make.js",
     "build-bundle": "enb make && node bin/make.js",
     "watch-data": "watch-run -i -p '{content/**,bin/**,.enb/make.js}' 'npm run build-data'",
     "watch-bundle": "watch-run -i -p '{*.blocks/**,bin/make.js,.enb/make.js}' 'npm run build-bundle'"

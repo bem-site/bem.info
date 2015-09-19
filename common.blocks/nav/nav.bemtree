@@ -1,12 +1,12 @@
 block('nav').content()(function() {
     var data = this.data,
-        rootUrl = data.rootUrl,
+        site = data.page.site,
         lang = data.lang;
 
-    return data.model.filter(function(item) {
+    return data.pages.filter(function(item) {
         if (/^\/forum/.test(item.url)) return true;
-        if (!new RegExp('^' + rootUrl).test(item.url)) return;
-        return item.url.split('/').length === rootUrl.split('/').length + 1;
+        if (!new RegExp('^' + site).test(item.url)) return;
+        return item.url.split('/').length === site.split('/').length + 1;
     }).map(function(item) {
         var isCurrent = this.data.page.url === item.url,
             title = typeof item.title === 'string' ? item.title : item.title[lang];
