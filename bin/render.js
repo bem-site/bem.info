@@ -9,12 +9,16 @@ var fs = require('fs'),
     bemtree = require('../desktop.bundles/index/index.bemtree.js').BEMTREE;
 
 function md(vinyl) {
+    if (!vinyl || !vinyl.contents) return;
+
     marked(vinyl.contents.toString('utf-8'), function(err, html) {
         fs.writeFileSync(vinyl.path.replace(/md$/, 'html'), html);
     });
 }
 
 function bemjson(vinyl) {
+    if (!vinyl || !vinyl.contents) return;
+
     fs.writeFileSync(
         vinyl.path.replace(/bemjson\.js$/, 'html'),
         bemhtml.apply(vm.runInNewContext(vinyl.contents.toString('utf-8')))
@@ -22,6 +26,8 @@ function bemjson(vinyl) {
 }
 
 function html(vinyl) {
+    if (!vinyl || !vinyl.contents) return;
+
     var path = vinyl.path,
         re = new RegExp('(.*)\/' + config.rawFolder + '(.*)index\.(.*)\.html$'),
         lang = path.replace(re, '$3'),
