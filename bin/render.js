@@ -34,7 +34,11 @@ function html(vinyl) {
         pageUrl = path.replace(re, '$2'),
         page = _.where(pages[lang], { url: pageUrl })[0];
 
-    page.content = vinyl.contents.toString('utf-8');
+    applyTemplates(page, lang, vinyl.contents.toString('utf-8'));
+}
+
+function applyTemplates(page, lang, content) {
+    page.content = content;
 
     bemtree.apply({
         block: 'root',
@@ -46,7 +50,7 @@ function html(vinyl) {
     }).then(function(bemjson) {
         bemjson.block = 'page';
 
-        var dirName = config.outputFolder + lang + pageUrl;
+        var dirName = config.outputFolder + lang + page.url;
 
         mkdirp.sync(dirName);
         fs.writeFileSync(dirName + '/index.html', bemhtml.apply(bemjson));
@@ -55,4 +59,4 @@ function html(vinyl) {
     });
 }
 
-module.exports = { md: md, bemjson: bemjson, html: html };
+module.exports = { md: md, bemjson: bemjson, html: html, applyTemplates: applyTemplates };
