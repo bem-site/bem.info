@@ -3,11 +3,10 @@
 var fs = require('fs'),
     request = require('request'),
     gulp = require('gulp'),
+    enb = require('enb'),
     browserSync = require('browser-sync'),
     watch = require('gulp-watch'),
     batch = require('gulp-batch'),
-    mkdirp = require('mkdirp'),
-    rimraf = require('rimraf'),
     pages = require('./content/pages.js'),
     data = require('./bin/get-data.js'),
     render = require('./bin/render.js'),
@@ -36,30 +35,33 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function () {
     var options = { ignoreInitial: false };
 
-    watch(['content/pages.js', 'content/config.js'], options, batch(function (events, done) {
+    watch(['content/*.{bemjson.js,md}', 'content/pages.js', 'content/config.js'], options, function (events, done) {
         data.getData();
-    }));
+    });
 
     watch(rawFolder + '/**/*.md', options, render.md);
     watch(rawFolder + '/**/*.bemjson.js', options, render.bemjson);
     watch(rawFolder + '/**/*.html', options, render.html);
 
-    // watch(rawFolder + '/**/*.md', options, batch(function (events, done) {
-    //     render.md(events[0]);
-    // }));
-    // watch(rawFolder + '/**/*.bemjson.js', options, batch(function (events, done) {
-    //     render.bemjson(events[0]);
-    // }));
-    // watch(rawFolder + '/**/*.html', options, batch(function (events, done) {
-    //     render.html(events[0]);
-    // }));
+    watch(['*blocks/**/*'], options, function (events, done) {
+        enb.make();
+    });
 
-    // watch(
-    //     [
-    //         'desktop.bundles/index/index.bemhtml.js',
-    //         'desktop.bundles/index/index.bemtree.js'
-    //     ], options, batch(function (events, done) {
-    //         //
-    //     }));
+    watch('desktop.bundles/index/index.min.*', options, function (vinyl, done) {
+        config.langs.forEach(function(lang) {
+            vinyl.pipe(fs.createWriteStream(config.outputFolder + lang + '/' + vinyl.basename));
+        });
+    });
+
+    // watch(['desktop.bundles/index/index.bemhtml.js', 'desktop.bundles/index/index.bemtree.js'], options, function (events, done) {
+    //     config.langs.forEach(function(lang) {
+    //         pages[lang].forEach(function(page) {
+    //             render.applyTemplates(
+    //                 page, lang,
+    //                 fs.createReadStream(rawFolder + page.url + 'index.' + lang + '.html', 'utf8')
+    //             )
+    //         })
+    //     });
+    // });
 });
 
