@@ -7,7 +7,7 @@ var techs = {
         borschik: require('enb-borschik/techs/borschik'),
 
         // css
-        stylus: require('enb-stylus/techs/stylus'),
+        css: require('enb/techs/css'),
 
         // js
         browserJs: require('enb-js/techs/browser-js'),
@@ -41,11 +41,11 @@ module.exports = function(config) {
             [enbBemTechs.files],
 
             // css
-            [techs.stylus, {
-                target: '?.css',
-                autoprefixer: {
-                    browsers: ['last 2 versions', 'ie 10', 'opera 12.1']
-                }
+            [techs.css, {
+                target: '?.css'
+                // , autoprefixer: {
+                //     browsers: ['last 2 versions', 'ie 10', 'opera 12.1']
+                // }
             }],
 
             // bemtree
