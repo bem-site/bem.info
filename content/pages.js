@@ -168,7 +168,7 @@ module.exports = {
             url: '/methodology/solved-problems/',
             site: '/methodology/',
             title: 'Solved problems',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/solved-problems/solved-problems.en.md'
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/solved-problems/solved-problems.ru.md'
         },
         {
             url: '/methodology/definitions/',
@@ -192,7 +192,7 @@ module.exports = {
             url: '/methodology/build/',
             site: '/methodology/',
             title: 'Building',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/build/build-method.en.md'
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/build/build-method.ru.md'
         },
         {
             url: '/methodology/history/',
