@@ -1,8 +1,21 @@
 block('root').replace()(function() {
-    var data = this.data = this.ctx.data,
-        title = data.page.url !== '/' ? data.page.title + ' / ' : '';
+    var data = this.data = this.ctx.data;
 
-        title += data.pages[0].title;
+    // title generation (begin)
+    var titles = data.pages.filter(function(item) {
+        if (!new RegExp('^' + item.url).test(data.page.site)) return;
+
+        return item.url.split('/').length <= data.page.site.split('/').length;
+    }).map(function(item, idx) { return item.title }, this);
+
+    if (data.page.url !== data.page.site)
+        titles.push(data.page.title);
+
+    titles.reverse();
+
+    var title = titles.shift();
+    titles.forEach(function(t) { title += ' / ' + t });
+    // title generation (end)
 
     return {
         block: 'page',

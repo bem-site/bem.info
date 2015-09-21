@@ -1,3 +1,0 @@
-<title> -> reverse URL
-
-if (arguments.length === 1 && !Array.isArray(targets))
