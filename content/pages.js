@@ -1,5 +1,6 @@
 // refer https://livemail.yandex-team.ru/docs#/lei?ly4wjp+knxos2
 
+
 module.exports = {
     'ru': [
         {
@@ -13,7 +14,7 @@ module.exports = {
             site: '/methodology/',
             title: 'Методология',
             source: './content/methodology.ru.bemjson.js',
-            type: 'bemjson'
+            type: 'bemjson.js'
         },
         {
             url: '/methodology/solved-problems/',
@@ -161,7 +162,7 @@ module.exports = {
             site: '/methodology/',
             title: 'Methodology',
             source: './content/methodology.en.bemjson.js',
-            type: 'bemjson'
+            type: 'bemjson.js'
         },
         {
             url: '/methodology/solved-problems/',
@@ -297,3 +298,4 @@ module.exports = {
         }        
     ]
 };
+

@@ -12,7 +12,8 @@ block('page').content()(function() {
             mods: { 'site': site === 'index' ? site : undefined }
         }    
     ];
-    if (this.data.page.type === 'bemjson') {
+
+    if (this.data.page.type === 'bemjson.js') {
         blocks.push(this.data.page.content);
     } else {
         blocks.push(
@@ -21,6 +22,7 @@ block('page').content()(function() {
             }
         );
     }
+
     blocks.push(
         {
             block: 'footer'
