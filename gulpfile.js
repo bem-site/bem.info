@@ -1,67 +1,126 @@
 'use strict';
 
-var fs = require('fs'),
+var browserSync = require('browser-sync'),
     request = require('request'),
+    mkdirp = require('mkdirp'),
+    marked = require('marked'),
     gulp = require('gulp'),
+    path = require('path'),
     enb = require('enb'),
-    browserSync = require('browser-sync'),
+    fs = require('fs'),
+    vm = require('vm'),
     watch = require('gulp-watch'),
     batch = require('gulp-batch'),
     pages = require('./content/pages.js'),
-    data = require('./bin/get-data.js'),
-    render = require('./bin/render.js'),
-    config = require('./content/config.js'),
-    rawFolder = config.rawFolder;
+    bemhtml = require('./desktop.bundles/index/index.bemhtml.js').BEMHTML,
+    bemtree = require('./desktop.bundles/index/index.bemtree.js').BEMTREE;
+
+var langs = ['ru', 'en'],
+    outputFolder = 'output-';
 
 gulp.task('default', ['watch', 'browser-sync'], function () {
+    enb.make();
+    renderPages();
 });
 
 gulp.task('browser-sync', function() {
-    browserSync.init(
-        {
-            files: 'output-en/**',
-            server: {
-                baseDir: 'output-en'
-            },
-            port: 8008,
-            browser: 'firefox',
-            startPath: '/methodology/',
-            online: false,
-            notify: false
-        }
-    );
+    console.log('bs');
+    browserSync.init({
+        files: outputFolder + 'en' + '/**',
+        server: { baseDir: outputFolder + 'en' },
+        port: 8008,
+        browser: 'firefox',
+        startPath: '/methodology/',
+        online: false,
+        notify: false
+    });
 });
 
 gulp.task('watch', function () {
-    var options = { ignoreInitial: false };
 
-    watch(['content/*.{bemjson.js,md}', 'content/pages.js', 'content/config.js'], options, function (events, done) {
-        data.getData();
-    });
-
-    watch(rawFolder + '/**/*.md', options, render.md);
-    watch(rawFolder + '/**/*.bemjson.js', options, render.bemjson);
-    watch(rawFolder + '/**/*.html', options, render.html);
-
-    watch(['*blocks/**/*'], options, function (events, done) {
+    // watch changes in blocks and build using enb
+    watch(['*blocks/**/*'], function batch(events, done) {
         enb.make();
     });
 
-    watch('desktop.bundles/index/index.min.*', options, function (vinyl, done) {
-        config.langs.forEach(function(lang) {
-            vinyl.pipe(fs.createWriteStream(config.outputFolder + lang + '/' + vinyl.basename));
+    // watch changes in final css and js and copy it to output folders
+    watch('desktop.bundles/index/index.min.*', function (vinyl) {
+        langs.forEach(function(lang) {
+            vinyl.pipe(fs.createWriteStream(outputFolder + lang + '/' + vinyl.basename));
         });
     });
 
-    // watch(['desktop.bundles/index/index.bemhtml.js', 'desktop.bundles/index/index.bemtree.js'], options, function (events, done) {
-    //     config.langs.forEach(function(lang) {
-    //         pages[lang].forEach(function(page) {
-    //             render.applyTemplates(
-    //                 page, lang,
-    //                 fs.createReadStream(rawFolder + page.url + 'index.' + lang + '.html', 'utf8')
-    //             )
-    //         })
-    //     });
-    // });
+    // watch changes in content and bemtree/bemhtml bundles and rebuild pages
+    watch(['content/**/*', 'desktop.bundles/index/index.bemhtml.js', 'desktop.bundles/index/index.bemtree.js'], function batch(events, done) {
+        renderPages();
+    });
 });
+
+function applyTemplates(page, lang, content) {
+
+    page.content = content;
+
+    bemtree.apply({
+        block: 'root',
+        data: {
+            page: page,
+            pages: pages[lang],
+            lang: lang
+        }
+    }).then(function(bemjson) {
+        bemjson.block = 'page';
+
+        var dirName = outputFolder + lang + page.url;
+
+        mkdirp(dirName);
+        fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
+    }).fail(function(e){
+        console.log('Error:', e);
+    });
+}
+
+function render(page, lang) {
+    
+    var content;
+
+    if (/^http/.test(page.source)) {
+        content = 'HTTP'; //??? request(source);
+    } else if (/^\.\/(.*)/.test(page.source)) {
+        // read content from local FS
+        content = fs.readFileSync(page.source, 'utf8');
+    } else {
+        // store inlined content
+        content = page.source;
+    }
+
+    var type = page.type || 'md'
+    if (type === 'md') {
+        marked(content, function(err, html) { applyTemplates(page, lang, content) });
+    } else if (type === 'bemjson.js') {
+        applyTemplates(page, lang, bemhtml.apply(vm.runInNewContext(content)));
+    } else {
+        throw "Unknown type";
+    }
+}
+
+function renderPages() {
+    langs.forEach(function(lang) {
+        pages[lang].forEach(function(page) {
+            render(page, lang);
+        })
+    });
+}
+
+// function html(vinyl) {
+//     if (!vinyl || !vinyl.contents) return;
+
+//     var path = vinyl.path,
+//         re = new RegExp('(.*)\/' + config.rawFolder + '(.*)index\.(.*)\.html$'),
+//         lang = path.replace(re, '$3'),
+//         pageUrl = path.replace(re, '$2'),
+//         page = _.where(pages[lang], { url: pageUrl })[0];
+
+//     applyTemplates(page, lang, vinyl.contents.toString('utf8'));
+// }
+
 

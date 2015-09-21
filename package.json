@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "bem-environ": "~1.4.0",
-    "glob": "^4.4.1",
-    "marked": "^0.3.3",
-    "mkdirp": "^0.5.0",
-    "request": "^2.53.0",
-    "rimraf": "^2.2.8",
-    "vow": "^0.4.8"
+    "glob": "",
+    "marked": "",
+    "mkdirp": "",
+    "request": "",
+    "rimraf": "",
+    "vow": ""
   },
   "devDependencies": {
     "borschik": "^1.3.0",
@@ -30,15 +30,16 @@
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
+    "stylus": "^0.52.4",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
-    "gulp-watch": "https://github.com/floatdrop/gulp-watch/archive/v4.2.6.tar.gz",
+    "gulp-watch": "^4.3.5",
     "lodash": "^3.10.1",
     "ym": "^0.1.2"
   },
   "scripts": {
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && npm run pre",
-    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs ../../node_modules/enb-stylus/node_modules/.bin/stylus && cd -",
+    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
     "pre": "rm -rf output-{en,ru} && mkdir -p output-{en,ru} && cp content/robots.txt favicon.ico output-en && cp content/robots.txt favicon.ico output-ru",
     "deps": "bower i"
   },
