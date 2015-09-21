@@ -82,26 +82,31 @@ function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, conte
 }
 
 function render(bemtree, bemhtml, pages, page, lang, outputFolder) {
+
+    var renderInner = function(err, content) {
+        var type = page.type || 'md'
+        if (type === 'md') {
+            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
+        } else if (type === 'bemjson.js') {
+            applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
+        } else {
+            throw "Unknown type";
+        }
+    };
     
-    var content;
+    var source = page.source;
 
-    if (/^http/.test(page.source)) {
-        content = 'HTTP'; //??? request(source);
-    } else if (/^\.\/(.*)/.test(page.source)) {
+    if (/^http/.test(source)) {
+        request(source, function (err, response, content) {
+            if (!err && response.statusCode == 200)
+                renderInner(err, content);
+        });
+    } else if (/^\.\/(.*)/.test(source)) {
         // read content from local FS
-        content = fs.readFileSync(page.source, 'utf8');
+        fs.readFile(source, 'utf8', renderInner);
     } else {
-        // store inlined content
-        content = page.source;
-    }
-
-    var type = page.type || 'md'
-    if (type === 'md') {
-        marked(content, function(err, html) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
-    } else if (type === 'bemjson.js') {
-        applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
-    } else {
-        throw "Unknown type";
+        // inline content
+        renderInner(null, source);
     }
 }
 
