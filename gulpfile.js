@@ -20,6 +20,14 @@ var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
 
 gulp.task('default', ['watch', 'browser-sync'], function () {
     enb.make();
+
+    ['css', 'js'].forEach(function(tech) {
+        langs.forEach(function(lang) {
+            fs.createReadStream('desktop.bundles/index/index.min.' + tech)
+                .pipe(fs.createWriteStream(outputFolder + lang + '/index.min.' + tech));
+        })
+    });
+
     renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
 });
 
