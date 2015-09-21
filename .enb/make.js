@@ -55,6 +55,7 @@ module.exports = function(config) {
             [techs.bemhtml, { devMode: process.env.BEMHTML_ENV === 'development' }],
 
             // client bemhtml
+/*            
             [enbBemTechs.depsByTechToBemdecl, {
                 target: '?.bemhtml.bemdecl.js',
                 sourceTech: 'js',
@@ -74,16 +75,17 @@ module.exports = function(config) {
                 filesTarget: '?.bemhtml.files',
                 devMode: process.env.BEMHTML_ENV === 'development'
             }],
-
+*/
             // js
             [techs.browserJs, { includeYM: true }],
+/*
             [techs.fileMerge, {
                 target: '?.js',
                 sources: ['?.browser.bemhtml.js', '?.browser.js']
             }],
-
+*/
             // borschik
-            [techs.borschik, { sourceTarget: '?.js', destTarget: '?.min.js', minify: isProd }],
+            [techs.borschik, { sourceTarget: '?.browser.js', destTarget: '?.min.js', minify: isProd }],
             [techs.borschik, { sourceTarget: '?.css', destTarget: '?.min.css', tech: 'cleancss', minify: isProd }]
         ]);
 
