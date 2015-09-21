@@ -5,22 +5,22 @@ var browserSync = require('browser-sync'),
     mkdirp = require('mkdirp'),
     marked = require('marked'),
     gulp = require('gulp'),
-    path = require('path'),
     enb = require('enb'),
     fs = require('fs'),
     vm = require('vm'),
     watch = require('gulp-watch'),
-    batch = require('gulp-batch'),
-    pages = require('./content/pages.js'),
-    bemhtml = require('./desktop.bundles/index/index.bemhtml.js').BEMHTML,
-    bemtree = require('./desktop.bundles/index/index.bemtree.js').BEMTREE;
+    batch = require('gulp-batch');
 
 var langs = ['ru', 'en'],
-    outputFolder = 'output-';
+    outputFolder = 'output-',
+    pages = require('./content/pages.js');
+
+var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
+    bemtreeFile = './desktop.bundles/index/index.bemtree.js';
 
 gulp.task('default', ['watch', 'browser-sync'], function () {
     enb.make();
-    renderPages();
+    renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
 });
 
 gulp.task('browser-sync', function() {
@@ -52,11 +52,13 @@ gulp.task('watch', function () {
 
     // watch changes in content and bemtree/bemhtml bundles and rebuild pages
     watch(['content/**/*', 'desktop.bundles/index/index.bemhtml.js', 'desktop.bundles/index/index.bemtree.js'], function batch(events, done) {
-        renderPages();
+        delete require.cache[require.resolve(bemtreeFile)];
+        delete require.cache[require.resolve(bemhtmlFile)];
+        renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
     });
 });
 
-function applyTemplates(page, lang, content) {
+function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) {
 
     page.content = content;
 
@@ -79,7 +81,7 @@ function applyTemplates(page, lang, content) {
     });
 }
 
-function render(page, lang) {
+function render(bemtree, bemhtml, pages, page, lang, outputFolder) {
     
     var content;
 
@@ -95,18 +97,18 @@ function render(page, lang) {
 
     var type = page.type || 'md'
     if (type === 'md') {
-        marked(content, function(err, html) { applyTemplates(page, lang, content) });
+        marked(content, function(err, html) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
     } else if (type === 'bemjson.js') {
-        applyTemplates(page, lang, bemhtml.apply(vm.runInNewContext(content)));
+        applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
     } else {
         throw "Unknown type";
     }
 }
 
-function renderPages() {
+function renderPages(bemtree, bemhtml, pages, langs, outputFolder) {
     langs.forEach(function(lang) {
         pages[lang].forEach(function(page) {
-            render(page, lang);
+            render(bemtree, bemhtml, pages, page, lang, outputFolder);
         })
     });
 }
