@@ -17,45 +17,79 @@
 {
 	display: inline-block;
 
-	height: 302px;
-	margin: 40px 0 0 -106px;
+	height: 333px;
+	margin: 9px 0 0 -106px;
 	padding-left: 317px;
 
 	text-align: left;
 
-	background: no-repeat 0 0;
+	background: no-repeat 0 32px;
 }
 
 .promo-header__title
 {
-	font-size: 120px;
+	font-size: 133px;
+	font-weight: bold;
 
 	display: block;
+
+	margin: 0 0 -11px;
+	padding: 0;
 
 	text-transform: lowercase;
 }
 
 .promo-header__subtitle
 {
-	font-size: 40px;
+	font-size: 46px;
+	line-height: 60px;
 
 	display: inline-block;
-	margin-left: -21px;
-	padding: 13px 26px;
+	margin-left: -9px;
+	padding: 0 16px 1px;
 
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
+}
 
+.promo-header_site_methodology .promo-header__title
+{
+	color: #000;
+}
+
+.promo-header_site_methodology .promo-header__subtitle
+{
 	color: #fff;
-	background: #000;
+	background: #000;	
+}
+
+.promo-header_site_platform .promo-header__title
+{
+	color: #fff;
+}
+
+.promo-header_site_platform .promo-header__subtitle
+{
+	color: #000;
+	background: rgb(255, 204, 0);
 }
 
 .promo-header_site_methodology
 {
-    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, url(_site/promo-header_site_methodology.png);
+    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(0, 160, 234) url(_site/promo-header_site_methodology.png);
 }
 
 .promo-header_site_methodology .promo-header__main
 {
 	background-image: url(__logo/promo-header__logo_site_methodology.png);
+}
+
+.promo-header_site_platform
+{
+    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(251, 77, 81) url(_site/promo-header_site_platform.png) 20px 20px;
+}
+
+.promo-header_site_platform .promo-header__main
+{
+	background-image: url(__logo/promo-header__logo_site_platform.png);
 }

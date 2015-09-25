@@ -56,7 +56,8 @@ module.exports = {
             url: '/platform/',
             site: '/platform/',
             title: 'Платформа',
-            source: './content/platform.ru.md'
+            source: './content/platform.ru.bemjson.js',
+            type: 'bemjson.js'
         },
         {
             url: '/platform/techs/',
@@ -204,7 +205,8 @@ module.exports = {
             url: '/platform/',
             site: '/platform/',
             title: 'Platform',
-            source: 'BEM Platform will appear here'
+            source: './content/platform.en.bemjson.js',
+            type: 'bemjson.js'
         },
         {
             url: '/platform/techs/',
@@ -234,7 +236,7 @@ module.exports = {
             url: '/platform/techs/i-bem.js/',
             site: '/platform/techs/i-bem.js/',
             title: 'i-bem',
-            source: 'https://raw.githubusercontent.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.en.md'
+            source: 'https://raw.githubusercontent.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md'
         },
         {
             url: '/platform/techs/i-bem.js/quick-start/',

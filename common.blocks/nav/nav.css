@@ -47,14 +47,14 @@
 
 .nav__link:hover
 {
-    color: #000;    
+    color: #000;
 }
 
 .nav_site_index 
 {
     position: relative;
 
-    margin: -54px 145px 54px 70px;
+    margin: -54px 200px 54px 0;
 
     font-size: 15px;
     text-align: center;
@@ -74,4 +74,9 @@
     vertical-align: bottom;
 
     color: #555;
+}
+
+.nav_site_index .nav__link:hover
+{
+    color: #fff;    
 }
