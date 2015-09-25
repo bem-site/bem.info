@@ -9,21 +9,19 @@
 
 	overflow: hidden;
 
-	text-align: center;
 	white-space: nowrap;
 }
 
 .promo-header__main
 {
+	position: absolute;
+	left: 50%;
+
 	display: inline-block;
 
-	height: 333px;
-	margin: 9px 0 0 -106px;
+	height: 329px;
+	margin: 9px 0 0 -380px;
 	padding-left: 317px;
-
-	text-align: left;
-
-	background: no-repeat 0 32px;
 }
 
 .promo-header__title
@@ -45,8 +43,8 @@
 	line-height: 60px;
 
 	display: inline-block;
-	margin-left: -9px;
-	padding: 0 16px 1px;
+	margin-left: -16px;
+	padding: 0 23px 1px;
 
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -76,20 +74,20 @@
 
 .promo-header_site_methodology
 {
-    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(0, 160, 234) url(_site/promo-header_site_methodology.png);
+    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(0, 160, 234) url(_site/promo-header_site_methodology.png) 50% -7px;
 }
 
 .promo-header_site_methodology .promo-header__main
 {
-	background-image: url(__logo/promo-header__logo_site_methodology.png);
+	background: no-repeat url(__logo/promo-header__logo_site_methodology.png) 20px 24px;
 }
 
 .promo-header_site_platform
 {
-    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(251, 77, 81) url(_site/promo-header_site_platform.png) 20px 20px;
+    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(251, 77, 81) url(_site/promo-header_site_platform.png) 50% 50%;
 }
 
 .promo-header_site_platform .promo-header__main
 {
-	background-image: url(__logo/promo-header__logo_site_platform.png);
+	background: no-repeat url(__logo/promo-header__logo_site_platform.png) 20px 24px;
 }
