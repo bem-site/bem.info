@@ -9,7 +9,7 @@
 
 .header_site_index
 {
-    background: #eee;
+    background: #000;
 }
 
 .header_site_methodology
@@ -19,7 +19,7 @@
 
 .header_site_platform
 {
-    background: #E5F8E0;
+    background: rgb(56, 0, 1);
 }
 
 .header_site_community

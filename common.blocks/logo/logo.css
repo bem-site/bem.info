@@ -15,7 +15,17 @@
 	margin: 23px 0 0 30px;
 }
 
+.logo_site_index
+{
+	fill: #fff;
+}
+
 .logo_site_methodology
 {
 	fill: rgb(0, 160, 234);
+}
+
+.logo_site_platform
+{
+	fill: rgb(255, 0, 58);
 }
