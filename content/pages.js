@@ -17,19 +17,13 @@ module.exports = {
             type: 'bemjson.js'
         },
         {
-            url: '/methodology/solved-problems/',
-            site: '/methodology/',
-            title: 'Какие проблемы решает',
-            source: 'Применение БЭМ-методологии для решения задач веб-разработки — примеры решения распространенных проблем с помощью соглашения по именованию БЭМ-сущностей.'
-        },
-        {
-            url: '/methodology/definitions/',
+            url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Основные понятия',
             source: 'Основные понятия БЭМ-методологии'
         },
         {
-            url: '/methodology/naming/',
+            url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Соглашение по именованию',
             source: 'Соглашение по именованию '
@@ -41,10 +35,16 @@ module.exports = {
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
         },
         {
-            url: '/methodology/build/',
+            url: '/methodology/building/',
             site: '/methodology/',
             title: 'Сборка',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
+        },
+        {
+            url: '/methodology/solved-problems/',
+            site: '/methodology/',
+            title: 'Какие проблемы решает',
+            source: 'Применение БЭМ-методологии для решения задач веб-разработки — примеры решения распространенных проблем с помощью соглашения по именованию БЭМ-сущностей.'
         },
         {
             url: '/methodology/history/',
@@ -165,19 +165,13 @@ module.exports = {
             type: 'bemjson.js'
         },
         {
-            url: '/methodology/solved-problems/',
-            site: '/methodology/',
-            title: 'Solved problems',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/solved-problems/solved-problems.ru.md'
-        },
-        {
-            url: '/methodology/definitions/',
+            url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Key concepts',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/definitions/definitions.en.md'
         },
         {
-            url: '/methodology/naming/',
+            url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Naming convention',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/naming/naming-convention.en.md'
@@ -189,10 +183,16 @@ module.exports = {
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.en.md'
         },
         {
-            url: '/methodology/build/',
+            url: '/methodology/building/',
             site: '/methodology/',
             title: 'Building',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/build/build-method.ru.md'
+        },
+        {
+            url: '/methodology/solved-problems/',
+            site: '/methodology/',
+            title: 'Solved problems',
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/solved-problems/solved-problems.ru.md'
         },
         {
             url: '/methodology/history/',
