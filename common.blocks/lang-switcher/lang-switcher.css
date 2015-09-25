@@ -25,6 +25,11 @@
 	background: none;
 }
 
+.lang-switcher .select__button.button_hovered::before
+{
+	background: rgba(255, 255, 255, 0.2);
+}
+
 .lang-switcher .select__button.button_pressed::before
 {
 	background: rgba(255, 255, 255, 0.1);

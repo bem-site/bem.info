@@ -1,0 +1,39 @@
+.article
+{
+	margin: 0 0 0 115px;
+}
+
+.article h1
+{
+	font-size: 33px;
+	font-weight: 700;
+
+	margin: 2.6ex 0 1.5ex -2px;
+}
+
+.article h2
+{
+	font-size: 26px;
+	font-weight: 700;
+
+	margin: 2.6ex 0 1.5ex -1px;
+}
+
+.article h3
+{
+	font-size: 20px;
+	font-weight: 700;
+
+	margin: 2.6ex 0 1.5ex 0;
+}
+
+.article h1, .article h2, .article h3, .article h4, .article h5,
+.article p, .article ul, .article ol
+{
+	max-width: 750px;
+}
+
+.article pre
+{
+	font-size: 85%;
+}

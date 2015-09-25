@@ -35,13 +35,18 @@
     color: #000;
 }
 
-.nav .link
+.nav__link
 {
     display: block;
 
     color: rgb(153, 153, 153);
 
     text-decoration: none;
+}
+
+.nav__link:hover
+{
+    color: #000;
 }
 
 .nav_site_index 

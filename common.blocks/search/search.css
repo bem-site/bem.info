@@ -27,7 +27,7 @@
 .search__form
 {
     position: absolute;
-    top: 0;
+    top: 28px;
     right: -10px;
 
     display: none;
