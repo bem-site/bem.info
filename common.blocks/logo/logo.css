@@ -2,8 +2,9 @@
 {
     display: inline-block;
 
-    width: 74px;
+    width: 84px;
     height: 70px;
 
-    background: url(logo.svg) no-repeat 50% 50% / 50px auto;
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: url(logo.svg) no-repeat 50% 50% / 30px auto;
 }

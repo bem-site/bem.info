@@ -3,7 +3,6 @@
     position: relative;
 
     height: 70px;
-    padding-right: 140px;
 
     white-space: nowrap;
 }
@@ -37,6 +36,11 @@
 {
     position: absolute;
     top: 0;
-    right: 24px;
+    right: 0;
+
+    height: 70px;
+    padding-left: 5px;
+
+    background: inherit;
 }
 

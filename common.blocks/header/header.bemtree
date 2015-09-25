@@ -15,10 +15,10 @@ block('header').content()(function() {
             elem: 'item',
             content: [
                 {
-                    block: 'search'
+                    block: 'lang-switcher'
                 },
                 {
-                    block: 'lang-switcher'
+                    block: 'search'
                 }
             ]
         }

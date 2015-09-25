@@ -13,9 +13,9 @@ block('breadcrumbs').content()(function() {
 
         return {
             elem: 'item',
-            elemMods: { level: idx + 1 },
             content: this.data.page.url === item.url ? title : {
                 block: 'link',
+                mix: { block: 'breadcrumbs', elem: 'link' },
                 url: item.url,
                 content: title
             }
