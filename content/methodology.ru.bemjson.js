@@ -4,12 +4,13 @@
     content : [
         {
             elem : 'title', 
-            content : 'BEM'
+            mods: { color: 'black' },
+            content : 'БЭМ'
         },
         ' ',
         {
             elem : 'subtitle', 
-            content : 'methodology'
+            content : 'методология'
         }
     ]
 }, {

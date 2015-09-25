@@ -4,6 +4,7 @@
     content : [
         {
             elem : 'title', 
+            mods: { color: 'black' },
             content : 'BEM'
         },
         ' ',

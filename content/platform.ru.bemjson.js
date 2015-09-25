@@ -3,13 +3,14 @@
     mods : { site : 'platform' },
     content : [
         {
-            elem : 'title', 
-            content : 'BEM'
+            elem : 'title',
+            mods: { color: 'white' },
+            content : 'БЭМ'
         },
         ' ',
         {
             elem : 'subtitle', 
-            content : 'platform'
+            content : 'платформа'
         }
     ]
 }, {

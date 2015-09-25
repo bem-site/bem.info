@@ -1,7 +1,10 @@
 ({
     shouldDeps: [
         {
-        	elem : 'lego',
+            elem : 'title',
+        },
+        {
+            elem : 'lego',
             mods : { site : 'methodology' }
         }
     ]
