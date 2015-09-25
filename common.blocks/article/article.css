@@ -1,7 +1,5 @@
 .article
 {
-	line-height: 1.8;
-
 	margin: 0 0 0 115px;
 }
 
@@ -33,6 +31,18 @@
 .article p, .article ul, .article ol
 {
 	max-width: 750px;
+}
+
+.article p
+{
+	line-height: 1.8;
+
+	margin: 0 0 2ex;
+}
+
+.article li
+{
+	margin-bottom: 0.8ex;
 }
 
 .article pre
