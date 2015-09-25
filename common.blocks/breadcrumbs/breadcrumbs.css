@@ -25,8 +25,8 @@
 
     content: "/";
 
-    color: rgb(157, 167, 173);
-}
+    color: rgba(255, 255, 255, 0.55);
+ }
 
 .breadcrumbs__item:last-child::after
 {
@@ -37,4 +37,9 @@
 {
     color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
+}
+
+.breadcrumbs__link:hover
+{
+    color: #fff;
 }
