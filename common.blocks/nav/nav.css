@@ -3,7 +3,7 @@
     display: block;
 
     margin: 0;
-    padding: 5px 0 5px 112px;
+    padding: 0 0 0 112px;
 
     list-style: none;
 
@@ -17,11 +17,11 @@
     display: inline-block;
 
     margin: 0 31px 0 0;
-    padding: 0 3px;
+    padding: 5px 3px;
 
     line-height: 30px;
     white-space: nowrap;
-}}
+}
 
 .nav__item:last-child
 {
@@ -30,7 +30,10 @@
 
 .nav__item_current
 {
+    margin-bottom: -1px;
+
     color: #000;
+    border-bottom: 1px solid #000;
 }
 
 .nav__link
@@ -44,7 +47,7 @@
 
 .nav__link:hover
 {
-    color: #000;
+    color: #000;    
 }
 
 .nav_site_index 
