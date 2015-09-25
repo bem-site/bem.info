@@ -1,51 +1,42 @@
 .lang-switcher
 {
+    position: relative;
+    top: -18px;
+
     display: inline-block;
-
-    margin-top: 18px;
-
-    vertical-align: top;
 }
 
 .lang-switcher .select__button
 {
-	font: inherit;
+    font: inherit;
+    letter-spacing: 0.2em;
 
-	padding: 3px 3px 3px 1px;
-}
+    padding: 3px 3px 3px 1px;
 
-.lang-switcher .select__button
-{
-	background: none;
+    color: #fff;
+    background: none;
 }
 
 .lang-switcher .select__button::before
 {
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: none;
 }
 
 .lang-switcher .select__button.button_hovered::before
 {
-	background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .lang-switcher .select__button.button_pressed::before
 {
-	background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.lang-switcher .select__button
+.lang-switcher.select_theme_islands .select__tick
 {
-	letter-spacing: 0.2em;
+    top: 4px;
+    right: 4px;
 
-	color: #fff;
-}
-
-.lang-switcher .select_theme_islands .select__tick
-{
-	top: 4px;
-	right: 4px;
-
-	color: #fff;
+    color: #fff;
 }

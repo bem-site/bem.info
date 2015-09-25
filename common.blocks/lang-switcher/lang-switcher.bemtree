@@ -1,12 +1,13 @@
-block('lang-switcher').content()(function() {
-    return {
-        block : 'select',
-        mods : { mode : 'radio', theme : 'islands', size : 'm' },
-        name : 'lang',
-        val : this.data.lang,
-        options : [
-            { val : 'ru', text : 'RU' },
-            { val : 'en', text : 'EN' }
-        ]
-    };
+block('lang-switcher').replace()(function() {
+    return {
+        block : 'select',
+        mix : 'lang-switcher',
+        mods : { mode : 'radio', theme : 'islands', size : 'm' },
+        name : 'lang',
+        val : this.data.lang,
+        options : [
+            { val : 'ru', text : 'RU' },
+            { val : 'en', text : 'EN' }
+        ]
+    };
 });
