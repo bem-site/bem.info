@@ -43,7 +43,7 @@
   "scripts": {
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && npm run pre",
     "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
-    "pre": "rm -rf output-{en,ru} && mkdir -p output-{en,ru} && cp content/robots.txt favicon.ico output-en && cp content/robots.txt favicon.ico output-ru",
+    "pre": "rm -rf output-{en,ru} && mkdir -p output-{en,ru} && cp content/robots.txt content/favicon.ico output-en && cp content/robots.txt content/favicon.ico output-ru",
     "deps": "bower i"
   },
   "private": true
