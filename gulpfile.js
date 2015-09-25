@@ -38,7 +38,7 @@ gulp.task('browser-sync', function() {
         server: { baseDir: outputFolder + 'en' },
         port: 8008,
         browser: 'firefox',
-        startPath: '/methodology/',
+        startPath: '/platform/',
         online: false,
         notify: false
     });
