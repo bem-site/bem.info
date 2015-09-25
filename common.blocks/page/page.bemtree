@@ -1,15 +1,14 @@
 block('page').content()(function() {
-    var rootUrl = this.data.page.site,
-        site = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+    var siteMod = this.data.siteMod;
 
     var blocks = [
         {
             block: 'header',
-            mods: { 'site': site }
+            mods: { 'site': siteMod }
         },
         {
             block: 'nav',
-            mods: { 'site': site === 'index' ? site : undefined }
+            mods: { 'site': siteMod === 'index' ? siteMod : undefined }
         }    
     ];
 

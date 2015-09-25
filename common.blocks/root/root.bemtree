@@ -1,5 +1,8 @@
 block('root').replace()(function() {
     var data = this.data = this.ctx.data;
+    var rootUrl = this.data.page.site;
+
+    this.data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
 
     // title generation (begin)
     var titles = data.pages.filter(function(item) {
