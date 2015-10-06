@@ -12,15 +12,13 @@ block('breadcrumbs').content()(function() {
 
         return item.url.split('/').length <= site.split('/').length;
     }).map(function(item, idx) {
-        var title = typeof item.title === 'string' ? item.title : item.title[lang];
-
         return {
             elem: 'item',
-            content: this.data.page.url === item.url ? title : {
+            content: this.data.page.url === item.url ? item.title : {
                 block: 'link',
                 mix: { block: 'breadcrumbs', elem: 'link' },
                 url: item.url,
-                content: title
+                content: item.title
             }
         };
     }, this);
