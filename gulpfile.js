@@ -9,7 +9,8 @@ var browserSync = require('browser-sync'),
     fs = require('fs'),
     vm = require('vm'),
     watch = require('gulp-watch'),
-    batch = require('gulp-batch');
+    batch = require('gulp-batch'),
+    runSequence = require('run-sequence');
 
 var langs = ['ru', 'en'],
     outputFolder = 'output-',
@@ -18,21 +19,26 @@ var langs = ['ru', 'en'],
 var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
     bemtreeFile = './desktop.bundles/index/index.bemtree.js';
 
-gulp.task('default', ['watch', 'browser-sync'], function () {
-    enb.make();
+gulp.task('default', function () {
+    runSequence('init', 'watch', 'browser-sync');
+});
 
-    ['css', 'js'].forEach(function(tech) {
-        langs.forEach(function(lang) {
-            fs.createReadStream('desktop.bundles/index/index.min.' + tech)
-                .pipe(fs.createWriteStream(outputFolder + lang + '/index.min.' + tech));
-        })
+gulp.task('init', function(callback) {
+    enb.make().then(function() {
+        ['css', 'js'].forEach(function(tech) {
+            langs.forEach(function(lang) {
+                fs.createReadStream('desktop.bundles/index/index.min.' + tech)
+                    .pipe(fs.createWriteStream(outputFolder + lang + '/index.min.' + tech));
+            })
+        });
+
+        renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
+
+        callback();
     });
-
-    renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
 });
 
 gulp.task('browser-sync', function() {
-    console.log('bs');
     browserSync.init({
         files: outputFolder + 'en' + '/**',
         server: { baseDir: outputFolder + 'en' },
