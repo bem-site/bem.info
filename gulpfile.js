@@ -82,7 +82,7 @@ function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, conte
 
         var dirName = outputFolder + lang + page.url;
 
-        mkdirp(dirName);
+        mkdirp.sync(dirName);
         fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
     }).fail(function(e){
         console.log('Error:', e);
