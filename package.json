@@ -33,12 +33,12 @@
     "enb-stylus": "^2.0.0",
     "enb-js": "^1.0.0",
 
-    "stylus": "^0.52.4",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-watch": "^4.3.5",
-    "lodash": "^3.10.1",
     "run-sequence": "^1.1.4",
+
+    "lodash": "^3.10.1",
     "stylus": "^0.52.4",
     "ym": "^0.1.2"
   },
