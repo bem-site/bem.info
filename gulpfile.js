@@ -73,10 +73,9 @@ gulp.task('watch', function () {
 });
 
 function applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) {
-
     page.content = content;
 
-    bemtree.apply({
+    var bemjson = bemtree.apply({
         block: 'root',
         data: {
             page: page,
@@ -84,16 +83,14 @@ function applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder
             langs: langs,
             lang: lang
         }
-    }).then(function(bemjson) {
-        bemjson.block = 'page';
-
-        var dirName = outputFolder + lang + page.url;
-
-        mkdirp.sync(dirName);
-        fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
-    }).fail(function(e){
-        console.log('Error:', e);
     });
+
+    bemjson.block = 'page';
+
+    var dirName = outputFolder + lang + page.url;
+
+    mkdirp.sync(dirName);
+    fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
 }
 
 function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
@@ -110,7 +107,7 @@ function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
             throw "Unknown type";
         }
     };
-    
+
     var source = page.source;
 
     if (/^http/.test(source)) {

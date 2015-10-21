@@ -16,7 +16,7 @@ var techs = {
         bemtree: require('enb-bemxjst/techs/bemtree'),
 
         // bemhtml
-        bemhtml: require('enb-bemxjst-2/techs/bemhtml')
+        bemhtml: require('enb-bemxjst/techs/bemhtml')
     },
     enbBemTechs = require('enb-bem-techs'),
     levels = [
@@ -45,10 +45,14 @@ module.exports = function(config) {
             [techs.css, { target: '?.css' }],
 
             // bemtree
-            [techs.bemtree, { devMode: env.BEMTREE_ENV === 'development' }],
+            [techs.bemtree, {
+                sourceSuffixes: ['bemtree.js', 'bemtree']
+            }],
 
             // bemhtml
-            [techs.bemhtml, { devMode: env.BEMHTML_ENV === 'development' }],
+            [techs.bemhtml, {
+                sourceSuffixes: ['bemhtml.js', 'bemhtml']
+            }],
 
             // js
             [techs.browserJs, { includeYM: true }],
