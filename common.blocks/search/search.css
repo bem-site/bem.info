@@ -16,7 +16,7 @@
 {
     width: 17px;
     height: 17px;
-    background: url(search.png) no-repeat 0 0 / 100% 100%;
+    background: url(search.svg) no-repeat 0 0 / 100% 100%;
 }
 
 .search_opened .search__switcher
