@@ -33,17 +33,19 @@
     "enb-stylus": "^2.0.0",
     "enb-js": "^1.0.0",
 
-    "stylus": "^0.52.4",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-watch": "^4.3.5",
+    "run-sequence": "^1.1.4",
+
     "lodash": "^3.10.1",
+    "stylus": "^0.52.4",
     "ym": "^0.1.2"
   },
   "scripts": {
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && npm run pre",
     "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
-    "pre": "rm -rf output-{en,ru} && mkdir -p output-{en,ru} && cp content/robots.txt content/favicon.ico output-en && cp content/robots.txt content/favicon.ico output-ru",
+    "pre": "rm -rf output-en output-ru && mkdir -p output-en output-ru && cp content/robots.txt content/favicon.ico output-en && cp content/robots.txt content/favicon.ico output-ru",
     "deps": "bower i"
   },
   "private": true
