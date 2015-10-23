@@ -1,3 +1,3 @@
 ({
-    shouldDeps: ['promo-title', 'promo-content']
+    shouldDeps : ['promo-title', 'promo-content']
 })

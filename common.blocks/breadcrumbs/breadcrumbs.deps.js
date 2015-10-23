@@ -1,5 +1,5 @@
 ({
-    shouldDeps: [
+    shouldDeps : [
         'link',
         {
             block : 'select',
