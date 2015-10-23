@@ -1,9 +1,11 @@
 block('breadcrumbs').content()(function() {
     var data = this.data,
-        site = data.page.site,
-        lang = data.lang;
+        page = data.page,
+        site = page.site;
 
-    return data.pages.filter(function(item) {
+    var result = [];
+
+    data.pages.filter(function(item) {
         if (item.url === '/') return;
 
         if (/^\/forum/.test(item.url)) return;
@@ -12,14 +14,47 @@ block('breadcrumbs').content()(function() {
 
         return item.url.split('/').length <= site.split('/').length;
     }).map(function(item, idx) {
-        return {
+        result.push({
             elem: 'item',
-            content: this.data.page.url === item.url ? item.title : {
+            content: page.url === item.url ? item.title : {
                 block: 'link',
                 mix: { block: 'breadcrumbs', elem: 'link' },
                 url: item.url,
                 content: item.title
             }
-        };
+        });
     }, this);
+
+    if (page.type === 'lib') {
+        var split = site.replace(/(.*)\/$/, '$1').split('/'),
+            libVer = split.pop();
+            libName = split.pop();
+
+        var options = [];
+        this.data.libs[libName].forEach(function(ver) {
+            if (ver !== libVer)
+                options.push({ val : ver, text : ver });
+        });
+
+        var lastResultItem = result.pop();
+        if (typeof lastResultItem.content === 'string')
+            lastResultItem.content += ' ' + libVer;
+        else
+            lastResultItem.content.content += ' ' + libVer;            
+
+        result.push(lastResultItem);
+
+        result.push({
+            elem: 'item',
+            mix: { elem: 'version' },
+            content: {
+                block : 'select',
+                mods : { mode : 'radio-check', theme : 'islands', size : 'm' },
+                text : '',
+                options : options
+            }     
+        });
+    }
+
+    return result;
 });

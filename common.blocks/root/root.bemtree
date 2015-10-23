@@ -20,6 +20,23 @@ block('root').replace()(function() {
     titles.forEach(function(t) { title += ' / ' + t });
     // title generation (end)
 
+    var libs = {};
+    data.pages.forEach(function (page) {
+        if (page.type === 'lib') {
+            var split = page.site.replace(/(.*)\/$/, '$1').split('/'),
+                version = split.pop();
+                name = split.pop();
+
+            if (!libs[name])
+                libs[name] = [];
+
+            if (libs[name].indexOf(version) == -1)
+                libs[name].push(version);
+        }
+    });
+
+    this.data.libs = libs;
+
     return {
         block: 'page',
         title: title,

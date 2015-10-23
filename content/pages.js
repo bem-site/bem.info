@@ -1,8 +1,8 @@
 // refer https://livemail.yandex-team.ru/docs#/lei?ly4wjp+knxos2
 
-
 module.exports = {
     'ru': [
+/*    
         {
             url: '/',
             site: '/',
@@ -143,12 +143,43 @@ module.exports = {
             title: 'Библиотеки',
             source: 'Здесь будет страница про БЭМ-библиотеки'
         },
+*/        
+        {
+            url: '/platform/libs/bem-core/2.7.0/',
+            site: '/platform/libs/bem-core/2.7.0/',
+            title: 'bem-core',
+            source: 'content-libs/bem-core-2.7.0',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.7.0/i-bem/',
+            site: '/platform/libs/bem-core/2.7.0/',
+            title: 'i-bem',
+            source: 'i-bem block',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.8.0/',
+            site: '/platform/libs/bem-core/2.8.0/',
+            title: 'bem-core',
+            source: 'content-libs/bem-core-2.8.0',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.8.0/i-bem/',
+            site: '/platform/libs/bem-core/2.8.0/',
+            title: 'i-bem',
+            source: 'i-bem block',
+            type: 'lib'
+        },
+/*        
         {
             url: '/community/',
             site: '/community/',
-            title: 'Сообщество',
-            source: 'Здесь будет страница про БЭМ-сообщество'
+            title: 'Community',
+            source: 'Info about BEM community will apper here'
         }
+*/        
     ],
 
     'en': [
@@ -158,6 +189,7 @@ module.exports = {
             title: 'BEM',
             source: 'BEM is awesome'
         },
+/*    
         {
             url: '/methodology/',
             site: '/methodology/',
@@ -201,6 +233,7 @@ module.exports = {
             title: 'History',
             source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/history/history.en.md'
         },
+*/        
         {
             url: '/platform/',
             site: '/platform/',
@@ -214,6 +247,7 @@ module.exports = {
             title: 'Technologies',
             source: 'Info about BEM techs will apper here'
         },
+/*        
         {
             url: '/platform/techs/bemhtml/',
             site: '/platform/techs/bemhtml/',
@@ -232,12 +266,15 @@ module.exports = {
             title: 'BEMTREE',
             source: 'https://raw.githubusercontent.com/bem/bem-core/v2/common.docs/bemtree-reference/bemtree-reference.en.md'
         },
+*/
+
         {
             url: '/platform/techs/i-bem.js/',
             site: '/platform/techs/i-bem.js/',
             title: 'i-bem',
-            source: 'https://raw.githubusercontent.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md'
+            source: 'ahttps://raw.githubusercontent.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md'
         },
+/*        
         {
             url: '/platform/techs/i-bem.js/quick-start/',
             site: '/platform/techs/i-bem.js/',
@@ -274,30 +311,72 @@ module.exports = {
             title: 'FAQ',
             source: 'BEM Platform FAQ will appear here'
         },
+*/
         {
             url: '/platform/techs/i-bem.js/reference/',
             site: '/platform/techs/i-bem.js/',
             title: 'Reference',
             source: 'TODO'
         },
+/*
         {
             url: '/platform/tools/',
             site: '/platform/tools/',
             title: 'Инструменты',
             source: 'Здесь будет страница про БЭМ-инструменты'
         },
+*/        
         {
             url: '/platform/libs/',
             site: '/platform/libs/',
-            title: 'Библиотеки',
-            source: 'Здесь будет страница про БЭМ-библиотеки'
+            title: 'Libraries',
+            source: 'BEM Libs page will be here'
+
         },
+/*        
+        {
+            url: '/platform/libs/bem-core/',
+            site: '/platform/libs/bem-core/',
+            title: 'bem-core',
+            source: 'bem-core'
+        },
+*/        
+        {
+            url: '/platform/libs/bem-core/2.7.0/',
+            site: '/platform/libs/bem-core/2.7.0/',
+            title: 'bem-core',
+            source: 'content-libs/bem-core-2.7.0',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.7.0/i-bem/',
+            site: '/platform/libs/bem-core/2.7.0/',
+            title: 'i-bem',
+            source: 'i-bem block',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.8.0/',
+            site: '/platform/libs/bem-core/2.8.0/',
+            title: 'bem-core',
+            source: 'content-libs/bem-core-2.8.0',
+            type: 'lib'
+        },
+        {
+            url: '/platform/libs/bem-core/2.8.0/i-bem/',
+            site: '/platform/libs/bem-core/2.8.0/',
+            title: 'i-bem',
+            source: 'i-bem block',
+            type: 'lib'
+        },
+/*        
         {
             url: '/community/',
             site: '/community/',
             title: 'Community',
             source: 'Info about BEM community will apper here'
-        }        
+        }
+*/
     ]
 };
 

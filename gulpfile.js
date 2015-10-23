@@ -38,7 +38,7 @@ gulp.task('browser-sync', function() {
         server: { baseDir: outputFolder + 'en' },
         port: 8008,
         browser: 'firefox',
-        startPath: '/platform/',
+        startPath: '/platform/libs/bem-core/2.8.0/',
         online: false,
         notify: false
     });
@@ -82,7 +82,7 @@ function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, conte
 
         var dirName = outputFolder + lang + page.url;
 
-        mkdirp(dirName);
+        mkdirp.sync(dirName);
         fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
     }).fail(function(e){
         console.log('Error:', e);
@@ -97,6 +97,8 @@ function render(bemtree, bemhtml, pages, page, lang, outputFolder) {
             marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
         } else if (type === 'bemjson.js') {
             applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
+        } else if (type === 'lib') {
+            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
         } else {
             throw "Unknown type";
         }
