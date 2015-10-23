@@ -11,8 +11,9 @@ block('root').replace()(function() {
         return item.url.split('/').length <= data.page.site.split('/').length;
     }).map(function(item, idx) { return item.title }, this);
 
-    if (data.page.url !== data.page.site)
+    if (data.page.url !== data.page.site) {
         titles.push(data.page.title);
+    }
 
     titles.reverse();
 
@@ -20,22 +21,26 @@ block('root').replace()(function() {
     titles.forEach(function(t) { title += ' / ' + t });
     // title generation (end)
 
+    // libs extraction (begin)
+    // looking for libs in pages and storing its to this.data.libs = {
+    //     'lib-name1': ['ver1', 'ver2'],
+    //     'lib-name2': ['ver1', 'ver2']
+    // }
     var libs = {};
     data.pages.forEach(function (page) {
         if (page.type === 'lib') {
             var split = page.site.replace(/(.*)\/$/, '$1').split('/'),
-                version = split.pop();
+                version = split.pop(),
                 name = split.pop();
 
-            if (!libs[name])
-                libs[name] = [];
+            libs[name] || (libs[name] = []);
 
-            if (libs[name].indexOf(version) == -1)
-                libs[name].push(version);
+            libs[name].indexOf(version) < 0 && libs[name].push(version);
         }
     });
 
     this.data.libs = libs;
+    // libs extraction (end)
 
     return {
         block: 'page',

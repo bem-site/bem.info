@@ -27,33 +27,37 @@ block('breadcrumbs').content()(function() {
 
     if (page.type === 'lib') {
         var split = site.replace(/(.*)\/$/, '$1').split('/'),
-            libVer = split.pop();
+            libVer = split.pop(),
             libName = split.pop();
 
         var options = [];
-        this.data.libs[libName].forEach(function(ver) {
-            if (ver !== libVer)
+        data.libs[libName].forEach(function(ver) {
+            if (ver !== libVer) {
                 options.push({ val : ver, text : ver });
+            }
         });
 
         var lastResultItem = result.pop();
-        if (typeof lastResultItem.content === 'string')
+        if (typeof lastResultItem.content === 'string') {
             lastResultItem.content += ' ' + libVer;
-        else
+        }
+        else {
             lastResultItem.content.content += ' ' + libVer;            
+        }
 
-        result.push(lastResultItem);
-
-        result.push({
-            elem: 'item',
-            mix: { elem: 'version' },
-            content: {
-                block : 'select',
-                mods : { mode : 'radio-check', theme : 'islands', size : 'm' },
-                text : '',
-                options : options
-            }     
-        });
+        result.push(
+            lastResultItem,
+            {
+                elem: 'item',
+                mix: { elem: 'version' },
+                content: {
+                    block : 'select',
+                    mods : { mode : 'radio-check', theme : 'islands', size : 'm' },
+                    text : '',
+                    options : options
+                }
+            }
+        );
     }
 
     return result;
