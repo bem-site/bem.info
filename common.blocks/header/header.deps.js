@@ -1,10 +1,10 @@
 ({
-    mustDeps: [
+    mustDeps : [
         'i-bem'
     ],
-    shouldDeps: [
+    shouldDeps : [
         {
-            elems: ['item']
+            elems : ['item']
         },
         'logo',
         'breadcrumbs',
