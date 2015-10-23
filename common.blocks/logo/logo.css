@@ -5,27 +5,27 @@
     width: 84px;
     height: 70px;
 
-	border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo__logo
 {
-	width: 30px;
-	height: 25px;
-	margin: 23px 0 0 30px;
+    width: 30px;
+    height: 25px;
+    margin: 23px 0 0 30px;
 }
 
 .logo_site_index
 {
-	fill: #fff;
+    fill: #fff;
 }
 
 .logo_site_methodology
 {
-	fill: rgb(0, 160, 234);
+    fill: rgb(0, 160, 234);
 }
 
 .logo_site_platform
 {
-	fill: rgb(255, 0, 58);
+    fill: rgb(255, 0, 58);
 }
