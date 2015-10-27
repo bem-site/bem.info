@@ -84,6 +84,8 @@
 {
     width: 0;
     margin: 0;
+
+    visibility: hidden;
 }
 /*
 .breadcrumbs__version .select_theme_islands .select__tick
