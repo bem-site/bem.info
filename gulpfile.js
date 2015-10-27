@@ -72,7 +72,7 @@ gulp.task('watch', function () {
     });
 });
 
-function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) {
+function applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) {
 
     page.content = content;
 
@@ -81,6 +81,7 @@ function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, conte
         data: {
             page: page,
             pages: pages[lang],
+            langs: langs,
             lang: lang
         }
     }).then(function(bemjson) {
@@ -95,16 +96,16 @@ function applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, conte
     });
 }
 
-function render(bemtree, bemhtml, pages, page, lang, outputFolder) {
+function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
 
     var renderInner = function(err, content) {
         var type = page.type || 'md'
         if (type === 'md') {
-            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
+            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) });
         } else if (type === 'bemjson.js') {
-            applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
+            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
         } else if (type === 'lib') {
-            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, lang, outputFolder, content) });
+            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) });
         } else {
             throw "Unknown type";
         }
@@ -129,7 +130,7 @@ function render(bemtree, bemhtml, pages, page, lang, outputFolder) {
 function renderPages(bemtree, bemhtml, pages, langs, outputFolder) {
     langs.forEach(function(lang) {
         pages[lang].forEach(function(page) {
-            render(bemtree, bemhtml, pages, page, lang, outputFolder);
+            render(bemtree, bemhtml, pages, page, langs, lang, outputFolder);
         })
     });
 }

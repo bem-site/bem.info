@@ -1,5 +1,39 @@
 .lang-switcher
 {
+    font-size: 14px;
+
+    display: inline-block;
+
+    margin-top: 24px;
+}
+
+.lang-switcher__item
+{
+    display: inline-block;
+
+    margin-right: 18px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+.lang-switcher__item:last-child
+{
+    margin-right: 0;
+}
+
+.lang-switcher__link
+{
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/*
+.lang-switcher
+{
     position: relative;
     top: -18px;
 
@@ -40,3 +74,4 @@
 
     color: #fff;
 }
+*/
