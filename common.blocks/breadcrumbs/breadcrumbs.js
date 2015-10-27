@@ -1,12 +1,13 @@
-modules.define('breadcrumbs', ['i-bem__dom'],
-    function(provide, BEMDOM) {
-        provide(BEMDOM.decl('breadcrumbs', {
-            onSetMod: {
-                'js': {
-                    'inited': function() {
-                    }
+modules.define('breadcrumbs', ['i-bem__dom', 'select'], function(provide, BEMDOM, Select) {
+    provide(BEMDOM.decl(this.name, {
+        onSetMod: {
+            'js': {
+                'inited': function() {
+                    Select.on(this.elem('version'), 'change', function(e) {
+                        window.location.href = '/' + e.target.getVal(); // TODO: правильный урл
+                    });
                 }
             }
-        }));
-    }
- );
+        }
+    }));
+});
