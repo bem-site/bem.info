@@ -1,51 +1,88 @@
 .article
 {
-	margin: 0 0 0 115px;
+    margin: 0 0 0 111px;
 }
 
 .article h1
 {
-	font-size: 33px;
-	font-weight: 700;
+    font: 48px/60px "OpenSans-SemiBold", Arial, sans-serif;
 
-	margin: 2.6ex 0 1.5ex -2px;
+    margin: 68px 0 0 -2px;
 }
 
 .article h2
 {
-	font-size: 26px;
-	font-weight: 700;
+    font: 36px/45px "OpenSans-SemiBold", Arial, sans-serif;
 
-	margin: 2.6ex 0 1.5ex -1px;
+    margin: 52px 0 15px -1px;
 }
 
 .article h3
 {
-	font-size: 20px;
-	font-weight: 700;
+    font: 28px/35px "OpenSans-SemiBold", Arial, sans-serif;
 
-	margin: 2.6ex 0 1.5ex 0;
+    margin: 36px 0 20px 0;
 }
+
+.article h4
+{
+    font: 20px/25px "OpenSans-SemiBold", Arial, sans-serif;
+
+    margin: 31px 0 20px 0;
+}
+
 
 .article h1, .article h2, .article h3, .article h4, .article h5,
-.article p, .article ul, .article ol
+.article p, .article ul, .article ol, .article blockquote
 {
-	max-width: 750px;
+    max-width: 960px;
 }
 
-.article p
+.article p, .article li
 {
-	line-height: 1.8;
-
-	margin: 0 0 2ex;
+    margin: 0 0 16px;
 }
 
-.article li
+.article blockquote, .article pre
 {
-	margin-bottom: 0.8ex;
+    margin: 29px 0 px;
+    padding: 9px 32px 6px;
+
+    border-left: 4px solid #f3f1ed;
+    background: #fafaf7;
+}
+
+/*  TODO: ask designer about background-color of code, pre and blockquote */
+.article pre code
+{
+    background: inherit;
+}
+
+.article blockquote p
+{
+    margin-bottom: 0;
 }
 
 .article pre
 {
-	font-size: 85%;
+    font-size: 85%;
 }
+
+.article a:link
+{
+    text-decoration: none;
+
+    color: #04b;
+}
+
+.article code
+{
+    font: Consolas, monospace;
+
+    padding: 0 5px;
+
+    border: 1px solid #f6f5f3;
+    border-radius: 3px;
+    background: #f6f5f3;
+}
+
