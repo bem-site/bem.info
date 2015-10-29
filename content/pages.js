@@ -19,7 +19,7 @@ module.exports = {
             url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Основные понятия',
-            source: 'Основные понятия БЭМ-методологии'
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/definitions/definitions.ru.md'
         },
         {
             url: '/methodology/naming-convention/',
