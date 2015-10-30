@@ -39,14 +39,26 @@ gulp.task('init', function(callback) {
 });
 
 gulp.task('browser-sync', function() {
-    browserSync.init({
+    browserSync.create().init({
         files: outputFolder + 'en' + '/**',
         server: { baseDir: outputFolder + 'en' },
         port: 8008,
-        browser: 'firefox',
-        startPath: '/platform/libs/bem-core/2.8.0/',
+        browser: 'chrome',
+        startPath: '/methodology/typo/',
         online: false,
-        notify: false
+        notify: false,
+        ui: false
+    });
+
+    browserSync.create().init({
+        files: outputFolder + 'ru' + '/**',
+        server: { baseDir: outputFolder + 'ru' },
+        port: 8009,
+        browser: 'chrome',
+        startPath: '/methodology/typo/',
+        online: false,
+        notify: false,
+        ui: false
     });
 });
 

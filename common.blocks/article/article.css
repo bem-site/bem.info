@@ -1,88 +1,157 @@
-.article
+ .article
 {
-    margin: 0 0 0 111px;
+    padding: 9px 0 0 111px;
+
+    background: url(article.png) repeat;
 }
 
-.article h1
-{
-    font: 48px/60px "OpenSans-SemiBold", Arial, sans-serif;
+/* block level (begin) */
+    .article h1, .article h2, .article h3, .article h4,
+    .article p, .article ul, .article ol, .article hr,
+    .article blockquote, .article pre
+    {
+        max-width: 700px;
+    }
 
-    margin: 68px 0 0 -2px;
-}
+    .article p, .article li, .article blockquote, .article pre
+    {
+        margin: 0 0 16px;
+    }
 
-.article h2
-{
-    font: 36px/45px "OpenSans-SemiBold", Arial, sans-serif;
+    .article hr
+    {
+        height: 3px;
+        margin: 21px 0 24px;
+        padding: 0;
 
-    margin: 52px 0 15px -1px;
-}
-
-.article h3
-{
-    font: 28px/35px "OpenSans-SemiBold", Arial, sans-serif;
-
-    margin: 36px 0 20px 0;
-}
-
-.article h4
-{
-    font: 20px/25px "OpenSans-SemiBold", Arial, sans-serif;
-
-    margin: 31px 0 20px 0;
-}
+        color: #ccc;
+        border: 0;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC") repeat-x;
+    }
+/* block level (end) */
 
 
-.article h1, .article h2, .article h3, .article h4, .article h5,
-.article p, .article ul, .article ol, .article blockquote
-{
-    max-width: 960px;
-}
+/* heading (begin) */
+    .article h1, .article h2, .article h3, .article h4
+    {
+        font-family: "OpenSans-SemiBold", Arial, sans-serif;
+        font-weight: 500;
 
-.article p, .article li
-{
-    margin: 0 0 16px;
-}
+        padding: 0;
+    }
 
-.article blockquote, .article pre
-{
-    margin: 29px 0 px;
-    padding: 9px 32px 6px;
+    .article h1
+    {
+        font-size: 49px;
+        line-height: 64px;
 
-    border-left: 4px solid #f3f1ed;
-    background: #fafaf7;
-}
+        margin: 53px 0 27px -2px;
+    }
+/*
+    .article__info
+    {
+        margin-bottom: 39px;
 
-/*  TODO: ask designer about background-color of code, pre and blockquote */
-.article pre code
-{
-    background: inherit;
-}
+        font-size: 14px;
+    }
+*/
+    .article h2
+    {
+        font-size: 36px;
+        line-height: 48px;
 
-.article blockquote p
-{
-    margin-bottom: 0;
-}
+        margin: 50px 0 14px -1px;
+    }
 
-.article pre
-{
-    font-size: 85%;
-}
+    .article h3
+    {
+        font-size: 28px;
+        line-height: 48px;
 
-.article a:link
-{
-    text-decoration: none;
+        margin: 37px 0 11px 0;
+    }
 
-    color: #04b;
-}
+    .article h4
+    {
+        font-size: 20px;
+        line-height: 32px;
 
-.article code
-{
-    font: Consolas, monospace;
+        margin: 31px 0 17px 0;
+    }
 
-    padding: 0 5px;
+    .article h1 + h2
+    {
+        margin-top: -14px;
+    }
 
-    border: 1px solid #f6f5f3;
-    border-radius: 3px;
-    background: #f6f5f3;
-}
+    .article h2 + h3
+    {
+        margin-top: 19px;
+    }
 
+    .article h3 + h4
+    {
+        margin-top: -1px;
+    }
+/* heading (end) */
+
+/* blockquote and pre (begin) */
+    .article blockquote
+    {
+        acolor: #999;
+    }
+
+    .article blockquote, .article pre
+    {
+        padding: 0 32px 0;
+
+        border-left: 4px solid #f3f1ed;
+        background: rgba(240, 240, 235, 0.4);
+    }
+
+    /*  TODO: ask designer about background-color of code, pre and blockquote */
+    .article blockquote code, .article pre code
+    {
+        white-space: pre;
+
+        border: 0;
+        background: none;
+    }
+
+    .article blockquote pre
+    {
+        border: 0;
+        background: rgba(207, 207, 200, 0.4);
+    }
+
+/* blockquote and pre (end) */
+
+/* inline (begin) */
+    .article strong
+    {
+        font: 16px/1.9 "OpenSans-SemiBold", Arial, sans-serif;
+    }
+
+    .article a:link
+    {
+        text-decoration: none;
+
+        color: #04b;
+    }
+
+    .article img
+    {
+        margin: 7px 0 -1px;
+    }
+
+    .article code
+    {
+        font: 16px/1.9 Consolas, monospace;
+
+        padding: 0 5px;
+
+        border: 1px solid #f6f5f3;
+        border-radius: 3px;
+        background: #f6f5f3;
+    }
+/* inline (end) */

@@ -1,10 +1,10 @@
 .lang-switcher
 {
+    font-size: 14px;
+
     display: inline-block;
 
-    margin-top: 20px;
-
-    font-size: 14px;
+    margin-top: 22px;
 }
 
 .lang-switcher__item

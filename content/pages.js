@@ -9,6 +9,19 @@ module.exports = {
             source: 'БЭМ прекрасен'
         },
         {
+            url: '/methodology/typo/',
+            site: '/methodology/',
+            title: 'Типографика',
+            source: './content/typo.ru.md'
+        },
+        {
+            url: '/methodology/typo_light/',
+            site: '/methodology/',
+            title: 'Типографика (лёгкая сетка)',
+            source: './content/typo_light.ru.bemjson.js',
+            type: 'bemjson.js'
+        },
+        {
             url: '/methodology/',
             site: '/methodology/',
             title: 'Методология',
@@ -25,7 +38,7 @@ module.exports = {
             url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Соглашение по именованию',
-            source: 'Соглашение по именованию '
+            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/naming/naming-convention.ru.md'
         },
         {
             url: '/methodology/filesystem/',
@@ -184,6 +197,13 @@ module.exports = {
             site: '/',
             title: 'BEM',
             source: 'BEM is awesome'
+        },
+        {
+            url: '/methodology/typo/',
+            site: '/methodology/',
+            title: 'Typography',
+            source: './content/typo.en.bemjson.js',
+            type: 'bemjson.js'
         },
         {
             url: '/methodology/',
