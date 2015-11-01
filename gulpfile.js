@@ -21,7 +21,9 @@ var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
     bemtreeFile = './desktop.bundles/index/index.bemtree.js';
 
 var renderer = new marked.Renderer();
-renderer.heading = require('marked-heading-anchors');
+renderer.heading = require('marked-renderer-heading-anchors');
+//TODO
+//renderer.image = require('marked-renderer-video');
 marked.setOptions({
     renderer: renderer,
 

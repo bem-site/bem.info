@@ -14,7 +14,7 @@
     "glob": "",
     "highlight.js": "^8.9.1",
     "marked": "",
-    "marked-heading-anchors": "vithar/marked-heading-anchors",
+    "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
     "mkdirp": "",
     "request": "",
     "rimraf": "",
