@@ -48,7 +48,7 @@
 
 
 /* heading (begin) */
-    .article h1, .article h2, .article h3, .article h4
+    .article__heading
     {
         font-family: "OpenSans-SemiBold", Arial, sans-serif;
         font-weight: 500;
@@ -56,7 +56,7 @@
         padding: 0;
     }
 
-    .article h1
+    .article__heading_1
     {
         font-size: 49px;
         line-height: 64px;
@@ -71,7 +71,7 @@
         font-size: 14px;
     }
 */
-    .article h2
+    .article__heading_2
     {
         font-size: 36px;
         line-height: 48px;
@@ -79,7 +79,7 @@
         margin: 50px 0 14px -1px;
     }
 
-    .article h3
+    .article__heading_3
     {
         font-size: 28px;
         line-height: 48px;
@@ -87,7 +87,7 @@
         margin: 37px 0 11px 0;
     }
 
-    .article h4
+    .article__heading_4
     {
         font-size: 20px;
         line-height: 32px;
@@ -95,19 +95,39 @@
         margin: 31px 0 17px 0;
     }
 
-    .article h1 + h2
+    .article__heading_1 + .article__heading_2
     {
         margin-top: -14px;
     }
 
-    .article h2 + h3
+    .article__heading_2 + .article__heading_3
     {
         margin-top: 19px;
     }
 
-    .article h3 + h4
+    .article__heading_3 + .article__heading_4
     {
         margin-top: -1px;
+    }
+
+    .article__heading-anchor::before
+    {
+        display: none;
+
+        font-size: 80%;
+
+        position: absolute;
+        margin: -0.08ex 0 0 -1.3em;
+        padding: 0 0.4em;
+
+        content: '§';
+
+        color: #ccc;
+    }
+
+    .article__heading:hover .article__heading-anchor::before
+    {
+        display: inline-block;
     }
 /* heading (end) */
 

@@ -20,7 +20,14 @@ var langs = ['ru', 'en'],
 var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
     bemtreeFile = './desktop.bundles/index/index.bemtree.js';
 
+var renderer = new marked.Renderer();
+renderer.heading = require('marked-heading-anchors');
 marked.setOptions({
+    renderer: renderer,
+
+    headingClassName: 'article__heading article__heading_',
+    headingAnchorClassName: 'article__heading-anchor',
+
     highlight: function (code, lang) {
         return lang && hljs.highlight(lang, code).value || hljs.highlightAuto(code).value;
     }
