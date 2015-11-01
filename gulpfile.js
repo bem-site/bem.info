@@ -22,7 +22,7 @@ var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
 
 marked.setOptions({
     highlight: function (code, lang) {
-        return hljs.highlight(lang, code).value;
+        return lang && hljs.highlight(lang, code).value || hljs.highlightAuto(code).value;
     }
 });
 
