@@ -13,9 +13,14 @@
         max-width: 700px;
     }
 
-    .article p, .article ul, .article ol, .article li, .article blockquote, .article pre, .article hr
+    .article p, .article ul, .article ol, .article blockquote, .article pre, .article hr
     {
         margin: 0 0 16px;
+    }
+
+    .article li
+    {
+        margin: 0;
     }
 
     .article ul ul, .article ul ol, .article ol ul, .article ol ol
