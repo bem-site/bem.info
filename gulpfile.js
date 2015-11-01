@@ -4,6 +4,7 @@ var browserSync = require('browser-sync'),
     request = require('request'),
     mkdirp = require('mkdirp'),
     marked = require('marked'),
+    hljs = require('highlight.js'),
     gulp = require('gulp'),
     enb = require('enb'),
     fs = require('fs'),
@@ -18,6 +19,12 @@ var langs = ['ru', 'en'],
 
 var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
     bemtreeFile = './desktop.bundles/index/index.bemtree.js';
+
+marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlight(lang, code).value;
+    }
+});
 
 gulp.task('default', function () {
     runSequence('init', 'watch', 'browser-sync');
@@ -110,11 +117,11 @@ function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
     var renderInner = function(err, content) {
         var type = page.type || 'md'
         if (type === 'md') {
-            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) });
+            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, marked(content));
         } else if (type === 'bemjson.js') {
             applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
         } else if (type === 'lib') {
-            marked(content, function(err, content) { applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) });
+            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, marked(content));
         } else {
             throw "Unknown type";
         }
@@ -143,17 +150,3 @@ function renderPages(bemtree, bemhtml, pages, langs, outputFolder) {
         })
     });
 }
-
-// function html(vinyl) {
-//     if (!vinyl || !vinyl.contents) return;
-
-//     var path = vinyl.path,
-//         re = new RegExp('(.*)\/' + config.rawFolder + '(.*)index\.(.*)\.html$'),
-//         lang = path.replace(re, '$3'),
-//         pageUrl = path.replace(re, '$2'),
-//         page = _.where(pages[lang], { url: pageUrl })[0];
-
-//     applyTemplates(page, lang, vinyl.contents.toString('utf8'));
-// }
-
-

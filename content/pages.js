@@ -15,13 +15,6 @@ module.exports = {
             source: './content/typo.ru.md'
         },
         {
-            url: '/methodology/typo_light/',
-            site: '/methodology/',
-            title: 'Типографика (лёгкая сетка)',
-            source: './content/typo_light.ru.bemjson.js',
-            type: 'bemjson.js'
-        },
-        {
             url: '/methodology/',
             site: '/methodology/',
             title: 'Методология',

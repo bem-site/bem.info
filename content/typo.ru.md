@@ -175,10 +175,70 @@ ___
 
 # 1 Код
 
+## 2 HTML
+
 ```html
 <header class="header">
     <img class="logo">
 </header>
+```
+
+## 2 XML
+
+```xml
+<block:header>
+    <block:logo/>
+    <block:search-form>
+        <block:input>input</block:input>
+        <block:button/>
+    </block:search-form>
+    <block:lang-switcher/>
+</block:header>
+```
+
+## 2 CSS
+
+```css
+.article
+{
+    color: #000;
+    background: white;
+}
+```
+
+## 2 JS
+
+```js
+function test() {
+    var array = [];
+
+    for (var i = 0; i < 10; i++) {
+        array.push(i);
+    }
+
+    return array;
+}
+```
+
+## 2 BEMJSON
+
+```js
+[{
+    block : 'promo-header',
+    mods : { site : 'platform' },
+    content : [
+        {
+            elem : 'title',
+            mods: { color: 'white' },
+            content : 'BEM'
+        },
+        ' ',
+        {
+            elem : 'subtitle',
+            content : 'platform'
+        }
+    ]
+}]
 ```
 
 ## 2 Заголовок и код

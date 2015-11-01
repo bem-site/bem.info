@@ -119,10 +119,27 @@
     /*  TODO: ask designer about background-color of code, pre and blockquote */
     .article blockquote code, .article pre code
     {
+        font: 16px/1 Consolas, monospace;
+
+        display: block;
+
+        width: 100%;
+        padding: 25px 0 23px;
+
+        overflow-x: auto;
         white-space: pre;
 
+        color: #657b83;
         border: 0;
         background: none;
+    }
+
+    /* Double line-height for HTML/XML */
+    .article .lang-html, .article .lang-xml
+    {
+        line-height: 2;
+
+        padding: 17px 0 15px;
     }
 
     .article blockquote pre
@@ -131,6 +148,16 @@
         background: none;
     }
 
+    /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css */
+    /* Unused statements removed */
+    .hljs-comment,.hljs-doctype,.hljs-pi{color:#93a1a1}
+    .hljs-keyword,.hljs-winutils,.method/*WTF???*/,.hljs-addition,.css .hljs-tag,.hljs-request,.hljs-status{color:#859900}
+    .hljs-number,.hljs-command,.hljs-string,.hljs-tag .hljs-value,.hljs-rule .hljs-value,.hljs-doctag,.hljs-regexp,.hljs-hexcolor,.hljs-link_url{color:#2aa198}
+    .hljs-title,.hljs-localvars,.hljs-chunk,.hljs-decorator,.hljs-built_in,.hljs-identifier,.hljs-id,.css .hljs-function,.hljs-name{color:#268bd2}
+    .hljs-attribute,.hljs-variable,.hljs-constant,.hljs-class .hljs-title,.hljs-parent,.hljs-type,.hljs-link_reference{color:#b58900}
+    .hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-pragma,.hljs-shebang,.hljs-symbol,.hljs-symbol .hljs-string,.hljs-special,.hljs-attr_selector,.hljs-subst,.hljs-cdata,.css .hljs-pseudo,.hljs-header{color:#cb4b16}
+    .hljs-deletion,.hljs-important{color:#dc322f}
+    .hljs-link_label{color:#6c71c4}
 /* blockquote and pre (end) */
 
 /* inline (begin) */
