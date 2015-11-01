@@ -141,15 +141,14 @@
         /* MUST BE #F6F5F3 */
     }
 
-    /*  TODO: ask designer about background-color of code, pre and blockquote */
-    .article blockquote code, .article pre code
+    .article code[class|=lang]
     {
         font: 16px/1 Consolas, monospace;
 
         display: block;
 
         width: 100%;
-        padding: 25px 0 23px;
+        padding: 9px 0 7px;
 
         overflow-x: auto;
         white-space: pre;
@@ -160,7 +159,7 @@
     }
 
     /* Double line-height for HTML/XML */
-    .article .lang-html, .article .lang-xml
+    .article code.lang-html, .article code.lang-xml
     {
         line-height: 2;
 
