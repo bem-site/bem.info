@@ -8,6 +8,7 @@ module.exports = {
             title: 'БЭМ',
             source: 'БЭМ прекрасен'
         },
+
         {
             url: '/methodology/',
             site: '/methodology/',
@@ -19,38 +20,49 @@ module.exports = {
             url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Основные понятия',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/definitions/definitions.ru.md'
+            // TODO: rename /definitions/definitions to /key-concepts/key-concepts
+            source: './content-github/method/definitions/definitions.ru.md'
         },
         {
             url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Соглашение по именованию',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/naming/naming-convention.ru.md'
+            // TODO: rename /naming/ to /naming-convention/
+            source: './content-github/method/naming/naming-convention.ru.md'
         },
         {
             url: '/methodology/filesystem/',
             site: '/methodology/',
             title: 'Файловая система',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
+            source: './content-github/method/filesystem/filesystem.ru.md'
         },
         {
-            url: '/methodology/building/',
+            url: '/methodology/build/',
             site: '/methodology/',
             title: 'Сборка',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.ru.md'
+            // TODO: rename /build-method/ to /build/
+            source: './content-github/method/build-method/build-method.ru.md'
+        },
+        {
+            url: '/methodology/declarations/',
+            site: '/methodology/',
+            title: 'Декларации',
+            // TODO: rename /declaration/declaration to /declarations/declarations
+            source: './content-github/method/declaration/declaration.ru.md'
         },
         {
             url: '/methodology/solved-problems/',
             site: '/methodology/',
             title: 'Какие проблемы решает',
-            source: 'Применение БЭМ-методологии для решения задач веб-разработки — примеры решения распространенных проблем с помощью соглашения по именованию БЭМ-сущностей.'
+            source: './content-github/method/solved-problems/solved-problems.ru.md'
         },
         {
             url: '/methodology/history/',
             site: '/methodology/',
             title: 'История создания',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/history/history.ru.md'
+            source: './content-github/method/history/history.ru.md'
         },
+
         {
             url: '/platform/',
             site: '/platform/',
@@ -191,6 +203,7 @@ module.exports = {
             title: 'BEM',
             source: 'BEM is awesome'
         },
+
         {
             url: '/methodology/',
             site: '/methodology/',
@@ -202,38 +215,49 @@ module.exports = {
             url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Key concepts',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/definitions/definitions.en.md'
+            // TODO: rename /definitions/definitions to /key-concepts/key-concepts
+            source: './content-github/method/definitions/definitions.en.md'
         },
         {
             url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Naming convention',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/naming/naming-convention.en.md'
+            // TODO: rename /naming/ to /naming-convention/
+            source: './content-github/method/naming/naming-convention.en.md'
         },
         {
             url: '/methodology/filesystem/',
             site: '/methodology/',
             title: 'Filesystem',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/filesystem/filesystem.en.md'
+            source: './content-github/method/filesystem/filesystem.en.md'
         },
         {
-            url: '/methodology/building/',
+            url: '/methodology/build/',
             site: '/methodology/',
-            title: 'Building',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/build/build-method.ru.md'
+            title: 'Build',
+            // TODO: rename /build-method/ to /build/
+            source: './content-github/method/build-method/build-method.en.md'
+        },
+        {
+            url: '/methodology/declarations/',
+            site: '/methodology/',
+            title: 'Declarations',
+            // TODO: rename /declaration/declaration to /declarations/declarations
+            source: './content-github/method/declaration/declaration.en.md'
         },
         {
             url: '/methodology/solved-problems/',
             site: '/methodology/',
             title: 'Solved problems',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/solved-problems/solved-problems.ru.md'
+            source: './content-github/method/solved-problems/solved-problems.en.md'
         },
         {
             url: '/methodology/history/',
             site: '/methodology/',
             title: 'History',
-            source: 'https://raw.githubusercontent.com/bem/bem-method/bem-info-data/method/history/history.en.md'
+            source: './content-github/method/history/history.en.md'
         },
+
         {
             url: '/platform/',
             site: '/platform/',
@@ -364,8 +388,7 @@ module.exports = {
             url: '/community/typo/',
             site: '/community/',
             title: 'Typography',
-            source: './content/typo.ru.md',
-            type: 'bemjson.js'
+            source: './content/typo.ru.md'
         }
     ]
 };
