@@ -30,6 +30,9 @@ marked.setOptions({
     headingAnchorClassName: 'article__heading-anchor',
 
     highlight: function (code, lang) {
+        if (lang === 'files') {
+            return code;
+        }
         return lang && hljs.highlight(lang, code).value || hljs.highlightAuto(code).value;
     }
 });
