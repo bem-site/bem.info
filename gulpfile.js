@@ -2,12 +2,11 @@
 
 var browserSync = require('browser-sync'),
     request = require('request'),
-    mkdirp = require('mkdirp'),
     marked = require('marked'),
     hljs = require('highlight.js'),
     gulp = require('gulp'),
     enb = require('enb'),
-    fs = require('fs'),
+    fs = require('fs-extra'),
     vm = require('vm'),
     watch = require('gulp-watch'),
     batch = require('gulp-batch'),
@@ -117,8 +116,16 @@ function applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder
 
     var dirName = outputFolder + lang + page.url;
 
-    mkdirp.sync(dirName);
+    fs.mkdirsSync(dirName);
     fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
+
+    var source = page.source;
+    var type = page.type || 'md';
+    if (type === 'md' && /^\.\//.test(source)) {
+        var sourceDir = source.replace(/[^\/]*$/, '');
+
+        fs.copySync(sourceDir, dirName, { filter: function(file) { return !/md$/.test(file) }});
+    }
 }
 
 function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
@@ -143,7 +150,7 @@ function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
             if (!err && response.statusCode == 200)
                 renderInner(err, content);
         });
-    } else if (/^\.\/(.*)/.test(source)) {
+    } else if (/^\.\//.test(source)) {
         // read content from local FS
         fs.readFile(source, 'utf8', renderInner);
     } else {
