@@ -10,7 +10,7 @@
     .article p, .article ul, .article ol, .article hr,
     .article blockquote, .article pre
     {
-        max-width: 700px;
+        max-width: 760px;
     }
 
     .article p, .article ul, .article ol, .article blockquote, .article pre, .article hr
