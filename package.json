@@ -44,7 +44,8 @@
     "ym": "^0.1.2"
   },
   "scripts": {
-    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run build-bemxjst-bundle && npm run compile-stylus && npm run pre",
+    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run build-bemxjst-bundle && npm run compile-stylus && npm run content && npm run pre",
+    "content": "git clone git@github.com:vithar/bem-method.git content-github",
     "build-bemxjst-bundle": "cd node_modules/enb-bemxjst/node_modules/bem-xjst && npm i && make && cd -",
     "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
     "pre": "rm -rf output-en output-ru && mkdir -p output-en output-ru && cp content/robots.txt content/favicon.ico output-en && cp content/robots.txt content/favicon.ico output-ru",
