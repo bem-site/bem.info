@@ -95,7 +95,9 @@ gulp.task('watch', function () {
     });
 
     // watch changes in content and bemtree/bemhtml bundles and rebuild pages
-    watch(['content/**/*', 'desktop.bundles/index/index.bemhtml.js', 'desktop.bundles/index/index.bemtree.js'], function batch(events, done) {
+    watch(['content/**/*', 'content-github/**/*',
+            'desktop.bundles/index/index.bemhtml.js',
+            'desktop.bundles/index/index.bemtree.js'], function batch(events, done) {
         delete require.cache[require.resolve(bemtreeFile)];
         delete require.cache[require.resolve(bemhtmlFile)];
         renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
