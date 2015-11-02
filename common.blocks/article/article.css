@@ -159,7 +159,7 @@
     }
 
     /* Double line-height for HTML/XML */
-    .article code.lang-html, .article code.lang-xml
+    .article code.lang-xml, .article code.lang-html
     {
         line-height: 2;
 
@@ -170,6 +170,13 @@
     {
         border: 0;
         background: none;
+    }
+
+    .article blockquote code.lang-xml,
+    .article blockquote code.lang-html
+    {
+        margin-bottom: -1px;
+        padding: 1px 0 0;
     }
 
     /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css */
