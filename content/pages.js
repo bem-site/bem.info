@@ -9,12 +9,6 @@ module.exports = {
             source: 'БЭМ прекрасен'
         },
         {
-            url: '/methodology/typo/',
-            site: '/methodology/',
-            title: 'Типографика',
-            source: './content/typo.ru.md'
-        },
-        {
             url: '/methodology/',
             site: '/methodology/',
             title: 'Методология',
@@ -181,7 +175,13 @@ module.exports = {
             site: '/community/',
             title: 'Community',
             source: 'Info about BEM community will apper here'
-        }
+        },
+        {
+            url: '/community/typo/',
+            site: '/community/',
+            title: 'Типографика',
+            source: './content/typo.ru.md'
+        },
     ],
 
     'en': [
@@ -190,13 +190,6 @@ module.exports = {
             site: '/',
             title: 'BEM',
             source: 'BEM is awesome'
-        },
-        {
-            url: '/methodology/typo/',
-            site: '/methodology/',
-            title: 'Typography',
-            source: './content/typo.en.bemjson.js',
-            type: 'bemjson.js'
         },
         {
             url: '/methodology/',
@@ -366,6 +359,13 @@ module.exports = {
             site: '/community/',
             title: 'Community',
             source: 'Info about BEM community will apper here'
+        },
+        {
+            url: '/community/typo/',
+            site: '/community/',
+            title: 'Typography',
+            source: './content/typo.ru.md',
+            type: 'bemjson.js'
         }
     ]
 };
