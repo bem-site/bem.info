@@ -1,5 +1,9 @@
 designer:
 	стиль для <hr>
+	стиль для note, nb, important
+	лёгкий шрифт для monospace
+	навигация вперёд/назад внизу страницы с документацией (строить по pages или явно указывать порядок?)
+	иконка для anchor
 
 
 Implement marked-renderer-video, see https://github.com/bem-site/bem-md-renderer/blob/master/index.js
