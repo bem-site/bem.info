@@ -12,7 +12,7 @@ var browserSync = require('browser-sync'),
     batch = require('gulp-batch'),
     runSequence = require('run-sequence');
 
-var langs = ['ru', 'en'],
+var langs = ['ru'],
     outputFolder = 'output-',
     pages = require('./content/pages.js');
 
@@ -20,9 +20,17 @@ var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
     bemtreeFile = './desktop.bundles/index/index.bemtree.js';
 
 var renderer = new marked.Renderer();
-renderer.heading = require('marked-renderer-heading-anchors');
+
 //TODO
 //renderer.image = require('marked-renderer-video');
+renderer.heading = require('marked-renderer-heading-anchors');
+
+renderer._link = renderer.link;
+renderer.link = function(href, title, text) {
+    return renderer._link.apply(this, arguments)
+        .replace(/href="(.*\/)([^\/#]*)(.*)"/, 'href="$1$3"');
+}
+
 marked.setOptions({
     renderer: renderer,
 
