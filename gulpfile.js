@@ -27,8 +27,7 @@ renderer.heading = require('marked-renderer-heading-anchors');
 
 renderer._link = renderer.link;
 renderer.link = function(href, title, text) {
-    return renderer._link.apply(this, arguments)
-        .replace(/href="(.*\/)([^\/#]*)(.*)"/, 'href="$1$3"');
+    return this._link(href.replace(/(.*\/)([^\/#]*)(.*)/, '$1$3'), title, text);
 }
 
 marked.setOptions({
