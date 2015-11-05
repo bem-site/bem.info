@@ -32,7 +32,7 @@ marked.setOptions({
     highlight: function (code, lang) {
         // TODO: implement true highligting for 'files' codeblock: different colors for directories, files, comments
         if (lang === 'files') {
-            return code.replace('`', ''); // temporary implementation of 'files' highlighting
+            return code.replace(/\`/g, ''); // temporary implementation of 'files' highlighting
         }
         return lang && hljs.highlight(lang, code).value || hljs.highlightAuto(code).value;
     }
