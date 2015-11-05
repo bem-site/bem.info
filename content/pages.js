@@ -20,15 +20,13 @@ module.exports = {
             url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Основные понятия',
-            // TODO: rename /definitions/definitions to /key-concepts/key-concepts
-            source: './content-github/method/definitions/definitions.ru.md'
+            source: './content-github/method/key-concepts/key-concepts.ru.md'
         },
         {
             url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Соглашение по именованию',
-            // TODO: rename /naming/ to /naming-convention/
-            source: './content-github/method/naming/naming-convention.ru.md'
+            source: './content-github/method/naming-convention/naming-convention.ru.md'
         },
         {
             url: '/methodology/filesystem/',
@@ -40,15 +38,13 @@ module.exports = {
             url: '/methodology/build/',
             site: '/methodology/',
             title: 'Сборка',
-            // TODO: rename /build-method/ to /build/
-            source: './content-github/method/build-method/build-method.ru.md'
+            source: './content-github/method/build/build.ru.md'
         },
         {
             url: '/methodology/declarations/',
             site: '/methodology/',
             title: 'Декларации',
-            // TODO: rename /declaration/declaration to /declarations/declarations
-            source: './content-github/method/declaration/declaration.ru.md'
+            source: './content-github/method/declarations/declarations.ru.md'
         },
         {
             url: '/methodology/solved-problems/',
@@ -215,15 +211,13 @@ module.exports = {
             url: '/methodology/key-concepts/',
             site: '/methodology/',
             title: 'Key concepts',
-            // TODO: rename /definitions/definitions to /key-concepts/key-concepts
-            source: './content-github/method/definitions/definitions.en.md'
+            source: './content-github/method/key-concepts/key-concepts.en.md'
         },
         {
             url: '/methodology/naming-convention/',
             site: '/methodology/',
             title: 'Naming convention',
-            // TODO: rename /naming/ to /naming-convention/
-            source: './content-github/method/naming/naming-convention.en.md'
+            source: './content-github/method/naming-convention/naming-convention.en.md'
         },
         {
             url: '/methodology/filesystem/',
@@ -235,15 +229,13 @@ module.exports = {
             url: '/methodology/build/',
             site: '/methodology/',
             title: 'Build',
-            // TODO: rename /build-method/ to /build/
-            source: './content-github/method/build-method/build-method.en.md'
+            source: './content-github/method/build/build.en.md'
         },
         {
             url: '/methodology/declarations/',
             site: '/methodology/',
             title: 'Declarations',
-            // TODO: rename /declaration/declaration to /declarations/declarations
-            source: './content-github/method/declaration/declaration.en.md'
+            source: './content-github/method/declarations/declarations.en.md'
         },
         {
             url: '/methodology/solved-problems/',
