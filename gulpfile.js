@@ -33,8 +33,12 @@ marked.setOptions({
         // TODO: implement true highligting for 'files' codeblock: different colors for directories, files, comments
         if (lang === 'files') {
             return code.replace(/\`/g, ''); // temporary implementation of 'files' highlighting
+        } else if (lang === 'text') {
+            return code;
+        } else if (lang) {
+            return hljs.highlight(lang, code).value;
         }
-        return lang && hljs.highlight(lang, code).value || hljs.highlightAuto(code).value;
+        return hljs.highlightAuto(code).value;
     }
 });
 
