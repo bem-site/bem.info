@@ -536,3 +536,117 @@ ___
   1. Многострочный абзац со `вставкой кода`, **полужирным** и _наклонным_ текстооооооооом. [Ссылка](https://example.com/), [посещённая ссылка](https://www.yandex.ru).
 
 * Многострочный абзац со `вставкой кода`, **полужирным** и _наклонным_ текстооооооооом. [Ссылка](https://example.com/), [посещённая ссылка](https://www.yandex.ru).
+
+## Таблицы всех видов
+
+### Таблица 1 (Простая таблица со ссылками. Может быть достаточно большой, >10 строк.)
+
+| Модификатор | Допустимые значения | Способы использования | Описание |
+| ----------- | ------------------- | -------------------- | -------- |
+| <a href="#buttontype">type</a> | <code>'link'</code>, <code>'submit'</code> | <code>BEMJSON</code> | Тип кнопки.|
+| <a href="#buttontoggle">togglable</a> | <code>'check'</code>, <code>'radio'</code> | <code>BEMJSON</code> | Тип переключателя.|
+| <a href="#buttondisabled">disabled</a> | <code>true</code> | <code>BEMJSON</code>, <code>JS</code> | Неактивное состояние. |
+| <a href="#buttonfocused">focused</a> | <code>true</code> | <code>BEMJSON</code>, <code>JS</code> | Фокус на блоке. |
+| <a href="#buttonpressed">pressed</a> | <code>true</code> | – | Действие «нажатие на кнопку». |
+| <a href="#hovered">hovered</a> | <code>true</code> | – | Наведение курсором. |
+| <a href='#buttonthemes'>theme</a> | <code>'islands'</code> | <code>BEMJSON</code> | Стилевое оформление. |
+| <a href="#buttonsize">size</a> | <code>'s'</code>, <code>'m'</code>, <code>'l'</code>, <code>'xl'</code> | <code>BEMJSON</code> | Размер кнопки. Используется для кнопок с <a href="#buttonthemes">модификатором theme в значении islands</a>.|
+| <a href="#buttonview">view</a> | <code>'action'</code>, <code>'pseudo'</code>, <code>'plain'</code> | <code>BEMJSON</code> | Тип визуального выделения кнопки.|
+
+### Таблица 2 (Таблица с пустыми ячейками)
+
+| Номер шага | Этап | Описание | Паттерн преобразования |
+| ------------- |-------------|------------- |-------------|------------- |-------------|
+|  1  | Преобразование БЭМ-ориентированных подпредикатов | Взять в кавычки имена БЭМ-сущностей | `b1` → `'b1'` |
+|  2 |  | Заменить сокращения для БЭМ-сущностей на хелперы | `block 'b1'` → `block('b1')` |
+|  3 |  | Заменить все запятые, разделяющие подпредикаты, на точки | `,`  → `.` |
+|  4 | Преобразование произвольных подпредикатов | Обернуть произвольные подпредикаты в хелпер `match` | `произвольный-подпредикат` → `match(произвольный-подпредикат)` |
+|  5 | Преобразование подпредикатов для мод | Заменить названия стандартных мод на хелперы | `tag` → `tag()` |
+|  6 |  | Обернуть оставшиеся подпредикаты в хелпер `mode` и взять в кавычки | `some-mode` → `mode('some-mode')` |
+|  7 | Преобразование тела шаблона и вложенных конструкций | Заменить двоеточие перед телом шаблонов на открывающую скобку и добавить после тела закрывающую | ` : ...`  →  `(...)` |
+|  8 |  | Добавить запятые между вложенными подшаблонами | `block('b1'){ tag()('a') elem('e1').tag('b') }` → `block('b1'){ tag()('a'), elem('e1').tag('b') }` |
+|  9 |  | Заменить фигурные скобки, указывающие вложенность, обычными скобками | `block('b1'){ tag()('a'), elem('e1').tag('b') }` → `block('b1')(tag()('a'), elem('e1').tag('b'))` |
+
+
+### Таблица 3 (Таблица в HTML с блоками кода)
+
+<table>
+<tr>
+    <th>Входные данные</th>
+    <th>Шаблон</th>
+    <th>Результат</th>
+</tr>
+<tr>
+    <td>
+        <pre><code>
+{
+  items: [
+    { text: '1' },
+    { text: '2' }
+  ]
+}
+        </code></pre>
+    </td>
+
+    <td>
+        <pre><code>
+&lt;ul class="menu"&gt;
+    [% foreach item in items %]
+        &lt;li class="menu&#95;&#95;item"&gt;
+            [% item.text %]
+        &lt;/li&gt;
+    [% end %]
+&lt;/ul&gt;
+        </code></pre>
+    </td>
+    <td>
+        <pre><code>
+&lt;ul class="menu"&gt;
+    &lt;li class="menu&#95;&#95;item">1&lt;/li&gt;
+    &lt;li class="menu&#95;&#95;item">2&lt;/li&gt;
+&lt;/ul&gt;
+        </code></pre>
+    </td>
+
+</tr>
+</table>
+
+### Таблица 4 (Таблица в HTML с горизонтальным скроллом. Ширина таблицы больше ширины экрана. )
+
+<table>
+    <tr>
+        <th>Входные данные</th>
+        <th>Шаблон</th>
+        <th>Результат</th>
+    </tr>
+    <tr>
+        <td>
+        <pre><code>
+{
+    block: 'menu',
+    content: [
+        { elem: 'item', content: '1' },
+        { elem: 'item', content: '2' }
+    ]
+}
+        </code></pre>
+        </td>
+        <td>
+        <pre><code>
+block('menu')(
+    tag()('ul'),
+    elemMatch('item').tag()('li')
+)
+        </code></pre>
+        </td>
+        <td>
+        <pre><code>
+&lt;ul class="menu"&gt;
+    &lt;li class="menu&#95;&#95;item"&gt;1&lt;/li&gt;
+    &lt;li class="menu&#95;&#95;item"&gt;2&lt;/li&gt;
+&lt;/ul&gt;
+        </code></pre>
+        </td>
+    </tr>
+</table>
+
