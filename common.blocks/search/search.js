@@ -26,7 +26,7 @@ provide(BEMDOM.decl(this.name, {
                 this.input.setMod('focused', true);
 
                 BEMDOM.doc.on('keydown', function (e) {
-                    e.keyCode === 27 && self.input.delMod('focused');
+                    e.keyCode === 27 && self.delMod('opened');
                 });
             },
             '': function() {
