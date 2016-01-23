@@ -1,15 +1,14 @@
 block('search').content()(function() {
+    var lang = this.data.lang;
+
     return [
-        {
-            elem: 'switcher',
-            mix: { elem: 'icon' }
-        },
         {
             block: 'form',
             mix: [
-                { block: 'search', elem: 'form' },
-                { block: 'control-group' }
+                { block: 'search', elem: 'form' }
             ],
+            action: 'https://yandex.' + (lang === 'ru' ? 'ru' : 'com') + '/sitesearch',
+            attrs: { target: '_blank' },
             content: [
                 {
                     block: 'input',
@@ -17,25 +16,33 @@ block('search').content()(function() {
                     mods: {
                         theme: 'islands',
                         size: 'l',
-                        type: 'search',
-                        'has-clear': true
+                        type: 'search'
                     },
-                    name: 'q'
+                    name: 'q',
+                    placeholder : lang === 'ru' ? 'Искать' : 'Search'
                 },
                 {
-                    block: 'button',
-                    mods: {
-                        theme: 'islands',
-                        size: 'l',
-                        type: 'submit',
-                        view: 'action'
-                    },
-                    icon: {
-                        block: 'icon',
-                        mix: { block: 'search', elem: 'icon' }
-                    }
+                    tag: 'input', attrs: { type: 'hidden', name: 'reqenc' }
+                },
+                {
+                    tag: 'input', attrs: { type: 'hidden', name: 'searchid', value: '1944806' }
+                },
+                {
+                    tag: 'input', attrs: { type: 'hidden', name: 'l10n', value: lang }
+                },
+                {
+                    block: 'search',
+                    elem: 'submit',
+                    tag: 'button',
+                    attrs: { type: 'submit' }
                 }
             ]
+        },
+        {
+            elem: 'open'
+        },
+        {
+            elem: 'close'
         }
     ]
 });

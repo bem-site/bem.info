@@ -34,9 +34,7 @@
 
 .header__item
 {
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: right;
 
     height: 70px;
     padding-left: 5px;

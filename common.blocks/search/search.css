@@ -1,38 +1,78 @@
 .search
 {
-    position: relative;
-
     display: inline-block;
 
     margin-left: 16px;
-    padding: 27px 31px 26px 29px;
-
-    cursor: pointer;
+    width: 80px;
+    height: 100%;
 
     vertical-align: top;
 }
 
-.search__icon
+.search__open, .search__close
 {
+    position: absolute;
+    top: 0;
+
     width: 17px;
     height: 17px;
-    background: url(search.svg) no-repeat 0 0 / 100% 100%;
+    padding: 23px 31px 30px 32px;
+
+    display: block;
+    cursor: pointer;
+
+    /* search__switcher.svg properties */
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+
+    transition: all 0.15s ease-out 0s;
 }
 
-.search_opened .search__switcher
+.search__open
 {
-    display: none;
+    right: 0;
+}
+
+.search__close
+{
+    right: -80px;
+}
+
+.search_opened
+{
+    padding-left: 80px;
+}
+
+.search_opened .search__open
+{
+    right: 80px;
+
+    stroke: #000;
+    background: #fc0;
+}
+
+.search_opened .search__close
+{
+    right: 0;
+
+    stroke: #fff;
+    background: none;
 }
 
 .search__form
 {
     position: absolute;
-    top: 28px;
-    right: -10px;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 81px;
 
     display: none;
 
-    width: 270px;
+    width: calc(100% - 241px);
+
+    background: #08364d;
 }
 
 .search_opened .search__form
@@ -40,7 +80,63 @@
     display: block;
 }
 
-.search__input
+.search__form .input_theme_islands.input_size_l
 {
-    width: 228px;
+    font: inherit;
+    font-size: 17px;
+
+    width: 100%;
+    margin-top: 18px;
+
+    background: none;
+}
+
+.search__form .input_theme_islands:before
+{
+    background: none;
+}
+
+.search__form .input_theme_islands.input_focused
+{
+    box-shadow: none;
+}
+
+.search__form .input_theme_islands.input_size_l .input__control
+{
+    padding-left: 29px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search__form .input_theme_islands .input__control::-webkit-input-placeholder
+{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search__form .input_theme_islands .input__control::-moz-placeholder
+{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search__form .input_theme_islands .input__control:-ms-input-placeholder
+{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search__submit
+{
+    position: absolute;
+    top: 0;
+    right: -80px;
+
+    width: 80px;
+    height: 70px;
+
+    cursor: pointer;
+
+    border: 0;
+    outline: 0;
+    background: none;
 }
