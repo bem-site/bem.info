@@ -5,6 +5,8 @@ designer:
 	навигация вперёд/назад внизу страницы с документацией (строить по pages или явно указывать порядок?)
 	иконка для anchor
 
+search
+	посмотреть нужна ли тема islands и как обойтись без неё, не надо будет столько перекрывать
 
 Implement marked-renderer-video, see https://github.com/bem-site/bem-md-renderer/blob/master/index.js
 
