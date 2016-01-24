@@ -4,24 +4,34 @@ provide(BEMDOM.decl(this.name, {
     onSetMod: {
         js: {
             inited: function() {
-                var input = this.input = this.findBlockOn('input', 'input');
+                this.input = this.findBlockOn('input', 'input');
 
                 Form.on(this.domElem, 'submit', this._onClose, this);
-                input.on({ modName: 'focused', modVal: '' }, this._onClose, this);
+                this.input.on({ modName: 'focused', modVal: '' }, this._onClose, this);
             }
         },
         opened: {
             'true': function() {
                 this.input.setMod('focused', true);
+
+                // Close search then ESC pressed
+                this.bindToDoc('keydown', function (e) {
+                    e.keyCode === 27 && this.delMod('opened');
+                });
+            },
+            '': function() {
+                this.unbindFromDoc('keydown');
             }
         }
     },
     _onClose: function() {
         var _this = this;
 
+        // setTimeout used to have time to handle submit button on input's focus lost
         setTimeout(function() {
             _this.delMod('opened');
-        }, 10);
+            _this.input.setVal('');
+        }, 100);
     }
 }, {
     live: function() {
