@@ -18,7 +18,7 @@ block('search').content()(function() {
                         size: 'l',
                         type: 'search'
                     },
-                    name: 'q',
+                    name: 'text',
                     placeholder : lang === 'ru' ? 'Искать' : 'Search'
                 },
                 {
