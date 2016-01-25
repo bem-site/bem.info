@@ -1,4 +1,4 @@
-modules.define('search', ['i-bem__dom', 'form', 'input'], function(provide, BEMDOM, Form) {
+modules.define('search', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], function(provide, BEMDOM, Form, KeyCodes) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -7,27 +7,28 @@ provide(BEMDOM.decl(this.name, {
                 this.input = this.findBlockOn('input', 'input');
 
                 Form.on(this.domElem, 'submit', this._onClose, this);
+
+                // Close search on input's focus lost
                 this.input.on({ modName: 'focused', modVal: '' }, this._onClose, this);
             }
         },
         opened: {
             'true': function() {
-                this.input.setMod('focused', true);
-
-                // Close search then ESC pressed
-                this.bindToDoc('keydown', function (e) {
-                    e.keyCode === 27 && this.delMod('opened');
+                this.bindToDoc('keydown', function(e) {
+                    // Close search then ESC pressed
+                    e.keyCode === KeyCodes.ESC && this.input.delMod('focused');
                 });
-            },
-            '': function() {
-                this.unbindFromDoc('keydown');
+
+                this.input.setMod('focused', true);
             }
-        }
+        },
     },
     _onClose: function() {
         var _this = this;
 
-        // setTimeout used to have time to handle submit button on input's focus lost
+        this.unbindFromDoc('keydown');
+
+        // setTimeout is used to have time to handle submit button on input's focus lost
         setTimeout(function() {
             _this.delMod('opened');
             _this.input.setVal('');

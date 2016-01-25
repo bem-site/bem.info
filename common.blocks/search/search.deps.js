@@ -1,8 +1,10 @@
 ({
     shouldDeps : [
         'form',
-        'control-group',
-        'querystring',
+        {
+            block: 'keyboard',
+            elem: 'codes'
+        },
         {
             block : 'input',
             mods : {
