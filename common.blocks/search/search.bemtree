@@ -1,11 +1,12 @@
 block('search').content()(function() {
-    var lang = this.data.lang;
+    var lang = this.data.lang,
+        siteMod = this.data.siteMod;
 
     return [
         {
             block: 'form',
             mix: [
-                { block: 'search', elem: 'form' }
+                { block: 'search', elem: 'form', elemMods: { site: siteMod } }
             ],
             action: 'https://yandex.' + (lang === 'ru' ? 'ru' : 'com') + '/sitesearch',
             attrs: { target: '_blank' },
