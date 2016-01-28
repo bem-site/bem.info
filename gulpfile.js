@@ -12,7 +12,7 @@ var browserSync = require('browser-sync'),
     batch = require('gulp-batch'),
     runSequence = require('run-sequence');
 
-var langs = ['ru'],
+var langs = ['ru', 'en'],
     outputFolder = 'output-',
     pages = require('./content/pages.js');
 
