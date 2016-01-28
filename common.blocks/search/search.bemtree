@@ -19,6 +19,7 @@ block('search').content()(function() {
                         type: 'search'
                     },
                     name: 'text',
+                    autocomplete: false,
                     placeholder : lang === 'ru' ? 'Искать' : 'Search'
                 },
                 {
