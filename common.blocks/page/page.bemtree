@@ -7,9 +7,13 @@ block('page').content()(function() {
             mods: { 'site': siteMod }
         },
         {
+            block: 'sitemap',
+            mods: { 'site': siteMod }
+        },
+        {
             block: 'nav',
             mods: { 'site': siteMod === 'index' ? siteMod : undefined }
-        }    
+        }
     ];
 
     if (this.data.page.type === 'bemjson.js') {

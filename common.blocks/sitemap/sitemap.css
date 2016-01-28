@@ -1,0 +1,125 @@
+.sitemap
+{
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+
+    display: none;
+    width: 100%;
+    min-height: calc(100% - 100px);
+    padding-top: 29px;
+
+    color: #fff;
+    background: #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sitemap_site_methodology
+{
+    background: #052433;
+}
+
+.sitemap_site_platform
+{
+    background: #330505;
+}
+
+.sitemap_site_community
+{
+    background: #25330a;
+}
+
+.sitemap_opened
+{
+    display: flex;
+}
+
+.sitemap__section
+{
+    width: 26%;
+    margin-right: 11%;
+}
+
+.sitemap__section:first-child
+{
+    margin-left: 110px;
+}
+
+.sitemap__section:last-child
+{
+    margin-right: 100px;
+}
+
+.sitemap__title
+{
+    font-size: 18px;
+    font-weight: normal;
+
+    margin: 0 0 20px -10px;
+    padding-bottom: 19px;
+
+    text-indent: 10px;
+
+    border-bottom: 1px solid;
+}
+
+.sitemap__title_site_methodology
+{
+    border-color: rgba(161, 207, 230, 0.3);
+}
+
+.sitemap__title_site_platform
+{
+    border-color: rgba(255, 153, 153, 0.3);
+}
+
+.sitemap__title_site_community
+{
+    border-color: rgba(177, 204, 122, 0.3);
+}
+
+.sitemap__current
+{
+    font-weight: normal;
+
+    margin: -5px 0 0 -10px;
+    padding: 5px 10px;
+
+    color: #000;
+    background: #fc0;
+}
+
+.sitemap__tree
+{
+    font-size: 14px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sitemap__tree-item
+{
+    margin: 0 0 12px;
+
+    list-style: none;
+}
+
+.sitemap .link
+{
+    text-decoration: none;
+}
+
+.sitemap :link
+{
+    color: #fff;
+}
+
+.sitemap__title :visited
+{
+    color: #fff;
+}
+
+.sitemap__tree-item :visited
+{
+    color: #777;
+}

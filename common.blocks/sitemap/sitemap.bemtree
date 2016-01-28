@@ -1,0 +1,54 @@
+block('sitemap').content()(function() {
+    var data = this.data,
+        currentPage = data.page;
+
+    return ['methodology', 'platform', 'community'].map(function(site) {
+        var rootSitePage,
+            rootSiteUrl = '/' + site + '/',
+            pages = data.pages.filter(function(page) {
+                if (page.site.indexOf(rootSiteUrl) === 0) {
+                    if (page.url === rootSiteUrl) {
+                        rootSitePage = page;
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            });
+
+        return {
+            elem: 'section',
+            content: [
+                {
+                    elem: 'title',
+                    elemMods: { site: site },
+                    content: rootSitePage.url === currentPage.url ? {
+                        elem: 'current',
+                        content: rootSitePage.title
+                    } : {
+                        block: 'link',
+                        url: rootSitePage.url,
+                        content: rootSitePage.title
+                    }
+                },
+                {
+                    elem: 'tree',
+                    // TODO: generate nested tree instead of plain list
+                    content: pages.map(function(page) {
+                        return {
+                            elem: 'tree-item',
+                            content: page.url === currentPage.url ? {
+                                elem: 'current',
+                                content: page.title
+                            } : {
+                                block: 'link',
+                                url: page.url,
+                                content: page.title
+                            }
+                        }
+                    })
+                }
+            ]
+        };
+    });
+});
