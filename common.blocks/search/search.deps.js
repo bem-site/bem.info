@@ -1,6 +1,7 @@
 ({
     shouldDeps : [
         'form',
+        'events',
         {
             block: 'keyboard',
             elem: 'codes'

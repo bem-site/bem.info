@@ -1,4 +1,5 @@
 block('sitemap')(
+    js()(true),
     elem('title').tag()('h1'),
     elem('tree').tag()('ul'),
     elem('tree-item').tag()('li'),

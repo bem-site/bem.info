@@ -1,5 +1,6 @@
 ({
     shouldDeps : [
-        'link'
+        'link',
+        'search'
     ]
 })

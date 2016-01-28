@@ -1,4 +1,4 @@
-modules.define('search', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], function(provide, BEMDOM, Form, KeyCodes) {
+modules.define('search', ['i-bem__dom', 'form', 'keyboard__codes', 'events', 'input'], function(provide, BEMDOM, Form, KeyCodes, events) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -14,12 +14,17 @@ provide(BEMDOM.decl(this.name, {
         },
         opened: {
             'true': function() {
+                this.emit(new events.Event('opened'));
+
                 this.bindToDoc('keydown', function(e) {
                     // Close search then ESC pressed
                     e.keyCode === KeyCodes.ESC && this.input.delMod('focused');
                 });
 
                 this.input.setMod('focused', true);
+            },
+            '': function() {
+                this.emit(new events.Event('closed'));
             }
         },
     },
