@@ -1,18 +1,8 @@
 .logo
 {
-    display: inline-block;
-
-    width: 80px;
-    height: 70px;
-
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.logo__logo
-{
     width: 30px;
     height: 25px;
-    margin: 23px 0 0 30px;
+    padding: 23px 20px 22px 30px;
 }
 
 .logo_site_index

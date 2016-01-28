@@ -5,6 +5,7 @@ block('header').content()(function() {
     return [
         {
             block: 'logo',
+            mix: { block: 'header', elem: 'logo' },
             mods: { 'site': siteMod },
             url: url !== '/' ? '/' : undefined
         },
@@ -13,15 +14,11 @@ block('header').content()(function() {
             mix: { block: 'header', elem: 'breadcrumbs' }
         },
         {
-            elem: 'item',
-            content: [
-                {
-                    block: 'lang-switcher'
-                },
-                {
-                    block: 'search'
-                }
-            ]
+            block: 'lang-switcher',
+            mix: { block: 'header', elem: 'lang' }
+        },
+        {
+            block: 'search'
         }
     ];
 });

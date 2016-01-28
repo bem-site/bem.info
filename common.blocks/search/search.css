@@ -1,12 +1,9 @@
 .search
 {
-    display: inline-block;
+    position: relative;
 
-    margin-left: 16px;
+    overflow: hidden;
     width: 80px;
-    height: 100%;
-
-    vertical-align: top;
 }
 
 .search__open, .search__close
@@ -41,7 +38,10 @@
 
 .search_opened
 {
-    padding-left: 80px;
+    position: static;
+
+    overflow: visible;
+    width: 160px;
 }
 
 .search_opened .search__open
