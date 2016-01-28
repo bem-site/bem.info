@@ -229,13 +229,13 @@ module.exports = {
             url: '/methodology/build/',
             site: '/methodology/',
             title: 'Build',
-            source: './content-github/method/build/build.en.md'
+            source: 'TODO./content-github/method/build/build.en.md'
         },
         {
             url: '/methodology/declarations/',
             site: '/methodology/',
             title: 'Declarations',
-            source: './content-github/method/declarations/declarations.en.md'
+            source: 'TODO./content-github/method/declarations/declarations.en.md'
         },
         {
             url: '/methodology/solved-problems/',
@@ -384,4 +384,3 @@ module.exports = {
         }
     ]
 };
-
