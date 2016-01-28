@@ -12,10 +12,15 @@
 
 .logo_site_methodology
 {
-    fill: rgb(0, 160, 234);
+    fill: #17a1e6;
 }
 
 .logo_site_platform
 {
-    fill: rgb(255, 0, 58);
+    fill: #ff4c4c;
+}
+
+.logo_site_community
+{
+    fill: #96cc29;
 }
