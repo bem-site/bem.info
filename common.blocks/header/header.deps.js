@@ -9,7 +9,6 @@
         'logo',
         'breadcrumbs',
         'lang-switcher',
-        'search',
-        'clearfix'
+        'search'
     ]
 })
