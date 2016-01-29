@@ -34,6 +34,12 @@
     display: flex;
 }
 
+/* Hide all siblings then sitemap is shown */
+.sitemap_opened ~ div
+{
+    display: none;
+}
+
 .sitemap__section
 {
     width: 26%;
