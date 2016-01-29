@@ -153,7 +153,7 @@ module.exports = {
         {
             url: '/platform/libs/bem-core/2.7.0/',
             site: '/platform/libs/bem-core/2.7.0/',
-            title: 'bem-core',
+            title: 'bem-core 2.7.0',
             source: 'content-libs/bem-core-2.7.0',
             type: 'lib'
         },
@@ -167,7 +167,7 @@ module.exports = {
         {
             url: '/platform/libs/bem-core/2.8.0/',
             site: '/platform/libs/bem-core/2.8.0/',
-            title: 'bem-core',
+            title: 'bem-core 2.8.0',
             source: 'content-libs/bem-core-2.8.0',
             type: 'lib'
         },
@@ -345,7 +345,7 @@ module.exports = {
         {
             url: '/platform/libs/bem-core/2.7.0/',
             site: '/platform/libs/bem-core/2.7.0/',
-            title: 'bem-core',
+            title: 'bem-core 2.7.0',
             source: 'content-libs/bem-core-2.7.0',
             type: 'lib'
         },
@@ -359,7 +359,7 @@ module.exports = {
         {
             url: '/platform/libs/bem-core/2.8.0/',
             site: '/platform/libs/bem-core/2.8.0/',
-            title: 'bem-core',
+            title: 'bem-core 2.8.0',
             source: 'content-libs/bem-core-2.8.0',
             type: 'lib'
         },

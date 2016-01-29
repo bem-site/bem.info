@@ -38,13 +38,6 @@ block('breadcrumbs').content()(function() {
         });
 
         var lastResultItem = result.pop();
-        if (typeof lastResultItem.content === 'string') {
-            lastResultItem.content += ' ' + libVer;
-        }
-        else {
-            lastResultItem.content.content += ' ' + libVer;            
-        }
-
         result.push(
             lastResultItem,
             {
