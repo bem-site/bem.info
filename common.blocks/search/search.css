@@ -23,7 +23,7 @@
     stroke: #fff;
     stroke-width: 2;
 
-    transition: all 0.15s ease-out 0s;
+    transition: all 0.15s cubic-bezier(.02, .01, .47, 1); 
 }
 
 .search__open
