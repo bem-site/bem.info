@@ -97,17 +97,33 @@
 
 .sitemap__tree
 {
-    font-size: 14px;
-
     margin: 0;
     padding: 0;
-}
-
-.sitemap__tree-item
-{
-    margin: 0 0 12px;
 
     list-style: none;
+}
+
+.sitemap__tree-item-1
+{
+    font-size: 14px;
+
+    margin: 0 0 12px;
+}
+
+.sitemap__tree-item-2,
+.sitemap__tree-item-1 + .sitemap__tree-item-3,
+.sitemap__tree-item-1 + :not(.sitemap__tree-item-2) ~ .sitemap__tree-item-3
+{
+    font-size: 12px;
+
+    margin: -8px 0 14px 30px;
+}
+
+.sitemap__tree-item-3
+{
+    font-size: 12px;
+
+    margin: -18px 0 14px 60px;
 }
 
 .sitemap .link
@@ -125,7 +141,7 @@
     color: #fff;
 }
 
-.sitemap__tree-item :visited
+.sitemap__tree :visited
 {
-    color: #777;
+    color: #666;
 }

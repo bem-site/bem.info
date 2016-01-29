@@ -2,6 +2,8 @@ block('sitemap')(
     js()(true),
     elem('title').tag()('h1'),
     elem('tree').tag()('ul'),
-    elem('tree-item').tag()('li'),
+    elem('tree-item-1').tag()('li'),
+    elem('tree-item-2').tag()('li'),
+    elem('tree-item-3').tag()('li'),
     elem('current').tag()('strong')
 );

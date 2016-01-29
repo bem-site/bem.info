@@ -35,8 +35,10 @@ block('sitemap').content()(function() {
                     elem: 'tree',
                     // TODO: generate nested tree instead of plain list
                     content: pages.map(function(page) {
-                        return {
-                            elem: 'tree-item',
+                        var level = page.url.split('/').length - 3;
+
+                        return level > 3 ? undefined : {
+                            elem: 'tree-item-' + level,
                             content: page.url === currentPage.url ? {
                                 elem: 'current',
                                 content: page.title
