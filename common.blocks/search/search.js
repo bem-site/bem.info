@@ -32,7 +32,7 @@ provide(BEMDOM.decl(this.name, {
         setTimeout(function() {
             _this.delMod('opened');
             _this.input.setVal('');
-        }, 100);
+        }, 150);
     }
 }, {
     live: function() {
