@@ -47,5 +47,8 @@
 
 .header__lang
 {
-    margin: 22px 16px 0 5px;
+    position: relative;
+    z-index: 1;
+
+    margin: 22px -64px 0 5px;
 }

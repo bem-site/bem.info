@@ -1,9 +1,10 @@
 .search
 {
     position: relative;
+    z-index: 0;
 
     overflow: hidden;
-    width: 80px;
+    width: 160px;
 }
 
 .search__open, .search__close
@@ -23,7 +24,7 @@
     stroke: #fff;
     stroke-width: 2;
 
-    transition: all 0.15s cubic-bezier(.02, .01, .47, 1); 
+    transition: all 0.2s cubic-bezier(.02, .01, .47, 1);
 }
 
 .search__open
@@ -39,9 +40,9 @@
 .search_opened
 {
     position: static;
+    z-index: 1;
 
     overflow: visible;
-    width: 160px;
 }
 
 .search_opened .search__open
