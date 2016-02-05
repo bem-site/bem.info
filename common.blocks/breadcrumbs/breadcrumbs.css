@@ -44,7 +44,7 @@
 
 .breadcrumbs__link:hover
 {
-    color: #fff;
+    opacity: 0.8;
 }
 
 .breadcrumbs__version

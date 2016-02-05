@@ -129,19 +129,31 @@
 .sitemap .link
 {
     text-decoration: none;
-}
 
-.sitemap :link
-{
     color: #fff;
 }
 
-.sitemap__title :visited
+.sitemap .link:hover
 {
-    color: #fff;
+    opacity: 0.8;
 }
 
-.sitemap__tree :visited
+.sitemap :visited
 {
-    color: #666;
+    color: rgb(180, 180, 180);
+}
+
+.sitemap_site_methodology :visited
+{
+    color: rgb(155, 167, 173);
+}
+
+.sitemap_site_platform :visited
+{
+    color: rgb(173, 155, 155);
+}
+
+.sitemap_site_comminity :visited
+{
+    color: rgb(167, 173, 157);
 }

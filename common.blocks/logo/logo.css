@@ -24,3 +24,8 @@
 {
     fill: #96cc29;
 }
+
+.logo:link:hover
+{
+    opacity: 0.8;
+}
