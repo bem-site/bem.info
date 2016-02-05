@@ -3,19 +3,27 @@
     mods : { site : 'methodology' },
     content : [
         {
-            elem : 'title',
-            mods: { color: 'black' },
-            content : 'БЭМ'
-        },
-        ' ',
-        {
-            elem : 'subtitle',
-            content : 'методология'
+            elem : 'header',
+            content : [
+                {
+                    elem : 'title',
+                    content : 'БЭМ',
+                },
+                ' ',
+                {
+                    elem : 'subtitle',
+                    content : 'методология'
+                }
+            ]
         },
         {
             elem : 'action',
-            url : 'TODO',
-            content : 'документация'
+            url : 'key-concepts/',
+            content : 'Документация'
+        },
+        {
+            elem : 'text',
+            content : 'Методология <strong>БЭМ</strong> содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
         }
     ]
 }, {

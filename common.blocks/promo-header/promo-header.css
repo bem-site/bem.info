@@ -9,15 +9,14 @@
 	margin: -1px 0 0 0;
 
 	overflow: hidden;
-
 	white-space: nowrap;
 }
 
-.promo-header__main
+.promo-header__header
 {
-	position: relative;
-	z-index: 1;
+	font-weight: normal;
 
+	display: inline-block;
 	margin: 6px 0 0 392px;
 }
 
@@ -127,6 +126,18 @@
 	display: none;
 }
 
+.promo-header:before
+{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	content: " ";
+}
+
 .promo-header_site_methodology
 {
     background: #17a1e6 url(_site/promo-header_site_methodology.png) 0 -2px;
@@ -134,23 +145,25 @@
 
 .promo-header_site_methodology:before
 {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
-	content: "";
-
-	background: linear-gradient(0, rgba(23, 161, 230, 0.9), rgba(51, 207, 244, 0.9));
+	background: linear-gradient(0deg, rgba(23, 161, 230, 0.9), rgba(51, 207, 244, 0.9));
 }
 
-.promo-header_site_platform
+.promo-header__text
 {
-    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(251, 77, 81) url(_site/promo-header_site_platform.png) 50% 10px;
+	position: relative;
+	overflow: visible;
+
+	max-width: 45em;
+	margin: 34px 0 0 400px;
+
+	line-height: 1.5;
+	letter-spacing: 0.7px;
+	white-space: normal;
+
+	color: #fff;
 }
 
-.promo-header_site_platform .promo-header__main
+.promo-header__text strong
 {
-	background-image: url(__logo/promo-header__logo_site_platform.png);
+	letter-spacing: 1px;
 }

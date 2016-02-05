@@ -1,8 +1,10 @@
 block('promo-header')(
-    tag()('h1'),
+    tag()('div'), // TODO: may be <header> ?
+    elem('header').tag()('h1'),
     elem('title').tag()('span'),
     elem('subtitle').tag()('span'),
-    elem('legos').tag()('span'),
+    elem('text').tag()('p'),
+    elem('legos').tag()('div'),
     elem('lego').tag()('span'),
     js()(true),
 
@@ -31,10 +33,7 @@ block('promo-header')(
                     }
                 ]
             },
-			{
-				elem: 'main',
-				content: applyNext()
-			},
+			applyNext(),
 			{
 				elem: 'legos',
 				content: function() {
