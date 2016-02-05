@@ -1,0 +1,43 @@
+.promo-logo
+{
+    position: absolute;
+    left: 79px;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: calc(100% - 156px);
+    height: 436px;
+}
+
+.promo-logo__logo
+{
+    display: block;
+
+    width: 244px;
+    height: 457px;
+
+    opacity: 0.35;
+}
+
+.promo-logo__logo_bright
+{
+    opacity: 1;
+}
+
+.promo-logo__logo_methodology_1
+{
+    padding-right: 80px;
+
+    background: url(promo-logo__logo_methodology_1.svg) no-repeat 0 45px;
+}
+
+.promo-logo__logo_methodology_2
+{
+    background: url(promo-logo__logo_methodology_2.svg) no-repeat 0 20px;
+}
+
+.promo-logo__logo_methodology_3
+{
+    background: url(promo-logo__logo_methodology_3.svg) no-repeat 0 21px;
+}

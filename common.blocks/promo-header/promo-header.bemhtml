@@ -6,8 +6,31 @@ block('promo-header')(
     elem('lego').tag()('span'),
     js()(true),
 
+    elem('action').replace()(function() {
+        return {
+            block: 'link',
+            mix: { block: 'promo-header', elem: 'action' },
+            url: this.ctx.url,
+            content: this.ctx.content
+        }
+    }),
+
 	content()(function() {
 		return [
+            {
+                block: 'promo-logo',
+                content: [
+                    {
+                        elem: 'logo', elemMods: { methodology: 1, bright: true }
+                    },
+                    {
+                        elem: 'logo', elemMods: { methodology: 2 }
+                    },
+                    {
+                        elem: 'logo', elemMods: { methodology: 3 }
+                    }
+                ]
+            },
 			{
 				elem: 'main',
 				content: applyNext()

@@ -1,6 +1,12 @@
 ({
     shouldDeps : [
         {
+            block: 'link',
+        },
+        {
+            block: 'promo-logo',
+        },
+        {
             elem : 'title',
         },
         {

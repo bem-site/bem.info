@@ -3,14 +3,19 @@
     mods : { site : 'methodology' },
     content : [
         {
-            elem : 'title', 
+            elem : 'title',
             mods: { color: 'black' },
             content : 'БЭМ'
         },
         ' ',
         {
-            elem : 'subtitle', 
+            elem : 'subtitle',
             content : 'методология'
+        },
+        {
+            elem : 'action',
+            url : 'TODO',
+            content : 'документация'
         }
     ]
 }, {
@@ -18,7 +23,7 @@
     mods : { site : 'methodology' },
     content : [
         {
-            block : 'promo-title', 
+            block : 'promo-title',
             content : [
                 {
                     elem : 'strong',
@@ -28,7 +33,7 @@
             ]
         },
         {
-            block : 'promo-content', 
+            block : 'promo-content',
             content : [
                 {
                     elem : 'image',
@@ -42,7 +47,7 @@
             ]
         },
         {
-            block : 'promo-content', 
+            block : 'promo-content',
             content : [
                 {
                     elem : 'image',
@@ -51,12 +56,12 @@
                 },
                 {
                     elem : 'text',
-                    content : 'The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers.'
+                    content : '<strong>The main idea</strong> of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers.'
                 }
             ]
         },
         {
-            block : 'promo-title', 
+            block : 'promo-title',
             content : [
                 {
                     elem : 'strong',

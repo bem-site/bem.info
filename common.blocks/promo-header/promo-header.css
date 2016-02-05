@@ -3,8 +3,9 @@
 	font-weight: normal;
 
 	position: relative;
+	z-index: 0;
 
-	height: 420px;
+	height: 478px;
 	margin: -1px 0 0 0;
 
 	overflow: hidden;
@@ -14,36 +15,58 @@
 
 .promo-header__main
 {
-	position: absolute;
-	left: 50%;
+	position: relative;
+	z-index: 1;
 
-	display: inline-block;
+	margin: 6px 0 0 392px;
+}
 
-	height: 302px;
-	margin: 33px 0 0 -400px;
-	padding-left: 317px;
+.promo-header__title
+{
+	font-size: 98px;
+	font-weight: bold;
+	letter-spacing: 8px;
 
-	background: no-repeat 20px 0;
+	display: block;
+	margin-bottom: -32px;
+
+	color: #fff;
 }
 
 .promo-header__subtitle
 {
-	font-size: 46px;
-	line-height: 60px;
+	font-size: 30px;
+
+	position: relative;
 
 	display: inline-block;
-	margin-left: -2px;
-	padding: 0 23px 1px;
 
-	letter-spacing: 0.2em;
+	margin-left: -20px;
+	padding: 2px 18px 1px 25px;
+
+	letter-spacing: 6px;
 	text-transform: uppercase;
 }
 
+.promo-header__subtitle::before, .promo-header__action::before
+{
+	position: absolute;
+	z-index: -1;
+	top: 8px;
+	left: 8px;
+
+	width: 100%;
+	height: 100%;
+
+	content: "";
+
+	background: rgba(0, 0, 0, 0.3);
+}
 
 .promo-header_site_methodology .promo-header__subtitle
 {
-	color: #fff;
-	background: #000;	
+	color: #000;
+	background: #fff;
 }
 
 .promo-header_site_platform .promo-header__subtitle
@@ -52,14 +75,74 @@
 	background: rgb(255, 204, 0);
 }
 
-.promo-header_site_methodology
+.promo-header__action
 {
-    background: url(__lego/promo-header__lego.png) 0 413px repeat-x, rgb(0, 160, 234) url(_site/promo-header_site_methodology.png) 50% -7px;
+	font-size: 30px;
+
+	position: relative;
+
+	display: inline-block;
+
+	padding: 2px 35px 1px 25px;
+
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	color: #000;
+	background: #fc0;
 }
 
-.promo-header_site_methodology .promo-header__main
+.promo-header__action::after
 {
-	background-image: url(__logo/promo-header__logo_site_methodology.png);
+	position: relative;
+	top: -3px;
+
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-left: 12px;
+
+	content: "";
+
+	transform: rotate(-45deg);
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.promo-header__action::before
+{
+	background-color: rgba(77, 61, 0, 0.7);
+}
+
+.promo-header__action:active
+{
+	position: relative;
+	top: 8px;
+	left: 8px;
+}
+
+.promo-header__action:active::before
+{
+	display: none;
+}
+
+.promo-header_site_methodology
+{
+    background: #17a1e6 url(_site/promo-header_site_methodology.png) 0 -2px;
+}
+
+.promo-header_site_methodology:before
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	content: "";
+
+	background: linear-gradient(0, rgba(23, 161, 230, 0.9), rgba(51, 207, 244, 0.9));
 }
 
 .promo-header_site_platform
