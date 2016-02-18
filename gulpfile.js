@@ -63,7 +63,8 @@ function buildData(lang) {
             modelPath: `./content/model.${lang}.json`,
             host: `http://${lang}.bem.info`,
             dest: DATA_DIRS[lang],
-            token: process.env.TOKEN
+            token: process.env.TOKEN,
+            DEBUG: process.env.DEBUG
         }
     });
 }
@@ -78,7 +79,8 @@ function compilePages(lang) {
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
             langs: LANGUAGES,
-            lang: lang
+            lang: lang,
+            DEBUG: process.env.DEBUG
         }
     });
 }
