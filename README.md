@@ -14,22 +14,29 @@ $ git clone https://github.com/vithar/bem.info.git
 $ npm install
 ```
 
+Запустить сборку данных, компиляцию страниц и статический сервер:
+```bash
+$ TOKEN={pass your github token here} gulp
+```
+
+## Поэтапная сборка
+
 Собрать данные. Сборка данных осуществляется с помощью инструмента [gorshochek](https://github.com/bem-site/gorshochek).
 
 Примечание: для сборки данных нужно передать ваш гитхаб-токен, с помощью которого будет осуществляться
 загрузка данных для страниц сайта.
 ```bash
-$ TOKEN={pass your github token here} npm run data-build
+$ TOKEN={pass your github token here} gulp data-build
 ```
 
 Скомпилировать статические HTML-страницы:
 ```bash
-$ npm run compile
+$ gulp compile-pages
 ```
 
 Запуск файлового наблюдателя и локального сервера разработки:
 ```bash
-$ npm start
+$ gulp browser-sync
 ```
 
 ## Модель данных
