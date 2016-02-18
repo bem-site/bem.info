@@ -9,46 +9,37 @@
   "engines": {
     "node": ">=4.1"
   },
-  "dependencies": {
-    "bem-environ": "~1.4.0",
-    "glob": "",
-    "highlight.js": "^8.9.1",
-    "marked": "",
-    "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
-    "mkdirp": "",
-    "request": "",
-    "rimraf": "",
-    "vow": ""
-  },
   "devDependencies": {
     "borschik": "^1.3.0",
     "borschik-tech-cleancss": "^1.0.0",
     "bower": "^1.3.12",
-    "browser-sync": "^2.9.3",
-
+    "browser-sync": "^2.11.1",
     "enb": "^0.17.2",
     "enb-bem-techs": "^2.0.0",
-    "enb-borschik": "^2.0.0",
     "enb-bemxjst": "tadatuta/enb-bemxjst#4.x-bemtree",
+    "enb-borschik": "^2.0.0",
+    "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
-    "enb-js": "^1.0.0",
-
+    "fs-extra": "^0.26.5",
+    "gorshochek": "bem-site/gorshochek",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-watch": "^4.3.5",
+    "highlight.js": "^9.1.0",
+    "lodash": "^4.2.1",
+    "marked": "^0.3.5",
+    "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
+    "q": "^1.4.1",
+    "rimraf": "^2.5.2",
     "run-sequence": "^1.1.4",
-
-    "lodash": "^3.10.1",
     "stylus": "^0.52.4",
     "ym": "^0.1.2"
   },
   "scripts": {
-    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && npm run content && npm run pre",
-    "content": "git clone git@github.com:vithar/bem-method.git content-github",
-    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
-    "pre": "rm -rf output-en output-ru && mkdir -p output-en output-ru && cp content/robots.txt content/favicon.ico output-en && cp content/robots.txt content/favicon.ico output-ru",
-    "deps": "bower i"
+    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && gulp prepare-output",
+    "deps": "bower i",
+    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -"
   },
   "private": true
 }

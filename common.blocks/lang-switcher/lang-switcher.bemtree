@@ -6,7 +6,6 @@ block('lang-switcher').content()(function() {
 
         return {
             elem: 'item',
-//            elemMods: { current: isCurrent },
             content: isCurrent ? lang : {
                 block: 'link',
                 mix: { block: 'lang-switcher', elem: 'link' },
@@ -15,17 +14,4 @@ block('lang-switcher').content()(function() {
             }
         };
     }, this);
-/*  
-    return {
-        block : 'select',
-        mix : 'lang-switcher',
-        mods : { mode : 'radio', theme : 'islands', size : 'm' },
-        name : 'lang',
-        val : this.data.lang,
-        options : [
-            { val : 'ru', text : 'RU' },
-            { val : 'en', text : 'EN' }
-        ]
-    };
-*/
 });

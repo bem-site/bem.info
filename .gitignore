@@ -1,4 +1,3 @@
-content-github/
 libs/
 node_modules/
 .DS_Store
@@ -19,5 +18,7 @@ npm-debug.log
 *pages*/*/*.bemhtml.bemdecl.js
 !*pages*/.bem/*
 
-raw-data
+token
 output-*
+data-*
+.gorshochek

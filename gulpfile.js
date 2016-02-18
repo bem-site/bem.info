@@ -1,185 +1,166 @@
-'use strict';
+var path = require('path'),
+    cp = require('child_process'),
 
-var browserSync = require('browser-sync'),
-    request = require('request'),
-    marked = require('marked'),
-    hljs = require('highlight.js'),
-    gulp = require('gulp'),
+    _ = require('lodash'),
+    Q = require('q'),
     enb = require('enb'),
-    fs = require('fs-extra'),
-    vm = require('vm'),
-    watch = require('gulp-watch'),
+    fsExtra = require('fs-extra'),
+    runSequence = require('run-sequence'),
+    rimraf = require('rimraf'),
+
+    gulp = require('gulp'),
     batch = require('gulp-batch'),
-    runSequence = require('run-sequence');
+    browserSync = require('browser-sync');
 
-var langs = ['ru', 'en'],
-    outputFolder = 'output-',
-    pages = require('./content/pages.js');
+const LANGUAGES = ['en', 'ru'];
 
-var bemhtmlFile = './desktop.bundles/index/index.bemhtml.js',
-    bemtreeFile = './desktop.bundles/index/index.bemtree.js';
+const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
+    prev[language] = './.gorshochek/cache/' + language;
+    return prev;
+}, {});
+const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
+    prev[language] = './data-' + language;
+    return prev;
+}, {});
+const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
+    prev[language] = './output-' + language;
+    return prev;
+}, {});
 
-var renderer = new marked.Renderer();
+const BUNDLE_NAME = 'index';
 
-//TODO
-//renderer.image = require('marked-renderer-video');
-renderer.heading = require('marked-renderer-heading-anchors');
+const BEMTREE_PATH = path.join('desktop.bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemtree.js');
+const BEMHTML_PATH = path.join('desktop.bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemhtml.js');
 
-renderer._link = renderer.link;
-renderer.link = function(href, title, text) {
-    return this._link(href.replace(/(.*\/)([^\/#]*)(.*)/, '$1$3'), title, text);
+function removeFolder(folder) {
+    return Q.denodeify(rimraf)(folder);
 }
 
-marked.setOptions({
-    renderer: renderer,
+function copyFile(src, dest) {
+    return Q.denodeify(fsExtra.copy)(src, dest);
+}
 
-    headingClassName: 'article__heading article__heading_',
-    headingAnchorClassName: 'article__heading-anchor',
+function copyFileToOutputDirs(srcFolder, srcFile) {
+    return Q.all(_.values(OUTPUT_DIRS).map(
+        folder => copyFile(path.join(srcFolder, srcFile), path.join(folder, srcFile))));
+}
 
-    highlight: function (code, lang) {
-        // TODO: implement true highligting for 'files' codeblock: different colors for directories, files, comments
-        if (lang === 'files') {
-            return code.replace(/\`/g, ''); // temporary implementation of 'files' highlighting
-        } else if (lang === 'text') {
-            return code;
-        } else if (lang) {
-            return hljs.highlight(lang, code).value;
+function runSubProcess(file, options) {
+    const defer = Q.defer();
+    const proc = cp.fork(file, options);
+    proc.on('error', (error) => defer.reject(error));
+    proc.on('close', () => defer.resolve());
+    proc.on('exit', () => defer.resolve());
+    return defer.promise;
+}
+
+function buildData(lang) {
+    return runSubProcess('./data-builder.js', {
+        cwd: process.cwd(),
+        encoding: 'utf-8',
+        env: {
+            GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
+            modelPath: `./content/model.${lang}.json`,
+            host: `http://${lang}.bem.info`,
+            dest: DATA_DIRS[lang],
+            token: process.env.TOKEN
         }
-        return hljs.highlightAuto(code).value;
-    }
-});
-
-gulp.task('default', function () {
-    runSequence('init', 'watch', 'browser-sync');
-});
-
-gulp.task('init', function(callback) {
-    enb.make().then(function() {
-        ['css', 'js'].forEach(function(tech) {
-            langs.forEach(function(lang) {
-                fs.createReadStream('desktop.bundles/index/index.min.' + tech)
-                    .pipe(fs.createWriteStream(outputFolder + lang + '/index.min.' + tech));
-            })
-        });
-
-        renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
-
-        callback();
     });
-});
+}
 
-gulp.task('browser-sync', function() {
-    browserSync.create().init({
-        files: outputFolder + 'en' + '/**',
-        server: { baseDir: outputFolder + 'en' },
-        port: 8008,
-        browser: 'chrome',
-        startPath: '/methodology/typo/',
-        online: false,
-        notify: false,
-        ui: false
-    });
-
-    browserSync.create().init({
-        files: outputFolder + 'ru' + '/**',
-        server: { baseDir: outputFolder + 'ru' },
-        port: 8009,
-        browser: 'chrome',
-        startPath: '/methodology/typo/',
-        online: false,
-        notify: false,
-        ui: false
-    });
-});
-
-gulp.task('watch', function () {
-
-    // watch changes in blocks and build using enb
-    watch(['*blocks/**/*'], function batch(events, done) {
-        enb.make();
-    });
-
-    // watch changes in final css and js and copy it to output folders
-    watch('desktop.bundles/index/index.min.*', function (vinyl) {
-        langs.forEach(function(lang) {
-            vinyl.pipe(fs.createWriteStream(outputFolder + lang + '/' + vinyl.basename));
-        });
-    });
-
-    // watch changes in content and bemtree/bemhtml bundles and rebuild pages
-    watch(['content/**/*', 'content-github/**/*',
-            'desktop.bundles/index/index.bemhtml.js',
-            'desktop.bundles/index/index.bemtree.js'], function batch(events, done) {
-        delete require.cache[require.resolve(bemtreeFile)];
-        delete require.cache[require.resolve(bemhtmlFile)];
-        renderPages(require(bemtreeFile).BEMTREE, require(bemhtmlFile).BEMHTML, pages, langs, outputFolder);
-    });
-});
-
-function applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, content) {
-    page.content = content;
-
-    var bemjson = bemtree.apply({
-        block: 'root',
-        data: {
-            page: page,
-            pages: pages[lang],
-            langs: langs,
+function compilePages(lang) {
+    return runSubProcess('./template.js', {
+        cwd: process.cwd(),
+        encoding: 'utf-8',
+        env: {
+            bemtree: BEMTREE_PATH,
+            bemhtml: BEMHTML_PATH,
+            source: DATA_DIRS[lang],
+            destination: OUTPUT_DIRS[lang],
+            langs: LANGUAGES,
             lang: lang
         }
     });
-
-    bemjson.block = 'page';
-
-    var dirName = outputFolder + lang + page.url;
-
-    fs.mkdirsSync(dirName);
-    fs.writeFile(dirName + '/index.html', bemhtml.apply(bemjson));
-
-    var source = page.source;
-    var type = page.type || 'md';
-    if (type === 'md' && /^\.\//.test(source)) {
-        var sourceDir = source.replace(/[^\/]*$/, '');
-
-        fs.copySync(sourceDir, dirName, { filter: function(file) { return !/md$/.test(file) }});
-    }
 }
 
-function render(bemtree, bemhtml, pages, page, langs, lang, outputFolder) {
+// Подготовка директорий output-*
 
-    var renderInner = function(err, content) {
-        var type = page.type || 'md'
-        if (type === 'md') {
-            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, marked(content));
-        } else if (type === 'bemjson.js') {
-            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, bemhtml.apply(vm.runInNewContext(content)));
-        } else if (type === 'lib') {
-            applyTemplates(bemtree, bemhtml, pages, page, langs, lang, outputFolder, marked(content));
-        } else {
-            throw "Unknown type";
-        }
-    };
+gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
+gulp.task('copy-misc-to-output', ['clean-output'], () => {
+    return Q.all([
+        copyFileToOutputDirs('./content', 'favicon.ico'),
+        copyFileToOutputDirs('./content', 'robots.txt')
+    ]);
+});
+gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
-    var source = page.source;
+// Сборка данных
 
-    if (/^http/.test(source)) {
-        request(source, function (err, response, content) {
-            if (!err && response.statusCode == 200)
-                renderInner(err, content);
+gulp.task('data-clean', () => Q.all(_.values(DATA_DIRS).map(removeFolder)));
+gulp.task('data-cache-clean', () => Q.all(_.values(CACHE_DIRS).map(removeFolder)));
+gulp.task('data-build', () => Q.all(LANGUAGES.map(buildData)));
+gulp.task('data-rebuild', () => runSequence('data-clean', 'data-cache-clean', 'data-build'));
+
+// Шаблонизация данных
+
+gulp.task('enb-make', () => enb.make());
+gulp.task('drop-templates-cache', (callback) => {
+    delete require.cache[BEMHTML_PATH];
+    delete require.cache[BEMTREE_PATH];
+    callback();
+});
+gulp.task('copy-static', () => Q.all([
+    copyFileToOutputDirs(path.join('desktop.bundles', BUNDLE_NAME), BUNDLE_NAME + '.min.css'),
+    copyFileToOutputDirs(path.join('desktop.bundles', BUNDLE_NAME), BUNDLE_NAME + '.min.js')
+]));
+
+gulp.task('build-html', () => Q.all(LANGUAGES.map(compilePages)));
+gulp.task('compile-pages', () => runSequence(
+    'enb-make',
+    'drop-templates-cache',
+    'copy-static',
+    'build-html'
+));
+
+// Наблюдатель
+
+gulp.task('watch', () => {
+    gulp.watch(['*blocks/**/*'], batch((event, done) => runSequence(
+        'enb-make',
+        'drop-templates-cache',
+        'build-html',
+        done
+    )));
+    gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
+    gulp.watch(['data-*/**/*'], batch((events, done) => runSequence('build-html', done)));
+    gulp.watch('desktop.bundles/index/index.min.*', ['copy-static']);
+});
+
+gulp.task('browser-sync', () => {
+    const port = 8008;
+
+    LANGUAGES.forEach((lang, index) => {
+        browserSync.create().init({
+            files: OUTPUT_DIRS[lang] + '/**',
+            server: { baseDir: OUTPUT_DIRS[lang] },
+            port: port + index,
+            browser: ['google chrome', 'firefox', 'opera'],
+            open: false,
+            startPath: '/methodology/',
+            online: false,
+            logLevel: 'warn',
+            logFileChanges: false,
+            notify: false,
+            ui: false
         });
-    } else if (/^\.\//.test(source)) {
-        // read content from local FS
-        fs.readFile(source, 'utf8', renderInner);
-    } else {
-        // inline content
-        renderInner(null, source);
-    }
-}
-
-function renderPages(bemtree, bemhtml, pages, langs, outputFolder) {
-    langs.forEach(function(lang) {
-        pages[lang].forEach(function(page) {
-            render(bemtree, bemhtml, pages, page, langs, lang, outputFolder);
-        })
     });
-}
+});
+
+gulp.task('default', (done) => runSequence(
+    'data-build',
+    'enb-make',
+    'compile-pages',
+    'watch',
+    'browser-sync',
+    done
+));

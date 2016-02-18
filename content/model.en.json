@@ -3,7 +3,7 @@
     "url": "/",
     "site": "/",
     "title": "BEM",
-    "source": "BEM is awesome",
+    "content": "BEM is awesome",
     "published": true
   },
   {
@@ -18,49 +18,49 @@
     "url": "/methodology/key-concepts/",
     "site": "/methodology/",
     "title": "Key concepts",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/key-concepts/key-concepts.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md",
     "published": true
   },
   {
     "url": "/methodology/naming-convention/",
     "site": "/methodology/",
     "title": "Naming convention",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/naming-convention/naming-convention.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md",
     "published": true
   },
   {
     "url": "/methodology/filesystem/",
     "site": "/methodology/",
     "title": "Filesystem",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/filesystem/filesystem.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.en.md",
     "published": true
   },
   {
     "url": "/methodology/build/",
     "site": "/methodology/",
     "title": "Build",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/build/build.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.en.md",
     "published": true
   },
   {
     "url": "/methodology/declarations/",
     "site": "/methodology/",
     "title": "Declarations",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/declarations/declarations.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.en.md",
     "published": true
   },
   {
     "url": "/methodology/solved-problems/",
     "site": "/methodology/",
     "title": "Solved problems",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/solved-problems/solved-problems.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md",
     "published": true
   },
   {
     "url": "/methodology/history/",
     "site": "/methodology/",
     "title": "History",
-    "source": "https://github.com/bem/bem-method/tree/bem-info-data/method/history/history.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.en.md",
     "published": true
   },
 
@@ -76,7 +76,7 @@
     "url": "/platform/techs/",
     "site": "/platform/techs/",
     "title": "Technologies",
-    "source": "Info about BEM techs will apper here",
+    "content": "Info about BEM techs will apper here",
     "published": true
   },
   {
@@ -111,70 +111,70 @@
     "url": "/platform/techs/i-bem.js/quick-start/",
     "site": "/platform/techs/i-bem.js/",
     "title": "Quick start",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/manual/",
     "site": "/platform/techs/i-bem.js/",
     "title": "Manual",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/rationale/",
     "site": "/platform/techs/i-bem.js/",
     "title": "Rationale",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/api/",
     "site": "/platform/techs/i-bem.js/",
     "title": "API",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/playground/",
     "site": "/platform/techs/i-bem.js/",
     "title": "Playground",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/faq/",
     "site": "/platform/techs/i-bem.js/",
     "title": "FAQ",
-    "source": "BEM Platform FAQ will appear here",
+    "content": "BEM Platform FAQ will appear here",
     "published": true
   },
   {
     "url": "/platform/techs/i-bem.js/reference/",
     "site": "/platform/techs/i-bem.js/",
     "title": "Reference",
-    "source": "TODO",
+    "content": "TODO",
     "published": true
   },
   {
     "url": "/platform/tools/",
     "site": "/platform/tools/",
     "title": "Tools",
-    "source": "Tools page",
+    "content": "Tools page",
     "published": true
   },
   {
     "url": "/platform/libs/",
     "site": "/platform/libs/",
     "title": "Libraries",
-    "source": "<ul><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a></ul>",
+    "content": "<ul><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a></ul>",
     "published": true
   },
   {
     "url": "/platform/libs/bem-core/2.7.0/",
     "site": "/platform/libs/bem-core/2.7.0/",
     "title": "bem-core 2.7.0",
-    "source": "content-libs/bem-core-2.7.0",
+    "content": "content-libs/bem-core-2.7.0",
     "type": "lib",
     "published": true
   },
@@ -182,7 +182,7 @@
     "url": "/platform/libs/bem-core/2.7.0/i-bem/",
     "site": "/platform/libs/bem-core/2.7.0/",
     "title": "i-bem",
-    "source": "i-bem block",
+    "content": "i-bem block",
     "type": "lib",
     "published": true
   },
@@ -190,7 +190,7 @@
     "url": "/platform/libs/bem-core/2.8.0/",
     "site": "/platform/libs/bem-core/2.8.0/",
     "title": "bem-core 2.8.0",
-    "source": "content-libs/bem-core-2.8.0",
+    "content": "content-libs/bem-core-2.8.0",
     "type": "lib",
     "published": true
   },
@@ -198,7 +198,7 @@
     "url": "/platform/libs/bem-core/2.8.0/i-bem/",
     "site": "/platform/libs/bem-core/2.8.0/",
     "title": "i-bem",
-    "source": "i-bem block",
+    "content": "i-bem block",
     "type": "lib",
     "published": true
   },
@@ -206,14 +206,14 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Community",
-    "source": "Info about BEM community will apper here",
+    "content": "Info about BEM community will apper here",
     "published": true
   },
   {
     "url": "/community/typo/",
     "site": "/community/",
     "title": "Typography",
-    "source": "./content/deprecated/typo.ru.md",
+    "content": "./content/deprecated/typo.ru.md",
     "published": true
   }
 ]
