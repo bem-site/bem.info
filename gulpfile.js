@@ -19,7 +19,7 @@ const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
     return prev;
 }, {});
 const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = './data-' + language;
+    prev[language] = './.gorshochek/data-' + language;
     return prev;
 }, {});
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
