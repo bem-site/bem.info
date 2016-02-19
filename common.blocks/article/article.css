@@ -228,6 +228,7 @@
         .article a:hover
         {
             color: #c00;
+            transition: all 0.3s;
         }
 
         .article a:visited
