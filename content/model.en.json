@@ -213,7 +213,7 @@
     "url": "/community/typo/",
     "site": "/community/",
     "title": "Typography",
-    "content": "./content/deprecated/typo.ru.md",
+    "source": "./content/deprecated/typo.ru.md",
     "published": true
   }
 ]
