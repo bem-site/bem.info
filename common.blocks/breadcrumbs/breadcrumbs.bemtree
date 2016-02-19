@@ -3,8 +3,18 @@ block('breadcrumbs').content()(function() {
         page = data.page,
         site = page.site;
 
-    return page.breadcrumbs.map(function(item, idx) {
-        return {
+    var result = [];
+
+    data.pages.filter(function(item) {
+        if (item.url === '/') return;
+
+        if (/^\/forum/.test(item.url)) return;
+
+        if (!new RegExp('^' + item.url).test(site)) return;
+
+        return item.url.split('/').length <= site.split('/').length;
+    }).map(function(item, idx) {
+        result.push({
             elem: 'item',
             content: page.url === item.url ? item.title : {
                 block: 'link',
@@ -12,9 +22,9 @@ block('breadcrumbs').content()(function() {
                 url: item.url,
                 content: item.title
             }
-        };
-    });
-
+        });
+    }, this);
+/*
     if (page.type === 'lib') {
         var split = site.replace(/(.*)\/$/, '$1').split('/'),
             libVer = split.pop(),
@@ -43,4 +53,6 @@ block('breadcrumbs').content()(function() {
             }
         );
     }
+*/
+    return result;
 });
