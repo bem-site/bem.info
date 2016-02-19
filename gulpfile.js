@@ -55,7 +55,7 @@ function runSubProcess(file, options) {
 }
 
 function buildData(lang) {
-    return runSubProcess('./data-builder.js', {
+    return runSubProcess('./lib/data-builder.js', {
         cwd: process.cwd(),
         encoding: 'utf-8',
         env: {
@@ -70,7 +70,7 @@ function buildData(lang) {
 }
 
 function compilePages(lang) {
-    return runSubProcess('./template.js', {
+    return runSubProcess('./lib/template.js', {
         cwd: process.cwd(),
         encoding: 'utf-8',
         env: {
