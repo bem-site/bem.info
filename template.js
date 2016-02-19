@@ -24,6 +24,6 @@ Q(model)
         }
     }))
     .done(
-        () => console.log('Pages were successfully compiled to: ', params.destination),
+        // () => console.log('Pages were successfully compiled to: ', params.destination),
         error => console.error(error.stack)
     );

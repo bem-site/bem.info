@@ -6,11 +6,11 @@ var model = gorshochek.createModel(),
     tasks = gorshochek.tasks,
     params = process.env;
 
-console.log('Start build data with params:');
-console.log('modelPath: ', params.modelPath);
-console.log('token: ', params.token);
-console.log('host: ', params.host);
-console.log('dest: ', params.dest);
+// console.log('Start build data with params:');
+// console.log('modelPath: ', params.modelPath);
+// console.log('token: ', params.token);
+// console.log('host: ', params.host);
+// console.log('dest: ', params.dest);
 
 Q()
     .then(tasks.core.mergeModels(model, {modelPath: params.modelPath}))
@@ -33,4 +33,3 @@ Q()
     }, function(error) {
         console.error(error.stack);
     });
-
