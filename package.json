@@ -21,7 +21,6 @@
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
-    "fs-extra": "^0.26.5",
     "gorshochek": "bem-site/gorshochek",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",

@@ -4,7 +4,6 @@ var path = require('path'),
     _ = require('lodash'),
     Q = require('q'),
     enb = require('enb'),
-    fsExtra = require('fs-extra'),
     runSequence = require('run-sequence'),
     rimraf = require('rimraf'),
 
@@ -34,15 +33,6 @@ const BEMHTML_PATH = path.join('desktop.bundles', BUNDLE_NAME, BUNDLE_NAME + '.b
 
 function removeFolder(folder) {
     return Q.denodeify(rimraf)(folder);
-}
-
-function copyFile(src, dest) {
-    return Q.denodeify(fsExtra.copy)(src, dest);
-}
-
-function copyFileToOutputDirs(srcFolder, srcFile) {
-    return Q.all(_.values(OUTPUT_DIRS).map(
-        folder => copyFile(path.join(srcFolder, srcFile), path.join(folder, srcFile))));
 }
 
 function runSubProcess(file, options) {
@@ -88,12 +78,9 @@ function compilePages(lang) {
 // Подготовка директорий output-*
 
 gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
-gulp.task('copy-misc-to-output', ['clean-output'], () => {
-    return Q.all([
-        copyFileToOutputDirs('./content', 'favicon.ico'),
-        copyFileToOutputDirs('./content', 'robots.txt')
-    ]);
-});
+gulp.task('copy-misc-to-output', ['clean-output'], () => Q.all(LANGUAGES.map(lang => {
+    return gulp.src('content/{favicon.ico,robots.txt}').pipe(gulp.dest(OUTPUT_DIRS[lang]));
+})));
 gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
 // Сборка данных
@@ -111,16 +98,22 @@ gulp.task('drop-templates-cache', (callback) => {
     delete require.cache[BEMTREE_PATH];
     callback();
 });
-gulp.task('copy-static', () => Q.all([
-    copyFileToOutputDirs(path.join('desktop.bundles', BUNDLE_NAME), BUNDLE_NAME + '.min.css'),
-    copyFileToOutputDirs(path.join('desktop.bundles', BUNDLE_NAME), BUNDLE_NAME + '.min.js')
-]));
+gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
+    return gulp.src(path.join('desktop.bundles', BUNDLE_NAME, `{${BUNDLE_NAME}.min.css,${BUNDLE_NAME}.min.js'}`))
+        .pipe(gulp.dest(OUTPUT_DIRS[lang]));
+})));
+
+gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
+    return gulp.src(path.join(DATA_DIRS[lang], 'sitemap.xml'))
+        .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang])));
+})));
 
 gulp.task('build-html', () => Q.all(LANGUAGES.map(compilePages)));
 gulp.task('compile-pages', () => runSequence(
     'enb-make',
     'drop-templates-cache',
     'copy-static',
+    'copy-sitemap-xml',
     'build-html'
 ));
 
