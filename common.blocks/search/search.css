@@ -35,6 +35,7 @@
 .search__open:hover
 {
     opacity: 0.8;
+    transition: all 0.3s;
 }
 
 .search__close
@@ -56,6 +57,11 @@
 
     stroke: #000;
     background: #fc0;
+}
+
+.search_opened .search__open:hover
+{
+    opacity: 1;
 }
 
 .search_opened .search__close
