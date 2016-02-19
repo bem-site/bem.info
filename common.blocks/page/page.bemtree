@@ -31,6 +31,5 @@ block('page').content()(function() {
             block: 'footer'
         }
     );
-
     return blocks;
 });

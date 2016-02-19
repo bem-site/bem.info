@@ -4,28 +4,7 @@ block('root').replace()(function() {
 
     this.data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
 
-    // title generation (begin)
-    var titles = data.pages.filter(function(item) {
-        if (!new RegExp('^' + item.url).test(data.page.site)) return;
-
-        return item.url.split('/').length <= data.page.site.split('/').length;
-    }).map(function(item, idx) { return item.title }, this);
-
-    if (data.page.url !== data.page.site) {
-        titles.push(data.page.title);
-    }
-
-    titles.reverse();
-
-    var title = titles.shift();
-    titles.forEach(function(t) { title += ' / ' + t });
-    // title generation (end)
-
     // libs extraction (begin)
-    // looking for libs in pages and storing its to this.data.libs = {
-    //     'lib-name1': ['ver1', 'ver2'],
-    //     'lib-name2': ['ver1', 'ver2']
-    // }
     var libs = {};
     data.pages.forEach(function (page) {
         if (page.type === 'lib') {
@@ -44,7 +23,7 @@ block('root').replace()(function() {
 
     return {
         block: 'page',
-        title: title,
+        title: this.data.page.head.title,
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
             { elem: 'css', url: '/index.min.css' }
