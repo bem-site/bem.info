@@ -51,6 +51,7 @@
 .nav__link:hover
 {
     color: #000;
+    transition: all 0.3s;
 }
 
 .nav_site_index

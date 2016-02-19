@@ -92,6 +92,12 @@
 	background: #fc0;
 }
 
+.promo-header__action:hover
+{
+	background: rgb(255, 224, 0);
+	transition: all 0.3s;
+}
+
 .promo-header__action::after
 {
 	position: relative;
@@ -161,6 +167,7 @@
 	white-space: normal;
 
 	color: #fff;
+	text-shadow: 1px 1px 1px #777;
 }
 
 .promo-header__text strong

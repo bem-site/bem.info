@@ -1,6 +1,7 @@
 .promo-logo
 {
     position: absolute;
+    z-index: -1;
     left: 79px;
 
     display: flex;

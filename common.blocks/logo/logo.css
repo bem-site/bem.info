@@ -25,7 +25,8 @@
     fill: #96cc29;
 }
 
-.logo:link:hover
+.logo:link:hover .logo__logo
 {
     opacity: 0.8;
+    transition: all 0.3s;
 }

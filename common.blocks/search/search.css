@@ -24,7 +24,7 @@
     stroke: #fff;
     stroke-width: 2;
 
-    transition: right, background 0.2s cubic-bezier(.02, .01, .47, 1);
+    transition: all 0.3s cubic-bezier(.02, .01, .47, 1);
 }
 
 .search__open
@@ -35,6 +35,7 @@
 .search__open:hover
 {
     opacity: 0.8;
+    transition: all 0.3s;
 }
 
 .search__close
