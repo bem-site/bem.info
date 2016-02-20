@@ -17,8 +17,9 @@ const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = './.gorshochek/cache/' + language;
     return prev;
 }, {});
+const DATA_DIR_PREFIX = './.gorshochek/data-';
 const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = './.gorshochek/data-' + language;
+    prev[language] = DATA_DIR_PREFIX + language;
     return prev;
 }, {});
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
@@ -120,15 +121,17 @@ gulp.task('compile-pages', () => runSequence(
 // Наблюдатель
 
 gulp.task('watch', () => {
+    // watch changes in blocks and build using enb
     gulp.watch(['*blocks/**/*'], batch((event, done) => runSequence(
         'enb-make',
-        'drop-templates-cache',
-        'build-html',
+        'copy-static', // copy final css and js to output folders
         done
     )));
+
+    gulp.watch([BEMTREE_PATH, BEMHTML_PATH, DATA_DIR_PREFIX + '*/**/*'],
+        batch((event, done) => runSequence('drop-templates-cache', 'build-html', done)));
+
     gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
-    gulp.watch(['data-*/**/*'], batch((events, done) => runSequence('build-html', done)));
-    gulp.watch('desktop.bundles/index/index.min.*', ['copy-static']);
 });
 
 gulp.task('browser-sync', () => {
@@ -153,7 +156,6 @@ gulp.task('browser-sync', () => {
 
 gulp.task('default', (done) => runSequence(
     'data-build',
-    'enb-make',
     'compile-pages',
     'watch',
     'browser-sync',
