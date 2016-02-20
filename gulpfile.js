@@ -147,7 +147,7 @@ gulp.task('browser-sync', () => {
             open: false,
             startPath: '/methodology/',
             online: false,
-            logLevel: 'warn',
+            logLevel: 'silent',
             logFileChanges: false,
             notify: false,
             ui: false
