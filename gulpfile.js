@@ -99,7 +99,7 @@ gulp.task('drop-templates-cache', (callback) => {
     callback();
 });
 gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
-    return gulp.src(path.join('desktop.bundles', BUNDLE_NAME, `{${BUNDLE_NAME}.min.css,${BUNDLE_NAME}.min.js'}`))
+    return gulp.src(`desktop.bundles/${BUNDLE_NAME}/{${BUNDLE_NAME}.min.css,${BUNDLE_NAME}.min.js}`)
         .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
@@ -128,7 +128,7 @@ gulp.task('watch', () => {
     )));
     gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
     gulp.watch(['data-*/**/*'], batch((events, done) => runSequence('build-html', done)));
-    gulp.watch('desktop.bundles/index/index.min.*', ['copy-static']);
+    gulp.watch('desktop.bundles/index/index.min.*',  batch((events, done) => runSequence('copy-static', done)));
 });
 
 gulp.task('browser-sync', () => {
