@@ -64,6 +64,7 @@ function compilePages(lang) {
         cwd: process.cwd(),
         encoding: 'utf-8',
         env: {
+            GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
             bemtree: BEMTREE_PATH,
             bemhtml: BEMHTML_PATH,
             source: DATA_DIRS[lang],
