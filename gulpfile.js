@@ -150,7 +150,11 @@ gulp.task('browser-sync', () => {
             logLevel: 'silent',
             logFileChanges: false,
             notify: false,
-            ui: false
+            ui: false,
+            middleware: function (req, res, next) {
+                req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
+                next();
+            }
         });
     });
 });
