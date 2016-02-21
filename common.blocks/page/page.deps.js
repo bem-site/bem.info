@@ -1,4 +1,14 @@
 ({
     mustDeps : ['i-bem'],
-    shouldDeps : ['header', 'sitemap', 'nav', 'promo-header', 'promo-main', 'article', 'footer']
+    shouldDeps : [
+        'header',
+        'sitemap',
+        'nav',
+        'promo-page',
+        'promo-header',
+        'promo-main',
+        'promo-footer',
+        'article',
+        'footer'
+    ]
 })

@@ -1,0 +1,16 @@
+.footer__copyright-logo
+{
+    display: inline-block;
+    width: 60px;
+    height: 23px;
+    margin: -10px 0 0 0.5em;
+
+    vertical-align: middle;
+
+    transition: all 0.3s;
+}
+
+.footer__copyright-logo:hover
+{
+    opacity: 0.8;
+}

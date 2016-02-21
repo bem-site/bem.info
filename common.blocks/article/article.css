@@ -1,6 +1,7 @@
  .article
 {
-    padding: 9px 0 0 111px;
+    margin-bottom: 0;
+    padding: 9px 0 16px 111px;
 
     background: url(article.png) repeat;
 }
@@ -218,6 +219,8 @@
         .article a
         {
             text-decoration: none;
+
+            transition: all 0.3s;
         }
 
         .article a:link
@@ -225,15 +228,14 @@
             color: #04b;
         }
 
-        .article a:hover
-        {
-            color: #c00;
-            transition: all 0.3s;
-        }
-
         .article a:visited
         {
             color: #909;
+        }
+
+        .article a:hover
+        {
+            color: #c00;
         }
     /* links (end) */
 /* inline (end) */

@@ -1,0 +1,14 @@
+.promo-footer
+{
+	position: relative;
+	z-index: 0;
+
+	height: 478px;
+
+	text-align: center;
+}
+
+.promo-footer .promo-action
+{
+	margin-top: 100px;
+}

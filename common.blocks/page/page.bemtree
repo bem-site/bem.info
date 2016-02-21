@@ -19,17 +19,9 @@ block('page').content()(function() {
     if (this.data.page.type === 'bemjson.js') {
         blocks.push(this.data.page.content);
     } else {
-        blocks.push(
-            {
-                block: 'article'
-            }
-        );
+        blocks.push({ block: 'article' });
+        blocks.push({ block: 'footer', mods: { site: siteMod }});
     }
 
-    blocks.push(
-        {
-            block: 'footer'
-        }
-    );
     return blocks;
 });

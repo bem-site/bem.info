@@ -80,9 +80,14 @@ function compilePages(lang) {
 // Подготовка директорий output-*
 
 gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
+
 gulp.task('copy-misc-to-output', ['clean-output'], () => Q.all(LANGUAGES.map(lang => {
-    return gulp.src('content/{favicon.ico,robots.txt}').pipe(gulp.dest(OUTPUT_DIRS[lang]));
+    return gulp.src([
+        'content/{favicon.ico,robots.txt}',
+        'common.blocks/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
+    ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
+
 gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
 // Сборка данных
@@ -160,6 +165,7 @@ gulp.task('browser-sync', () => {
 });
 
 gulp.task('default', (done) => runSequence(
+    'copy-misc-to-output',
     'data-build',
     'compile-pages',
     'watch',

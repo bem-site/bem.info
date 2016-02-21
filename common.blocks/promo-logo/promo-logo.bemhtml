@@ -1,3 +1,0 @@
-block('promo-logo')(
-    elem('logo').tag()('span')
-);

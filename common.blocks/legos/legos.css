@@ -1,0 +1,41 @@
+.legos::before
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	height: 7px;
+	margin-top: 112px;
+
+	content: '';
+	background: 0 0 repeat-x;
+}
+
+.legos
+{
+	display: block;
+	overflow: hidden;
+	height: 119px;
+
+	text-align: center;
+	white-space: nowrap;
+}
+
+.legos__lego
+{
+	display: inline-block;
+
+	width: 44px;
+	height: 119px;
+	background: 0 0 repeat-x;
+}
+
+.legos__lego_width_2
+{
+	width: 66px;
+}
+
+.legos__lego_width_3
+{
+	width: 88px;
+}
