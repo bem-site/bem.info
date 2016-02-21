@@ -1,4 +1,4 @@
-.footer__copyright-logo
+.footer__copyright-logo-img
 {
     display: inline-block;
     width: 60px;
@@ -10,7 +10,7 @@
     transition: all 0.3s;
 }
 
-.footer__copyright-logo:hover
+.footer__copyright-logo-img:hover
 {
     opacity: 0.8;
 }

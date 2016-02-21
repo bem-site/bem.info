@@ -1,17 +1,16 @@
 ({
     shouldDeps : [
         {
-            block: 'promo-logo',
+            mods : { site : 'methodology' },
+            elems : [
+                'title',
+                {
+                    elem : 'lego',
+                    mods : { site : 'methodology' }
+                }
+            ]
         },
-        {
-            block: 'promo-action',
-        },
-        {
-            elem : 'title',
-        },
-        {
-            elem : 'lego',
-            mods : { site : 'methodology' }
-        }
+        'promo-logo',
+        'promo-action'
     ]
 })

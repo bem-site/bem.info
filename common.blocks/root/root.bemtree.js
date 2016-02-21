@@ -1,8 +1,8 @@
 block('root').replace()(function() {
-    var data = this.data = this.ctx.data;
-    var rootUrl = this.data.page.site;
+    var data = this.data = this.ctx.data,
+        rootUrl = data.page.site;
 
-    var siteMod = this.data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+    data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
 
     // libs extraction (begin)
     var libs = {};
@@ -18,13 +18,13 @@ block('root').replace()(function() {
         }
     });
 
-    this.data.libs = libs;
+    data.libs = libs;
     // libs extraction (end)
 
     return {
         block: 'page',
-        title: this.data.page.head.title,
-        mods: { 'site': siteMod },
+        title: data.page.head.title,
+        mods: { 'site': data.siteMod },
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
             { elem: 'css', url: '/index.min.css' }

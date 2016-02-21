@@ -1,27 +1,25 @@
 block('page').content()(function() {
-    var siteMod = this.data.siteMod;
+    var data = this.data,
+        page = data.page,
+        siteMod = data.siteMod;
 
-    var blocks = [
+    return [
         {
             block: 'header',
-            mods: { 'site': siteMod }
+            mods: { site: siteMod }
         },
         {
             block: 'sitemap',
-            mods: { 'site': siteMod }
+            mods: { site: siteMod }
         },
         {
             block: 'nav',
-            mods: { 'site': siteMod === 'index' ? siteMod : undefined }
+            mods: siteMod === 'index' ? { site: siteMod } : {}
+        },
+        page.type === 'bemjson.js' ? page.content : { block: 'article' },
+        {
+            block: 'footer',
+            mods: { site: siteMod, promo: page.type === 'bemjson.js' }
         }
     ];
-
-    if (this.data.page.type === 'bemjson.js') {
-        blocks.push(this.data.page.content);
-    } else {
-        blocks.push({ block: 'article' });
-        blocks.push({ block: 'footer', mods: { site: siteMod }});
-    }
-
-    return blocks;
 });
