@@ -192,7 +192,7 @@
     "url": "/platform/libs/",
     "site": "/platform/libs/",
     "title": "Библиотеки",
-    "content": "Здесь будет страница про БЭМ-библиотеки",
+    "content": "<ul><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a></ul>",
     "bundle": "platform",
     "published": true
   },
