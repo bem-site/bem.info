@@ -121,7 +121,6 @@ gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
         .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang])));
 })));
 
-
 gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
     return compilePages(lang, BEMTREE, BEMHTML);
 })));
