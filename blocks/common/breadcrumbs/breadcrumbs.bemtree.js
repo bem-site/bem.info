@@ -17,9 +17,8 @@ block('breadcrumbs').content()(function() {
         result.push({
             elem: 'item',
             content: page.url === item.url ? item.title : {
-                block: 'link',
-                mix: { block: 'breadcrumbs', elem: 'link' },
-                url: item.url,
+                elem: 'link',
+                attrs: { href: item.url },
                 content: item.title
             }
         });
