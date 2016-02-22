@@ -73,23 +73,6 @@
 	background: rgb(255, 204, 0);
 }
 
-.promo-header:before
-{
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
-	content: " ";
-}
-
-.promo-header_site_methodology:before
-{
-	background: linear-gradient(0deg, rgba(23, 161, 230, 0.9), rgba(51, 207, 244, 0.9));
-}
-
 .promo-header__text
 {
 	position: relative;

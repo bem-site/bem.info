@@ -19,6 +19,7 @@ block('page').content()(function() {
         page.type === 'bemjson.js' ? page.content : { block: 'article' },
         {
             block: 'footer',
+            mix: { block: 'page-bg', mods: { site: siteMod }},
             mods: { site: siteMod, promo: page.type === 'bemjson.js' && siteMod !== 'index' }
         }
     ];

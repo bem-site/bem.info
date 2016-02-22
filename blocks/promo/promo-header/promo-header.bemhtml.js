@@ -4,6 +4,7 @@ block('promo-header')(
     elem('title').tag()('span'),
     elem('subtitle').tag()('span'),
     elem('text').tag()('p'),
+    mix()({ block: 'page-bg', mods: { site: 'methodology' }}),
     js()(true),
 
     elem('action').replace()(function() {

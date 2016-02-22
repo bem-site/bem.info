@@ -24,7 +24,6 @@ block('root').replace()(function() {
     return {
         block: 'page',
         title: data.page.head.title,
-        mods: { 'site': data.siteMod },
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
             { elem: 'css', url: '/' + siteBundle + '.min.css' }
