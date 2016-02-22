@@ -1,8 +1,8 @@
 block('root').replace()(function() {
     var data = this.data = this.ctx.data,
-        rootUrl = data.page.site;
-
-    data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1];
+        rootUrl = data.page.site,
+        siteMod = data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1],
+        siteBundle = siteMod + (data.page.url === rootUrl && rootUrl !== '/' ? '-index' : '');
 
     // libs extraction (begin)
     var libs = {};
@@ -27,10 +27,10 @@ block('root').replace()(function() {
         mods: { 'site': data.siteMod },
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
-            { elem: 'css', url: '/index.min.css' }
+            { elem: 'css', url: '/' + siteBundle + '.min.css' }
         ],
         scripts: [
-            { elem: 'js', url: '/index.min.js' }
+            { elem: 'js', url: '/' + siteBundle + '.min.js' }
         ]
     };
 });

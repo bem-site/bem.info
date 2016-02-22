@@ -19,24 +19,21 @@ var techs = {
         bemhtml: require('enb-bemxjst/techs/bemhtml')
     },
     enbBemTechs = require('enb-bem-techs'),
-    levels = [
+    libLevels = [
         { path: 'libs/bem-core/common.blocks', check: false },
         { path: 'libs/bem-core/desktop.blocks', check: false },
         { path: 'libs/bem-components/common.blocks', check: false },
         { path: 'libs/bem-components/desktop.blocks', check: false },
         { path: 'libs/bem-components/design/common.blocks', check: false },
         { path: 'libs/bem-components/design/desktop.blocks', check: false },
-        'common.blocks'
+        'blocks/common'
     ];
 
-module.exports = function(config) {
-    var env = process.env;
-    var isProd = env.YENV === 'production';
-
-    config.nodes('*.bundles/*', function(nodeConfig) {
+function configNodes(config, isProd, bundle, levels) {
+    config.nodes(bundle, function(nodeConfig) {
         nodeConfig.addTechs([
             // essential
-            [enbBemTechs.levels, { levels: levels }],
+            [enbBemTechs.levels, { levels: libLevels.concat(levels) }],
             [techs.fileProvider, { target: '?.bemdecl.js' }],
             [enbBemTechs.deps],
             [enbBemTechs.files],
@@ -64,4 +61,19 @@ module.exports = function(config) {
 
         nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '?.min.css', '?.min.js']);
     });
+}
+
+module.exports = function(config) {
+    var isProd = process.env.YENV === 'production';
+
+    configNodes(config, isProd, 'bundles/index', [ 'blocks/index' ]);
+
+    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology' ]);
+    configNodes(config, isProd, 'bundles/methodology', [ 'blocks/methodology' ]);
+
+    configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
+    configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
+
+    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community' ]);
+    configNodes(config, isProd, 'bundles/community', [ 'blocks/community' ]);
 };

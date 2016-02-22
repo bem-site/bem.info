@@ -1,4 +1,5 @@
 var path = require('path'),
+    fs = require('fs')
     cp = require('child_process'),
 
     _ = require('lodash'),
@@ -27,10 +28,12 @@ const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
     return prev;
 }, {});
 
+const BUNDLES = fs.readdirSync('bundles');
+
 const BUNDLE_NAME = 'index';
 
-const BEMTREE_PATH = path.join('desktop.bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemtree.js');
-const BEMHTML_PATH = path.join('desktop.bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemhtml.js');
+const BEMTREE_PATH = path.join('bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemtree.js');
+const BEMHTML_PATH = path.join('bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemhtml.js');
 
 function removeFolder(folder) {
     return Q.denodeify(rimraf)(folder);
@@ -84,7 +87,7 @@ gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
 gulp.task('copy-misc-to-output', ['clean-output'], () => Q.all(LANGUAGES.map(lang => {
     return gulp.src([
         'content/{favicon.ico,robots.txt}',
-        'common.blocks/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
+        'blocks/common/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
     ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
@@ -105,9 +108,13 @@ gulp.task('drop-templates-cache', (callback) => {
     delete require.cache[BEMTREE_PATH];
     callback();
 });
+
 gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
-    return gulp.src(path.join('desktop.bundles', BUNDLE_NAME, `{${BUNDLE_NAME}.min.css,${BUNDLE_NAME}.min.js'}`))
-        .pipe(gulp.dest(OUTPUT_DIRS[lang]));
+    var files = BUNDLES.map(bundle => {
+        return path.join('bundles', bundle, bundle + '.min.*')
+    });
+
+    return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
 gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
@@ -128,7 +135,7 @@ gulp.task('compile-pages', () => runSequence(
 
 gulp.task('watch', () => {
     // watch changes in blocks and build using enb
-    gulp.watch(['*blocks/**/*'], batch((event, done) => runSequence(
+    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence(
         'enb-make',
         'copy-static', // copy final css and js to output folders
         done
