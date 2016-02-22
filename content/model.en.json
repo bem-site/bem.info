@@ -3,7 +3,8 @@
     "url": "/",
     "site": "/",
     "title": "BEM",
-    "content": "BEM is awesome",
+    "source": "./content/bemjson/index.en.bemjson.js",
+    "type": "bemjson.js",
     "published": true
   },
   {

@@ -3,7 +3,8 @@
     "url": "/",
     "site": "/",
     "title": "БЭМ",
-    "content": "БЭМ прекрасен",
+    "source": "./content/bemjson/index.ru.bemjson.js",
+    "type": "bemjson.js",
     "published": true
   },
 
@@ -12,8 +13,8 @@
     "site": "/methodology/",
     "title": "Методология",
     "source": "./content/bemjson/methodology.ru.bemjson.js",
-    "published": true,
-    "type": "bemjson.js"
+    "type": "bemjson.js",
+    "published": true
   },
   {
     "url": "/methodology/key-concepts/",
