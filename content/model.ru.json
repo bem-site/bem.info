@@ -5,6 +5,7 @@
     "title": "БЭМ",
     "source": "./content/bemjson/index.ru.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "index",
     "published": true
   },
 
@@ -14,6 +15,7 @@
     "title": "Методология",
     "source": "./content/bemjson/methodology.ru.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "methodology-index",
     "published": true
   },
   {
@@ -21,6 +23,7 @@
     "site": "/methodology/",
     "title": "Основные понятия",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -28,6 +31,7 @@
     "site": "/methodology/",
     "title": "Соглашение по именованию",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -35,6 +39,7 @@
     "site": "/methodology/",
     "title": "Файловая система",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -42,6 +47,7 @@
     "site": "/methodology/",
     "title": "Сборка",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -49,6 +55,7 @@
     "site": "/methodology/",
     "title": "Декларации",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -56,6 +63,7 @@
     "site": "/methodology/",
     "title": "Какие проблемы решает",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.ru.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -63,6 +71,7 @@
     "site": "/methodology/",
     "title": "История создания",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.ru.md",
+    "bundle": "methodology",
     "published": true
   },
 
@@ -72,6 +81,7 @@
     "title": "Платформа",
     "source": "./content/bemjson/platform.ru.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "platform-index",
     "published": true
   },
   {
@@ -79,6 +89,7 @@
     "site": "/platform/techs/",
     "title": "Технологии",
     "content": "Здесь будет страница про БЭМ-технологии",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -86,6 +97,7 @@
     "site": "/platform/techs/bemhtml/",
     "title": "BEMHTML",
     "source": "https://github.com/bem/bem-core/v2/common.docs/reference/reference.ru.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -93,6 +105,7 @@
     "site": "/platform/techs/bemhtml/",
     "title": "Quick start",
     "source": "https://github.com/bem/bem-core/v2/common.docs/intro/intro.ru.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -100,6 +113,7 @@
     "site": "/platform/techs/bemtree/",
     "title": "BEMTREE",
     "source": "https://github.com/bem/bem-core/v2/common.docs/bemtree-reference/bemtree-reference.ru.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -107,6 +121,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "i-bem",
     "source": "https://github.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -114,6 +129,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Quick start",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -121,6 +137,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Manual",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -128,6 +145,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Rationale",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -135,6 +153,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "API",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -142,6 +161,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Playground",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -149,6 +169,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "FAQ",
     "content": "Здесь будет описание БЭМ платформы",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -156,6 +177,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Reference",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -163,6 +185,7 @@
     "site": "/platform/tools/",
     "title": "Инструменты",
     "content": "Здесь будет страница про БЭМ-инструменты",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -170,6 +193,7 @@
     "site": "/platform/libs/",
     "title": "Библиотеки",
     "content": "Здесь будет страница про БЭМ-библиотеки",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -178,6 +202,7 @@
     "title": "bem-core 2.7.0",
     "content": "content-libs/bem-core-2.7.0",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -186,6 +211,7 @@
     "title": "i-bem",
     "content": "i-bem block",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -194,6 +220,7 @@
     "title": "bem-core 2.8.0",
     "content": "content-libs/bem-core-2.8.0",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -202,6 +229,7 @@
     "title": "i-bem",
     "content": "i-bem block",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -209,6 +237,7 @@
     "site": "/community/",
     "title": "Community",
     "content": "Info about BEM community will upper here",
+    "bundle": "community-index",
     "published": true
   },
   {
@@ -216,6 +245,7 @@
     "site": "/community/",
     "title": "Типографика",
     "source": "./content/deprecated/typo.ru.md",
+    "bundle": "community",
     "published": true
   }
 ]

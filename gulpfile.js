@@ -28,12 +28,16 @@ const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
     return prev;
 }, {});
 
-const BUNDLES = fs.readdirSync('bundles');
-
-const BUNDLE_NAME = 'index';
-
-const BEMTREE_PATH = path.join('bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemtree.js');
-const BEMHTML_PATH = path.join('bundles', BUNDLE_NAME, BUNDLE_NAME + '.bemhtml.js');
+const BUNDLES_DIR = 'bundles';
+const BUNDLES = fs.readdirSync(BUNDLES_DIR);
+const BEMTREE = BUNDLES.reduce((prev, bundle) => {
+    prev[bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.bemtree.js');
+    return prev;
+}, {});
+const BEMHTML = BUNDLES.reduce((prev, bundle) => {
+    prev[bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.bemhtml.js');
+    return prev;
+}, {});
 
 function removeFolder(folder) {
     return Q.denodeify(rimraf)(folder);
@@ -63,14 +67,14 @@ function buildData(lang) {
     });
 }
 
-function compilePages(lang) {
+function compilePages(lang, bemtree, bemhtml) {
     return runSubProcess('./lib/template.js', {
         cwd: process.cwd(),
         encoding: 'utf-8',
         env: {
             GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            bemtree: BEMTREE_PATH,
-            bemhtml: BEMHTML_PATH,
+            bemtree: JSON.stringify(bemtree),
+            bemhtml: JSON.stringify(bemhtml),
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
             langs: LANGUAGES,
@@ -103,15 +107,10 @@ gulp.task('data-rebuild', () => runSequence('data-clean', 'data-cache-clean', 'd
 // Шаблонизация данных
 
 gulp.task('enb-make', () => enb.make());
-gulp.task('drop-templates-cache', (callback) => {
-    delete require.cache[BEMHTML_PATH];
-    delete require.cache[BEMTREE_PATH];
-    callback();
-});
 
 gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
     var files = BUNDLES.map(bundle => {
-        return path.join('bundles', bundle, bundle + '.min.*')
+        return path.join(BUNDLES_DIR, bundle, bundle + '.min.*')
     });
 
     return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
@@ -122,18 +121,15 @@ gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
         .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang])));
 })));
 
-gulp.task('build-html', () => Q.all(LANGUAGES.map(compilePages)));
-gulp.task('compile-pages', () => runSequence(
-    'enb-make',
-    'drop-templates-cache',
-    'copy-static',
-    'copy-sitemap-xml',
-    'build-html'
-));
+gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
+    return compilePages(lang, BEMTREE, BEMHTML);
+})));
 
 // Наблюдатель
 
 gulp.task('watch', () => {
+    gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
+
     // watch changes in blocks and build using enb
     gulp.watch(['blocks/**/*'], batch((event, done) => runSequence(
         'enb-make',
@@ -141,10 +137,39 @@ gulp.task('watch', () => {
         done
     )));
 
-    gulp.watch([BEMTREE_PATH, BEMHTML_PATH, DATA_DIR_PREFIX + '*/**/*'],
-        batch((event, done) => runSequence('drop-templates-cache', 'build-html', done)));
+    // compile pages then bemtree/bemhtml bundle or data changes
+    gulp.watch([BUNDLES_DIR + '/*/*.bem{tree,html}.js', DATA_DIR_PREFIX + '*/**'],
+        batch((event, done) => runSequence(
+        'build-html',
+        done
+    )));
+/*
+    BUNDLES.forEach(bundle => {
+        gulp.watch([
+                BEMTREE[bundle], BEMHTML[bundle],
+                path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
+                path.join(DATA_DIR_PREFIX + '*', bundle + '.js'),
+            ],
+            batch((event, done) => {
+                delete require.cache[path.join(process.cwd(), BEMTREE[bundle])];
+                delete require.cache[path.join(process.cwd(), BEMHTML[bundle])];
 
-    gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
+                // var bemtree = {},
+                //     bemhtml = {};
+                // bemtree[bundle] = BEMTREE[bundle];
+                // bemhtml[bundle] = BEMHTML[bundle];
+// TODO: pass `bemtree` and `bemhtml` instead of `BEMTREE` and `BEMHTML`
+// TODO: ask bemer@ how to filter model for pages with passed bundle
+
+                LANGUAGES.forEach(lang => {
+                    compilePages(lang, BEMTREE, BEMHTML);
+                });
+
+                done();
+            })
+        );
+    });
+*/
 });
 
 gulp.task('browser-sync', () => {
@@ -174,7 +199,10 @@ gulp.task('browser-sync', () => {
 gulp.task('default', (done) => runSequence(
     'copy-misc-to-output',
     'data-build',
-    'compile-pages',
+    'enb-make',
+    'copy-static',
+    'copy-sitemap-xml',
+    'build-html',
     'watch',
     'browser-sync',
     done

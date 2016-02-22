@@ -5,6 +5,7 @@
     "title": "BEM",
     "source": "./content/bemjson/index.en.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "index",
     "published": true
   },
   {
@@ -13,6 +14,7 @@
     "title": "Methodology",
     "source": "./content/bemjson/methodology.en.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "methodology-index",
     "published": true
   },
   {
@@ -20,6 +22,7 @@
     "site": "/methodology/",
     "title": "Key concepts",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -27,6 +30,7 @@
     "site": "/methodology/",
     "title": "Naming convention",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -34,6 +38,7 @@
     "site": "/methodology/",
     "title": "Filesystem",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -41,6 +46,7 @@
     "site": "/methodology/",
     "title": "Build",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -48,6 +54,7 @@
     "site": "/methodology/",
     "title": "Declarations",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -55,6 +62,7 @@
     "site": "/methodology/",
     "title": "Solved problems",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md",
+    "bundle": "methodology",
     "published": true
   },
   {
@@ -62,6 +70,7 @@
     "site": "/methodology/",
     "title": "History",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.en.md",
+    "bundle": "methodology",
     "published": true
   },
 
@@ -71,6 +80,7 @@
     "title": "Platform",
     "source": "./content/bemjson/platform.en.bemjson.js",
     "type": "bemjson.js",
+    "bundle": "platform-index",
     "published": true
   },
   {
@@ -78,6 +88,7 @@
     "site": "/platform/techs/",
     "title": "Technologies",
     "content": "Info about BEM techs will apper here",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -85,6 +96,7 @@
     "site": "/platform/techs/bemhtml/",
     "title": "BEMHTML",
     "source": "https://github.com/bem/bem-core/v2/common.docs/reference/reference.en.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -92,6 +104,7 @@
     "site": "/platform/techs/bemhtml/",
     "title": "Quick start",
     "source": "https://github.com/bem/bem-core/v2/common.docs/intro/intro.en.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -99,6 +112,7 @@
     "site": "/platform/techs/bemtree/",
     "title": "BEMTREE",
     "source": "https://github.com/bem/bem-core/v2/common.docs/bemtree-reference/bemtree-reference.en.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -106,6 +120,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "i-bem",
     "source": "https://github.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -113,6 +128,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Quick start",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -120,6 +136,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Manual",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -127,6 +144,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Rationale",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -134,6 +152,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "API",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -141,6 +160,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Playground",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -148,6 +168,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "FAQ",
     "content": "BEM Platform FAQ will appear here",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -155,6 +176,7 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Reference",
     "content": "TODO",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -162,6 +184,7 @@
     "site": "/platform/tools/",
     "title": "Tools",
     "content": "Tools page",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -169,6 +192,7 @@
     "site": "/platform/libs/",
     "title": "Libraries",
     "content": "<ul><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a></ul>",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -177,6 +201,7 @@
     "title": "bem-core 2.7.0",
     "content": "content-libs/bem-core-2.7.0",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -185,6 +210,7 @@
     "title": "i-bem",
     "content": "i-bem block",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -193,6 +219,7 @@
     "title": "bem-core 2.8.0",
     "content": "content-libs/bem-core-2.8.0",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -201,6 +228,7 @@
     "title": "i-bem",
     "content": "i-bem block",
     "type": "lib",
+    "bundle": "platform",
     "published": true
   },
   {
@@ -208,6 +236,7 @@
     "site": "/community/",
     "title": "Community",
     "content": "Info about BEM community will apper here",
+    "bundle": "community-index",
     "published": true
   },
   {
@@ -215,6 +244,7 @@
     "site": "/community/",
     "title": "Typography",
     "source": "./content/deprecated/typo.ru.md",
+    "bundle": "community",
     "published": true
   }
 ]

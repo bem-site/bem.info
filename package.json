@@ -21,7 +21,7 @@
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
-    "gorshochek": "bem-site/gorshochek",
+    "gorshochek": "vithar/gorshochek",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-watch": "^4.3.5",
