@@ -1,6 +1,3 @@
 ({
-    mustDeps : ['i-bem'],
-    shouldDeps : [
-        { block : 'page' }
-    ]
+    shouldDeps : ['page']
 })

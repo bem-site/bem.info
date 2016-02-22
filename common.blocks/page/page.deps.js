@@ -9,6 +9,9 @@
         'promo-main',
         'promo-footer',
         'article',
-        'footer'
+        {
+            block : 'footer',
+            mods : { site : ['methodology'], promo : true }
+        }
     ]
 })
