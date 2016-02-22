@@ -9,31 +9,6 @@
     white-space: nowrap;
 }
 
-.header_site_index
-{
-    background: #000;
-}
-
-.header_site_methodology
-{
-    background: #052433;
-}
-
-.header_site_platform
-{
-    background: #330505;
-}
-
-.header_site_community
-{
-    background: #25330a;
-}
-
-.header_site_forum
-{
-    background: #aaa;
-}
-
 .header__logo
 {
     border-right: 1px solid rgba(255, 255, 255, 0.2);

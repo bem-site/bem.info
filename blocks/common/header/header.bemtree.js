@@ -6,7 +6,6 @@ block('header').content()(function() {
         {
             block: 'logo',
             mix: { block: 'header', elem: 'logo' },
-            mods: { 'site': siteMod },
             url: url !== '/' ? '/' : undefined
         },
         {

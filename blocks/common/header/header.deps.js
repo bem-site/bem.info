@@ -1,11 +1,5 @@
 ({
-    mustDeps : [
-        'i-bem'
-    ],
-    shouldDeps : [
-        {
-            elems : ['item']
-        },
+    shouldDeps: [
         'logo',
         'breadcrumbs',
         'lang-switcher',

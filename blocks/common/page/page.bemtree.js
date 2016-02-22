@@ -5,8 +5,7 @@ block('page').content()(function() {
 
     return [
         {
-            block: 'header',
-            mods: { site: siteMod }
+            block: 'header'
         },
         {
             block: 'sitemap',
