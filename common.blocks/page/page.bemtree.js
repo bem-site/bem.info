@@ -19,7 +19,7 @@ block('page').content()(function() {
         page.type === 'bemjson.js' ? page.content : { block: 'article' },
         {
             block: 'footer',
-            mods: { site: siteMod, promo: page.type === 'bemjson.js' }
+            mods: { site: siteMod, promo: page.type === 'bemjson.js' && siteMod !== 'index' }
         }
     ];
 });
