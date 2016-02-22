@@ -1,0 +1,26 @@
+.footer
+{
+    background: #000;
+}
+
+.footer__layout
+{
+    justify-content: space-between;
+}
+
+.footer__domain
+{
+    font-style: italic;
+
+    margin: 0 31px 0 0;
+}
+
+.footer__copyright
+{
+    margin: 0;
+}
+
+.footer__copyright-bem
+{
+    letter-spacing: 1px;
+}

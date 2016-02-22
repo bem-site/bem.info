@@ -1,33 +1,10 @@
 block('footer').content()(function() {
-    var siteMod = this.data.siteMod,
-        indexContent = siteMod === 'index' ? [
-            {
-                elem: 'domain',
-                content: 'Jadwiga and Jacek Duniec thank you for domain!'
-            },
-            {
-                elem: 'copyright',
-                content: [
-                    {
-                        tag: 'strong',
-                        content: 'BEM'
-                    },
-                    ' is proudly made by ',
-                    {
-                        elem: 'copyright-logo',
-                        url: 'https://yandex.com/company/',
-                        content: 'Yandex'
-                    }
-                ]
-            }
-        ] : [];
-
     return [
         {
             block: 'legos',
             mods: { color: 'inverted' }
         },
-        apply('extra'),
+        apply('promo'),
         {
             elem: 'layout',
             content: [
@@ -51,7 +28,7 @@ block('footer').content()(function() {
                         }
                     ]
                 },
-                indexContent
+                apply('index')
             ]
         }
     ];

@@ -1,13 +1,3 @@
-.footer_site_index
-{
-    background: #000;
-}
-
-.footer_site_index .footer__layout
-{
-    justify-content: space-between;
-}
-
 .footer__layout
 {
     font-size: 90%;
@@ -44,21 +34,4 @@
 .footer__channel-link:hover
 {
     opacity: 0.8;
-}
-
-.footer__domain
-{
-    font-style: italic;
-
-    margin: 0 31px 0 0;
-}
-
-.footer__copyright
-{
-    margin: 0;
-}
-
-.footer__copyright strong
-{
-    letter-spacing: 1px;
 }

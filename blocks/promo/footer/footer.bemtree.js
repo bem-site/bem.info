@@ -1,4 +1,4 @@
-block('footer').mod('promo', true).mode('extra')(function() {
+block('footer').mode('promo')(function() {
     return {
         block : 'promo-footer',
         mods : { site : this.data.siteMod }

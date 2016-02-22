@@ -91,7 +91,7 @@ gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
 gulp.task('copy-misc-to-output', ['clean-output'], () => Q.all(LANGUAGES.map(lang => {
     return gulp.src([
         'content/{favicon.ico,robots.txt}',
-        'blocks/common/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
+        'blocks/index/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
     ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
