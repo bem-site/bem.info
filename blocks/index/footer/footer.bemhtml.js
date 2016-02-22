@@ -1,4 +1,6 @@
 block('footer')(
+    elem('copyright-bem').tag()('strong'),
+
     elem('copyright-logo')(
         tag()('a'),
         attrs()(function() {
