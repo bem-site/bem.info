@@ -1,0 +1,77 @@
+.breadcrumbs__version
+{
+    margin-left: -27px;
+
+    background: inherit;
+}
+
+.breadcrumbs__version .select
+{
+    vertical-align: inherit;
+}
+
+.breadcrumbs__version .select__button.button_theme_islands.button_size_m
+{
+    font: inherit;
+    font-size: 17px;
+}
+
+.breadcrumbs__version .select__button
+{
+    font: inherit;
+
+    color: inherit;
+    background: inherit;
+}
+
+.breadcrumbs__version .select__button::before
+{
+    border: none;
+    background: inherit;
+}
+
+.breadcrumbs__version .select__button.button_theme_islands.button_size_m .button__text
+{
+    width: 0;
+    margin: 0;
+
+    visibility: hidden;
+}
+/*
+.breadcrumbs__version .select_theme_islands .select__tick
+{
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: none;
+
+    transform: rotate(-45deg);
+}
+*/
+
+.breadcrumbs__version .select__button
+{
+    position: relative;
+    left: 3px;
+    top: 2px;
+
+    padding: 0;
+
+    color: #fff;
+    background: inherit;
+}
+
+.breadcrumbs__version .select__button::before
+{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumbs__version .select__button.button_hovered::before
+{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumbs__version .select__button.button_pressed::before
+{
+    background: rgba(255, 255, 255, 0.05);
+}
