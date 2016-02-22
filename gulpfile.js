@@ -1,5 +1,5 @@
 var path = require('path'),
-    fs = require('fs')
+    fs = require('fs'),
     cp = require('child_process'),
 
     _ = require('lodash'),
@@ -121,9 +121,25 @@ gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
         .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang])));
 })));
 
+
 gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
     return compilePages(lang, BEMTREE, BEMHTML);
 })));
+
+gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
+    return gulp.src(path.join(DATA_DIRS[lang], 'static/*'))
+        .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang], 'static')));
+})));
+
+gulp.task('build-html', () => Q.all(LANGUAGES.map(compilePages)));
+gulp.task('compile-pages', () => runSequence(
+    'enb-make',
+    'drop-templates-cache',
+    'copy-static',
+    'copy-static-images',
+    'copy-sitemap-xml',
+    'build-html'
+));
 
 // Наблюдатель
 
