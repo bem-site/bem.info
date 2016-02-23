@@ -67,18 +67,19 @@ function buildData(lang) {
     });
 }
 
-function compilePages(lang, bemtree, bemhtml) {
+function compilePages(lang, bundle) {
     return runSubProcess('./lib/template.js', {
         cwd: process.cwd(),
         encoding: 'utf-8',
         env: {
             GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            bemtree: JSON.stringify(bemtree),
-            bemhtml: JSON.stringify(bemhtml),
+            bemtree: BEMTREE[bundle],
+            bemhtml: BEMHTML[bundle],
+            bundle,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
             langs: LANGUAGES,
-            lang: lang,
+            lang,
             DEBUG: process.env.DEBUG
         }
     });
@@ -122,7 +123,7 @@ gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
 })));
 
 gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
-    return compilePages(lang, BEMTREE, BEMHTML);
+    return Q.all(BUNDLES.map(compilePages.bind(null, lang)));
 })));
 
 gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
@@ -130,7 +131,6 @@ gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
         .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang], 'static')));
 })));
 
-gulp.task('build-html', () => Q.all(LANGUAGES.map(compilePages)));
 gulp.task('compile-pages', () => runSequence(
     'enb-make',
     'drop-templates-cache',
@@ -158,7 +158,8 @@ gulp.task('watch', () => {
         'build-html',
         done
     )));
-/*
+
+    /*
     BUNDLES.forEach(bundle => {
         gulp.watch([
                 BEMTREE[bundle], BEMHTML[bundle],
@@ -173,8 +174,6 @@ gulp.task('watch', () => {
                 //     bemhtml = {};
                 // bemtree[bundle] = BEMTREE[bundle];
                 // bemhtml[bundle] = BEMHTML[bundle];
-// TODO: pass `bemtree` and `bemhtml` instead of `BEMTREE` and `BEMHTML`
-// TODO: ask bemer@ how to filter model for pages with passed bundle
 
                 LANGUAGES.forEach(lang => {
                     compilePages(lang, BEMTREE, BEMHTML);
@@ -184,7 +183,7 @@ gulp.task('watch', () => {
             })
         );
     });
-*/
+    */
 });
 
 gulp.task('browser-sync', () => {
@@ -216,6 +215,7 @@ gulp.task('default', (done) => runSequence(
     'data-build',
     'enb-make',
     'copy-static',
+    'copy-static-images',
     'copy-sitemap-xml',
     'build-html',
     'watch',
