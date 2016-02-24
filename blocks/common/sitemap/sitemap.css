@@ -35,7 +35,7 @@
 }
 
 /* Hide all siblings then sitemap is shown */
-.sitemap_opened ~ div
+.sitemap_opened ~ div, .sitemap_opened ~ footer
 {
     display: none;
 }
