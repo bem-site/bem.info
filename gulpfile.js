@@ -15,10 +15,10 @@ var path = require('path'),
 const LANGUAGES = ['en', 'ru'];
 
 const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = './.gorshochek/cache/' + language;
+    prev[language] = './.cache/gorshochek-cache-' + language;
     return prev;
 }, {});
-const DATA_DIR_PREFIX = './.gorshochek/data-';
+const DATA_DIR_PREFIX = './.cache/gorshochek-data-';
 const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = DATA_DIR_PREFIX + language;
     return prev;
