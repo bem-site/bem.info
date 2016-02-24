@@ -20,5 +20,4 @@ npm-debug.log
 
 token
 output-*
-data-*
-.gorshochek
+.cache
