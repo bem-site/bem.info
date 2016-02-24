@@ -11,11 +11,11 @@ block('footer').content()(function() {
                 {
                     elem: 'community',
                     content: [
-                        {
+                        this.data.lang === 'ru' ? {
                             elem: 'channel',
-                            url: 'https://ru.bem.info/forum/',
-                            content: 'Форум'
-                        },
+                            url: 'https://web-standards.slack.com/messages/bem/',
+                            content: 'Slack'
+                        } : undefined,
                         {
                             elem: 'channel',
                             url: 'https://www.facebook.com/groups/bem.info/',
