@@ -21,7 +21,7 @@
 
     /* search__switcher.svg properties */
     fill: none;
-    stroke: #fff;
+    stroke: rgba(255, 255, 255, 0.65);
     stroke-width: 2;
 
     transition: all 0.3s cubic-bezier(.02, .01, .47, 1);
@@ -34,7 +34,7 @@
 
 .search__open:hover
 {
-    opacity: 0.8;
+    stroke: #fff;
 }
 
 .search__close
@@ -56,19 +56,20 @@
 
     stroke: #000;
     background: #fc0;
-}
-
-.search_opened .search__open:hover
-{
-    opacity: 1;
+    transition: all 0.3s;
 }
 
 .search_opened .search__close
 {
     right: 0;
 
-    stroke: #fff;
+    stroke: rgba(255, 255, 255, 0.65);
     background: none;
+}
+
+.search_opened .search__close:hover
+{
+    stroke: #fff;
 }
 
 .search__form

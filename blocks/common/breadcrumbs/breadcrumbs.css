@@ -41,10 +41,10 @@
     text-decoration: none;
 
     color: rgba(255, 255, 255, 0.55);
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
 .breadcrumbs__link:hover
 {
-    opacity: 0.8;
+    color: #fff;
 }

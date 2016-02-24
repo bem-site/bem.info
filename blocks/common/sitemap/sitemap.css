@@ -131,6 +131,7 @@
     text-decoration: none;
 
     color: #fff;
+    transition: all 0.3s;
 }
 
 .sitemap .link:hover
