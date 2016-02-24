@@ -128,7 +128,7 @@ gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
 
 gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
     return gulp.src(path.join(DATA_DIRS[lang], 'static/*'))
-        .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang], 'static')));
+        .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
 gulp.task('compile-pages', () => runSequence(
