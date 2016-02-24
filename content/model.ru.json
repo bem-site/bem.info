@@ -65,7 +65,69 @@
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.ru.md",
     "bundle": "methodology"
   },
-
+  {
+    "url": "/tools/",
+    "site": "/tools/",
+    "title": "Инструменты",
+    "content": "Здесь будет страница про БЭМ-инструменты",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/",
+    "title": "bem-tools",
+    "content": "bem-tools",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/init/",
+    "site": "/tools/bem-tools/",
+    "title": "init",
+    "source": "init",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/make/",
+    "site": "/tools/bem-tools/",
+    "title": "make",
+    "content": "bem-tools-make",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/create/",
+    "site": "/tools/bem-tools/",
+    "title": "create",
+    "content": "bem-tools-create",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/find/",
+    "site": "/tools/bem-tools/",
+    "title": "find",
+    "content": "bem-tools-find",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-config/",
+    "site": "/tools/bem-config/",
+    "title": "bem-config",
+    "source": "https://github.com/bem-contrib/bem-config/blob/master/README.md",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-fs-scheme/",
+    "site": "/tools/bem-fs-scheme/",
+    "title": "bem-fs-scheme",
+    "source": "https://github.com/bem-contrib/bem-fs-scheme/blob/master/README.md",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-naming/",
+    "site": "/tools/bem-naming/",
+    "title": "bem-naming",
+    "source": "https://github.com/bem/bem-naming/blob/master/README.ru.md",
+    "bundle": "tools"
+  },
   {
     "url": "/platform/",
     "site": "/platform/",
@@ -156,13 +218,6 @@
     "site": "/platform/techs/i-bem.js/",
     "title": "Reference",
     "content": "TODO",
-    "bundle": "platform"
-  },
-  {
-    "url": "/platform/tools/",
-    "site": "/platform/tools/",
-    "title": "Инструменты",
-    "content": "Здесь будет страница про БЭМ-инструменты",
     "bundle": "platform"
   },
   {

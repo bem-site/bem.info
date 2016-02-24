@@ -71,6 +71,9 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology' ]);
     configNodes(config, isProd, 'bundles/methodology', [ 'blocks/methodology' ]);
 
+    configNodes(config, isProd, 'bundles/tools-index', [ 'blocks/promo', 'blocks/tools' ]);
+    configNodes(config, isProd, 'bundles/tools', [ 'blocks/tools' ]);
+
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
     configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
 
