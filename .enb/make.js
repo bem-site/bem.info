@@ -74,6 +74,5 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
     configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
 
-    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community' ]);
-    configNodes(config, isProd, 'bundles/community', [ 'blocks/community' ]);
+    configNodes(config, isProd, 'bundles/forum', [ 'blocks/forum' ]);
 };

@@ -205,17 +205,17 @@
     "bundle": "platform"
   },
   {
-    "url": "/community/",
-    "site": "/community/",
-    "title": "Community",
-    "content": "Info about BEM community will upper here",
-    "bundle": "community-index"
-  },
-  {
-    "url": "/community/typo/",
-    "site": "/community/",
+    "url": "/platform/typo/",
+    "site": "/platform/",
     "title": "Типографика",
     "source": "./content/deprecated/typo.ru.md",
-    "bundle": "community"
+    "bundle": "platform"
+  },
+  {
+    "url": "/forum/",
+    "site": "/forum/",
+    "title": "Forum",
+    "content": "FORUM",
+    "bundle": "forum"
   }
 ]

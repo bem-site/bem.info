@@ -4,8 +4,7 @@ block('nav').content()(function() {
         lang = data.lang;
 
     return data.pages.filter(function(item) {
-        if (/^\/forum/.test(item.url)) return true;
-        if (!new RegExp('^' + site).test(item.url)) return;
+        if (!new RegExp('^' + site).test(item.url) || item.url.indexOf('/forum/') != -1) return;
         return item.url.split('/').length === site.split('/').length + 1;
     }).map(function(item) {
         var isCurrent = this.data.page.url === item.url,

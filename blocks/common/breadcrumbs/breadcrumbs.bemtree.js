@@ -8,8 +8,6 @@ block('breadcrumbs').content()(function() {
     data.pages.filter(function(item) {
         if (item.url === '/') return;
 
-        if (/^\/forum/.test(item.url)) return;
-
         if (!new RegExp('^' + item.url).test(site)) return;
 
         return item.url.split('/').length <= site.split('/').length;

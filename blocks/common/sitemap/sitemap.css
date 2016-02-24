@@ -24,7 +24,7 @@
     background: #330505;
 }
 
-.sitemap_site_community
+.sitemap_site_forum
 {
     background: #25330a;
 }
@@ -79,7 +79,7 @@
     border-color: rgba(255, 153, 153, 0.3);
 }
 
-.sitemap__title_site_community
+.sitemap__title_site_forum
 {
     border-color: rgba(177, 204, 122, 0.3);
 }

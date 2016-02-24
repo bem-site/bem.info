@@ -20,10 +20,27 @@
     margin: 18px 0 0 29px;
 }
 
+.header__forum
+{
+    margin: 19px 40px 0 10px;
+
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.65);
+    transition: color 0.3s;
+}
+
+.header__forum:hover
+{
+    color: #fff;
+}
+
 .header__lang
 {
     position: relative;
     z-index: 1;
 
-    margin: 22px -64px 0 5px;
+    margin: 19px -64px 0 5px;
+    padding: 0;
 }

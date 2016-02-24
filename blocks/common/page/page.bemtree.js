@@ -11,10 +11,10 @@ block('page').content()(function() {
             block: 'sitemap',
             mods: { site: siteMod }
         },
-        {
+        page.url !== '/forum/' ? {
             block: 'nav',
             mods: siteMod === 'index' ? { site: siteMod } : {}
-        },
+        } : undefined,
         page.type === 'bemjson.js' ? page.content : { block: 'article' },
         {
             block: 'footer',
