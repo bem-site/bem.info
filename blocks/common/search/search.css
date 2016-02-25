@@ -86,21 +86,6 @@
     background: #444;
 }
 
-.search__form_site_methodology
-{
-    background: #08364d;
-}
-
-.search__form_site_platform
-{
-    background: #4d0808;
-}
-
-.search__form_site_forum
-{
-    background: #384d0f;
-}
-
 .search_opened .search__form
 {
     display: block;

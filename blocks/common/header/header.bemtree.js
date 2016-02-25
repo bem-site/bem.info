@@ -15,7 +15,7 @@ block('header').content()(function() {
         url.indexOf('/forum/') === -1 ? {
             elem: 'forum',
             content: 'Форум',   // TODO: i18n
-            url: '/forum/'
+            attrs: { href: '/forum/' }
         } : undefined,
         {
             block: 'lang-switcher',

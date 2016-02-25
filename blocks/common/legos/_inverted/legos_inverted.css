@@ -1,0 +1,30 @@
+.legos_inverted::before, .legos_inverted .legos__lego
+{
+	background-image: url(legos_inverted.png);
+}
+
+.legos_inverted::before
+{
+    margin-top: 0;
+    background-position: 0 -112px;
+}
+
+.legos_inverted .legos__lego_height_2
+{
+	background-position: 0 -28px;
+}
+
+.legos_inverted .legos__lego_height_3
+{
+	background-position: 0 -56px;
+}
+
+.legos_inverted .legos__lego_height_4
+{
+	background-position: 0 -84px;
+}
+
+.legos_inverted .legos__lego_height_5
+{
+	background-position: 0 -112px;
+}

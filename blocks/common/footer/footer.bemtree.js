@@ -2,7 +2,7 @@ block('footer').content()(function() {
     return [
         {
             block: 'legos',
-            mods: { color: 'inverted' }
+            mods: { inverted: true }
         },
         apply('promo'),
         {

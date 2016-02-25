@@ -1,24 +1,18 @@
 block('page').content()(function() {
-    var data = this.data,
-        page = data.page,
-        siteMod = data.siteMod;
+    var page = this.data.page;
 
     return [
         {
             block: 'header'
         },
         {
-            block: 'sitemap',
-            mods: { site: siteMod }
+            block: 'sitemap'
         },
-        page.url !== '/forum/' ? {
-            block: 'nav',
-            mods: siteMod === 'index' ? { site: siteMod } : {}
-        } : undefined,
+        page.url !== '/forum/' ? { block: 'nav' } : undefined,
         page.type === 'bemjson.js' ? page.content : { block: 'article' },
         {
             block: 'footer',
-            mix: { block: 'page-bg', mods: { site: siteMod }}
+            mix: { block: 'page-bg' }
         }
     ];
 });

@@ -14,9 +14,8 @@ block('nav').content()(function() {
             elem: 'item',
             elemMods: { current: isCurrent },
             content: isCurrent ? title : {
-                block: 'link',
-                mix: { block: 'nav', elem: 'link' },
-                url: item.url,
+                elem: 'link',
+                attrs: { href: item.url },
                 content: title
             }
         };

@@ -7,9 +7,8 @@ block('lang-switcher').content()(function() {
         return {
             elem: 'item',
             content: isCurrent ? lang : {
-                block: 'link',
-                mix: { block: 'lang-switcher', elem: 'link' },
-                url: '//' + lang + '.bem.info' + data.page.url,
+                elem: 'link',
+                attrs: { href: '//' + lang + '.bem.info' + data.page.url },
                 content: lang
             }
         };

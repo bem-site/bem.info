@@ -26,8 +26,8 @@ block('sitemap').content()(function() {
                         elem: 'current',
                         content: rootSitePage.title
                     } : {
-                        block: 'link',
-                        url: rootSitePage.url,
+                        elem: 'link',
+                        attrs: { href: rootSitePage.url },
                         content: rootSitePage.title
                     }
                 },
@@ -43,8 +43,8 @@ block('sitemap').content()(function() {
                                 elem: 'current',
                                 content: page.title
                             } : {
-                                block: 'link',
-                                url: page.url,
+                                elem: 'link',
+                                attrs: { href: page.url },
                                 content: page.title
                             }
                         }

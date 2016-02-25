@@ -3,7 +3,7 @@
         'page-bg',
         {
             block: 'legos',
-            mods: { color: 'inverted' }
+            mods: { inverted: true }
         }
     ]
 })

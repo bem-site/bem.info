@@ -5,5 +5,6 @@ block('sitemap')(
     elem('tree-item-1').tag()('li'),
     elem('tree-item-2').tag()('li'),
     elem('tree-item-3').tag()('li'),
-    elem('current').tag()('strong')
+    elem('current').tag()('strong'),
+    elem('link').tag()('a')
 );

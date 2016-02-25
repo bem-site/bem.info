@@ -14,21 +14,6 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.sitemap_site_methodology
-{
-    background: #052433;
-}
-
-.sitemap_site_platform
-{
-    background: #330505;
-}
-
-.sitemap_site_forum
-{
-    background: #25330a;
-}
-
 .sitemap_opened
 {
     display: flex;
@@ -67,21 +52,6 @@
     text-indent: 10px;
 
     border-bottom: 1px solid;
-}
-
-.sitemap__title_site_methodology
-{
-    border-color: rgba(161, 207, 230, 0.3);
-}
-
-.sitemap__title_site_platform
-{
-    border-color: rgba(255, 153, 153, 0.3);
-}
-
-.sitemap__title_site_forum
-{
-    border-color: rgba(177, 204, 122, 0.3);
 }
 
 .sitemap__current
@@ -126,7 +96,7 @@
     margin: -18px 0 14px 60px;
 }
 
-.sitemap .link
+.sitemap__link
 {
     text-decoration: none;
 
@@ -134,27 +104,12 @@
     transition: all 0.3s;
 }
 
-.sitemap .link:hover
+.sitemap__link:hover
 {
     opacity: 0.8;
 }
 
-.sitemap :visited
+.sitemap__link:visited
 {
     color: rgb(180, 180, 180);
-}
-
-.sitemap_site_methodology :visited
-{
-    color: rgb(155, 167, 173);
-}
-
-.sitemap_site_platform :visited
-{
-    color: rgb(173, 155, 155);
-}
-
-.sitemap_site_comminity :visited
-{
-    color: rgb(167, 173, 157);
 }

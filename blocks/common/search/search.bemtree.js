@@ -21,7 +21,8 @@ block('search').content()(function() {
                     },
                     name: 'text',
                     autocomplete: false,
-                    placeholder : lang === 'ru' ? 'Искать' : 'Search'
+                    // TODO i18n
+                    placeholder: lang === 'ru' ? 'Искать' : 'Search'
                 },
                 {
                     tag: 'input', attrs: { type: 'hidden', name: 'reqenc' }
