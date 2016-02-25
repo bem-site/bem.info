@@ -9,8 +9,6 @@
         {
             block : 'input',
             mods : {
-                theme : 'islands',
-                size : 'l',
                 type : 'search'
                 // 'has-clear': true
             }

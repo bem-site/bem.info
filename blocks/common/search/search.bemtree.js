@@ -13,12 +13,7 @@ block('search').content()(function() {
             content: [
                 {
                     block: 'input',
-                    mix: { block: 'search', elem: 'input' },
-                    mods: {
-                        theme: 'islands',
-                        size: 'l',
-                        type: 'search'
-                    },
+                    mods: { type: 'search' },
                     name: 'text',
                     autocomplete: false,
                     // TODO i18n
