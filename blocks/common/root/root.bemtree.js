@@ -1,8 +1,9 @@
 block('root').replace()(function() {
     var data = this.data = this.ctx.data,
-        rootUrl = data.page.site,
+        page = data.page,
+        rootUrl = page.site,
         siteMod = data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1],
-        siteBundle = siteMod + (data.page.url === rootUrl && (rootUrl !== '/' && rootUrl !== '/forum/') ? '-index' : '');
+        siteBundle = siteMod + (page.url === rootUrl && (rootUrl !== '/' && rootUrl !== '/forum/') ? '-index' : '');
 
     // libs extraction (begin)
     var libs = {};
@@ -23,7 +24,7 @@ block('root').replace()(function() {
 
     return {
         block: 'page',
-        title: data.page.head.title,
+        title: page.head.title,
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
             { elem: 'css', url: '/' + siteBundle + '.min.css' }
