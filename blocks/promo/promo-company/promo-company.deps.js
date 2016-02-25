@@ -1,0 +1,10 @@
+({
+    shouldDeps: [
+        {
+            elems: [
+                'company',
+                'title'
+            ]
+        }
+    ]
+})
