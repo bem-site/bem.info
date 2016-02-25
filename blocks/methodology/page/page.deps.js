@@ -1,5 +1,7 @@
 ({
     shouldDeps: [
-        'article'
+        'article',
+        'promo-company',
+        'promo-talk-about-us'
     ]
 })
