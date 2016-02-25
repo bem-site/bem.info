@@ -77,7 +77,7 @@
     "site": "/tools/bem-tools/",
     "title": "bem-tools",
     "content": "bem-tools",
-    "bundle": "tools"
+    "bundle": "tools-index"
   },
   {
     "url": "/tools/bem-tools/init/",
