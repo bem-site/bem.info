@@ -86,8 +86,24 @@
     ]
 },
     {
-        block: 'promo-talk-about-us',
+        block: 'promo-quotes',
         content: [
+            {
+                block: 'promo-title',
+                mods: { color: 'white', size: 'small' },
+                mix: [{ block: 'promo-companies', elem: 'title' }],
+                content: [
+                    {
+                        elem: 'highlighted-words',
+                        content: 'PEOPLE'
+                    },
+                    ' TALK ABOUT ',
+                    {
+                        elem: 'strong',
+                        content: 'BEM'
+                    }
+                ]
+            },
             '<div style="height:500px;background: #17a1e6;width:100%"></div>',
             {
                 block: 'legos',
@@ -96,15 +112,21 @@
         ]
     },
     {
-        block: 'promo-company',
+        block: 'promo-companies',
         content: [
             {
-                block: 'promo-content',
-                mix: [{block: 'promo-company', elem: 'title'}],
+                block: 'promo-title',
+                mods: { color: 'black', size: 'small' },
+                mix: [{ block: 'promo-companies', elem: 'title' }],
                 content: [
                     {
-                        elem: 'text',
-                        content: 'Companies use <strong>BEM</strong>'
+                        elem: 'highlighted-words',
+                        content: 'Companies'
+                    },
+                    ' use ',
+                    {
+                        elem: 'strong',
+                        content: 'BEM'
                     }
                 ]
             },

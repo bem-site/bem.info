@@ -1,20 +1,20 @@
 .promo-title
 {
-	font-size: 36px;
+    line-height: 2.1;
+    letter-spacing: 2px;
 	font-weight: normal;
-
-	clear: both;
-
-	margin: 0 0 0 213px;
-	padding: 2em 0 1em;
+    text-transform: uppercase;
 }
 
-.promo-title__em
-{
-	font-style: normal;
+/*TODO: find article design
+/*.promo-title*/
+/*{*/
+    /*font-size: 36px;*/
+    /*font-weight: normal;*/
 
-	display: inline-block;
-	padding: 0 0.2em;
+    /*clear: both;*/
 
-	background: rgb(255, 206, 0);
-}
+    /*margin: 0 0 0 213px;*/
+    /*padding: 2em 0 1em;*/
+/*}*/
+

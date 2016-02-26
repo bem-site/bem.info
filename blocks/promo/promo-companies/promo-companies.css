@@ -1,8 +1,8 @@
-.promo-company{
+.promo-companies
+{
     display: flex;
     justify-content:space-around;
     align-content:center;
     flex-wrap: wrap;
     padding: 0 0 50px;
 }
-
