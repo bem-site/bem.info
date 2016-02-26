@@ -1,16 +1,15 @@
-block('promo-company')(
-    tag()('div'),
+block('promo-companies')(
     elem('title')(
         tag()('div')
     ),
     elem('company')(
         tag()('a'),
         attrs()(function () {
-            return {href: this.ctx.url};
+            return { href: this.ctx.url };
         }),
         content()(function () {
             return {
-                elem: 'company-img',
+                elem: 'logo',
                 attrs: {
                     alt: applyNext(),
                     src: this.ctx.src
@@ -19,7 +18,7 @@ block('promo-company')(
         })
     ),
 
-    elem('company-img')(
+    elem('logo')(
         tag()('img')
     )
 );

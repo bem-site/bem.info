@@ -1,0 +1,9 @@
+.promo-companies__company
+{
+    width: 30%;
+    text-align: center;
+}
+.promo-companies__company__logo
+{
+    height: 150px;
+}
