@@ -4,7 +4,7 @@ provide(BEMDOM.decl(this.name, {
     onSetMod: {
         js: {
             inited: function() {
-                this.input = this.findBlockOn('input', 'input');
+                this.input = this.findBlockInside('input');
 
                 Form.on(this.domElem, 'submit', this._onClose, this);
 
