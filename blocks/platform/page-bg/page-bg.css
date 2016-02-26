@@ -1,4 +1,4 @@
 .page-bg
 {
-    /*background: linear-gradient(0deg, rgba(23, 161, 230, 0.9), rgba(51, 207, 244, 0.9)), rgba(23, 161, 230, 0.9) url(page-bg.png) 0 -2px;*/
+    background: url(page-bg.png) -19px -5px;
 }
