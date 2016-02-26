@@ -69,42 +69,70 @@
     "url": "/tools/",
     "site": "/tools/",
     "title": "Инструменты",
-    "content": "Здесь будет страница про БЭМ-инструменты",
-    "bundle": "tools"
+    "content": "Tools page",
+    "bundle": "tools-index"
   },
   {
     "url": "/tools/bem-tools/",
     "site": "/tools/bem-tools/",
     "title": "bem-tools",
-    "content": "bem-tools",
-    "bundle": "tools-index"
+    "content": "bem-tools<br>bem-tools<br>bem-tools<br>bem-tools<br>bem-tools<br>",
+    "bundle": "tools"
   },
   {
     "url": "/tools/bem-tools/init/",
-    "site": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/init/",
     "title": "init",
-    "source": "init",
+    "content": "bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/init/changelog/",
+    "site": "/tools/bem-tools/init/",
+    "title": "Changelog",
+    "source": "bem-tools-init changelog",
     "bundle": "tools"
   },
   {
     "url": "/tools/bem-tools/make/",
-    "site": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/make/",
     "title": "make",
     "content": "bem-tools-make",
     "bundle": "tools"
   },
   {
+    "url": "/tools/bem-tools/make/changelog/",
+    "site": "/tools/bem-tools/make/",
+    "title": "Changelog",
+    "source": "bem-tools-make changelog",
+    "bundle": "tools"
+  },
+  {
     "url": "/tools/bem-tools/create/",
-    "site": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/create/",
     "title": "create",
     "content": "bem-tools-create",
     "bundle": "tools"
   },
   {
+    "url": "/tools/bem-tools/create/changelog/",
+    "site": "/tools/bem-tools/create/",
+    "title": "Changelog",
+    "source": "bem-tools-create changelog",
+    "bundle": "tools"
+  },
+  {
     "url": "/tools/bem-tools/find/",
-    "site": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/find/",
     "title": "find",
     "content": "bem-tools-find",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/find/changelog/",
+    "site": "/tools/bem-tools/find/",
+    "title": "Changelog",
+    "source": "bem-tools-find changelog",
     "bundle": "tools"
   },
   {
