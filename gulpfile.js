@@ -52,21 +52,6 @@ function runSubProcess(file, options) {
     return defer.promise;
 }
 
-function buildData(lang) {
-    return runSubProcess('./lib/data-builder.js', {
-        cwd: process.cwd(),
-        encoding: 'utf-8',
-        env: {
-            GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            modelPath: `./content/model.${lang}.json`,
-            host: `http://${lang}.bem.info`,
-            dest: DATA_DIRS[lang],
-            token: process.env.TOKEN,
-            DEBUG: process.env.DEBUG
-        }
-    });
-}
-
 function compilePages(lang, bundle) {
     return runSubProcess('./lib/template.js', {
         cwd: process.cwd(),
@@ -102,7 +87,20 @@ gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
 gulp.task('data-clean', () => Q.all(_.values(DATA_DIRS).map(removeFolder)));
 gulp.task('data-cache-clean', () => Q.all(_.values(CACHE_DIRS).map(removeFolder)));
-gulp.task('data-build', () => Q.all(LANGUAGES.map(buildData)));
+gulp.task('data-build', () => Q.all(LANGUAGES.map(lang => {
+    return runSubProcess('./lib/data-builder.js', {
+        cwd: process.cwd(),
+        encoding: 'utf-8',
+        env: {
+            GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
+            modelPath: `./content/model.${lang}.json`,
+            host: `http://${lang}.bem.info`,
+            dest: DATA_DIRS[lang],
+            token: process.env.TOKEN,
+            DEBUG: process.env.DEBUG
+        }
+    });
+})));
 gulp.task('data-rebuild', () => runSequence('data-clean', 'data-cache-clean', 'data-build'));
 
 // Шаблонизация данных
@@ -144,46 +142,30 @@ gulp.task('compile-pages', () => runSequence(
 
 gulp.task('watch', () => {
     gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
-
-    // watch changes in blocks and build using enb
-    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence(
-        'enb-make',
-        'copy-static', // copy final css and js to output folders
-        done
-    )));
+    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
-    gulp.watch([BUNDLES_DIR + '/*/*.bem{tree,html}.js', DATA_DIR_PREFIX + '*/**'],
-        batch((event, done) => runSequence(
-        'build-html',
-        done
-    )));
-
-    /*
     BUNDLES.forEach(bundle => {
+        var bemtree = path.join(process.cwd(), BEMTREE[bundle]),
+            bemhtml = path.join(process.cwd(), BEMHTML[bundle]);
         gulp.watch([
-                BEMTREE[bundle], BEMHTML[bundle],
+                bemtree, bemhtml,
                 path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
                 path.join(DATA_DIR_PREFIX + '*', bundle + '.js'),
             ],
             batch((event, done) => {
-                delete require.cache[path.join(process.cwd(), BEMTREE[bundle])];
-                delete require.cache[path.join(process.cwd(), BEMHTML[bundle])];
-
-                // var bemtree = {},
-                //     bemhtml = {};
-                // bemtree[bundle] = BEMTREE[bundle];
-                // bemhtml[bundle] = BEMHTML[bundle];
+                delete require.cache[bemhtml];
+                delete require.cache[bemtree];
 
                 LANGUAGES.forEach(lang => {
-                    compilePages(lang, BEMTREE, BEMHTML);
+                    console.log('lang', lang, 'bundle', bundle);
+                    compilePages(lang, bundle)
                 });
 
                 done();
-            })
-        );
+            }
+        ));
     });
-    */
 });
 
 gulp.task('browser-sync', () => {
