@@ -1,6 +1,6 @@
 [{
     block: 'promo-header',
-    mods: {site: 'methodology'},
+    mods: { site: 'methodology' },
     content: [
         {
             elem: 'header',
@@ -28,10 +28,11 @@
     ]
 }, {
     block: 'promo-main',
-    mods: {site: 'methodology'},
+    mods: { site: 'methodology' },
     content: [
         {
             block: 'promo-title',
+            mix: { block: 'promo-main', elem: 'title' },
             content: [
                 {
                     elem: 'strong',
@@ -45,7 +46,7 @@
             content: [
                 {
                     elem: 'image',
-                    mods: {side: 'left'},
+                    mods: { side: 'left' },
                     src: 'https://music.yandex.ru/blocks/artist-pics/artist-pics.200x200.png'
                 },
                 {
@@ -59,7 +60,7 @@
             content: [
                 {
                     elem: 'image',
-                    mods: {side: 'right'},
+                    mods: { side: 'right' },
                     src: 'https://music.yandex.ru/blocks/artist-pics/artist-pics.200x200.png'
                 },
                 {
@@ -70,6 +71,7 @@
         },
         {
             block: 'promo-title',
+            mix: { block: 'promo-main', elem: 'title' },
             content: [
                 {
                     elem: 'strong',
@@ -77,7 +79,7 @@
                 },
                 ' is a ',
                 {
-                    elem: 'em',
+                    elem: 'highlighted-words',
                     content: 'component-oriented approach'
                 },
                 ' for construction web-interfaces'
@@ -91,7 +93,7 @@
             {
                 block: 'promo-title',
                 mods: { color: 'white', size: 'small' },
-                mix: [{ block: 'promo-companies', elem: 'title' }],
+                mix: { block: 'promo-companies', elem: 'title' },
                 content: [
                     {
                         elem: 'highlighted-words',
@@ -104,7 +106,11 @@
                     }
                 ]
             },
-            '<div style="height:500px;background: #17a1e6;width:100%"></div>',
+            {
+                attrs: {
+                    style: 'height: 500px; background: #17a1e6;'
+                }
+            },
             {
                 block: 'legos',
                 mods: {color: 'white'}
