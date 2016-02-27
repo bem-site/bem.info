@@ -1,7 +1,7 @@
 [{
     shouldDeps : [
         {
-            elems : ['em', 'highlighted-words'],
+            elems : 'highlighted-words',
             mods : {
                 size : ['big', 'small'],
                 color : ['white', 'black']

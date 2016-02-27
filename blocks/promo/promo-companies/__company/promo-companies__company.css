@@ -1,9 +1,11 @@
 .promo-companies__company
 {
+    display: inline-block;
     width: 30%;
     text-align: center;
 }
-.promo-companies__company__logo
+
+.promo-companies__logo
 {
     height: 150px;
 }

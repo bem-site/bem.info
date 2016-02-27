@@ -1,6 +1,7 @@
 .promo-title__highlighted-words
 {
-    background-color: #ffcc00;
-    color: #000000;
+    background: #fc0;
+    color: #000;
     display: inline-block;
+    padding: 0 0.2em;
 }
