@@ -1,0 +1,17 @@
+.promo-section
+{
+    display: flex;
+    justify-content:space-around;
+    align-content:center;
+    flex-wrap: wrap;
+}
+
+.promo-section_color_blue
+{
+    background:#17a1e6;
+}
+
+.promo-section_color_white
+{
+    background: #fff;
+}
