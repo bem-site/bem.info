@@ -4,6 +4,7 @@
     justify-content:space-around;
     align-content:center;
     flex-wrap: wrap;
+    padding: 50px 0;
 }
 
 .promo-section_color_blue

@@ -87,8 +87,7 @@
         }
     ]
 }, {
-    block: 'promo-section',
-    mods: { color: 'blue', type: 'quotes' },
+    block: 'promo-quotes',
     content: [
         {
             block: 'legos',
@@ -110,106 +109,117 @@
                 }
             ]
         },
-        { 
-            elem: 'quote',
-            photo: '/promo-section__quote_default-photo.png',
-            name: 'Билл Гейтс',
-            position: 'создатель Майкрософта',
-            text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-          },
-        {     elem: 'quote', 
-             photo: '/promo-section__quote_default-photo.png',
-             name: 'Билл Гейтс1', 
-             position: 'создатель Майкрософта', 
-             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
-        }, 
-        {     elem: 'quote',
-             photo: '/promo-section__quote_default-photo.png',
-             name: 'Билл Гейтс2', 
-             position: 'создатель Майкрософта',
-             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
-        }, 
-        {     elem: 'quote', 
-             photo: '/promo-section__quote_default-photo.png', 
-             name: 'Билл Гейтс3', 
-             position: 'создатель Майкрософта',
-             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-          },
-         { 
-             elem: 'quote',
-             photo: '/promo-section__quote_default-photo.png',
-             name: 'Билл Гейтс4',
-             position: 'создатель Майкрософта',
-             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-           },
-        { 
-            elem: 'quote',
-            photo: '/promo-section__quote_default-photo.png',
-            name: 'Билл Гейтс5',
-            position: 'создатель Майкрософта',
-            text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
+        {
+            block: 'promo-section',
+            mods: { color: 'blue'},
+            content: [
+                {
+                    elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {     elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс1',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {     elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс2',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {     elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс3',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс4',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс5',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {     elem: 'quote',
+                    photo: '/promo-section__quote_default-photo.png',
+                    name: 'Билл Гейтс6',
+                    position: 'создатель Майкрософта',
+                    text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                }
+            ]
         },
-         {     elem: 'quote',
-             photo: '/promo-section__quote_default-photo.png', 
-             name: 'Билл Гейтс6', 
-             position: 'создатель Майкрософта',
-             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-           },
         {
             block: 'legos',
             mods: { color: 'white' }
         }
     ]
 }, {
-        block: 'promo-section',
-        mods: { color: 'white', type: 'companies' },
-        content: [
-            {
-                block: 'promo-title',
-                mods: { color: 'black', size: 'small' },
-                mix: [{ block: 'promo-section', elem: 'title' }],
-                content: [
-                    {
-                        elem: 'highlighted-words',
-                        content: 'Companies'
-                    },
-                    ' use ',
-                    {
-                        elem: 'strong',
-                        content: 'BEM'
-                    }
-                ]
-            },
-            {
-                elem: 'company',
-                content: 'Yandex',
-                url: '//yandex.ru',
-                src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-            },
-            {
-                elem: 'company',
-                content: 'Google',
-                url: '//google.com',
-                src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-            },
-            {
-                elem: 'company',
-                content: 'Apple',
-                url: '//apple.ru',
-                src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-            },
-            {
-                elem: 'company',
-                content: 'Tesla',
-                url: '//tesla.com',
-                src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-            },
-            {
-                elem: 'company',
-                content: 'Mail.ru',
-                url: '//mail.ru',
-                src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-            }
-        ]
+    block: 'promo-companies',
+    content: [
+        {
+            block: 'promo-title',
+            mods: { color: 'black', size: 'small' },
+            mix: { block: 'promo-section', elem: 'title' },
+            content: [
+                {
+                    elem: 'highlighted-words',
+                    content: 'Companies'
+                },
+                ' use ',
+                {
+                    elem: 'strong',
+                    content: 'BEM'
+                }
+            ]
+        },
+        {
+            block: 'promo-section',
+            mods: { color: 'white'},
+            content: [
+                {
+                    elem: 'company',
+                    content: 'Yandex',
+                    url: '//yandex.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Google',
+                    url: '//google.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Apple',
+                    url: '//apple.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Tesla',
+                    url: '//tesla.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Mail.ru',
+                    url: '//mail.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                }
+            ]
+        }
+    ]
 }
 ]
