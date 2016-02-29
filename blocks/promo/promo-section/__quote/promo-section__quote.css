@@ -1,0 +1,52 @@
+.promo-section__quote
+{
+    margin: 20px 0;
+    text-align: center;
+    width: 25%;
+}
+
+.promo-section__photo
+{
+    /* Картинка через CSS, т.к. борщик не подтягивает картинки из шаблонов*/
+    background: url("promo-section__quote_default-photo.png");
+    margin: 10px auto;
+    height: 140px;
+    width: 140px;
+    border-radius: 50px;
+    background-size: cover;
+}
+
+.promo-section__text{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.promo-section__text_name
+{
+    font-size: 16px;
+}
+
+.promo-section__text_italic
+{
+    font-style: italic;
+}
+
+.promo-section__text_bold
+{
+    font-weight: 600;
+}
+
+.promo-section__text_quotes{
+    width: 180px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.promo-section__text_quotes::after{
+    content:'».';
+}
+
+.promo-section__text_quotes::before{
+    content:'«';
+}

@@ -86,44 +86,88 @@
             ]
         }
     ]
-},
-    {
-        block: 'promo-quotes',
-        content: [
-            {
-                block: 'promo-title',
-                mods: { color: 'white', size: 'small' },
-                mix: { block: 'promo-companies', elem: 'title' },
-                content: [
-                    {
-                        elem: 'highlighted-words',
-                        content: 'PEOPLE'
-                    },
-                    ' TALK ABOUT ',
-                    {
-                        elem: 'strong',
-                        content: 'BEM'
-                    }
-                ]
-            },
-            {
-                attrs: {
-                    style: 'height: 500px; background: #17a1e6;'
+}, {
+    block: 'promo-section',
+    mods: { color: 'blue', type: 'quotes' },
+    content: [
+        {
+            block: 'legos',
+            mods: { inverted: true }
+        },
+        {
+            block: 'promo-title',
+            mods: { color: 'white', size: 'small' },
+            mix: { block: 'promo-section', elem: 'title' },
+            content: [
+                {
+                    elem: 'highlighted-words',
+                    content: 'PEOPLE'
+                },
+                ' TALK ABOUT ',
+                {
+                    elem: 'strong',
+                    content: 'BEM'
                 }
-            },
-            {
-                block: 'legos',
-                mods: {color: 'white'}
-            }
-        ]
-    },
-    {
-        block: 'promo-companies',
+            ]
+        },
+        { 
+            elem: 'quote',
+            photo: '/promo-section__quote_default-photo.png',
+            name: 'Билл Гейтс',
+            position: 'создатель Майкрософта',
+            text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+          },
+        {     elem: 'quote', 
+             photo: '/promo-section__quote_default-photo.png',
+             name: 'Билл Гейтс1', 
+             position: 'создатель Майкрософта', 
+             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
+        }, 
+        {     elem: 'quote',
+             photo: '/promo-section__quote_default-photo.png',
+             name: 'Билл Гейтс2', 
+             position: 'создатель Майкрософта',
+             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
+        }, 
+        {     elem: 'quote', 
+             photo: '/promo-section__quote_default-photo.png', 
+             name: 'Билл Гейтс3', 
+             position: 'создатель Майкрософта',
+             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+          },
+         { 
+             elem: 'quote',
+             photo: '/promo-section__quote_default-photo.png',
+             name: 'Билл Гейтс4',
+             position: 'создатель Майкрософта',
+             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+           },
+        { 
+            elem: 'quote',
+            photo: '/promo-section__quote_default-photo.png',
+            name: 'Билл Гейтс5',
+            position: 'создатель Майкрософта',
+            text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'  
+        },
+         {     elem: 'quote',
+             photo: '/promo-section__quote_default-photo.png', 
+             name: 'Билл Гейтс6', 
+             position: 'создатель Майкрософта',
+             text:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+           },
+        {
+            block: 'legos',
+            mods: { color: 'white' }
+        }
+    ]
+}, {
+        block: 'promo-section',
+        mods: { color: 'white', type: 'companies' },
         content: [
             {
                 block: 'promo-title',
                 mods: { color: 'black', size: 'small' },
-                mix: [{ block: 'promo-companies', elem: 'title' }],
+                mix: [{ block: 'promo-section', elem: 'title' }],
                 content: [
                     {
                         elem: 'highlighted-words',
@@ -167,5 +211,5 @@
                 src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
             }
         ]
-    }
+}
 ]

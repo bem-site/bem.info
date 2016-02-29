@@ -3,7 +3,7 @@
         'promo-page',
         'promo-header',
         'promo-main',
-        'promo-companies',
+        'promo-section',
         'promo-quotes',
         'promo-footer',
         {
