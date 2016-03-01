@@ -192,6 +192,10 @@ gulp.task('browser-sync', () => {
     });
 });
 
+gulp.task('libs-build', function(done) {
+    // require('bem-lib-site-generator').data(path.resolve('path/to/library'));
+});
+
 gulp.task('default', (done) => runSequence(
     'copy-misc-to-output',
     'data-build',
