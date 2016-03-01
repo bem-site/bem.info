@@ -16,7 +16,7 @@
     "browser-sync": "^2.11.1",
     "enb": "^0.17.2",
     "enb-bem-techs": "^2.0.0",
-    "enb-bemxjst": "tadatuta/enb-bemxjst#4.x-bemtree",
+    "enb-bemxjst": "^5.0.0",
     "enb-borschik": "^2.3.0",
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
