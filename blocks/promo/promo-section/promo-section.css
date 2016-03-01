@@ -1,10 +1,9 @@
 .promo-section
 {
-    display: flex;
-    justify-content:space-around;
-    align-content:center;
-    flex-wrap: wrap;
-    padding: 50px 0;
+    position: relative;
+    padding: 0 0 50px;
+    display: inline-block;
+    width: 100%;
 }
 
 .promo-section_color_blue
@@ -15,4 +14,18 @@
 .promo-section_color_white
 {
     background: #fff;
+}
+
+.promo-section_color_beige
+{
+    background: #f3f1ed;
+}
+
+.promo-section_color_black
+{
+    background: #333;
+}
+
+.promo-section__title{
+    padding: 50px 0;
 }

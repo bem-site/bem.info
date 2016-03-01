@@ -1,3 +1,10 @@
+.legos_color_white,
+.legos_color_blue{
+    background: none;
+    position: absolute;
+    top: -119px;
+}
+
 .legos__lego_height_2
 {
 	background-position: 0 28px;

@@ -32,11 +32,7 @@ block('promo-header')(
                     }
                 ]
             },
-			applyNext(),
-			{
-				block: 'legos',
-                mods: { color: 'white' }
-			}
+			applyNext()
 	 	]
 	})
 );

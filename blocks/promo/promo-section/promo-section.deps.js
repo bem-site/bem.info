@@ -1,14 +1,8 @@
 ({
-    shouldDeps: [
+    shouldDeps : [
         {
-            elems: [
-                'company',
-                'title',
-                'quote'
-            ],
-            mods:{
-                type:['companies','quotes']
-            }
+            block: 'legos',
+            mods: { color: ['blue', 'white'] }
         }
     ]
 })

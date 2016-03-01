@@ -1,8 +1,8 @@
-.promo-title__highlighted-words
+.promo-title__highlighted
 {
     background: #fc0;
-    color: #000;
     display: inline-block;
     padding: 0 0.2em;
     font-weight: 600;
+    color: #000;
 }
