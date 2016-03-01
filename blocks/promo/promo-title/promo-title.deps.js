@@ -1,10 +1,9 @@
 [{
     shouldDeps : [
         {
-            elems : 'highlighted-words',
+            elems : 'highlighted',
             mods : {
-                size : ['big', 'small'],
-                color : ['white', 'black']
+                color : ['white']
             }
         }
     ]
