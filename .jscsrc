@@ -47,7 +47,6 @@
     "disallowMixedSpacesAndTabs": true,
     "requireCapitalizedConstructors": true,
     "disallowYodaConditions": true,
-    "requireSpaceAfterLineComment": true,
     "disallowNewlineBeforeBlockStatements": true,
     "requireSpacesInConditionalExpression": true,
     "requireLineFeedAtFileEnd": true,
