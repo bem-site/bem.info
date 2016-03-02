@@ -29,11 +29,8 @@
 },{
     block: 'promo-section',
     mods: { color: 'white'},
+    lego_mods: { color: 'white' },
     content: [
-        {
-            block: 'legos',
-            mods: { color: 'white' }
-        },
         {
             block: 'promo-title',
             content: 'white'
@@ -81,186 +78,93 @@
 }, {
     block: 'promo-section',
     mods: { color: 'blue'},
+    lego_mods: { color: 'blue' },
     content: [
-        { 
-            block: 'legos',
-            mods: { color: 'blue' } 
-        }, 
         { 
             block: 'promo-title', 
             mods: { color: 'white'}, 
             content: [ 
                 { 
                     elem: 'highlighted', 
-                    content: 'PEOPLE' 
+                    content: 'people' 
                 }, 
-                ' TALK ABOUT BEM', 
-                { 
-                    elem: 'strong', 
-                    content: 'BEM' 
-                } 
+                ' talk about bem',
             ] 
         },
         {
             block: 'promo-quotes',
             content: [
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс0'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс0',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс1'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс1',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс2'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс2',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс3'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс3',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс4'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс4',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс5'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс5',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem: 'quote',
-                    content: [
-                        {
-                            elem: 'name',
-                            content: 'Билл Гейтс'
-                        },
-                        {
-                            elem:'position',
-                            content:'создатель Майкрософта'
-                        },
-                        {
-                            elem:'photo',
-                            url:'/promo-section__quote_default-photo.png'
-                        },
-                        {
-                            elem: 'text',
-                            content:'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                        }
-                    ]
+                    name: 'Билл Гейтс6',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 }
-            ]
+            ].map(function(quote){
+                return {
+                    elem: 'quote',
+                    content: [
+                        {
+                            elem: 'name',
+                            content: quote.name
+                        },
+                        {
+                            elem:'position',
+                            content: quote.position
+                        },
+                        {
+                            elem:'photo',
+                            url: quote.photo
+                        },
+                        {
+                            elem: 'text',
+                            content: quote.text
+                        }
+                    ]
+                };
+            })
         }]
 }, {
     block: 'promo-section',
     mods: { color: 'white'},
+    lego_mods: { color: 'white' },
     content: [
-        { 
-            block: 'legos',
-            mods: { color: 'white' }
-        },
         {
             block: 'promo-title', 
             mods: { color: 'black'},  
