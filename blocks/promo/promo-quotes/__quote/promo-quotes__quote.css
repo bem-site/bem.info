@@ -8,8 +8,8 @@
 
 .promo-quotes__photo
 {
-    /* Картинка через CSS, т.к. борщик не подтягивает картинки из шаблонов*/
-    background: url("promo-quotes__quote_default-photo.png");
+    /* TODO: Картинка через CSS, т.к. борщик не подтягивает картинки из шаблонов*/
+    background: url(promo-quotes__quote_default-photo.png);
     margin: 10px auto;
     height: 140px;
     width: 140px;
@@ -21,19 +21,9 @@
 {
     font-size: 14px;
     width: 180px;
-    margin: 0 auto;
+    margin: auto;
     display: inline-block;
     font-style: italic;
-}
-
-.promo-quotes__text::after
-{
-    content:'».';
-}
-
-.promo-quotes__text::before
-{
-    content:'«';
 }
 
 .promo-quotes__name

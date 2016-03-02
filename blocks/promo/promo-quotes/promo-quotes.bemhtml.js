@@ -9,15 +9,18 @@ block('promo-quotes')(
         tag()('dd')
     ),
     elem('photo')(
+        // TODO: use external images via
         //tag()('img'),
         attrs()(function() {
+            var ctx = this.ctx;
+
             return this.extend(applyNext(), {
-                //src: '/promo-section__quote.svg'
-                //alt: applyNext()
+                src: ctx.url,
+                alt: ctx.alt
             });
         })
     ),
     elem('text')(
-        tag()('quote')
+        tag()('blockquote')
     )
 );

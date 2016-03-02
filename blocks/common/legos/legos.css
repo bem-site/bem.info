@@ -18,6 +18,9 @@
 	height: 119px;
 
 	white-space: nowrap;
+
+    position: absolute;
+    top: -119px;
 }
 
 .legos__lego
