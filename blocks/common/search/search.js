@@ -7,7 +7,6 @@ provide(BEMDOM.decl(this.name, {
                 this.input = this.findBlockInside('input');
 
                 Form.on(this.domElem, 'submit', this._onClose, this);
-
                 // Close search on input's focus lost
                 this.input.on({ modName: 'focused', modVal: '' }, this._onClose, this);
             }
@@ -27,7 +26,6 @@ provide(BEMDOM.decl(this.name, {
         var _this = this;
 
         this.unbindFromDoc('keydown');
-
         // setTimeout is used to have time to handle submit button on input's focus lost
         setTimeout(function() {
             _this.delMod('opened');
