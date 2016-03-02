@@ -6,10 +6,10 @@
 	z-index: 0;
 
 	margin: -1px 0 0 0;
+    padding-bottom: 80px;
 
 	overflow: hidden;
 	white-space: nowrap;
-    padding-bottom: 80px;
 }
 
 .promo-header__header

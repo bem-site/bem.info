@@ -113,7 +113,7 @@
                         },
                         {
                             elem:'photo',
-                            elemMods:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem:'position',
@@ -138,7 +138,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',
@@ -159,7 +159,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',
@@ -180,7 +180,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',
@@ -201,7 +201,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',
@@ -222,7 +222,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',
@@ -243,7 +243,7 @@
                         },
                         {
                             elem:'photo',
-                            attrs:{ src:'/promo-section__quote_default-photo.png'}
+                            url:'/promo-section__quote_default-photo.png'
                         },
                         {
                             elem: 'text',

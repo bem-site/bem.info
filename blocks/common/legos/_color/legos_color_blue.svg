@@ -1,9 +1,1 @@
-<svg width="22" height="119" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
- <g>
-  <title>Layer 1</title>
-  <g>
-   <rect fill="#17a1e6" height="7" width="14" y="0" x="4"/>
-   <rect fill="#17a1e6" height="112" width="22" y="7" x="0"/>
-  </g>
- </g>
-</svg>
+<svg width="22" height="119" xmlns="http://www.w3.org/2000/svg"><title>Layer 1</title><path d="M4 0h14v7H4zM0 7h22v112H0z" fill="#17a1e6"/></svg>

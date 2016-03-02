@@ -1,11 +1,5 @@
-.legos_color_blue
+.legos_color_blue::before,
+.legos_color_blue .legos__lego
 {
-    background: none;
-    position: absolute;
-    top: -119px;
-}
-
-.legos_color_blue::before, .legos_color_blue .legos__lego
-{
-    background-image: url("legos_color_blue.svg");
+    background-image: url(legos_color_blue.svg);
 }
