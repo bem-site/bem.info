@@ -1,7 +1,5 @@
 #!/bin/bash
 
-REPO_LINK="git@github.com:AnyaTyu/bem.info.git"
-
 # create new folder
 mkdir ../temp
 
@@ -13,10 +11,13 @@ cd ../temp
 
 # init new repo
 git init
-git remote add origin $REPO_LINK
+git remote add origin $1
 
 git checkout -b gh-pages
 
 git add .
 git commit -m"create deploy"
 git push -f origin gh-pages
+
+cd ..
+rm -rf temp
