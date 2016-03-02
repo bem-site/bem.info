@@ -13,7 +13,8 @@
 
 .legos
 {
-	display: block;
+	display: inline-block;
+    width: 100%;
 	overflow: hidden;
 	height: 119px;
 
