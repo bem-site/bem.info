@@ -1,0 +1,5 @@
+.legos_color_beige::before,
+.legos_color_beige .legos__lego
+{
+    background-image: url(legos_color_beige.png);
+}

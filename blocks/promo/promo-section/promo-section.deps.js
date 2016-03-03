@@ -2,7 +2,7 @@
     shouldDeps : [
         {
             block: 'legos',
-            mods: { color: ['blue', 'white'] }
+            mods: { color: ['blue', 'white', 'black', 'beige'] }
         }
     ]
 })

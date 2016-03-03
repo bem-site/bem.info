@@ -1,0 +1,5 @@
+.legos_color_black::before,
+.legos_color_black .legos__lego
+{
+    background-image: url(legos_color_black.png);
+}
