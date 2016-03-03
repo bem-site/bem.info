@@ -27,7 +27,7 @@ block('sitemap').content()(function() {
                         content: rootSitePage.title
                     } : {
                         elem: 'link',
-                        attrs: { href: rootSitePage.url },
+                        attrs: { href: data.root + rootSitePage.url },
                         content: rootSitePage.title
                     }
                 },
@@ -44,7 +44,7 @@ block('sitemap').content()(function() {
                                 content: page.title
                             } : {
                                 elem: 'link',
-                                attrs: { href: page.url },
+                                attrs: { href: data.root + page.url },
                                 content: page.title
                             }
                         }
