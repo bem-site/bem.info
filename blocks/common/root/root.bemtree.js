@@ -27,10 +27,10 @@ block('root').replace()(function() {
         title: page.head.title,
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
-            { elem: 'css', url: '/' + siteBundle + '.min.css' }
+            { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' }
         ],
         scripts: [
-            { elem: 'js', url: '/' + siteBundle + '.min.js' }
+            { elem: 'js', url: data.root + '/' + siteBundle + '.min.js' }
         ]
     };
 });

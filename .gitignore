@@ -19,5 +19,5 @@ npm-debug.log
 !*pages*/.bem/*
 
 token
-output-*
+output
 .cache

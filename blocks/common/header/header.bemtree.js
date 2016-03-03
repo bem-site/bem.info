@@ -1,12 +1,13 @@
 block('header').content()(function() {
-    var url = this.data.page.url,
-        siteMod = this.data.siteMod;
+    var data = this.data,
+        url = data.page.url,
+        siteMod = data.siteMod;
 
     return [
         {
             block: 'logo',
             mix: { block: 'header', elem: 'logo' },
-            url: url !== '/' ? '/' : undefined
+            url: url !== '/' ? data.root + '/' : undefined
         },
         {
             block: 'breadcrumbs',
@@ -15,7 +16,7 @@ block('header').content()(function() {
         url.indexOf('/forum/') === -1 ? {
             elem: 'forum',
             content: 'Форум',   // TODO: i18n
-            attrs: { href: '/forum/' }
+            attrs: { href: data.root + '/forum/' }
         } : undefined,
         {
             block: 'lang-switcher',
