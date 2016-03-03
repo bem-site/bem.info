@@ -22,8 +22,6 @@ designer:
     планшетная
 
 	/methodology
-		отзывы людей
-		компании
         иллюстрации
 
 	/index
@@ -54,11 +52,6 @@ designer:
     можем ли мы использовать http 2.0 ?
     посмотреть на диаграмме загрузку бандла с common внутри и common отдельно
     имя файла css/js как md5 в /
-
-search
-	посмотреть нужна ли тема islands и как обойтись без неё, не надо будет столько перекрывать
-	реализовать suggest
-	реализовать поиск по сайту
 
 
 Implement marked-renderer-video, see https://github.com/bem-site/bem-md-renderer/blob/master/index.js
