@@ -5,9 +5,9 @@
         "libs/**",
         "node_modules/**",
         "lib/",
-	".cache/",
-	"output-*/",
-	"bundles/"
+        ".cache/",
+        "output-*/",
+        "bundles/"
     ],
     "fileExtensions": [".js"],
     "requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
