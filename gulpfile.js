@@ -10,7 +10,8 @@ var path = require('path'),
 
     gulp = require('gulp'),
     batch = require('gulp-batch'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    csscomb = require('gulp-csscomb');
 
 const LANGUAGES = ['ru'];
 
@@ -144,6 +145,7 @@ gulp.task('compile-pages', () => runSequence(
 
 gulp.task('watch', () => {
     gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data', done)));
+    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('styles', 'styles', done)));
     gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
@@ -180,7 +182,7 @@ gulp.task('browser-sync', () => {
         logLevel: 'silent',
         notify: false,
         ui: false,
-        middleware: function (req, res, next) {
+        middleware: function(req, res, next) {
             req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
             next();
         }
@@ -191,6 +193,11 @@ gulp.task('libs-build', function(done) {
     // require('bem-lib-site-generator').data(path.resolve('path/to/library'));
 });
 
+gulp.task('styles', function() {
+    return gulp.src('src/blocks/**/*.css')
+        .pipe(csscomb());
+});
+
 gulp.task('default', (done) => runSequence(
     'copy-misc-to-output',
     'data',
@@ -199,6 +206,7 @@ gulp.task('default', (done) => runSequence(
     'copy-static-images',
     'copy-sitemap-xml',
     'build-html',
+    'styles',
     'watch',
     'browser-sync',
     done
