@@ -1,10 +1,21 @@
 block('promo-footer').mod('site', 'methodology').content()([
     {
-        elem : 'text',
-        content : 'You should <strong>use BEM</strong> too'
+        block : 'promo-title',
+        mix: { block: 'promo-footer', elem: 'title' },
+        mods:{ color:'white'},
+        content : [
+            'You should ',
+            {
+                elem: 'highlighted',
+                content:'use BEM'
+            },
+            ' too'
+            ]
     },
     {
-        elem : 'text',
+        block : 'promo-title',
+        mix: { block: 'promo-footer', elem: 'title' },
+        mods:{ color:'white', size :'small' },
         content : 'There are no reason not to do so'
     },
     {

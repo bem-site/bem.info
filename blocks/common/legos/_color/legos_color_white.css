@@ -1,4 +1,5 @@
-.legos_color_white::before, .legos_color_white .legos__lego
+.legos_color_white::before,
+.legos_color_white .legos__lego
 {
-	background-image: url(legos_color_white.png);
+	background-image: url(legos_color_white.svg);
 }

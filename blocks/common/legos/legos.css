@@ -13,11 +13,15 @@
 
 .legos
 {
-	display: block;
+	display: inline-block;
+    width: 100%;
 	overflow: hidden;
 	height: 119px;
 
 	white-space: nowrap;
+
+    position: absolute;
+    top: -119px;
 }
 
 .legos__lego

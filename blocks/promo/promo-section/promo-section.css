@@ -1,0 +1,31 @@
+.promo-section
+{
+    position: relative;
+    padding: 0 0 50px;
+    display: inline-block;
+    width: 100%;
+}
+
+.promo-section_color_blue
+{
+    background:#17a1e6;
+}
+
+.promo-section_color_white
+{
+    background: #fff;
+}
+
+.promo-section_color_beige
+{
+    background: #f3f1ed;
+}
+
+.promo-section_color_black
+{
+    background: #333;
+}
+
+.promo-section__title{
+    padding: 50px 0;
+}

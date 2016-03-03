@@ -9,6 +9,11 @@
     background-position: 0 -112px;
 }
 
+.legos_inverted
+{
+    position: static;
+}
+
 .legos_inverted .legos__lego_height_2
 {
 	background-position: 0 -28px;

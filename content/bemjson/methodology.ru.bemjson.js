@@ -1,86 +1,214 @@
 [{
-    block : 'promo-header',
-    mods : { site : 'methodology' },
-    content : [
+    block: 'promo-header',
+    mods: { site: 'methodology' },
+    content: [
         {
-            elem : 'header',
-            content : [
+            elem: 'header',
+            content: [
                 {
-                    elem : 'title',
-                    content : 'БЭМ',
+                    elem: 'title',
+                    content: 'БЭМ',
                 },
                 ' ',
                 {
-                    elem : 'subtitle',
-                    content : 'методология'
+                    elem: 'subtitle',
+                    content: 'методология'
                 }
             ]
         },
         {
-            block : 'promo-action',
-            url : 'key-concepts/',
-            content : 'Документация'
+            block: 'promo-action',
+            url: 'key-concepts/',
+            content: 'Документация'
         },
         {
-            elem : 'text',
-            content : 'Методология <strong>БЭМ</strong> содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
+            elem: 'text',
+            content: 'Методология <strong>БЭМ</strong> содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
+        }
+    ]
+},{
+    block: 'promo-section',
+    mods: { color: 'white'},
+    lego_mods: { color: 'white' },
+    content: [
+        {
+            block: 'promo-title',
+            content: 'white'
+        },
+        {
+            block: 'promo-feature'
         }
     ]
 }, {
-    block : 'promo-main',
-    mods : { site : 'methodology' },
-    content : [
+    block: 'promo-section',
+    mods: { color: 'beige'},
+    content: [
         {
-            block : 'promo-title',
-            content : [
-                {
-                    elem : 'strong',
-                    content: 'BEM'
-                },
-                ' stands for Block, Element, Modifier'
-            ]
+            block: 'promo-title',
+            content: 'beige'
         },
         {
-            block : 'promo-content',
-            content : [
+            block: 'promo-feature'
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'black'},
+    content: [
+        {
+            block: 'promo-title',
+            content: 'black'
+        },
+        {
+            block: 'promo-feature'
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'beige'},
+    content: [
+        {
+            block: 'promo-title',
+            content: 'beige'
+        },
+        {
+            block: 'promo-feature'
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'blue'},
+    lego_mods: { color: 'blue' },
+    content: [
+        { 
+            block: 'promo-title', 
+            mods: { color: 'white'}, 
+            content: [ 
+                { 
+                    elem: 'highlighted', 
+                    content: 'people' 
+                }, 
+                ' talk about bem',
+            ] 
+        },
+        {
+            block: 'promo-quotes',
+            content: [
                 {
-                    elem : 'image',
-                    mods : { side : 'left' },
-                    src: 'https://music.yandex.ru/blocks/artist-pics/artist-pics.200x200.png'
+                    name: 'Билл Гейтс0',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    elem : 'text',
-                    content : 'The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers.'
+                    name: 'Билл Гейтс1',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    name: 'Билл Гейтс2',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    name: 'Билл Гейтс3',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    name: 'Билл Гейтс4',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    name: 'Билл Гейтс5',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                },
+                {
+                    name: 'Билл Гейтс6',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 }
-            ]
-        },
+            ].map(function(quote){
+                return {
+                    elem: 'quote',
+                    content: [
+                        {
+                            elem: 'name',
+                            content: quote.name
+                        },
+                        {
+                            elem:'position',
+                            content: quote.position
+                        },
+                        {
+                            elem:'photo',
+                            url: quote.photo
+                        },
+                        {
+                            elem: 'text',
+                            content: quote.text
+                        }
+                    ]
+                };
+            })
+        }]
+}, {
+    block: 'promo-section',
+    mods: { color: 'white'},
+    lego_mods: { color: 'white' },
+    content: [
         {
-            block : 'promo-content',
-            content : [
-                {
-                    elem : 'image',
-                    mods : { side : 'right' },
-                    src: 'https://music.yandex.ru/blocks/artist-pics/artist-pics.200x200.png'
-                },
-                {
-                    elem : 'text',
-                    content : '<strong>The main idea</strong> of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers. The main idea of BEM methodology is to speed development process up and ease the teamwork of developers.'
-                }
-            ]
-        },
-        {
-            block : 'promo-title',
-            content : [
-                {
-                    elem : 'strong',
-                    content: 'BEM'
-                },
-                ' is a ',
-                {
-                    elem : 'em',
-                    content: 'component-oriented approach'
-                },
-                ' for construction web-interfaces'
+            block: 'promo-title', 
+            mods: { color: 'black'},  
+            content: [ 
+                { 
+                    elem: 'highlighted', 
+                    content: 'Companies' 
+                }, 
+                ' use BEM' 
+            ] 
+        }, 
+        { 
+            block: 'promo-companies',  
+            content: [
+                { 
+                    elem: 'company', 
+                    content: 'Yandex', 
+                    url: '//yandex.ru', 
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
+                }, 
+                { 
+                    elem: 'company', 
+                    content: 'Google', 
+                    url: '//google.com', 
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
+                }, 
+                { 
+                    elem: 'company', 
+                    content: 'Apple', 
+                    url: '//apple.ru', 
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
+                }, 
+                { 
+                    elem: 'company', 
+                    content: 'Tesla', 
+                    url: '//tesla.com', 
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
+                }, 
+                { 
+                    elem: 'company', 
+                    content: 'Mail.ru', 
+                    url: '//mail.ru', 
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
+                } 
             ]
         }
     ]

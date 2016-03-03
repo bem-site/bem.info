@@ -1,0 +1,39 @@
+.promo-quotes__quote
+{
+    text-align: center;
+    display: inline-block;
+    padding: 20px 4%;
+    line-height: 1.4;
+}
+
+.promo-quotes__photo
+{
+    /* TODO: Картинка через CSS, т.к. борщик не подтягивает картинки из шаблонов*/
+    background: url(promo-quotes__quote_default-photo.png);
+    margin: 10px auto;
+    height: 140px;
+    width: 140px;
+    border-radius: 50px;
+    background-size: cover;
+}
+
+.promo-quotes__text
+{
+    font-size: 14px;
+    width: 180px;
+    margin: auto;
+    display: inline-block;
+    font-style: italic;
+}
+
+.promo-quotes__name
+{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.promo-quotes__position
+{
+    font-size: 14px;
+    margin:0;
+}
