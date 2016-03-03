@@ -3,7 +3,7 @@ block('promo-section')(
       return [
           {
               block: 'legos',
-              mods: this.ctx.lego_mods
+              mods: { color: this.ctx.mods.color }
           },
           applyNext()
       ]

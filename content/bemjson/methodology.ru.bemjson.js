@@ -29,7 +29,6 @@
 },{
     block: 'promo-section',
     mods: { color: 'white'},
-    lego_mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
@@ -78,7 +77,6 @@
 }, {
     block: 'promo-section',
     mods: { color: 'blue'},
-    lego_mods: { color: 'blue' },
     content: [
         { 
             block: 'promo-title', 
@@ -163,7 +161,6 @@
 }, {
     block: 'promo-section',
     mods: { color: 'white'},
-    lego_mods: { color: 'white' },
     content: [
         {
             block: 'promo-title', 
