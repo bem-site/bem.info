@@ -16,7 +16,7 @@ block('breadcrumbs').content()(function() {
             elem: 'item',
             content: page.url === item.url ? item.title : {
                 elem: 'link',
-                attrs: { href: item.url },
+                attrs: { href: data.root + item.url },
                 content: item.title
             }
         });

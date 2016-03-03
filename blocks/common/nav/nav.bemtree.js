@@ -15,7 +15,7 @@ block('nav').content()(function() {
             elemMods: { current: isCurrent },
             content: isCurrent ? title : {
                 elem: 'link',
-                attrs: { href: item.url },
+                attrs: { href: data.root + item.url },
                 content: title
             }
         };

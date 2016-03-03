@@ -23,8 +23,9 @@ const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = DATA_DIR_PREFIX + language;
     return prev;
 }, {});
+const OUTPUT = './output/';
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = './output-' + language;
+    prev[language] = OUTPUT + language;
     return prev;
 }, {});
 
@@ -72,14 +73,17 @@ function compilePages(lang, bundle) {
 
 // Подготовка директорий output-*
 
-gulp.task('clean-output', () => Q.all(_.values(OUTPUT_DIRS).map(removeFolder)));
+gulp.task('clean-output', () => { removeFolder(OUTPUT); });
 
-gulp.task('copy-misc-to-output', ['clean-output'], () => Q.all(LANGUAGES.map(lang => {
-    return gulp.src([
-        'content/{favicon.ico,robots.txt}',
-        'blocks/index/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
-    ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
-})));
+gulp.task('copy-misc-to-output', ['clean-output'], () => {
+    Q.all(gulp.src('content/index.html').pipe(gulp.dest(OUTPUT)),
+        LANGUAGES.map(lang => {
+            return gulp.src([
+                'content/{favicon.ico,robots.txt}',
+                'blocks/index/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
+            ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
+    }));
+});
 
 gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
@@ -169,26 +173,19 @@ gulp.task('watch', () => {
 });
 
 gulp.task('browser-sync', () => {
-    const port = 8008;
-
-    LANGUAGES.forEach((lang, index) => {
-        browserSync.create().init({
-            files: OUTPUT_DIRS[lang] + '/**',
-            server: { baseDir: OUTPUT_DIRS[lang] },
-            port: port + index,
-            browser: ['google chrome', 'firefox', 'opera'],
-            open: false,
-            startPath: '/methodology/',
-            online: false,
-            logLevel: 'silent',
-            logFileChanges: false,
-            notify: false,
-            ui: false,
-            middleware: function (req, res, next) {
-                req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
-                next();
-            }
-        });
+    browserSync.create().init({
+        files: OUTPUT + '/**',
+        server: { baseDir: OUTPUT },
+        port: 8008,
+        open: false,
+        online: false,
+        logLevel: 'silent',
+        notify: false,
+        ui: false,
+        middleware: function (req, res, next) {
+            req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
+            next();
+        }
     });
 });
 
