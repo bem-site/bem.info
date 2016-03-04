@@ -3,6 +3,8 @@
         "libs/**/*.svg": ":encodeURIComponent:",
         "libs/**": ":base64:",
         "blocks/**/*.svg": ":encodeURIComponent:",
-        "blocks/**": ":base64:"
+        "blocks/**": ":base64:",
+        "content-en/**": "output/bem.info/en",
+        "content-ru/**": "output/bem.info/ru"
     }
 }

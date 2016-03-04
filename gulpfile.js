@@ -78,11 +78,11 @@ function compilePages(lang, bundle) {
 gulp.task('clean-output', () => { removeFolder(OUTPUT); });
 
 gulp.task('copy-misc-to-output', ['clean-output'], () => {
-    Q.all(gulp.src('content/index.html').pipe(gulp.dest(OUTPUT)),
-        gulp.src('content/index.html').pipe(gulp.dest(OUTPUT_ROOT)),
+    Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)),
+        gulp.src('static/index.html').pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
-                'content/{favicon.ico,robots.txt}'
+                'static/{favicon.ico,robots.txt}'
             ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
@@ -99,7 +99,7 @@ gulp.task('data-build', () => Q.all(LANGUAGES.map(lang => {
         encoding: 'utf-8',
         env: {
             GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            modelPath: `./content/model.${lang}.json`,
+            modelPath: `./content-${lang}/model.${lang}.json`,
             host: `http://${lang}.bem.info`,
             dest: DATA_DIRS[lang],
             token: process.env.TOKEN,
@@ -147,7 +147,7 @@ gulp.task('compile-pages', () => runSequence(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content/**/*'], batch((event, done) => runSequence('data-build', done)));
+    gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data-build', done)));
     gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
