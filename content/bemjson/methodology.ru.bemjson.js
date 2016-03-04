@@ -13,7 +13,11 @@
                 {
                     elem: 'subtitle',
                     content: 'методология'
-                }
+                }/*,
+                {
+                    tag: 'img',
+                    attrs: { src: freeze('logo.svg') }
+                }*/
             ]
         },
         {

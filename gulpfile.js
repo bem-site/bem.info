@@ -23,9 +23,10 @@ const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = DATA_DIR_PREFIX + language;
     return prev;
 }, {});
-const OUTPUT = './output/bem.info/';
+const OUTPUT = './output';
+const OUTPUT_ROOT = OUTPUT + '/bem.info/';
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = OUTPUT + language;
+    prev[language] = OUTPUT_ROOT + language;
     return prev;
 }, {});
 
@@ -64,6 +65,7 @@ function compilePages(lang, bundle) {
             bundle,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
+            destinationRoot: OUTPUT,
             langs: LANGUAGES,
             lang,
             DEBUG: process.env.DEBUG
@@ -77,11 +79,10 @@ gulp.task('clean-output', () => { removeFolder(OUTPUT); });
 
 gulp.task('copy-misc-to-output', ['clean-output'], () => {
     Q.all(gulp.src('content/index.html').pipe(gulp.dest(OUTPUT)),
-        gulp.src('content/index.html').pipe(gulp.dest(OUTPUT + '..')),
+        gulp.src('content/index.html').pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
-                'content/{favicon.ico,robots.txt}',
-                'blocks/index/footer/__copyright-logo/footer__copyright-logo_lang_{en,ru}.svgz'
+                'content/{favicon.ico,robots.txt}'
             ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
@@ -176,7 +177,7 @@ gulp.task('watch', () => {
 gulp.task('browser-sync', () => {
     browserSync.create().init({
         files: OUTPUT + '/**',
-        server: { baseDir: OUTPUT + '..' },
+        server: { baseDir: OUTPUT },
         port: 8008,
         open: false,
         online: false,
