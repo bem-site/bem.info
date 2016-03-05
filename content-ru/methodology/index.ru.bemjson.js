@@ -14,10 +14,10 @@
                     elem: 'subtitle',
                     content: 'методология'
                 }/*,
-                {
-                    tag: 'img',
-                    attrs: { src: freeze('logo.svg') }
-                }*/
+                 {
+                 tag: 'img',
+                 attrs: { src: freeze('logo.svg') }
+                 }*/
             ]
         },
         {
@@ -32,19 +32,43 @@
     ]
 },{
     block: 'promo-section',
-    mods: { color: 'white'},
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
-            content: 'white'
+            content: [
+                'EVERY WEB DEVELOPER MEETS THE',
+                {
+                    elem: 'highlighted',
+                    content: ' SAME PROBLEMS'
+                }
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-problems',
+            content: [
+                {
+                    elem: 'img',
+                    url: '/promo-problems__pictire.svg'
+                }
+            ]
+        },
+        {
+            block: 'promo-title',
+            content: [
+                'ALL THESE',
+                {
+                    elem: 'highlighted',
+                    content: ' PROBLEMS ARE SOLVED '
+                },
+                'BY BEM METHODOLOGY,',
+                'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE AN AGILE EASILY CHANGEABLE CODE'
+            ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige'},
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -56,7 +80,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'black'},
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
@@ -68,7 +92,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige'},
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -80,18 +104,18 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'blue'},
+    mods: { color: 'blue' },
     content: [
-        { 
-            block: 'promo-title', 
-            mods: { color: 'white'}, 
-            content: [ 
-                { 
-                    elem: 'highlighted', 
-                    content: 'people' 
-                }, 
+        {
+            block: 'promo-title',
+            mods: { color: 'white' },
+            content: [
+                {
+                    elem: 'highlighted',
+                    content: 'people'
+                },
                 ' talk about bem',
-            ] 
+            ]
         },
         {
             block: 'promo-quotes',
@@ -138,7 +162,7 @@
                     position: 'создатель Майкрософта',
                     text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 }
-            ].map(function(quote){
+            ].map(function(quote) {
                 return {
                     elem: 'quote',
                     content: [
@@ -147,11 +171,11 @@
                             content: quote.name
                         },
                         {
-                            elem:'position',
+                            elem: 'position',
                             content: quote.position
                         },
                         {
-                            elem:'photo',
+                            elem: 'photo',
                             url: quote.photo
                         },
                         {
@@ -164,52 +188,52 @@
         }]
 }, {
     block: 'promo-section',
-    mods: { color: 'white'},
+    mods: { color: 'white' },
     content: [
         {
-            block: 'promo-title', 
-            mods: { color: 'black'},  
-            content: [ 
-                { 
-                    elem: 'highlighted', 
-                    content: 'Companies' 
-                }, 
-                ' use BEM' 
-            ] 
-        }, 
-        { 
-            block: 'promo-companies',  
+            block: 'promo-title',
+            mods: { color: 'black' },
             content: [
-                { 
-                    elem: 'company', 
-                    content: 'Yandex', 
-                    url: '//yandex.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Google', 
-                    url: '//google.com', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Apple', 
-                    url: '//apple.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Tesla', 
-                    url: '//tesla.com', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Mail.ru', 
-                    url: '//mail.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                } 
+                {
+                    elem: 'highlighted',
+                    content: 'Companies'
+                },
+                ' use BEM'
+            ]
+        },
+        {
+            block: 'promo-companies',
+            content: [
+                {
+                    elem: 'company',
+                    content: 'Yandex',
+                    url: '//yandex.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Google',
+                    url: '//google.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Apple',
+                    url: '//apple.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Tesla',
+                    url: '//tesla.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Mail.ru',
+                    url: '//mail.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                }
             ]
         }
     ]

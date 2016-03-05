@@ -36,10 +36,34 @@
     content: [
         {
             block: 'promo-title',
-            content: 'white'
+            content: [
+                'EVERY WEB DEVELOPER MEETS THE',
+                {
+                    elem: 'highlighted',
+                    content: ' SAME PROBLEMS'
+                }
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-problems',
+            content: [
+                {
+                    elem: 'img',
+                    url: '/promo-problems__pictire.svg'
+                }
+            ]
+        },
+        {
+            block: 'promo-title',
+            content: [
+                'ALL THESE',
+                {
+                    elem: 'highlighted',
+                    content: ' PROBLEMS ARE SOLVED '
+                },
+                'BY BEM METHODOLOGY,',
+                'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE AN AGILE EASILY CHANGEABLE CODE'
+            ]
         }
     ]
 }, {
