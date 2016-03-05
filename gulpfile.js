@@ -80,7 +80,8 @@ gulp.task('copy-misc-to-output', ['clean-output'], () => {
     Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
-                'static/{favicon.ico,robots.txt}'
+                'static/{favicon.ico,robots.txt}',
+                'stattic/*.svg'
             ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
@@ -180,7 +181,7 @@ gulp.task('browser-sync', () => {
         logLevel: 'silent',
         notify: false,
         ui: false,
-        middleware: function (req, res, next) {
+        middleware: function(req, res, next) {
             req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
             next();
         }
