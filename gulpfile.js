@@ -75,19 +75,15 @@ function compilePages(lang, bundle) {
 
 // Подготовка директорий output-*
 
-gulp.task('clean-output', () => { removeFolder(OUTPUT); });
-
+gulp.task('clean-output', () => { rimraf.sync(OUTPUT); });
 gulp.task('copy-misc-to-output', ['clean-output'], () => {
-    Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)),
-        gulp.src('static/index.html').pipe(gulp.dest(OUTPUT_ROOT)),
+    Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
                 'static/{favicon.ico,robots.txt}'
             ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
-
-gulp.task('prepare-output', ['clean-output', 'copy-misc-to-output']);
 
 // Сборка данных
 
