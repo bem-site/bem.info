@@ -7,6 +7,7 @@
         'promo-companies',
         'promo-quotes',
         'promo-footer',
+        'promo-features',
         {
             block: 'footer',
             mods: { promo: true }

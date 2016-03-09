@@ -37,9 +37,6 @@
         {
             block: 'promo-title',
             content: 'white'
-        },
-        {
-            block: 'promo-feature'
         }
     ]
 }, {
@@ -48,10 +45,38 @@
     content: [
         {
             block: 'promo-title',
-            content: 'beige'
+            content: [
+                'BEM PROVIDES A ',
+                {
+                    elem: 'highlighted',
+                    content: ' CONSISTENT AND SANE'
+                },
+                ' ENVIRONMENT'
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            mods: { arrow: true },
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__bicycle.svg'
+                },
+                ' ',
+                {
+                    elem: 'separator'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__fortress.svg'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
         }
     ]
 }, {
@@ -60,10 +85,31 @@
     content: [
         {
             block: 'promo-title',
-            content: 'black'
+            mods: { color: 'white'},
+            content: 'ACCOMODATE CHANGES'
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-feature__lego_orange.png'
+                },
+                ' ',
+                {
+                    elem: 'separator',
+                    content: 'VS'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-feature__lego_green.png'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'}
+            ]
         }
     ]
 }, {
@@ -72,10 +118,37 @@
     content: [
         {
             block: 'promo-title',
-            content: 'beige'
+            content: [
+                {
+                    elem: 'highlighted',
+                    content: 'GROW AND SCALE '
+                },
+                'YOUR CODEBASE'
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            mods: { arrow: true },
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__shovel.svg'
+                },
+                ' ',
+                {
+                    elem: 'separator'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__tractor.svg'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
         }
     ]
 }, {

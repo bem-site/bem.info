@@ -1,29 +1,29 @@
 module.exports = {
-    options : {
-        boss : true,
-        eqeqeq : true,
-        evil : true,
-        expr : true,
-        forin : true,
-        immed : true,
-        loopfunc : true,
-        maxdepth : 4,
-        maxlen : 120,
-        noarg : true,
-        noempty : true,
-        onecase : true,
-        quotmark : 'single',
-        sub : true,
-        supernew : true,
-        undef : true,
-        unused : true
+    options: {
+        boss: true,
+        eqeqeq: true,
+        evil: true,
+        expr: true,
+        forin: true,
+        immed: true,
+        loopfunc: true,
+        maxdepth: 4,
+        maxlen: 120,
+        noarg: true,
+        noempty: true,
+        onecase: true,
+        quotmark: 'single',
+        sub: true,
+        supernew: true,
+        undef: true,
+        unused: true
     },
 
-    groups : {
-        browserjs : {
-            options : {
-                browser : true,
-                predef : [
+    groups: {
+        browserjs: {
+            options: {
+                browser: true,
+                predef: [
                     'console',
                     'modules',
                     'Promise',
@@ -31,7 +31,7 @@ module.exports = {
                 ]
             },
             //includes : ['common.blocks/**/*.js'],
-            excludes : [
+            excludes: [
                 '**/*.i18n/*.js',
                 '**/*.bem/*.js',
                 '**/*.min.js',
@@ -44,9 +44,9 @@ module.exports = {
             ]
         },
 
-        bemhtml : {
-            options : {
-                predef : [
+        bemhtml: {
+            options: {
+                predef: [
                     'oninit',
                     'apply',
                     'applyCtx',
@@ -75,9 +75,9 @@ module.exports = {
             //includes : ['common.blocks/**/*.bemhtml.js']
         },
 
-        bemtree : {
-            options : {
-                predef : [
+        bemtree: {
+            options: {
+                predef: [
                     'oninit',
                     'apply',
                     'applyCtx',

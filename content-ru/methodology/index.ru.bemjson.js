@@ -14,10 +14,10 @@
                     elem: 'subtitle',
                     content: 'методология'
                 }/*,
-                {
-                    tag: 'img',
-                    attrs: { src: freeze('logo.svg') }
-                }*/
+                 {
+                 tag: 'img',
+                 attrs: { src: freeze('logo.svg') }
+                 }*/
             ]
         },
         {
@@ -32,66 +32,140 @@
     ]
 },{
     block: 'promo-section',
-    mods: { color: 'white'},
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
             content: 'white'
-        },
-        {
-            block: 'promo-feature'
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige'},
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
-            content: 'beige'
+            content: [
+                'BEM PROVIDES A ',
+                {
+                    elem: 'highlighted',
+                    content: ' CONSISTENT AND SANE'
+                },
+                ' ENVIRONMENT'
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            mods: { arrow: true },
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__bicycle.svg'
+                },
+                ' ',
+                {
+                    elem: 'separator'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__fortress.svg'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'black'},
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
-            content: 'black'
+            mods: { color: 'white' },
+            content: 'ACCOMODATE CHANGES'
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-feature__lego_orange.png'
+                },
+                ' ',
+                {
+                    elem: 'separator',
+                    content: 'VS'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-feature__lego_green.png'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige'},
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
-            content: 'beige'
+            content: [
+                {
+                    elem: 'highlighted',
+                    content: 'GROW AND SCALE '
+                },
+                'YOUR CODEBASE'
+            ]
         },
         {
-            block: 'promo-feature'
+            block: 'promo-features',
+            mods: { arrow: true },
+            content: [
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__shovel.svg'
+                },
+                ' ',
+                {
+                    elem: 'separator'
+                },
+                ' ',
+                {
+                    elem: 'image',
+                    url: '/bem.info/ru/promo-features__tractor.svg'
+                },
+                ' ',
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'blue'},
+    mods: { color: 'blue' },
     content: [
-        { 
-            block: 'promo-title', 
-            mods: { color: 'white'}, 
-            content: [ 
-                { 
-                    elem: 'highlighted', 
-                    content: 'people' 
-                }, 
+        {
+            block: 'promo-title',
+            mods: { color: 'white' },
+            content: [
+                {
+                    elem: 'highlighted',
+                    content: 'people'
+                },
                 ' talk about bem',
-            ] 
+            ]
         },
         {
             block: 'promo-quotes',
@@ -138,7 +212,7 @@
                     position: 'создатель Майкрософта',
                     text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 }
-            ].map(function(quote){
+            ].map(function(quote) {
                 return {
                     elem: 'quote',
                     content: [
@@ -147,11 +221,11 @@
                             content: quote.name
                         },
                         {
-                            elem:'position',
+                            elem: 'position',
                             content: quote.position
                         },
                         {
-                            elem:'photo',
+                            elem: 'photo',
                             url: quote.photo
                         },
                         {
@@ -164,52 +238,52 @@
         }]
 }, {
     block: 'promo-section',
-    mods: { color: 'white'},
+    mods: { color: 'white' },
     content: [
         {
-            block: 'promo-title', 
-            mods: { color: 'black'},  
-            content: [ 
-                { 
-                    elem: 'highlighted', 
-                    content: 'Companies' 
-                }, 
-                ' use BEM' 
-            ] 
-        }, 
-        { 
-            block: 'promo-companies',  
+            block: 'promo-title',
+            mods: { color: 'black' },
             content: [
-                { 
-                    elem: 'company', 
-                    content: 'Yandex', 
-                    url: '//yandex.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Google', 
-                    url: '//google.com', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Apple', 
-                    url: '//apple.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Tesla', 
-                    url: '//tesla.com', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                }, 
-                { 
-                    elem: 'company', 
-                    content: 'Mail.ru', 
-                    url: '//mail.ru', 
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png' 
-                } 
+                {
+                    elem: 'highlighted',
+                    content: 'Companies'
+                },
+                ' use BEM'
+            ]
+        },
+        {
+            block: 'promo-companies',
+            content: [
+                {
+                    elem: 'company',
+                    content: 'Yandex',
+                    url: '//yandex.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Google',
+                    url: '//google.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Apple',
+                    url: '//apple.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Tesla',
+                    url: '//tesla.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                },
+                {
+                    elem: 'company',
+                    content: 'Mail.ru',
+                    url: '//mail.ru',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                }
             ]
         }
     ]

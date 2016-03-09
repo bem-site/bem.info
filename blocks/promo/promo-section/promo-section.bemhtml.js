@@ -1,5 +1,5 @@
 block('promo-section')(
-  content()(function(){
+  content()(function() {
       return [
           {
               block: 'legos',
