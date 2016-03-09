@@ -89,7 +89,7 @@ gulp.task('copy-misc-to-output', ['clean-output'], () => {
 
 gulp.task('data-clean', () => Q.all(_.values(DATA_DIRS).map(removeFolder)));
 gulp.task('data-cache-clean', () => Q.all(_.values(CACHE_DIRS).map(removeFolder)));
-gulp.task('data-build', () => Q.all(LANGUAGES.map(lang => {
+gulp.task('data', () => Q.all(LANGUAGES.map(lang => {
     return runSubProcess('./lib/data-builder.js', {
         cwd: process.cwd(),
         encoding: 'utf-8',
@@ -103,7 +103,7 @@ gulp.task('data-build', () => Q.all(LANGUAGES.map(lang => {
         }
     });
 })));
-gulp.task('data-rebuild', () => runSequence('data-clean', 'data-cache-clean', 'data-build'));
+gulp.task('data-rebuild', () => runSequence('data-clean', 'data-cache-clean', 'data'));
 
 // Шаблонизация данных
 
@@ -143,7 +143,7 @@ gulp.task('compile-pages', () => runSequence(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data-build', done)));
+    gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data', done)));
     gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
@@ -193,7 +193,7 @@ gulp.task('libs-build', function(done) {
 
 gulp.task('default', (done) => runSequence(
     'copy-misc-to-output',
-    'data-build',
+    'data',
     'enb-make',
     'copy-static',
     'copy-static-images',
