@@ -11,22 +11,27 @@ $ git clone https://github.com/vithar/bem.info.git
 
 Установить зависимости:
 ```bash
-$ npm install
+$ npm i
 ```
 
-Запустить сборку данных, компиляцию страниц и статический сервер:
+Запустить сборку данных:
 ```bash
-$ TOKEN={pass your github token here} gulp
+$ TOKEN={pass your github token here} gulp data
+```
+
+Запустить компиляцию страниц, watcher и статический сервер:
+```bash
+$ gulp
 ```
 
 ## Поэтапная сборка
 
-Собрать данные. Сборка данных осуществляется с помощью инструмента [gorshochek](https://github.com/bem-site/gorshochek).
+Собрать данные. Сборка данных осуществляется с помощью [gorshochek](https://github.com/bem-site/gorshochek).
 
 Примечание: для сборки данных нужно передать ваш гитхаб-токен, с помощью которого будет осуществляться
 загрузка данных для страниц сайта.
 ```bash
-$ TOKEN={pass your github token here} gulp data-build
+$ TOKEN={pass your github token here} gulp data
 ```
 
 Скомпилировать статические HTML-страницы:
@@ -41,8 +46,8 @@ $ gulp browser-sync
 
 ## Модель данных
 
-* [Модель данных](./content/model.en.json) для английской версии сайта
-* [Модель данных](./content/model.ru.json) для русской версии сайта
+* [Модель данных](./content-en/model.en.json) для английской версии сайта
+* [Модель данных](./content-ru/model.ru.json) для русской версии сайта
 
 ## Полезные команды
 
