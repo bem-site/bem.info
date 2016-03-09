@@ -1,0 +1,14 @@
+.promo-problems
+{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.promo-problems__img
+{
+    width: 700px;
+    height: 350px;
+    display: inline-block;
+    background: url(promo-problems__picture.svg);
+}

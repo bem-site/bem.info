@@ -80,7 +80,9 @@ gulp.task('copy-misc-to-output', ['clean-output'], () => {
     Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
-                'static/{favicon.ico,robots.txt}'
+                'static/{favicon.ico,robots.txt}',
+                'static/footer__copyright-logo_lang_{en,ru}.svgz',
+                'static/promo-problems__picture.svg'
             ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
