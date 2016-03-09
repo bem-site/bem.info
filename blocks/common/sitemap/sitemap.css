@@ -27,18 +27,19 @@
 
 .sitemap__section
 {
-    width: 26%;
-    margin-right: 11%;
+    width: 18%;
+    margin-right: 10%;
 }
 
 .sitemap__section:first-child
 {
+    width: 22%;
     margin-left: 110px;
 }
 
 .sitemap__section:last-child
 {
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 .sitemap__title
@@ -75,7 +76,7 @@
 
 .sitemap__tree-item-1
 {
-    font-size: 14px;
+    font-size: 16px;
 
     margin: 0 0 12px;
 }
@@ -84,14 +85,14 @@
 .sitemap__tree-item-1 + .sitemap__tree-item-3,
 .sitemap__tree-item-1 + :not(.sitemap__tree-item-2) ~ .sitemap__tree-item-3
 {
-    font-size: 12px;
+    font-size: 16px;
 
     margin: -8px 0 14px 30px;
 }
 
 .sitemap__tree-item-3
 {
-    font-size: 12px;
+    font-size: 14px;
 
     margin: -18px 0 14px 60px;
 }
@@ -104,7 +105,7 @@
     transition: all 0.3s;
 }
 
-.sitemap__link:hover
+.sitemap__link:link:hover
 {
     opacity: 0.8;
 }

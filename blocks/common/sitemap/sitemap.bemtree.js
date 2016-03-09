@@ -2,7 +2,7 @@ block('sitemap').content()(function() {
     var data = this.data,
         currentPage = data.page;
 
-    return ['methodology', 'tools', 'platform'].map(function(site) {
+    return ['methodology', 'tools', 'platform', 'community'].map(function(site) {
         var rootSitePage,
             rootSiteUrl = '/' + site + '/',
             pages = data.pages.filter(function(page) {
@@ -27,7 +27,7 @@ block('sitemap').content()(function() {
                         content: rootSitePage.title
                     } : {
                         elem: 'link',
-                        attrs: { href: data.root + rootSitePage.url },
+                        attrs: { href: rootSitePage.disabled ? undefined : data.root + rootSitePage.url },
                         content: rootSitePage.title
                     }
                 },
@@ -35,7 +35,7 @@ block('sitemap').content()(function() {
                     elem: 'tree',
                     // TODO: generate nested tree instead of plain list
                     content: pages.map(function(page) {
-                        var level = page.url.split('/').length - 3;
+                        var level = page.level || page.url.split('/').length - 3;
 
                         return level > 3 ? undefined : {
                             elem: 'tree-item-' + level,
@@ -44,7 +44,7 @@ block('sitemap').content()(function() {
                                 content: page.title
                             } : {
                                 elem: 'link',
-                                attrs: { href: data.root + page.url },
+                                attrs: { href: page.disabled ? undefined : data.root + page.url },
                                 content: page.title
                             }
                         }

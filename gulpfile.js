@@ -12,7 +12,7 @@ var path = require('path'),
     batch = require('gulp-batch'),
     browserSync = require('browser-sync');
 
-const LANGUAGES = ['en', 'ru'];
+const LANGUAGES = ['ru'];
 
 const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = './.cache/gorshochek-cache-' + language;
@@ -95,7 +95,7 @@ gulp.task('data', () => Q.all(LANGUAGES.map(lang => {
         encoding: 'utf-8',
         env: {
             GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            modelPath: `./content-${lang}/model.${lang}.json`,
+            modelPath: `./content-${lang}/model-hybrid.${lang}.json`,
             host: `http://${lang}.bem.info`,
             dest: DATA_DIRS[lang],
             token: process.env.TOKEN,
