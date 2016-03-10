@@ -107,7 +107,8 @@
     "url": "/platform/",
     "site": "/platform/",
     "title": "Платформа",
-    "disabled": true
+    "disabled": true,
+    "nav": false
   },
   {
     "url": "/platform/techs/",
@@ -166,24 +167,28 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Сообщество",
-    "disabled": 1
+    "disabled": 1,
+    "nav": false
   },
   {
     "url": "/blog/",
     "site": "/community/",
     "title": "Блог",
-    "level": 1
+    "level": 1,
+    "nav": false
   },
   {
     "url": "/events/",
     "site": "/community/",
     "title": "События",
-    "level": 1
+    "level": 1,
+    "nav": false
   },
   {
     "url": "/forum/",
     "site": "/community/",
     "title": "Форум",
-    "level": 1
+    "level": 1,
+    "nav": false
   }
 ]

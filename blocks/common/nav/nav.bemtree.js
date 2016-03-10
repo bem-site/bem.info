@@ -3,9 +3,9 @@ block('nav').content()(function() {
         site = data.page.site,
         lang = data.lang;
 
-    return data.pages.filter(function(item) {
-        if (!new RegExp('^' + site).test(item.url)) return;
-        return item.url.split('/').length === site.split('/').length + 1;
+    return data.pages.filter(function(page) {
+        if (!new RegExp('^' + site).test(page.url) || page.nav === false) return;
+        return page.url.split('/').length === site.split('/').length + 1;
     }).map(function(item) {
         var isCurrent = this.data.page.url === item.url,
             title = typeof item.title === 'string' ? item.title : item.title[lang];
