@@ -90,10 +90,17 @@
     "level": 1
   },
   {
+    "url": "/tools/modules/",
+    "site": "/tools/modules/",
+    "title": "Модули",
+    "disabled": true,
+    "level": 1
+  },
+  {
     "url": "/tools/bem/bem-naming/",
     "site": "/tools/",
     "title": "bem-naming",
-    "level": 1
+    "level": 2
   },
 
   {
@@ -109,6 +116,21 @@
     "disabled": true
   },
   {
+    "url": "/technology/i-bem/v2/i-bem-js/",
+    "site": "/platform/techs/i-bem/",
+    "title": "i-bem"
+  },
+  {
+    "url": "/technology/deps/about/",
+    "site": "/platform/techs/deps/",
+    "title": "DEPS"
+  },
+  {
+    "url": "/technology/bemjson/v2/bemjson/",
+    "site": "/platform/techs/bemjson/",
+    "title": "BEMJSON"
+  },
+  {
     "url": "/technology/bemhtml/v2/intro/",
     "site": "/platform/techs/bemhtml/",
     "title": "BEMHTML"
@@ -117,16 +139,6 @@
     "url": "/technology/bemtree/v2/bemtree/",
     "site": "/platform/techs/bemtree/",
     "title": "BEMTREE"
-  },
-  {
-    "url": "/technology/bemjson/v2/bemjson/",
-    "site": "/platform/techs/bemjson/",
-    "title": "BEMJSON"
-  },
-  {
-    "url": "/technology/i-bem/v2/i-bem-js/",
-    "site": "/platform/techs/i-bem/",
-    "title": "i-bem"
   },
 
   {
@@ -143,6 +155,11 @@
     "url": "/platform/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
     "title": "bem-components"
+  },
+  {
+    "url": "/platform/libs/bem-history/",
+    "site": "/platform/libs/bem-history/",
+    "title": "bem-history"
   },
 
   {
