@@ -13,11 +13,7 @@
                 {
                     elem: 'subtitle',
                     content: 'методология'
-                }/*,
-                 {
-                 tag: 'img',
-                 attrs: { src: freeze('logo.svg') }
-                 }*/
+                }
             ]
         },
         {
@@ -49,7 +45,7 @@
             content: [
                 {
                     elem: 'img',
-                    url: '/bem.info/ru/promo-problems__picture.svg'
+                    url: freeze('../../static-ru/promo-problems.ru.svg')
                 },
                 {
                     block: 'promo-title',
@@ -86,14 +82,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__bicycle.svg'
+                    url: freeze('../../static-ru/promo-features__bicycle.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__fortress.svg'
+                    url: freeze('../../static-ru/promo-features__fortress.svg')
                 },
                 {
                     elem: 'text',
@@ -121,14 +117,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__3-1.svg'
+                    url: freeze('../../static-ru/promo-features__3-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__3-2.svg'
+                    url: freeze('../../static-ru/promo-features__3-2.svg')
                 },
                 {
                     elem: 'text',
@@ -156,14 +152,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__shovel.svg'
+                    url: freeze('../../static-ru/promo-features__shovel.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__tractor.svg'
+                    url: freeze('../../static-ru/promo-features__tractor.svg')
                 },
                 {
                     elem: 'text',
@@ -191,14 +187,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__4-1.svg'
+                    url: freeze('../../static-ru/promo-features__4-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__4-2.svg'
+                    url: freeze('../../static-ru/promo-features__4-2.svg')
                 },
                 {
                     elem: 'text',
@@ -226,14 +222,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__5-1.svg'
+                    url: freeze('../../static-ru/promo-features__5-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__5-2.svg'
+                    url: freeze('../../static-ru/promo-features__5-2.svg')
                 },
                 {
                     elem: 'text',
@@ -261,14 +257,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__6-1.svg'
+                    url: freeze('../../static-ru/promo-features__6-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__6-2.svg'
+                    url: freeze('../../static-ru/promo-features__6-2.svg')
                 },
                 {
                     elem: 'text',
@@ -296,14 +292,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__7-1.svg'
+                    url: freeze('../../static-ru/promo-features__7-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__7-2.svg'
+                    url: freeze('../../static-ru/promo-features__7-2.svg')
                 },
                 {
                     elem: 'text',
@@ -331,14 +327,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__8-1.svg'
+                    url: freeze('../../static-ru/promo-features__8-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__8-2.svg'
+                    url: freeze('../../static-ru/promo-features__8-2.svg')
                 },
                 {
                     elem: 'text',
@@ -366,14 +362,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__9-1.svg'
+                    url: freeze('../../static-ru/promo-features__9-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: '/bem.info/ru/promo-features__9-2.svg'
+                    url: freeze('../../static-ru/promo-features__9-2.svg')
                 },
                 {
                     elem: 'text',
