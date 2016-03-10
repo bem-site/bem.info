@@ -1,0 +1,49 @@
+.promo-crossroad
+{
+    display: flex;
+    justify-content: space-around;
+
+    margin: 0 0 100px;
+    padding: 0 10%;
+}
+
+.promo-crossroad__item
+{
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-bottom: 0;
+
+    text-align: center;
+
+    color: #000;
+}
+
+.promo-crossroad__title-link
+{
+    font-size: 20px;
+    font-weight: 300;
+
+    text-decoration: none;
+
+    color: #000;
+}
+
+.promo-crossroad__img
+{
+    display: block;
+
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.promo-crossroad__text
+{
+    margin: 5px 0;
+}
+
+.promo-crossroad__text-link
+{
+    color: #048;
+}
