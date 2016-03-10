@@ -13,7 +13,7 @@ var path = require('path'),
     browserSync = require('browser-sync'),
     csscomb = require('gulp-csscomb');
 
-const LANGUAGES = ['ru'];
+const LANGUAGES = ['en', 'ru'];
 
 const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = './.cache/gorshochek-cache-' + language;

@@ -1,67 +1,67 @@
- [
+[
   {
     "url": "/",
     "site": "/",
-    "title": "БЭМ",
-    "source": "./content-ru/index/index.ru.bemjson.js",
+    "title": "BEM",
+    "source": "./content-en/index/index.en.bemjson.js",
     "type": "bemjson.js",
     "bundle": "index"
   },
   {
     "url": "/methodology/",
     "site": "/methodology/",
-    "title": "Методология",
-    "source": "./content-ru/methodology/index.ru.bemjson.js",
+    "title": "Methodology",
+    "source": "./content-en/methodology/index.en.bemjson.js",
     "type": "bemjson.js",
     "bundle": "methodology-index"
   },
   {
     "url": "/methodology/key-concepts/",
     "site": "/methodology/",
-    "title": "Основные понятия",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md",
+    "title": "Key concepts",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/naming-convention/",
     "site": "/methodology/",
-    "title": "Соглашение по именованию",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.ru.md",
+    "title": "Naming convention",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/filesystem/",
     "site": "/methodology/",
-    "title": "Файловая система",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.ru.md",
+    "title": "Filesystem",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/build/",
     "site": "/methodology/",
-    "title": "Сборка",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.ru.md",
+    "title": "Build",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/declarations/",
     "site": "/methodology/",
-    "title": "Декларации",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.ru.md",
+    "title": "Declarations",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/solved-problems/",
     "site": "/methodology/",
-    "title": "Какие проблемы решает",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.ru.md",
+    "title": "Solved problems",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/history/",
     "site": "/methodology/",
-    "title": "История создания",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.ru.md",
+    "title": "History",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.en.md",
     "bundle": "methodology"
   },
   {
@@ -75,7 +75,7 @@
   {
     "url": "/tools/",
     "site": "/tools/",
-    "title": "Инструментарий"
+    "title": "Toolbox"
   },
   {
     "url": "/tools/bem/bem-tools/",
@@ -92,7 +92,7 @@
   {
     "url": "/tools/modules/",
     "site": "/tools/modules/",
-    "title": "Модули",
+    "title": "Modules",
     "disabled": true,
     "level": 1
   },
@@ -106,14 +106,14 @@
   {
     "url": "/platform/",
     "site": "/platform/",
-    "title": "Платформа",
+    "title": "Platform",
     "disabled": true,
     "nav": false
   },
   {
     "url": "/platform/techs/",
     "site": "/platform/techs/",
-    "title": "Технологии",
+    "title": "Technologies",
     "disabled": true
   },
   {
@@ -145,7 +145,7 @@
   {
     "url": "/platform/libs/",
     "site": "/platform/libs/",
-    "title": "Библиотеки"
+    "title": "Libraries"
   },
   {
     "url": "/platform/libs/bem-core/",
@@ -166,28 +166,28 @@
   {
     "url": "/community/",
     "site": "/community/",
-    "title": "Сообщество",
+    "title": "Community",
     "disabled": 1,
     "nav": false
   },
   {
     "url": "/blog/",
     "site": "/community/",
-    "title": "Блог",
+    "title": "Blog",
     "level": 1,
     "nav": false
   },
   {
     "url": "/events/",
     "site": "/community/",
-    "title": "События",
+    "title": "Events",
     "level": 1,
     "nav": false
   },
   {
     "url": "/forum/",
     "site": "/community/",
-    "title": "Форум",
+    "title": "Forum",
     "level": 1,
     "nav": false
   }
