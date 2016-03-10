@@ -146,8 +146,7 @@ gulp.task('compile-pages', () => runSequence(
 
 gulp.task('watch', () => {
     gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data', done)));
-    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('styles', 'styles', done)));
-    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
+    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('styles', 'enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
