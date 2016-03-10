@@ -41,7 +41,7 @@
     "ym": "^0.1.2"
   },
   "scripts": {
-    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus && gulp prepare-output",
+    "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus",
     "deps": "bower i",
     "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -"
   },
