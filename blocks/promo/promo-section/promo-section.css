@@ -1,9 +1,7 @@
 .promo-section
 {
     position: relative;
-    padding: 0 0 50px;
-    display: inline-block;
-    width: 100%;
+    padding: 0 0 30px;
 }
 
 .promo-section_color_blue
@@ -24,6 +22,7 @@
 .promo-section_color_black
 {
     background: #333;
+    color: #fff;
 }
 
 .promo-section__title{
