@@ -2,6 +2,25 @@
 {
     font: 16px/2 'Open Sans', Arial, sans-serif;
 
-    min-width: 750px;
     margin: 0;
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
 }
