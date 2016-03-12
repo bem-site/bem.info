@@ -6,7 +6,7 @@
 	z-index: 0;
 
 	margin: -1px 0 0 0;
-    padding-bottom: 80px;
+	padding-bottom: 80px;
 
 	overflow: hidden;
 	white-space: nowrap;
@@ -79,17 +79,14 @@
 	overflow: visible;
 
 	max-width: 45em;
-	margin: 34px 0 74px 400px;
+	margin: 34px 0 74px 382px;
+	padding: 5px 16px 6px 18px;
 
-	line-height: 1.5;
-	letter-spacing: 0.7px;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 26px;
 	white-space: normal;
 
 	color: #fff;
-	text-shadow: 2px 2px 2px #555;
-}
-
-.promo-header__text strong
-{
-	letter-spacing: 1px;
+	background: rgba(0, 0, 0, 0.1);
 }
