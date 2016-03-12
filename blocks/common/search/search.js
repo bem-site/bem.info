@@ -1,4 +1,4 @@
-modules.define('search', ['i-bem__dom', 'form', 'keyboard__codes', 'events', 'input'], function(provide, BEMDOM, Form, KeyCodes, events) {
+modules.define('search', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], function(provide, BEMDOM, Form, KeyCodes) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -20,7 +20,7 @@ provide(BEMDOM.decl(this.name, {
 
                 this.input.setMod('focused', true);
             }
-        },
+        }
     },
     _onClose: function() {
         var _this = this;

@@ -6,12 +6,12 @@ block('breadcrumbs').content()(function() {
     var result = [];
 
     data.pages.filter(function(item) {
-        if (item.url === '/') return;
+        if (item.url === '/') { return false; }
 
-        if (!new RegExp('^' + item.url).test(site)) return;
+        if (!new RegExp('^' + item.url).test(site)) { return false; }
 
         return item.url.split('/').length <= site.split('/').length;
-    }).map(function(item, idx) {
+    }).forEach(function(item) {
         result.push({
             elem: 'item',
             content: page.url === item.url ? item.title : {

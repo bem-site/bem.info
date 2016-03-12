@@ -7,9 +7,9 @@ block('root').replace()(function() {
 
     // libs extraction (begin)
     var libs = {};
-    data.pages.forEach(function (page) {
-        if (page.type === 'lib') {
-            var split = page.site.replace(/(.*)\/$/, '$1').split('/'),
+    data.pages.forEach(function (pageData) {
+        if (pageData.type === 'lib') {
+            var split = pageData.site.replace(/(.*)\/$/, '$1').split('/'),
                 version = split.pop(),
                 name = split.pop();
 

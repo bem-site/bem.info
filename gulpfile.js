@@ -155,7 +155,7 @@ gulp.task('watch', () => {
         gulp.watch([
                 bemtree, bemhtml,
                 path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
-                path.join(DATA_DIR_PREFIX + '*', bundle + '.js'),
+                path.join(DATA_DIR_PREFIX + '*', bundle + '.js')
             ],
             batch((event, done) => {
                 delete require.cache[bemhtml];
@@ -189,7 +189,7 @@ gulp.task('browser-sync', () => {
     });
 });
 
-gulp.task('libs-build', function(done) {
+gulp.task('libs-build', function() {
     // require('bem-lib-site-generator').data(path.resolve('path/to/library'));
 });
 

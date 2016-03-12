@@ -1,7 +1,6 @@
 block('header').content()(function() {
     var data = this.data,
-        url = data.page.url,
-        siteMod = data.siteMod;
+        url = data.page.url;
 
     return [
         {

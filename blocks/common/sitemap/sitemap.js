@@ -5,7 +5,7 @@ provide(BEMDOM.decl(this.name, {
         js: {
             inited: function() {
                 var _this = this;
-                Search.on({ modName: 'opened', modVal: '*' }, function(e) {
+                Search.on({ modName: 'opened', modVal: '*' }, function() {
                     _this.toggleMod('opened');
                 });
             }
