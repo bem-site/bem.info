@@ -8,8 +8,7 @@ block('footer').mode('index')(function() {
             elem: 'copyright',
             content: [
                 {
-                    elem: 'copyright-bem',
-                    content: 'BEM'
+                    block: 'bem'
                 },
                 ' is proudly made by ',
                 {

@@ -1,6 +1,8 @@
 ({
-    shouldDeps : [
-        'link',
+    mustDeps: [
+        'bem',
+    ],
+    shouldDeps: [
         'page-bg',
         'promo-logo',
         'promo-action',
@@ -9,7 +11,7 @@
             mods: { color: 'white' }
         },
         {
-            elem : 'title',
+            elem: 'title',
         }
     ]
 })

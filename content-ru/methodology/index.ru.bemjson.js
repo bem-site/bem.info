@@ -6,8 +6,8 @@
             elem: 'header',
             content: [
                 {
-                    elem: 'title',
-                    content: 'БЭМ',
+                    block: 'bem',
+                    mix: { block: 'promo-header', elem: 'title' }
                 },
                 ' ',
                 {
@@ -23,7 +23,11 @@
         },
         {
             elem: 'text',
-            content: 'Методология <strong>БЭМ</strong> содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
+            content: [
+                'Методология ',
+                { block: 'bem' },
+                ' содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
+            ]
         }
     ]
 },{
@@ -55,7 +59,9 @@
                             elem: 'highlighted',
                             content: 'PROBLEMS ARE SOLVED'
                         },
-                        ' BY BEM METHODOLOGY,<br>',
+                        ' BY ',
+                        { block: 'bem' },
+                        ' METHODOLOGY,<br>',
                         'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE AN AGILE EASILY CHANGEABLE CODE'
                     ]
                 }
@@ -69,7 +75,8 @@
         {
             block: 'promo-title',
             content: [
-                'BEM PROVIDES A ',
+                { block: 'bem' },
+                ' PROVIDES A ',
                 {
                     elem: 'highlighted',
                     content: ' CONSISTENT AND SANE'
@@ -390,7 +397,10 @@
                     elem: 'highlighted',
                     content: 'people'
                 },
-                ' talk about bem',
+                ' talk about ',
+                {
+                    block: 'bem'
+                }
             ]
         },
         {
@@ -474,7 +484,8 @@
                     elem: 'highlighted',
                     content: 'Companies'
                 },
-                ' use BEM'
+                ' use ',
+                { block: 'bem' }
             ]
         },
         {

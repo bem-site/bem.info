@@ -26,7 +26,7 @@ block('root').replace()(function() {
         block: 'page',
         title: page.head.title,
         head: [
-            { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,700&subset=cyrillic' },
+            { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,600,700&subset=cyrillic' },
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' }
         ],
         scripts: [

@@ -1,9 +1,12 @@
 [{
-    shouldDeps : [
+    mustDeps: [
+        'bem'
+    ],
+    shouldDeps: [
         {
-            elems : 'highlighted',
-            mods : {
-                color : ['white']
+            elems: 'highlighted',
+            mods: {
+                color: ['white']
             }
         }
     ]
