@@ -1,5 +1,5 @@
 ({
-    shouldDeps : [
+    shouldDeps: [
         'form',
         'events',
         {
@@ -7,12 +7,12 @@
             elem: 'codes'
         },
         {
-            block : 'input',
-            mods : {
-                type : 'search'
+            block: 'input',
+            mods: {
+                type: 'search'
                 // 'has-clear': true
             }
         },
-        { elems : ['submit', 'open', 'close'] }
+        { elems: ['submit', 'open', 'close'] }
     ]
 })

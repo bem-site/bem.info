@@ -1,10 +1,10 @@
 block('promo-companies')(
     elem('company')(
         tag()('a'),
-        attrs()(function () {
+        attrs()(function() {
             return { href: this.ctx.url };
         }),
-        content()(function () {
+        content()(function() {
             return {
                 elem: 'logo',
                 attrs: {

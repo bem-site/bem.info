@@ -5,7 +5,7 @@ block('nav').content()(function() {
 
     return data.pages.filter(function(page) {
         if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
-        
+
         return page.url.split('/').length === site.split('/').length + 1;
     }).map(function(item) {
         var isCurrent = this.data.page.url === item.url,
