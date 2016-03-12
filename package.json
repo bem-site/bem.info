@@ -31,8 +31,6 @@
     "gulp-watch": "^4.3.5",
     "highlight.js": "^9.1.0",
     "jscs": "^2.9.0",
-    "jshint": "^2.9.1",
-    "jshint-groups": "^0.8.0",
     "lodash": "^4.2.1",
     "marked": "^0.3.5",
     "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
