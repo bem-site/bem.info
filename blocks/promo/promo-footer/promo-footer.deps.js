@@ -1,12 +1,12 @@
 ({
-    shouldDeps : [
+    shouldDeps: [
         {
-            mods : { site : 'methodology' },
-            elems : [
+            mods: { site: 'methodology' },
+            elems: [
                 'title',
                 {
-                    elem : 'lego',
-                    mods : { site : 'methodology' }
+                    elem: 'lego',
+                    mods: { site: 'methodology' }
                 }
             ]
         },

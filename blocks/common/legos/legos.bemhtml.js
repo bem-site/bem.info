@@ -9,7 +9,7 @@ block('legos')(
 			blocks.push(
 				{
 					elem: 'lego',
-					elemMods: { width: w > 1 ? w : undefined, height : h > 1 ? h : undefined }
+					elemMods: { width: w > 1 ? w : undefined, height: h > 1 ? h : undefined }
 				}
 			);
 		}

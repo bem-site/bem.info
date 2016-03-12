@@ -22,6 +22,8 @@
     "enb-js": "^1.0.0",
     "enb-modules": "^0.2.0",
     "enb-stylus": "^2.0.0",
+    "eslint": "^2.4.0",
+    "eslint-config-pedant": "^0.1.0",
     "gorshochek": "vithar/gorshochek#freeze-support-and-full-model",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
@@ -29,8 +31,6 @@
     "gulp-watch": "^4.3.5",
     "highlight.js": "^9.1.0",
     "jscs": "^2.9.0",
-    "jshint": "^2.9.1",
-    "jshint-groups": "^0.8.0",
     "lodash": "^4.2.1",
     "marked": "^0.3.5",
     "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
@@ -41,9 +41,11 @@
     "ym": "^0.1.2"
   },
   "scripts": {
+    "test": "npm run lint",
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus",
     "deps": "bower i",
-    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -"
+    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
+    "lint": "eslint . && jscs ."
   },
   "private": true
 }
