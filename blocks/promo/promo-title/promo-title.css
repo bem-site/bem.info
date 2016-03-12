@@ -1,12 +1,24 @@
 .promo-title
 {
+    padding-top: 50px;
+
     font-size: 15px;
+    font-weight: 600;
     line-height: 2.1;
     letter-spacing: 2px;
-    font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    padding-top: 50px;
+}
+
+.promo-title__highlighted
+{
+    padding: 0 0.2em;
+
+    font-weight: 600;
+    font-style: normal;
+
+    color: #000;
+    background: #fc0;
 }
 
 .promo-title .bem
