@@ -41,9 +41,11 @@
     "ym": "^0.1.2"
   },
   "scripts": {
+    "test": "npm run lint",
     "postinstall": "[ \"$NODE_ENV\" != 'production' ] && npm run deps || true && npm run compile-stylus",
     "deps": "bower i",
-    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -"
+    "compile-stylus": "cd libs/bem-components && find . -iname '*.styl' | xargs stylus && cd -",
+    "lint": "eslint . && jscs ."
   },
   "private": true
 }
