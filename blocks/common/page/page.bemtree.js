@@ -9,7 +9,10 @@ block('page').content()(function() {
             block: 'sitemap'
         },
         page.url !== '/forum/' ? { block: 'nav' } : undefined,
-        page.type === 'bemjson.js' ? page.content : { block: 'article' },
+        page.type === 'bemjson.js' ? page.content : [
+            { block: 'article-rewind' },
+            { block: 'article' }
+        ],
         {
             block: 'footer',
             mix: { block: 'page-bg' }

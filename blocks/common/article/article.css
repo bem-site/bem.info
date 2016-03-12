@@ -1,6 +1,6 @@
  .article
 {
-    margin-bottom: 0;
+    margin: 0 35px 0 0;
     padding: 9px 0 16px 111px;
 
     background: url(article.png) repeat;
@@ -54,6 +54,10 @@
         font-family: "OpenSans-SemiBold", Arial, sans-serif;
         font-weight: 500;
 
+        position: relative;
+        z-index: 1;
+
+        display: inline-block;
         padding: 0;
     }
 

@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'article-rewind',
         'article'
     ]
 })

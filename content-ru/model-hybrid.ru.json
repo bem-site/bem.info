@@ -20,7 +20,8 @@
     "site": "/methodology/",
     "title": "Основные понятия",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md",
-    "bundle": "methodology"
+    "bundle": "methodology",
+    "prev": false
   },
   {
     "url": "/methodology/naming-convention/",
@@ -69,7 +70,8 @@
     "site": "/methodology/",
     "title": "FAQ",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.ru.md",
-    "bundle": "methodology"
+    "bundle": "methodology",
+    "next": false
   },
 
   {
