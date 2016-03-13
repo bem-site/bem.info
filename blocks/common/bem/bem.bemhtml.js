@@ -1,4 +1,6 @@
 block('bem')(
     tag()('strong'),
-    content()(function() { return 'БЭМ' }) // TODO i18n
+    content()(function() {
+        return this.i18n(this.block, 'bem');
+    })
 );

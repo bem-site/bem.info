@@ -6,8 +6,8 @@
         "node_modules/**",
         "lib/",
 	".cache/",
-	"output-*/",
-	"bundles/"
+	"output/",
+	"*bundles/"
     ],
     "fileExtensions": [".js"],
     "validateQuoteMarks": "'",
