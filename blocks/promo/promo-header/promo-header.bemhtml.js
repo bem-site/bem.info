@@ -4,17 +4,8 @@ block('promo-header')(
     elem('title').tag()('span'),
     elem('subtitle').tag()('span'),
     elem('text').tag()('p'),
+    elem('link').tag()('a'),
     mix()({ block: 'page-bg', mods: { site: 'methodology' } }),
-    js()(true),
-
-    elem('action').replace()(function() {
-        return {
-            block: 'link',
-            mix: { block: 'promo-header', elem: 'action' },
-            url: this.ctx.url,
-            content: this.ctx.content
-        }
-    }),
 
 	content()(function() {
 		return [

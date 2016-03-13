@@ -1,7 +1,7 @@
 .promo-section
 {
     position: relative;
-    padding: 0 0 30px;
+    padding: 0 0 70px;
 }
 
 .promo-section_color_blue
@@ -25,6 +25,12 @@
     color: #fff;
 }
 
-.promo-section__title{
+.promo-section_color_black .promo-features__separator
+{
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.promo-section__title
+{
     padding: 50px 0;
 }

@@ -6,24 +6,34 @@
             elem: 'header',
             content: [
                 {
-                    elem: 'title',
-                    content: 'БЭМ',
+                    block: 'bem',
+                    mix: { block: 'promo-header', elem: 'title' }
                 },
                 ' ',
                 {
                     elem: 'subtitle',
-                    content: 'методология'
+                    content: 'methodology'
                 }
             ]
         },
         {
             block: 'promo-action',
-            url: 'key-concepts/',
-            content: 'Документация'
+            attrs: { href: 'key-concepts/' },
+            content: 'Documentation'
         },
         {
             elem: 'text',
-            content: 'Методология <strong>БЭМ</strong> содана в Яндексе для разработки сайтов, которые надо делать быстро, а поддерживать долгие годы. Она задаёт правила, позволяющие плавно развивать проект от одной страницы до огромного портала, минимизируя проблемы.'
+            content: [
+                { block: 'bem' },
+                ' methodology was invented at ',
+                {
+                    elem: 'link',
+                    attrs: { href: 'https://yandex.com/company/' },
+                    content: 'Yandex'
+                },
+                ' to develop sites which should be launched fast and supported for a long time. ',
+                'It helps to create extendable and reusable interface components.'
+            ]
         }
     ]
 },{
@@ -50,13 +60,15 @@
                 {
                     block: 'promo-title',
                     content: [
-                        'ALL THESE ',
+                        'All these ',
                         {
                             elem: 'highlighted',
                             content: 'PROBLEMS ARE SOLVED'
                         },
-                        ' BY BEM METHODOLOGY,<br>',
-                        'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE AN AGILE EASILY CHANGEABLE CODE'
+                        ' BY ',
+                        { block: 'bem' },
+                        ' METHODOLOGY,<br>',
+                        'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE flexible and maintainable code'
                     ]
                 }
             ]
@@ -69,7 +81,8 @@
         {
             block: 'promo-title',
             content: [
-                'BEM PROVIDES A ',
+                { block: 'bem' },
+                ' PROVIDES A ',
                 {
                     elem: 'highlighted',
                     content: ' CONSISTENT AND SANE'
@@ -100,16 +113,16 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'GROW AND SCALE'
+                    content: 'Accommodate'
                 },
-                ' YOUR CODEBASE'
+                ' changes'
             ]
         },
         {
@@ -117,14 +130,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__3-1.svg')
+                    url: freeze('../../static/promo-features__squirrel.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__3-2.svg')
+                    url: freeze('../../static/promo-features__yogi.svg')
                 },
                 {
                     elem: 'text',
@@ -142,9 +155,9 @@
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'GROW AND SCALE'
+                    content: 'Grow and scale'
                 },
-                ' YOUR CODEBASE'
+                ' your codebase'
             ]
         },
         {
@@ -152,84 +165,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__shovel.svg')
+                    url: freeze('../../static/promo-features__9-1.svg')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__tractor.svg')
-                },
-                {
-                    elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
-                }
-            ]
-        }
-    ]
-},{
-    block: 'promo-section',
-    mods: { color: 'white' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'GROW AND SCALE'
-                },
-                ' YOUR CODEBASE'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__4-1.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__4-2.svg')
-                },
-                {
-                    elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
-                }
-            ]
-        }
-    ]
-},{
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'GROW AND SCALE'
-                },
-                ' YOUR CODEBASE'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__5-1.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__5-2.svg')
+                    url: freeze('../../static/promo-features__9-2.svg')
                 },
                 {
                     elem: 'text',
@@ -245,11 +188,12 @@
         {
             block: 'promo-title',
             content: [
+                'Promote ',
                 {
                     elem: 'highlighted',
-                    content: 'GROW AND SCALE'
+                    content: 'reuse'
                 },
-                ' YOUR CODEBASE'
+                ' and efficiency'
             ]
         },
         {
@@ -273,7 +217,7 @@
             ]
         }
     ]
-},{
+}, {
     block: 'promo-section',
     mods: { color: 'beige' },
     content: [
@@ -282,9 +226,125 @@
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'GROW AND SCALE'
+                    content: 'Increase'
                 },
-                ' YOUR CODEBASE'
+                ' productivity'
+            ]
+        },
+        {
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: freeze('../../static/promo-features__shovel.svg')
+                },
+                {
+                    elem: 'separator'
+                },
+                {
+                    elem: 'image',
+                    url: freeze('../../static/promo-features__tractor.svg')
+                },
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'black' },
+    content: [
+        {
+            block: 'promo-title',
+            content: [
+                {
+                    elem: 'highlighted',
+                    content: 'Team'
+                },
+                ' work'
+            ]
+        },
+        {
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: freeze('../../static/promo-features__teamwork_bad.svg')
+                },
+                {
+                    elem: 'separator'
+                },
+                {
+                    elem: 'image',
+                    url: freeze('../../static/promo-features__teamwork_good.svg')
+                },
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'beige' },
+    content: [
+        {
+            block: 'promo-title',
+            content: [
+                'Do ',
+                {
+                    elem: 'highlighted',
+                    content: 'less'
+                },
+                ', get ',
+                {
+                    elem: 'highlighted',
+                    content: 'more'
+                }
+            ]
+        },
+        {
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: freeze('../../static-ru/promo-features__busy-man.svg')
+                },
+                {
+                    elem: 'separator'
+                },
+                {
+                    elem: 'image',
+                    url: freeze('../../static-ru/promo-features__3d-printer.svg')
+                },
+                {
+                    elem: 'text',
+                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                }
+            ]
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'white' },
+    content: [
+        {
+            block: 'promo-title',
+            content: [
+                'Suitable for ',
+                {
+                    elem: 'highlighted',
+                    content: 'any'
+                },
+                ' programming language or ',
+                {
+                    elem: 'highlighted',
+                    content: 'any'
+                },
+                ' framework'
             ]
         },
         {
@@ -308,18 +368,18 @@
             ]
         }
     ]
-},{
+}, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'GROW AND SCALE'
+                    content: 'Easy'
                 },
-                ' YOUR CODEBASE'
+                ' to learn'
             ]
         },
         {
@@ -345,41 +405,6 @@
     ]
 },{
     block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'GROW AND SCALE'
-                },
-                ' YOUR CODEBASE'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__9-1.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__9-2.svg')
-                },
-                {
-                    elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
-                }
-            ]
-        }
-    ]
-},{
-    block: 'promo-section',
     mods: { color: 'blue' },
     content: [
         {
@@ -388,9 +413,10 @@
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'people'
+                    content: 'Experts'
                 },
-                ' talk about bem',
+                ' recommend ',
+                { block: 'bem' }
             ]
         },
         {
@@ -474,7 +500,8 @@
                     elem: 'highlighted',
                     content: 'Companies'
                 },
-                ' use BEM'
+                ' use ',
+                { block: 'bem' }
             ]
         },
         {
@@ -483,7 +510,7 @@
                 {
                     elem: 'company',
                     content: 'Yandex',
-                    url: '//yandex.ru',
+                    url: 'https://tech.yandex.com/bem/',
                     src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
@@ -494,20 +521,20 @@
                 },
                 {
                     elem: 'company',
-                    content: 'Apple',
-                    url: '//apple.ru',
+                    content: 'BBC',
+                    url: 'http://www.integralist.co.uk/posts/bem.html',
                     src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
                     elem: 'company',
-                    content: 'Tesla',
-                    url: '//tesla.com',
+                    content: 'Госдеп',
+                    url: 'AAA',
                     src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
                     elem: 'company',
-                    content: 'Mail.ru',
-                    url: '//mail.ru',
+                    content: 'BuzzFeed',
+                    url: 'http://www.buzzfeed.com/',
                     src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 }
             ]

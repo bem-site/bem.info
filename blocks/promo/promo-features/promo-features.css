@@ -2,7 +2,7 @@
 {
     display: flex;
     margin: -10px auto 120px;
-    max-width: 800px;
+    max-width: 1000px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -11,25 +11,26 @@
 {
     width: 40px;
     height: 40px;
-    margin-top: 180px;
+    margin-top: 230px;
 
-    border: 2px solid #000;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-width: 0 2px 2px 0;
     transform: rotate(-45deg);
-    color: #fff;
-    opacity: 0.2;
 }
 
 .promo-features__image
 {
     display: inline-block;
-    width: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 .promo-features__text
 {
-    padding: 50px 100px 0;
-
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 1.7;
+
+    margin: 50px auto 0;
+    max-width: 600px;
 }

@@ -1,6 +1,7 @@
 .promo-title
 {
-    padding-top: 50px;
+    margin: 0;
+    padding: 50px 0 0;
 
     font-size: 15px;
     font-weight: 600;
@@ -12,7 +13,7 @@
 
 .promo-title__highlighted
 {
-    padding: 0 0.2em;
+    padding: 0 1px 0 3px;
 
     font-weight: 600;
     font-style: normal;

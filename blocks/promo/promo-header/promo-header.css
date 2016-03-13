@@ -78,7 +78,7 @@
 	position: relative;
 	overflow: visible;
 
-	max-width: 45em;
+	max-width: 40em;
 	margin: 34px 0 74px 382px;
 	padding: 5px 16px 6px 18px;
 
@@ -89,4 +89,15 @@
 
 	color: #fff;
 	background: rgba(0, 0, 0, 0.1);
+}
+
+.promo-header__link
+{
+	color: #fff;
+	transition: all 0.3em;
+}
+
+.promo-header__link:hover
+{
+	opacity: 0.8;
 }
