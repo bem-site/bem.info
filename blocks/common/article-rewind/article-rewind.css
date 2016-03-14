@@ -30,6 +30,8 @@
 .article-rewind__next
 {
     right: -3px;
+    /*fix bug in FF*/
+    max-width: 50%;
 }
 
 .article-rewind__prev-link,
@@ -52,6 +54,7 @@
 .article-rewind__prev-link
 {
     margin-left: calc(-100% + 35px);
+    margin-left: -moz-calc(-85% + 35px);
     padding: 0 31px 0 12px;
 }
 
@@ -64,7 +67,7 @@
 .article-rewind__prev-link:hover,
 .article-rewind__next-link:hover
 {
-    margin-left: 0;
+    margin-left: 0 !important;
 }
 
 .article-rewind__prev-link::after,
