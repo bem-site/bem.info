@@ -34,11 +34,19 @@ const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
 const BUNDLES_DIR = 'bundles';
 const BUNDLES = fs.readdirSync(BUNDLES_DIR);
 const BEMTREE = BUNDLES.reduce((prev, bundle) => {
-    prev[bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.bemtree.js');
+    LANGUAGES.forEach(lang => {
+        prev[lang] || (prev[lang] = {});
+        prev[lang][bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.' + lang + '.bemtree.js');
+    });
+
     return prev;
 }, {});
 const BEMHTML = BUNDLES.reduce((prev, bundle) => {
-    prev[bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.bemhtml.js');
+    LANGUAGES.forEach(lang => {
+        prev[lang] || (prev[lang] = {});
+        prev[lang][bundle] = path.join(BUNDLES_DIR, bundle, bundle + '.' + lang + '.bemhtml.js');
+    });
+
     return prev;
 }, {});
 
@@ -61,8 +69,8 @@ function compilePages(lang, bundle) {
         encoding: 'utf-8',
         env: {
             GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            bemtree: BEMTREE[bundle],
-            bemhtml: BEMHTML[bundle],
+            bemtree: BEMTREE[lang][bundle],
+            bemhtml: BEMHTML[lang][bundle],
             bundle,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
@@ -113,7 +121,7 @@ gulp.task('enb-make', () => enb.make());
 
 gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
     var files = BUNDLES.map(bundle => {
-        return path.join(BUNDLES_DIR, bundle, bundle + '.min.*')
+        return path.join(BUNDLES_DIR, bundle, bundle + '*.min.*')
     });
 
     return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
@@ -150,16 +158,17 @@ gulp.task('watch', () => {
 
     // compile pages then bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
-        var bemtree = path.join(process.cwd(), BEMTREE[bundle]),
-            bemhtml = path.join(process.cwd(), BEMHTML[bundle]);
-        gulp.watch([
-                bemtree, bemhtml,
+        var cwd = process.cwd(),
+            bemtree = LANGUAGES.map(lang => path.join(cwd, BEMTREE[lang][bundle])),
+            bemhtml = LANGUAGES.map(lang => path.join(cwd, BEMHTML[lang][bundle]));
+
+        gulp.watch(bemtree.concat(bemhtml, [
                 path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
                 path.join(DATA_DIR_PREFIX + '*', bundle + '.js')
-            ],
+            ]),
             batch((event, done) => {
-                delete require.cache[bemhtml];
-                delete require.cache[bemtree];
+                bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
+                bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
 
                 LANGUAGES.forEach(lang => {
                     console.log('lang', lang, 'bundle', bundle);

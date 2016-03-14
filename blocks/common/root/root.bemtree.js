@@ -30,7 +30,7 @@ block('root').replace()(function() {
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' }
         ],
         scripts: [
-            { elem: 'js', url: data.root + '/' + siteBundle + '.min.js' }
+            { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js' }
         ]
     };
 });
