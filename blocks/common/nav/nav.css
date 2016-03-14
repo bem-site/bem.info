@@ -1,5 +1,7 @@
 .nav
 {
+    font-size: 14px;
+
     position: relative;
     z-index: 1;
 
@@ -10,20 +12,19 @@
 
     list-style: none;
 
-    font-size: 14px;
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: #fff;
 }
 
 .nav__item
 {
+    line-height: 30px;
+
     display: inline-block;
 
     margin: 0 31px 0 0;
     padding: 6px 3px 4px;
 
-    line-height: 30px;
     white-space: nowrap;
 }
 
@@ -44,10 +45,10 @@
 {
     display: block;
 
+    transition: color 0.3s;
     text-decoration: none;
 
     color: rgb(153, 153, 153);
-    transition: color 0.3s;
 }
 
 .nav__link:hover

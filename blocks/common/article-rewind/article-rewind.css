@@ -36,8 +36,10 @@
 .article-rewind__next-link
 {
     display: inline-block;
+
     height: 31px;
 
+    transition: all 0.3s;
     white-space: nowrap;
     text-decoration: none;
 
@@ -45,7 +47,6 @@
     border: 1px solid rgb(174, 174, 174);
     border-radius: 3px;
     background: #fff;
-    transition: all 0.3s;
 }
 
 .article-rewind__prev-link
@@ -71,21 +72,21 @@
 {
     font-size: 25px;
 
-    position: absolute;;
+    position: absolute;
 
-    color: #555;
+    color: #555;;
 }
 
 .article-rewind__prev-link::after
 {
-    content: '‹';
-
     margin: -12px 0 0 11px;
+
+    content: '‹';
 }
 
 .article-rewind__next-link::before
 {
-    content: '›';
-
     margin: -12px 0 0 -18px;
+
+    content: '›';
 }

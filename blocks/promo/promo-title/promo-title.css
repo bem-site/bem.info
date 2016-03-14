@@ -1,22 +1,23 @@
 .promo-title
 {
-    margin: 0;
-    padding: 50px 0 0;
-
     font-size: 15px;
     font-weight: 600;
     line-height: 2.1;
+
+    margin: 0;
+    padding: 50px 0 0;
+
+    text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-align: center;
 }
 
 .promo-title__highlighted
 {
-    padding: 0 1px 0 3px;
-
     font-weight: 600;
     font-style: normal;
+
+    padding: 0 1px 0 3px;
 
     color: #000;
     background: #fc0;

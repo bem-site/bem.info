@@ -1,7 +1,10 @@
 .promo-quotes
 {
-    text-align: center;
     line-height: 1.2;
-    color: #fff;
+
     padding: 30px 0 100px;
+
+    text-align: center;
+
+    color: #fff;
 }

@@ -1,12 +1,13 @@
 .promo-section
 {
     position: relative;
+
     padding: 0 0 70px;
 }
 
 .promo-section_color_blue
 {
-    background:#17a1e6;
+    background: #17a1e6;
 }
 
 .promo-section_color_white
@@ -21,8 +22,8 @@
 
 .promo-section_color_black
 {
-    background: #333;
     color: #fff;
+    background: #333;
 }
 
 .promo-section_color_black .promo-features__separator

@@ -1,10 +1,11 @@
 .breadcrumbs
 {
+    font-size: 17px;
+
     display: inline-block;
 
     padding: 0;
 
-    font-size: 17px;
     vertical-align: top;
 
     background: inherit;
@@ -26,10 +27,10 @@
 {
     margin-left: 11px;
 
-    content: "/";
+    content: '/';
 
     color: rgba(255, 255, 255, 0.55);
- }
+}
 
 .breadcrumbs__item:last-child::after
 {
@@ -38,10 +39,10 @@
 
 .breadcrumbs__link
 {
+    transition: color 0.3s;
     text-decoration: none;
 
     color: rgba(255, 255, 255, 0.55);
-    transition: color 0.3s;
 }
 
 .breadcrumbs__link:hover

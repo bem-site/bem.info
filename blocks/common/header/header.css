@@ -4,6 +4,7 @@
     position: relative;
 
     display: flex;
+
     height: 70px;
 
     white-space: nowrap;
@@ -17,6 +18,7 @@
 .header__breadcrumbs
 {
     flex-grow: 1;
+
     margin: 18px 0 0 29px;
 }
 
@@ -24,11 +26,11 @@
 {
     margin: 19px 40px 0 10px;
 
+    transition: color 0.3s;
     text-decoration: none;
     letter-spacing: 2px;
 
     color: rgba(255, 255, 255, 0.65);
-    transition: color 0.3s;
 }
 
 .header__forum:hover
