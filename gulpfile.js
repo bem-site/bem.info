@@ -203,7 +203,7 @@ gulp.task('libs-build', function() {
 });
 
 gulp.task('styles', function() {
-    return gulp.src('/blocks/**/*.css', { base: './' })
+    return gulp.src('blocks/**/*.css', { base: './' })
         .pipe(csscomb())
         .pipe(gulp.dest('./'));
 });
