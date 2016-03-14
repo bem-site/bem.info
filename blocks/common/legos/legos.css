@@ -1,44 +1,47 @@
 .legos::before
 {
-	position: absolute;
-	left: 0;
-	right: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
 
-	height: 7px;
-	margin-top: 112px;
+    height: 7px;
+    margin-top: 112px;
 
-	content: '';
-	background: 0 0 repeat-x;
+    content: '';
+
+    background: 0 0 repeat-x;
 }
 
 .legos
 {
-	display: inline-block;
-    width: 100%;
-	overflow: hidden;
-	height: 119px;
-
-	white-space: nowrap;
-
     position: absolute;
     top: -119px;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+    height: 119px;
+
+    white-space: nowrap;
 }
 
 .legos__lego
 {
-	display: inline-block;
+    display: inline-block;
 
-	width: 44px;
-	height: 119px;
-	background: 0 0 repeat-x;
+    width: 44px;
+    height: 119px;
+
+    background: 0 0 repeat-x;
 }
 
 .legos__lego_width_2
 {
-	width: 66px;
+    width: 66px;
 }
 
 .legos__lego_width_3
 {
-	width: 88px;
+    width: 88px;
 }

@@ -1,67 +1,68 @@
 .promo-action::before
 {
-	position: absolute;
-	z-index: -1;
-	top: 8px;
-	left: 8px;
+    position: absolute;
+    z-index: -1;
+    top: 8px;
+    left: 8px;
 
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	content: "";
+    content: '';
 
     background: rgba(77, 61, 0, 0.7);
 }
 
 .promo-action
 {
-	font-size: 30px;
+    font-size: 30px;
 
-	position: relative;
+    position: relative;
 
-	display: inline-block;
+    display: inline-block;
 
-	padding: 2px 35px 1px 25px;
+    padding: 2px 35px 1px 25px;
 
-	letter-spacing: 6px;
-	text-transform: uppercase;
-	text-decoration: none;
+    transition: all 0.3s;
+    text-decoration: none;
+    letter-spacing: 6px;
+    text-transform: uppercase;
 
-	color: #000;
-	background: #fc0;
-	transition: all 0.3s;
+    color: #000;
+    background: #fc0;
 }
 
 .promo-action:hover
 {
-	background: rgb(255, 224, 0);
+    background: rgb(255, 224, 0);
 }
 
 .promo-action::after
 {
-	position: relative;
-	top: -3px;
+    position: relative;
+    top: -3px;
 
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-	margin-left: 12px;
+    display: inline-block;
 
-	content: "";
+    width: 15px;
+    height: 15px;
+    margin-left: 12px;
 
-	transform: rotate(-45deg);
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
+    content: '';
+    transform: rotate(-45deg);
+
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .promo-action:active
 {
-	position: relative;
-	top: 8px;
-	left: 8px;
+    position: relative;
+    top: 8px;
+    left: 8px;
 }
 
 .promo-action:active::before
 {
-	display: none;
+    display: none;
 }

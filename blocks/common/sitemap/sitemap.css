@@ -5,13 +5,14 @@
     top: 70px;
 
     display: none;
+
     width: 100%;
     min-height: calc(100% - 100px);
     padding-top: 29px;
 
     color: #fff;
-    background: #444;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: #444;
 }
 
 .sitemap_opened
@@ -20,7 +21,8 @@
 }
 
 /* Hide all siblings then sitemap is shown */
-.sitemap_opened ~ div, .sitemap_opened ~ footer
+.sitemap_opened ~ div,
+.sitemap_opened ~ footer
 {
     display: none;
 }
@@ -99,10 +101,10 @@
 
 .sitemap__link
 {
+    transition: all 0.3s;
     text-decoration: none;
 
     color: #fff;
-    transition: all 0.3s;
 }
 
 .sitemap__link:link:hover
