@@ -12,7 +12,7 @@ block('footer').mode('index')(function() {
                 },
                 ' is proudly made by ',
                 {
-                    elem: 'copyright-logo',
+                    elem: 'copyright-ya',
                     url: 'https://yandex.com/company/',
                     content: 'Yandex'
                 }
@@ -20,3 +20,8 @@ block('footer').mode('index')(function() {
         }
     ];
 });
+
+block('footer').mode('promo')(function() {
+    return;
+});
+

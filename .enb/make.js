@@ -95,8 +95,7 @@ module.exports = function(config) {
     var isProd = process.env.YENV === 'production';
 
     config.setLanguages(langs);
-
-    configNodes(config, isProd, 'bundles/index', [ 'blocks/index' ]);
+    configNodes(config, isProd, 'bundles/index', [ 'blocks/promo/', 'blocks/index' ]);
 
     configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology' ]);
     configNodes(config, isProd, 'bundles/methodology', [ 'blocks/methodology' ]);

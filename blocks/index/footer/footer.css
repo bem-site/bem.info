@@ -19,3 +19,12 @@
 {
     margin: 0;
 }
+
+.footer__copyright-ya
+{
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: #fff;
+}
