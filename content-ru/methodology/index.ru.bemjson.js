@@ -102,7 +102,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Все разработчики используют единые правила для написания кода.'
                 }
             ]
         }
@@ -137,7 +137,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Простое и быстрое обновление базовых компонентов.'
                 }
             ]
         }
@@ -172,7 +172,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'При использовании методологии код развивается по заранее известным правилам. Результат всегда получается логичным и предсказуемым.'
                 }
             ]
         }
@@ -207,7 +207,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
                 }
             ]
         }
@@ -242,7 +242,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Простота обновления и масштабирования повышают эффективность работы.'
                 }
             ]
         }
@@ -277,7 +277,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту — всё заранее известно.'
                 }
             ]
         }
@@ -317,7 +317,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
                 }
             ]
         }
@@ -358,7 +358,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
                 }
             ]
         }
@@ -393,7 +393,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
         }
