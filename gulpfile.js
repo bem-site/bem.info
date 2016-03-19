@@ -153,7 +153,7 @@ gulp.task('compile-pages', () => runSequence(
 
 gulp.task('watch', () => {
     gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data', done)));
-    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('styles', 'enb-make', 'copy-static', done)));
+    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
@@ -201,7 +201,7 @@ gulp.task('libs-build', function() {
     // require('bem-lib-site-generator').data(path.resolve('path/to/library'));
 });
 
-gulp.task('styles', function() {
+gulp.task('csscomb', function() {
     return gulp.src('blocks/**/*.css', { base: './' })
         .pipe(csscomb())
         .pipe(gulp.dest('./'));
@@ -215,7 +215,7 @@ gulp.task('default', (done) => runSequence(
     'copy-static-images',
     'copy-sitemap-xml',
     'build-html',
-    'styles',
+    'csscomb',
     'watch',
     'browser-sync',
     done
