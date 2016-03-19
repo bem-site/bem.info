@@ -27,9 +27,9 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_methodology.png')
+                                        url: freeze('../../static/promo-crossroad_methodology.png')
                                     },
-                                    'Методология'
+                                    'Methodology'
                                 ]
                             }
                         ]
@@ -52,9 +52,9 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_platform.png')
+                                        url: freeze('../../static/promo-crossroad_platform.png')
                                     },
-                                    'Платформа'
+                                    'Platform'
                                 ]
                             }
                         ]
@@ -69,7 +69,7 @@
                         {
                             elem: 'text-link',
                             url: '/tutorials/quick-start-static/',
-                            content: 'Быстрый старт'
+                            content: 'Quick start'
                         }
                     }
                 ]
@@ -86,16 +86,16 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_community.svg')
+                                        url: freeze('../../static/promo-crossroad_community.svg')
                                     },
-                                    'Сообщество'
+                                    'Community'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Люди и события'
+                        content: 'People and events'
                     }
                 ]
             }

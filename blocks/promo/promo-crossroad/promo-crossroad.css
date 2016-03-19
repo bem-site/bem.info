@@ -36,6 +36,8 @@
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
+
+    border-radius: 100px;
 }
 
 .promo-crossroad__text
