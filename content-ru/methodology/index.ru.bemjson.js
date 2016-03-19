@@ -56,7 +56,7 @@
                 {
                     block: 'promo-title',
                     content: [
-                        'Все эти ',
+                        'Эти ',
                         {
                             elem: 'highlighted',
                             content: 'проблемы решены'
@@ -81,9 +81,9 @@
                 ' предлагает ',
                 {
                     elem: 'highlighted',
-                    content: 'непротиворечивое и разумное'
+                    content: 'единые'
                 },
-                ' окружение'
+                ' правила написания кода'
             ]
         },
         {
@@ -102,7 +102,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'Все разработчики используют единые правила для написания кода.'
+                    content: '??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ???'
                 }
             ]
         }
@@ -110,41 +110,6 @@
 }, {
     block: 'promo-section',
     mods: { color: 'black' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Лёгкое'
-                },
-                ' обновление'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: freeze('../../static-ru/promo-features__squirrel.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static-ru/promo-features__yogi.svg')
-                },
-                {
-                    elem: 'text',
-                    content: 'Простое и быстрое обновление базовых компонентов.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -172,23 +137,23 @@
                 },
                 {
                     elem: 'text',
-                    content: 'При использовании методологии код развивается по заранее известным правилам. Результат всегда получается логичным и предсказуемым.'
+                    content: 'При использовании методологии код развивается по заранее известным правилам.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
                     elem: 'highlighted',
-                    content: 'Повторное использование'
+                    content: 'Повторное'
                 },
-                ' и эффективность'
+                ' использование'
             ]
         },
         {
@@ -214,7 +179,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
@@ -249,7 +214,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'black' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -277,14 +242,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту — всё заранее известно.'
+                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту&nbsp;— всё заранее известно.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
@@ -324,7 +289,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -365,7 +330,7 @@
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',

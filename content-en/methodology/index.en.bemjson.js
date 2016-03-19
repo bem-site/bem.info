@@ -43,10 +43,10 @@
         {
             block: 'promo-title',
             content: [
-                'EVERY WEB DEVELOPER MEETS THE ',
+                'Every web developer meets the ',
                 {
                     elem: 'highlighted',
-                    content: 'SAME PROBLEMS'
+                    content: 'same problems'
                 }
             ]
         },
@@ -60,15 +60,15 @@
                 {
                     block: 'promo-title',
                     content: [
-                        'All these ',
+                        'These ',
                         {
                             elem: 'highlighted',
-                            content: 'PROBLEMS ARE SOLVED'
+                            content: 'problems are solved'
                         },
-                        ' BY ',
+                        ' by ',
                         { block: 'bem' },
-                        ' METHODOLOGY,<br>',
-                        'A DEVELOPMENT APPROACH ALLOWING TO ACHIEVE flexible and maintainable code'
+                        ' methodology,<br>',
+                        'a development approach allowing to achieve flexible and maintainable code'
                     ]
                 }
             ]
@@ -82,12 +82,12 @@
             block: 'promo-title',
             content: [
                 { block: 'bem' },
-                ' PROVIDES A ',
+                ' предлагает ',
                 {
                     elem: 'highlighted',
-                    content: ' CONSISTENT AND SANE'
+                    content: 'единые'
                 },
-                ' ENVIRONMENT'
+                ' правила написания кода'
             ]
         },
         {
@@ -106,7 +106,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: '??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ???'
                 }
             ]
         }
@@ -114,41 +114,6 @@
 }, {
     block: 'promo-section',
     mods: { color: 'black' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Accommodate'
-                },
-                ' changes'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__squirrel.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__yogi.svg')
-                },
-                {
-                    elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -176,14 +141,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'При использовании методологии код развивается по заранее известным правилам.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -192,8 +157,7 @@
                 {
                     elem: 'highlighted',
                     content: 'reuse'
-                },
-                ' and efficiency'
+                }
             ]
         },
         {
@@ -212,14 +176,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
@@ -247,14 +211,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Простота обновления и масштабирования повышают эффективность работы.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'black' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -282,14 +246,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту&nbsp;— всё заранее известно.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
@@ -322,14 +286,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
@@ -363,14 +327,14 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
@@ -398,7 +362,7 @@
                 },
                 {
                     elem: 'text',
-                    content: 'And consistent environment is consistent. And sane environment is sane. And when your environment is consistent and sane at the same time it’s totally awesome, because you feel yourself sane and consistent and, you know, everything around is sane and consistent and stuff. And you feel happy.'
+                    content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
         }
