@@ -1,38 +1,18 @@
 parserOptions:
   ecmaVersion": 6
 
+plugins:
+  - bem-xjst
+
 env:
   browser: true
   node: true
   es6: true
+  bem-xjst/bemhtml: true
+  bem-xjst/bemtree: true
 
 globals:
   # YModules
   modules: false
-  # BEMHTML
-  oninit: false
-  apply: false
-  applyCtx: false
-  applyNext: false
-  match: false
-  block: false
-  elem: false
-  elemMatch: false
-  mod: false
-  def: false
-  mode: false
-  content: false
-  mix: false
-  tag: false
-  bem: false
-  js: false
-  attrs: false
-  cls: false
-  extend: false
-  replace: false
-  wrap: false
 
 extends: pedant
-
-rules:
-  no-undefined: off
