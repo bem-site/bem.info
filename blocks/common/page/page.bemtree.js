@@ -1,5 +1,6 @@
 block('page').content()(function() {
-    var page = this.data.page;
+    var data = this.data,
+        page = data.page;
 
     return [
         {
@@ -12,7 +13,12 @@ block('page').content()(function() {
         page.type === 'bemjson.js' ? page.content : [
             { block: 'article-rewind' },
             { block: 'article' },
-            { block: 'article-amendments' }
+            { block: 'article-amendments' },
+            {
+                block: 'social-likes',
+                params: page.head.meta,
+                lang: data.lang
+            }
         ],
         {
             block: 'footer',
