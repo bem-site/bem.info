@@ -33,6 +33,3 @@ globals:
   wrap: false
 
 extends: pedant
-
-rules:
-  no-undefined: off
