@@ -27,7 +27,11 @@ block('root').replace()(function() {
         title: page.head.title,
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,600,700&subset=cyrillic' },
-            { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' }
+            { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' },
+            Object.keys(page.head.meta).reduce(function(prev, field) {
+                (field.indexOf('og') !== -1) && prev.push({ elem: 'meta', attrs: { property: 'og:' + field.toLowerCase().replace('og', ''), content: page.head.meta[field] } });
+                return prev
+            }, [])
         ],
         scripts: [
             { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js' }
