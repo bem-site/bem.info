@@ -1,6 +1,7 @@
 ({
     shouldDeps: [
         'article-rewind',
-        'article'
+        'article',
+        'article-amendments'
     ]
 })

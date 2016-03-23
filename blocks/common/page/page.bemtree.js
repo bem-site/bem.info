@@ -11,7 +11,8 @@ block('page').content()(function() {
         page.url !== '/forum/' ? { block: 'nav' } : undefined,
         page.type === 'bemjson.js' ? page.content : [
             { block: 'article-rewind' },
-            { block: 'article' }
+            { block: 'article' },
+            { block: 'article-amendments' }
         ],
         {
             block: 'footer',
