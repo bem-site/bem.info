@@ -347,14 +347,8 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__8-1.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static-ru/promo-features__8-2.svg')
+                    elemMods: { single: true },
+                    url: freeze('../../static-ru/promo-features__easy-to-learn.svgz')
                 },
                 {
                     elem: 'text',

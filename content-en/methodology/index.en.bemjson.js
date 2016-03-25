@@ -351,18 +351,12 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__8-1.svg')
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: freeze('../../static/promo-features__8-2.svg')
+                    elemMods: { single: true },
+                    url: freeze('../../static/promo-features__easy-to-learn.svgz')
                 },
                 {
                     elem: 'text',
-                    content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
+                    content: 'TODO: Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
         }

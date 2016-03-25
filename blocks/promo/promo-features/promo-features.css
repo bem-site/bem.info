@@ -28,6 +28,13 @@
     height: 400px;
 }
 
+.promo-features__image_single
+{
+    width: 460px;
+    height: 336px;
+    margin: 90px auto 0;
+}
+
 .promo-features__text
 {
     font-size: 15px;
