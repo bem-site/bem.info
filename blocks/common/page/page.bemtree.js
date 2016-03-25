@@ -23,6 +23,16 @@ block('page').content()(function() {
         {
             block: 'footer',
             mix: { block: 'page-bg' }
+        },
+        {
+            block: 'yandex-metrica',
+            params: {
+                id: '16972024',
+                webvisor: true,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true
+            }
         }
     ];
 });

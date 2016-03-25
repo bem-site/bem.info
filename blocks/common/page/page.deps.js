@@ -4,6 +4,7 @@
         'sitemap',
         'nav',
         'social-likes',
-        'footer'
+        'footer',
+        'yandex-metrica'
     ]
 })
