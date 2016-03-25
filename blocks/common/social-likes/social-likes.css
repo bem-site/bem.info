@@ -1,0 +1,42 @@
+.social-likes
+{
+    margin: 9px 0 50px 111px;
+}
+
+.social-likes__service
+{
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+    margin: 0 0 4px 6px;
+    padding: 3px;
+
+    transition: all 0.3s;
+    vertical-align: middle;
+    text-indent: -9999px;
+
+    border-radius: 3px;
+}
+
+.social-likes__service:hover,
+.social-likes__service:active,
+.social-likes__service:focus
+{
+    opacity: 0.8;
+}
+
+.social-likes__service_type_facebook
+{
+    background: #425497 0 0 / cover no-repeat url(social-likes_service_facebook.svg);
+}
+
+.social-likes__service_type_twitter
+{
+    background: #00b7ec 0 0 / cover no-repeat url(social-likes_service_twitter.svg);
+}
+
+.social-likes__service_type_vk
+{
+    background: #526e8f 1px 2px / 28px 28px url(social-likes_service_vk.svg);
+}
