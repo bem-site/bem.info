@@ -10,7 +10,7 @@
     "node": ">=4.1"
   },
   "devDependencies": {
-    "bem-lib-site-generator": "bem-site/bem-lib-site-data",
+    "bem-lib-site-data": "bem-site/bem-lib-site-data",
     "borschik": "^1.5.2",
     "borschik-tech-cleancss": "^1.0.3",
     "bower": "^1.7.7",
