@@ -44,7 +44,7 @@
     text-decoration: none;
 
     color: #000;
-    border: 1px solid rgb(174, 174, 174);
+    border: 1px solid rgba(174, 174, 174, 0.4);
     border-radius: 3px;
     background: #fff;
 }
@@ -65,6 +65,8 @@
 .article-rewind__next-link:hover
 {
     margin-left: 0;
+
+    border-color: rgb(174, 174, 174, 0.4);
 }
 
 .article-rewind__prev-link::after,
