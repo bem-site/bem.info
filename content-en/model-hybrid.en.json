@@ -76,7 +76,7 @@
     "url": "/methodology/faq/",
     "site": "/methodology/",
     "title": "FAQ",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.ru.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.en.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
