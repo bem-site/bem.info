@@ -4,7 +4,7 @@
     z-index: 0;
     top: 238px;
 
-    width: 100%;
+    width: calc(100% - 111px); /* 111px padding-left in article-wrap */
     margin: 0;
     padding: 0;
 
@@ -24,7 +24,7 @@
 
 .article-rewind__prev
 {
-    left: -3px;
+    left: -114px; /* -(3px + 111px padding-left in article-wrap) */
 }
 
 .article-rewind__next

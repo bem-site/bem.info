@@ -10,16 +10,7 @@ block('page').content()(function() {
             block: 'sitemap'
         },
         page.url !== '/forum/' ? { block: 'nav' } : undefined,
-        page.type === 'bemjson.js' ? page.content : [
-            { block: 'article-rewind' },
-            { block: 'article' },
-            { block: 'article-amendments' },
-            {
-                block: 'social-likes',
-                params: page.head.meta,
-                lang: data.lang
-            }
-        ],
+        page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' },
         {
             block: 'footer',
             mix: { block: 'page-bg' }

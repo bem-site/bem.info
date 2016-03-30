@@ -1,6 +1,6 @@
 .social-likes
 {
-    margin: 9px 0 50px 111px;
+    margin: 48px 0 50px;
 }
 
 .social-likes__service
@@ -9,7 +9,7 @@
 
     width: 25px;
     height: 25px;
-    margin: 0 0 4px 6px;
+    margin: -2px 0 4px 6px;
     padding: 3px;
 
     transition: all 0.3s;

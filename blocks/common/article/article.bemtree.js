@@ -1,3 +1,6 @@
 block('article').content()(function() {
-    return this.data.page.content;
+    return [
+        { block: 'article-tags' },
+        this.data.page.content
+    ];
 });

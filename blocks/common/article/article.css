@@ -1,11 +1,3 @@
- .article
-{
-    margin: 0 35px 0 0;
-    padding: 9px 0 16px 111px;
-
-    background: url(article.png) repeat;
-}
-
 /* block level (begin) */
 .article h1,
 .article h2,
@@ -18,6 +10,8 @@
 .article blockquote,
 .article pre
 {
+    clear: left;
+
     max-width: 760px;
 }
 
@@ -72,8 +66,6 @@
     position: relative;
     z-index: 1;
 
-    display: inline-block;
-
     padding: 0;
 }
 
@@ -82,7 +74,9 @@
     font-size: 49px;
     line-height: 64px;
 
-    margin: 53px 0 27px -2px;
+    float: left;
+
+    margin: 0 0 43px -2px;
 }
 /*
     .article__info
@@ -118,7 +112,10 @@
 
 .article__heading_1 + .article__heading_2
 {
-    margin-top: -14px;
+    position: relative;
+    top: -7px;
+
+    margin-bottom: 7px;
 }
 
 .article__heading_2 + .article__heading_3

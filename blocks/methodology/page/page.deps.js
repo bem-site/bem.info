@@ -1,7 +1,5 @@
 ({
     shouldDeps: [
-        'article-rewind',
-        'article',
-        'article-amendments'
+        'article-wrap'
     ]
 })

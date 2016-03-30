@@ -1,0 +1,33 @@
+.article-tags
+{
+    display: inline-block;
+
+    margin-top: 16px !important; /* TODO: remove !important after mirgation to md2bemjson */
+}
+
+.article-tags__tag
+{
+    display: inline-block;
+}
+
+.article-tags__link
+{
+    font-size: 15px;
+
+    display: inline-block;
+
+    margin: 1px 10px 0 0;
+    padding: 1px 10px 2px;
+
+    transition: all 0.3s;
+    text-decoration: none;
+
+    color: rgba(0, 0, 0, 0.8) !important; /* TODO: remove !important after mirgation to md2bemjson */
+    border-radius: 3px;
+    background: #f7f7f7;
+}
+
+.article-tags__link:hover
+{
+    color: #000 !important; /* TODO: remove !important after mirgation to md2bemjson */
+}
