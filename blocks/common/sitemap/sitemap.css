@@ -116,3 +116,56 @@
 {
     color: rgb(180, 180, 180);
 }
+
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .sitemap__section
+    {
+        width: 50%;
+    }
+    .sitemap__section:first-child
+    {
+        width: 50%;
+    }
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .sitemap_opened
+    {
+        display: block;
+    }
+    .sitemap__section
+    {
+        display: inline-block;
+
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 3%;
+
+        vertical-align: top;
+    }
+    .sitemap__section:first-child
+    {
+        width: 100%;
+        margin: 0;
+    }
+    .sitemap__section:last-child
+    {
+        margin: 0;
+    }
+}
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}

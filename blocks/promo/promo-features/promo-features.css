@@ -44,3 +44,54 @@
     max-width: 750px;
     margin: 50px auto 0;
 }
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-features__image
+    {
+        width: 370px;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-features__image
+    {
+        width: 100%;
+        height: auto;
+        margin-top: -10px;
+    }
+
+    .promo-features__image_single
+    {
+        margin-top: 80px;
+    }
+
+    .promo-features__separator
+    {
+        margin: 10px auto 0;
+
+        transform: rotate(45deg);
+    }
+
+    .promo-features__text
+    {
+        text-align: center;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-features
+    {
+        margin: -10px auto 80px;
+    }
+}

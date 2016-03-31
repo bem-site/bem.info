@@ -1,0 +1,95 @@
+.toggle
+{
+    display: none;
+
+    margin: 24px 23px 0 10px;
+}
+
+.toggle
+{
+    padding: 10px 35px 16px 0;
+
+    cursor: pointer;
+}
+.toggle__line,
+.toggle__line:before,
+.toggle__line:after
+{
+    position: absolute;
+
+    display: block;
+
+    width: 35px;
+    height: 3px;
+
+    content: '';
+    cursor: pointer;
+
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.55);
+}
+.toggle__line:before
+{
+    top: -10px;
+}
+.toggle__line:after
+{
+    bottom: -10px;
+}
+.toggle:hover .toggle__line,
+.toggle:hover .toggle__line:before,
+.toggle:hover .toggle__line:after,
+.toggle_active .toggle__line:before,
+.toggle_active .toggle__line:after
+{
+    background: rgba(255, 255, 255, 1);
+}
+
+.toggle__line,
+.toggle__line:before,
+.toggle__line:after
+{
+    transition: all 500ms ease-in-out;
+}
+.toggle_active .toggle__line,
+.toggle_active:hover .toggle__line
+{
+    background-color: transparent;
+}
+.toggle_active .toggle__line:before,
+.toggle_active .toggle__line:after
+{
+    top: 0;
+}
+.toggle_active .toggle__line:before
+{
+    transform: rotate(45deg);
+}
+.toggle_active .toggle__line:after
+{
+    transform: rotate(-45deg);
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .toggle
+    {
+        display: block;
+    }
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}

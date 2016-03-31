@@ -3,6 +3,7 @@
         'logo',
         'breadcrumbs',
         'lang-switcher',
-        'search'
+        'search',
+        'toggle'
     ]
 })

@@ -59,17 +59,34 @@
 /*mobile*/
 @media all and (max-width: 480px)
 {
-    .nav
-    {
-        overflow: hidden;
-
-        height: 40px;
-    }
 }
 
 /*tablet*/
 @media all and (max-width: 780px)
 {
+    .nav
+    {
+        position: absolute;
+        z-index: 2;
+
+        display: none;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 0 0 10px;
+    }
+    .nav__item
+    {
+        font-size: 16px;
+
+        width: 100%;
+    }
+    .nav_toggled
+    {
+        display: block;
+
+        margin-top: -1px;
+    }
 }
 
 /*tablet md*/
