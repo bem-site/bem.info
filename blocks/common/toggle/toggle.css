@@ -56,11 +56,17 @@
 {
     background-color: transparent;
 }
-.toggle_active .toggle__line:before,
-.toggle_active .toggle__line:after
+
+.toggle_active .toggle__line:before
 {
     top: 0;
 }
+
+.toggle_active .toggle__line:after
+{
+    bottom: 0;
+}
+
 .toggle_active .toggle__line:before
 {
     transform: rotate(45deg);
