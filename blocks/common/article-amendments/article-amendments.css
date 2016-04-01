@@ -3,3 +3,27 @@
     max-width: 760px;
     margin: 48px 0 16px;
 }
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .article-amendments
+    {
+        padding: 8px 10% 16px;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+}

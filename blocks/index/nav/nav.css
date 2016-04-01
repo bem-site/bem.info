@@ -32,3 +32,68 @@
 {
     color: #fff;
 }
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .nav
+    {
+        position: absolute;
+        z-index: 2;
+
+        display: none;
+
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 0 0 0 10px;
+
+        white-space: normal;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+    }
+
+    .nav__item
+    {
+        font-size: 16px;
+        line-height: 30px;
+
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 6px 3px 4px;
+
+        text-align: left;
+        white-space: nowrap;
+
+        color: rgb(153, 153, 153);
+    }
+
+    .nav__link:hover
+    {
+        color: #000;
+    }
+
+    .nav_toggled
+    {
+        display: block;
+
+        margin-top: -1px;
+    }
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
