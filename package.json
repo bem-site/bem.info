@@ -29,7 +29,7 @@
     "eslint-config-pedant": "^0.1.1",
     "eslint-plugin-bem-xjst": "^1.0.1",
     "gorshochek": "vithar/gorshochek#freeze-support-and-full-model",
-    "gulp": "^3.9.0",
+    "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.6",
     "gulp-watch": "^4.3.5",
@@ -40,7 +40,6 @@
     "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
     "q": "^1.4.1",
     "rimraf": "^2.5.2",
-    "run-sequence": "^1.1.4",
     "stylus": "^0.54.2",
     "ym": "^0.1.2"
   },

@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path'),
     fs = require('fs'),
     cp = require('child_process'),
@@ -5,7 +7,6 @@ var path = require('path'),
     _ = require('lodash'),
     Q = require('q'),
     enb = require('enb'),
-    runSequence = require('run-sequence'),
     rimraf = require('rimraf'),
 
     gulp = require('gulp'),
@@ -84,9 +85,10 @@ function compilePages(lang, bundle) {
 
 // Подготовка директорий output-*
 
-gulp.task('clean-output', () => { rimraf.sync(OUTPUT); });
-gulp.task('copy-misc-to-output', ['clean-output'], () => {
-    Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
+gulp.task('copy-misc-to-output', () => {
+    rimraf.sync(OUTPUT);
+
+    return Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
                 'static/{favicon.ico,robots.txt}'
@@ -140,9 +142,8 @@ gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
         .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
-gulp.task('compile-pages', () => runSequence(
+gulp.task('compile-pages', gulp.series(
     'enb-make',
-    'drop-templates-cache',
     'copy-static',
     'copy-static-images',
     'copy-sitemap-xml',
@@ -152,8 +153,8 @@ gulp.task('compile-pages', () => runSequence(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content-*/**/*'], batch((event, done) => runSequence('data', done)));
-    gulp.watch(['blocks/**/*'], batch((event, done) => runSequence('enb-make', 'copy-static', done)));
+    gulp.watch(['content-*/**/*'], batch((event, done) => gulp.series('data', done)));
+    gulp.watch(['blocks/**/*'], batch((event, done) => gulp.series('enb-make', 'copy-static', done)));
 
     // compile pages then bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
@@ -207,7 +208,7 @@ gulp.task('csscomb', function() {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', (done) => runSequence(
+gulp.task('default', gulp.series(
     'copy-misc-to-output',
     'data',
     'enb-make',
@@ -216,7 +217,5 @@ gulp.task('default', (done) => runSequence(
     'copy-sitemap-xml',
     'build-html',
     'csscomb',
-    'watch',
-    'browser-sync',
-    done
+    gulp.parallel('watch', 'browser-sync')
 ));
