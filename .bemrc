@@ -1,0 +1,12 @@
+module.exports = {
+    root: true,
+    levels: {
+        'libs/bem-core/common.blocks': { scheme: 'nested' },
+        'libs/bem-core/desktop.blocks': { scheme: 'nested' },
+        'libs/bem-components/common.blocks': { scheme: 'nested' },
+        'libs/bem-components/desktop.blocks': { scheme: 'nested' },
+        'libs/bem-components/design/common.blocks': { scheme: 'nested' },
+        'libs/bem-components/design/desktop.blocks': { scheme: 'nested' },
+        'blocks/common': { scheme: 'flex' }
+    }
+};
