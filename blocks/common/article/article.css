@@ -161,7 +161,7 @@
     /* MUST BE #F6F5F3 */
 }
 
-.article code[class|=lang]
+.article pre code
 {
     font: 16px/1 Consolas, monospace;
 
