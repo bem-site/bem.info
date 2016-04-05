@@ -23,6 +23,10 @@ block('header').content()(function() {
         },
         {
             block: 'search'
+        },
+        {
+            block: 'toggle',
+            toggleBlock: 'nav'
         }
     ];
 });

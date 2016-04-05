@@ -40,3 +40,31 @@
 {
     background: #526e8f 1px 2px / 28px 28px url(social-likes_service_vk.svg);
 }
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .social-likes
+    {
+        padding: 8px 10% 16px;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .social-likes
+    {
+        font-size: 12px;
+    }
+}

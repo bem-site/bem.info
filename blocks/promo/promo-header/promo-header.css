@@ -108,3 +108,107 @@
 {
     opacity: 0.8;
 }
+
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-header__header
+    {
+        margin: 6px 0 0 10%;
+    }
+
+    .promo-logo__logo_bright
+    {
+        opacity: 0.35;
+    }
+
+    .promo-header__text
+    {
+        margin: 34px 0 74px 10%;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-logo__logo_methodology_1
+    {
+        display: none;
+    }
+
+    .promo-header__header
+    {
+        display: block;
+
+        margin: 6px 10% 0;
+    }
+
+    .promo-header__subtitle
+    {
+        margin-left: 0;
+    }
+
+    .promo-action
+    {
+        margin: 6px 0 0 15%;
+    }
+
+    .promo-header__text
+    {
+        margin: 34px 0 74px 10%;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-header
+    {
+        padding-bottom: 50px;
+    }
+
+    .promo-header__header
+    {
+        margin: 6px 5% 0 2%;
+    }
+
+    .promo-header__title
+    {
+        font-size: 90px;
+    }
+
+    .promo-action
+    {
+        font-size: 18px;
+
+        margin: 6px 0 0 2%;
+    }
+
+    .promo-action::after
+    {
+        top: 0;
+
+        width: 11px;
+        height: 11px;
+    }
+
+    .promo-header__subtitle
+    {
+        font-size: 18px;
+    }
+
+    .promo-header__text
+    {
+        font-size: 14px;
+    }
+
+    .promo-logo__logo_methodology_2
+    {
+        display: none;
+    }
+}

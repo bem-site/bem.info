@@ -325,6 +325,32 @@
 /* links (end) */
 /* inline (end) */
 
+/*tablet lg*/
+@media all and (min-width: 1200px)
+{
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .article
+    {
+        padding: 9px 10% 16px;
+    }
+    .article-wrap
+    {
+        overflow: hidden;
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
 
 /*mobile*/
 @media all and (max-width: 480px)
@@ -353,23 +379,4 @@
     {
         padding: 0 5px;
     }
-}
-
-/*tablet*/
-@media all and (max-width: 780px)
-{
-    .article
-    {
-        padding: 9px 10% 16px;
-    }
-}
-
-/*tablet md*/
-@media all and (max-width: 1200px)
-{
-}
-
-/*tablet lg*/
-@media all and (min-width: 1200px)
-{
 }
