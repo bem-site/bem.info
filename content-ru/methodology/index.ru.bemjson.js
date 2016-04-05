@@ -51,7 +51,7 @@
             content: [
                 {
                     elem: 'img',
-                    url: freeze('../../static-ru/promo-problems.ru.svg')
+                    url: freeze('../../static-ru/promo-problems.ru.svgz')
                 },
                 {
                     block: 'promo-title',
