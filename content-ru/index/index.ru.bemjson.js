@@ -86,6 +86,7 @@
                                 content: [
                                     {
                                         elem: 'img',
+                                        elemMods: { square: true },
                                         url: freeze('../../static-ru/promo-crossroad_community.svg')
                                     },
                                     'Сообщество'
