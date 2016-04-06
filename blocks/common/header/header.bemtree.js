@@ -14,7 +14,7 @@ block('header').content()(function() {
         },
         url.indexOf('/forum/') === -1 ? {
             elem: 'forum',
-            content: 'Форум',   // TODO: i18n
+            content: this.i18n(this.block, 'forum'), // Forum
             attrs: { href: data.root + '/forum/' }
         } : undefined,
         {
