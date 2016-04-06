@@ -7,7 +7,7 @@ block('promo-footer').mod('site', 'methodology').content()([
             // 'You should ',
             {
                 block: 'promo-highlight',
-                content: 'используйте',
+                content: 'используйте'
                 // 'use',
             },
             ' ',
