@@ -45,7 +45,7 @@
             content: [
                 'Every web developer meets the ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'same problems'
                 }
             ]
@@ -58,17 +58,17 @@
                     url: freeze('../../static/promo-problems.en.svgz')
                 },
                 {
-                    block: 'promo-title',
+                    block: 'promo-text',
                     content: [
                         'These ',
                         {
-                            elem: 'highlighted',
+                            block: 'promo-highlight',
                             content: 'problems are solved'
                         },
                         ' by ',
                         { block: 'bem' },
                         ' methodology,<br>',
-                        'a development approach allowing to achieve flexible and maintainable code'
+                        'a development approach allowing to achieve flexible and maintainable code.'
                     ]
                 }
             ]
@@ -84,7 +84,7 @@
                 { block: 'bem' },
                 ' предлагает ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'единые'
                 },
                 ' правила написания кода'
@@ -105,7 +105,7 @@
                     url: freeze('../../static/promo-features__fortress.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: '??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ???'
                 }
             ]
@@ -119,7 +119,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Grow and scale'
                 },
                 ' your codebase'
@@ -140,7 +140,7 @@
                     url: freeze('../../static/promo-features__9-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'При использовании методологии код развивается по заранее известным правилам.'
                 }
             ]
@@ -155,7 +155,7 @@
             content: [
                 'Promote ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'reuse'
                 }
             ]
@@ -175,7 +175,7 @@
                     url: freeze('../../static/promo-features__6-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
                 }
             ]
@@ -189,7 +189,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Increase'
                 },
                 ' productivity'
@@ -210,7 +210,7 @@
                     url: freeze('../../static/promo-features__tractor.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Простота обновления и масштабирования повышают эффективность работы.'
                 }
             ]
@@ -224,7 +224,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Team'
                 },
                 ' work'
@@ -245,7 +245,7 @@
                     url: freeze('../../static/promo-features__teamwork_good.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту&nbsp;— всё заранее известно.'
                 }
             ]
@@ -260,12 +260,12 @@
             content: [
                 'Do ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'less'
                 },
                 ', get ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'more'
                 }
             ]
@@ -285,7 +285,7 @@
                     url: freeze('../../static/promo-features__3d-printer.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
                 }
             ]
@@ -300,12 +300,12 @@
             content: [
                 'Suitable for ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'any'
                 },
                 ' programming language or ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'any'
                 },
                 ' framework'
@@ -326,7 +326,7 @@
                     url: freeze('../../static/promo-features__7-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
                 }
             ]
@@ -340,7 +340,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Easy'
                 },
                 ' to learn'
@@ -355,7 +355,7 @@
                     url: freeze('../../static/promo-features__easy-to-learn.svgz')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'TODO: Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
@@ -370,7 +370,7 @@
             mods: { color: 'white' },
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Experts'
                 },
                 ' recommend ',
@@ -455,7 +455,7 @@
             mods: { color: 'black' },
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Companies'
                 },
                 ' use ',

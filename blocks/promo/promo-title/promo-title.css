@@ -12,17 +12,6 @@
     text-transform: uppercase;
 }
 
-.promo-title__highlighted
-{
-    font-weight: 600;
-    font-style: normal;
-
-    padding: 0 1px 0 3px;
-
-    color: #000;
-    background: #fc0;
-}
-
 .promo-title .bem
 {
     letter-spacing: 2px;

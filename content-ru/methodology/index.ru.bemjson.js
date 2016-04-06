@@ -41,7 +41,7 @@
             content: [
                 'Каждый веб-разработчик сталкивается с одними и теми же ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'проблемами'
                 }
             ]
@@ -54,17 +54,17 @@
                     url: freeze('../../static-ru/promo-problems.ru.svgz')
                 },
                 {
-                    block: 'promo-title',
+                    block: 'promo-text',
                     content: [
                         'Эти ',
                         {
-                            elem: 'highlighted',
+                            block: 'promo-highlight',
                             content: 'проблемы решены'
                         },
                         ' ',
                         { block: 'bem' },
                         '-методологией,<br>',
-                        'подходом к веб-разработке, который позволяет получить гибкий, легко изменяемый код'
+                        'подходом к веб-разработке, который позволяет получить гибкий, легко изменяемый код.'
                     ]
                 }
             ]
@@ -80,7 +80,7 @@
                 { block: 'bem' },
                 ' предлагает ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'единые'
                 },
                 ' правила написания кода'
@@ -101,7 +101,7 @@
                     url: freeze('../../static-ru/promo-features__fortress.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: '??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ??? ???'
                 }
             ]
@@ -115,7 +115,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Масштабирование'
                 },
                 ' кода'
@@ -136,7 +136,7 @@
                     url: freeze('../../static-ru/promo-features__9-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'При использовании методологии код развивается по заранее известным правилам.'
                 }
             ]
@@ -150,7 +150,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Повторное'
                 },
                 ' использование'
@@ -171,7 +171,7 @@
                     url: freeze('../../static-ru/promo-features__6-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
                 }
             ]
@@ -185,7 +185,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Увеличение'
                 },
                 ' производительности'
@@ -206,7 +206,7 @@
                     url: freeze('../../static-ru/promo-features__tractor.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Простота обновления и масштабирования повышают эффективность работы.'
                 }
             ]
@@ -220,7 +220,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Командная'
                 },
                 ' работа'
@@ -241,7 +241,7 @@
                     url: freeze('../../static-ru/promo-features__teamwork_good.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту&nbsp;— всё заранее известно.'
                 }
             ]
@@ -256,12 +256,12 @@
             content: [
                 'Пиши ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'меньше'
                 },
                 ', получай ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'больше'
                 }
             ]
@@ -281,7 +281,7 @@
                     url: freeze('../../static-ru/promo-features__3d-printer.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
                 }
             ]
@@ -296,12 +296,12 @@
             content: [
                 'Можно использовать в ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'любых'
                 },
                 ' языках программирования и в ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'любых'
                 },
                 ' фреймворках'
@@ -322,7 +322,7 @@
                     url: freeze('../../static-ru/promo-features__7-2.svg')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
                 }
             ]
@@ -336,7 +336,7 @@
             block: 'promo-title',
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Легко'
                 },
                 ' изучить'
@@ -351,7 +351,7 @@
                     url: freeze('../../static-ru/promo-features__easy-to-learn.svgz')
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
@@ -366,7 +366,7 @@
             mods: { color: 'white' },
             content: [
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'Эксперты'
                 },
                 ' рекомендуют ',
@@ -455,7 +455,7 @@
                 { block: 'bem' },
                 ' ',
                 {
-                    elem: 'highlighted',
+                    block: 'promo-highlight',
                     content: 'используют'
                 }
             ]

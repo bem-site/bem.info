@@ -4,6 +4,8 @@
         'promo-header',
         'promo-main',
         'promo-section',
+        'promo-text',
+        'promo-highlight',
         'promo-companies',
         'promo-quotes',
         'promo-footer',

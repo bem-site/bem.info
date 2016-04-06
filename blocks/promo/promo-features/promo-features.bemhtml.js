@@ -7,8 +7,5 @@ block('promo-features')(
             });
         })
     ),
-    elem('text')(
-        tag()('p')
-    ),
     elem('separator').tag()('span')
 );

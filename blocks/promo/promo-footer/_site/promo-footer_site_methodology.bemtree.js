@@ -3,15 +3,15 @@ block('promo-footer').mod('site', 'methodology').content()([
         block: 'promo-title',
         mods: { color: 'white' },
         content: [
-            'Вы тоже используйте ',
+            'Вы тоже ',
             // 'You should ',
             {
-                elem: 'highlighted',
-                content: [
-                    // 'use ',
-                    { block: 'bem' }
-                ]
-            }
+                block: 'promo-highlight',
+                content: 'используйте',
+                // 'use',
+            },
+            ' ',
+            { block: 'bem' }
             // ' too'
         ]
     },
