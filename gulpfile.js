@@ -75,10 +75,12 @@ function compilePages(lang, bundle) {
             bundle,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
-            destinationRoot: OUTPUT,
+            destinationRoot: OUTPUT + (
+                process.env.YENV === 'production' ? '/bem.info/' + lang : ''),
             langs: LANGUAGES,
             lang,
-            DEBUG: process.env.DEBUG
+            DEBUG: process.env.DEBUG,
+            YENV: process.env.YENV
         }
     });
 }
