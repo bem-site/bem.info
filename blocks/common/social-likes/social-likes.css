@@ -40,3 +40,39 @@
 {
     background: #526e8f 1px 2px / 28px 28px url(social-likes_service_vk.svg);
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .social-likes
+    {
+        padding: 8px 4% 16px;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .social-likes
+    {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .social-likes .social-likes__text
+    {
+        display: none;
+    }
+
+    .social-likes__service
+    {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+    }
+
+    .social-likes__service_type_vk
+    {
+        background: #526e8f 3px 2px / 60px 60px url(social-likes_service_vk.svg);
+    }
+}

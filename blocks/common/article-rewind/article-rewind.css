@@ -92,3 +92,70 @@
 
     content: '›';
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .article-rewind
+    {
+        position: static;
+
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    .article-rewind__next
+    {
+        position: static;
+    }
+
+    .article-rewind__next-link
+    {
+        margin: 0;
+    }
+
+    .article-rewind__prev
+    {
+        display: none;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: portrait)
+{
+    .article-rewind__next-link
+    {
+        font-size: 16px;
+
+        margin: 0 14px;
+        padding: 0 12px 5px 31px;
+    }
+
+    .article-rewind__next-link::before
+    {
+        margin: -9px 0 0 -18px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape)
+{
+    .article-rewind__next-link
+    {
+        font-size: 14px;
+
+        height: 28px;
+        margin: 0 14px;
+    }
+
+    .article-rewind__next-link::before
+    {
+        margin: -13px 0 0 -18px;
+    }
+}

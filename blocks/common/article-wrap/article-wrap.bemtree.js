@@ -3,8 +3,8 @@ block('article-wrap').content()(function() {
         page = data.page;
 
     return [
-        { block: 'article-rewind' },
         { block: 'article' },
+        { block: 'article-rewind' },
         { block: 'article-amendments' },
         {
             block: 'social-likes',

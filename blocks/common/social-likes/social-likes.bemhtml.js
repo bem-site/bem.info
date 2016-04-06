@@ -1,8 +1,13 @@
 block('social-likes')(
     content()(function() {
         return [
-            this.i18n(this.block, 'text'),//Share with world
-            ': ',
+            {
+                elem: 'text',
+                content: [
+                    this.i18n(this.block, 'text'),//Share with world
+                    ': '
+                ]
+            },
             {
                 elem: 'service',
                 elemMods: { type: 'facebook' },
@@ -47,5 +52,6 @@ block('social-likes')(
                 href: url
             }
         })
-    )
+    ),
+    elem('text').tag()('a')
 );

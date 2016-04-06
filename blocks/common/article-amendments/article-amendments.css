@@ -3,3 +3,37 @@
     max-width: 760px;
     margin: 48px 0 16px;
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .article-amendments
+    {
+        padding: 8px 10px 16px;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: portrait)
+{
+    .article-amendments
+    {
+        font-size: 12px;
+        line-height: 27px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape)
+{
+    .article-amendments
+    {
+        font-size: 8px;
+    }
+}
