@@ -2,7 +2,7 @@ block('footer').mode('index')(function() {
     return [
         {
             elem: 'domain',
-            content: 'Jadwiga and Jacek Duniec thank you for domain!'
+            content: this.i18n(this.block, 'domain') // Jadwiga and Jacek Duniec thank you for domain!
         },
         {
             elem: 'copyright',
@@ -10,11 +10,13 @@ block('footer').mode('index')(function() {
                 {
                     block: 'bem'
                 },
-                ' is proudly made by ',
+                ' ',
+                this.i18n(this.block, 'made'), // is proudly made by
+                ' ',
                 {
                     elem: 'copyright-ya',
-                    url: 'https://yandex.com/company/',
-                    content: 'Yandex'
+                    url: this.i18n(this.block, 'yandex-url'),
+                    content: this.i18n(this.block, 'yandex') // Yandex
                 }
             ]
         }

@@ -1,16 +1,12 @@
 [
     {
-        block: 'index-logo',
-        url: freeze('../../static-ru/index-logo__1.svg')
-    },
-    {
         block: 'index-title',
         content: [
-                {
-                    block: 'bem'
-                },
-                'Технология создания веб-приложений'
-            ]
+            {
+                block: 'bem'
+            },
+            'Методология веб-разработки'
+        ]
     },
     {
         block: 'promo-crossroad',
@@ -36,7 +32,7 @@
                     },
                     {
                         elem: 'text',
-                        content: 'Идея и архитектура БЭМ'
+                        content: 'Идея и архитектура'
                     }
                 ]
             },
@@ -48,7 +44,7 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'platform/',
+                                url: 'tutorials/quick-start-static/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -62,7 +58,8 @@
                     {
                         elem: 'text',
                         content: 'Готовая реализация'
-                    },
+                    }
+/*
                     {
                         elem: 'text',
                         content:
@@ -72,6 +69,7 @@
                             content: 'Быстрый старт'
                         }
                     }
+*/
                 ]
             },
             {
@@ -82,7 +80,7 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'community/',
+                                url: 'forum/',
                                 content: [
                                     {
                                         elem: 'img',

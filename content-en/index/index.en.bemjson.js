@@ -1,16 +1,12 @@
 [
     {
-        block: 'index-logo',
-        url: freeze('../../static-ru/index-logo__1.svg')
-    },
-    {
         block: 'index-title',
         content: [
-                {
-                    block: 'bem'
-                },
-                'Технология создания веб-приложений'
-            ]
+            {
+                block: 'bem'
+            },
+            'Frontend Development Methodology'
+        ]
     },
     {
         block: 'promo-crossroad',
@@ -36,7 +32,7 @@
                     },
                     {
                         elem: 'text',
-                        content: 'Идея и архитектура БЭМ'
+                        content: 'Idea and architecture'
                     }
                 ]
             },
@@ -48,7 +44,7 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'platform/',
+                                url: 'tutorials/quick-start-static/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -61,8 +57,9 @@
                     },
                     {
                         elem: 'text',
-                        content: 'Готовая реализация'
-                    },
+                        content: 'Implementation'
+                    }
+/*
                     {
                         elem: 'text',
                         content:
@@ -72,6 +69,7 @@
                             content: 'Quick start'
                         }
                     }
+*/
                 ]
             },
             {
@@ -82,7 +80,7 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'community/',
+                                url: 'forum/',
                                 content: [
                                     {
                                         elem: 'img',

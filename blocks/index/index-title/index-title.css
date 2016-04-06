@@ -1,6 +1,7 @@
 .index-title
 {
     font-size: 24px;
+    font-weight: 300;
     line-height: 1.4;
 
     margin: 80px 0 85px;
@@ -10,7 +11,11 @@
 
 .index-title .bem
 {
+    font-size: 36px;
+
     display: block;
 
     margin-bottom: 5px;
+
+    letter-spacing: 5px;
 }
