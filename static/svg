@@ -1,0 +1,1 @@
+svgo  --multipass --enable=transformsWithOnePath --enable=removeTitle -i $1
