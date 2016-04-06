@@ -2,8 +2,8 @@
     shouldDeps: [
         'promo-page',
         'promo-header',
-        'promo-main',
         'promo-section',
+        'promo-title',
         'promo-text',
         'promo-highlight',
         'promo-companies',
