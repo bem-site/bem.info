@@ -481,7 +481,7 @@
                 {
                     elem: 'company',
                     content: 'Яндекс',
-                    url: 'https://tech.yandex.com/bem/',
+                    url: 'https://tech.yandex.ru/bem/',
                     src: freeze('../../static-ru/promo-companies__yandex.ru.svgz'),
                 },
                 {
