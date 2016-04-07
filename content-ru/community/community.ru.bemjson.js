@@ -5,7 +5,7 @@
             {
                 block: 'bem'
             },
-            'Методология веб-разработки'
+            'Сообщество'
         ]
     },
     {
@@ -19,21 +19,20 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'methodology/',
+                                url: '/blog/',
                                 content: [
                                     {
                                         elem: 'img',
-                                        elemMods: { type: 'round' },
-                                        url: freeze('../../static-ru/promo-crossroad_methodology.png')
+                                        url: freeze('../../static-ru/promo-crossroad_blog.svg')
                                     },
-                                    'Методология'
+                                    'Блог'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Идея и архитектура'
+                        content: 'Что нового?'
                     }
                 ]
             },
@@ -45,33 +44,21 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'tutorials/quick-start-static/',
+                                url: '/events/',
                                 content: [
                                     {
                                         elem: 'img',
-                                        elemMods: { type: 'round' },
-                                        url: freeze('../../static-ru/promo-crossroad_platform.png')
+                                        url: freeze('../../static-ru/promo-crossroad_events.svg')
                                     },
-                                    'Платформа'
+                                    'События'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Готовая реализация'
+                        content: 'Что, где, когда'
                     }
-/*
-                    {
-                        elem: 'text',
-                        content:
-                        {
-                            elem: 'text-link',
-                            url: '/tutorials/quick-start-static/',
-                            content: 'Быстрый старт'
-                        }
-                    }
-*/
                 ]
             },
             {
@@ -82,21 +69,20 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'community/',
+                                url: '/forum/',
                                 content: [
                                     {
                                         elem: 'img',
-                                        elemMods: { type: 'out-of-box' },
-                                        url: freeze('../../static-ru/promo-crossroad_community.svg')
+                                        url: freeze('../../static-ru/promo-crossroad_forum.svg')
                                     },
-                                    'Сообщество'
+                                    'Форум'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Люди и события'
+                        content: 'Вопросы и ответы'
                     }
                 ]
             }

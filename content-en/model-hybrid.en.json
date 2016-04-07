@@ -176,7 +176,9 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Community",
-    "disabled": 1,
+    "source": "./content-en/community/community.en.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "community-index",
     "nav": false
   },
   {

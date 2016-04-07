@@ -98,7 +98,7 @@ module.exports = function(config) {
     config.setLanguages(langs);
     configNodes(config, isProd, 'bundles/index', [ 'blocks/promo/', 'blocks/index' ]);
 
-    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology' ]);
+    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
     configNodes(config, isProd, 'bundles/methodology', [ 'blocks/methodology' ]);
 
     configNodes(config, isProd, 'bundles/tools-index', [ 'blocks/promo', 'blocks/tools' ]);
@@ -106,6 +106,8 @@ module.exports = function(config) {
 
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
     configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
+
+    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 
     configNodes(config, isProd, 'bundles/forum', [ 'blocks/forum' ]);
 };

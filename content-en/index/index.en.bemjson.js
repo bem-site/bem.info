@@ -23,6 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
+                                        elemMods: { type: 'round' },
                                         url: freeze('../../static/promo-crossroad_methodology.png')
                                     },
                                     'Methodology'
@@ -48,6 +49,7 @@
                                 content: [
                                     {
                                         elem: 'img',
+                                        elemMods: { type: 'round' },
                                         url: freeze('../../static/promo-crossroad_platform.png')
                                     },
                                     'Platform'
@@ -80,11 +82,11 @@
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'forum/',
+                                url: 'community/',
                                 content: [
                                     {
                                         elem: 'img',
-                                        elemMods: { square: true },
+                                        elemMods: { type: 'out-of-box' },
                                         url: freeze('../../static/promo-crossroad_community.svg')
                                     },
                                     'Community'

@@ -36,15 +36,16 @@
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
+}
 
+.promo-crossroad__img_type_round
+{
     border-radius: 100px;
 }
 
-.promo-crossroad__img_square
+.promo-crossroad__img_type_out-of-box
 {
     width: 215px;
-
-    border-radius: 0;
 }
 
 .promo-crossroad__text

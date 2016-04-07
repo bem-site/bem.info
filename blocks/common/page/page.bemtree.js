@@ -13,7 +13,7 @@ block('page').content()(function() {
         page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' },
         {
             block: 'footer',
-            mix: { block: 'page-bg' }
+            mix: { block: 'page-bg' } // TODO: move to methodology-index/footer
         },
         {
             block: 'yandex-metrica',

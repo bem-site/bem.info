@@ -178,7 +178,9 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Сообщество",
-    "disabled": 1,
+    "source": "./content-ru/community/community.ru.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "community-index",
     "nav": false
   },
   {
