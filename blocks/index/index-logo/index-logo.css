@@ -6,3 +6,28 @@
     height: 300px;
     margin: 95px auto 50px;
 }
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet md*!*/
+/*@media all and (max-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet*!*/
+/*@media all and (max-width: 780px)*/
+/*{*/
+/*}*/
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .index-logo
+    {
+        width: 250px;
+        height: 250px;
+        margin: 50px auto;
+    }
+}

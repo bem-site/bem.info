@@ -19,3 +19,29 @@
 
     letter-spacing: 5px;
 }
+
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet md*!*/
+/*@media all and (max-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet*!*/
+/*@media all and (max-width: 780px)*/
+/*{*/
+/*}*/
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .index-title
+    {
+        font-size: 18px;
+
+        margin: 50px auto;
+    }
+}
