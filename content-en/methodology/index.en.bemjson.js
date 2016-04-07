@@ -409,13 +409,8 @@
                     text: 'BEM is okay.'
                 },
                 {
-                    name: 'Jonathan Snook',
-                    photo: freeze('../../static/promo-quotes__jonathan-snook.jpg'),
-                    position: 'Author of OOCSS, Xero',
-                    url: 'https://twitter.com/snookca/status/606908589295464449',
-                    text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
-                },
-                {
+<<<<<<< HEAD
+=======
                     name: 'Paul Irish',
                     photo: freeze('../../static/promo-quotes__paul-irish.jpg'),
                     position: 'Front-end Developer, Google Inc.',
@@ -423,6 +418,24 @@
                     text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
                 },
                 {
+>>>>>>> fae12136ff52254a4ddc15eb03c7efbbce7823b9
+                    name: 'Jonathan Snook',
+                    photo: freeze('../../static/promo-quotes__jonathan-snook.jpg'),
+                    position: 'Author of OOCSS, Xero',
+                    url: 'https://twitter.com/snookca/status/606908589295464449',
+                    text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
+                },
+                {
+<<<<<<< HEAD
+                    name: 'Paul Irish',
+                    photo: freeze('../../static/promo-quotes__paul-irish.jpg'),
+                    position: 'Front-end Developer, Google Inc.',
+                    url: 'ttps://twitter.com/paul_irish/status/192483200696717312',
+                    text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
+                },
+                {
+=======
+>>>>>>> fae12136ff52254a4ddc15eb03c7efbbce7823b9
                     name: 'Necolas Gallagher',
                     photo: freeze('../../static/promo-quotes__necolas-gallagher.jpg'),
                     position: 'Software Engineer, Twitter',
