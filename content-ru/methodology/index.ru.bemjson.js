@@ -379,46 +379,53 @@
             block: 'promo-quotes',
             content: [
                 {
-                    name: 'Билл Гейтс0',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Harry Roberts',
+                    photo: freeze('../../static/promo-quotes__harry-roberts.jpg'),
+                    position: 'Consultant Front-end Architect',
+                    url: 'http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/',
+                    text: 'I use BEM notation on everything I build now as its usefulness has proved itself over and over.'
                 },
                 {
-                    name: 'Билл Гейтс1',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Mark McDonnell',
+                    photo: freeze('../../static/promo-quotes__mark-mcdonnell.jpg'),
+                    position: 'Technical Lead, BBC News',
+                    url: 'http://www.integralist.co.uk/posts/bem.html',
+                    text: 'Itʼs less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.'
                 },
                 {
-                    name: 'Билл Гейтс2',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Connie Chan',
+                    photo: freeze('../../static/promo-quotes__connie-chan.jpg'),
+                    position: 'Design Director, Thoughtbot',
+                    url: 'https://robots.thoughtbot.com/keeping-the-frontend-modular-with-bem',
+                    text: 'Combined with a preprocessor, BEM makes keeping your CSS modular and object-oriented a breeze.'
                 },
                 {
-                    name: 'Билл Гейтс3',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Vadim Makeev',
+                    photo: freeze('../../static/promo-quotes__vadim-makeev.jpg'),
+                    position: 'Web Evangelist, Opera Software',
+                    url: 'http://pepelsbey.net/pres/bem-ok/en/',
+                    text: 'BEM is okay.'
                 },
                 {
-                    name: 'Билл Гейтс4',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Jonathan Snook',
+                    photo: freeze('../../static/promo-quotes__jonathan-snook.jpg'),
+                    position: 'Author of OOCSS, Xero',
+                    url: 'https://twitter.com/snookca/status/606908589295464449',
+                    text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
                 },
                 {
-                    name: 'Билл Гейтс5',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Paul Irish',
+                    photo: freeze('../../static/promo-quotes__paul-irish.jpg'),
+                    position: 'Front-end Developer, Google Inc.',
+                    url: 'ttps://twitter.com/paul_irish/status/192483200696717312',
+                    text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
                 },
                 {
-                    name: 'Билл Гейтс6',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
+                    name: 'Necolas Gallagher',
+                    photo: freeze('../../static/promo-quotes__necolas-gallagher.jpg'),
+                    position: 'Software Engineer, Twitter',
+                    url: 'https://twitter.com/necolas/status/192678667023949824',
+                    text: 'BEM is far more than a HTML/CSS system. Iʼve got no plans to use it all; just adapted some of its ideas.'
                 }
             ].map(function(quote) {
                 return {
@@ -434,16 +441,24 @@
                         },
                         {
                             elem: 'photo',
-                            url: quote.photo
+                            attrs: {
+                                src: quote.photo,
+                                alt: quote.name
+                            }
                         },
                         {
-                            elem: 'text',
-                            content: quote.text
+                            elem: 'link',
+                            attrs: { href: quote.url },
+                            content: {
+                                elem: 'text',
+                                content: quote.text
+                            }
                         }
                     ]
                 };
             })
-        }]
+        }
+    ]
 }, {
     block: 'promo-section',
     mods: { color: 'white' },
