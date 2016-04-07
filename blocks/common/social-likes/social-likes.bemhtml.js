@@ -26,7 +26,7 @@ block('social-likes')(
                 elemMods: { type: 'twitter' },
                 params: this.ctx.params,
                 lang: this.ctx.lang,
-                url: 'https://twitter.com/share',
+                url: 'https://twitter.com/share?',
                 content: 'Twitter'
             }
         ]
