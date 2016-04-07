@@ -484,31 +484,31 @@
                     elem: 'company',
                     content: 'Yandex',
                     url: 'https://tech.yandex.com/bem/',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    src: freeze('../../static/promo-companies__yandex.en.svgz'),
                 },
                 {
                     elem: 'company',
                     content: 'Google',
-                    url: '//google.com',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
+                    src: freeze('../../static/promo-companies__google.svgz'),
                 },
                 {
                     elem: 'company',
                     content: 'BBC',
                     url: 'http://www.integralist.co.uk/posts/bem.html',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    src: freeze('../../static/promo-companies__bbc.svgz'),
                 },
                 {
                     elem: 'company',
-                    content: 'Госдеп',
-                    url: 'AAA',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    content: 'Alpha-Bank',
+                    url: 'https://github.com/alfa-bank-dev/ui',
+                    src: freeze('../../static/promo-companies__alpha-bank.svgz'),
                 },
                 {
                     elem: 'company',
                     content: 'BuzzFeed',
                     url: 'http://www.buzzfeed.com/',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    src: freeze('../../static/promo-companies__buzzfeed.svgz'),
                 }
             ]
         }

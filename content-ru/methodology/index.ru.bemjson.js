@@ -480,28 +480,37 @@
             content: [
                 {
                     elem: 'company',
-                    content: 'Yandex',
-                    url: 'https://tech.yandex.ru/bem/',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    content: 'Яндекс',
+                    url: 'https://tech.yandex.com/bem/',
+                    src: freeze('../../static-ru/promo-companies__yandex.ru.svgz'),
                 },
                 {
                     elem: 'company',
                     content: 'Google',
-                    url: 'дока БЭМ в mdl',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
+                    src: freeze('../../static-ru/promo-companies__google.svgz'),
                 },
                 {
                     elem: 'company',
-                    content: 'Альфа-Банк',
-                    url: 'библиотека',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    content: 'BBC',
+                    url: 'http://www.integralist.co.uk/posts/bem.html',
+                    src: freeze('../../static-ru/promo-companies__bbc.svgz'),
                 },
                 {
                     elem: 'company',
-                    content: 'Госдеп',
-                    url: '//tesla.com',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
+                    content: 'Aplha-Bank',
+                    url: 'https://github.com/alfa-bank-dev/ui',
+                    src: freeze('../../static-ru/promo-companies__alpha-bank.svgz'),
                 },
+                {
+                    elem: 'company',
+                    content: 'BuzzFeed',
+                    url: 'http://www.buzzfeed.com/',
+                    src: freeze('../../static-ru/promo-companies__buzzfeed.svgz'),
+                }
+            ]
+        }
+/*
                 {
                     elem: 'company',
                     content: 'Mail.ru',
@@ -510,5 +519,6 @@
                 }
             ]
         }
+*/
     ]
 }]

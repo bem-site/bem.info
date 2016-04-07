@@ -1,6 +1,20 @@
 .promo-companies
 {
-    padding: 30px 0 0;
+    margin: 70px 0 0;
 
     text-align: center;
+}
+
+.promo-companies__company
+{
+    display: inline-block;
+
+    margin: 0 8% 50px;
+
+    text-align: center;
+}
+
+.promo-companies__logo
+{
+    width: 200px;
 }
