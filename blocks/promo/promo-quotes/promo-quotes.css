@@ -2,9 +2,66 @@
 {
     line-height: 1.2;
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     padding: 30px 0 100px;
 
     text-align: center;
 
     color: #fff;
+}
+
+.promo-quotes__quote
+{
+    line-height: 1.4;
+
+    display: inline-block;
+
+    padding: 20px 4%;
+
+    text-align: center;
+}
+
+.promo-quotes__photo
+{
+    width: 140px;
+    height: 140px;
+    margin: 10px auto;
+
+    border-radius: 70px;
+}
+
+.promo-quotes__name
+{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.promo-quotes__position
+{
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.promo-quotes__link
+{
+    font-style: normal;
+
+    text-decoration: none;
+
+    color: #fff;
+}
+
+.promo-quotes__text
+{
+    font-size: 14px;
+    font-style: italic;
+
+    display: block;
+
+    width: 180px;
+    margin: auto;
 }
