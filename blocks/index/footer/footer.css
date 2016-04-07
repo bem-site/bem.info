@@ -5,6 +5,7 @@
 
 .footer__layout
 {
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -27,4 +28,56 @@
     text-decoration: none;
 
     color: #fff;
+}
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet md*!*/
+/*@media all and (max-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .footer__layout
+    {
+        display: block;
+
+        padding: 40px 10%;
+
+        text-align: center;
+    }
+
+    .footer__copyright,
+    .footer__domain,
+    .footer__community
+    {
+        display: inline-block;
+
+        margin: 10px 0;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .footer__layout
+    {
+        display: block;
+
+        padding: 0 5% 40px;
+    }
+
+    .footer__domain
+    {
+        font-size: 12px;
+    }
+
+    .footer__channel
+    {
+        margin: 0 15px;
+    }
 }

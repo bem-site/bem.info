@@ -52,9 +52,54 @@
 {
     margin: 5px 0;
 }
+
 /*
 .promo-crossroad__text-link
 {
     color: #048;
 }
 */
+
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-crossroad
+    {
+        padding: 0 5%;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-crossroad
+    {
+        flex-wrap: wrap;
+
+        padding: 0 1%;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-crossroad
+    {
+        display: block;
+    }
+
+    .promo-crossroad__item
+    {
+        margin-top: 50px;
+    }
+
+    .promo-crossroad__title-link
+    {
+        display: inline-block;
+    }
+}
