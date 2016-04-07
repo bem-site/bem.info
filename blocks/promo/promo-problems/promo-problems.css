@@ -10,3 +10,18 @@
     width: 800px;
     height: 400px;
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-problems
+    {
+        padding: 0 0 55px;
+    }
+
+    .promo-problems__img
+    {
+        width: 100%;
+        height: auto;
+    }
+}

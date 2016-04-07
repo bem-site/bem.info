@@ -28,7 +28,7 @@ block('root').replace()(function() {
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,600,700&subset=cyrillic' },
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' },
-            (page.url === '/') && { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width' } },
+            { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width' } },
             { elem: 'meta', attrs: { property: 'og:image', content: 'https://ru.bem.info/og_image/logo_theme_stripe.png' } }, // TODO: implement via block with images; implement random
             Object.keys(page.head.meta).reduce(function(prev, field) {
                 (field.indexOf('og') !== -1) && prev.push({ elem: 'meta', attrs: { property: 'og:' + field.toLowerCase().replace('og', ''), content: page.head.meta[field] } });

@@ -34,3 +34,69 @@
     height: 336px;
     margin: 90px auto 0;
 }
+
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-features__image
+    {
+        width: 318px;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-features__image_single
+    {
+        margin-top: 80px;
+    }
+
+    @media all and (max-width: 680px)
+    {
+        .promo-features__image
+        {
+            width: 220px;
+        }
+
+        .promo-features__separator
+        {
+            margin-top: 215px;
+            margin-left: -10px;
+        }
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-features
+    {
+        align-items: stretch;
+
+        margin: -10px auto 80px;
+    }
+
+    .promo-features__image
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+    .promo-features__image_single
+    {
+        margin-top: 20px;
+    }
+
+    .promo-features__separator
+    {
+        width: 15px;
+        height: 15px;
+        margin-top: 90px;
+    }
+}
