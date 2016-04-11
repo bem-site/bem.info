@@ -22,7 +22,8 @@
     "title": "Key concepts",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md",
     "tags": ["methodology"],
-    "bundle": "methodology"
+    "bundle": "methodology",
+    "prev": false
   },
   {
     "url": "/methodology/naming-convention/",
@@ -78,7 +79,8 @@
     "title": "FAQ",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.en.md",
     "tags": ["methodology"],
-    "bundle": "methodology"
+    "bundle": "methodology",
+    "next": false
   },
 
   {
