@@ -48,7 +48,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static/promo-crossroad_events.svg')
+                                        url: freeze('../../static/promo-crossroad_events.svgz')
                                     },
                                     'Events'
                                 ]
