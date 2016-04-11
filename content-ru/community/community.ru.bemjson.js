@@ -23,7 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_blog.svg')
+                                        url: freeze('../../static-ru/promo-crossroad_blog.svgz')
                                     },
                                     'Блог'
                                 ]
