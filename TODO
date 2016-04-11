@@ -44,6 +44,7 @@ designer:
     можем ли мы использовать http 2.0 ?
     посмотреть на диаграмме загрузку бандла с common внутри и common отдельно
     имя файла css/js как md5 в /
+    в methodology-index попадают article-* из-за зависимости в methodology/page/page.deps.js
 
 
 Implement marked-renderer-video, see https://github.com/bem-site/bem-md-renderer/blob/master/index.js
