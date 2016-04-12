@@ -3,7 +3,6 @@ bem-components
 
 Упячка:
     index-title лежит в blocks/promo из-за community. Переделать после появления дизайна страницы Сообщества
-    в methodology-index попадают article-* из-за зависимости в methodology/page/page.deps.js (можно ли прописать в bundles?)
     перенести promo-footer_site_methodology в blocks/methodology-index
 
 bemhint

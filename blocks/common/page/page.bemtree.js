@@ -12,8 +12,7 @@ block('page').content()(function() {
         page.url !== '/forum/' && page.url !== '/' ? { block: 'nav' } : undefined,
         page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' },
         {
-            block: 'footer',
-            mix: { block: 'page-bg' } // TODO: move to methodology-index/footer
+            block: 'footer'
         },
         {
             block: 'yandex-metrica',
