@@ -55,7 +55,7 @@
             content: [
                 {
                     elem: 'img',
-                    url: freeze('../../static/promo-problems.en.svgz')
+                    url: freeze('../../static/promo-problems.en.svg')
                 },
                 {
                     block: 'promo-text',
@@ -352,7 +352,7 @@
                 {
                     elem: 'image',
                     elemMods: { single: true },
-                    url: freeze('../../static/promo-features__easy-to-learn.svgz')
+                    url: freeze('../../static/promo-features__easy-to-learn.svg')
                 },
                 {
                     block: 'promo-text',
@@ -484,31 +484,31 @@
                     elem: 'company',
                     content: 'Yandex',
                     url: 'https://tech.yandex.com/bem/',
-                    src: freeze('../../static/promo-companies__yandex.en.svgz'),
+                    src: freeze('../../static/promo-companies__yandex.en.svg'),
                 },
                 {
                     elem: 'company',
                     content: 'Google',
                     url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
-                    src: freeze('../../static/promo-companies__google.svgz'),
+                    src: freeze('../../static/promo-companies__google.svg'),
                 },
                 {
                     elem: 'company',
                     content: 'BBC',
                     url: 'http://www.integralist.co.uk/posts/bem.html',
-                    src: freeze('../../static/promo-companies__bbc.svgz'),
+                    src: freeze('../../static/promo-companies__bbc.svg'),
                 },
                 {
                     elem: 'company',
                     content: 'Alpha-Bank',
                     url: 'https://github.com/alfa-bank-dev/ui',
-                    src: freeze('../../static/promo-companies__alpha-bank.svgz'),
+                    src: freeze('../../static/promo-companies__alpha-bank.svg'),
                 },
                 {
                     elem: 'company',
                     content: 'BuzzFeed',
                     url: 'http://www.buzzfeed.com/',
-                    src: freeze('../../static/promo-companies__buzzfeed.svgz'),
+                    src: freeze('../../static/promo-companies__buzzfeed.svg'),
                 }
             ]
         }

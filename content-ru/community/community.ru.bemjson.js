@@ -23,7 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_blog.svgz')
+                                        url: freeze('../../static-ru/promo-crossroad_blog.svg')
                                     },
                                     'Блог'
                                 ]
@@ -48,7 +48,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static-ru/promo-crossroad_events.svgz')
+                                        url: freeze('../../static-ru/promo-crossroad_events.svg')
                                     },
                                     'События'
                                 ]
