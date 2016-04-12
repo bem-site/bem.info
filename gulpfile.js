@@ -90,7 +90,7 @@ function compilePages(lang, bundle) {
 gulp.task('copy-misc-to-output', () => {
     rimraf.sync(OUTPUT);
 
-    return Q.all(gulp.src('static/index.html').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
+    return Q.all(gulp.src('static/{index.html,robots.txt,.nojekyll}').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src([
                 'static/{favicon.ico,robots.txt}'
