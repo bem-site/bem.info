@@ -18,3 +18,17 @@
 {
     width: 200px;
 }
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-companies
+    {
+        margin: 30px 0 -100px;
+    }
+
+    .promo-companies__logo
+    {
+        width: 100px;
+    }
+}

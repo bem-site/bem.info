@@ -16,3 +16,37 @@
 {
     letter-spacing: 2px;
 }
+
+/*!*tablet lg*!*/
+/*@media all and (min-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*!*tablet md*!*/
+/*@media all and (max-width: 1200px)*/
+/*{*/
+/*}*/
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-title
+    {
+        font-size: 14px;
+
+        margin: 0 2%;
+        padding: 20px 0 0 0;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-title
+    {
+        font-size: 13px;
+
+        margin: 0 12px;
+        padding: 40px 0 0;
+    }
+}

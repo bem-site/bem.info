@@ -9,3 +9,27 @@
 
     text-align: center;
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .promo-text
+    {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 50px auto 0;
+        padding: 0 2%;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-text
+    {
+        margin: 20px 0;
+        padding: 0 14px;
+
+        text-align: center;
+    }
+}
