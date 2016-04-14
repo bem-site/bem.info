@@ -18,3 +18,17 @@
 {
     padding: 0;
 }
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-footer
+    {
+        height: 350px;
+    }
+
+    .promo-footer .promo-action
+    {
+        margin: 100px 0 0 5px;
+    }
+}

@@ -65,3 +65,18 @@
     width: 180px;
     margin: auto;
 }
+
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .promo-quotes
+    {
+        padding: 0 0 100px;
+    }
+
+    .promo-quotes__text
+    {
+        width: auto;
+    }
+}
