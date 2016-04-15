@@ -10,21 +10,11 @@
     min-height: calc(100% - 100px);
     padding-top: 29px;
 
+    transition: all 0.3s;
+
     color: #fff;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     background: #444;
-}
-
-.sitemap_opened
-{
-    display: flex;
-}
-
-/* Hide all siblings then sitemap is shown */
-.sitemap_opened ~ div,
-.sitemap_opened ~ footer
-{
-    display: none;
 }
 
 .sitemap__section
@@ -63,6 +53,8 @@
 
     margin: -5px 0 0 -10px;
     padding: 5px 10px;
+
+    white-space: nowrap;
 
     color: #000;
     background: #fc0;
@@ -115,4 +107,64 @@
 .sitemap__link:visited
 {
     color: rgb(180, 180, 180);
+}
+
+/*tablet*/
+@media all and (max-width: 980px)
+{
+    @media all and (max-width: 780px)
+    {
+        .sitemap
+        {
+            padding-top: 0;
+
+            border: 0;
+        }
+
+        .sitemap__title
+        {
+            margin: 0 0 0 -10px;
+            padding: 0;
+
+            border: 0;
+        }
+
+        .sitemap__tree
+        {
+            margin: 0 20px;
+        }
+
+        .sitemap__tree-item-1
+        {
+            margin: 0;
+        }
+
+        .sitemap__current
+        {
+            margin: -5px 0 0 -6px;
+            padding: 5px 6px;
+        }
+    }
+
+    .sitemap .sitemap__section
+    {
+        display: inline-block;
+
+        width: 46%;
+        margin: 0 2%;
+
+        vertical-align: top;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .sitemap .sitemap__section
+    {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 10px 13px;
+    }
 }

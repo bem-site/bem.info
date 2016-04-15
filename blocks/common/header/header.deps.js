@@ -1,8 +1,9 @@
 ({
     shouldDeps: [
-        'logo',
+        'search',
         'breadcrumbs',
+        'logo',
         'lang-switcher',
-        'search'
+        { elems: ['toggle', 'toggle-line', 'layout'] }
     ]
 })

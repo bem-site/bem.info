@@ -2,6 +2,7 @@
     shouldDeps: [
         'form',
         'events',
+        'header',
         {
             block: 'keyboard',
             elem: 'codes'

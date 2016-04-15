@@ -7,7 +7,11 @@ block('lang-switcher').content()(function() {
 
         return {
             elem: 'item',
-            content: isCurrent ? lang : {
+            content: isCurrent ?
+            {
+                elem: 'current',
+                content: lang
+            } : {
                 elem: 'link',
                 attrs: { href: host + data.page.url },
                 content: lang

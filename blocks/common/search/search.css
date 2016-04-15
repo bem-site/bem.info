@@ -1,17 +1,21 @@
 .search
 {
-    position: relative;
+    position: absolute;
     z-index: 0;
+    top: 0;
+    right: 0;
 
     overflow: hidden;
 
     width: 160px;
+    height: 70px;
 }
 
 .search__open,
 .search__close
 {
     position: absolute;
+    z-index: 1;
     top: 0;
 
     display: block;
@@ -80,7 +84,7 @@
 .search__form
 {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     bottom: 0;
     left: 81px;
@@ -88,6 +92,7 @@
     display: none;
 
     width: calc(100% - 241px);
+    height: 70px;
 
     background: #444;
 }
@@ -161,4 +166,74 @@
     border: 0;
     outline: 0;
     background: none;
+}
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .search
+    {
+        top: -20px;
+        left: 0;
+
+        width: calc(100% - 40px);
+
+        background: inherit;
+    }
+
+    .search_opened
+    {
+        position: absolute;
+        z-index: 2;
+    }
+
+    .search_opened .search__form
+    {
+        display: block;
+
+        background: inherit;
+    }
+
+    .search__form
+    {
+        position: static;
+
+        display: block;
+
+        width: auto;
+        height: 47px;
+        margin: 0 10px 0 13px;
+        padding: 12px 0 5px 30px;
+
+        border-bottom: 1px solid #ccc;
+    }
+
+    .search__form .input
+    {
+        width: 100%;
+        margin: 18px 0 0;
+    }
+
+    .search__open
+    {
+        top: 12px;
+        left: -18px;
+
+        width: 20px;
+
+        stroke-width: 1px;
+    }
+
+    .search_opened .search__open
+    {
+        background: transparent;
+
+        stroke: #fff;
+    }
+
+    .search__close,
+    .search__submit
+    {
+        display: none;
+    }
 }

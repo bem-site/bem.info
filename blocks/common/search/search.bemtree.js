@@ -9,7 +9,6 @@ block('search').content()(function() {
                 { block: 'search', elem: 'form', elemMods: { site: siteMod } }
             ],
             action: 'https://yandex.' + (lang === 'ru' ? 'ru' : 'com') + '/sitesearch',
-            attrs: { target: '_blank' },
             content: [
                 {
                     block: 'input',
@@ -37,10 +36,12 @@ block('search').content()(function() {
             ]
         },
         {
-            elem: 'open'
+            elem: 'open',
+            mix: { block: 'header', elem: 'open' }
         },
         {
-            elem: 'close'
+            elem: 'close',
+            mix: { block: 'header', elem: 'close' }
         }
     ]
 });

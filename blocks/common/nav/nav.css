@@ -56,28 +56,44 @@
     color: #000;
 }
 
-/*mobile*/
-@media all and (max-width: 480px)
-{
-    .nav
-    {
-        overflow: hidden;
-
-        height: 40px;
-    }
-}
-
 /*tablet*/
 @media all and (max-width: 780px)
 {
-}
+    .nav
+    {
+        display: block;
 
-/*tablet md*/
-@media all and (max-width: 1200px)
-{
-}
+        padding: 0 30px;
 
-/*tablet lg*/
-@media all and (min-width: 1200px)
-{
+        background: inherit;
+    }
+
+    .nav__item
+    {
+        display: block;
+
+        padding: 1px 3px;
+
+        white-space: nowrap;
+    }
+
+    .nav__item_current
+    {
+        font-size: 15px;
+
+        margin: 0 8px 0 0;
+
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .nav__link
+    {
+        font-size: 16px;
+    }
+
+    .nav__link:hover
+    {
+        color: #fff;
+    }
 }

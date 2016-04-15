@@ -2,7 +2,9 @@
 {
     font-size: 14px;
 
-    display: inline-block;
+    float: right;
+
+    margin: 22px 96px 0 10px;
 }
 
 .lang-switcher__item
@@ -79,3 +81,34 @@
     color: #fff;
 }
 */
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .lang-switcher
+    {
+        font-size: 19px;
+
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 140px;
+
+        margin: 7px -72px 0 5px;
+    }
+
+    .lang-switcher .lang-switcher__item
+    {
+        margin: 0;
+    }
+
+    .lang-switcher__link
+    {
+        color: #fff;
+    }
+
+    .lang-switcher__current
+    {
+        display: none;
+    }
+}
