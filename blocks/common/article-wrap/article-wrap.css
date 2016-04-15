@@ -5,3 +5,31 @@
 
     background: url(article-wrap.png) repeat;
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .article-wrap
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 0 5%;
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+{
+    .article-wrap
+    {
+        margin: 0;
+        padding: 0;
+    }
+}
