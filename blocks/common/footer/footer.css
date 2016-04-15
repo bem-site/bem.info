@@ -38,16 +38,6 @@
     opacity: 0.8;
 }
 
-/*!*tablet lg*!*/
-/*@media all and (min-width: 1200px)*/
-/*{*/
-/*}*/
-
-/*!*tablet md*!*/
-/*@media all and (max-width: 1200px)*/
-/*{*/
-/*}*/
-
 /*tablet*/
 @media all and (max-width: 780px)
 {
@@ -55,9 +45,9 @@
     {
         padding: 40px 10%;
     }
-}
 
-/*!*mobile*!*/
-/*@media all and (max-width: 480px)*/
-/*{*/
-/*}*/
+    .footer__community
+    {
+        font-size: 15px;
+    }
+}
