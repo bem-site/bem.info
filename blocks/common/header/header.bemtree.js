@@ -4,25 +4,40 @@ block('header').content()(function() {
 
     return [
         {
-            block: 'logo',
-            mix: { block: 'header', elem: 'logo' },
-            url: url !== '/' ? data.root + '/' : undefined
+            elem: 'layout',
+            content: [
+                {
+                    block: 'logo',
+                    mix: { block: 'header', elem: 'logo' },
+                    url: url !== '/' ? data.root + '/' : undefined
+                },
+                {
+                    block: 'lang-switcher',
+                    mix: { block: 'header', elem: 'lang' }
+                },
+                url.indexOf('/forum/') === -1 ? {
+                    elem: 'forum',
+                    content: this.i18n(this.block, 'forum'), // Forum
+                    attrs: { href: data.root + '/forum/' }
+                } : undefined
+            ]
         },
         {
-            block: 'breadcrumbs',
-            mix: { block: 'header', elem: 'breadcrumbs' }
-        },
-        url.indexOf('/forum/') === -1 ? {
-            elem: 'forum',
-            content: this.i18n(this.block, 'forum'), // Forum
-            attrs: { href: data.root + '/forum/' }
-        } : undefined,
-        {
-            block: 'lang-switcher',
-            mix: { block: 'header', elem: 'lang' }
+            block: 'search',
+            mix: { block: 'header', elem: 'search' }
         },
         {
-            block: 'search'
+            elem: 'menu',
+            content: [
+                {
+                    block: 'breadcrumbs',
+                    mix: { block: 'header', elem: 'breadcrumbs' }
+                },
+                url !== '/forum/' && url !== '/' ? { block: 'nav' } : undefined
+            ]
+        },
+        {
+            elem: 'toggle'
         }
     ];
 });

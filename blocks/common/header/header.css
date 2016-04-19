@@ -1,9 +1,18 @@
-.header
+.header_opened + .sitemap
 {
-    /* search block will position absolutely search field inside header block */
-    position: relative;
-
     display: flex;
+}
+/* Hide all siblings then sitemap is shown */
+.header_opened ~ div,
+.header_opened ~ footer
+{
+    display: none;
+}
+
+.header__layout
+{
+    /* search block will position absolutely search field inside header__layout block */
+    position: relative;
 
     height: 70px;
 
@@ -19,12 +28,14 @@
 {
     flex-grow: 1;
 
-    margin: 18px 0 0 29px;
+    margin: 18px 0 0 0;
 }
 
 .header__forum
 {
-    margin: 19px 40px 0 10px;
+    float: right;
+
+    margin: 19px -5px 0 10px;
 
     transition: color 0.3s;
     text-decoration: none;
@@ -43,37 +54,96 @@
     position: relative;
     z-index: 1;
 
-    margin: 22px -64px 0 5px;
-    padding: 0;
+    margin: 22px 80px 0 5px;
 }
 
-/*mobile*/
-@media all and (max-width: 480px)
+@media all and (max-width: 780px)
 {
-    .header
+    .header_opened
     {
-        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .header_opened + .sitemap
+    {
+        top: 52px;
+
+        display: block;
+        flex-wrap: wrap;
+
+        transform: translate3d(0, 100%, 0);
+
+        opacity: 0;
+    }
+
+    .header_opened.header_focused .header__menu
+    {
+        display: none;
+    }
+
+    .header__menu
+    {
+        position: absolute;
+        z-index: 1;
 
         width: 100%;
+        height: auto;
+        padding: 0 0 30px;
+
+        transition: all 0.3s ease-in-out;
+        transform: translate3d(0, -120%, 0);
+
+        opacity: 0;
+        border-top: 0;
+    }
+
+    .header_opened .header__menu
+    {
+        top: 49px;
+
+        transform: none;
+
+        opacity: 1;
+    }
+
+    .header_opened .header__layout
+    {
+        display: none;
+    }
+
+    .header_opened.header_focused + .sitemap
+    {
+        transform: none;
+
+        opacity: 1;
+    }
+    .header__layout
+    {
+        z-index: 2;
+
+        width: 100%;
+        height: 54px;
+
+        background: inherit;
     }
 
     .header__forum
     {
-        display: none;
+        font-size: 19px;
+
+        margin: 6px 120px 0 10px;
+
+        color: #fff;
     }
-}
 
-/*tablet*/
-@media all and (max-width: 780px)
-{
-}
+    .header__logo
+    {
+        z-index: 1;
 
-/*tablet md*/
-@media all and (max-width: 1200px)
-{
-}
-
-/*tablet lg*/
-@media all and (min-width: 1200px)
-{
+        border: 0;
+    }
 }

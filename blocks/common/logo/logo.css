@@ -1,5 +1,7 @@
 .logo
 {
+    display: inline-block;
+
     width: 30px;
     height: 25px;
     padding: 23px 20px 22px 30px;
@@ -15,29 +17,19 @@
     transition: fill 0.3s;
 }
 
-/*mobile*/
-@media all and (max-width: 480px)
+/*tablet*/
+@media all and (max-width: 780px)
 {
+    .logo
+    {
+        padding: 13px;
+    }
     .logo__logo
     {
         width: 30px;
         height: 25px;
+        padding: 0;
 
         transition: fill 0.3s;
     }
-}
-
-/*tablet*/
-@media all and (max-width: 780px)
-{
-}
-
-/*tablet md*/
-@media all and (max-width: 1200px)
-{
-}
-
-/*tablet lg*/
-@media all and (min-width: 1200px)
-{
 }

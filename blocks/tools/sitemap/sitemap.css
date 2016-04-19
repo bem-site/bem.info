@@ -1,0 +1,14 @@
+.sitemap
+{
+    background: #330505;
+}
+
+.sitemap__title
+{
+    border-color: rgba(161, 207, 230, 0.3);
+}
+
+.sitemap__link:visited
+{
+    color: rgb(155, 167, 173);
+}

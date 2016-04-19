@@ -9,7 +9,6 @@ block('page').content()(function() {
         {
             block: 'sitemap'
         },
-        page.url !== '/forum/' && page.url !== '/' ? { block: 'nav' } : undefined,
         page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' },
         {
             block: 'footer'
