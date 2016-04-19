@@ -100,35 +100,43 @@ gulp.task('copy-misc-to-output', () => {
 
 // Сборка данных
 
+function data() {
+    return Q.all(LANGUAGES.map(lang => {
+        return runSubProcess('./lib/data-builder.js', {
+            cwd: process.cwd(),
+            encoding: 'utf-8',
+            env: {
+                GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
+                modelPath: `./content-${lang}/model-hybrid.${lang}.json`,
+                host: `http://${lang}.bem.info`,
+                dest: DATA_DIRS[lang],
+                token: process.env.TOKEN,
+                DEBUG: process.env.DEBUG
+            }
+        });
+    }));
+}
+
 gulp.task('data-clean', () => Q.all(_.values(DATA_DIRS).map(removeFolder)));
 gulp.task('data-cache-clean', () => Q.all(_.values(CACHE_DIRS).map(removeFolder)));
-gulp.task('data', () => Q.all(LANGUAGES.map(lang => {
-    return runSubProcess('./lib/data-builder.js', {
-        cwd: process.cwd(),
-        encoding: 'utf-8',
-        env: {
-            GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-            modelPath: `./content-${lang}/model-hybrid.${lang}.json`,
-            host: `http://${lang}.bem.info`,
-            dest: DATA_DIRS[lang],
-            token: process.env.TOKEN,
-            DEBUG: process.env.DEBUG
-        }
-    });
-})));
-gulp.task('data-rebuild', () => gulp.serias('data-clean', 'data-cache-clean', 'data'));
+gulp.task('data', data);
+gulp.task('data-rebuild', () => gulp.series('data-clean', 'data-cache-clean', 'data'));
 
 // Шаблонизация данных
 
-gulp.task('enb-make', () => enb.make());
+gulp.task('enb-make', enb.make);
 
-gulp.task('copy-static', () => Q.all(LANGUAGES.map(lang => {
-    var files = BUNDLES.map(bundle => {
-        return path.join(BUNDLES_DIR, bundle, bundle + '*.min.*')
-    });
+function copyStatic() {
+    return Q.all(LANGUAGES.map(lang => {
+        var files = BUNDLES.map(bundle => {
+            return path.join(BUNDLES_DIR, bundle, bundle + '*.min.*')
+        });
 
-    return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
-})));
+        return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
+    }));
+}
+
+gulp.task('copy-static', copyStatic);
 
 gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
     return gulp.src(path.join(DATA_DIRS[lang], 'sitemap.xml'))
@@ -156,8 +164,18 @@ gulp.task('compile-pages', gulp.series(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content-*/**/*'], batch((event, done) => gulp.series('data', done)));
-    gulp.watch(['blocks/**/*'], batch((event, done) => gulp.series('enb-make', 'copy-static', done)));
+    gulp.watch(['content-*/**/*'], batch((event, done) => {
+        data();
+        done();
+    }));
+
+    gulp.watch(['blocks/**/*'], batch((event, done) => {
+        enb.make();
+        copyStatic();
+        done();
+        //TODO: gulp.series does not work :(
+//        gulp.series('enb-make', 'copy-static', done);
+    }));
 
     // compile pages then bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
@@ -172,11 +190,7 @@ gulp.task('watch', () => {
             batch((event, done) => {
                 bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
                 bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
-
-                LANGUAGES.forEach(lang => {
-                    console.log('lang', lang, 'bundle', bundle);
-                    compilePages(lang, bundle)
-                });
+                LANGUAGES.forEach(lang => compilePages(lang, bundle));
 
                 done();
             }
