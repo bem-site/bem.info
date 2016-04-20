@@ -1,15 +1,9 @@
 .header__toggle
 {
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
-
-    display: none;
-
-    margin: 24px 23px 0 10px;
-    padding: 10px 35px 16px 0;
-
-    cursor: pointer;
 }
 
 .header__toggle-line,
@@ -18,15 +12,21 @@
 {
     position: absolute;
 
-    display: block;
+    display: none;
 
-    width: 30px;
-    height: 1px;
+    width: 25px;
+    height: 2px;
 
     content: '';
     cursor: pointer;
 
     border-radius: 1px;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.header__toggle:hover .header__toggle-line:before,
+.header__toggle:hover .header__toggle-line:after
+{
     background: #fff;
 }
 
@@ -44,7 +44,17 @@
 .header__toggle-line:before,
 .header__toggle-line:after
 {
-    transition: all 300ms ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__toggle_active
+{
+    z-index: 2;
+
+    width: auto;
+    height: auto;
+    margin: 26px 23px 0 10px;
+    padding: 10px 30px 16px 0;
 }
 
 .header__toggle_active .header__toggle-line,
@@ -56,33 +66,50 @@
 .header__toggle_active .header__toggle-line:before
 {
     top: 0;
-}
 
-.header__toggle_active .header__toggle-line:after
-{
-    bottom: 0;
-}
+    display: block;
 
-.header__toggle_active .header__toggle-line:before
-{
     transform: rotate(45deg);
 }
 
 .header__toggle_active .header__toggle-line:after
 {
+    bottom: 0;
+
+    display: block;
+
     transform: rotate(-45deg);
+}
+
+.header__toggle_active .header__toggle-line
+{
+    display: block;
 }
 
 /*tablet*/
 @media all and (max-width: 780px)
 {
+    .header__toggle-line,
+    .header__toggle-line:before,
+    .header__toggle-line:after
+    {
+        display: block;
+
+        width: 30px;
+        height: 1px;
+
+        background: #fff;
+    }
+
     .header__toggle
     {
         z-index: 2;
 
-        display: inline-block;
-
+        width: auto;
+        height: auto;
         margin: 15px 13px 0 10px;
         padding: 10px 30px 16px 0;
+
+        cursor: pointer;
     }
 }

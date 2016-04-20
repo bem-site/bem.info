@@ -12,8 +12,8 @@ modules.define('header', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], fun
             opened: {
                 'true': function() {
                     var mq = window.matchMedia('all and (max-width: 780px)');
-                    this.setMod(this.toggle, 'active', true);
                     this.search.setMod('opened', true);
+                    this.setMod(this.toggle, 'active', true);
                     this.bindToDoc('keydown', function(e) {
                         // Close search then ESC pressed
                         if (e.keyCode === KeyCodes.ESC) {
@@ -30,13 +30,14 @@ modules.define('header', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], fun
                     var _this = this;
 
                     _this.unbindFromDoc('keydown');
-                    _this.delMod(_this.toggle, 'active', true);
                     _this.search.delMod('opened');
+                    _this.delMod(_this.toggle, 'active', true);
                     _this.delMod('opened').delMod('focused');
                     // setTimeout is used to have time to handle submit button on input's focus lost
                     setTimeout(function() {
                         _this.input.setVal('');
                     }, 150);
+
                 }
             }
         }
