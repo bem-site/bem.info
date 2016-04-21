@@ -1,4 +1,6 @@
 block('footer').content()(function() {
+    var lang = this.data.lang;
+
     return [
         {
             block: 'legos',
@@ -11,7 +13,7 @@ block('footer').content()(function() {
                 {
                     elem: 'community',
                     content: [
-                        this.data.lang === 'ru' ? {
+                        lang === 'ru' ? {
                             elem: 'channel',
                             url: 'https://web-standards.slack.com/messages/bem/',
                             content: 'Slack'
@@ -23,7 +25,7 @@ block('footer').content()(function() {
                         },
                         {
                             elem: 'channel',
-                            url: 'https://twitter.com/bem_ru/',
+                            url: 'https://twitter.com/bem_' + lang + '/',
                             content: 'Twitter'
                         }
                     ]
