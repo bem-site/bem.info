@@ -154,22 +154,22 @@
   },
 
   {
-    "url": "/platform/libs/",
+    "url": "/libs/",
     "site": "/platform/libs/",
     "title": "Библиотеки"
   },
   {
-    "url": "/platform/libs/bem-core/",
+    "url": "/libs/bem-core/",
     "site": "/platform/libs/bem-core/",
     "title": "bem-core"
   },
   {
-    "url": "/platform/libs/bem-components/",
+    "url": "/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
     "title": "bem-components"
   },
   {
-    "url": "/platform/libs/bem-history/",
+    "url": "/libs/bem-history/",
     "site": "/platform/libs/bem-history/",
     "title": "bem-history"
   },
