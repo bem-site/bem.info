@@ -23,8 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        elemMods: { type: 'round' },
-                                        url: freeze('../../static/promo-crossroad_methodology.png')
+                                        url: freeze('../../static/promo-crossroad_methodology.svg')
                                     },
                                     'Methodology'
                                 ]
