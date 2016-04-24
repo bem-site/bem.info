@@ -110,6 +110,7 @@ function data() {
                 modelPath: `./content-${lang}/model-hybrid.${lang}.json`,
                 host: `http://${lang}.bem.info`,
                 dest: DATA_DIRS[lang],
+                root: process.env.YENV === 'production' ? '' : '/bem.info/' + lang,
                 token: process.env.TOKEN,
                 DEBUG: process.env.DEBUG
             }
