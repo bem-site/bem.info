@@ -11,7 +11,7 @@
     "url": "/methodology/",
     "site": "/methodology/",
     "title": "Methodology",
-    "source": "./content-en/methodology/index.en.bemjson.js",
+    "source": "./content-en/methodology/methodology.en.bemjson.js",
     "tags": ["methodology"],
     "type": "bemjson.js",
     "bundle": "methodology-index"
