@@ -20,6 +20,11 @@ block('footer').content()(function() {
                         } : undefined,
                         {
                             elem: 'channel',
+                            url: 'https://telegram.me/bem_' + lang,
+                            content: 'Telegram'
+                        },
+                        {
+                            elem: 'channel',
                             url: 'https://www.facebook.com/groups/bem.info/',
                             content: 'Facebook'
                         },
