@@ -354,6 +354,11 @@
         top: 0;
         right: 0;
     }
+
+    .article img
+    {
+        width: 100%;
+    }
 }
 
 /*mobile*/
