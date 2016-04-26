@@ -3,6 +3,7 @@
         'form',
         'events',
         'header',
+        'search-icon',
         {
             block: 'keyboard',
             elem: 'codes'

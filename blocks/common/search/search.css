@@ -11,43 +11,6 @@
     height: 70px;
 }
 
-.search__open,
-.search__close
-{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-
-    display: block;
-
-    width: 17px;
-    height: 17px;
-    padding: 23px 31px 30px 32px;
-
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
-    /* search__switcher.svg properties */
-
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.65);
-    stroke-width: 2;
-}
-
-.search__open
-{
-    right: 0;
-}
-
-.search__open:hover
-{
-    stroke: #fff;
-}
-
-.search__close
-{
-    right: -80px;
-}
-
 .search_opened
 {
     position: static;
@@ -56,27 +19,37 @@
     overflow: visible;
 }
 
-.search_opened .search__open
+.search_opened .search__submit
 {
     right: 80px;
-
-    transition: all 0.3s;
 
     background: #fc0;
 
     stroke: #000;
 }
 
-.search_opened .search__close
+.search_opened .search__submit:hover
 {
-    right: 0;
-
-    background: none;
-
-    stroke: rgba(255, 255, 255, 0.65);
+    stroke: #000;
 }
 
-.search_opened .search__close:hover
+.search__submit
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+
+    margin: 0;
+
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.search__submit:hover
 {
     stroke: #fff;
 }
@@ -89,17 +62,10 @@
     bottom: 0;
     left: 81px;
 
-    display: none;
-
     width: calc(100% - 241px);
     height: 70px;
 
     background: #444;
-}
-
-.search_opened .search__form
-{
-    display: block;
 }
 
 .search__form .input
@@ -152,22 +118,6 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.search__submit
-{
-    position: absolute;
-    top: 0;
-    right: -80px;
-
-    width: 80px;
-    height: 70px;
-
-    cursor: pointer;
-
-    border: 0;
-    outline: 0;
-    background: none;
-}
-
 /*tablet*/
 @media all and (max-width: 780px)
 {
@@ -214,26 +164,27 @@
         margin: 18px 0 0;
     }
 
-    .search__open
+    .search_opened .search__submit
     {
-        top: 12px;
-        left: -18px;
+        transition: none;
 
-        width: 20px;
-
-        stroke-width: 1px;
-    }
-
-    .search_opened .search__open
-    {
         background: transparent;
 
         stroke: #fff;
+        stroke-width: 1;
     }
 
-    .search__close,
+    .search_opened .search__submit:hover
+    {
+        stroke: #fff;
+    }
+
     .search__submit
     {
-        display: none;
+        top: -8px;
+        left: -17px;
+
+        width: 19px;
+        height: 19px;
     }
 }
