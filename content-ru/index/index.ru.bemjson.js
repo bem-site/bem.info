@@ -49,7 +49,7 @@
                                     {
                                         elem: 'img',
                                         elemMods: { type: 'round' },
-                                        url: freeze('../../static-ru/promo-crossroad_platform.png')
+                                        url: freeze('../../static-ru/promo-crossroad_platform.svg')
                                     },
                                     'Платформа'
                                 ]
