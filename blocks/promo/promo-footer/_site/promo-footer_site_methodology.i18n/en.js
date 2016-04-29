@@ -3,8 +3,8 @@ module.exports = {
         you: 'You should',
         use: 'use',
         too: 'too',
-        reason: 'There are no reason not to do so',
-        doc: 'Documentaion'
+        reason: 'There is no reason not to do so',
+        doc: 'Documentation'
     }
 };
 
