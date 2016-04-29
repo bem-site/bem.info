@@ -23,7 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static/promo-crossroad_blog.svg')
+                                        url: freeze('../../static/promo-crossroad_blog.svgz')
                                     },
                                     'Blog'
                                 ]
@@ -48,7 +48,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static/promo-crossroad_events.svg')
+                                        url: freeze('../../static/promo-crossroad_events.svgz')
                                     },
                                     'Events'
                                 ]
@@ -73,7 +73,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static/promo-crossroad_forum.svg')
+                                        url: freeze('../../static/promo-crossroad_forum.svgz')
                                     },
                                     'Forum'
                                 ]
