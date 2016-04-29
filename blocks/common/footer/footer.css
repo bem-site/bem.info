@@ -25,6 +25,11 @@
     margin-right: 31px;
 }
 
+.footer__channel:last-child
+{
+    margin: 0;
+}
+
 .footer__channel-link
 {
     transition: all 0.3s;
