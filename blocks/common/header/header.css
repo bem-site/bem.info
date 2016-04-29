@@ -2,6 +2,7 @@
 {
     display: flex;
 }
+
 /* Hide all siblings then sitemap is shown */
 .header_opened ~ div,
 .header_opened ~ footer
@@ -21,6 +22,8 @@
 
 .header__logo
 {
+    float: left;
+
     border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -35,7 +38,7 @@
 {
     float: right;
 
-    margin: 19px -5px 0 10px;
+    margin: 20px -5px 0 10px;
 
     transition: color 0.3s;
     text-decoration: none;
@@ -54,7 +57,9 @@
     position: relative;
     z-index: 1;
 
-    margin: 22px 80px 0 5px;
+    float: right;
+
+    margin: 23px 96px 0 10px;
 }
 
 @media all and (max-width: 780px)
