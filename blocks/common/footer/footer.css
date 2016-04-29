@@ -56,3 +56,25 @@
         font-size: 15px;
     }
 }
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .footer__layout
+    {
+        display: block;
+
+        padding: 40px 12px;
+    }
+
+    .footer__community
+    {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer__channel
+    {
+        margin-right: 0;
+    }
+}
