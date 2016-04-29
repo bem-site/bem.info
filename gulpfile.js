@@ -210,7 +210,10 @@ gulp.task('browser-sync', () => {
         notify: false,
         ui: false,
         middleware: function(req, res, next) {
-            req.url.match(/svgz/) && res.setHeader('Content-Encoding', 'gzip');
+            if (req.url.match(/svgd/)) {
+                res.setHeader('Content-Type', 'image/svg+xml');
+                res.setHeader('Content-Encoding', 'deflate')
+            }
             next();
         }
     });
