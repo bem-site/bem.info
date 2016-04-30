@@ -3,7 +3,7 @@
     "url": "/",
     "site": "/",
     "title": "БЭМ",
-    "source": "./content-ru/index/index.ru.bemjson.js",
+    "source": "./content/index/index.ru.bemjson.js",
     "type": "bemjson.js",
     "bundle": "index"
   },
@@ -12,7 +12,7 @@
     "url": "/methodology/",
     "site": "/methodology/",
     "title": "Методология",
-    "source": "./content-ru/methodology/index.ru.bemjson.js",
+    "source": "./content/methodology/index.ru.bemjson.js",
     "type": "bemjson.js",
     "bundle": "methodology-index"
   },
@@ -160,7 +160,7 @@
     "url": "/platform/",
     "site": "/platform/",
     "title": "Платформа",
-    "source": "./content-ru/platform/index.ru.bemjson.js",
+    "source": "./content/platform/index.ru.bemjson.js",
     "type": "bemjson.js",
     "bundle": "platform-index"
   },
@@ -291,7 +291,7 @@
     "url": "/platform/typo/",
     "site": "/platform/",
     "title": "Типографика",
-    "source": "./content-ru/platform/typo.ru.md",
+    "source": "./content/platform/typo.ru.md",
     "bundle": "platform"
   },
   {

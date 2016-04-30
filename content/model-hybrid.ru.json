@@ -3,7 +3,7 @@
     "url": "/",
     "site": "/",
     "title": "БЭМ",
-    "source": "./content-ru/index/index.ru.bemjson.js",
+    "source": "./content/index/index.ru.bemjson.js",
     "type": "bemjson.js",
     "bundle": "index"
   },
@@ -11,7 +11,7 @@
     "url": "/methodology/",
     "site": "/methodology/",
     "title": "Методология",
-    "source": "./content-ru/methodology/methodology.ru.bemjson.js",
+    "source": "./content/methodology/methodology.ru.bemjson.js",
     "tags": ["methodology"],
     "type": "bemjson.js",
     "bundle": "methodology-index"
@@ -178,7 +178,7 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Сообщество",
-    "source": "./content-ru/community/community.ru.bemjson.js",
+    "source": "./content/community/community.ru.bemjson.js",
     "type": "bemjson.js",
     "bundle": "community-index",
     "nav": false

@@ -3,7 +3,7 @@
     "url": "/",
     "site": "/",
     "title": "BEM",
-    "source": "./content-en/index/index.en.bemjson.js",
+    "source": "./content/index/index.en.bemjson.js",
     "type": "bemjson.js",
     "bundle": "index"
   },
@@ -11,7 +11,7 @@
     "url": "/methodology/",
     "site": "/methodology/",
     "title": "Methodology",
-    "source": "./content-en/methodology/methodology.en.bemjson.js",
+    "source": "./content/methodology/methodology.en.bemjson.js",
     "tags": ["methodology"],
     "type": "bemjson.js",
     "bundle": "methodology-index"
@@ -178,7 +178,7 @@
     "url": "/community/",
     "site": "/community/",
     "title": "Community",
-    "source": "./content-en/community/community.en.bemjson.js",
+    "source": "./content/community/community.en.bemjson.js",
     "type": "bemjson.js",
     "bundle": "community-index",
     "nav": false

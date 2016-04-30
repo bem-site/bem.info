@@ -107,7 +107,7 @@ function data() {
             encoding: 'utf-8',
             env: {
                 GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-                modelPath: `./content-${lang}/model-hybrid.${lang}.json`,
+                modelPath: `./content/model-hybrid.${lang}.json`,
                 host: `http://${lang}.bem.info`,
                 dest: DATA_DIRS[lang],
                 root: process.env.YENV === 'production' ? '' : '/bem.info/' + lang,
@@ -167,7 +167,7 @@ gulp.task('compile-pages', gulp.series(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content-*/**/*'], batch((event, done) => {
+    gulp.watch(['content/**/*'], batch((event, done) => {
         data();
         done();
     }));
