@@ -311,14 +311,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: 'freeze('../../static-ru/promo-features__busy-man.svg'')
+                    url: 'promo-features__busy-man.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: 'freeze('../../static-ru/promo-features__3d-printer.svg'')
+                    url: 'promo-features__3d-printer.svg'
                 },
                 {
                     elem: 'text',

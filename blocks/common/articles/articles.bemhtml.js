@@ -5,10 +5,10 @@ block('articles')(
     elem('position').tag()('dd'),
     elem('text').tag()('dd'),
     elem('photo')(
-		tag()('img'),
+	tag()('img'),
         attrs()(function() {
             return this.extend(applyNext(), {
-            	alt: this.ctx.alt,
+                alt: this.ctx.alt,
                 src: this.freeze(this.ctx.src)
             });
         })
