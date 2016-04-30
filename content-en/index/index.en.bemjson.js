@@ -23,7 +23,7 @@
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: freeze('../../static/promo-crossroad_methodology.svgd')
+                                        url: 'promo-crossroad_methodology.svgd'
                                     },
                                     'Methodology'
                                 ]
@@ -49,7 +49,7 @@
                                     {
                                         elem: 'img',
                                         elemMods: { type: 'round' },
-                                        url: freeze('../../static/promo-crossroad_platform.svgd')
+                                        url: 'promo-crossroad_platform.svgd'
                                     },
                                     'Platform'
                                 ]
@@ -86,7 +86,7 @@
                                     {
                                         elem: 'img',
                                         elemMods: { type: 'out-of-box' },
-                                        url: freeze('../../static/promo-crossroad_community.svgd')
+                                        url: 'promo-crossroad_community.svgd'
                                     },
                                     'Community'
                                 ]

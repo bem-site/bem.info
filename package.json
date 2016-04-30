@@ -1,10 +1,9 @@
 {
-  "author": "Vitaly Harisov",
   "name": "bem.info",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vithar/bem.info.git"
+    "url": "git@github.com:bem-site/bem.info.git"
   },
   "engines": {
     "node": ">=4.1"
@@ -28,7 +27,7 @@
     "eslint": "^2.4.0",
     "eslint-config-pedant": "^0.1.1",
     "eslint-plugin-bem-xjst": "^1.0.1",
-    "gorshochek": "vithar/gorshochek#issue-49",
+    "gorshochek": "bem-site/gorshochek#issues/53-2",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.6",

@@ -25,6 +25,7 @@ const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = DATA_DIR_PREFIX + language;
     return prev;
 }, {});
+const STATIC = './static';
 const OUTPUT = './output';
 const OUTPUT_ROOT = OUTPUT + '/bem.info/';
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
@@ -73,10 +74,10 @@ function compilePages(lang, bundle) {
             bemtree: BEMTREE[lang][bundle],
             bemhtml: BEMHTML[lang][bundle],
             bundle,
+            static: STATIC,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
-            destinationRoot: OUTPUT + (
-                process.env.YENV === 'production' ? '/bem.info/' + lang : ''),
+            destinationRoot: OUTPUT + (process.env.YENV === 'production' ? '/bem.info/static' : ''),
             langs: LANGUAGES,
             lang,
             DEBUG: process.env.DEBUG,
@@ -90,11 +91,10 @@ function compilePages(lang, bundle) {
 gulp.task('copy-misc-to-output', () => {
     rimraf.sync(OUTPUT);
 
-    return Q.all(gulp.src('static/{index.html,robots.txt,.nojekyll}').pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
+    return Q.all(gulp.src(path.join(STATIC, '{index.html,robots.txt,.nojekyll}')).pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
-            return gulp.src([
-                'static/{favicon.ico,robots.txt}'
-            ]).pipe(gulp.dest(OUTPUT_DIRS[lang]));
+            return gulp.src(path.join(STATIC, '{favicon.ico,robots.txt}'))
+                .pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
 });
 
@@ -132,6 +132,8 @@ function copyStatic() {
         var files = BUNDLES.map(bundle => {
             return path.join(BUNDLES_DIR, bundle, bundle + '*.min.*')
         });
+
+        files.push(path.join(OUTPUT_ROOT, 'static', '*'));
 
         return gulp.src(files).pipe(gulp.dest(OUTPUT_DIRS[lang]));
     }));
@@ -233,10 +235,10 @@ gulp.task('default', gulp.series(
     'copy-misc-to-output',
     'data',
     'enb-make',
+    'build-html',
     'copy-static',
     'copy-static-images',
     'copy-sitemap-xml',
-    'build-html',
     'csscomb',
     gulp.parallel('watch', 'browser-sync')
 ));

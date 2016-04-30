@@ -9,7 +9,7 @@ block('promo-companies')(
                 elem: 'logo',
                 attrs: {
                     alt: applyNext(),
-                    src: this.ctx.src
+                    src: this.freeze(this.ctx.src)
                 }
             };
         })

@@ -3,7 +3,7 @@ block('promo-features')(
         tag()('img'),
         attrs()(function() {
             return this.extend(applyNext(), {
-                src: this.ctx.url
+                src: this.freeze(this.ctx.url)
             });
         })
     ),

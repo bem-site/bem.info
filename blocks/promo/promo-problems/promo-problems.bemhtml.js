@@ -5,7 +5,7 @@ block('promo-problems')(
             var ctx = this.ctx;
 
             return this.extend(applyNext(), {
-                src: ctx.url,
+                src: this.freeze(ctx.url),
                 alt: ctx.alt
             });
         })

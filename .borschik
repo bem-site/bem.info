@@ -6,7 +6,6 @@
         "blocks/**": ":base64:",
         "content-en/**": "output/bem.info/en",
         "content-ru/**": "output/bem.info/ru",
-        "static/**": "output/bem.info/en",
-        "static-ru/**": "output/bem.info/ru"
+        "static/**": "output/bem.info/static"
     }
 }

@@ -55,7 +55,7 @@
             content: [
                 {
                     elem: 'img',
-                    url: freeze('../../static/promo-problems.en.svg')
+                    url: 'promo-problems.en.svg'
                 },
                 {
                     block: 'promo-title',
@@ -95,14 +95,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__bicycle.svg')
+                    url: 'promo-features__bicycle.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__fortress.svg')
+                    url: 'promo-features__fortress.svg'
                 },
                 {
                     elem: 'text',
@@ -130,14 +130,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__squirrel.svg')
+                    url: 'promo-features__squirrel.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__yogi.svg')
+                    url: 'promo-features__yogi.svg'
                 },
                 {
                     elem: 'text',
@@ -165,14 +165,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__9-1.svg')
+                    url: 'promo-features__9-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__9-2.svg')
+                    url: 'promo-features__9-2.svg'
                 },
                 {
                     elem: 'text',
@@ -201,14 +201,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__6-1.svg')
+                    url: 'promo-features__6-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__6-2.svg')
+                    url: 'promo-features__6-2.svg'
                 },
                 {
                     elem: 'text',
@@ -236,14 +236,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__shovel.svg')
+                    url: 'promo-features__shovel.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__tractor.svg')
+                    url: 'promo-features__tractor.svg'
                 },
                 {
                     elem: 'text',
@@ -271,14 +271,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__teamwork_bad.svg')
+                    url: 'promo-features__teamwork_bad.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__teamwork_good.svg')
+                    url: 'promo-features__teamwork_good.svg'
                 },
                 {
                     elem: 'text',
@@ -311,14 +311,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__busy-man.svg')
+                    url: 'freeze('../../static-ru/promo-features__busy-man.svg'')
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__3d-printer.svg')
+                    url: 'freeze('../../static-ru/promo-features__3d-printer.svg'')
                 },
                 {
                     elem: 'text',
@@ -352,14 +352,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__7-1.svg')
+                    url: 'promo-features__7-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__7-2.svg')
+                    url: 'promo-features__7-2.svg'
                 },
                 {
                     elem: 'text',
@@ -387,14 +387,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__8-1.svg')
+                    url: 'promo-features__8-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static/promo-features__8-2.svg')
+                    url: 'promo-features__8-2.svg'
                 },
                 {
                     elem: 'text',

@@ -51,7 +51,7 @@
             content: [
                 {
                     elem: 'img',
-                    url: freeze('../../static-ru/promo-problems.ru.svg')
+                    url: 'promo-problems.ru.svg'
                 },
                 {
                     block: 'promo-text',
@@ -91,14 +91,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__bicycle.svg')
+                    url: 'promo-features__bicycle.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__fortress.svg')
+                    url: 'promo-features__fortress.svg'
                 },
                 {
                     block: 'promo-text',
@@ -126,14 +126,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__9-1.svg')
+                    url: 'promo-features__9-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__9-2.svg')
+                    url: 'promo-features__9-2.svg'
                 },
                 {
                     block: 'promo-text',
@@ -161,14 +161,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__6-1.svg')
+                    url: 'promo-features__6-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__6-2.svg')
+                    url: 'promo-features__6-2.svg'
                 },
                 {
                     block: 'promo-text',
@@ -196,14 +196,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__shovel.svg')
+                    url: 'promo-features__shovel.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__tractor.svg')
+                    url: 'promo-features__tractor.svg'
                 },
                 {
                     block: 'promo-text',
@@ -231,14 +231,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__teamwork_bad.svg')
+                    url: 'promo-features__teamwork_bad.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__teamwork_good.svg')
+                    url: 'promo-features__teamwork_good.svg'
                 },
                 {
                     block: 'promo-text',
@@ -271,14 +271,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__busy-man.svg')
+                    url: 'promo-features__busy-man.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__3d-printer.svg')
+                    url: 'promo-features__3d-printer.svg'
                 },
                 {
                     block: 'promo-text',
@@ -312,14 +312,14 @@
             content: [
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__7-1.svg')
+                    url: 'promo-features__7-1.svg'
                 },
                 {
                     elem: 'separator'
                 },
                 {
                     elem: 'image',
-                    url: freeze('../../static-ru/promo-features__7-2.svg')
+                    url: 'promo-features__7-2.svg'
                 },
                 {
                     block: 'promo-text',
@@ -348,7 +348,7 @@
                 {
                     elem: 'image',
                     elemMods: { single: true },
-                    url: freeze('../../static-ru/promo-features__easy-to-learn.svg')
+                    url: 'promo-features__easy-to-learn.svg'
                 },
                 {
                     block: 'promo-text',
@@ -380,49 +380,49 @@
             content: [
                 {
                     name: 'Harry Roberts',
-                    photo: freeze('../../static-ru/promo-quotes__harry-roberts.jpg'),
+                    photo: 'promo-quotes__harry-roberts.jpg',
                     position: 'Consultant Front-end Architect',
                     url: 'http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/',
                     text: 'I use BEM notation on everything I build now as its usefulness has proved itself over and over.'
                 },
                 {
                     name: 'Mark McDonnell',
-                    photo: freeze('../../static-ru/promo-quotes__mark-mcdonnell.jpg'),
+                    photo: 'promo-quotes__mark-mcdonnell.jpg',
                     position: 'Technical Lead, BBC News',
                     url: 'http://www.integralist.co.uk/posts/bem.html',
                     text: 'Itʼs less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.'
                 },
                 {
                     name: 'Connie Chan',
-                    photo: freeze('../../static-ru/promo-quotes__connie-chan.jpg'),
+                    photo: 'promo-quotes__connie-chan.jpg',
                     position: 'Design Director, Thoughtbot',
                     url: 'https://robots.thoughtbot.com/keeping-the-frontend-modular-with-bem',
                     text: 'Combined with a preprocessor, BEM makes keeping your CSS modular and object-oriented a breeze.'
                 },
                 {
                     name: 'Vadim Makeev',
-                    photo: freeze('../../static-ru/promo-quotes__vadim-makeev.jpg'),
+                    photo: 'promo-quotes__vadim-makeev.jpg',
                     position: 'Web Evangelist, Opera Software',
                     url: 'http://pepelsbey.net/pres/bem-ok/en/',
                     text: 'BEM is okay.'
                 },
                 {
                     name: 'Jonathan Snook',
-                    photo: freeze('../../static-ru/promo-quotes__jonathan-snook.jpg'),
+                    photo: 'promo-quotes__jonathan-snook.jpg',
                     position: 'Author of OOCSS, Xero',
                     url: 'https://twitter.com/snookca/status/606908589295464449',
                     text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
                 },
                 {
                     name: 'Paul Irish',
-                    photo: freeze('../../static-ru/promo-quotes__paul-irish.jpg'),
+                    photo: 'promo-quotes__paul-irish.jpg',
                     position: 'Front-end Developer, Google Inc.',
                     url: 'ttps://twitter.com/paul_irish/status/192483200696717312',
                     text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
                 },
                 {
                     name: 'Necolas Gallagher',
-                    photo: freeze('../../static-ru/promo-quotes__necolas-gallagher.jpg'),
+                    photo: 'promo-quotes__necolas-gallagher.jpg',
                     position: 'Software Engineer, Twitter',
                     url: 'https://twitter.com/necolas/status/192678667023949824',
                     text: 'BEM is far more than a HTML/CSS system. Iʼve got no plans to use it all; just adapted some of its ideas.'
@@ -482,31 +482,31 @@
                     elem: 'company',
                     content: 'Яндекс',
                     url: 'https://tech.yandex.ru/bem/',
-                    src: freeze('../../static-ru/promo-companies__yandex.ru.svg'),
+                    src: 'promo-companies__yandex.ru.svg',
                 },
                 {
                     elem: 'company',
                     content: 'Google',
                     url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
-                    src: freeze('../../static-ru/promo-companies__google.svg'),
+                    src: 'promo-companies__google.svg',
                 },
                 {
                     elem: 'company',
                     content: 'BBC',
                     url: 'http://www.integralist.co.uk/posts/bem.html',
-                    src: freeze('../../static-ru/promo-companies__bbc.svg'),
+                    src: 'promo-companies__bbc.svg',
                 },
                 {
                     elem: 'company',
                     content: 'Aplha-Bank',
                     url: 'https://github.com/alfa-bank-dev/ui',
-                    src: freeze('../../static-ru/promo-companies__alpha-bank.svg'),
+                    src: 'promo-companies__alpha-bank.svg',
                 },
                 {
                     elem: 'company',
                     content: 'BuzzFeed',
                     url: 'http://www.buzzfeed.com/',
-                    src: freeze('../../static-ru/promo-companies__buzzfeed.svg'),
+                    src: 'promo-companies__buzzfeed.svg',
                 }
             ]
         }
