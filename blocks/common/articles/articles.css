@@ -1,0 +1,54 @@
+.articles
+{
+    max-width: 760px;
+    margin: 0 0 0 160px;
+    /*margin: 62px 32px 126px 271px;*/
+}
+
+.articles__title
+{
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.articles__photo
+{
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+    margin: 10px 0 10px -160px;
+
+    /*border-radius: 70px;*/
+}
+
+.articles__author
+{
+    display: inline;
+
+    margin: 0;
+}
+
+.articles__position
+{
+    display: inline;
+
+    margin: 0;
+}
+
+.articles__author + .articles__position::before
+{
+    content: ', ';
+}
+
+.articles__link
+{
+    text-decoration: none;
+}
+
+.articles__text
+{
+    min-height: 10ex;
+    margin: 1ex 0 2ex;
+}

@@ -3,9 +3,9 @@ block('article-wrap').content()(function() {
         page = data.page;
 
     return [
-        { block: 'article' },
+        { block: page.type === 'articles' ? 'articles' : 'article' },
         { block: 'article-rewind' },
-        { block: 'article-amendments' },
+        { block: page.type === 'articles' ? 'articles-add' : 'article-amendments' },
         {
             block: 'social-likes',
             params: page.head.meta,

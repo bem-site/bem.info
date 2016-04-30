@@ -4,6 +4,7 @@
         'article-tags',
         'article',
         'article-amendments',
+        'articles',
         'social-likes'
     ]
 })

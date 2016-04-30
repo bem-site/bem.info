@@ -1,3 +1,18 @@
+  {
+    "url": "/methodology/articles/",
+    "site": "/methodology/",
+    "title": "Articles",
+    "source": "./content-en/methodology/articles.en.js",
+    "tags": ["methodology"],
+    "type": "articles",
+    "bundle": "methodology",
+    "disabled": true,
+    "published": false
+  },
+
+
+
+
 Убрать правую границу у соцсетей в подвале на внутренних страницах
 
 https://en.bem.qloud.yandex.ru/methodology/declarations/
