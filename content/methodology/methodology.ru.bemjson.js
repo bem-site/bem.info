@@ -432,20 +432,21 @@
                     elem: 'quote',
                     content: [
                         {
+                            elem: 'photo',
+                            src: quote.photo,
+                            alt: quote.name
+                        },
+                        ' ',
+                        {
                             elem: 'name',
                             content: quote.name
                         },
+                        ' ',
                         {
                             elem: 'position',
                             content: quote.position
                         },
-                        {
-                            elem: 'photo',
-                            attrs: {
-                                src: quote.photo,
-                                alt: quote.name
-                            }
-                        },
+                        ' ',
                         {
                             elem: 'link',
                             attrs: { href: quote.url },

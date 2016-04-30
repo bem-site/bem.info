@@ -17,9 +17,10 @@
 {
     line-height: 1.4;
 
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
 
-    padding: 20px 4%;
+    margin: 20px 4% 52px;
 
     text-align: center;
 }
@@ -28,7 +29,7 @@
 {
     width: 140px;
     height: 140px;
-    margin: 10px auto;
+    margin: 10px auto 15px;
 
     border-radius: 70px;
 }
@@ -37,11 +38,15 @@
 {
     font-size: 16px;
     font-weight: 600;
+
+    order: -1;
 }
 
 .promo-quotes__position
 {
     font-size: 14px;
+
+    order: -1;
 
     margin: 0;
 }
@@ -61,11 +66,11 @@
     font-style: italic;
 
     display: block;
+    order: -1;
 
     width: 180px;
     margin: auto;
 }
-
 
 /*mobile*/
 @media all and (max-width: 480px)
