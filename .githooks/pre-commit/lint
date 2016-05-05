@@ -25,5 +25,5 @@ git_cached_files=$(git diff --cached --name-only --diff-filter=ACMR | grep -e '\
 if [ "$git_cached_files" ]; then
     $NPM_BIN/eslint $git_cached_files || exit 1
     $NPM_BIN/jscs $git_cached_files || exit 1
-    $NPM_BIN/csscomb --lint $git_cached_files || exit 1
 fi
+$NPM_BIN/bemhint blocks/ || exit 1
