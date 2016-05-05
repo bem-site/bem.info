@@ -9,7 +9,7 @@
     "libs"
   ],
   "dependencies": {
-    "bem-components": "^2.4.0",
+    "bem-components": "^2.5.1",
     "bem-stat-counters": "^1.3.0"
   }
 }
