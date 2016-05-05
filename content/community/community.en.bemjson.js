@@ -82,7 +82,7 @@
                     },
                     {
                         elem: 'text',
-                        content: 'Questions ans answers'
+                        content: 'Questions and answers'
                     }
                 ]
             }
