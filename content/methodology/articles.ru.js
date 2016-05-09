@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         title: 'Учимся любить БЭМ',
         author: 'Johan Ronsse',

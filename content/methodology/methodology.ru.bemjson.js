@@ -1,4 +1,4 @@
-[{
+module.exports = [{
     block: 'promo-header',
     mods: { site: 'methodology' },
     content: [
@@ -483,31 +483,31 @@
                     elem: 'company',
                     content: 'Яндекс',
                     url: 'https://tech.yandex.ru/bem/',
-                    src: 'promo-companies__yandex.ru.svg',
+                    src: 'promo-companies__yandex.ru.svg'
                 },
                 {
                     elem: 'company',
                     content: 'Google',
                     url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
-                    src: 'promo-companies__google.svg',
+                    src: 'promo-companies__google.svg'
                 },
                 {
                     elem: 'company',
                     content: 'BBC',
                     url: 'http://www.integralist.co.uk/posts/bem.html',
-                    src: 'promo-companies__bbc.svg',
+                    src: 'promo-companies__bbc.svg'
                 },
                 {
                     elem: 'company',
                     content: 'Aplha-Bank',
                     url: 'https://github.com/alfa-bank-dev/ui',
-                    src: 'promo-companies__alpha-bank.svg',
+                    src: 'promo-companies__alpha-bank.svg'
                 },
                 {
                     elem: 'company',
                     content: 'BuzzFeed',
                     url: 'http://www.buzzfeed.com/',
-                    src: 'promo-companies__buzzfeed.svg',
+                    src: 'promo-companies__buzzfeed.svg'
                 }
             ]
         }
