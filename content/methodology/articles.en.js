@@ -1,4 +1,4 @@
-return [
+[
     {
         title: 'Learning to Love BEM',
         author: 'Johan Ronsse',
