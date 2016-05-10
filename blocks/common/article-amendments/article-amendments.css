@@ -1,7 +1,10 @@
 .article-amendments
 {
     max-width: 760px;
-    margin: 48px 0 16px;
+    margin: 48px 0 16px -10px;
+    padding: 0 10px;
+
+    background: rgba(0, 0, 0, 0.1);
 }
 
 /*tablet*/
