@@ -1,5 +1,4 @@
 **/*.deps.js
-**/*.bemjson.js
 libs/**
 *bundles/**
 output/**

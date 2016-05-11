@@ -46,7 +46,10 @@ function configNodes(config, isProd, bundle, levels) {
             [enbBemTechs.files],
 
             // css
-            [techs.css, { target: '?.css' }],
+            [techs.css, {
+                target: '?.css',
+                autoprefixer: { browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%'] }
+            }],
 
             // i18n
             [techs.keysets, { lang: '{lang}' }],

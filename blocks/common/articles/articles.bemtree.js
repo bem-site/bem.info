@@ -1,10 +1,8 @@
-var vm = require('vm');
-
 block('articles').content()(function() {
     var data = this.data,
         page = data.page;
 
-    return vm.runInNewContext(page.content).map(function(article) {
+    return page.content.map(function(article) {
         return [
             {
                 elem: 'title',
