@@ -2,7 +2,7 @@ block('sitemap').content()(function() {
     var data = this.data,
         currentPage = data.page;
 
-    return ['methodology', 'tools', 'platform', 'community'].map(function(site) {
+    return ['methodology', 'toolbox', 'platform', 'community'].map(function(site) {
         var rootSitePage,
             rootSiteUrl = '/' + site + '/',
             pages = data.pages.filter(function(page) {

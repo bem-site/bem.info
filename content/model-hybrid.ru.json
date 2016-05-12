@@ -109,34 +109,63 @@
   },
 
   {
-    "url": "/tools/",
-    "site": "/tools/",
-    "title": "Инструментарий"
+    "url": "/toolbox/",
+    "site": "/toolbox/",
+    "title": "Toolbox",
+    "source": "./content/toolbox/toolbox.ru.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "toolbox-index"
   },
   {
-    "url": "/tools/bem/bem-tools/",
-    "site": "/tools/",
-    "title": "bem-tools",
-    "level": 1
+    "url": "/toolbox/enb/",
+    "site": "/toolbox/enb/",
+    "title": "ENB",
+    "content": "ENB page",
+    "bundle": "toolbox",
+    "prev": false
   },
   {
-    "url": "/tools/bem/enb-bem/",
-    "site": "/tools/",
-    "title": "enb-bem",
-    "level": 1
+    "url": "/toolbox/enb/test/",
+    "site": "/toolbox/enb/",
+    "title": "ENB TEST",
+    "content": "ENB TEST page",
+    "bundle": "toolbox"
   },
   {
-    "url": "/tools/modules/",
-    "site": "/tools/modules/",
-    "title": "Модули",
-    "disabled": true,
-    "level": 1
+    "url": "/toolbox/bem-tools/",
+    "site": "/toolbox/bem-tools/",
+    "title": "bem-toolbox",
+    "content": "bem-toolbox",
+    "bundle": "toolbox"
   },
   {
-    "url": "/tools/bem/bem-naming/",
-    "site": "/tools/",
+    "url": "/toolbox/sdk/",
+    "site": "/toolbox/sdk/",
+    "title": "BEM SDK",
+    "content": "BEM SDK",
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/sdk/bem-naming/",
+    "site": "/toolbox/sdk/bem-naming/",
     "title": "bem-naming",
-    "level": 2
+    "source": "https://github.com/bem/bem-naming/blob/master/README.md",
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/sdk/bem-config/",
+    "site": "/toolbox/sdk/bem-config/",
+    "title": "bem-config",
+    "source": "https://github.com/bem-contrib/bem-config/blob/master/README.md",
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/sdk/bem-fs-scheme/",
+    "site": "/toolbox/sdk/bem-fs-scheme/",
+    "title": "bem-fs-scheme",
+    "source": "https://github.com/bem-contrib/bem-fs-scheme/blob/master/README.md",
+    "bundle": "toolbox",
+    "next": false
   },
 
   {

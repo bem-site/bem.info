@@ -43,3 +43,30 @@
 {
     background: url(promo-logo__logo_methodology_3.svg) no-repeat 0 21px;
 }
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-logo__logo_bright
+    {
+        opacity: 0.35;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 790px)
+{
+    .promo-logo__logo_methodology_1
+    {
+        display: none;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 580px)
+{
+    .promo-logo
+    {
+        display: none;
+    }
+}

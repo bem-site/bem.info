@@ -1,0 +1,11 @@
+.promo-header__link
+{
+    transition: all 0.3em;
+
+    color: #fff;
+}
+
+.promo-header__link:hover
+{
+    opacity: 0.8;
+}
