@@ -35,6 +35,7 @@ block('root').replace()(function() {
                 return prev
             }, [])
         ],
+        favicon: data.root + '/favicon.ico',
         scripts: [
             { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js' }
         ]
