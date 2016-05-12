@@ -34,6 +34,22 @@
     "bundle": "methodology"
   },
   {
+    "url": "/methodology/js/",
+    "site": "/methodology/",
+    "title": "JavaScript",
+    "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/js-principles/",
+    "site": "/methodology/",
+    "title": "Особенности JavaScript",
+    "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.ru.md",
+    "bundle": "methodology"
+  },
+  {
     "url": "/methodology/filesystem/",
     "site": "/methodology/",
     "title": "Файловая система",
