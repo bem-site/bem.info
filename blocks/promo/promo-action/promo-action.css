@@ -66,3 +66,46 @@
 {
     display: none;
 }
+
+/*tablet*/
+@media all and (max-width: 790px)
+{
+    .promo-action
+    {
+        font-size: 24px;
+
+        margin: 0;
+    }
+
+    @media all and (max-width: 680px)
+    {
+        .promo-action
+        {
+            font-size: 19px;
+        }
+
+        .promo-action::after
+        {
+            top: 0;
+        }
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 580px)
+{
+    .promo-action
+    {
+        font-size: 16px;
+
+        margin: 6px 20px;
+    }
+
+    .promo-action::after
+    {
+        top: 0;
+
+        width: 11px;
+        height: 11px;
+    }
+}

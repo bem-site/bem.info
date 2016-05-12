@@ -1,4 +1,4 @@
-block('promo-footer').mod('site', 'methodology').content()(function() {
+block('promo-footer').content()(function() {
     return [
         {
             block: 'promo-title',
