@@ -1,4 +1,4 @@
-var langs = ['ru', 'en'],
+var langs = ['ru', 'uk', 'en'],
     techs = {
         // essential
         fileProvider: require('enb/techs/file-provider'),

@@ -1,0 +1,232 @@
+ [
+  {
+    "url": "/",
+    "site": "/",
+    "title": "БЕМ",
+    "source": "./content/index/index.uk.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "index"
+  },
+  {
+    "url": "/methodology/",
+    "site": "/methodology/",
+    "title": "Методология",
+    "source": "./content/methodology/methodology.uk.bemjson.js",
+    "tags": ["methodology"],
+    "type": "bemjson.js",
+    "bundle": "methodology-index"
+  },
+  {
+    "url": "/methodology/key-concepts/",
+    "site": "/methodology/",
+    "title": "Основные понятия",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology",
+    "prev": false
+  },
+  {
+    "url": "/methodology/naming-convention/",
+    "site": "/methodology/",
+    "title": "Соглашение по именованию",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/js/",
+    "site": "/methodology/",
+    "title": "JavaScript",
+    "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.uk.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/js-principles/",
+    "site": "/methodology/",
+    "title": "Особенности JavaScript",
+    "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/filesystem/",
+    "site": "/methodology/",
+    "title": "Файловая система",
+    "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.uk.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/build/",
+    "site": "/methodology/",
+    "title": "Сборка",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/declarations/",
+    "site": "/methodology/",
+    "title": "Декларации",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/solved-problems/",
+    "site": "/methodology/",
+    "title": "Какие проблемы решает",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/history/",
+    "site": "/methodology/",
+    "title": "История создания",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/articles/",
+    "site": "/methodology/",
+    "title": "Статьи",
+    "source": "./content/methodology/articles.uk.js",
+    "tags": ["methodology"],
+    "type": "articles",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/faq/",
+    "site": "/methodology/",
+    "title": "FAQ",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.uk.md",
+    "tags": ["methodology"],
+    "bundle": "methodology",
+    "next": false
+  },
+
+  {
+    "url": "/tools/",
+    "site": "/tools/",
+    "title": "Инструментарий"
+  },
+  {
+    "url": "/tools/bem/bem-tools/",
+    "site": "/tools/",
+    "title": "bem-tools",
+    "level": 1
+  },
+  {
+    "url": "/tools/bem/enb-bem/",
+    "site": "/tools/",
+    "title": "enb-bem",
+    "level": 1
+  },
+  {
+    "url": "/tools/modules/",
+    "site": "/tools/modules/",
+    "title": "Модули",
+    "disabled": true,
+    "level": 1
+  },
+  {
+    "url": "/tools/bem/bem-naming/",
+    "site": "/tools/",
+    "title": "bem-naming",
+    "level": 2
+  },
+
+  {
+    "url": "/platform/",
+    "site": "/platform/",
+    "title": "Платформа",
+    "disabled": true,
+    "nav": false
+  },
+  {
+    "url": "/platform/techs/",
+    "site": "/platform/techs/",
+    "title": "Технологии",
+    "disabled": true
+  },
+  {
+    "url": "/technology/i-bem/v2/i-bem-js/",
+    "site": "/platform/techs/i-bem/",
+    "title": "i-bem"
+  },
+  {
+    "url": "/technology/deps/about/",
+    "site": "/platform/techs/deps/",
+    "title": "DEPS"
+  },
+  {
+    "url": "/technology/bemjson/v2/bemjson/",
+    "site": "/platform/techs/bemjson/",
+    "title": "BEMJSON"
+  },
+  {
+    "url": "/technology/bemhtml/v2/intro/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "BEMHTML"
+  },
+  {
+    "url": "/technology/bemtree/v2/bemtree/",
+    "site": "/platform/techs/bemtree/",
+    "title": "BEMTREE"
+  },
+
+  {
+    "url": "/libs/",
+    "site": "/platform/libs/",
+    "title": "Библиотеки"
+  },
+  {
+    "url": "/libs/bem-core/",
+    "site": "/platform/libs/bem-core/",
+    "title": "bem-core"
+  },
+  {
+    "url": "/libs/bem-components/",
+    "site": "/platform/libs/bem-components/",
+    "title": "bem-components"
+  },
+  {
+    "url": "/libs/bem-history/",
+    "site": "/platform/libs/bem-history/",
+    "title": "bem-history"
+  },
+
+  {
+    "url": "/community/",
+    "site": "/community/",
+    "title": "Сообщество",
+    "source": "./content/community/community.uk.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "community-index",
+    "nav": false
+  },
+  {
+    "url": "/blog/",
+    "site": "/community/",
+    "title": "Блог",
+    "level": 1,
+    "nav": false
+  },
+  {
+    "url": "/events/",
+    "site": "/community/",
+    "title": "События",
+    "level": 1,
+    "nav": false
+  },
+  {
+    "url": "/forum/",
+    "site": "/community/",
+    "title": "Форум",
+    "level": 1,
+    "nav": false
+  }
+]
