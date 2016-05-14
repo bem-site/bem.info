@@ -113,6 +113,7 @@
     "site": "/toolbox/",
     "title": "Toolbox",
     "source": "./content/toolbox/toolbox.ru.bemjson.js",
+    "tags": ["toolbox"],
     "type": "bemjson.js",
     "bundle": "toolbox-index"
   },
@@ -120,22 +121,110 @@
     "url": "/toolbox/enb/",
     "site": "/toolbox/enb/",
     "title": "ENB",
-    "content": "ENB page",
+    "description": "ENB — сборщик проектов, построенных по методологии БЭМ",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.ru.md",
+    "tags": ["toolbox", "enb"],
+    "hidden": ["en", "uk"],
     "bundle": "toolbox",
     "prev": false
   },
   {
-    "url": "/toolbox/enb/test/",
-    "site": "/toolbox/enb/",
-    "title": "ENB TEST",
-    "content": "ENB TEST page",
+    "url": "/toolbox/enb/enb-bem-techs/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "enb-bem-techs",
+    "description": "Пакет для сборки проектов, в основе которых лежит БЭМ методология",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/README.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
     "bundle": "toolbox"
   },
   {
+    "url": "/toolbox/enb/enb-bem-techs/fs/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Структура проекта",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/bem-project.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/bundle/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Сборка бандла",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/page/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Сборка страницы",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-page.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/merged-bundle/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Сборка merged-бандла",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/dist/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Сборка дистрибутива",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/api/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "API",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/api.ru.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/changelog/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Изменения",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/CHANGELOG.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/migration-2.0/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Миграция на 2.0",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/MIGRATION-2.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-bem-techs/migration-1.0/",
+    "site": "/toolbox/enb/enb-bem-techs/",
+    "title": "Миграция на 1.0",
+    "source": "https://github.com/enb/enb-bem-techs/blob/master/MIGRATION-1.md",
+    "tags": ["toolbox", "enb", "enb-bem-techs"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox",
+    "next": false
+  },
+
+  {
     "url": "/toolbox/bem-tools/",
     "site": "/toolbox/bem-tools/",
-    "title": "bem-toolbox",
-    "content": "bem-toolbox",
+    "title": "bem-tools",
+    "content": "bem-tools",
     "bundle": "toolbox"
   },
   {

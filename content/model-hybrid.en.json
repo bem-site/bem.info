@@ -120,7 +120,9 @@
     "url": "/toolbox/enb/",
     "site": "/toolbox/enb/",
     "title": "ENB",
-    "content": "ENB page",
+    "description": "ENB — a tool for building web projects based on BEM methodology",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.en.md",
+    "tags": ["toolbox", "enb"],
     "bundle": "toolbox",
     "prev": false
   },
