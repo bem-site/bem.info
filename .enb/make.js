@@ -102,10 +102,10 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/index', [ 'blocks/promo/', 'blocks/index' ]);
 
     configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
-    configNodes(config, isProd, 'bundles/methodology', [ 'blocks/methodology' ]);
+    configNodes(config, isProd, 'bundles/methodology', [ 'bundles/methodology/blocks', 'blocks/methodology' ]);
 
     configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
-    configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/toolbox' ]);
+    configNodes(config, isProd, 'bundles/toolbox', [ 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
 
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
     configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
