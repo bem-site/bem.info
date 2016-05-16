@@ -124,7 +124,6 @@
     "description": "ENB — сборщик проектов, построенных по методологии БЭМ",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.ru.md",
     "tags": ["toolbox", "enb"],
-    "hidden": ["en", "uk"],
     "bundle": "toolbox",
     "prev": false
   },
@@ -139,16 +138,7 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/fs/",
-    "site": "/toolbox/enb/enb-bem-techs/",
-    "title": "Структура проекта",
-    "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/bem-project.md",
-    "tags": ["toolbox", "enb", "enb-bem-techs"],
-    "hidden": ["en", "uk"],
-    "bundle": "toolbox"
-  },
-  {
-    "url": "/toolbox/enb/enb-bem-techs/bundle/",
+    "url": "/toolbox/enb/enb-bem-techs/build-bundle/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Сборка бандла",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle.md",
@@ -157,7 +147,7 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/page/",
+    "url": "/toolbox/enb/enb-bem-techs/build-page/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Сборка страницы",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-page.md",
@@ -166,7 +156,7 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/merged-bundle/",
+    "url": "/toolbox/enb/enb-bem-techs/build-merged-bundle/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Сборка merged-бандла",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle.md",
@@ -175,7 +165,7 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/dist/",
+    "url": "/toolbox/enb/enb-bem-techs/build-dist/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Сборка дистрибутива",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist.md",
@@ -202,7 +192,7 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/migration-2.0/",
+    "url": "/toolbox/enb/enb-bem-techs/migration-2/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Миграция на 2.0",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/MIGRATION-2.md",
@@ -210,14 +200,123 @@
     "bundle": "toolbox"
   },
   {
-    "url": "/toolbox/enb/enb-bem-techs/migration-1.0/",
+    "url": "/toolbox/enb/enb-bem-techs/migration-1/",
     "site": "/toolbox/enb/enb-bem-techs/",
     "title": "Миграция на 1.0",
     "source": "https://github.com/enb/enb-bem-techs/blob/master/MIGRATION-1.md",
     "tags": ["toolbox", "enb", "enb-bem-techs"],
     "hidden": ["en", "uk"],
-    "bundle": "toolbox",
-    "next": false
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-js/",
+    "site": "/toolbox/enb/enb-js/",
+    "title": "enb-js",
+    "source": "https://github.com/enb/enb-js/blob/master/README.md",
+    "tags": ["toolbox", "enb", "enb-js"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-js/api/",
+    "site": "/toolbox/enb/enb-js/",
+    "title": "API",
+    "source": "https://github.com/enb/enb-js/blob/master/api.ru.md",
+    "tags": ["toolbox", "enb", "enb-js"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-js/changelog/",
+    "site": "/toolbox/enb/enb-js/",
+    "title": "Изменения",
+    "source": "https://github.com/enb/enb-js/blob/master/CHANGELOG.md",
+    "tags": ["toolbox", "enb", "enb-js"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-modules/",
+    "site": "/toolbox/enb/enb-modules/",
+    "title": "enb-modules",
+    "source": "https://github.com/enb/enb-modules/blob/master/README.md",
+    "tags": ["toolbox", "enb", "enb-modules"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-modules/changelog/",
+    "site": "/toolbox/enb/enb-modules/",
+    "title": "Изменения",
+    "source": "https://github.com/enb/enb-modules/blob/master/CHANGELOG.md",
+    "tags": ["toolbox", "enb", "enb-modules"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-css/",
+    "site": "/toolbox/enb/enb-css/",
+    "title": "enb-css",
+    "description": "Поддержка CSS для ENB",
+    "source": "https://github.com/enb/enb-css/blob/master/README.md",
+    "tags": ["toolbox", "enb", "enb-css"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-css/ie/",
+    "site": "/toolbox/enb/enb-css/",
+    "title": "Сборка бандла для IE",
+    "source": "https://github.com/enb/enb-css/blob/master/docs/ie.ru.md",
+    "tags": ["toolbox", "enb", "enb-css"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-css/api/",
+    "site": "/toolbox/enb/enb-css/",
+    "title": "API",
+    "source": "https://github.com/enb/enb-css/blob/master/docs/api.ru.md",
+    "tags": ["toolbox", "enb", "enb-css"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-css/changelog/",
+    "site": "/toolbox/enb/enb-css/",
+    "title": "Изменения",
+    "source": "https://github.com/enb/enb-css/blob/master/CHANGELOG.md",
+    "tags": ["toolbox", "enb", "enb-css"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-stylus/",
+    "site": "/toolbox/enb/enb-stylus/",
+    "title": "enb-stylus",
+    "description": "Поддержка stylus для ENB",
+    "source": "https://github.com/enb/enb-stylus/blob/master/README.md",
+    "tags": ["toolbox", "enb", "enb-stylus"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-stylus/api/",
+    "site": "/toolbox/enb/enb-stylus/",
+    "title": "API",
+    "source": "https://github.com/enb/enb-stylus/blob/master/api.ru.md",
+    "tags": ["toolbox", "enb", "enb-stylus"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/enb/enb-stylus/changelog/",
+    "site": "/toolbox/enb/enb-stylus/",
+    "title": "Изменения",
+    "source": "https://github.com/enb/enb-stylus/blob/master/CHANGELOG.md",
+    "tags": ["toolbox", "enb", "enb-stylus"],
+    "hidden": ["en", "uk"],
+    "bundle": "toolbox"
   },
 
   {
