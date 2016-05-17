@@ -2,6 +2,10 @@
 {
     font: 16px/2 'Open Sans', Arial, sans-serif;
 
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
     margin: 0;
 }
 
