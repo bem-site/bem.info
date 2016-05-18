@@ -9,7 +9,10 @@ block('page').content()(function() {
         {
             block: 'sitemap'
         },
-        page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' },
+        {
+            block: 'content',
+            content: page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' }
+        },
         {
             block: 'footer'
         },
