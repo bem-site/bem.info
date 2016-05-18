@@ -21,6 +21,7 @@
 
 .search_opened .search__submit
 {
+    position: fixed;
     right: 80px;
 
     background: #fc0;
@@ -35,10 +36,10 @@
 
 .search__submit
 {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
-    right: 0;
+    right: -80px;
 
     margin: 0;
 
