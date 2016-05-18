@@ -1,24 +1,20 @@
 block('legos')(
 	content()(function() {
-        /* @random - random value -1 or 1
-         * @w - block width
-         * @h - block height
-         */
-		var blocks = [],
-            h = 0, w;
+        var sizes = [
+            [4, 2], [3, 2], [2, 2], [3, 2], [2, 6], [3, 6], [4, 6],
+            [2, 4], [3, 2], [2, 4], [3, 7], [1, 4], [3, 3], [2, 2],
+            [4, 3], [3, 3], [2, 1], [3, 4], [2, 6], [3, 4], [4, 3],
+            [2, 4], [1, 2], [2, 4], [3, 7], [1, 4], [3, 3], [4, 2]
+        ];
 
-        for (var i = 0; i < 28; i++) {
-                w = Math.floor(Math.random() * 3) + 1;
-                h = 1 + ({ '4': -1, '1': 1 }[h] || Math.floor(Math.random() * 3) || -1);
-
+        return sizes.reduce(function(blocks, value) {
             blocks.push(
                 {
                     elem: 'lego',
-                    elemMods: { width: w > 1 && w, height: h > 1 && h }
+                    elemMods: { height: value[0], width: value[1] }
                 }
             );
-        }
-
-		return blocks;
+            return blocks;
+        }, []);
 	})
 );
