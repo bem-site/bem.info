@@ -88,7 +88,7 @@ function configNodes(config, isProd, bundle, levels) {
 
             // borschik
             [techs.borschik, { sourceTarget: '?.{lang}.js', destTarget: '?.{lang}.min.js', minify: isProd }],
-            [techs.borschik, { sourceTarget: '?.css', destTarget: '?.min.css', tech: 'cleancss', minify: isProd }]
+            [techs.borschik, { sourceTarget: '?.css', destTarget: '?.min.css', minify: isProd }]
         ]);
 
         nodeConfig.addTargets(['?.{lang}.bemtree.js', '?.{lang}.bemhtml.js', '?.min.css', '?.{lang}.min.js']);
