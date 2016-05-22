@@ -71,3 +71,90 @@
     min-height: 64px;
     margin: 16px 0 49px;
 }
+
+/*tablet*/
+@media all and (max-width: 780px)
+{
+    .articles
+    {
+        margin: 10px 4% 0 130px;
+    }
+
+    .articles__photo
+    {
+        width: 70px;
+        height: 70px;
+        margin-left: -86px;
+    }
+
+    .articles__date
+    {
+        font-size: 10px;
+    }
+
+    .articles__position
+    {
+        font-size: 90%;
+    }
+
+    .articles__text
+    {
+        margin: 10px 0 49px -86px;
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 480px)
+{
+    .articles
+    {
+        margin-left: 0;
+        padding: 4% 10px;
+    }
+
+    .articles__link
+    {
+        font-size: 28px;
+    }
+
+    .articles__photo
+    {
+        display: none;
+    }
+
+    .articles__date
+    {
+        font-size: 15px;
+
+        display: block;
+    }
+
+    .articles__text
+    {
+        margin: 10px 0 20px;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: portrait)
+{
+    .articles
+    {
+        font-size: 16px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape)
+{
+    .articles
+    {
+        font-size: 10px;
+    }
+}
