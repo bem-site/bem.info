@@ -10,7 +10,7 @@
   {
     "url": "/methodology/",
     "site": "/methodology/",
-    "title": "Методология",
+    "title": "Методологія",
     "source": "./content/methodology/methodology.uk.bemjson.js",
     "tags": ["methodology"],
     "type": "bemjson.js",
@@ -19,7 +19,7 @@
   {
     "url": "/methodology/key-concepts/",
     "site": "/methodology/",
-    "title": "Основные понятия",
+    "title": "Основні поняття",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology",
@@ -28,7 +28,7 @@
   {
     "url": "/methodology/naming-convention/",
     "site": "/methodology/",
-    "title": "Соглашение по именованию",
+    "title": "Угода щодо іменування",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
@@ -44,7 +44,7 @@
   {
     "url": "/methodology/js-principles/",
     "site": "/methodology/",
-    "title": "Особенности JavaScript",
+    "title": "Особливості JavaScript",
     "tags": ["methodology"],
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md",
     "bundle": "methodology"
@@ -52,7 +52,7 @@
   {
     "url": "/methodology/filesystem/",
     "site": "/methodology/",
-    "title": "Файловая система",
+    "title": "Файлова система",
     "tags": ["methodology"],
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.uk.md",
     "bundle": "methodology"
@@ -60,7 +60,7 @@
   {
     "url": "/methodology/build/",
     "site": "/methodology/",
-    "title": "Сборка",
+    "title": "Збірка",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
@@ -68,7 +68,7 @@
   {
     "url": "/methodology/declarations/",
     "site": "/methodology/",
-    "title": "Декларации",
+    "title": "Декларації",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
@@ -76,7 +76,7 @@
   {
     "url": "/methodology/solved-problems/",
     "site": "/methodology/",
-    "title": "Какие проблемы решает",
+    "title": "Які проблеми вирішує",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
@@ -84,7 +84,7 @@
   {
     "url": "/methodology/history/",
     "site": "/methodology/",
-    "title": "История создания",
+    "title": "Історія створення",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
@@ -92,7 +92,7 @@
   {
     "url": "/methodology/articles/",
     "site": "/methodology/",
-    "title": "Статьи",
+    "title": "Статті",
     "source": "./content/methodology/articles.uk.js",
     "tags": ["methodology"],
     "type": "articles",
@@ -111,7 +111,7 @@
   {
     "url": "/tools/",
     "site": "/tools/",
-    "title": "Инструментарий"
+    "title": "Інструментарій"
   },
   {
     "url": "/tools/bem/bem-tools/",
@@ -128,7 +128,7 @@
   {
     "url": "/tools/modules/",
     "site": "/tools/modules/",
-    "title": "Модули",
+    "title": "Модулі",
     "disabled": true,
     "level": 1
   },
@@ -149,7 +149,7 @@
   {
     "url": "/platform/techs/",
     "site": "/platform/techs/",
-    "title": "Технологии",
+    "title": "Технології",
     "disabled": true
   },
   {
@@ -181,7 +181,7 @@
   {
     "url": "/libs/",
     "site": "/platform/libs/",
-    "title": "Библиотеки"
+    "title": "Бібліотеки"
   },
   {
     "url": "/libs/bem-core/",
@@ -202,7 +202,7 @@
   {
     "url": "/community/",
     "site": "/community/",
-    "title": "Сообщество",
+    "title": "Спільнота",
     "source": "./content/community/community.uk.bemjson.js",
     "type": "bemjson.js",
     "bundle": "community-index",
@@ -218,7 +218,7 @@
   {
     "url": "/events/",
     "site": "/community/",
-    "title": "События",
+    "title": "Події",
     "level": 1,
     "nav": false
   },
