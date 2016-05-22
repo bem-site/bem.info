@@ -111,23 +111,27 @@
   {
     "url": "/tools/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "Інструментарій"
   },
   {
     "url": "/tools/bem/bem-tools/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "bem-tools",
     "level": 1
   },
   {
     "url": "/tools/bem/enb-bem/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "enb-bem",
     "level": 1
   },
   {
     "url": "/tools/modules/",
     "site": "/tools/modules/",
+    "lang": "ru",
     "title": "Модулі",
     "disabled": true,
     "level": 1
@@ -135,6 +139,7 @@
   {
     "url": "/tools/bem/bem-naming/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "bem-naming",
     "level": 2
   },
@@ -142,6 +147,7 @@
   {
     "url": "/platform/",
     "site": "/platform/",
+    "lang": "ru",
     "title": "Платформа",
     "disabled": true,
     "nav": false
@@ -149,54 +155,68 @@
   {
     "url": "/platform/techs/",
     "site": "/platform/techs/",
+    "lang": "ru",
     "title": "Технології",
     "disabled": true
   },
   {
     "url": "/technology/i-bem/v2/i-bem-js/",
     "site": "/platform/techs/i-bem/",
+    "lang": "ru",
     "title": "i-bem"
   },
   {
     "url": "/technology/deps/about/",
     "site": "/platform/techs/deps/",
+    "lang": "ru",
     "title": "DEPS"
   },
   {
     "url": "/technology/bemjson/v2/bemjson/",
     "site": "/platform/techs/bemjson/",
+    "lang": "ru",
     "title": "BEMJSON"
   },
   {
     "url": "/technology/bemhtml/v2/intro/",
     "site": "/platform/techs/bemhtml/",
+    "lang": "ru",
     "title": "BEMHTML"
   },
   {
     "url": "/technology/bemtree/v2/bemtree/",
     "site": "/platform/techs/bemtree/",
+    "lang": "ru",
     "title": "BEMTREE"
   },
 
   {
     "url": "/libs/",
     "site": "/platform/libs/",
-    "title": "Бібліотеки"
+    "lang": "ru",
+    "title": "Бібліотеки",
+    "level": 1
   },
   {
     "url": "/libs/bem-core/",
     "site": "/platform/libs/bem-core/",
-    "title": "bem-core"
+    "lang": "ru",
+    "title": "bem-core",
+    "level": 2
   },
   {
     "url": "/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
-    "title": "bem-components"
+    "lang": "ru",
+    "title": "bem-components",
+    "level": 2
   },
   {
     "url": "/libs/bem-history/",
     "site": "/platform/libs/bem-history/",
-    "title": "bem-history"
+    "lang": "ru",
+    "title": "bem-history",
+    "level": 2
   },
 
   {
@@ -211,6 +231,7 @@
   {
     "url": "/blog/",
     "site": "/community/",
+    "lang": "ru",
     "title": "Блог",
     "level": 1,
     "nav": false
@@ -218,6 +239,7 @@
   {
     "url": "/events/",
     "site": "/community/",
+    "lang": "ru",
     "title": "Події",
     "level": 1,
     "nav": false
@@ -225,6 +247,7 @@
   {
     "url": "/forum/",
     "site": "/community/",
+    "lang": "ru",
     "title": "Форум",
     "level": 1,
     "nav": false

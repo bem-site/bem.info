@@ -44,7 +44,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'tutorials/quick-start-static/',
+                                url: 'https://ru.bem.info/tutorials/quick-start-static/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -66,7 +66,7 @@ module.exports = [
                         content:
                         {
                             elem: 'text-link',
-                            url: '/tutorials/quick-start-static/',
+                            url: 'https://ru.bem.info/tutorials/quick-start-static/',
                             content: 'Швидкий старт'
                         }
                     }
