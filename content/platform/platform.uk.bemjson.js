@@ -41,7 +41,7 @@ module.exports = [{
             content: [
                 'Каждый веб-разработчик сталкивается с одними и теми же ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'проблемами'
                 }
             ]
@@ -51,20 +51,20 @@ module.exports = [{
             content: [
                 {
                     elem: 'img',
-                    url: 'promo-problems.ru.svgd'
+                    url: 'promo-problems.ru.svg'
                 },
                 {
-                    block: 'promo-text',
+                    block: 'promo-title',
                     content: [
                         'Эти ',
                         {
-                            block: 'promo-highlight',
+                            elem: 'highlighted',
                             content: 'проблемы решены'
                         },
                         ' ',
                         { block: 'bem' },
                         '-методологией,<br>',
-                        'подходом к веб-разработке, который позволяет получить гибкий, легко изменяемый код.'
+                        'подходом к веб-разработке, который позволяет получить гибкий, легко изменяемый код'
                     ]
                 }
             ]
@@ -80,7 +80,7 @@ module.exports = [{
                 { block: 'bem' },
                 ' предлагает ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'единые'
                 },
                 ' правила написания кода'
@@ -101,13 +101,14 @@ module.exports = [{
                     url: 'promo-features__fortress.svg'
                 },
                 {
-                    block: 'promo-text',
-                    content: 'Общий подход для всех технологий: HTML, CSS, JavaScript, документации, тестов и т.д.'
+                    elem: 'text',
+                    content: '???'
                 }
             ]
         }
     ]
 }, {
+    // TODO: move to 'platform' promo page
     block: 'promo-section',
     mods: { color: 'black' },
     content: [
@@ -115,7 +116,42 @@ module.exports = [{
             block: 'promo-title',
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
+                    content: 'Лёгкое'
+                },
+                ' обновление'
+            ]
+        },
+        {
+            block: 'promo-features',
+            content: [
+                {
+                    elem: 'image',
+                    url: 'promo-features__squirrel.svg'
+                },
+                {
+                    elem: 'separator'
+                },
+                {
+                    elem: 'image',
+                    url: 'promo-features__yogi.svg'
+                },
+                {
+                    elem: 'text',
+                    content: 'Простое и быстрое обновление базовых компонентов.'
+                }
+            ]
+        }
+    ]
+}, {
+    block: 'promo-section',
+    mods: { color: 'beige' },
+    content: [
+        {
+            block: 'promo-title',
+            content: [
+                {
+                    elem: 'highlighted',
                     content: 'Масштабирование'
                 },
                 ' кода'
@@ -136,21 +172,21 @@ module.exports = [{
                     url: 'promo-features__9-2.svg'
                 },
                 {
-                    block: 'promo-text',
-                    content: 'Код развивается по заранее известным правилам.'
+                    elem: 'text',
+                    content: 'При использовании методологии код развивается по заранее известным правилам.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'Повторное'
                 },
                 ' использование'
@@ -171,7 +207,7 @@ module.exports = [{
                     url: 'promo-features__6-2.svg'
                 },
                 {
-                    block: 'promo-text',
+                    elem: 'text',
                     content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
                 }
             ]
@@ -179,13 +215,13 @@ module.exports = [{
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'Увеличение'
                 },
                 ' производительности'
@@ -206,7 +242,7 @@ module.exports = [{
                     url: 'promo-features__tractor.svg'
                 },
                 {
-                    block: 'promo-text',
+                    elem: 'text',
                     content: 'Простота обновления и масштабирования повышают эффективность работы.'
                 }
             ]
@@ -214,13 +250,13 @@ module.exports = [{
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'Командная'
                 },
                 ' работа'
@@ -241,27 +277,27 @@ module.exports = [{
                     url: 'promo-features__teamwork_good.svg'
                 },
                 {
-                    block: 'promo-text',
-                    content: 'Общая терминология позволяет разработчикам быстро переходить от проекта к проекту&nbsp;— всё заранее известно.'
+                    elem: 'text',
+                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту — всё заранее известно.'
                 }
             ]
         }
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'black' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
             content: [
                 'Пиши ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'меньше'
                 },
                 ', получай ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'больше'
                 }
             ]
@@ -281,7 +317,7 @@ module.exports = [{
                     url: 'promo-features__3d-printer.svg'
                 },
                 {
-                    block: 'promo-text',
+                    elem: 'text',
                     content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
                 }
             ]
@@ -289,19 +325,19 @@ module.exports = [{
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'beige' },
+    mods: { color: 'white' },
     content: [
         {
             block: 'promo-title',
             content: [
                 'Можно использовать в ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'любых'
                 },
                 ' языках программирования и в ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'любых'
                 },
                 ' фреймворках'
@@ -322,7 +358,7 @@ module.exports = [{
                     url: 'promo-features__7-2.svg'
                 },
                 {
-                    block: 'promo-text',
+                    elem: 'text',
                     content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
                 }
             ]
@@ -330,13 +366,13 @@ module.exports = [{
     ]
 }, {
     block: 'promo-section',
-    mods: { color: 'white' },
+    mods: { color: 'beige' },
     content: [
         {
             block: 'promo-title',
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'Легко'
                 },
                 ' изучить'
@@ -347,11 +383,17 @@ module.exports = [{
             content: [
                 {
                     elem: 'image',
-                    elemMods: { single: true },
-                    url: 'promo-features__easy-to-learn.svg'
+                    url: 'promo-features__8-1.svg'
                 },
                 {
-                    block: 'promo-text',
+                    elem: 'separator'
+                },
+                {
+                    elem: 'image',
+                    url: 'promo-features__8-2.svg'
+                },
+                {
+                    elem: 'text',
                     content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
                 }
             ]
@@ -366,7 +408,7 @@ module.exports = [{
             mods: { color: 'white' },
             content: [
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'Эксперты'
                 },
                 ' рекомендуют ',
@@ -379,87 +421,71 @@ module.exports = [{
             block: 'promo-quotes',
             content: [
                 {
-                    name: 'Harry Roberts',
-                    photo: 'promo-quotes__harry-roberts.jpg',
-                    position: 'Consultant Front-end Architect',
-                    url: 'http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/',
-                    text: 'I use BEM notation on everything I build now as its usefulness has proved itself over and over.'
+                    name: 'Билл Гейтс0',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Mark McDonnell',
-                    photo: 'promo-quotes__mark-mcdonnell.jpg',
-                    position: 'Technical Lead, BBC News',
-                    url: 'http://www.integralist.co.uk/posts/bem.html',
-                    text: 'Itʼs less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.'
+                    name: 'Билл Гейтс1',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Connie Chan',
-                    photo: 'promo-quotes__connie-chan.jpg',
-                    position: 'Design Director, Thoughtbot',
-                    url: 'https://robots.thoughtbot.com/keeping-the-frontend-modular-with-bem',
-                    text: 'Combined with a preprocessor, BEM makes keeping your CSS modular and object-oriented a breeze.'
+                    name: 'Билл Гейтс2',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Vadim Makeev',
-                    photo: 'promo-quotes__vadim-makeev.jpg',
-                    position: 'Web Evangelist, Opera Software',
-                    url: 'http://pepelsbey.net/pres/bem-ok/en/',
-                    text: 'BEM is okay.'
+                    name: 'Билл Гейтс3',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Jonathan Snook',
-                    photo: 'promo-quotes__jonathan-snook.jpg',
-                    position: 'Author of OOCSS, Xero',
-                    url: 'https://twitter.com/snookca/status/606908589295464449',
-                    text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
+                    name: 'Билл Гейтс4',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Paul Irish',
-                    photo: 'promo-quotes__paul-irish.jpg',
-                    position: 'Front-end Developer, Google Inc.',
-                    url: 'ttps://twitter.com/paul_irish/status/192483200696717312',
-                    text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
+                    name: 'Билл Гейтс5',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 },
                 {
-                    name: 'Necolas Gallagher',
-                    photo: 'promo-quotes__necolas-gallagher.jpg',
-                    position: 'Software Engineer, Twitter',
-                    url: 'https://twitter.com/necolas/status/192678667023949824',
-                    text: 'BEM is far more than a HTML/CSS system. Iʼve got no plans to use it all; just adapted some of its ideas.'
+                    name: 'Билл Гейтс6',
+                    photo: '/promo-section__quote_default-photo.png',
+                    position: 'создатель Майкрософта',
+                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
                 }
             ].map(function(quote) {
                 return {
                     elem: 'quote',
                     content: [
                         {
-                            elem: 'photo',
-                            src: quote.photo,
-                            alt: quote.name
-                        },
-                        ' ',
-                        {
                             elem: 'name',
                             content: quote.name
                         },
-                        ' ',
                         {
                             elem: 'position',
                             content: quote.position
                         },
-                        ' ',
                         {
-                            elem: 'link',
-                            attrs: { href: quote.url },
-                            content: {
-                                elem: 'text',
-                                content: quote.text
-                            }
+                            elem: 'photo',
+                            url: quote.photo
+                        },
+                        {
+                            elem: 'text',
+                            content: quote.text
                         }
                     ]
                 };
             })
-        }
-    ]
+        }]
 }, {
     block: 'promo-section',
     mods: { color: 'white' },
@@ -471,7 +497,7 @@ module.exports = [{
                 { block: 'bem' },
                 ' ',
                 {
-                    block: 'promo-highlight',
+                    elem: 'highlighted',
                     content: 'используют'
                 }
             ]
@@ -481,37 +507,28 @@ module.exports = [{
             content: [
                 {
                     elem: 'company',
-                    content: 'Яндекс',
+                    content: 'Yandex',
                     url: 'https://tech.yandex.ru/bem/',
-                    src: 'promo-companies__yandex.ru.svg'
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
                     elem: 'company',
                     content: 'Google',
-                    url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
-                    src: 'promo-companies__google.svg'
+                    url: 'дока БЭМ в mdl',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
                     elem: 'company',
-                    content: 'BBC',
-                    url: 'http://www.integralist.co.uk/posts/bem.html',
-                    src: 'promo-companies__bbc.svg'
+                    content: 'Альфа-Банк',
+                    url: 'библиотека',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
                 {
                     elem: 'company',
-                    content: 'Aplha-Bank',
-                    url: 'https://github.com/alfa-bank-dev/ui',
-                    src: 'promo-companies__alpha-bank.svg'
+                    content: 'Госдеп',
+                    url: '//tesla.com',
+                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
                 },
-                {
-                    elem: 'company',
-                    content: 'BuzzFeed',
-                    url: 'http://www.buzzfeed.com/',
-                    src: 'promo-companies__buzzfeed.svg'
-                }
-            ]
-        }
-/*
                 {
                     elem: 'company',
                     content: 'Mail.ru',
@@ -520,6 +537,5 @@ module.exports = [{
                 }
             ]
         }
-*/
     ]
 }]

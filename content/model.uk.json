@@ -1,0 +1,304 @@
+[
+  {
+    "url": "/",
+    "site": "/",
+    "title": "БЭМ",
+    "source": "./content/index/index.ru.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "index"
+  },
+
+  {
+    "url": "/methodology/",
+    "site": "/methodology/",
+    "title": "Методология",
+    "source": "./content/methodology/index.ru.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "methodology-index"
+  },
+  {
+    "url": "/methodology/key-concepts/",
+    "site": "/methodology/",
+    "title": "Основные понятия",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/naming-convention/",
+    "site": "/methodology/",
+    "title": "Соглашение по именованию",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/filesystem/",
+    "site": "/methodology/",
+    "title": "Файловая система",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/build/",
+    "site": "/methodology/",
+    "title": "Сборка",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/declarations/",
+    "site": "/methodology/",
+    "title": "Декларации",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/solved-problems/",
+    "site": "/methodology/",
+    "title": "Какие проблемы решает",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/methodology/history/",
+    "site": "/methodology/",
+    "title": "История создания",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.ru.md",
+    "bundle": "methodology"
+  },
+  {
+    "url": "/tools/",
+    "site": "/tools/",
+    "title": "Инструменты",
+    "content": "Tools page",
+    "bundle": "tools-index"
+  },
+  {
+    "url": "/tools/bem-tools/",
+    "site": "/tools/bem-tools/",
+    "title": "bem-tools",
+    "content": "bem-tools<br>bem-tools<br>bem-tools<br>bem-tools<br>bem-tools<br>",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/init/",
+    "site": "/tools/bem-tools/init/",
+    "title": "init",
+    "content": "bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>bem-tools-init<br>",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/init/changelog/",
+    "site": "/tools/bem-tools/init/",
+    "title": "Changelog",
+    "source": "bem-tools-init changelog",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/make/",
+    "site": "/tools/bem-tools/make/",
+    "title": "make",
+    "content": "bem-tools-make",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/make/changelog/",
+    "site": "/tools/bem-tools/make/",
+    "title": "Changelog",
+    "source": "bem-tools-make changelog",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/create/",
+    "site": "/tools/bem-tools/create/",
+    "title": "create",
+    "content": "bem-tools-create",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/create/changelog/",
+    "site": "/tools/bem-tools/create/",
+    "title": "Changelog",
+    "source": "bem-tools-create changelog",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/find/",
+    "site": "/tools/bem-tools/find/",
+    "title": "find",
+    "content": "bem-tools-find",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-tools/find/changelog/",
+    "site": "/tools/bem-tools/find/",
+    "title": "Changelog",
+    "source": "bem-tools-find changelog",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-config/",
+    "site": "/tools/bem-config/",
+    "title": "bem-config",
+    "source": "https://github.com/bem-contrib/bem-config/blob/master/README.md",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-fs-scheme/",
+    "site": "/tools/bem-fs-scheme/",
+    "title": "bem-fs-scheme",
+    "source": "https://github.com/bem-contrib/bem-fs-scheme/blob/master/README.md",
+    "bundle": "tools"
+  },
+  {
+    "url": "/tools/bem-naming/",
+    "site": "/tools/bem-naming/",
+    "title": "bem-naming",
+    "source": "https://github.com/bem/bem-naming/blob/master/README.ru.md",
+    "bundle": "tools"
+  },
+  {
+    "url": "/platform/",
+    "site": "/platform/",
+    "title": "Платформа",
+    "source": "./content/platform/index.ru.bemjson.js",
+    "type": "bemjson.js",
+    "bundle": "platform-index"
+  },
+  {
+    "url": "/platform/techs/",
+    "site": "/platform/techs/",
+    "title": "Технологии",
+    "content": "Здесь будет страница про БЭМ-технологии",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/bemhtml/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "BEMHTML",
+    "source": "https://github.com/bem/bem-core/v2/common.docs/reference/reference.ru.md",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/bemhtml/quick-start/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "Quick start",
+    "source": "https://github.com/bem/bem-core/v2/common.docs/intro/intro.ru.md",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/bemtree/",
+    "site": "/platform/techs/bemtree/",
+    "title": "BEMTREE",
+    "source": "https://github.com/bem/bem-core/v2/common.docs/bemtree-reference/bemtree-reference.ru.md",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "i-bem",
+    "source": "https://github.com/bem/bem-core/v2/common.docs/i-bem-js/i-bem-js.ru.md",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/quick-start/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "Quick start",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/manual/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "Manual",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/rationale/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "Rationale",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/api/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "API",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/playground/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "Playground",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/faq/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "FAQ",
+    "content": "Здесь будет описание БЭМ платформы",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem.js/reference/",
+    "site": "/platform/techs/i-bem.js/",
+    "title": "Reference",
+    "content": "TODO",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/",
+    "site": "/platform/libs/",
+    "title": "Библиотеки",
+    "content": "<ul><li><a href=\"bem-core/2.7.0\">bem-core/2.7.0</a><li><a href=\"bem-core/2.8.0\">bem-core/2.8.0</a></ul>",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/bem-core/2.7.0/",
+    "site": "/platform/libs/bem-core/2.7.0/",
+    "title": "bem-core 2.7.0",
+    "content": "content-libs/bem-core-2.7.0",
+    "type": "lib",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/bem-core/2.7.0/i-bem/",
+    "site": "/platform/libs/bem-core/2.7.0/",
+    "title": "i-bem",
+    "content": "i-bem block",
+    "type": "lib",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/bem-core/2.8.0/",
+    "site": "/platform/libs/bem-core/2.8.0/",
+    "title": "bem-core 2.8.0",
+    "content": "content-libs/bem-core-2.8.0",
+    "type": "lib",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/bem-core/2.8.0/i-bem/",
+    "site": "/platform/libs/bem-core/2.8.0/",
+    "title": "i-bem",
+    "content": "i-bem block",
+    "type": "lib",
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/typo/",
+    "site": "/platform/",
+    "title": "Типографика",
+    "source": "./content/platform/typo.ru.md",
+    "bundle": "platform"
+  },
+  {
+    "url": "/forum/",
+    "site": "/forum/",
+    "title": "Forum",
+    "content": "FORUM",
+    "bundle": "forum"
+  }
+]

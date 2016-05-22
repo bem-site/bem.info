@@ -1,17 +1,17 @@
-[
+ [
   {
     "url": "/",
     "site": "/",
-    "title": "BEM",
-    "source": "./content/index/index.en.bemjson.js",
+    "title": "БЕМ",
+    "source": "./content/index/index.uk.bemjson.js",
     "type": "bemjson.js",
     "bundle": "index"
   },
   {
     "url": "/methodology/",
     "site": "/methodology/",
-    "title": "Methodology",
-    "source": "./content/methodology/methodology.en.bemjson.js",
+    "title": "Методологія",
+    "source": "./content/methodology/methodology.uk.bemjson.js",
     "tags": ["methodology"],
     "type": "bemjson.js",
     "bundle": "methodology-index"
@@ -19,8 +19,8 @@
   {
     "url": "/methodology/key-concepts/",
     "site": "/methodology/",
-    "title": "Key concepts",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md",
+    "title": "Основні поняття",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology",
     "prev": false
@@ -28,8 +28,8 @@
   {
     "url": "/methodology/naming-convention/",
     "site": "/methodology/",
-    "title": "Naming convention",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md",
+    "title": "Угода щодо іменування",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
@@ -38,62 +38,62 @@
     "site": "/methodology/",
     "title": "JavaScript",
     "tags": ["methodology"],
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.uk.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/js-principles/",
     "site": "/methodology/",
-    "title": "JavaScript principles",
+    "title": "Особливості JavaScript",
     "tags": ["methodology"],
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/filesystem/",
     "site": "/methodology/",
-    "title": "Filesystem",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.en.md",
+    "title": "Файлова система",
     "tags": ["methodology"],
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.uk.md",
     "bundle": "methodology"
   },
   {
     "url": "/methodology/build/",
     "site": "/methodology/",
-    "title": "Build",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.en.md",
+    "title": "Збірка",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
   {
     "url": "/methodology/declarations/",
     "site": "/methodology/",
-    "title": "Declarations",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.en.md",
+    "title": "Декларації",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
   {
     "url": "/methodology/solved-problems/",
     "site": "/methodology/",
-    "title": "Solved problems",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md",
+    "title": "Які проблеми вирішує",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
   {
     "url": "/methodology/history/",
     "site": "/methodology/",
-    "title": "History",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.en.md",
+    "title": "Історія створення",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology"
   },
   {
     "url": "/methodology/articles/",
     "site": "/methodology/",
-    "title": "Articles",
-    "source": "./content/methodology/articles.en.js",
+    "title": "Статті",
+    "source": "./content/methodology/articles.uk.js",
     "tags": ["methodology"],
     "type": "articles",
     "bundle": "methodology"
@@ -102,7 +102,7 @@
     "url": "/methodology/faq/",
     "site": "/methodology/",
     "title": "FAQ",
-    "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.en.md",
+    "source": "https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.uk.md",
     "tags": ["methodology"],
     "bundle": "methodology",
     "next": false
@@ -111,30 +111,35 @@
   {
     "url": "/tools/",
     "site": "/tools/",
-    "title": "Toolbox"
+    "lang": "ru",
+    "title": "Інструментарій"
   },
   {
     "url": "/tools/bem/bem-tools/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "bem-tools",
     "level": 1
   },
   {
     "url": "/tools/bem/enb-bem/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "enb-bem",
     "level": 1
   },
   {
     "url": "/tools/modules/",
     "site": "/tools/modules/",
-    "title": "Modules",
+    "lang": "ru",
+    "title": "Модулі",
     "disabled": true,
     "level": 1
   },
   {
     "url": "/tools/bem/bem-naming/",
     "site": "/tools/",
+    "lang": "ru",
     "title": "bem-naming",
     "level": 2
   },
@@ -142,63 +147,74 @@
   {
     "url": "/platform/",
     "site": "/platform/",
-    "title": "Platform",
+    "lang": "ru",
+    "title": "Платформа",
     "disabled": true,
     "nav": false
   },
   {
     "url": "/platform/techs/",
     "site": "/platform/techs/",
-    "title": "Technologies",
+    "lang": "ru",
+    "title": "Технології",
     "disabled": true
   },
   {
     "url": "/technology/i-bem/v2/i-bem-js/",
     "site": "/platform/techs/i-bem/",
+    "lang": "ru",
     "title": "i-bem"
   },
   {
     "url": "/technology/deps/about/",
     "site": "/platform/techs/deps/",
+    "lang": "ru",
     "title": "DEPS"
   },
   {
     "url": "/technology/bemjson/v2/bemjson/",
     "site": "/platform/techs/bemjson/",
+    "lang": "ru",
     "title": "BEMJSON"
   },
   {
     "url": "/technology/bemhtml/v2/intro/",
     "site": "/platform/techs/bemhtml/",
+    "lang": "ru",
     "title": "BEMHTML"
   },
   {
     "url": "/technology/bemtree/v2/bemtree/",
     "site": "/platform/techs/bemtree/",
+    "lang": "ru",
     "title": "BEMTREE"
   },
 
   {
     "url": "/libs/",
     "site": "/platform/libs/",
-    "title": "Libraries",
+    "lang": "ru",
+    "title": "Бібліотеки",
     "level": 1
   },
   {
     "url": "/libs/bem-core/",
     "site": "/platform/libs/bem-core/",
+    "lang": "ru",
     "title": "bem-core",
     "level": 2
   },
   {
     "url": "/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
+    "lang": "ru",
     "title": "bem-components",
     "level": 2
   },
   {
     "url": "/libs/bem-history/",
     "site": "/platform/libs/bem-history/",
+    "lang": "ru",
     "title": "bem-history",
     "level": 2
   },
@@ -206,8 +222,8 @@
   {
     "url": "/community/",
     "site": "/community/",
-    "title": "Community",
-    "source": "./content/community/community.en.bemjson.js",
+    "title": "Спільнота",
+    "source": "./content/community/community.uk.bemjson.js",
     "type": "bemjson.js",
     "bundle": "community-index",
     "nav": false
@@ -215,21 +231,24 @@
   {
     "url": "/blog/",
     "site": "/community/",
-    "title": "Blog",
+    "lang": "ru",
+    "title": "Блог",
     "level": 1,
     "nav": false
   },
   {
     "url": "/events/",
     "site": "/community/",
-    "title": "Events",
+    "lang": "ru",
+    "title": "Події",
     "level": 1,
     "nav": false
   },
   {
     "url": "/forum/",
     "site": "/community/",
-    "title": "Forum",
+    "lang": "ru",
+    "title": "Форум",
     "level": 1,
     "nav": false
   }

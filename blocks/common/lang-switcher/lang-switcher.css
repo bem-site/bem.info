@@ -88,14 +88,15 @@
         position: absolute;
         z-index: 1;
         top: 0;
-        right: 140px;
+        right: 120px;
 
         margin: 7px -72px 0 5px;
     }
 
-    .lang-switcher .lang-switcher__item
+    .lang-switcher__item,
+    .lang-switcher__item:last-child
     {
-        margin: 0;
+        margin-right: 12px;
     }
 
     .lang-switcher__link
@@ -103,7 +104,7 @@
         color: #fff;
     }
 
-    .lang-switcher__current
+    .lang-switcher__item_current
     {
         display: none;
     }

@@ -1,6 +1,12 @@
 block('footer').content()(function() {
     var lang = this.data.lang;
 
+    if (lang === 'uk') {
+        lang = 'ru';
+    } else if (lang !== 'ru' && lang !== 'en') {
+        lang = 'en';
+    }
+
     return [
         {
             block: 'legos',
@@ -13,11 +19,11 @@ block('footer').content()(function() {
                 {
                     elem: 'community',
                     content: [
-                        lang === 'ru' ? {
+                        lang === 'ru' && {
                             elem: 'channel',
                             url: 'https://web-standards.slack.com/messages/bem/',
                             content: 'Slack'
-                        } : undefined,
+                        },
                         {
                             elem: 'channel',
                             url: 'https://telegram.me/bem_' + lang,

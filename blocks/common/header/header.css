@@ -126,6 +126,7 @@
 
         opacity: 1;
     }
+
     .header__layout
     {
         z-index: 2;
@@ -140,7 +141,7 @@
     {
         font-size: 19px;
 
-        margin: 6px 120px 0 10px;
+        margin: 6px 150px 0 10px;
 
         color: #fff;
     }

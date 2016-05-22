@@ -7,11 +7,8 @@ block('lang-switcher').content()(function() {
 
         return {
             elem: 'item',
-            content: isCurrent ?
-            {
-                elem: 'current',
-                content: lang
-            } : {
+            elemMods: isCurrent && { current: true },
+            content: isCurrent ? lang : {
                 elem: 'link',
                 attrs: { href: host + data.page.url },
                 content: lang

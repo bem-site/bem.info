@@ -1,6 +1,16 @@
 block('header').content()(function() {
     var data = this.data,
-        url = data.page.url;
+        url = data.page.url,
+        lang = this.data.lang,
+        forumUrl;
+
+    if (lang === 'ru' || lang === 'en') {
+        forumUrl = data.root + '/forum/';
+    } else if (lang === 'uk') {
+        forumUrl = 'https://ru.bem.info/forum/';
+    } else {
+        forumUrl = 'https://en.bem.info/forum/';
+    }
 
     return [
         {
@@ -15,11 +25,11 @@ block('header').content()(function() {
                     block: 'lang-switcher',
                     mix: { block: 'header', elem: 'lang' }
                 },
-                url.indexOf('/forum/') === -1 ? {
+                url.indexOf('/forum/') === -1 && {
                     elem: 'forum',
                     content: this.i18n(this.block, 'forum'), // Forum
-                    attrs: { href: data.root + '/forum/' }
-                } : undefined
+                    attrs: { href: forumUrl }
+                }
             ]
         },
         {
