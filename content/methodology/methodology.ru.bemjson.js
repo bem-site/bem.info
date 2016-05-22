@@ -51,7 +51,7 @@ module.exports = [{
             content: [
                 {
                     elem: 'img',
-                    url: 'promo-problems.ru.svg'
+                    url: 'promo-problems.ru.svgd'
                 },
                 {
                     block: 'promo-text',

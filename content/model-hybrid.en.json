@@ -181,22 +181,26 @@
   {
     "url": "/libs/",
     "site": "/platform/libs/",
-    "title": "Libraries"
+    "title": "Libraries",
+    "level": 1
   },
   {
     "url": "/libs/bem-core/",
     "site": "/platform/libs/bem-core/",
-    "title": "bem-core"
+    "title": "bem-core",
+    "level": 2
   },
   {
     "url": "/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
-    "title": "bem-components"
+    "title": "bem-components",
+    "level": 2
   },
   {
     "url": "/libs/bem-history/",
     "site": "/platform/libs/bem-history/",
-    "title": "bem-history"
+    "title": "bem-history",
+    "level": 2
   },
 
   {
