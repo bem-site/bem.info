@@ -5,7 +5,7 @@ module.exports = [
             {
                 block: 'bem'
             },
-            'Сообщество'
+            'Спільнота'
         ]
     },
     {
@@ -32,7 +32,7 @@ module.exports = [
                     },
                     {
                         elem: 'text',
-                        content: 'Что нового?'
+                        content: 'Що нового?'
                     }
                 ]
             },
@@ -50,14 +50,14 @@ module.exports = [
                                         elem: 'img',
                                         url: 'promo-crossroad_events.svgd'
                                     },
-                                    'События'
+                                    'Події'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Что, где, когда'
+                        content: 'Що, де, коли'
                     }
                 ]
             },
@@ -82,7 +82,7 @@ module.exports = [
                     },
                     {
                         elem: 'text',
-                        content: 'Вопросы и ответы'
+                        content: 'Питання і відповіді'
                     }
                 ]
             }

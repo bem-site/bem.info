@@ -1,5 +1,5 @@
 module.exports = {
     'social-likes': {
-        text: 'Поделиться c миром'
+        text: 'Поділитися зі світом'
     }
 };

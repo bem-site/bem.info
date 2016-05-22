@@ -1,8 +1,8 @@
 module.exports = {
     footer: {
-        domain: 'Ядвига и Яцек Даниц — спасибо за домен!',
-        made: 'с гордостью сделан в',
-        yandex: 'Яндексе',
+        domain: 'Ядвіга і Яцек Даниц — спасибі за домен!',
+        made: 'з гордістю зроблений в',
+        yandex: 'Яндексі',
         'yandex-url': 'https://yandex.ua/company/'
     }
 };

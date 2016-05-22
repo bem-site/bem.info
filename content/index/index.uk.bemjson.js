@@ -5,7 +5,7 @@ module.exports = [
             {
                 block: 'bem'
             },
-            'Методология веб-разработки'
+            'Методологія веб-розробки'
         ]
     },
     {
@@ -25,14 +25,14 @@ module.exports = [
                                         elem: 'img',
                                         url: 'promo-crossroad_methodology.svgd'
                                     },
-                                    'Методология'
+                                    'Методологія'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Идея и архитектура'
+                        content: 'Ідея та архітектура'
                     }
                 ]
             },
@@ -58,7 +58,7 @@ module.exports = [
                     },
                     {
                         elem: 'text',
-                        content: 'Готовая реализация'
+                        content: 'Готова реалізація'
                     }
 /*
                     {
@@ -67,7 +67,7 @@ module.exports = [
                         {
                             elem: 'text-link',
                             url: '/tutorials/quick-start-static/',
-                            content: 'Быстрый старт'
+                            content: 'Швидкий старт'
                         }
                     }
 */
@@ -88,14 +88,14 @@ module.exports = [
                                         elemMods: { type: 'out-of-box' },
                                         url: 'promo-crossroad_community.svgd'
                                     },
-                                    'Сообщество'
+                                    'Спільнота'
                                 ]
                             }
                         ]
                     },
                     {
                         elem: 'text',
-                        content: 'Люди и события'
+                        content: 'Люди і події'
                     }
                 ]
             }
