@@ -19,7 +19,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: '/blog/',
+                                url: 'https://ru.bem.info/blog/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -44,7 +44,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: '/events/',
+                                url: 'https://ru.bem.info/events/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -69,7 +69,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: '/forum/',
+                                url: 'https://ru.bem.info/forum/',
                                 content: [
                                     {
                                         elem: 'img',
