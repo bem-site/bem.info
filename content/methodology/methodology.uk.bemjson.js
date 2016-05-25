@@ -417,7 +417,7 @@ module.exports = [{
                     name: 'Paul Irish',
                     photo: 'promo-quotes__paul-irish.jpg',
                     position: 'Front-end Developer, Google Inc.',
-                    url: 'ttps://twitter.com/paul_irish/status/192483200696717312',
+                    url: 'https://twitter.com/paul_irish/status/192483200696717312',
                     text: 'This BEM stuff is next-level shit. Itʼs incredible how methodical it is.'
                 },
                 {
