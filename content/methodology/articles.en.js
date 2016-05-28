@@ -1,5 +1,14 @@
 module.exports = [
     {
+        title: 'BEMantic: DRY Like You Mean It',
+        author: 'Matt Stow',
+        photo: 'people/matt-stow.jpg',
+        position: 'UX & a11y developer at @TOTVS Labs',
+        url: 'https://medium.com/@stowball/bemantic-dry-like-you-mean-it-133ea3843d98#.e99b7e4pt',
+        date: '12-05-2015',
+        text: 'Matt Stow explains why using a BEM (or similar methodology) doesn’t necessarily mean that your code won’t be semantic and accessible.'
+    },
+    {
         title: 'Learning to Love BEM',
         author: 'Johan Ronsse',
         photo: 'people/johan-ronsse.jpg',
@@ -8,7 +17,6 @@ module.exports = [
         date: '06-05-2015',
         text: 'I have to admit: when I first heard about BEM, I thought it was a bad idea. Why make your CSS naming so complicated? After learning more about BEM I am convinced: the method really has its merits. It is mostly useful in the context of a large scale web application with a lot of components.'
     },
-
     {
         title: 'Side Effects in CSS',
         author: 'Philip Walton',

@@ -44,6 +44,31 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
+                                url: 'toolbox/',
+                                content: [
+                                    {
+                                        elem: 'img',
+                                        url: 'promo-crossroad_toolbox.svg'
+                                    },
+                                    'Toolbox'
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        elem: 'text',
+                        content: 'Tools and SDK'
+                    }
+                ]
+            },
+            {
+                elem: 'item',
+                content: [
+                    {
+                        elem: 'title',
+                        content: [
+                            {
+                                elem: 'title-link',
                                 url: 'tutorials/quick-start-static/',
                                 content: [
                                     {

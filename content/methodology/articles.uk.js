@@ -1,5 +1,14 @@
 module.exports = [
     {
+        title: 'БЕМантика: пишіть осмислені стилі без повторів',
+        author: 'Метт Стоу',
+        photo: 'people/matt-stow.jpg',
+        position: 'UX & a11y разработчик в @TOTVS Labs',
+        url: 'http://css-live.ru/articles/bemantika-pishite-osmyslennye-stili-bez-povtorov.html',
+        date: '21-05-2015',
+        text: 'Метт Стоу объясняет, почему, использование БЭМ (или похожей методологии) не обязательно означает, что ваш код не будет семантичным и доступным.'
+    },
+    {
         title: 'Вчимося любити БЕМ',
         author: 'Johan Ronsse',
         photo: 'people/johan-ronsse.jpg',
