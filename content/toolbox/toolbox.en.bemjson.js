@@ -124,7 +124,7 @@ module.exports = [{
                         attrs: { href: 'sdk/bem-walk/', style: 'margin-left: 2em' },
                         content: 'bem-walk'
                     }
-                },
+                }
             ]
         }
     ]

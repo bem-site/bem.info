@@ -4,13 +4,13 @@ block('article-amendments').content()(function() {
         {
             elem: 'issue',
             content: this.i18n(this.block, 'issue'), // Github
-            url: this.data.page.source || ''
+            url: this.data.page.source
         },
         this.i18n(this.block, 'edit'), // , or correct an article using
         {
             elem: 'edit',
             content: 'prose.io.',
-            url: this.data.page.source || ''
+            url: this.data.page.source
         }
     ]
 });
