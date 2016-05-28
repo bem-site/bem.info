@@ -37,7 +37,7 @@ block('sitemap').content()(function() {
                     content: pages.map(function(page) {
                         var level = page.level || page.url.split('/').length - 3;
 
-                        return level > 3 ? undefined : {
+                        return level < 3 && {
                             elem: 'tree-item-' + level,
                             content: page.url === currentPage.url ? {
                                 elem: 'current',

@@ -8,7 +8,7 @@ block('article-tags').content()(function() {
                 elem: 'tag',
                 content: {
                     elem: 'link',
-                    attrs: { href: data.root + '/tags/' + tag },
+                    // attrs: { href: data.root + '/tags/' + tag },
                     content: tag
                 }
             }

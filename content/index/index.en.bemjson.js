@@ -48,7 +48,7 @@ module.exports = [
                                 content: [
                                     {
                                         elem: 'img',
-                                        url: ''
+                                        url: 'promo-crossroad_toolbox.svg'
                                     },
                                     'Toolbox'
                                 ]

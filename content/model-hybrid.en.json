@@ -112,7 +112,7 @@
     "url": "/toolbox/",
     "site": "/toolbox/",
     "title": "Toolbox",
-    "source": "./content/toolbox/toolbox.ru.bemjson.js",
+    "source": "./content/toolbox/toolbox.en.bemjson.js",
     "type": "bemjson.js",
     "bundle": "toolbox-index"
   },
@@ -123,50 +123,71 @@
     "description": "ENB — a tool for building web projects based on BEM methodology",
     "source": "https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.en.md",
     "tags": ["toolbox", "enb"],
-    "bundle": "toolbox",
-    "prev": false
-  },
-  {
-    "url": "/toolbox/enb/test/",
-    "site": "/toolbox/enb/",
-    "title": "ENB TEST",
-    "content": "ENB TEST page",
     "bundle": "toolbox"
   },
   {
     "url": "/toolbox/bem-tools/",
     "site": "/toolbox/bem-tools/",
-    "title": "bem-toolbox",
-    "content": "bem-toolbox",
+    "title": "bem-tools",
+    "source": "https://github.com/bem/bem-tools/blob/newPluginSearchAlgo@WIP/README.md",
+    "tags": ["toolbox", "bem-tools"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/bemmet/",
+    "site": "/toolbox/bemmet/",
+    "title": "bemmet",
+    "source": "https://github.com/tadatuta/bemmet/blob/master/README.md",
+    "tags": ["toolbox", "bemmet"],
     "bundle": "toolbox"
   },
   {
     "url": "/toolbox/sdk/",
     "site": "/toolbox/sdk/",
-    "title": "BEM SDK",
-    "content": "BEM SDK",
+    "title": "SDK",
+    "source": "https://github.com/bem-sdk/bem-sdk/blob/master/README.md",
+    "tags": ["toolbox", "sdk"],
     "bundle": "toolbox"
   },
   {
     "url": "/toolbox/sdk/bem-naming/",
     "site": "/toolbox/sdk/bem-naming/",
     "title": "bem-naming",
-    "source": "https://github.com/bem/bem-naming/blob/master/README.md",
+    "source": "https://github.com/bem-sdk/bem-naming/blob/master/README.md",
+    "tags": ["toolbox", "sdk", "bem-naming"],
     "bundle": "toolbox"
   },
   {
     "url": "/toolbox/sdk/bem-config/",
     "site": "/toolbox/sdk/bem-config/",
     "title": "bem-config",
-    "source": "https://github.com/bem-contrib/bem-config/blob/master/README.md",
+    "source": "https://github.com/bem-sdk/bem-config/blob/master/README.md",
+    "tags": ["toolbox", "sdk", "bem-config"],
     "bundle": "toolbox"
   },
   {
     "url": "/toolbox/sdk/bem-fs-scheme/",
     "site": "/toolbox/sdk/bem-fs-scheme/",
     "title": "bem-fs-scheme",
-    "source": "https://github.com/bem-contrib/bem-fs-scheme/blob/master/README.md",
+    "source": "https://github.com/bem-sdk/bem-fs-scheme/blob/master/README.md",
+    "tags": ["toolbox", "sdk", "bem-fs-scheme"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/sdk/bem-deps/",
+    "site": "/toolbox/sdk/bem-deps/",
+    "title": "bem-deps",
+    "source": "https://github.com/bem-sdk/bem-deps/blob/master/README.md",
+    "tags": ["toolbox", "sdk", "bem-deps"],
+    "bundle": "toolbox"
+  },
+  {
+    "url": "/toolbox/sdk/bem-walk/",
+    "site": "/toolbox/sdk/bem-walk/",
+    "title": "bem-walk",
+    "source": "https://github.com/bem-sdk/bem-walk/blob/master/README.md",
     "bundle": "toolbox",
+    "tags": ["toolbox", "sdk", "bem-walk"],
     "next": false
   },
 

@@ -11,7 +11,7 @@ module.exports = [{
                 ' ',
                 {
                     elem: 'subtitle',
-                    content: 'инструментарий'
+                    content: 'toolbox'
                 }
             ]
         }
@@ -27,7 +27,7 @@ module.exports = [{
                     tag: 'h2',
                     elem: 'heading',
                     elemMods: { heading: 2 },
-                    content: 'Сборка'
+                    content: 'Build'
                 },
                 {
                     tag: 'p',
@@ -37,11 +37,12 @@ module.exports = [{
                         content: 'ENB'
                     }
                 },
+/*
                 {
                     tag: 'h2',
                     elem: 'heading',
                     elemMods: { heading: 2 },
-                    content: 'Проверка'
+                    content: 'Linting'
                 },
                 {
                     tag: 'p',
@@ -51,11 +52,12 @@ module.exports = [{
                         content: 'bemhint'
                     }
                 },
+*/
                 {
                     tag: 'h2',
                     elem: 'heading',
                     elemMods: { heading: 2 },
-                    content: 'Поддержка в редакторах и терминале'
+                    content: 'Editor support and console'
                 },
                 {
                     tag: 'p',
