@@ -107,8 +107,8 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
     configNodes(config, isProd, 'bundles/toolbox', [ 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
 
-    configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform' ]);
-    configNodes(config, isProd, 'bundles/platform', [ 'blocks/platform' ]);
+    configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform', 'blocks/platform-index' ]);
+    configNodes(config, isProd, 'bundles/platform', [ 'bundles/platform/blocks', 'blocks/platform' ]);
 
     configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 

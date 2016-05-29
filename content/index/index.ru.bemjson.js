@@ -1,12 +1,9 @@
 module.exports = [
     {
         block: 'index-title',
-        content: [
-            {
-                block: 'bem'
-            },
-            'Методология веб-разработки'
-        ]
+        content: {
+            block: 'bem'
+        }
     },
     {
         block: 'promo-crossroad',
@@ -69,7 +66,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'tutorials/quick-start-static/',
+                                url: 'platform/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -84,18 +81,16 @@ module.exports = [
                     {
                         elem: 'text',
                         content: 'Готовая реализация'
-                    }
-/*
+                    },
                     {
                         elem: 'text',
                         content:
                         {
                             elem: 'text-link',
-                            url: '/tutorials/quick-start-static/',
+                            url: 'platform/tutorials/',
                             content: 'Быстрый старт'
                         }
                     }
-*/
                 ]
             },
             {

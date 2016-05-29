@@ -1,6 +1,5 @@
 module.exports = [{
     block: 'promo-header',
-    mods: { site: 'methodology' },
     content: [
         {
             elem: 'header',
@@ -12,23 +11,22 @@ module.exports = [{
                 ' ',
                 {
                     elem: 'subtitle',
-                    content: 'методология'
+                    content: 'платформа'
                 }
             ]
         },
         {
             block: 'promo-action',
-            attrs: { href: 'key-concepts/' },
-            content: 'Документация'
+            attrs: { href: 'tutorials/quick-start-static/' },
+            content: 'Быстрый старт'
         },
         {
             elem: 'text',
             content: [
-                'Методология ',
+                'Платформа ',
                 { block: 'bem' },
-                ' создана в Яндексе для разработки сайтов, которые надо делать быстро, ',
-                'а поддерживать долгие годы. Она позволяет создавать расширяемые и ',
-                'повторно используемые компоненты интерфейса.'
+                ' это экосистема web-разработки, предоставляющая технологии и библиотеки готовых компонентов. ',
+                'Позволяет быстро создавать, масштабировать и легко поддерживать проекты любой сложности.'
             ]
         }
     ]
@@ -38,89 +36,32 @@ module.exports = [{
     content: [
         {
             block: 'promo-title',
-            content: [
-                'Каждый веб-разработчик сталкивается с одними и теми же ',
-                {
-                    elem: 'highlighted',
-                    content: 'проблемами'
-                }
-            ]
+            content: 'Технологии'
         },
         {
-            block: 'promo-problems',
-            content: [
-                {
-                    elem: 'img',
-                    url: 'promo-problems.ru.svg'
-                },
-                {
-                    block: 'promo-title',
-                    content: [
-                        'Эти ',
-                        {
-                            elem: 'highlighted',
-                            content: 'проблемы решены'
-                        },
-                        ' ',
-                        { block: 'bem' },
-                        '-методологией,<br>',
-                        'подходом к веб-разработке, который позволяет получить гибкий, легко изменяемый код'
-                    ]
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                { block: 'bem' },
-                ' предлагает ',
-                {
-                    elem: 'highlighted',
-                    content: 'единые'
-                },
-                ' правила написания кода'
-            ]
+            block: 'promo-text',
+            content: 'валпорав плорапв апро'
         },
         {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__bicycle.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__fortress.svg'
-                },
-                {
-                    elem: 'text',
-                    content: '???'
-                }
-            ]
-        }
+            block: 'promo-text',
+            content: 'валпорав плорапв апро'
+        },
+        {
+            block: 'promo-text',
+            content: 'валпорав плорапв апро'
+        },
+        {
+            block: 'promo-text',
+            content: 'валпорав плорапв апро'
+        },
     ]
 }, {
-    // TODO: move to 'platform' promo page
     block: 'promo-section',
     mods: { color: 'black' },
     content: [
         {
             block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Лёгкое'
-                },
-                ' обновление'
-            ]
+            content: 'Библиотеки'
         },
         {
             block: 'promo-features',
@@ -137,405 +78,70 @@ module.exports = [{
                     url: 'promo-features__yogi.svg'
                 },
                 {
-                    elem: 'text',
+                    block: 'promo-text',
                     content: 'Простое и быстрое обновление базовых компонентов.'
                 }
             ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Масштабирование'
-                },
-                ' кода'
-            ]
         },
         {
-            block: 'promo-features',
+            block: 'articles',
             content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__9-1.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__9-2.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'При использовании методологии код развивается по заранее известным правилам.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'white' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Повторное'
-                },
-                ' использование'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__6-1.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__6-2.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Большинство проектов используют одинаковые компоненты. Повторное использование позволяет резко сократить сроки и стоимость разработки.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Увеличение'
-                },
-                ' производительности'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__shovel.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__tractor.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Простота обновления и масштабирования повышают эффективность работы.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'black' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Командная'
-                },
-                ' работа'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__teamwork_bad.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__teamwork_good.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Общая терминология позволяет новым разработчикам быстро переходить от проекта к проекту — всё заранее известно.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                'Пиши ',
-                {
-                    elem: 'highlighted',
-                    content: 'меньше'
-                },
-                ', получай ',
-                {
-                    elem: 'highlighted',
-                    content: 'больше'
-                }
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__busy-man.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__3d-printer.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Общие единые правила способствуют автоматизации процессов. Часть кода может быть сгенерирована автоматически.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'white' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                'Можно использовать в ',
-                {
-                    elem: 'highlighted',
-                    content: 'любых'
-                },
-                ' языках программирования и в ',
-                {
-                    elem: 'highlighted',
-                    content: 'любых'
-                },
-                ' фреймворках'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__7-1.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__7-2.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Методология предлагает абстрактные практики по повышению надёжности и повторному использованию кода.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'beige' },
-    content: [
-        {
-            block: 'promo-title',
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Легко'
-                },
-                ' изучить'
-            ]
-        },
-        {
-            block: 'promo-features',
-            content: [
-                {
-                    elem: 'image',
-                    url: 'promo-features__8-1.svg'
-                },
-                {
-                    elem: 'separator'
-                },
-                {
-                    elem: 'image',
-                    url: 'promo-features__8-2.svg'
-                },
-                {
-                    elem: 'text',
-                    content: 'Описание методологии со всеми примерами и отсылками можно прочитать за утренним кофе.'
-                }
-            ]
-        }
-    ]
-}, {
-    block: 'promo-section',
-    mods: { color: 'blue' },
-    content: [
-        {
-            block: 'promo-title',
-            mods: { color: 'white' },
-            content: [
-                {
-                    elem: 'highlighted',
-                    content: 'Эксперты'
-                },
-                ' рекомендуют ',
-                {
-                    block: 'bem'
-                }
-            ]
-        },
-        {
-            block: 'promo-quotes',
-            content: [
-                {
-                    name: 'Билл Гейтс0',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс1',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс2',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс3',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс4',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс5',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                },
-                {
-                    name: 'Билл Гейтс6',
-                    photo: '/promo-section__quote_default-photo.png',
-                    position: 'создатель Майкрософта',
-                    text: 'Посоветовал ребятам попробовать БЭМ для интерфейсов некстгена Xbox'
-                }
-            ].map(function(quote) {
-                return {
-                    elem: 'quote',
-                    content: [
+                    {
+                        title: 'БЭМантика: пишите осмысленные стили без повторов',
+                        author: 'Мэтт Стоу',
+                        photo: 'people/matt-stow.jpg',
+                        position: 'UX & a11y разработчик в @TOTVS Labs',
+                        url: 'http://css-live.ru/articles/bemantika-pishite-osmyslennye-stili-bez-povtorov.html',
+                        date: '21-05-2015',
+                        text: 'Мэтт Стоу объясняет, почему, использование БЭМ (или похожей методологии) не обязательно означает, что ваш код не будет семантичным и доступным.'
+                    },
+                    {
+                        title: 'Учимся любить БЭМ',
+                        author: 'Johan Ronsse',
+                        photo: 'people/johan-ronsse.jpg',
+                        url: 'http://frontender.info/learning-to-love-bem/',
+                        date: '27-05-2015',
+                        text: 'Должен признаться: когда я впервые услышал о БЭМ, я подумал, что идея как-то не очень. Зачем так усложнять именование в CSS? Со временем я узнал БЭМ получше и убедился, что у него есть свои достоинства: в основном он полезен для больших приложений с огромным количеством компонентов.'
+                    }
+                ].map(function(article) {
+                    return [
                         {
-                            elem: 'name',
-                            content: quote.name
+                            elem: 'title',
+                            content: [
+                                {
+                                    elem: 'link',
+                                    attrs: { href: article.url },
+                                    content: [
+                                        {
+                                            elem: 'photo',
+                                            src: article.photo,
+                                            alt: article.author
+                                        },
+                                        ' ',
+                                        article.title
+                                    ]
+                                },
+                                ' ',
+                                {
+                                    elem: 'date',
+                                    content: article.date
+                                }
+                            ]
                         },
                         {
+                            elem: 'author',
+                            content: article.author
+                        },
+                        article.position && {
                             elem: 'position',
-                            content: quote.position
-                        },
-                        {
-                            elem: 'photo',
-                            url: quote.photo
+                            content: article.position
                         },
                         {
                             elem: 'text',
-                            content: quote.text
+                            content: article.text
                         }
-                    ]
-                };
-            })
-        }]
-}, {
-    block: 'promo-section',
-    mods: { color: 'white' },
-    content: [
-        {
-            block: 'promo-title',
-            mods: { color: 'black' },
-            content: [
-                { block: 'bem' },
-                ' ',
-                {
-                    elem: 'highlighted',
-                    content: 'используют'
-                }
-            ]
-        },
-        {
-            block: 'promo-companies',
-            content: [
-                {
-                    elem: 'company',
-                    content: 'Yandex',
-                    url: 'https://tech.yandex.ru/bem/',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-                },
-                {
-                    elem: 'company',
-                    content: 'Google',
-                    url: 'дока БЭМ в mdl',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-                },
-                {
-                    elem: 'company',
-                    content: 'Альфа-Банк',
-                    url: 'библиотека',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-                },
-                {
-                    elem: 'company',
-                    content: 'Госдеп',
-                    url: '//tesla.com',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-                },
-                {
-                    elem: 'company',
-                    content: 'Mail.ru',
-                    url: 'статья на Хабре',
-                    src: 'http://www.stplm.ru/upload/d41d8cd98f00b204e9800998ecf8427e/app20/byezimyeni3_preview.png'
-                }
-            ]
+                    ];
+                })
         }
     ]
 }]

@@ -661,8 +661,8 @@
     "site": "/toolbox/sdk/bem-walk/",
     "title": "bem-walk",
     "source": "https://github.com/bem-sdk/bem-walk/blob/master/README.md",
-    "bundle": "toolbox",
     "tags": ["toolbox", "sdk", "bem-walk"],
+    "bundle": "toolbox",
     "next": false
   },
 
@@ -670,64 +670,114 @@
     "url": "/platform/",
     "site": "/platform/",
     "title": "Платформа",
-    "disabled": true,
-    "nav": false
+    "source": "./content/platform/platform.ru.bemjson.js",
+    "tags": ["platform"],
+    "type": "bemjson.js",
+    "bundle": "platform-index"
   },
   {
     "url": "/platform/techs/",
     "site": "/platform/techs/",
     "title": "Технологии",
-    "disabled": true
+    "content": "Здесь будет страница про БЭМ-технологии",
+    "tags": ["platform", "techs"],
+    "bundle": "platform"
   },
   {
-    "url": "/technology/i-bem/v2/i-bem-js/",
-    "site": "/platform/techs/i-bem/",
-    "title": "i-bem"
+    "url": "/platform/techs/bemxjst/",
+    "site": "/platform/techs/bemxjst/",
+    "title": "bemxjst",
+    "content": "Здесь будет страница про bemxjst",
+    "tags": ["platform", "techs", "bemxjst"],
+    "bundle": "platform"
   },
   {
-    "url": "/technology/deps/about/",
-    "site": "/platform/techs/deps/",
-    "title": "DEPS"
-  },
-  {
-    "url": "/technology/bemjson/v2/bemjson/",
-    "site": "/platform/techs/bemjson/",
-    "title": "BEMJSON"
-  },
-  {
-    "url": "/technology/bemhtml/v2/intro/",
-    "site": "/platform/techs/bemhtml/",
-    "title": "BEMHTML"
-  },
-  {
-    "url": "/technology/bemtree/v2/bemtree/",
+    "url": "/platform/techs/bemtree/",
     "site": "/platform/techs/bemtree/",
-    "title": "BEMTREE"
+    "title": "BEMTREE",
+    "content": "Здесь будет страница про bemtree",
+    "tags": ["platform", "techs", "bemxjst", "bemtree"],
+    "bundle": "platform"
   },
-
   {
-    "url": "/libs/",
+    "url": "/platform/techs/bemhtml/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "BEMHTML",
+    "content": "Здесь будет страница про bemhtml",
+    "tags": ["platform", "techs", "bemxjst", "bemhtml"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/bemjson/",
+    "site": "/platform/techs/bemjson/",
+    "title": "BEMJSON",
+    "content": "Здесь будет страница про bemjson",
+    "tags": ["platform", "techs", "bemjson"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/i-bem/",
+    "site": "/platform/techs/i-bem/",
+    "title": "i-bem",
+    "content": "Здесь будет страница про i-bem",
+    "tags": ["platform", "techs", "i-bem"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/techs/deps/",
+    "site": "/platform/techs/deps/",
+    "title": "DEPS",
+    "content": "Здесь будет страница про DEPS",
+    "tags": ["platform", "techs", "deps"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/libs/",
     "site": "/platform/libs/",
     "title": "Библиотеки",
-    "level": 1
+    "content": "Здесь будет страница про libs",
+    "tags": ["platform", "libs"],
+    "bundle": "platform"
   },
   {
-    "url": "/libs/bem-core/",
+    "url": "/platform/libs/bem-core/",
     "site": "/platform/libs/bem-core/",
     "title": "bem-core",
-    "level": 2
+    "content": "Здесь будет страница про libs/bem-core",
+    "tags": ["platform", "libs", "bem-core"],
+    "bundle": "platform"
   },
   {
-    "url": "/libs/bem-components/",
+    "url": "/platform/libs/bem-components/",
     "site": "/platform/libs/bem-components/",
     "title": "bem-components",
-    "level": 2
+    "content": "Здесь будет страница про libs/bem-components",
+    "tags": ["platform", "libs", "bem-components"],
+    "bundle": "platform"
   },
   {
-    "url": "/libs/bem-history/",
+    "url": "/platform/libs/bem-history/",
     "site": "/platform/libs/bem-history/",
     "title": "bem-history",
-    "level": 2
+    "content": "Здесь будет страница про libs/bem-history",
+    "tags": ["platform", "libs", "bem-history"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/tutorials/",
+    "site": "/platform/tutorials/",
+    "title": "Обучение",
+    "content": "Три страницы: статика, express, spa. Потом всё остальное",
+    "tags": ["platform", "tutorials"],
+    "bundle": "platform"
+  },
+  {
+    "url": "/platform/tutorials/quick-start-static/",
+    "site": "/platform/tutorials/",
+    "title": "???",
+    "content": "quick-start-static",
+    "tags": ["platform", "tutorials"],
+    "bundle": "platform"
   },
 
   {
