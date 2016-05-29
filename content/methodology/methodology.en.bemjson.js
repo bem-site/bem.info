@@ -1,6 +1,5 @@
 module.exports = [{
     block: 'promo-header',
-    mods: { site: 'methodology' },
     content: [
         {
             elem: 'header',

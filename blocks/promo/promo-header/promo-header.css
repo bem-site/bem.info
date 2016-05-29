@@ -7,6 +7,7 @@
 
     overflow: hidden;
 
+    min-height: 300px;
     margin: -1px 0 0 0;
     padding-bottom: 100px;
 
@@ -19,7 +20,7 @@
 
     display: inline-block;
 
-    margin: 6px 0 0 392px;
+    margin: 6px 0 0 106px;
 }
 
 .promo-header__title
@@ -43,7 +44,7 @@
 
     display: inline-block;
 
-    margin-left: -20px;
+    margin-left: -21px;
     padding: 2px 18px 1px 25px;
 
     letter-spacing: 6px;
@@ -65,50 +66,6 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.promo-header_site_methodology .promo-header__subtitle
-{
-    color: #000;
-    background: #fff;
-}
-
-.promo-header_site_platform .promo-header__subtitle
-{
-    color: #000;
-    background: rgb(255, 204, 0);
-}
-
-.promo-header__text
-{
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 26px;
-
-    position: relative;
-
-    overflow: visible;
-
-    max-width: 40em;
-    margin: 34px 0 74px 382px;
-    padding: 5px 16px 6px 18px;
-
-    white-space: normal;
-
-    color: #fff;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.promo-header__link
-{
-    transition: all 0.3em;
-
-    color: #fff;
-}
-
-.promo-header__link:hover
-{
-    opacity: 0.8;
-}
-
 /*!*tablet lg*!*/
 /*@media all and (min-width: 1200px)*/
 /*{*/
@@ -121,16 +78,6 @@
     {
         margin: 6px 0 0 10%;
     }
-
-    .promo-logo__logo_bright
-    {
-        opacity: 0.35;
-    }
-
-    .promo-header__text
-    {
-        margin: 34px 0 74px 10%;
-    }
 }
 
 /*tablet*/
@@ -141,22 +88,11 @@
         margin: 6px 0 0 5%;
     }
 
-    .promo-header__text
-    {
-        margin: 34px 0 74px 5%;
-    }
-
-    .promo-header__subtitle,
-    .promo-action
+    .promo-header__subtitle
     {
         font-size: 24px;
 
         margin: 0;
-    }
-
-    .promo-logo__logo_methodology_1
-    {
-        display: none;
     }
 
     @media all and (max-width: 680px)
@@ -166,19 +102,9 @@
             margin: 6px 0 0 2%;
         }
 
-        .promo-header__text
-        {
-            margin: 34px 2% 74px;
-        }
-
-        .promo-header__subtitle,
-        .promo-action
+        .promo-header__subtitle
         {
             font-size: 19px;
-        }
-        .promo-action::after
-        {
-            top: 0;
         }
     }
 }
@@ -198,14 +124,6 @@
         margin: 6px 5% 0 14px;
     }
 
-    .promo-header__text
-    {
-        font-size: 14px;
-
-        margin: 34px 0 105px;
-        padding: 5px 14px 6px 20px;
-    }
-
     .promo-header__title
     {
         font-size: 90px;
@@ -218,25 +136,5 @@
         font-size: 16px;
 
         margin: 6px;
-    }
-
-    .promo-action
-    {
-        font-size: 16px;
-
-        margin: 6px 20px;
-    }
-
-    .promo-action::after
-    {
-        top: 0;
-
-        width: 11px;
-        height: 11px;
-    }
-
-    .promo-logo
-    {
-        display: none;
     }
 }

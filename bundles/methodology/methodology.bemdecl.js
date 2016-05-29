@@ -1,1 +1,1 @@
-exports.blocks = [{ name: 'root' }, { name: 'article-wrap' }];
+exports.blocks = [{ name: 'root' }];

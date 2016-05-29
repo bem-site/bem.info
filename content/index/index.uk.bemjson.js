@@ -44,6 +44,31 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
+                                url: 'toolbox/',
+                                content: [
+                                    {
+                                        elem: 'img',
+                                        url: 'promo-crossroad_toolbox.svg'
+                                    },
+                                    'Інструментарій'
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        elem: 'text',
+                        content: 'Інструменти та SDK'
+                    }
+                ]
+            },
+            {
+                elem: 'item',
+                content: [
+                    {
+                        elem: 'title',
+                        content: [
+                            {
+                                elem: 'title-link',
                                 url: 'https://ru.bem.info/tutorials/quick-start-static/',
                                 content: [
                                     {

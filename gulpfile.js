@@ -233,12 +233,12 @@ gulp.task('csscomb', function() {
 
 gulp.task('default', gulp.series(
     'copy-misc-to-output',
-    'data',
+//    'data',
     'enb-make',
     'build-html',
     'copy-static',
     'copy-static-images',
     'copy-sitemap-xml',
-    'csscomb',
+//    'csscomb',
     gulp.parallel('watch', 'browser-sync')
 ));
