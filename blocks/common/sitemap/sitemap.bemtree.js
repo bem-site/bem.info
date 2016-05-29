@@ -2,7 +2,7 @@ block('sitemap').content()(function() {
     var data = this.data,
         currentPage = data.page;
 
-    return ['methodology', 'tools', 'platform', 'community'].map(function(site) {
+    return ['methodology', 'toolbox', 'platform', 'community'].map(function(site) {
         var rootSitePage,
             rootSiteUrl = '/' + site + '/',
             pages = data.pages.filter(function(page) {
@@ -37,7 +37,7 @@ block('sitemap').content()(function() {
                     content: pages.map(function(page) {
                         var level = page.level || page.url.split('/').length - 3;
 
-                        return level > 3 ? undefined : {
+                        return level < 3 && {
                             elem: 'tree-item-' + level,
                             content: page.url === currentPage.url ? {
                                 elem: 'current',

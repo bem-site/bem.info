@@ -2,8 +2,9 @@ block('root').replace()(function() {
     var data = this.data = this.ctx.data,
         page = data.page,
         rootUrl = page.site,
-        siteMod = data.siteMod = rootUrl === '/' ? 'index' : rootUrl.split('/')[1],
-        siteBundle = siteMod + (page.url === rootUrl && (rootUrl !== '/' && rootUrl !== '/forum/') ? '-index' : '');
+        urlSplit = page.url.replace(/\?.*$/, '').split('/'),
+        siteMod = data.siteMod = rootUrl === '/' ? 'index' : urlSplit[1],
+        siteBundle = siteMod + (urlSplit.length === 3 && (rootUrl !== '/' && rootUrl !== '/forum/') ? '-index' : '');
 
     // libs extraction (begin)
     var libs = {};

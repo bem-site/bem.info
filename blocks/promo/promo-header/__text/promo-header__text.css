@@ -1,0 +1,57 @@
+.promo-header__text
+{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 26px;
+
+    position: relative;
+
+    overflow: visible;
+
+    max-width: 40em;
+    margin: 34px 0 74px 382px;
+    padding: 5px 16px 6px 18px;
+
+    white-space: normal;
+
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/*tablet md*/
+@media all and (max-width: 1200px)
+{
+    .promo-header__text
+    {
+        margin: 34px 0 74px 10%;
+    }
+}
+
+/*tablet*/
+@media all and (max-width: 790px)
+{
+    .promo-header__text
+    {
+        margin: 34px 0 74px 5%;
+    }
+
+    @media all and (max-width: 680px)
+    {
+        .promo-header__text
+        {
+            margin: 34px 2% 74px;
+        }
+    }
+}
+
+/*mobile*/
+@media all and (max-width: 580px)
+{
+    .promo-header__text
+    {
+        font-size: 14px;
+
+        margin: 34px 0 105px;
+        padding: 5px 14px 6px 20px;
+    }
+}

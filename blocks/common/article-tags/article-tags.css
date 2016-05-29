@@ -22,7 +22,7 @@
     transition: all 0.3s;
     text-decoration: none;
 
-    color: rgba(0, 0, 0, 0.8) !important; /* TODO: remove !important after mirgation to md2bemjson */
+    color: rgba(0, 0, 0, 0.8) !important;  /* TODO: remove !important after mirgation to md2bemjson */
     border-radius: 3px;
     background: #f7f7f7;
 }
