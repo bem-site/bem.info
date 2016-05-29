@@ -11,6 +11,7 @@ var path = require('path'),
 
     gulp = require('gulp'),
     batch = require('gulp-batch'),
+    watch = require('gulp-watch'),
     browserSync = require('browser-sync'),
     csscomb = require('gulp-csscomb');
 
@@ -167,17 +168,12 @@ gulp.task('compile-pages', gulp.series(
 // Наблюдатель
 
 gulp.task('watch', () => {
-    gulp.watch(['content/**/*'], batch((event, done) => {
-        data();
-        done();
+    watch(['content/**/*'], batch((event, done) => {
+        data().then(done);
     }));
 
-    gulp.watch(['blocks/**/*'], batch((event, done) => {
-        enb.make();
-        copyStatic();
-        done();
-        //TODO: gulp.series does not work :(
-//        gulp.series('enb-make', 'copy-static', done);
+    watch(['blocks/**/*'], batch((event, done) => {
+        enb.make().then(() => copyStatic().then(done));
     }));
 
     // compile pages then bemtree/bemhtml bundle or data changes
@@ -186,16 +182,14 @@ gulp.task('watch', () => {
             bemtree = LANGUAGES.map(lang => path.join(cwd, BEMTREE[lang][bundle])),
             bemhtml = LANGUAGES.map(lang => path.join(cwd, BEMHTML[lang][bundle]));
 
-        gulp.watch(bemtree.concat(bemhtml, [
+        watch(bemtree.concat(bemhtml, [
                 path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
                 path.join(DATA_DIR_PREFIX + '*', bundle + '.js')
             ]),
             batch((event, done) => {
                 bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
                 bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
-                LANGUAGES.forEach(lang => compilePages(lang, bundle));
-
-                done();
+                Q.all(LANGUAGES.map(lang => compilePages(lang, bundle))).then(done);
             }
         ));
     });
