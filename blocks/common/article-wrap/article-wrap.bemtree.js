@@ -3,6 +3,7 @@ block('article-wrap').content()(function() {
         page = data.page;
 
     return [
+        page.isTranslationMissed && { block: 'article-translation-missed' },
         { block: page.type === 'articles' ? 'articles' : 'article' },
         { block: 'article-rewind' },
         { block: page.type === 'articles' ? 'articles-add' : 'article-amendments' },

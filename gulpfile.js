@@ -8,6 +8,7 @@ var path = require('path'),
     Q = require('q'),
     enb = require('enb'),
     rimraf = require('rimraf'),
+    mkdirp = require('mkdirp'),
 
     gulp = require('gulp'),
     batch = require('gulp-batch'),
@@ -15,13 +16,17 @@ var path = require('path'),
     browserSync = require('browser-sync'),
     csscomb = require('gulp-csscomb');
 
+const model = require('./content/model.js');
+
 const LANGUAGES = ['en', 'ru', 'uk'];
 
+const CACHE = './.cache';
+
 const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = './.cache/gorshochek-cache-' + language;
+    prev[language] = CACHE + '/gorshochek-cache-' + language;
     return prev;
 }, {});
-const DATA_DIR_PREFIX = './.cache/gorshochek-data-';
+const DATA_DIR_PREFIX = CACHE + '/gorshochek-data-';
 const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = DATA_DIR_PREFIX + language;
     return prev;
@@ -102,13 +107,42 @@ gulp.task('copy-misc-to-output', () => {
 // Сборка данных
 
 function data() {
+    mkdirp.sync(CACHE);
+
     return Q.all(LANGUAGES.map(lang => {
+        const processedModel = model.map(sourcePage => {
+            const page = Object.assign({}, sourcePage);
+
+            ['source', 'title', 'description'].forEach(field => {
+                if (!page[field]) {
+                    return;
+                }
+
+                if (typeof page[field][lang] === 'undefined') {
+                    page[field] = (lang === 'uk' ?
+                        page[field].ru || page[field].en :
+                        page[field].en || page[field].ru) || page[field];
+
+                    if (field === 'source') {
+                        page.isTranslationMissed = true;
+                    }
+                } else {
+                    page[field] = page[field][lang];
+                }
+            });
+
+            return page;
+        });
+
+        const modelPath = path.join(CACHE, `model.${lang}.json`);
+        fs.writeFileSync(modelPath, JSON.stringify(processedModel));
+
         return runSubProcess('./lib/data-builder.js', {
             cwd: process.cwd(),
             encoding: 'utf-8',
             env: {
                 GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
-                modelPath: `./content/model-hybrid.${lang}.json`,
+                modelPath: modelPath,
                 host: `http://${lang}.bem.info`,
                 dest: DATA_DIRS[lang],
                 root: process.env.YENV === 'production' ? '' : '/bem.info/' + lang,

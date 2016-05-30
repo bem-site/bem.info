@@ -1,0 +1,45 @@
+.article-translation-missed
+{
+    position: absolute;
+
+    max-width: 760px;
+    margin: -53px 0 16px -10px;
+    padding: 0 10px;
+
+    background: rgba(255, 0, 0, 0.1);
+}
+
+@media all and (min-width: 320px) and (max-width: 568px)
+{
+    .article-translation-missed
+    {
+        position: static;
+
+        margin: 16px 0;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: portrait)
+{
+    .article-translation-missed
+    {
+        font-size: 12px;
+        line-height: 27px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape)
+{
+    .article-translation-missed
+    {
+        font-size: 8px;
+    }
+}
