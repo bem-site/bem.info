@@ -154,7 +154,7 @@
 .article blockquote,
 .article pre
 {
-    padding: 0 32px;
+    padding: 0 16px;
 
     border-left: 4px solid #e9e8e6;
     background: rgba(240, 240, 235, 0.4);
@@ -163,13 +163,13 @@
 
 .article pre code
 {
-    font: 16px/1 Consolas, monospace;
+    font: 15px/16px 'Courier New', monospace;
 
     display: block;
     overflow-x: auto;
 
     width: 100%;
-    padding: 9px 0 7px;
+    padding: 11px 0 5px;
 
     white-space: pre;
 
@@ -179,6 +179,7 @@
 }
 
 /* Double line-height for HTML/XML */
+/*
 .article code.lang-xml,
 .article code.lang-html
 {
@@ -186,20 +187,20 @@
 
     padding: 17px 0 15px;
 }
-
+*/
 .article blockquote pre
 {
     border: 0;
     background: none;
 }
-
+/*
 .article blockquote code.lang-xml,
 .article blockquote code.lang-html
 {
     margin-bottom: -1px;
     padding: 1px 0 0;
 }
-
+*/
 /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css */
 /* Unused statements removed */
 .hljs-comment,
@@ -304,7 +305,7 @@
 
 .article code
 {
-    font: 16px/1.8 Consolas, monospace;
+    font: 16px/1.8 'Courier New', monospace;
 
     padding: 0 5px;
 
