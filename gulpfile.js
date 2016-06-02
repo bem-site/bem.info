@@ -187,7 +187,7 @@ gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
 
 gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
     // FIXME: use '/static/*' then https://github.com/bem-site/gorshochek/issues/49 would be resolved
-    return gulp.src(path.join(DATA_DIRS[lang], '/*.{gif,png,jpg,svg,svgz}'))
+    return gulp.src(path.join(DATA_DIRS[lang], '/*.{gif,png,jpg,svg,svgz,svgd}'))
         .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
