@@ -5,7 +5,6 @@ module.exports = [
             {
                 block: 'bem'
             },
-            'Методология веб-разработки'
         ]
     },
     {
@@ -69,7 +68,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'tutorials/quick-start-static/',
+                                url: 'platform/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -84,8 +83,7 @@ module.exports = [
                     {
                         elem: 'text',
                         content: 'Готовая реализация'
-                    }
-/*
+                    },
                     {
                         elem: 'text',
                         content:
@@ -95,7 +93,6 @@ module.exports = [
                             content: 'Быстрый старт'
                         }
                     }
-*/
                 ]
             },
             {
