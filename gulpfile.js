@@ -261,7 +261,7 @@ gulp.task('csscomb', function() {
 
 gulp.task('default', gulp.series(
     'copy-misc-to-output',
-    'data',
+//    'data',
     'enb-make',
     'build-html',
     'copy-static',

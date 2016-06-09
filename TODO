@@ -48,6 +48,33 @@
     ? https://github.com/zloylos/ymapsbem/blob/master/README.md (README.ru.md)
     ? https://github.com/dab/firmCardStory/blob/master/docs/firm-card-story/firm-card-story.ru.md
 
+  {
+    "url": "/technology/i-bem/v2/i-bem-js/",
+    "site": "/platform/techs/i-bem/",
+    "title": "i-bem"
+  },
+  {
+    "url": "/technology/deps/about/",
+    "site": "/platform/techs/deps/",
+    "title": "DEPS"
+  },
+  {
+    "url": "/technology/bemjson/v2/bemjson/",
+    "site": "/platform/techs/bemjson/",
+    "title": "BEMJSON"
+  },
+  {
+    "url": "/technology/bemhtml/v2/intro/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "BEMHTML"
+  },
+  {
+    "url": "/technology/bemtree/v2/bemtree/",
+    "site": "/platform/techs/bemtree/",
+    "title": "BEMTREE"
+  },
+
+
 
 Убрать правую границу у соцсетей в подвале на внутренних страницах
 
