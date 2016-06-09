@@ -1,5 +1,0 @@
-({
-    shouldDeps: [
-        'article-wrap',
-    ]
-})

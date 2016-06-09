@@ -1,5 +1,5 @@
 ({
     shouldDeps: [
-        'article-wrap'
+        'page-bg'
     ]
 })

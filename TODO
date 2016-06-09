@@ -10,6 +10,34 @@
     "published": false
   },
 
++  {
++    "url": "/technology/i-bem/v2/i-bem-js/",
++    "site": "/platform/techs/i-bem/",
++    "title": "i-bem"
++  },
++  {
++    "url": "/technology/deps/about/",
++    "site": "/platform/techs/deps/",
++    "title": "DEPS"
++  },
++  {
++    "url": "/technology/bemjson/v2/bemjson/",
++    "site": "/platform/techs/bemjson/",
++    "title": "BEMJSON"
++  },
++  {
++    "url": "/technology/bemhtml/v2/intro/",
++    "site": "/platform/techs/bemhtml/",
++    "title": "BEMHTML"
++  },
++  {
++    "url": "/technology/bemtree/v2/bemtree/",
++    "site": "/platform/techs/bemtree/",
++    "title": "BEMTREE"
++  },
+
+
+
 /platform/articles/
     https://habrahabr.ru/company/yandex/blog/267875/
     https://habrahabr.ru/post/249653/
