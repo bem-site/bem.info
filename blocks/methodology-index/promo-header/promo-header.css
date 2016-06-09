@@ -1,23 +1,5 @@
-.promo-header__header
-{
-    margin-left: 392px;
-}
-
 .promo-header__subtitle
 {
     color: #000;
     background: #fff;
 }
-/*
-.promo-header_site_toolbox .promo-header__subtitle
-{
-    color: #000;
-    background: #fff;
-}
-
-.promo-header_site_platform .promo-header__subtitle
-{
-    color: #000;
-    background: rgb(255, 204, 0);
-}
-*/
