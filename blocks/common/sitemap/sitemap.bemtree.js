@@ -18,6 +18,7 @@ block('sitemap').content()(function() {
 
         return {
             elem: 'section',
+            elemMods: { site: site },
             content: [
                 {
                     elem: 'title',

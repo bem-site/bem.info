@@ -5,12 +5,13 @@
     top: 70px;
 
     display: none;
+    box-sizing: border-box;
 
     width: 100%;
     min-height: calc(100% - 100px);
-    padding-top: 29px;
+    padding: 29px 80px 50px 110px;
 
-    transition: all 0.3s;
+    transition: color 0.3s;
 
     color: #fff;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -19,19 +20,32 @@
 
 .sitemap__section
 {
-    width: 18%;
-    margin-right: 10%;
-}
-
-.sitemap__section:first-child
-{
-    width: 22%;
-    margin-left: 110px;
+    margin-right: 7%;
 }
 
 .sitemap__section:last-child
 {
-    margin-right: 80px;
+    margin-right: 0;
+}
+
+.sitemap__section_site_methodology
+{
+    width: 22%;
+}
+
+.sitemap__section_site_toolbox
+{
+    width: 19%;
+}
+
+.sitemap__section_site_platform
+{
+    width: 26%;
+}
+
+.sitemap__section_site_community
+{
+    width: 12%;
 }
 
 .sitemap__title
@@ -39,7 +53,7 @@
     font-size: 18px;
     font-weight: normal;
 
-    margin: 0 0 20px -10px;
+    margin: 0 0 20px -11px;
     padding-bottom: 19px;
 
     text-indent: 10px;
@@ -62,6 +76,8 @@
 
 .sitemap__tree
 {
+    line-height: 1.2;
+
     margin: 0;
     padding: 0;
 
@@ -72,7 +88,7 @@
 {
     font-size: 16px;
 
-    margin: 0 0 12px;
+    margin: 0 0 16px;
 }
 
 .sitemap__tree-item-2,
@@ -81,7 +97,7 @@
 {
     font-size: 16px;
 
-    margin: -8px 0 14px 30px;
+    margin: -8px 0 20px 30px;
 }
 
 .sitemap__tree-item-3
@@ -110,50 +126,37 @@
 }
 
 /*tablet*/
-@media all and (max-width: 980px)
+@media all and (max-width: 780px)
 {
-    @media all and (max-width: 780px)
+    .sitemap
     {
-        .sitemap
-        {
-            padding-top: 0;
+        padding: 0;
 
-            border: 0;
-        }
-
-        .sitemap__title
-        {
-            margin: 0 0 0 -10px;
-            padding: 0;
-
-            border: 0;
-        }
-
-        .sitemap__tree
-        {
-            margin: 0 20px;
-        }
-
-        .sitemap__tree-item-1
-        {
-            margin: 0;
-        }
-
-        .sitemap__current
-        {
-            margin: -5px 0 0 -6px;
-            padding: 5px 6px;
-        }
+        border: 0;
     }
 
-    .sitemap .sitemap__section
+    .sitemap__title
     {
-        display: inline-block;
+        margin: 0 0 0 -10px;
+        padding: 0;
 
-        width: 46%;
-        margin: 0 2%;
+        border: 0;
+    }
 
-        vertical-align: top;
+    .sitemap__tree
+    {
+        margin: 0 20px;
+    }
+
+    .sitemap__tree-item-1
+    {
+        margin: 0;
+    }
+
+    .sitemap__current
+    {
+        margin: -5px 0 0 -6px;
+        padding: 5px 6px;
     }
 }
 
