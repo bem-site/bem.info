@@ -143,7 +143,7 @@ function data() {
             env: {
                 GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
                 modelPath: modelPath,
-                host: `http://${lang}.bem.info`,
+                host: `https://${lang}.bem.info`,
                 dest: DATA_DIRS[lang],
                 root: process.env.YENV === 'production' ? '' : '/bem.info/' + lang,
                 token: process.env.TOKEN,
@@ -261,7 +261,7 @@ gulp.task('csscomb', function() {
 
 gulp.task('default', gulp.series(
     'copy-misc-to-output',
-//    'data',
+    'data',
     'enb-make',
     'build-html',
     'copy-static',
