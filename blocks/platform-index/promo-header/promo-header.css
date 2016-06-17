@@ -1,0 +1,12 @@
+.promo-header__subtitle
+{
+    color: #000;
+    background: #fff;
+}
+
+.promo-header__text
+{
+    max-width: 50em;
+    margin-left: 94px;
+}
+

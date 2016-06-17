@@ -69,7 +69,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'https://ru.bem.info/tutorials/quick-start-static/',
+                                url: 'platform/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -84,18 +84,16 @@ module.exports = [
                     {
                         elem: 'text',
                         content: 'Готова реалізація'
-                    }
-/*
+                    },
                     {
                         elem: 'text',
                         content:
                         {
                             elem: 'text-link',
-                            url: 'https://ru.bem.info/tutorials/quick-start-static/',
+                            url: 'platform/tutorials/quick-start-static/',
                             content: 'Швидкий старт'
                         }
                     }
-*/
                 ]
             },
             {

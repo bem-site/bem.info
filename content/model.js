@@ -15,6 +15,7 @@ module.exports = [
     type: 'bemjson.js',
     bundle: 'index'
   },
+
   {
     url: '/methodology/',
     site: '/methodology/',
@@ -985,8 +986,8 @@ module.exports = [
     site: '/toolbox/bemhint/fs-naming/',
     title: {
       ru: 'Именование файлов',
-      // uk: '',
-      // en: '',
+      uk: 'Іменування файлів',
+      en: 'File naming',
     },
     source: {
       // ru: 'https://github.com/bemhint/bemhint-fs-naming/blob/master/README.ru.md',
@@ -1005,7 +1006,7 @@ module.exports = [
       en: 'DEPS schema',
     },
     source: {
-      // ru: 'https://github.com/bemhint/bemhint-deps-schema/blob/master/README.ru.md', // TODO
+      ru: 'https://github.com/bemhint/bemhint-deps-schema/blob/master/README.ru.md',
       // uk: '',
       en: 'https://github.com/bemhint/bemhint-deps-schema/blob/master/README.md',
     },
@@ -1122,8 +1123,8 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-sdk/bem-walk/blob/master/README.md',
     },
-    bundle: 'toolbox',
     tags: ['toolbox', 'sdk', 'bem-walk'],
+    bundle: 'toolbox',
     next: false
   },
 
@@ -1136,13 +1137,16 @@ module.exports = [
       en: 'Platform',
     },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: './content/platform/platform.ru.bemjson.js',
+      uk: './content/platform/platform.uk.bemjson.js',
+      en: './content/platform/platform.en.bemjson.js',
     },
-    disabled: true,
-    nav: false
+    tags: ['platform'],
+    type: 'bemjson.js',
+    bundle: 'platform-index',
+    prev: false
   },
+/*
   {
     url: '/platform/techs/',
     site: '/platform/techs/',
@@ -1152,70 +1156,349 @@ module.exports = [
       en: 'Technologies',
     },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: './content/platform/platform.ru.bemjson.js',
+      uk: './content/platform/platform.ru.bemjson.js',
+      en: './content/platform/platform.ru.bemjson.js',
     },
-    disabled: true
+    tags: ['platform', 'techs'],
+    bundle: 'platform'
   },
+*/
   {
-    url: '/technology/i-bem/v2/i-bem-js/',
-    site: '/platform/techs/i-bem/',
-    title: 'i-bem',
+    url: '/platform/bemjson/',
+    site: '/platform/bemjson/',
+    title: {
+      ru: 'Данные (BEMJSON)',
+      uk: 'Дані (BEMJSON)',
+      en: 'Data (BEMJSON)'
+    },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/4-data.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/4-data.md',
     },
-    level: 2
+    tags: ['platform', 'bemjson'],
+    bundle: 'platform'
   },
   {
-    url: '/technology/deps/about/',
-    site: '/platform/techs/deps/',
-    title: 'DEPS',
+    url: '/platform/bem-xjst/',
+    site: '/platform/bem-xjst/',
+    title: {
+      ru: 'Шаблоны (BEMHTML, BEMTREE)',
+      uk: 'Шаблони (BEMHTML, BEMTREE)',
+      en: 'Templates (BEMHTML, BEMTREE)',
+    },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/1-about.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/1-about.md',
     },
-    level: 2
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
   },
   {
-    url: '/technology/bemjson/v2/bemjson/',
-    site: '/platform/techs/bemjson/',
-    title: 'BEMJSON',
+    url: '/platform/bem-xjst/quick-start/',
+    site: '/platform/bem-xjst/',
+    title: {
+      ru: 'Быстрый старт',
+      uk: 'Швидкий старт',
+      en: 'Quick start',
+    },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/2-quick-start.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/2-quick-start.md',
     },
-    level: 2
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
   },
   {
-    url: '/technology/bemhtml/v2/intro/',
-    site: '/platform/techs/bemhtml/',
-    title: 'BEMHTML',
+    url: '/platform/bem-xjst/api/',
+    site: '/platform/bem-xjst/',
+    title: 'API',
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/3-api.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/3-api.md',
     },
-    level: 2
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
   },
   {
-    url: '/technology/bemtree/v2/bemtree/',
-    site: '/platform/techs/bemtree/',
-    title: 'BEMTREE',
+    url: '/platform/bem-xjst/templates-syntax/',
+    site: '/platform/bem-xjst/',
+    title: {
+      ru: 'Синтаксис шаблонов',
+      uk: 'Синтаксис шаблонів',
+      en: 'Templates syntax',
+    },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/5-templates-syntax.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/5-templates-syntax.md',
     },
-    level: 2
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
   },
-
   {
-    url: '/libs/',
+    url: '/platform/bem-xjst/templates-context/',
+    site: '/platform/bem-xjst/',
+    title: {
+      ru: 'Контекст',
+      uk: 'Контекст',
+      en: 'Context',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/6-templates-context.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/6-templates-context.md',
+    },
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/bem-xjst/runtime/',
+    site: '/platform/bem-xjst/',
+    title: 'Runtime',
+    source: {
+      ru: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/ru/7-runtime.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-xjst/blob/docs-anchors/docs/en/7-runtime.md',
+    },
+    tags: ['platform', 'bem-xjst'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Клиентский JavaScript (i-bem.js)',
+      uk: 'Клієнтський JavaScript (i-bem.js)',
+      en: 'Client-side JavaScript (i-bem.js)',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/overview/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Общие сведения',
+      uk: 'Загальні відомості',
+      en: 'Overview',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-common.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-common.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/html-binding/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Привязка JS-блоков к HTML',
+      uk: 'Прив\'язка JS-блоків до HTML',
+      en: 'Binding JS blocks to HTML',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-html-binding.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-html-binding.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/declaration/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Декларация блока',
+      uk: 'Декларація блоку',
+      en: 'Block declaration',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-decl.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-decl.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/parameters/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Передача параметров',
+      uk: 'Передача параметрів',
+      en: 'Passing parameters',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-params.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-params.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/dom/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Работа с DOM-деревом',
+      uk: 'Робота з DOM-деревом',
+      en: 'Working with the DOM tree',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-dom.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-dom.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/states/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Состояния блока',
+      uk: 'Стану блоку',
+      en: 'States of a block',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-states.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-states.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/events/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'События',
+      uk: 'Події',
+      en: 'Events',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-events.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-events.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/init/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Инициализация',
+      uk: 'Ініціалізація',
+      en: 'Initialization',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-init.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-init.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/interaction/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Взаимодействие блоков',
+      uk: 'Взаємодія блоків',
+      en: 'Interaction of blocks',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-interact.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-interact.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/context/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Контекст',
+      uk: 'Контекст',
+      en: 'Context',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-context.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-context.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/extras/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Что дальше?',
+      uk: 'Що далі?',
+      en: 'What next?',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-extras.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/platform/common.docs/i-bem-js/i-bem-js-extras.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/deps/',
+    site: '/platform/deps/',
+    title: {
+      ru: 'Зависимости',
+      uk: 'Залежності',
+      en: 'Dependencies'
+    },
+    description: {
+      ru: 'deps.js — технология для декларирования зависимостей по БЭМ',
+      // uk: '',
+      en: 'deps.js — a technology to declare dependencies in BEM',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/depsjs/depsjs.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
+    },
+    tags: ['platform', 'deps'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/project-stub/',
+    site: '/platform/project-stub/',
+    title: {
+      ru: 'Заготовка проекта',
+      uk: 'Заготівля проекту',
+      en: 'Project stub',
+    },
+    source: {
+      ru: 'https://github.com/bem/project-stub/blob/master/README.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/project-stub/blob/master/README.md',
+    },
+    tags: ['platform', 'project-stub'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/libs/',
     site: '/platform/libs/',
     title: {
       ru: 'Библиотеки',
@@ -1223,11 +1506,12 @@ module.exports = [
       en: 'Libraries',
     },
     source: {
-      ru: '',
-      uk: '',
-      en: '',
+      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.ru.md',
+      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.uk.md',
+      en: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
-    level: 1
+    tags: ['platform', 'libs'],
+    bundle: 'platform'
   },
   {
     url: '/libs/bem-core/',
@@ -1238,6 +1522,8 @@ module.exports = [
       uk: '',
       en: '',
     },
+    tags: ['platform', 'libs', 'bem-core'],
+    bundle: 'platform',
     level: 2
   },
   {
@@ -1249,6 +1535,8 @@ module.exports = [
       uk: '',
       en: '',
     },
+    tags: ['platform', 'libs', 'bem-components'],
+    bundle: 'platform',
     level: 2
   },
   {
@@ -1260,7 +1548,140 @@ module.exports = [
       uk: '',
       en: '',
     },
+    tags: ['platform', 'libs', 'bem-history'],
+    bundle: 'platform',
     level: 2
+  },
+  {
+    url: '/platform/tutorials/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Учебные материалы',
+      uk: 'Навчальні матеріали',
+      en: 'Tutorials',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-method/blob/platform/platform/tutorials/index.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-method/blob/platform/platform/tutorials/index.en.md',
+    },
+    tags: ['platform', 'tutorials'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/tutorials/quick-start-static/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Собираем статическую страницу',
+      uk: 'Збираємо статичну сторінку',
+      en: 'Creating a static page',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-method/blob/platform/articles/quick-start-static/quick-start-static.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-method/blob/platform/articles/quick-start-static/quick-start-static.en.md',
+    },
+    tags: ['platform', 'tutorials', 'project-stub'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/tutorials/start-with-project-stub/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Создаём свой проект на БЭМ',
+      uk: 'Створюємо свій проект на БЕМ',
+      en: 'Starting your own BEM project',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-method/blob/platform/articles/start-with-project-stub/start-with-project-stub.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-method/blob/platform/articles/start-with-project-stub/start-with-project-stub.en.md',
+    },
+    tags: ['platform', 'tutorials', 'project-stub'],
+    bundle: 'platform'
+  },
+/*
+  {
+    url: '/platform/tutorials/project-stub/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Заготовка проекта',
+      uk: 'Заготівля проекту',
+      en: 'Project Stub',
+    },
+    source: {
+      ru: 'https://github.com/bem/project-stub/blob/bem-core/README.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/project-stub/blob/bem-core/README.md',
+    },
+    tags: ['platform', 'tutorials', 'project-stub'],
+    bundle: 'platform'
+  },
+*/
+  {
+    url: '/platform/tutorials/i-bem/',
+    site: '/platform/tutorials/i-bem/',
+    title: {
+      ru: 'Справочное руководство по i-bem.js',
+      uk: 'Довідкове керівництво по i-bem.js',
+      en: 'i-bem.js tutorial',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-js-tutorial/blob/platform/00-Intro/00-Intro.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-js-tutorial/blob/platform/00-Intro/00-Intro.en.md',
+    },
+    tags: ['platform', 'tutorials', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/tutorials/i-bem/block/',
+    site: '/platform/tutorials/i-bem/',
+    title: {
+      ru: 'Описание структуры блока',
+      uk: 'Опис структури блоку',
+      en: 'Block structure',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-js-tutorial/blob/platform/01-Block-structure/01-Block-structure.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-js-tutorial/blob/platform/01-Block-structure/01-Block-structure.en.md',
+    },
+    tags: ['platform', 'tutorials', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/tutorials/i-bem/modifiers/',
+    site: '/platform/tutorials/i-bem/',
+    title: {
+      ru: 'Модификаторы блока',
+      uk: 'Модифікатори блоку',
+      en: 'Modifiers',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-js-tutorial/blob/platform/02-Modifiers/02-Modifiers.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-js-tutorial/blob/platform/02-Modifiers/02-Modifiers.en.md',
+    },
+    tags: ['platform', 'tutorials', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/tutorials/i-bem/live-init/',
+    site: '/platform/tutorials/i-bem/',
+    title: {
+      ru: 'Живая (ленивая) инициализация',
+      uk: 'Жива (лінива) ініціалізація',
+      en: 'Live (lazy) initialization',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-js-tutorial/blob/platform/03-Live-initialization/03-Live-initialization.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-js-tutorial/blob/platform/03-Live-initialization/03-Live-initialization.en.md',
+    },
+    tags: ['platform', 'tutorials', 'i-bem'],
+    bundle: 'platform',
+    next: false
   },
 
   {

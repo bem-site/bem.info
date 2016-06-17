@@ -28,7 +28,7 @@
     "eslint": "^2.10.2",
     "eslint-config-pedant": "^0.5.1",
     "eslint-plugin-bem-xjst": "^1.0.2",
-    "gorshochek": "^2.3.1",
+    "gorshochek": "^2.4.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.6",
