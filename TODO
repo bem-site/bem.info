@@ -1,3 +1,9 @@
+https://ru.bem.info/tools/bem/bem-naming
+
+
+bem-method/articles/bem-js-main-terms/bem-js-main-terms.ru.md — преобразовать в
+quick start для /platform/i-bem/
+
   {
     "url": "/methodology/articles/",
     "site": "/methodology/",
@@ -48,6 +54,38 @@
     ? https://github.com/zloylos/ymapsbem/blob/master/README.md (README.ru.md)
     ? https://github.com/dab/firmCardStory/blob/master/docs/firm-card-story/firm-card-story.ru.md
 
+  {
+    "url": "/technology/i-bem/v2/i-bem-js/",
+    "site": "/platform/techs/i-bem/",
+    "title": "i-bem"
+  },
+  {
+    "url": "/technology/deps/about/",
+    "site": "/platform/techs/deps/",
+    "title": "DEPS"
+  },
+  {
+    "url": "/technology/bemjson/v2/bemjson/",
+    "site": "/platform/techs/bemjson/",
+    "title": "BEMJSON"
+  },
+  {
+    "url": "/technology/bemhtml/v2/intro/",
+    "site": "/platform/techs/bemhtml/",
+    "title": "BEMHTML"
+  },
+  {
+    "url": "/technology/bemtree/v2/bemtree/",
+    "site": "/platform/techs/bemtree/",
+    "title": "BEMTREE"
+  },
+
+Баг: article-rewind: если ссылка лежит на месте выдвижения prev — она не работает
+http://localhost:8008/bem.info/ru/platform/tutorials/start-with-project-stub/
+
+Нужны нормальные syntax color highlighling
+```bash
+```files
 
 Убрать правую границу у соцсетей в подвале на внутренних страницах
 
@@ -70,8 +108,6 @@ bemhint
 designer:
 	стиль для <hr>
 	стиль для note, nb, important
-	лёгкий шрифт для monospace
-	навигация вперёд/назад внизу страницы с документацией (строить по pages или явно указывать порядок?)
 	иконка для anchor
 
 Центрировать бэшки на морде методологии
