@@ -44,6 +44,7 @@
 
     display: inline-block;
 
+    min-width: 100%;
     margin-left: -21px;
     padding: 2px 18px 1px 25px;
 
