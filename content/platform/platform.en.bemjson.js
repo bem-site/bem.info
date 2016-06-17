@@ -11,20 +11,20 @@ module.exports = [{
                 ' ',
                 {
                     elem: 'subtitle',
-                    content: 'платформа'
+                    content: 'platform'
                 }
             ]
         },
         {
             block: 'promo-action',
             attrs: { href: 'tutorials/quick-start-static/' },
-            content: 'Быстрый старт'
+            content: 'Quick start'
         },
         {
             elem: 'text',
             content: [
-                'Экосистема web-разработки, предоставляющая технологии и библиотеки готовых компонентов. ',
-                'Позволяет быстро создавать, масштабировать и легко поддерживать проекты любой сложности.'
+                'A ecosystem of web development, providing technology and ready-made components libraries.<br>',
+                'Allows quickly create, easily scale and support projects of any complexity.'
             ]
         }
     ]
