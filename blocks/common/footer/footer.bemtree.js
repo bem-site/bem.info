@@ -10,7 +10,7 @@ block('footer').content()(function() {
     return [
         {
             block: 'legos',
-            mods: { inverted: true }
+            mods: { inverted: apply('legos-color') }
         },
         apply('promo'),
         {
@@ -45,4 +45,8 @@ block('footer').content()(function() {
             ]
         }
     ];
+});
+
+block('footer').mode('legos-color')(function() {
+    return 'white';
 });

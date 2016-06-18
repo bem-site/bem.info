@@ -69,7 +69,7 @@ module.exports = [
                         content: [
                             {
                                 elem: 'title-link',
-                                url: 'tutorials/quick-start-static/',
+                                url: 'platform/',
                                 content: [
                                     {
                                         elem: 'img',
@@ -84,8 +84,7 @@ module.exports = [
                     {
                         elem: 'text',
                         content: 'Implementation'
-                    }
-/*
+                    },
                     {
                         elem: 'text',
                         content:
@@ -95,7 +94,6 @@ module.exports = [
                             content: 'Quick start'
                         }
                     }
-*/
                 ]
             },
             {

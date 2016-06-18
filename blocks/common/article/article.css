@@ -2,7 +2,11 @@
 .article h1,
 .article h2,
 .article h3,
-.article h4,
+.article h4
+{
+    clear: left;
+}
+
 .article p,
 .article ul,
 .article ol,
@@ -13,29 +17,22 @@
     clear: left;
 
     max-width: 760px;
-}
-
-.article p,
-.article ul,
-.article ol,
-.article blockquote,
-.article pre,
-.article hr
-{
     margin: 0 0 16px;
 }
 
-.article li
-{
-    margin: 0;
-}
-
+.article li,
 .article ul ul,
 .article ul ol,
 .article ol ul,
 .article ol ol
 {
-    margin-top: 16px;
+    margin: 0;
+}
+
+.article p + ol,
+.article p + ul
+{
+    margin-top: -16px;
 }
 
 .article hr:before
@@ -55,7 +52,6 @@
     background: url('article__hr.gif') repeat-x 0 75%;
 }
 /* block level (end) */
-
 
 /* heading (begin) */
 .article__heading
@@ -116,6 +112,11 @@
     top: -7px;
 
     margin-bottom: 7px;
+}
+
+.article__heading_1 + .article__heading_2 + .article__heading_3
+{
+    margin-top: 12px;
 }
 
 .article__heading_2 + .article__heading_3
@@ -305,13 +306,16 @@
 
 .article code
 {
-    font: 16px/1.8 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.8;
 
-    padding: 0 5px;
+    padding: 0 2px;
 
-    border: 1px solid #f6f5f3;
+    white-space: nowrap;
+
     border-radius: 3px;
-    background: #f6f5f3;
+    background: rgba(240, 240, 235, 0.5);
 }
 
 /* links (begin) */
