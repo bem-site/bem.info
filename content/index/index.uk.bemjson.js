@@ -4,8 +4,7 @@ module.exports = [
         content: [
             {
                 block: 'bem'
-            },
-            'Методологія веб-розробки'
+            }
         ]
     },
     {
