@@ -90,7 +90,7 @@ module.exports = [
                         content:
                         {
                             elem: 'text-link',
-                            url: 'https://ru.bem.info/tutorials/quick-start-static/',
+                            url: 'platform/tutorials/quick-start-static/',
                             content: 'Швидкий старт'
                         }
                     }
