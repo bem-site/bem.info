@@ -28,7 +28,8 @@
     "eslint": "^2.10.2",
     "eslint-config-pedant": "^0.5.1",
     "eslint-plugin-bem-xjst": "^1.0.2",
-    "gorshochek": "^2.4.0",
+    "github-slugger": "^1.1.1",
+    "gorshochek": "bem-site/gorshochek#marked-opts2",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.6",
@@ -37,7 +38,6 @@
     "jscs": "^2.9.0",
     "lodash": "^4.2.1",
     "marked": "^0.3.5",
-    "marked-renderer-heading-anchors": "vithar/marked-renderer-heading-anchors",
     "q": "^1.4.1",
     "rimraf": "^2.5.2",
     "ym": "^0.1.2"
