@@ -14,7 +14,9 @@ var path = require('path'),
     batch = require('gulp-batch'),
     watch = require('gulp-watch'),
     browserSync = require('browser-sync'),
-    csscomb = require('gulp-csscomb');
+    csscomb = require('gulp-csscomb'),
+
+    prepareModel = require('./lib/prepare-model');
 
 const model = require('./content/model.js');
 
@@ -97,6 +99,10 @@ function compilePages(lang, bundle) {
 gulp.task('copy-misc-to-output', () => {
     rimraf.sync(OUTPUT);
 
+    LANGUAGES.forEach(lang => {
+        mkdirp.sync(OUTPUT_DIRS[lang]);
+    });
+
     return Q.all(gulp.src(path.join(STATIC, '{index.html,robots.txt,.nojekyll}')).pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
         LANGUAGES.map(lang => {
             return gulp.src(path.join(STATIC, '{favicon.ico,robots.txt}'))
@@ -110,32 +116,13 @@ function data() {
     mkdirp.sync(CACHE);
 
     return Q.all(LANGUAGES.map(lang => {
-        const processedModel = model.map(sourcePage => {
-            const page = Object.assign({}, sourcePage);
-
-            ['source', 'title', 'description'].forEach(field => {
-                if (!page[field]) {
-                    return;
-                }
-
-                if (typeof page[field][lang] === 'undefined') {
-                    page[field] = (lang === 'uk' ?
-                        page[field].ru || page[field].en :
-                        page[field].en || page[field].ru) || page[field];
-
-                    if (field === 'source') {
-                        page.isTranslationMissed = true;
-                    }
-                } else {
-                    page[field] = page[field][lang];
-                }
-            });
-
-            return page;
-        });
+        const preparedModel = prepareModel(model, lang);
 
         const modelPath = path.join(CACHE, `model.${lang}.json`);
-        fs.writeFileSync(modelPath, JSON.stringify(processedModel));
+        fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
+
+        const redirectsPath = path.join(OUTPUT_DIRS[lang], `redirects.json`);
+        fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
 
         return runSubProcess('./lib/data-builder.js', {
             cwd: process.cwd(),
