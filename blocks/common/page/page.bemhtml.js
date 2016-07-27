@@ -3,7 +3,7 @@ block('page').def()(function() {
     return applyNext().map(function(node) {
         if (node.tag === 'html') {
             node.attrs || (node.attrs = {});
-            node.attrs.lang = lang || 'ru';
+            node.attrs.lang = lang || 'en';
         }
         return node;
     });
