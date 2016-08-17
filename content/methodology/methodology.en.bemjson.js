@@ -513,7 +513,7 @@ module.exports = [{
                 {
                     elem: 'company',
                     content: 'EPAM',
-                    url: 'http://epam.com/',
+                    url: 'http://www.epam.com/',
                     src: 'promo-companies__epam.svg'
                 }
             ]
