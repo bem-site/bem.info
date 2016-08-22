@@ -507,6 +507,12 @@ module.exports = [{
                     content: 'BuzzFeed',
                     url: 'http://www.buzzfeed.com/',
                     src: 'promo-companies__buzzfeed.svg'
+                },
+                {
+                    elem: 'company',
+                    content: 'EPAM',
+                    url: 'http://www.epam.com/',
+                    src: 'promo-companies__epam.svg'
                 }
             ]
         }
