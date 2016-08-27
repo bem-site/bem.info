@@ -34,6 +34,23 @@ module.exports = [
     bundle: 'methodology-index'
   },
   {
+    url: '/methodology/quick-start/',
+    site: '/methodology/',
+    title: {
+      ru: 'Быстрый старт',
+      uk: 'Швидкий старт',
+      en: 'Quick start'
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.ru.md',
+      // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.uk.md',
+      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.en.md',
+    },
+    tags: ['methodology'],
+    bundle: 'methodology',
+    prev: false
+  },
+  {
     url: '/methodology/key-concepts/',
     site: '/methodology/',
     title: {
@@ -64,6 +81,18 @@ module.exports = [
       en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md',
     },
     tags: ['methodology'],
+    bundle: 'methodology'
+  },
+  {
+    url: '/methodology/css/',
+    site: '/methodology/',
+    title: 'CSS',
+    tags: ['methodology'],
+    source: {
+      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.ru.md',
+      // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.uk.md',
+      // en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.en.md',
+    },
     bundle: 'methodology'
   },
   {

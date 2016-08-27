@@ -23,7 +23,7 @@ block('promo-footer').content()(function() {
         },
         {
             block: 'promo-action',
-            attrs: { href: 'key-concepts/' },
+            attrs: { href: 'quick-start/' },
             content: this.i18n(this.block, 'doc') // 'Documentation'
         }
     ]

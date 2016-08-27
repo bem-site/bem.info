@@ -17,7 +17,7 @@ module.exports = [{
         },
         {
             block: 'promo-action',
-            attrs: { href: 'key-concepts/' },
+            attrs: { href: 'quick-start/' },
             content: 'Документация'
         },
         {
