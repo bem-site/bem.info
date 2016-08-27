@@ -4,9 +4,8 @@ block('article-wrap').content()(function() {
 
     return [
         page.isTranslationMissed && { block: 'article-translation-missed' },
-        { block: page.type === 'articles' ? 'articles' : 'article' },
-        { block: 'article-rewind' },
-        { block: page.type === 'articles' ? 'articles-add' : 'article-amendments' },
+        apply('articles'),
+        apply('article'),
         {
             block: 'social-likes',
             params: page.head.meta,
