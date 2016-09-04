@@ -1,8 +1,11 @@
 block('sitemap').content()(function() {
     var data = this.data,
-        currentPage = data.page;
+        currentPage = data.page,
+        env = process.env,
+        sites = Array.isArray(env.sites) ?
+            env.sites : env.sites.split(',');
 
-    return ['methodology', 'toolbox', 'platform', 'community'].map(function(site) {
+    return sites.map(function(site) {
         var rootSitePage,
             rootSiteUrl = '/' + site + '/',
             pages = data.pages.filter(function(page) {
