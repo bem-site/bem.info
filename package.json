@@ -30,7 +30,7 @@
     "eslint-config-pedant": "^0.7.0",
     "eslint-plugin-bem-xjst": "^2.0.0",
     "github-slugger": "^1.1.1",
-    "gorshochek": "^2.6.0",
+    "gorshochek": "^2.7.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.7",

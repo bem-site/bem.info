@@ -1,10 +1,7 @@
 block('root').replace()(function() {
     var data = this.data = this.ctx.data,
         page = data.page,
-        rootUrl = page.site,
-        urlSplit = page.url.replace(/\?.*$/, '').split('/'),
-        siteMod = data.siteMod = rootUrl === '/' ? 'index' : urlSplit[1],
-        siteBundle = siteMod + (urlSplit.length === 3 && (rootUrl !== '/' && rootUrl !== '/forum/') ? '-index' : '');
+        siteBundle = page.bundle;
 
     // libs extraction (begin)
     var libs = {};

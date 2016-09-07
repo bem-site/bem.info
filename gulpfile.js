@@ -18,9 +18,10 @@ var path = require('path'),
 
     prepareModel = require('./lib/prepare-model');
 
-const model = require('./content/model.js');
+const env = process.env;
+const model = require(env.PATH_TO_MODEL || './content/model.js');
 
-const LANGUAGES = ['en', 'ru', 'uk'];
+const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru', 'uk'];
 
 const CACHE = './.cache';
 
@@ -85,11 +86,12 @@ function compilePages(lang, bundle) {
             static: STATIC,
             source: DATA_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
-            destinationRoot: OUTPUT + (process.env.YENV === 'production' ? '/bem.info/static' : ''),
+            destinationRoot: OUTPUT + (env.YENV === 'production' ? '/bem.info/static' : ''),
             langs: LANGUAGES,
+            sites: env.SITES ? env.SITES.split(',') : ['methodology', 'toolbox', 'platform', 'community'],
             lang,
-            DEBUG: process.env.DEBUG,
-            YENV: process.env.YENV
+            DEBUG: env.DEBUG,
+            YENV: env.YENV
         }
     });
 }
@@ -121,8 +123,10 @@ function data() {
         const modelPath = path.join(CACHE, `model.${lang}.json`);
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
 
-        const redirectsPath = path.join(OUTPUT_DIRS[lang], `redirects.json`);
-        fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
+        if (preparedModel.redirects) {
+            const redirectsPath = path.join(OUTPUT_DIRS[lang], `redirects.json`);
+            fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
+        }
 
         return runSubProcess('./lib/data-builder.js', {
             cwd: process.cwd(),
@@ -132,9 +136,10 @@ function data() {
                 modelPath: modelPath,
                 host: `https://${lang}.bem.info`,
                 dest: DATA_DIRS[lang],
-                root: process.env.YENV === 'production' ? '' : '/bem.info/' + lang,
-                token: process.env.TOKEN,
-                DEBUG: process.env.DEBUG
+                root: env.YENV === 'production' ? '' : '/bem.info/' + lang,
+                token: env.TOKEN,
+                DEBUG: env.DEBUG,
+                githubHosts: env.GITHUB_HOSTS
             }
         });
     }));
