@@ -91,7 +91,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.ru.md',
       // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.uk.md',
-      // en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.en.md',
+      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.en.md',
     },
     bundle: 'methodology'
   },
