@@ -123,7 +123,7 @@ function data() {
         const modelPath = path.join(CACHE, `model.${lang}.json`);
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
 
-        if (preparedModel.redirects) {
+        if (preparedModel.redirects && preparedModel.redirects.length) {
             const redirectsPath = path.join(OUTPUT_DIRS[lang], `redirects.json`);
             fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
         }
