@@ -1485,9 +1485,9 @@ module.exports = [
       en: 'deps.js — a technology to declare dependencies in BEM',
     },
     source: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/depsjs/depsjs.ru.md',
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
     },
     tags: ['platform', 'deps'],
     bundle: 'platform'
