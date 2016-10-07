@@ -30,7 +30,7 @@ module.exports = [
     // https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
 
     // ???
-    // https://github.com/bem/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.en.md
+    // https://github.com/bem-site/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.en.md
 
     // ???
     // https://www.smashingmagazine.com/2015/02/product-design-unification-case-study-mobile-web-framework/

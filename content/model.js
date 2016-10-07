@@ -42,9 +42,9 @@ module.exports = [
       en: 'Quick start'
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.ru.md',
-      // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/quick-start/quick-start.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/quick-start/quick-start.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/quick-start/quick-start.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/quick-start/quick-start.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology',
@@ -59,9 +59,9 @@ module.exports = [
       en: 'Key concepts'
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology',
@@ -76,9 +76,9 @@ module.exports = [
       en: 'Naming convention',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/naming-convention/naming-convention.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology'
@@ -89,9 +89,9 @@ module.exports = [
     title: 'CSS',
     tags: ['methodology'],
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.ru.md',
-      // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.en.md',
     },
     bundle: 'methodology'
   },
@@ -105,9 +105,9 @@ module.exports = [
     },
     tags: ['methodology'],
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-js/bem-for-js.en.md',
     },
     bundle: 'methodology'
   },
@@ -121,25 +121,25 @@ module.exports = [
     },
     tags: ['methodology'],
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.en.md',
     },
     bundle: 'methodology'
   },
   {
-    url: '/methodology/filesystem/',
+    url: '/methodology/filestructure/',
     site: '/methodology/',
     title: {
-      ru: 'Файловая система',
-      uk: 'Файлова система',
-      en: 'Filesystem',
+      ru: 'Файловая структура',
+      uk: 'Файлова структура',
+      en: 'File structure',
     },
     tags: ['methodology'],
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/filesystem/filesystem.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.en.md',
     },
     bundle: 'methodology'
   },
@@ -152,9 +152,9 @@ module.exports = [
       en: 'Build',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/build/build.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology'
@@ -168,9 +168,9 @@ module.exports = [
       en: 'Declarations',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/declarations/declarations.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/declarations/declarations.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/declarations/declarations.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/declarations/declarations.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology'
@@ -184,9 +184,9 @@ module.exports = [
       en: 'Solved problems',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/solved-problems/solved-problems.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology'
@@ -200,9 +200,9 @@ module.exports = [
       en: 'History',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/method/history/history.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/history/history.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/history/history.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/history/history.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology'
@@ -229,9 +229,9 @@ module.exports = [
     site: '/methodology/',
     title: 'FAQ',
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/faq/faq.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/faq/faq.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/faq/faq.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/faq/faq.en.md',
     },
     tags: ['methodology'],
     bundle: 'methodology',
@@ -265,9 +265,9 @@ module.exports = [
       en: 'ENB — a tool for building web projects based on BEM methodology'
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.ru.md',
-      // uk: 'https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.ru.md', // TODO
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/tools/enb-overview.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.ru.md', // TODO
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.en.md',
     },
     tags: ['toolbox', 'enb'],
     bundle: 'toolbox',
@@ -1063,9 +1063,9 @@ module.exports = [
     site: '/toolbox/bem-tools/',
     title: 'bem-tools',
     source: {
-      // ru: 'https://github.com/bem/bem-tools/blob/newPluginSearchAlgo@WIP/README.ru.md', // TODO
+      // ru: 'https://github.com/bem-archive/bem-tools/blob/newPluginSearchAlgo@WIP/README.ru.md', // TODO
       // uk: '',
-      en: 'https://github.com/bem/bem-tools/blob/newPluginSearchAlgo@WIP/README.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/newPluginSearchAlgo@WIP/README.md',
     },
     tags: ['toolbox', 'bem-tools'],
     bundle: 'toolbox'
@@ -1517,9 +1517,9 @@ module.exports = [
       en: 'Libraries',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.ru.md',
-      uk: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.uk.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/libs/index.en.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.ru.md',
+      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
     tags: ['platform', 'libs'],
     bundle: 'platform'
@@ -1572,9 +1572,9 @@ module.exports = [
       en: 'Tutorials',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
     tags: ['platform', 'tutorials'],
     bundle: 'platform'
@@ -1588,9 +1588,9 @@ module.exports = [
       en: 'Creating a static page',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.en.md',
     },
     tags: ['platform', 'tutorials', 'project-stub'],
     bundle: 'platform'
@@ -1604,9 +1604,9 @@ module.exports = [
       en: 'Starting your own BEM project',
     },
     source: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.en.md',
     },
     tags: ['platform', 'tutorials', 'project-stub'],
     bundle: 'platform'
@@ -1620,9 +1620,9 @@ module.exports = [
       en: 'i-bem.js tutorial',
     },
     source: {
-      ru: 'https://github.com/bem/bem-js-tutorial/blob/master/00-Intro/00-Intro.ru.md',
+      ru: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
+      en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
     tags: ['platform', 'tutorials', 'i-bem'],
     bundle: 'platform'
@@ -1636,9 +1636,9 @@ module.exports = [
       en: 'Block structure',
     },
     source: {
-      ru: 'https://github.com/bem/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.ru.md',
+      ru: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
+      en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
     tags: ['platform', 'tutorials', 'i-bem'],
     bundle: 'platform'
@@ -1652,9 +1652,9 @@ module.exports = [
       en: 'Modifiers',
     },
     source: {
-      ru: 'https://github.com/bem/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.ru.md',
+      ru: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
+      en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
     tags: ['platform', 'tutorials', 'i-bem'],
     bundle: 'platform'
@@ -1668,9 +1668,9 @@ module.exports = [
       en: 'Live (lazy) initialization',
     },
     source: {
-      ru: 'https://github.com/bem/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.ru.md',
+      ru: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
+      en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
     tags: ['platform', 'tutorials', 'i-bem'],
     bundle: 'platform',
@@ -1766,11 +1766,11 @@ module.exports = [
     }
   },
   {
-    url: '/method/filesystem',
-    now: {
-      ru: '/methodology/filesystem/',
-      en: '/methodology/filesystem/',
-    }
+    url: [
+      '/method/filesystem',
+      '/methodology/filesystem',
+    ],
+    now: '/methodology/filestructure/'
   },
   {
     url: [
@@ -2690,15 +2690,15 @@ module.exports = [
       '/libs/bem-core/1.0.0/i-bem.js/bem-js-main-terms/',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/bem-js-main-terms/bem-js-main-terms.ru.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/bem-js-main-terms/bem-js-main-terms.en.md'
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/bem-js-main-terms/bem-js-main-terms.ru.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/bem-js-main-terms/bem-js-main-terms.en.md'
     }
   },
   {
     url: '/articles/yandex-frontend-dev',
     now: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.ru.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.en.md'
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.ru.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/yandex-frontend-dev/yandex-frontend-dev.en.md'
     }
   },
   {
@@ -2715,15 +2715,15 @@ module.exports = [
   {
     url: '/articles/borschik',
     now: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/borschik/borschik.ru.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/borschik/borschik.en.md'
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/borschik/borschik.ru.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/borschik/borschik.en.md'
     }
   },
   {
     url: '/articles/smartcd',
     now: {
-      ru: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/smartcd/smartcd.ru.md',
-      en: 'https://github.com/bem/bem-method/blob/bem-info-data/articles/smartcd/smartcd.en.md'
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/smartcd/smartcd.ru.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/smartcd/smartcd.en.md'
     }
   },
   {
@@ -2920,8 +2920,8 @@ module.exports = [
       '/tools/bem/installation',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/installation/installation.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/installation/installation.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/installation/installation.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/installation/installation.en.md'
     }
   },
   {
@@ -2930,8 +2930,8 @@ module.exports = [
       '/tools/bem/commands',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/commands/commands.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/commands/commands.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/commands/commands.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/commands/commands.en.md'
     }
   },
   {
@@ -2940,8 +2940,8 @@ module.exports = [
       '/tools/bem/levels',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/levels/levels.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/levels/levels.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/levels/levels.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/levels/levels.en.md'
     }
   },
   {
@@ -2950,8 +2950,8 @@ module.exports = [
       '/tools/bem/customization',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/customization/customization.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/customization/customization.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/customization/customization.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/customization/customization.en.md'
     }
   },
   {
@@ -2961,8 +2961,8 @@ module.exports = [
       '/tools/tech-modules',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/tech-modules/tech-modules.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/tech-modules/tech-modules.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/tech-modules/tech-modules.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/tech-modules/tech-modules.en.md'
     }
   },
   {
@@ -2971,15 +2971,15 @@ module.exports = [
       '/tools/bem/api',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/api/api.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/api/api.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/api/api.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/api/api.en.md'
     }
   },
   {
     url: '/tools/bem/bem-tools/creating-subcommands',
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/creating-subcommands/creating-subcommands.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/creating-subcommands/creating-subcommands.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/creating-subcommands/creating-subcommands.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/creating-subcommands/creating-subcommands.en.md'
     }
   },
   {
@@ -2988,15 +2988,15 @@ module.exports = [
       '/tools/bem/contribute',
     ],
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/contribute/contribute.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/contribute/contribute.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/contribute/contribute.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/contribute/contribute.en.md'
     }
   },
   {
     url: '/tools/bem/bem-tools/changelog',
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/support/0.10.x/ChangeLog.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/support/0.10.x/ChangeLog.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/support/0.10.x/ChangeLog.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/support/0.10.x/ChangeLog.md'
     }
   },
   {
@@ -3009,8 +3009,8 @@ module.exports = [
   {
     url: '/tools/bem/bem-tools',
     now: {
-      ru: 'https://github.com/bem/bem-tools/blob/dev/docs/index/index.ru.md',
-      en: 'https://github.com/bem/bem-tools/blob/dev/docs/index/index.en.md'
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/index/index.ru.md',
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/index/index.en.md'
     }
   },
   // html-differ
@@ -3145,8 +3145,8 @@ module.exports = [
       '/tools/bem/generator-bem-stub',
     ],
     now: {
-      ru: 'https://github.com/bem/generator-bem-stub/blob/master/README.ru.md',
-      en: 'https://github.com/bem/generator-bem-stub/blob/master/README.md'
+      ru: 'https://github.com/bem-archive/generator-bem-stub/blob/master/README.ru.md',
+      en: 'https://github.com/bem-archive/generator-bem-stub/blob/master/README.md'
     }
   },
   // bem-naming
