@@ -16,10 +16,14 @@ var path = require('path'),
     browserSync = require('browser-sync'),
     csscomb = require('gulp-csscomb'),
 
-    prepareModel = require('./lib/prepare-model');
+    prepareLibs = require('./lib/prepare-libs'),
+    prepareModel = require('./lib/prepare-model'),
+
+    fsHelpers = require('./libs/bem-lib-site-view/lib/fs-helpers');
+
+let model;
 
 const env = process.env;
-const model = require(env.PATH_TO_MODEL || './content/model.js');
 
 const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru', 'uk'];
 
@@ -98,18 +102,20 @@ function compilePages(lang, bundle) {
 
 // Подготовка директорий output-*
 
-gulp.task('copy-misc-to-output', () => {
+gulp.task('prepare-output', () => {
     rimraf.sync(OUTPUT);
 
-    LANGUAGES.forEach(lang => {
-        mkdirp.sync(OUTPUT_DIRS[lang]);
-    });
+    return Q.all(
+        gulp.src(path.join(CACHE, 'output', '**'))
+            .pipe(gulp.dest(OUTPUT)),
 
-    return Q.all(gulp.src(path.join(STATIC, '{index.html,robots.txt,.nojekyll}')).pipe(gulp.dest(OUTPUT)).pipe(gulp.dest(OUTPUT_ROOT)),
-        LANGUAGES.map(lang => {
-            return gulp.src(path.join(STATIC, '{favicon.ico,robots.txt}'))
-                .pipe(gulp.dest(OUTPUT_DIRS[lang]));
-    }));
+        gulp.src(path.join(STATIC, '{index.html,robots.txt,.nojekyll}'))
+            .pipe(gulp.dest(OUTPUT))
+            .pipe(gulp.dest(OUTPUT_ROOT)),
+
+        LANGUAGES.map(lang => gulp.src(path.join(STATIC, '{favicon.ico,robots.txt}'))
+            .pipe(gulp.dest(OUTPUT_DIRS[lang])))
+    );
 });
 
 // Сборка данных
@@ -142,13 +148,28 @@ function data() {
                 githubHosts: env.GITHUB_HOSTS
             }
         });
-    }));
+    })).then(() => fsHelpers.touch(path.join(CACHE, '.inited')));
 }
 
-gulp.task('data-clean', () => Q.all(_.values(DATA_DIRS).map(removeFolder)));
-gulp.task('data-cache-clean', () => Q.all(_.values(CACHE_DIRS).map(removeFolder)));
-gulp.task('data', data);
-gulp.task('data-rebuild', () => gulp.series('data-clean', 'data-cache-clean', 'data'));
+gulp.task('prepare-model', () => {
+    return Q.all(prepareLibs(require(env.PATH_TO_MODEL || './content/model.js')))
+        .then(models => {
+            model = _.concat(models);
+        });
+});
+
+gulp.task('prepare-data', data);
+
+gulp.task('data', gulp.series('prepare-model', 'prepare-data'));
+
+gulp.task('is-data-exists', () => {
+    return fsHelpers.exists(path.join(CACHE, '.inited')).then(doesExists => {
+        if (doesExists)
+            return Promise.resolve();
+
+        throw Error('Data is not initialized in ' + CACHE + ', run `gulp data`');
+    });
+});
 
 // Шаблонизация данных
 
@@ -156,9 +177,8 @@ gulp.task('enb-make', enb.make);
 
 function copyStatic() {
     return Q.all(LANGUAGES.map(lang => {
-        var files = BUNDLES.map(bundle => {
-            return path.join(BUNDLES_DIR, bundle, bundle + '*.min.*')
-        });
+        const files = BUNDLES.map(bundle =>
+            path.join(BUNDLES_DIR, bundle, bundle + '*.min.*'));
 
         files.push(path.join(OUTPUT_ROOT, 'static', '*'));
 
@@ -252,8 +272,8 @@ gulp.task('csscomb', function() {
 });
 
 gulp.task('default', gulp.series(
-    'copy-misc-to-output',
-    'data',
+    'is-data-exists',
+    'prepare-output',
     'enb-make',
     'build-html',
     'copy-static',
