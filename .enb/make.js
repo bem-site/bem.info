@@ -108,7 +108,7 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/toolbox', [ 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
 
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform', 'blocks/platform-index' ]);
-    configNodes(config, isProd, 'bundles/platform', [ 'bundles/platform/blocks', 'blocks/platform' ]);
+    configNodes(config, isProd, 'bundles/platform', [ 'libs/bem-lib-site-view/lib-view.blocks', 'bundles/platform/blocks', 'blocks/platform' ]);
 
     configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 
