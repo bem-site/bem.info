@@ -6,7 +6,7 @@ block('sitemap').content()(function() {
             env.sites : env.sites.split(',');
 
     return sites.map(function(site) {
-        var rootSitePage,
+        var rootSitePage = {},
             rootSiteUrl = '/' + site + '/',
             pages = data.pages.filter(function(page) {
                 if (page.site.indexOf(rootSiteUrl) === 0) {
