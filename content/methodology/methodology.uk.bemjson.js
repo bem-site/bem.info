@@ -500,7 +500,7 @@ module.exports = [{
                 {
                     elem: 'company',
                     content: 'Aplha-Bank',
-                    url: 'https://github.com/alfa-bank-dev/ui',
+                    url: 'https://github.com/awinogradov/alfa-bank-ui',
                     src: 'promo-companies__alpha-bank.svgd'
                 },
                 {
