@@ -33,7 +33,6 @@ var langs = ['ru', 'uk', 'en'],
         { path: 'libs/bem-components/desktop.blocks', check: false },
         { path: 'libs/bem-components/design/common.blocks', check: false },
         { path: 'libs/bem-components/design/desktop.blocks', check: false },
-        'blocks/common'
     ];
 
 function configNodes(config, isProd, bundle, levels) {
@@ -99,18 +98,18 @@ module.exports = function(config) {
     var isProd = process.env.YENV === 'production';
 
     config.setLanguages(langs);
-    configNodes(config, isProd, 'bundles/index', [ 'blocks/promo/', 'blocks/index' ]);
+    configNodes(config, isProd, 'bundles/index', [ 'blocks/common', 'blocks/promo/', 'blocks/index' ]);
 
-    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
-    configNodes(config, isProd, 'bundles/methodology', [ 'bundles/methodology/blocks', 'blocks/methodology' ]);
+    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/common', 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
+    configNodes(config, isProd, 'bundles/methodology', [ 'blocks/common', 'bundles/methodology/blocks', 'blocks/methodology' ]);
 
-    configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
-    configNodes(config, isProd, 'bundles/toolbox', [ 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
+    configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
+    configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/common', 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
 
-    configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/promo', 'blocks/platform', 'blocks/platform-index' ]);
-    configNodes(config, isProd, 'bundles/platform', [ 'libs/bem-lib-site-view/lib-view.blocks', 'bundles/platform/blocks', 'blocks/platform' ]);
+    configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/common', 'blocks/promo', 'blocks/platform', 'blocks/platform-index' ]);
+    configNodes(config, isProd, 'bundles/platform', [ 'libs/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/platform/blocks', 'blocks/platform' ]);
 
-    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
+    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 
-    configNodes(config, isProd, 'bundles/forum', [ 'blocks/forum' ]);
+    configNodes(config, isProd, 'bundles/forum', [ 'blocks/common', 'blocks/forum' ]);
 };
