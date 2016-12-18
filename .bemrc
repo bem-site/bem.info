@@ -1,0 +1,53 @@
+module.exports = {
+    root: true,
+
+    modules: {
+        'bem-lib-site': {
+            langs: ['uk', 'ru', 'en'],
+
+            data: {
+                tempFolder: 'tmp',
+                outputFolder: '.cache/bem-lib-site-data'
+            },
+/*
+            view: {
+                outputFolder: 'bem-lib-site-view-output'
+            },
+*/
+            platforms: { // TODO: make it really optional
+                'desktop': ['common', 'deskpad', 'desktop', 'test'],
+                'touch-phone': ['common', 'touch', 'touch-phone', 'test'],
+                'touch-pad': ['common', 'deskpad', 'touch', 'touch-pad', 'test']
+            },
+            libs: {
+                'bem-components': {
+                    langs: ['uk', 'ru', 'en'],
+                    github: {
+                        url: 'github.com',
+                        user: 'bem',
+                        repo: 'bem-components'
+                    },
+                    templateEngine: 'BEMHTML'
+                },
+                'bem-core': {
+                    langs: ['uk', 'ru', 'en'],
+                    github: {
+                        url: 'github.com',
+                        user: 'bem',
+                        repo: 'bem-core'
+                    },
+                    templateEngine: 'BEMHTML'
+                },
+                'bem-history': {
+                    langs: ['uk', 'ru', 'en'],
+                    github: {
+                        url: 'github.com',
+                        user: 'bem',
+                        repo: 'bem-history'
+                    },
+                    templateEngine: 'BEMHTML'
+                }
+            }
+        }
+    }
+};
