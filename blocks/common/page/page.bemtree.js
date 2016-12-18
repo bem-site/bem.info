@@ -11,7 +11,9 @@ block('page').content()(function() {
         },
         {
             block: 'content',
-            content: page.type === 'bemjson.js' ? page.content :  { block: 'article-wrap' }
+            content: page.type === 'bemjson.js' ? page.content :
+                    page.type === 'lib' ? { block: 'blocks' } :
+                    { block: 'article-wrap' }
         },
         {
             block: 'footer'

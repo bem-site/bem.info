@@ -4,13 +4,11 @@ block('breadcrumbs').mode('lib')(function() {
         site = page.site;
 
     if (page.type === 'lib') {
-        var split = site.replace(/(.*)\/$/, '$1').split('/'),
-            libVer = split.pop(),
-            libName = split.pop();
+        var version = page.version,
+            options = [];
 
-        var options = [];
-        data.libs[libName].forEach(function(ver) {
-            if (ver !== libVer) {
+        data.libs[page.library].forEach(function(ver) {
+            if (ver !== version) {
                 options.push({ val: ver, text: ver });
             }
         });
@@ -22,8 +20,8 @@ block('breadcrumbs').mode('lib')(function() {
                 block: 'select',
                 mods: { mode: 'radio-check', theme: 'islands', size: 'm' },
                 text: '',
-                js: { url: site.replace(libVer + '/', '') },
-                options: options
+                js: { url: data.root + site.replace(version + '/', '') },
+                options: options.reverse()
             }
         };
     }

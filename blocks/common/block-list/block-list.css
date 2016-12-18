@@ -1,0 +1,53 @@
+.block-list
+{
+    margin: 0;
+
+    background: #f3f1ed;
+}
+
+.block-list__set-list
+{
+    margin: 0;
+}
+
+.block-list__set-name
+{
+    font-size: 14px;
+
+    padding: 0 20px;
+
+    text-transform: uppercase;
+
+    color: #949391;
+}
+
+.block-list__set-name
+{
+    padding: 10px 20px;
+}
+
+.block-list__blocks
+{
+    font-size: 14px;
+
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.block-list__block_current
+{
+    padding: 0 20px;
+
+    background: #e6e5e2;
+}
+
+.block-list__link
+{
+    display: block;
+
+    padding: 0 20px;
+
+    text-decoration: none;
+
+    color: #000;
+}

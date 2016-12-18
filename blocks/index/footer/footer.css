@@ -29,15 +29,6 @@
 
     color: #fff;
 }
-/*!*tablet lg*!*/
-/*@media all and (min-width: 1200px)*/
-/*{*/
-/*}*/
-
-/*!*tablet md*!*/
-/*@media all and (max-width: 1200px)*/
-/*{*/
-/*}*/
 
 /*tablet*/
 @media all and (max-width: 780px)

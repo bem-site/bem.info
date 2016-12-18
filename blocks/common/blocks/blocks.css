@@ -1,0 +1,20 @@
+.blocks
+{
+    display: flex;
+}
+
+@media (min-width: 781px)
+{
+    .blocks__list
+    {
+        min-width: 220px;
+        margin-top: -41px;
+    }
+
+    .blocks__data
+    {
+        width: 100%;
+        margin: 0;
+        padding: 62px 20px 20px 50px;
+    }
+}

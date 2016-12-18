@@ -9,8 +9,10 @@
     "node": ">=4.1"
   },
   "devDependencies": {
-    "bem-lib-site-data": "^0.0.7",
+    "bem-config": "^3.1.0",
+    "bem-lib-site-data": "bem-site/bem-lib-site-data",
     "bem-lib-site-view": "^0.0.3",
+    "bem-naming": "^1.0.1",
     "bemhint": "^0.6.1",
     "bemhint-css-naming": "^1.0.1",
     "bemhint-deps-specification": "^1.0.0",
@@ -29,6 +31,7 @@
     "eslint": "^3.4.0",
     "eslint-config-pedant": "^0.7.0",
     "eslint-plugin-bem-xjst": "^2.0.0",
+    "fs-extra": "^1.0.0",
     "github-slugger": "^1.1.1",
     "gorshochek": "^2.7.0",
     "gulp": "gulpjs/gulp#4.0",
@@ -36,10 +39,12 @@
     "gulp-csscomb": "^3.0.7",
     "gulp-watch": "^4.3.9",
     "highlight.js": "^9.6.0",
+    "js-beautify": "^1.6.4",
     "jscs": "^3.0.7",
     "lodash": "^4.15.0",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
+    "node-eval": "^1.1.0",
     "q": "^1.4.1",
     "rimraf": "^2.5.4",
     "ym": "^0.1.2"

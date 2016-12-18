@@ -25,16 +25,16 @@
     color: #fff;
 }
 
-.breadcrumbs__item::after
+.breadcrumbs__item::before
 {
-    margin-left: 11px;
+    margin-right: 11px;
 
     content: '/';
 
     color: rgba(255, 255, 255, 0.55);
 }
 
-.breadcrumbs__item:last-child::after
+.breadcrumbs__item:first-child::before
 {
     display: none;
 }

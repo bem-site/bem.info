@@ -16,6 +16,13 @@
     background: #fff;
 }
 
+.nav_type_lib
+{
+    min-height: 40px;
+    margin-left: 220px;
+    padding-left: 47px;
+}
+
 .nav__item
 {
     line-height: 30px;
@@ -63,6 +70,7 @@
     {
         display: block;
 
+        margin: 0;
         padding: 0 30px;
 
         background: inherit;
