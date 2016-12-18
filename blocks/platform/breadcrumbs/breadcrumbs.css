@@ -1,8 +1,13 @@
 .breadcrumbs__version
 {
-    margin-left: -27px;
+    margin-left: -7px;
 
     background: inherit;
+}
+
+.breadcrumbs__version::before
+{
+    display: none;
 }
 
 .breadcrumbs__version .select

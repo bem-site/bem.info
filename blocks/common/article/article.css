@@ -2,7 +2,8 @@
 .article h1,
 .article h2,
 .article h3,
-.article h4
+.article h4,
+.article h5
 {
     clear: left;
 }
@@ -12,7 +13,8 @@
 .article ol,
 .article hr,
 .article blockquote,
-.article pre
+.article pre,
+.article table
 {
     clear: left;
 
@@ -30,9 +32,15 @@
 }
 
 .article p + ol,
-.article p + ul
+.article p + ul,
+.article p + table
 {
     margin-top: -16px;
+}
+
+.article p + table
+{
+    margin-top: -1px;
 }
 
 .article hr:before
@@ -106,6 +114,14 @@
     margin: 31px 0 17px 0;
 }
 
+.article__heading_5
+{
+    font-size: 18px;
+    line-height: 32px;
+
+    margin: 31px 0 16px 0;
+}
+
 .article__heading_1 + .article__heading_2
 {
     position: relative;
@@ -125,6 +141,11 @@
 }
 
 .article__heading_3 + .article__heading_4
+{
+    margin-top: -1px;
+}
+
+.article__heading_4 + .article__heading_5
 {
     margin-top: -1px;
 }
@@ -150,6 +171,44 @@
     display: inline-block;
 }
 /* heading (end) */
+
+/* table (begin) */
+.article table
+{
+    word-break: normal;
+    word-break: keep-all;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/*
+.article tr:nth-child(2n) {
+  background: #f8f8f8;
+}
+*/
+
+.article th
+{
+    font-weight: bold;
+
+    padding: 0 13px;
+
+    text-align: left;
+    vertical-align: top;
+
+    border: 1px solid #ddd;
+}
+
+.article td
+{
+    padding: 15px 13px;
+
+    vertical-align: top;
+
+    border: 1px solid #ddd;
+}
+/* table (end) */
 
 /* blockquote and pre (begin) */
 .article blockquote,
@@ -329,6 +388,7 @@
 }
 /* links (end) */
 /* inline (end) */
+
 
 /*tablet*/
 @media all and (max-width: 780px)

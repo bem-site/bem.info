@@ -2,9 +2,9 @@
 
 var path = require('path'),
     fs = require('fs'),
+    fsExtra = require('fs-extra'),
     cp = require('child_process'),
 
-    _ = require('lodash'),
     Q = require('q'),
     enb = require('enb'),
     rimraf = require('rimraf'),
@@ -65,10 +65,6 @@ const BEMHTML = BUNDLES.reduce((prev, bundle) => {
     return prev;
 }, {});
 
-function removeFolder(folder) {
-    return Q.denodeify(rimraf)(folder);
-}
-
 function runSubProcess(file, options) {
     const defer = Q.defer();
     const proc = cp.fork(file, options);
@@ -103,12 +99,15 @@ function compilePages(lang, bundle) {
 // Подготовка директорий output-*
 
 gulp.task('prepare-output', () => {
-    rimraf.sync(OUTPUT);
+    return new Promise((resolve) => {
+        fsExtra.remove(OUTPUT, () => {
+            fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () => resolve());
+        });
+    });
+});
 
+gulp.task('prepare-static', () => {
     return Q.all(
-        gulp.src(path.join(CACHE, 'output', '**'))
-            .pipe(gulp.dest(OUTPUT)),
-
         gulp.src(path.join(STATIC, '{index.html,robots.txt,.nojekyll}'))
             .pipe(gulp.dest(OUTPUT))
             .pipe(gulp.dest(OUTPUT_ROOT)),
@@ -130,7 +129,7 @@ function data() {
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
 
         if (preparedModel.redirects && preparedModel.redirects.length) {
-            const redirectsPath = path.join(OUTPUT_DIRS[lang], `redirects.json`);
+            const redirectsPath = path.join(CACHE, OUTPUT_ROOT, lang, `redirects.json`);
             fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
         }
 
@@ -152,9 +151,11 @@ function data() {
 }
 
 gulp.task('prepare-model', () => {
+    rimraf.sync(path.join(CACHE, OUTPUT));
+
     return Q.all(prepareLibs(require(env.PATH_TO_MODEL || './content/model.js')))
-        .then(models => {
-            model = _.concat(models);
+        .then(pages => {
+            model = pages;
         });
 });
 
@@ -164,8 +165,9 @@ gulp.task('data', gulp.series('prepare-model', 'prepare-data'));
 
 gulp.task('is-data-exists', () => {
     return fsHelpers.exists(path.join(CACHE, '.inited')).then(doesExists => {
-        if (doesExists)
+        if (doesExists) {
             return Promise.resolve();
+        }
 
         throw Error('Data is not initialized in ' + CACHE + ', run `gulp data`');
     });
@@ -273,12 +275,8 @@ gulp.task('csscomb', function() {
 
 gulp.task('default', gulp.series(
     'is-data-exists',
-    'prepare-output',
-    'enb-make',
-    'build-html',
-    'copy-static',
-    'copy-static-images',
-    'copy-sitemap-xml',
+    gulp.parallel('prepare-output', 'copy-static-images', 'enb-make'),
+    gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml'),
 //    'csscomb',
     gulp.parallel('watch', 'browser-sync')
 ));

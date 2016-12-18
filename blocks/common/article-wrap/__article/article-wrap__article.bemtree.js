@@ -1,8 +1,11 @@
 block('article-wrap').mode('article')(
-    match(function() { return !this.data.page.type })(function() {
+    match(function() {
+        var type = this.data.page.type;
+        return !type || type === 'lib';
+    })(function() {
         return [
             { block: 'article' },
-            { block: 'article-rewind' },
+            !this.data.page.type && { block: 'article-rewind' },
             { block: 'article-amendments' },
         ];
     })
