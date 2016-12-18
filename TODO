@@ -1,3 +1,67 @@
+GROUNDUP
+
+поддержка .bemrc в bem-info и библиотеках
+
+Обход модели в один проход, выпилить горшочек
+
+watcher: сборка только необходимых для запроса файлов
+
+переписать весь gulp файл
+
+ES6 везде
+
+Node.js 7 (async/await без babel!)
+
+Закладывать в архитектуру сразу bem-lib-site-view (сайт одной библиотеки), bem.info и lego
+
+Сейчас из bem-lib-site приходит поле block.content в котором есть все языки в одной языковой модели.
+Это раздувает модель и не позволяет вынести плашку про отсутствие перевода, поскольку обрабатывается source, а не block.content
+
+Слои в docker так, чтобы собранные данные либы не закачивались каждый раз заново
+    или складывать статику на yastatic.net, для каждой либы — свой пакет
+
+bem-lib-site-data
+  1. складывать примеры сразу в правильной структуре на fs для view, чтобы не перекладывать
+  1. уметь обрабатывать библиотеки инкрементально, добавляя только те примеры, которых ещё нет (подумать про проблему, что разные версии библиотеки могут иметь разные зависимости или уровни и один и тот же пример с одним sha1 будет разным в разных версиях библиотеки)
+  1. дату сложить в диск и выкачивать zip
+
+bem-lib-site-view
+  1. хранить путь к GH и версию в .bemrc — не удобно, хорошо бы хранить в самой библиотеке
+
+=========================================================================================
+
+bem-components
+
+* [YModules](https://ru.bem.info/tools/bem/modules/)
+* [i-bem.js](https://ru.bem.info/technology/i-bem/current/i-bem-js/)
+* [BEMHTML](https://ru.bem.info/technology/bemhtml/current/reference/)
+* [BH](https://ru.bem.info/technology/bh/current/about/)
+* [DEPS](https://ru.bem.info/technology/deps/about/)
+
+1. Find the right block on the library website: [bem.info](https://en.bem.info). For example, you can use [select](https://en.bem.info/libs/bem-components/v3.0.0/desktop/select/#mandatory-single-choice-list-mode-modifier-with-radio-value-1).
+
+<a href="/CONTRIBUTING.md">How to contribute</a>
+
+[Gemini](https://en.bem.info/tools/testing/gemini/) is used for layout testing.
+
+
+----------------------------------
+
+bem-core
+удалять из md
+
+[![Build Status](https://travis-ci.org/bem/bem-core.svg?branch=v2)](https://travis-ci.org/bem/bem-core) [![GitHub Release](https://img.shields.io/github/release/bem/bem-core.svg)](https://github.com/bem/bem-core/releases)
+
+This README is also available [in English](https://en.bem.info/libs/bem-core/).
+
+Информация о библиотеке в более информативном виде доступна на [bem.info](https://ru.bem.info/libs/bem-core/).
+
+----------------------------------
+
+Удалять `` из заголовков или корректно их обрабатывать
+
+----------------------------------
+
 https://ru.bem.info/tools/bem/bem-naming
 
 
@@ -130,7 +194,7 @@ designer:
 	удалять из шрифта все глифы, которых нет в тексте
 	использовать разные файлы шрифтов для en и ru
 	сжимать js
-	удалять из js все неиспользуемые методы
+	удалять из js все неиспользуемые методы (Closure Compiler)
 	сжимать для продакшена html/css/js через zopfli (deflate даёт наименьший результат)
 	структурная минимизация css
 	минимизация css под алгоритм gzip
