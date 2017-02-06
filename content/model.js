@@ -1381,13 +1381,29 @@ module.exports = [
     site: '/platform/i-bem/',
     title: {
       ru: 'Состояния блока',
-      uk: 'Стану блоку',
+      uk: 'Стани блоку',
       en: 'States of a block',
     },
     source: {
       ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.ru.md',
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.en.md',
+    },
+    tags: ['platform', 'i-bem'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/i-bem/collections/',
+    site: '/platform/i-bem/',
+    title: {
+      ru: 'Коллекции',
+      uk: 'Колекції',
+      en: 'Collections',
+    },
+    source: {
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-collections.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-collections.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
