@@ -1100,7 +1100,7 @@ module.exports = [
     site: '/toolbox/sdk/bem-naming/',
     title: 'bem-naming',
     source: {
-      ru: 'https://github.com/bem-sdk/bem-naming/blob/master/README.ru.md',
+      //ru: 'https://github.com/bem-sdk/bem-naming/blob/master/README.ru.md', //TODO
       // uk: 'https://github.com/bem-sdk/bem-naming/blob/master/README.uk.md',
       en: 'https://github.com/bem-sdk/bem-naming/blob/master/README.md',
     },
@@ -1289,9 +1289,9 @@ module.exports = [
       en: 'Client-side JavaScript (i-bem.js)',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1305,9 +1305,9 @@ module.exports = [
       en: 'Overview',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-common.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-common.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-common.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-common.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1321,9 +1321,9 @@ module.exports = [
       en: 'Binding JS blocks to HTML',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-html-binding.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-html-binding.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-html-binding.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-html-binding.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1337,9 +1337,9 @@ module.exports = [
       en: 'Block declaration',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-decl.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-decl.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-decl.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-decl.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1353,9 +1353,9 @@ module.exports = [
       en: 'Passing parameters',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-params.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-params.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-params.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-params.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1369,9 +1369,9 @@ module.exports = [
       en: 'Working with the DOM tree',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-dom.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-dom.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-dom.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-dom.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1385,9 +1385,9 @@ module.exports = [
       en: 'States of a block',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-states.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-states.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1401,9 +1401,9 @@ module.exports = [
       en: 'Events',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-events.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-events.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-events.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-events.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1417,9 +1417,9 @@ module.exports = [
       en: 'Initialization',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-init.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-init.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-init.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-init.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1433,9 +1433,9 @@ module.exports = [
       en: 'Interaction of blocks',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-interact.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-interact.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-interact.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-interact.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1449,9 +1449,9 @@ module.exports = [
       en: 'Context',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-context.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-context.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-context.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-context.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1465,9 +1465,9 @@ module.exports = [
       en: 'What next?',
     },
     source: {
-      ru: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-extras.ru.md',
+      ru: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-extras.ru.md',
       // uk: '',
-      en: 'https://github.com/bem/bem-core/blob/v3/common.docs/i-bem-js/i-bem-js-extras.en.md',
+      en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-extras.en.md',
     },
     tags: ['platform', 'i-bem'],
     bundle: 'platform'
@@ -1489,6 +1489,22 @@ module.exports = [
       ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.ru.md',
       // uk: '',
       en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
+    },
+    tags: ['platform', 'deps'],
+    bundle: 'platform'
+  },
+  {
+    url: '/platform/deps-spec/',
+    site: '/platform/deps-spec/',
+    title: {
+      ru: 'Спецификация DEPS',
+      uk: 'Специфікація DEPS',
+      en: 'DEPS specification'
+    },
+    source: {
+      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/specification.ru.md',
+      // uk: '',
+      // en: ''
     },
     tags: ['platform', 'deps'],
     bundle: 'platform'
