@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "bem-config": "^3.1.0",
-    "bem-lib-site-view": "git+ssh://git@github.com/bem-site/bem-lib-site-view.git",
+    "bem-lib-site-view": "bem-site/bem-lib-site-view",
     "bem-naming": "^1.0.1",
-    "bem.info-data": "git+ssh://git@github.com/bem-site/bem.info-data.git",
+    "bem.info-data": "bem-site/bem.info-data",
     "bemhint": "^0.6.1",
     "bemhint-css-naming": "^1.0.1",
     "bemhint-deps-specification": "^1.0.0",
