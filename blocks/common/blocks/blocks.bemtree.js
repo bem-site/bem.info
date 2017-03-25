@@ -25,7 +25,7 @@ block('blocks').content()(function() {
             ],
             data: Object.assign({
                     lang: data.lang,
-                    examplesUrlPrefix: data.root + '/' + page.library,
+                    examplesUrlPrefix: '//yastatic.net/' + page.library + '-examples',
                     outputLibFolder: outputLibFolder,
                     setName: page.setName
                 }, page.block)
