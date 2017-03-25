@@ -7,18 +7,15 @@ module.exports = {
 
             data: {
                 tempFolder: 'tmp',
-                outputFolder: '.cache/bem-lib-site-data'
+                outputFolder: 'node_modules/bem.info-data'
             },
-/*
-            view: {
-                outputFolder: 'bem-lib-site-view-output'
-            },
-*/
+
             platforms: { // TODO: make it really optional
                 'desktop': ['common', 'deskpad', 'desktop'],
                 'touch-phone': ['common', 'touch', 'touch-phone'],
                 'touch-pad': ['common', 'deskpad', 'touch', 'touch-pad']
             },
+
             libs: {
                 'bem-components': {
                     langs: ['uk', 'ru', 'en'],
