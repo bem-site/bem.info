@@ -153,7 +153,7 @@ module.exports = [
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.ru.md',
-      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.uk.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.uk.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/build/build.en.md',
     },
     tags: ['methodology'],
