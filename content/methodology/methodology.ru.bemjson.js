@@ -408,7 +408,7 @@ module.exports = [{
                 {
                     name: 'Jonathan Snook',
                     photo: 'promo-quotes__jonathan-snook.jpg',
-                    position: 'Author of OOCSS, Xero',
+                    position: 'Author of SMACSS, Xero',
                     url: 'https://twitter.com/snookca/status/606908589295464449',
                     text: 'Most common misspelling is “SMACCS”. I should just rename it to BEM.'
                 },
