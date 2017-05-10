@@ -43,14 +43,6 @@ module.exports = [
         text: 'Combined with a preprocessor, BEM makes keeping your CSS modular and object-oriented a breeze.'
     },
     {
-        title: 'BEM is okay',
-        author: 'Vadim Makeev',
-        photo: 'promo-quotes__vadim-makeev.jpg',
-        position: 'Web Evangelist, Opera Software',
-        url: 'http://pepelsbey.net/pres/bem-ok/en/',
-        text: 'BEM is okay.'
-    },
-    {
         title: 'Q',
         author: 'Jonathan Snook',
         photo: 'promo-quotes__jonathan-snook.jpg',
