@@ -251,7 +251,6 @@ module.exports = [
       uk: './content/toolbox/toolbox.uk.bemjson.js',
       en: './content/toolbox/toolbox.en.bemjson.js',
     },
-    tags: ['toolbox'],
     type: 'bemjson.js',
     bundle: 'toolbox-index'
   },
@@ -269,7 +268,7 @@ module.exports = [
       // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.ru.md', // TODO
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.en.md',
     },
-    tags: ['toolbox', 'enb'],
+    tags: ['enb'],
     bundle: 'toolbox',
     prev: false
   },
@@ -287,7 +286,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -303,7 +302,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -319,7 +318,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -335,7 +334,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -351,7 +350,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -363,7 +362,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -379,7 +378,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -395,7 +394,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -411,7 +410,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -423,7 +422,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-js'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -435,7 +434,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-js'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -451,7 +450,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-js'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -463,7 +462,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-modules'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -479,7 +478,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-modules'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -496,7 +495,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-css'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -512,7 +511,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-css'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -524,7 +523,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-css'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -540,7 +539,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-css'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -557,7 +556,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-stylus'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -569,7 +568,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-stylus'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -585,7 +584,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-stylus'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -602,7 +601,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bemxjst'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -614,7 +613,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bemxjst'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -630,7 +629,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bemxjst'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -647,7 +646,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bh'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -659,7 +658,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bh'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -675,7 +674,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bh'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -691,7 +690,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-techs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -708,7 +707,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-i18n'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -720,7 +719,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-i18n'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -736,7 +735,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-i18n'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -753,7 +752,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-borschik'],
+    tags: ['enb', 'borschik'],
     bundle: 'toolbox'
   },
   {
@@ -765,7 +764,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-borschik'],
+    tags: ['enb', 'borschik'],
     bundle: 'toolbox'
   },
   {
@@ -781,7 +780,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-borschik'],
+    tags: ['enb', 'borschik'],
     bundle: 'toolbox'
   },
   {
@@ -798,7 +797,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-specs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -814,7 +813,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-specs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -831,7 +830,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-tmpl-specs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -847,7 +846,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-tmpl-specs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -864,7 +863,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-examples'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -880,7 +879,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-examples'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -897,7 +896,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-docs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -913,7 +912,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-bem-docs'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -930,7 +929,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-magic-platform'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -946,7 +945,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-magic-platform'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -963,7 +962,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-magic-factory'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -979,7 +978,7 @@ module.exports = [
       // uk: '',
       // en: '',
     },
-    tags: ['toolbox', 'enb', 'enb-magic-factory'],
+    tags: ['enb'],
     bundle: 'toolbox'
   },
   {
@@ -991,7 +990,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bemhint/bemhint/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemhint'],
+    tags: ['bemhint'],
     bundle: 'toolbox'
   },
   {
@@ -1007,7 +1006,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bemhint/bemhint-css-naming/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemhint', 'bemhint-css-naming'],
+    tags: ['bemhint'],
     bundle: 'toolbox'
   },
   {
@@ -1023,7 +1022,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bemhint/bemhint-fs-naming/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemhint', 'bemhint-fs-naming'],
+    tags: ['bemhint'],
     bundle: 'toolbox'
   },
   {
@@ -1039,7 +1038,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bemhint/bemhint-deps-schema/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemhint', 'bemhint-deps-schema'],
+    tags: ['bemhint', 'deps'],
     bundle: 'toolbox'
   },
   {
@@ -1055,7 +1054,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bemhint/bemhint-deps-specification/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemhint', 'bemhint-deps-specification'],
+    tags: ['bemhint', 'deps'],
     bundle: 'toolbox'
   },
   {
@@ -1067,7 +1066,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-archive/bem-tools/blob/newPluginSearchAlgo@WIP/README.md',
     },
-    tags: ['toolbox', 'bem-tools'],
+    tags: ['bem-tools'],
     bundle: 'toolbox'
   },
   {
@@ -1079,7 +1078,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/tadatuta/bemmet/blob/master/README.md',
     },
-    tags: ['toolbox', 'bemmet'],
+    tags: ['bemmet'],
     bundle: 'toolbox'
   },
 
@@ -1092,7 +1091,7 @@ module.exports = [
       // uk: 'https://github.com/bem-sdk/bem-sdk/blob/master/README.uk.md',
       en: 'https://github.com/bem-sdk/bem-sdk/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk'],
+    tags: ['bem-sdk'],
     bundle: 'toolbox'
   },
   {
@@ -1104,7 +1103,7 @@ module.exports = [
       // uk: 'https://github.com/bem-sdk/bem-naming/blob/master/README.uk.md',
       en: 'https://github.com/bem-sdk/bem-naming/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk', 'bem-naming'],
+    tags: ['bem-sdk'],
     bundle: 'toolbox'
   },
   {
@@ -1116,7 +1115,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-sdk/bem-config/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk', 'bem-config'],
+    tags: ['bem-sdk'],
     bundle: 'toolbox'
   },
   {
@@ -1128,7 +1127,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-sdk/bem-fs-scheme/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk', 'bem-fs-scheme'],
+    tags: ['bem-sdk'],
     bundle: 'toolbox'
   },
   {
@@ -1140,7 +1139,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-sdk/bem-deps/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk', 'bem-deps'],
+    tags: ['bem-sdk', 'deps'],
     bundle: 'toolbox'
   },
   {
@@ -1152,7 +1151,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-sdk/bem-walk/blob/master/README.md',
     },
-    tags: ['toolbox', 'sdk', 'bem-walk'],
+    tags: ['bem-sdk'],
     bundle: 'toolbox',
     next: false
   },
@@ -1170,7 +1169,6 @@ module.exports = [
       uk: './content/platform/platform.uk.bemjson.js',
       en: './content/platform/platform.en.bemjson.js',
     },
-    tags: ['platform'],
     type: 'bemjson.js',
     bundle: 'platform-index',
     prev: false
@@ -1189,7 +1187,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md',
     },
-    tags: ['platform', 'bemjson'],
+    tags: ['bemjson'],
     bundle: 'platform'
   },
   {
@@ -1205,7 +1203,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/1-about.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1221,7 +1219,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/2-quick-start.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1233,7 +1231,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/3-api.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1249,7 +1247,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/5-templates-syntax.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1265,7 +1263,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/6-templates-context.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1277,7 +1275,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/7-runtime.md',
     },
-    tags: ['platform', 'bem-xjst'],
+    tags: ['bem-xjst'],
     bundle: 'platform'
   },
   {
@@ -1293,7 +1291,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1309,7 +1307,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-common.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1325,7 +1323,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-html-binding.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1341,7 +1339,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-decl.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1357,7 +1355,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-params.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1373,7 +1371,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-dom.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1389,7 +1387,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1405,7 +1403,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-collections.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1421,7 +1419,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-events.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1437,7 +1435,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-init.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1453,7 +1451,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-interact.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1469,7 +1467,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-context.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1485,7 +1483,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-extras.en.md',
     },
-    tags: ['platform', 'i-bem'],
+    tags: ['i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1506,7 +1504,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
     },
-    tags: ['platform', 'deps'],
+    tags: ['deps'],
     bundle: 'platform'
   },
   {
@@ -1522,7 +1520,7 @@ module.exports = [
       // uk: '',
       // en: ''
     },
-    tags: ['platform', 'deps'],
+    tags: ['deps'],
     bundle: 'platform'
   },
   {
@@ -1538,7 +1536,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem/project-stub/blob/master/README.md',
     },
-    tags: ['platform', 'project-stub'],
+    tags: ['project-stub'],
     bundle: 'platform'
   },
 
@@ -1555,7 +1553,7 @@ module.exports = [
       uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.uk.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
-    tags: ['platform', 'libs'],
+    tags: ['libs'],
     bundle: 'platform'
   },
 
@@ -1565,14 +1563,6 @@ module.exports = [
     title: 'bem-core',
     library: 'bem-core',
     versions: [
-/*
-      'node_modules/bem.info-data/bem-core-2.3.0',
-      'node_modules/bem.info-data/bem-core-2.5.0',
-      'node_modules/bem.info-data/bem-core-2.5.1',
-      'node_modules/bem.info-data/bem-core-2.6.0',
-      'node_modules/bem.info-data/bem-core-2.7.0',
-      'node_modules/bem.info-data/bem-core-2.8.0',
-*/
       'node_modules/bem.info-data/bem-core-2.9.0',
       'node_modules/bem.info-data/bem-core-3.0.1',
       'node_modules/bem.info-data/bem-core-3.1.0',
@@ -1580,9 +1570,10 @@ module.exports = [
       'node_modules/bem.info-data/bem-core-4.0.0',
       'node_modules/bem.info-data/bem-core-4.1.0',
       'node_modules/bem.info-data/bem-core-4.1.1',
+      'node_modules/bem.info-data/bem-core-4.2.0',
     ],
-    current: '4.1.1',
-    tags: ['platform', 'libs', 'bem-core'],
+    current: '4.2.0',
+    tags: ['libs', 'bem-core'],
     bundle: 'platform',
     type: 'lib'
   },
@@ -1592,20 +1583,14 @@ module.exports = [
     title: 'bem-components',
     library: 'bem-components',
     versions: [
-      'node_modules/bem.info-data/bem-components-2.3.0',
-      'node_modules/bem.info-data/bem-components-2.4.0',
-      'node_modules/bem.info-data/bem-components-2.5.0',
-      'node_modules/bem.info-data/bem-components-2.5.1',
-      'node_modules/bem.info-data/bem-components-3.0.0',
-      'node_modules/bem.info-data/bem-components-3.0.1',
-      'node_modules/bem.info-data/bem-components-3.0.2',
-      'node_modules/bem.info-data/bem-components-3.1.2',
       'node_modules/bem.info-data/bem-components-3.1.3',
       'node_modules/bem.info-data/bem-components-4.0.0',
       'node_modules/bem.info-data/bem-components-5.0.0',
+      'node_modules/bem.info-data/bem-components-5.1.0',
+      'node_modules/bem.info-data/bem-components-6.0.0',
     ],
-    current: '5.0.0',
-    tags: ['platform', 'libs', 'bem-components'],
+    current: '6.0.0',
+    tags: ['libs', 'bem-components'],
     bundle: 'platform',
     type: 'lib'
   },
@@ -1617,14 +1602,14 @@ module.exports = [
     versions: [
       'node_modules/bem.info-data/bem-history-3.0.0',
       'node_modules/bem.info-data/bem-history-3.1.0',
-      // 'node_modules/bem.info-data/bem-history-3.2.0',
+      'node_modules/bem.info-data/bem-history-3.2.0',
+      'node_modules/bem.info-data/bem-history-4.0.0',
     ],
-    current: '3.1.0',
-    tags: ['platform', 'libs', 'bem-history'],
+    current: '4.0.0',
+    tags: ['libs'],
     bundle: 'platform',
     type: 'lib'
   },
-
   {
     url: '/platform/libs/principles/',
     site: '/platform/libs/',
@@ -1638,7 +1623,7 @@ module.exports = [
       // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.uk.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.en.md',
     },
-    tags: ['platform', 'libs'],
+    tags: ['libs'],
     bundle: 'platform'
   },
 
@@ -1655,7 +1640,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
-    tags: ['platform', 'tutorials'],
+    tags: ['tutorials'],
     bundle: 'platform'
   },
   {
@@ -1671,7 +1656,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.en.md',
     },
-    tags: ['platform', 'tutorials', 'project-stub'],
+    tags: ['tutorials', 'project-stub'],
     bundle: 'platform'
   },
   {
@@ -1687,7 +1672,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.en.md',
     },
-    tags: ['platform', 'tutorials', 'project-stub'],
+    tags: ['tutorials', 'project-stub'],
     bundle: 'platform'
   },
   {
@@ -1703,7 +1688,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
-    tags: ['platform', 'tutorials', 'i-bem'],
+    tags: ['tutorials', 'i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1719,7 +1704,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
-    tags: ['platform', 'tutorials', 'i-bem'],
+    tags: ['tutorials', 'i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1735,7 +1720,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
-    tags: ['platform', 'tutorials', 'i-bem'],
+    tags: ['tutorials', 'i-bem.js'],
     bundle: 'platform'
   },
   {
@@ -1751,7 +1736,7 @@ module.exports = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
-    tags: ['platform', 'tutorials', 'i-bem'],
+    tags: ['tutorials', 'i-bem.js'],
     bundle: 'platform',
     next: false
   },
@@ -3723,6 +3708,14 @@ module.exports = [
   },
   {
     url: [
+      '/platform/libs/bem-components/3.1.2/',
+      '/platform/libs/bem-components/3.0.2/',
+      '/platform/libs/bem-components/3.0.1/',
+      '/platform/libs/bem-components/3.0.0/',
+      '/platform/libs/bem-components/2.5.1/',
+      '/platform/libs/bem-components/2.5.0/',
+      '/platform/libs/bem-components/2.4.0/',
+      '/platform/libs/bem-components/2.3.0/',
       '/libs/bem-components/dev-docs/',
       '/libs/bem-components/current/',
       '/libs/bem-components/',
