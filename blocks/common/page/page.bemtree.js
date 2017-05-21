@@ -27,10 +27,6 @@ block('page').content()(function() {
                 trackLinks: true,
                 accurateTrackBounce: true
             }
-        },
-        {
-            tag: 'script',
-            content: 'var rumMOKey="8d3973954a2e5ad62df100a01125fb4f";(function(w){if(w.performance&&w.performance.timing&&w.performance.navigation){var s=document.createElement("script");s.async=true;s.setAttribute("src","//static.site24x7rum.com/beacon/site24x7rum-min.js?appKey="+rumMOKey);document.body.appendChild(s)}})(window)'
         }
     ];
 });
