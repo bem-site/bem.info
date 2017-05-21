@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+    echo "Usage:"
+    echo "    $0 lib-data_after_bem-lib-site-data"
+    exit 1;
+fi
+
+pushd .
+cd $1
+
+rm -rf *.md
+rm -rf *.html
+rm -rf *.docs
+rm *.json
+
+mv desktop.examples desktop
+mv touch-pad.examples touch-pad
+mv touch-phone.examples touch-phone
+
+for platform in 'desktop' 'touch-pad' 'touch-phone'
+do
+    for block in `\ls $platform`
+    do
+        for example in `\ls $platform/$block`
+        do
+            for type in css js bemhtml.js bemjson.js *.html
+            do
+                mv $platform/$block/$example/$example.$type $platform/$block
+                zopfli $platform/$block/$example.$type
+                # rm $platform/$block.$type
+            done
+
+            rm -rf $platform/$block/$example
+        done
+    done
+done
+
+popd
