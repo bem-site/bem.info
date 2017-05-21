@@ -11,7 +11,7 @@ block('page').content()(function() {
         },
         {
             block: 'content',
-            content: page.type === 'bemjson.js' ? page.content :
+            content: page.type === 'bemjson.js' ? { html: page.content } :
                     page.type === 'lib' ? { block: 'blocks' } :
                     { block: 'article-wrap' }
         },

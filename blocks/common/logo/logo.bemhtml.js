@@ -8,6 +8,8 @@ block('logo')(
         return attrs;
     }),
     content()(function() {
-        return require('fs').readFileSync('blocks/common/logo/logo.svg', 'utf8').replace(/<svg/, '<svg class="logo__logo"');
+        return {
+            html: require('fs').readFileSync('blocks/common/logo/logo.svg', 'utf8').replace(/<svg/, '<svg class="logo__logo"')
+        };
     })
 );
