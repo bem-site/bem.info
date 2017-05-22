@@ -26,13 +26,13 @@ var langs = ['ru', 'uk', 'en'],
     },
     enbBemTechs = require('enb-bem-techs'),
     libLevels = [
-        { path: 'libs/bem-core/common.blocks', check: false },
-        { path: 'libs/bem-core/desktop.blocks', check: false },
-        { path: 'libs/bem-stat-counters/common.blocks', check: false },
-        { path: 'libs/bem-components/common.blocks', check: false },
-        { path: 'libs/bem-components/desktop.blocks', check: false },
-        { path: 'libs/bem-components/design/common.blocks', check: false },
-        { path: 'libs/bem-components/design/desktop.blocks', check: false },
+        { path: 'node_modules/bem-core/common.blocks', check: false },
+        { path: 'node_modules/bem-core/desktop.blocks', check: false },
+        { path: 'node_modules/bem-stat-counters/common.blocks', check: false },
+        { path: 'node_modules/bem-components/common.blocks', check: false },
+        { path: 'node_modules/bem-components/desktop.blocks', check: false },
+        { path: 'node_modules/bem-components/design/common.blocks', check: false },
+        { path: 'node_modules/bem-components/design/desktop.blocks', check: false },
     ];
 
 function configNodes(config, isProd, bundle, levels) {
@@ -107,7 +107,7 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/common', 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
 
     configNodes(config, isProd, 'bundles/platform-index', [ 'blocks/common', 'blocks/promo', 'blocks/platform', 'blocks/platform-index' ]);
-    configNodes(config, isProd, 'bundles/platform', [ 'libs/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/platform/blocks', 'blocks/platform' ]);
+    configNodes(config, isProd, 'bundles/platform', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/platform/blocks', 'blocks/platform' ]);
 
     configNodes(config, isProd, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 

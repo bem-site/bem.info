@@ -6,7 +6,7 @@
 
 Склонировать репозиторий проекта:
 ```bash
-$ git clone https://github.com/vithar/bem.info.git
+$ git clone https://github.com/bem-site/bem.info.git
 ```
 
 Установить зависимости:
@@ -24,34 +24,9 @@ $ TOKEN={pass your github token here} gulp data
 $ gulp
 ```
 
-## Поэтапная сборка
-
-Собрать данные. Сборка данных осуществляется с помощью [gorshochek](https://github.com/bem-site/gorshochek).
-
-Примечание: для сборки данных нужно передать ваш гитхаб-токен, с помощью которого будет осуществляться
-загрузка данных для страниц сайта.
-```bash
-$ TOKEN={pass your github token here} gulp data
-```
-
-Скомпилировать статические HTML-страницы:
-```bash
-$ gulp compile-pages
-```
-
-Запуск файлового наблюдателя и локального сервера разработки:
-```bash
-$ gulp browser-sync
-```
+Пойти браузером на http://localhost:8008/bem.info/ru/
 
 ## Модель данных
 
-* [Модель данных](./content-en/model.en.json) для английской версии сайта
-* [Модель данных](./content-ru/model.ru.json) для русской версии сайта
+* [Модель данных](./content/model.json) для сайта
 
-## Полезные команды
-
-Полная пересборка данных для сайта:
-```
-$ TOKEN={pass your github token here} npm run data-rebuild
-```

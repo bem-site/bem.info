@@ -19,7 +19,7 @@ var path = require('path'),
     prepareLibs = require('./lib/prepare-libs'),
     prepareModel = require('./lib/prepare-model'),
 
-    fsHelpers = require('./libs/bem-lib-site-view/lib/fs-helpers');
+    fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
 
 let model;
 
