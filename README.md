@@ -7,6 +7,7 @@
 Склонировать репозиторий проекта:
 ```bash
 $ git clone https://github.com/bem-site/bem.info.git
+$ cd bem.info
 ```
 
 Установить зависимости:
