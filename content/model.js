@@ -64,8 +64,7 @@ module.exports = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/key-concepts/key-concepts.en.md',
     },
     tags: ['methodology'],
-    bundle: 'methodology',
-    prev: false
+    bundle: 'methodology'
   },
   {
     url: '/methodology/naming-convention/',
@@ -112,22 +111,6 @@ module.exports = [
     bundle: 'methodology'
   },
   {
-    url: '/methodology/js-principles/',
-    site: '/methodology/',
-    title: {
-      ru: 'Особенности JavaScript',
-      uk: 'Особливості JavaScript',
-      en: 'JavaScript principles',
-    },
-    tags: ['methodology'],
-    source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.ru.md',
-      uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.uk.md',
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-js-principles/bem-js-principles.en.md',
-    },
-    bundle: 'methodology'
-  },
-  {
     url: '/methodology/filestructure/',
     site: '/methodology/',
     title: {
@@ -140,6 +123,38 @@ module.exports = [
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.ru.md',
       uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.uk.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/filestructure/filestructure.en.md',
+    },
+    bundle: 'methodology'
+  },
+  {
+    url: '/methodology/redefinition-levels/',
+    site: '/methodology/',
+    title: {
+      ru: 'Уровни переопределения',
+      uk: 'Рівень перевизначення',
+      en: 'Redefinition level',
+    },
+    tags: ['methodology'],
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.uk.md',
+      // en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.en.md',
+    },
+    bundle: 'methodology'
+  },
+  {
+    url: '/methodology/block-modification/',
+    site: '/methodology/',
+    title: {
+      ru: 'Модификация блока',
+      uk: 'Модифікація блоку',
+      en: 'Block modification',
+    },
+    tags: ['methodology'],
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.uk.md',
+      // en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.en.md',
     },
     bundle: 'methodology'
   },
@@ -1809,6 +1824,10 @@ module.exports = [
 
 // redirects
 // methodology
+  {
+    url: '/methodology/js-principles/',
+    now: '/methodology/js/',
+  },
   {
     url: [
       '/method/definitions/',
