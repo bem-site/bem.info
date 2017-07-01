@@ -39,17 +39,19 @@ block('sitemap').content()(function() {
                     elem: 'tree',
                     // TODO: generate nested tree instead of plain list
                     content: pages.map(function(page) {
-                        var level = page.level || page.url.split('/').length - 3;
+                        var level = page.level || page.url.split('/').length - 3,
+                            title = page.sitemapTitle ?
+                                page.sitemapTitle[data.lang] : page.title;
 
                         return level < 3 && {
                             elem: 'tree-item-' + level,
                             content: page.url === currentPage.url ? {
                                 elem: 'current',
-                                content: page.title
+                                content: title
                             } : {
                                 elem: 'link',
                                 attrs: { href: page.disabled ? undefined : page.lang ? 'https://' + page.lang + '.bem.info' + page.url : data.root + page.url },
-                                content: page.title
+                                content: title
                             }
                         }
                     })

@@ -1204,95 +1204,19 @@ module.exports = [
     },
     tags: ['bemjson'],
     bundle: 'platform'
-  },
-  {
+  }].concat(require('./platform/bem-xjst')({
     url: '/platform/bem-xjst/',
     site: '/platform/bem-xjst/',
     title: {
-      ru: 'Шаблоны (BEMHTML, BEMTREE)',
-      uk: 'Шаблони (BEMHTML, BEMTREE)',
-      en: 'Templates (BEMHTML, BEMTREE)',
-    },
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/1-about.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/1-about.md',
+        ru: 'Шаблоны (BEMHTML, BEMTREE)',
+        uk: 'Шаблони (BEMHTML, BEMTREE)',
+        en: 'Templates (BEMHTML, BEMTREE)',
     },
     tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
-  {
-    url: '/platform/bem-xjst/quick-start/',
-    site: '/platform/bem-xjst/',
-    title: {
-      ru: 'Быстрый старт',
-      uk: 'Швидкий старт',
-      en: 'Quick start',
-    },
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/2-quick-start.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/2-quick-start.md',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
-  {
-    url: '/platform/bem-xjst/api/',
-    site: '/platform/bem-xjst/',
-    title: 'API',
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/3-api.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/3-api.md',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
-  {
-    url: '/platform/bem-xjst/templates-syntax/',
-    site: '/platform/bem-xjst/',
-    title: {
-      ru: 'Синтаксис шаблонов',
-      uk: 'Синтаксис шаблонів',
-      en: 'Templates syntax',
-    },
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/5-templates-syntax.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/5-templates-syntax.md',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
-  {
-    url: '/platform/bem-xjst/templates-context/',
-    site: '/platform/bem-xjst/',
-    title: {
-      ru: 'Контекст',
-      uk: 'Контекст',
-      en: 'Context',
-    },
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/6-templates-context.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/6-templates-context.md',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
-  {
-    url: '/platform/bem-xjst/runtime/',
-    site: '/platform/bem-xjst/',
-    title: 'Runtime',
-    source: {
-      ru: 'https://github.com/bem/bem-xjst/blob/master/docs/ru/7-runtime.md',
-      // uk: '',
-      en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/7-runtime.md',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform'
-  },
+    bundle: 'platform',
+    library: 'bem-xjst',
+    type: 'versioned'
+  })).concat([
   {
     url: '/platform/i-bem/',
     site: '/platform/i-bem/',
@@ -3769,4 +3693,4 @@ module.exports = [
       en: '/',
     }
   },
-];
+]);

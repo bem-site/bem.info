@@ -1,9 +1,9 @@
-block('breadcrumbs').mode('lib')(function() {
+block('breadcrumbs').mode('dropdown')(function() {
     var data = this.data,
         page = data.page,
         site = page.site;
 
-    if (page.type === 'lib') {
+    if (page.type === 'lib' || page.type === 'versioned') {
         var version = page.version,
             options = [];
 
