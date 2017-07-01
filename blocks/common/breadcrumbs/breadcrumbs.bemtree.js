@@ -22,7 +22,7 @@ block('breadcrumbs').content()(function() {
         });
     }, this);
 
-    result.push(apply('lib'));
+    result.push(apply('dropdown'));
 
     return result;
 });
