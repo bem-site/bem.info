@@ -1,13 +1,4 @@
 /* block level (begin) */
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5
-{
-    clear: left;
-}
-
 .article p,
 .article ul,
 .article ol,
@@ -69,6 +60,8 @@
 
     position: relative;
     z-index: 1;
+
+    clear: left;
 
     padding: 0;
 }
@@ -169,6 +162,13 @@
 .article__heading:hover .article__heading-anchor::before
 {
     display: inline-block;
+}
+
+.article__heading[class] code /* повышаю вес селектора, чтобы перебить .article code */
+{
+    font-size: inherit;
+
+    background: inherit;
 }
 /* heading (end) */
 
