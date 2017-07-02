@@ -5,7 +5,7 @@ block('article-wrap').mode('article')(
     })(function() {
         return [
             { block: 'article' },
-            !this.data.page.type && { block: 'article-rewind' },
+            !this.data.page.type && { block: 'article-rewind', mods: { floating: true } },
             { block: 'article-amendments' },
         ];
     })
