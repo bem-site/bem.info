@@ -53,7 +53,9 @@
   },
   "scripts": {
     "test": "npm run lint",
-    "lint": "eslint . && jscs ."
+    "lint": "eslint . && jscs .",
+    "docker-build": "docker build -t registry.yandex.net/bem/bem.info:$user$npm_package_version .",
+    "docker-push": "docker push registry.yandex.net/bem/bem.info:$user$npm_package_version"
   },
   "private": true
 }
