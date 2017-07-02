@@ -2,7 +2,7 @@
 {
     position: fixed;
     z-index: 0;
-    top: 238px;
+    top: 214px;
 
     width: calc(100% - 111px); /* 111px padding-left in article-wrap */
 }
@@ -40,35 +40,33 @@
     text-decoration: none;
 
     color: #000;
-    border: 1px solid rgba(174, 174, 174, 0.4);
     border-radius: 3px;
-    background: #fff;
+    background: #f7f7f7;
 }
 
 .article-rewind_floating .article-rewind__prev-link
 {
-    margin-left: calc(-100% + 35px);
-    padding: 0 31px 0 12px;
+    margin-left: calc(-100% + 64px);
+    padding: 17px 61px 17px 25px;
 }
 
 .article-rewind_floating .article-rewind__next-link
 {
-    margin-left: calc(100% - 35px);
-    padding: 0 12px 0 31px;
+    margin-left: calc(100% - 64px);
+    padding: 17px 25px 17px 61px;
 }
 
 .article-rewind_floating .article-rewind__prev-link:hover,
 .article-rewind_floating .article-rewind__next-link:hover
 {
     margin-left: 0;
-
-    border-color: rgb(174, 174, 174, 0.4);
 }
 
 .article-rewind_floating .article-rewind__prev-link::after,
 .article-rewind_floating .article-rewind__next-link::before
 {
-    font-size: 25px;
+    font-size: 76px;
+    line-height: 37px;
 
     position: absolute;
 
@@ -77,14 +75,14 @@
 
 .article-rewind_floating .article-rewind__prev-link::after
 {
-    margin: -12px 0 0 11px;
+    margin: -12px 0 0 18px;
 
     content: '‹';
 }
 
 .article-rewind_floating .article-rewind__next-link::before
 {
-    margin: -12px 0 0 -18px;
+    margin: -12px 0 0 -37px;
 
     content: '›';
 }
