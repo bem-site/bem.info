@@ -223,13 +223,13 @@
 
 .article pre code
 {
-    font: 15px/16px 'Courier New', monospace;
+    font: 16px/1.5 'Courier New', monospace;
 
     display: block;
     overflow-x: auto;
 
     width: 100%;
-    padding: 11px 0 5px;
+    padding: 6px 0 2px;
 
     white-space: pre;
 
@@ -238,29 +238,19 @@
     background: none;
 }
 
-/* Double line-height for HTML/XML */
-/*
-.article code.lang-xml,
-.article code.lang-html
-{
-    line-height: 2;
-
-    padding: 17px 0 15px;
-}
-*/
 .article blockquote pre
 {
     border: 0;
     background: none;
 }
-/*
-.article blockquote code.lang-xml,
-.article blockquote code.lang-html
+
+.article blockquote code,
+.article blockquote code
 {
     margin-bottom: -1px;
     padding: 1px 0 0;
 }
-*/
+
 /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css */
 /* Unused statements removed */
 .hljs-comment,
