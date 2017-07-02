@@ -32,6 +32,15 @@ module.exports = [
                     {
                         elem: 'text',
                         content: 'Ідея та архітектура'
+                    },
+                    {
+                        elem: 'text',
+                        content:
+                        {
+                            elem: 'text-link',
+                            url: 'methodology/quick-start/',
+                            content: 'Швидкий старт'
+                        }
                     }
                 ]
             },
