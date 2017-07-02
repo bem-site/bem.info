@@ -3,6 +3,14 @@
     margin: 48px 0 50px;
 }
 
+@media print
+{
+    .social-likes
+    {
+        display: none;
+    }
+}
+
 .social-likes__service
 {
     display: inline-block;

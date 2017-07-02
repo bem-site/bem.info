@@ -1,3 +1,11 @@
+@media print
+{
+    .footer
+    {
+        display: none;
+    }
+}
+
 .footer__layout
 {
     font-size: 90%;
@@ -44,7 +52,7 @@
 }
 
 /*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 780px)
 {
     .footer__layout
     {
@@ -58,7 +66,7 @@
 }
 
 /*mobile*/
-@media all and (max-width: 480px)
+@media (max-width: 480px)
 {
     .footer__layout
     {

@@ -9,7 +9,7 @@
     background: rgba(255, 0, 0, 0.1);
 }
 
-@media all and (min-width: 320px) and (max-width: 568px)
+@media (min-width: 320px) and (max-width: 568px)
 {
     .article-translation-missed
     {
@@ -20,10 +20,7 @@
 }
 
 /* Portrait */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: portrait)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait)
 {
     .article-translation-missed
     {
@@ -33,13 +30,18 @@ and (orientation: portrait)
 }
 
 /* Landscape */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: landscape)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape)
 {
     .article-translation-missed
     {
         font-size: 8px;
+    }
+}
+
+@media print
+{
+    .article-translation-missed
+    {
+        display: none;
     }
 }

@@ -8,7 +8,7 @@
 }
 
 /*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 780px)
 {
     .article-amendments
     {
@@ -17,10 +17,7 @@
 }
 
 /* Portrait */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: portrait)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait)
 {
     .article-amendments
     {
@@ -30,13 +27,18 @@ and (orientation: portrait)
 }
 
 /* Landscape */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: landscape)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape)
 {
     .article-amendments
     {
         font-size: 8px;
+    }
+}
+
+@media print
+{
+    .article-amendments
+    {
+        display: none;
     }
 }

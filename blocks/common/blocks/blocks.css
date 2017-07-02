@@ -18,3 +18,16 @@
         padding: 62px 20px 20px 50px;
     }
 }
+
+@media print
+{
+    .blocks__list
+    {
+        display: none;
+    }
+
+    .blocks__data
+    {
+        padding: 0;
+    }
+}

@@ -11,6 +11,14 @@
     list-style: none;
 }
 
+@media print
+{
+    .article-rewind
+    {
+        display: none;
+    }
+}
+
 .article-rewind__prev,
 .article-rewind__next
 {
@@ -94,7 +102,7 @@
 }
 
 /*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 780px)
 {
     .article-rewind
     {
@@ -121,10 +129,7 @@
 }
 
 /* Portrait */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: portrait)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait)
 {
     .article-rewind__next-link
     {
@@ -141,10 +146,7 @@ and (orientation: portrait)
 }
 
 /* Landscape */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (orientation: landscape)
+@media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape)
 {
     .article-rewind__next-link
     {
