@@ -16,7 +16,7 @@ const watch = require('gulp-watch');
 const browserSync = require('browser-sync');
 const csscomb = require('gulp-csscomb');
 
-const genNginxHostConf = require('./tools/genNginxHostConf');
+const genNginxHostConf = require('./tools/generate-nginx-host-conf');
 
 const prepareModel = require('./lib/prepare-model');
 const fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
@@ -132,7 +132,7 @@ function data() {
         if (preparedModel.redirects && preparedModel.redirects.length) {
             const redirectsDir = path.join(CACHE, OUTPUT_ROOT, lang);
             const redirectsJsonPath = path.join(redirectsDir, 'redirects.json');
-            const redirectsNginxPath = path.join(OUTPUT, `nginx_${lang}.conf` );
+            const redirectsNginxPath = path.join(OUTPUT, `nginx_${lang}.conf`);
 
             mkdirp.sync(redirectsDir);
             fs.writeFileSync(redirectsNginxPath, genNginxHostConf(lang, preparedModel.redirects));

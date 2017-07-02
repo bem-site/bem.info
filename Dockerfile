@@ -14,6 +14,5 @@ RUN mkdir -p /etc/nginx/sites/ /var/www/
 COPY tools/nginx.conf /etc/nginx/nginx.conf
 COPY output/nginx_*.conf /etc/nginx/sites/
 ADD output/bem.info /var/www/bem.info
-# -R and trailing slash are mandatory
+# -R and trailing slash are mandatory for recursive copy files from "static" dir
 RUN find /var/www/bem.info -type d -maxdepth 1 -iname '??' -exec cp -R /var/www/bem.info/static/ {}/ \;
-
