@@ -47,15 +47,9 @@
 @media screen
 {
     .article p + ol,
-    .article p + ul,
-    .article p + table
+    .article p + ul
     {
         margin-top: -16px;
-    }
-
-    .article p + table
-    {
-        margin-top: -1px;
     }
 }
 
@@ -93,7 +87,7 @@
 
 .article__heading_1
 {
-    font-size: 49px;
+    font-size: 50px;
     line-height: 64px;
 
     float: left;
@@ -110,21 +104,37 @@
 */
 .article__heading_2
 {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 48px;
 
-    margin: 50px 0 14px -1px;
+    margin: 48px 0 16px -1px;
 }
 
 .article__heading_3
 {
-    font-size: 28px;
+    font-size: 34px;
     line-height: 48px;
 
-    margin: 37px 0 11px 0;
+    margin: 34px 0 14px 0;
 }
 
 .article__heading_4
+{
+    font-size: 28px;
+    line-height: 32px;
+
+    margin: 29px 0 19px 0;
+}
+
+.article__heading_5
+{
+    font-size: 24px;
+    line-height: 32px;
+
+    margin: 30px 0 18px 0;
+}
+
+.article__heading_6
 {
     font-size: 20px;
     line-height: 32px;
@@ -132,38 +142,30 @@
     margin: 31px 0 17px 0;
 }
 
-.article__heading_5
-{
-    font-size: 18px;
-    line-height: 32px;
-
-    margin: 31px 0 16px 0;
-}
-
 .article__heading_1 + .article__heading_2
 {
     position: relative;
     top: -7px;
 
-    margin-bottom: 7px;
+    margin-bottom: 9px;
 }
 
 .article__heading_1 + .article__heading_2 + .article__heading_3
 {
-    margin-top: 12px;
-}
-
-.article__heading_2 + .article__heading_3
-{
-    margin-top: 19px;
+    margin-top: 11px;
 }
 
 .article__heading_3 + .article__heading_4
 {
-    margin-top: -1px;
+    margin-top: 27px;
 }
 
 .article__heading_4 + .article__heading_5
+{
+    margin-top: -2px;
+}
+
+.article__heading_5 + .article__heading_6
 {
     margin-top: -1px;
 }
@@ -199,7 +201,7 @@
 
 .article__heading[class] code /* повышаю вес селектора, чтобы перебить .article code */
 {
-    font-size: inherit;
+    font: inherit;
 
     background: inherit;
 }
@@ -208,6 +210,8 @@
 /* table (begin) */
 .article table
 {
+    width: 100%;
+
     word-break: normal;
     word-break: keep-all;
 
@@ -215,31 +219,48 @@
     border-collapse: collapse;
 }
 
-/*
-.article tr:nth-child(2n) {
-  background: #f8f8f8;
+.article table::after
+{
+    display: block;
+
+    margin-bottom: -7px;
+
+    content: '\00a0';
 }
-*/
+
+.article th,
+.article td
+{
+    text-align: left;
+    vertical-align: top;
+
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.article th::after,
+.article td::after
+{
+    height: 1px;
+
+    content: '';
+    border-bottom: 1px solid rgb(251, 251, 251);
+}
 
 .article th
 {
     font-weight: bold;
 
-    padding: 0 13px;
+    padding: 0 16px 6px 0;
+}
 
-    text-align: left;
-    vertical-align: top;
-
-    border: 1px solid #ddd;
+.article th:last-child
+{
+    padding-right: 0;
 }
 
 .article td
 {
-    padding: 15px 13px;
-
-    vertical-align: top;
-
-    border: 1px solid #ddd;
+    padding: 9px 16px 6px 0;
 }
 /* table (end) */
 
@@ -283,13 +304,6 @@
 {
     border: 0;
     background: none;
-}
-
-.article blockquote code,
-.article blockquote code
-{
-    margin-bottom: -1px;
-    padding: 1px 0 0;
 }
 
 /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css */
@@ -431,7 +445,15 @@
     text-decoration: none;
 }
 
-@media screeen
+.article a[name]:empty
+{
+    display: block;
+
+    min-height: 16px;
+    margin-bottom: -32px;
+}
+
+@media screen
 {
     .article a:link
     {
