@@ -7,7 +7,7 @@
 }
 
 /*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 780px)
 {
     .article-wrap
     {
@@ -19,17 +19,31 @@
         width: 100%;
         margin: 0;
         padding: 0 5%;
+
+        background: none;
     }
 }
 
-/* Portrait and Landscape */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
+/* Mobile portrait and landscape */
+@media (min-device-width: 320px) and (max-device-width: 568px)
 {
     .article-wrap
     {
         margin: 0;
         padding: 0;
+
+        background: none;
+    }
+}
+
+/* Print version */
+@media print
+{
+    .article-wrap
+    {
+        margin: 0;
+        padding: 0;
+
+        background: none;
     }
 }

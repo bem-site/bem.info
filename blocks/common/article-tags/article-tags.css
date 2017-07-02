@@ -5,6 +5,14 @@
     margin-top: 16px !important; /* TODO: remove !important after mirgation to md2bemjson */
 }
 
+@media print
+{
+    .article-tags
+    {
+        display: none;
+    }
+}
+
 .article-tags__tag
 {
     display: inline-block;
