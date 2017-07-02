@@ -2,3 +2,8 @@
 {
     margin-top: -5px;
 }
+
+.block-example__preview
+{
+    min-height: 158px;
+}
