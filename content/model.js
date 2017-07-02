@@ -1,3 +1,6 @@
+const versioned = require('../lib/model-versioned');
+const lib = require('../lib/model-lib');
+
 module.exports = [
   {
     url: '/',
@@ -1204,19 +1207,86 @@ module.exports = [
     },
     tags: ['bemjson'],
     bundle: 'platform'
-  }].concat(require('./platform/bem-xjst')({
-    url: '/platform/bem-xjst/',
-    site: '/platform/bem-xjst/',
-    title: {
-        ru: 'Шаблоны (BEMHTML, BEMTREE)',
-        uk: 'Шаблони (BEMHTML, BEMTREE)',
-        en: 'Templates (BEMHTML, BEMTREE)',
-    },
-    tags: ['bem-xjst'],
-    bundle: 'platform',
-    library: 'bem-xjst',
-    type: 'versioned'
-  })).concat([
+  }].concat(
+    versioned({
+      url: '/platform/bem-xjst/',
+      site: '/platform/bem-xjst/',
+      title: {
+          ru: 'Шаблоны (BEMHTML, BEMTREE)',
+          uk: 'Шаблони (BEMHTML, BEMTREE)',
+          en: 'Templates (BEMHTML, BEMTREE)',
+      },
+      tags: ['bem-xjst'],
+      bundle: 'platform',
+      library: 'bem-xjst',
+      type: 'versioned'
+    }, [
+      {
+        url: '',
+        // title: version-will-be-here
+        source: {
+            ru: '1-about.md',
+            en: '1-about.md',
+        }
+      },
+      {
+        url: 'quick-start/',
+        title: {
+          ru: 'Быстрый старт',
+          uk: 'Швидкий старт',
+          en: 'Quick start',
+        },
+        source: {
+            ru: '2-quick-start.md',
+            en: '2-quick-start.md',
+        }
+      },
+      {
+        url: 'api/',
+        title: 'API',
+        source: {
+            ru: '3-api.md',
+            en: '3-api.md',
+        }
+      },
+      {
+        url: 'templates-syntax/',
+        title: {
+          ru: 'Синтаксис шаблонов',
+          uk: 'Синтаксис шаблонів',
+          en: 'Templates syntax',
+        },
+        source: {
+            ru: '5-templates-syntax.md',
+            en: '5-templates-syntax.md',
+        }
+      },
+      {
+        url: 'templates-context/',
+        title: {
+          ru: 'Контекст',
+          uk: 'Контекст',
+          en: 'Context',
+        },
+        source: {
+          ru: '6-templates-context.md',
+          en: '6-templates-context.md',
+        }
+      },
+      {
+        url: 'runtime/',
+        title: 'Runtime',
+        source: {
+          ru: '7-runtime.md',
+          en: '7-runtime.md',
+        }
+      }
+    ], [
+      { number: 6, path: 'v6.x' },
+      { number: 7, path: 'v7.x' },
+      { number: 8, path: 'master' },
+    ], 8)
+  ).concat([
   {
     url: '/platform/i-bem/',
     site: '/platform/i-bem/',
@@ -1494,9 +1564,8 @@ module.exports = [
     },
     tags: ['libs'],
     bundle: 'platform'
-  },
-
-  {
+  }]).concat(
+  lib({
     url: '/platform/libs/bem-core/',
     site: '/platform/libs/bem-core/',
     title: 'bem-core',
@@ -1515,8 +1584,8 @@ module.exports = [
     tags: ['libs', 'bem-core'],
     bundle: 'platform',
     type: 'lib'
-  },
-  {
+  }),
+  lib({
     url: '/platform/libs/bem-components/',
     site: '/platform/libs/bem-components/',
     title: 'bem-components',
@@ -1532,8 +1601,8 @@ module.exports = [
     tags: ['libs', 'bem-components'],
     bundle: 'platform',
     type: 'lib'
-  },
-  {
+  }),
+  lib({
     url: '/platform/libs/bem-history/',
     site: '/platform/libs/bem-history/',
     title: 'bem-history',
@@ -1548,7 +1617,7 @@ module.exports = [
     tags: ['libs'],
     bundle: 'platform',
     type: 'lib'
-  },
+  })).concat([
   {
     url: '/platform/libs/principles/',
     site: '/platform/libs/',

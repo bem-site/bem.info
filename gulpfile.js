@@ -1,29 +1,27 @@
 'use strict';
 
-var path = require('path'),
-    fs = require('fs'),
-    fsExtra = require('fs-extra'),
-    cp = require('child_process'),
+const path = require('path');
+const fs = require('fs');
+const fsExtra = require('fs-extra');
+const cp = require('child_process');
 
-    Q = require('q'),
-    enb = require('enb'),
-    rimraf = require('rimraf'),
-    mkdirp = require('mkdirp'),
+const Q = require('q');
+const enb = require('enb');
+const rimraf = require('rimraf');
+const mkdirp = require('mkdirp');
 
-    gulp = require('gulp'),
-    batch = require('gulp-batch'),
-    watch = require('gulp-watch'),
-    browserSync = require('browser-sync'),
-    csscomb = require('gulp-csscomb'),
+const gulp = require('gulp');
+const batch = require('gulp-batch');
+const watch = require('gulp-watch');
+const browserSync = require('browser-sync');
+const csscomb = require('gulp-csscomb');
 
-    prepareLibs = require('./lib/prepare-libs'),
-    prepareModel = require('./lib/prepare-model'),
-
-    fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
-
-let model;
+const prepareModel = require('./lib/prepare-model');
+const fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
 
 const env = process.env;
+
+const model = require(env.PATH_TO_MODEL || './content/model.js');
 
 const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru', 'uk'];
 
@@ -120,6 +118,7 @@ gulp.task('prepare-static', () => {
 // Сборка данных
 
 function data() {
+    rimraf.sync(CACHE);
     mkdirp.sync(CACHE);
 
     return Q.all(LANGUAGES.map(lang => {
@@ -129,7 +128,10 @@ function data() {
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
 
         if (preparedModel.redirects && preparedModel.redirects.length) {
-            const redirectsPath = path.join(CACHE, OUTPUT_ROOT, lang, `redirects.json`);
+            const redirectsDir = path.join(CACHE, OUTPUT_ROOT, lang);
+            const redirectsPath = path.join(redirectsDir, `redirects.json`);
+
+            mkdirp.sync(redirectsDir);
             fs.writeFileSync(redirectsPath, JSON.stringify(preparedModel.redirects, null, 2));
         }
 
@@ -150,18 +152,7 @@ function data() {
     })).then(() => fsHelpers.touch(path.join(CACHE, '.inited')));
 }
 
-gulp.task('prepare-model', () => {
-    rimraf.sync(path.join(CACHE, OUTPUT));
-
-    return Q.all(prepareLibs(require(env.PATH_TO_MODEL || './content/model.js')))
-        .then(pages => {
-            model = pages;
-        });
-});
-
-gulp.task('prepare-data', data);
-
-gulp.task('data', gulp.series('prepare-model', 'prepare-data'));
+gulp.task('data', data);
 
 gulp.task('is-data-exists', () => {
     return fsHelpers.exists(path.join(CACHE, '.inited')).then(doesExists => {
