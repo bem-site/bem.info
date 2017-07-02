@@ -1,7 +1,13 @@
 ({
     shouldDeps: [
         'article',
-        'article-rewind',
         'article-amendments',
+        {
+            block: 'article-rewind',
+            mods: {
+                floating: true,
+                static: true
+            }
+        }
     ]
 })
