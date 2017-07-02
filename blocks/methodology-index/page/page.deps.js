@@ -11,6 +11,7 @@
         'promo-footer',
         'promo-features',
         'promo-problems',
+        'promo-content',
         {
             block: 'footer',
             mods: { promo: true }

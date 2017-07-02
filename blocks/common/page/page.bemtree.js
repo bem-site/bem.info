@@ -4,16 +4,26 @@ block('page').content()(function() {
 
     return [
         {
-            block: 'header'
+            block: 'header',
+            // TODO: fix after deleting bemjson everywhere
+            mods: { 'nav-hidden': page.type === 'promo' }
         },
         {
             block: 'sitemap'
         },
         {
             block: 'content',
-            content: page.type === 'bemjson.js' ? { html: page.content } :
-                    page.type === 'lib' ? { block: 'blocks' } :
-                    { block: 'article-wrap' }
+            content: function() {
+                if (page.type === 'bemjson.js') {
+                    return { html: page.content };
+                } else if (page.type === 'lib') {
+                    return { block: 'blocks' }
+                } else if (page.type === 'promo') {
+                    return { block: 'promo-content' };
+                } else {
+                    return { block: 'article-wrap' };
+                }
+            }()
         },
         {
             block: 'footer'
