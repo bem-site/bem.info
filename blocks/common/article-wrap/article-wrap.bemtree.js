@@ -5,11 +5,6 @@ block('article-wrap').content()(function() {
     return [
         page.isTranslationMissed && { block: 'article-translation-missed' },
         apply('articles'),
-        apply('article'),
-        {
-            block: 'social-likes',
-            params: page.head.meta,
-            lang: data.lang
-        }
+        apply('article')
     ];
 });
