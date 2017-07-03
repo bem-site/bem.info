@@ -5,8 +5,24 @@ block('article-rewind').content()(function() {
         page = data.page,
         pages = data.pages,
         pageIndex = _.indexOf(pages, page),
-        prevPage = data.page.prev !== false && pages[pageIndex - 1],
-        nextPage = data.page.next !== false && pages[pageIndex + 1];
+        prevPage,
+        nextPage;
+
+    if (data.page.prev !== false) {
+        if (data.page.prev === undefined) {
+            prevPage = pages[pageIndex - 1];
+        } else {
+            prevPage = _.find(pages, { url: data.page.prev });
+        }
+    }
+
+    if (data.page.next !== false) {
+        if (data.page.next === undefined) {
+            nextPage = pages[pageIndex + 1];
+        } else {
+            nextPage = _.find(pages, { url: data.page.next });
+        }
+    }
 
     return [
         prevPage && {

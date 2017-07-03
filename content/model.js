@@ -1188,8 +1188,7 @@ module.exports = [
       en: './content/platform/platform.en.bemjson.js',
     },
     type: 'bemjson.js',
-    bundle: 'platform-index',
-    prev: false
+    bundle: 'platform-index'
   },
 
   {
@@ -1206,7 +1205,8 @@ module.exports = [
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md',
     },
     tags: ['bemjson'],
-    bundle: 'platform'
+    bundle: 'platform',
+    prev: false
   }].concat(
     versioned({
       url: '/platform/bem-xjst/',
@@ -1227,7 +1227,8 @@ module.exports = [
         source: {
             ru: '1-about.md',
             en: '1-about.md',
-        }
+        },
+        prev: '/platform/bemjson/'
       },
       {
         url: 'quick-start/',
@@ -1279,7 +1280,8 @@ module.exports = [
         source: {
           ru: '7-runtime.md',
           en: '7-runtime.md',
-        }
+        },
+        next: '/platform/i-bem/'
       }
     ], [
       { number: 6, path: 'v6.x' },
