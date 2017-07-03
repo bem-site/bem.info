@@ -1,0 +1,145 @@
+.article-rewind_type_static
+{
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    min-height: 40px;
+    margin: 0 0 -35px -111px; /* 111px padding-left in article-wrap */
+    padding: 40px 32px 40px 111px; /* 111px + 32px padding-left/right in article-wrap */
+
+    background: #f3f1ed;
+}
+
+.article-rewind_type_static .article-rewind__prev
+{
+    position: relative;
+
+    align-self: center;
+
+    width: 111px;
+    height: 70px;
+    margin-left: -111px;
+
+    white-space: nowrap;
+}
+
+.article-rewind_type_static .article-rewind__prev-link
+{
+    position: absolute;
+    right: 34px;
+}
+
+.article-rewind_type_static .article-rewind__prev-link::after,
+.article-rewind_type_static .article-rewind__next-link::after
+{
+    font-size: 177px;
+    line-height: 26px;
+
+    color: #555;
+}
+
+.article-rewind_type_static .article-rewind__prev-link::after
+{
+    display: inline-block;
+
+    height: 70px;
+    margin-left: 32px;
+
+    content: '‹';
+}
+
+.article-rewind_type_static .article-rewind__next
+{
+    position: relative;
+
+    flex-grow: 1;
+    align-self: center;
+
+    margin-right: 78px;
+
+    text-align: right;
+}
+
+.article-rewind_type_static .article-rewind__next-text
+{
+    font-size: 16px;
+
+    position: absolute;
+    right: 0;
+
+    margin-top: -32px;
+
+    text-decoration: none;
+
+    color: #777;
+}
+
+.article-rewind_type_static .article-rewind__next-link
+{
+    font-size: 40px;
+    line-height: 46px;
+
+    text-decoration: none;
+
+    color: #000;
+}
+
+.article-rewind_type_static .article-rewind__next-link::after
+{
+    position: absolute;
+    top: 50%;
+    right: -78px;
+    transform: translateY(-50%);
+
+    height: 70px;
+
+    content: '›';
+}
+
+/*tablet*/
+@media (max-width: 780px)
+{
+    .article-rewind_type_static
+    {
+        margin-left: -6%; /* 5% padding-left in article-wrap */
+        padding-left: 6%; /* 5% padding-left/right in article-wrap */
+        padding-right: 6%;
+    }
+
+    .article-rewind_type_static .article-rewind__prev
+    {
+        margin-left: -39px;
+    }
+}
+
+/* Mobile portrait and landscape */
+@media (min-device-width: 320px) and (max-device-width: 568px)
+{
+    .article-rewind_type_static
+    {
+        width: 100%;
+        min-height: 40px;
+        margin: 0;
+        padding: 40px 0 40px 0;
+    }
+
+    .article-rewind_type_static .article-rewind__prev,
+    .article-rewind_type_static .article-rewind__next-link::after
+    {
+        display: none;
+    }
+
+    .article-rewind_type_static .article-rewind__next
+    {
+        margin: 0 13px;
+    }
+
+    .article-rewind_type_static .article-rewind__next-link
+    {
+        display: block;
+
+        word-break: break-all;
+    }
+}

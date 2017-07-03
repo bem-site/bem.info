@@ -20,11 +20,14 @@ block('article-rewind').content()(function() {
         prevPage && nextPage && ' ',
         nextPage && {
             elem: 'next',
-            content: {
-                elem: 'next-link',
-                url: data.root + nextPage.url,
-                content: nextPage.title
-            }
+            content: [
+                apply('next-text'),
+                {
+                    elem: 'next-link',
+                    url: data.root + nextPage.url,
+                    content: nextPage.title
+                }
+            ]
         }
     ];
 });
