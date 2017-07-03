@@ -1,3 +1,1 @@
-block('footer').mode('legos-color')(function() {
-    return 'black';
-});
+block('footer').mode('legos-color')('black');
