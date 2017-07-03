@@ -1,5 +1,4 @@
-block('footer').mode('promo')(function() {
-    return {
-        block: 'promo-footer'
-    };
-});
+block('footer')(
+    mode('promo')({ block: 'promo-footer' }),
+    mode('legos-color')('white')
+);
