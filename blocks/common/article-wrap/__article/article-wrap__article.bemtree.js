@@ -3,10 +3,20 @@ block('article-wrap').mode('article')(
         var type = this.data.page.type;
         return !type || type === 'lib' || type === 'versioned';
     })(function() {
+        var data = this.data,
+            page = data.page,
+            isShowRewind = !page.type || page.type === 'versioned';
+
         return [
             { block: 'article' },
-            !this.data.page.type && { block: 'article-rewind', mods: { floating: true } },
+            isShowRewind && { block: 'article-rewind', mods: { type: 'floating' } },
             { block: 'article-amendments' },
+            {
+                block: 'social-likes',
+                params: page.head.meta,
+                lang: data.lang
+            },
+            isShowRewind && { block: 'article-rewind', mods: { type: 'static', lang: data.lang } }
         ];
     })
 );

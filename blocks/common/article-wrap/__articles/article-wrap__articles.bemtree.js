@@ -10,7 +10,8 @@ block('article-wrap').mode('articles')(
                 block: 'social-likes',
                 params: page.head.meta,
                 lang: data.lang
-            }
+            },
+            { block: 'article-rewind', mods: { type: 'static', lang: data.lang } }
         ];
     })
 );

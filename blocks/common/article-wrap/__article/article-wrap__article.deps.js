@@ -5,8 +5,7 @@
         {
             block: 'article-rewind',
             mods: {
-                floating: true,
-                static: true
+                type: ['floating', 'static']
             }
         }
     ]
