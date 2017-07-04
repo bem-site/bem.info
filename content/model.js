@@ -1284,10 +1284,10 @@ module.exports = [
         next: '/platform/i-bem/'
       }
     ], [
-      { number: 6, path: 'v6.x' },
-      { number: 7, path: 'v7.x' },
-      { number: 8, path: 'master' },
-    ], 8)
+      { number: '6', text: '6.x', path: 'v6.x' },
+      { number: '7', text: '7.x', path: 'v7.x' },
+      { number: '8', text: '8.x', path: 'master' },
+    ], '8')
   ).concat([
   {
     url: '/platform/i-bem/',
