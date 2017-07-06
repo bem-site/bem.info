@@ -30,9 +30,9 @@
     border-bottom: 1px solid transparent;
 }
 
-.promo-crossroad__item:hover .promo-crossroad__title-link 
+.promo-crossroad__item:hover .promo-crossroad__title-link
 {
-    border-bottom: 1px solid rgba(0,0,0,.75);
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
 }
 
 .promo-crossroad__img

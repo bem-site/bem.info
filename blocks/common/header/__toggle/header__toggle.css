@@ -7,8 +7,8 @@
 }
 
 .header__toggle-line,
-.header__toggle-line:before,
-.header__toggle-line:after
+.header__toggle-line::before,
+.header__toggle-line::after
 {
     position: absolute;
 
@@ -24,25 +24,25 @@
     background: rgba(255, 255, 255, 0.65);
 }
 
-.header__toggle:hover .header__toggle-line:before,
-.header__toggle:hover .header__toggle-line:after
+.header__toggle:hover .header__toggle-line::before,
+.header__toggle:hover .header__toggle-line::after
 {
     background: #fff;
 }
 
-.header__toggle-line:before
+.header__toggle-line::before
 {
     top: -8px;
 }
 
-.header__toggle-line:after
+.header__toggle-line::after
 {
     bottom: -8px;
 }
 
 .header__toggle-line,
-.header__toggle-line:before,
-.header__toggle-line:after
+.header__toggle-line::before,
+.header__toggle-line::after
 {
     transition: all 0.3s ease-in-out;
 }
@@ -62,7 +62,7 @@
     background-color: transparent;
 }
 
-.header__toggle_active .header__toggle-line:before
+.header__toggle_active .header__toggle-line::before
 {
     top: 0;
 
@@ -71,7 +71,7 @@
     transform: rotate(45deg);
 }
 
-.header__toggle_active .header__toggle-line:after
+.header__toggle_active .header__toggle-line::after
 {
     bottom: 0;
 
@@ -89,8 +89,8 @@
 @media all and (max-width: 780px)
 {
     .header__toggle-line,
-    .header__toggle-line:before,
-    .header__toggle-line:after
+    .header__toggle-line::before,
+    .header__toggle-line::after
     {
         display: block;
 

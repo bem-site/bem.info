@@ -43,11 +43,9 @@
     margin: 0;
 }
 
-
 .breadcrumbs__version .select_theme_islands .select__tick
 {
     background-image: url(breadcrumbs.svg);
-
 }
 
 .breadcrumbs__version .select__button
