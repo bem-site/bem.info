@@ -5,8 +5,8 @@
     top: 70px;
 
     display: none;
-    box-sizing: border-box;
 
+    box-sizing: border-box;
     width: 100%;
     min-height: calc(100% - 100px);
     padding: 29px 80px 50px 110px;

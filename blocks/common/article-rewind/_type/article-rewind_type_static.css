@@ -91,11 +91,11 @@
     position: absolute;
     top: 50%;
     right: -78px;
-    transform: translateY(-50%);
 
     height: 70px;
 
     content: '›';
+    transform: translateY(-50%);
 }
 
 /*tablet*/
@@ -104,8 +104,8 @@
     .article-rewind_type_static
     {
         margin-left: -6%; /* 5% padding-left in article-wrap */
-        padding-left: 6%; /* 5% padding-left/right in article-wrap */
         padding-right: 6%;
+        padding-left: 6%; /* 5% padding-left/right in article-wrap */
     }
 
     .article-rewind_type_static .article-rewind__prev
@@ -122,7 +122,7 @@
         width: 100%;
         min-height: 40px;
         margin: 0;
-        padding: 40px 0 40px 0;
+        padding: 40px 0;
     }
 
     .article-rewind_type_static .article-rewind__prev,
