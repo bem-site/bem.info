@@ -1105,9 +1105,9 @@ module.exports = [
     site: '/toolbox/sdk/',
     title: 'SDK',
     source: {
-      ru: 'https://github.com/bem-sdk/bem-sdk/blob/master/README.ru.md',
-      // uk: 'https://github.com/bem-sdk/bem-sdk/blob/master/README.uk.md',
-      en: 'https://github.com/bem-sdk/bem-sdk/blob/master/README.md',
+      ru: 'https://github.com/bem/bem-sdk/blob/master/README.ru.md',
+      // uk: 'https://github.com/bem/bem-sdk/blob/master/README.uk.md',
+      en: 'https://github.com/bem/bem-sdk/blob/master/README.md',
     },
     tags: ['bem-sdk'],
     bundle: 'toolbox'
@@ -1117,9 +1117,9 @@ module.exports = [
     site: '/toolbox/sdk/bem-naming/',
     title: 'bem-naming',
     source: {
-      //ru: 'https://github.com/bem-sdk/bem-naming/blob/master/README.ru.md', //TODO
-      // uk: 'https://github.com/bem-sdk/bem-naming/blob/master/README.uk.md',
-      en: 'https://github.com/bem-sdk/bem-naming/blob/master/README.md',
+      //ru: 'https://github.com/bem-sdk-archive/bem-naming/blob/master/README.ru.md', //TODO
+      // uk: 'https://github.com/bem-sdk-archive/bem-naming/blob/master/README.uk.md',
+      en: 'https://github.com/bem-sdk-archive/bem-naming/blob/master/README.md',
     },
     tags: ['bem-sdk'],
     bundle: 'toolbox'
@@ -1129,9 +1129,9 @@ module.exports = [
     site: '/toolbox/sdk/bem-config/',
     title: 'bem-config',
     source: {
-      // ru: 'https://github.com/bem-sdk/bem-config/blob/master/README.ru.md', // TODO
+      // ru: 'https://github.com/bem-sdk-archive/bem-config/blob/master/README.ru.md', // TODO
       // uk: '',
-      en: 'https://github.com/bem-sdk/bem-config/blob/master/README.md',
+      en: 'https://github.com/bem-sdk-archive/bem-config/blob/master/README.md',
     },
     tags: ['bem-sdk'],
     bundle: 'toolbox'
@@ -1141,9 +1141,9 @@ module.exports = [
     site: '/toolbox/sdk/bem-fs-scheme/',
     title: 'bem-fs-scheme',
     source: {
-      // ru: 'https://github.com/bem-sdk/bem-fs-scheme/blob/master/README.ru.md', // TODO
+      // ru: 'https://github.com/bem-sdk-archive/bem-fs-scheme/blob/master/README.ru.md', // TODO
       // uk: '',
-      en: 'https://github.com/bem-sdk/bem-fs-scheme/blob/master/README.md',
+      en: 'https://github.com/bem-sdk-archive/bem-fs-scheme/blob/master/README.md',
     },
     tags: ['bem-sdk'],
     bundle: 'toolbox'
@@ -1153,9 +1153,9 @@ module.exports = [
     site: '/toolbox/sdk/bem-deps/',
     title: 'bem-deps',
     source: {
-      // ru: 'https://github.com/bem-sdk/bem-deps/blob/master/README.ru.md', // TODO
+      // ru: 'https://github.com/bem-sdk-archive/bem-deps/blob/master/README.ru.md', // TODO
       // uk: '',
-      en: 'https://github.com/bem-sdk/bem-deps/blob/master/README.md',
+      en: 'https://github.com/bem-sdk-archive/bem-deps/blob/master/README.md',
     },
     tags: ['bem-sdk', 'deps'],
     bundle: 'toolbox'
@@ -1165,9 +1165,9 @@ module.exports = [
     site: '/toolbox/sdk/bem-walk/',
     title: 'bem-walk',
     source: {
-      // ru: 'https://github.com/bem-sdk/bem-walk/blob/master/README.ru.md', //TODO
+      // ru: 'https://github.com/bem-sdk-archive/bem-walk/blob/master/README.ru.md', //TODO
       // uk: '',
-      en: 'https://github.com/bem-sdk/bem-walk/blob/master/README.md',
+      en: 'https://github.com/bem-sdk-archive/bem-walk/blob/master/README.md',
     },
     tags: ['bem-sdk'],
     bundle: 'toolbox',
