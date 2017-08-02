@@ -27,18 +27,18 @@ module.exports = [
       uk: 'Методологія',
       en: 'Methodology'
     },
-    source: {
-      ru: './content/methodology/methodology.ru.bemjson.js',
-      uk: './content/methodology/methodology.uk.bemjson.js',
-      en: './content/methodology/methodology.en.bemjson.js',
-    },
     tags: ['methodology'],
-    type: 'bemjson.js',
+    type: 'promo',
     bundle: 'methodology-index'
   },
   {
     url: '/methodology/quick-start/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Start quick, finish slow',
+      en: 'Start quick, finish slow',
+      uk: 'Start quick, finish slow'
+    },
     title: {
       ru: 'Быстрый старт',
       uk: 'Швидкий старт',
@@ -56,6 +56,11 @@ module.exports = [
   {
     url: '/methodology/key-concepts/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Concepts and other stuff',
+      uk: 'Concepts and other stuff',
+      en: 'Concepts and other stuff'
+    },
     title: {
       ru: 'Основные понятия',
       uk: 'Основні поняття',
@@ -72,6 +77,11 @@ module.exports = [
   {
     url: '/methodology/naming-convention/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Concepts and other stuff',
+      uk: 'Concepts and other stuff',
+      en: 'Concepts and other stuff'
+    },
     title: {
       ru: 'Соглашение по именованию',
       uk: 'Угода щодо іменування',
@@ -89,6 +99,11 @@ module.exports = [
     url: '/methodology/css/',
     site: '/methodology/',
     title: 'CSS',
+    subtitle: {
+      ru: 'Need more CSS',
+      uk: 'Need more CSS',
+      en: 'Need more CSS',
+    },
     tags: ['methodology'],
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-css.ru.md',
@@ -100,6 +115,11 @@ module.exports = [
   {
     url: '/methodology/js/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Client and Server',
+      uk: 'Client and Server',
+      en: 'Client and Server'
+    },
     title: {
       ru: 'JavaScript',
       uk: 'JavaScript',
@@ -116,6 +136,11 @@ module.exports = [
   {
     url: '/methodology/filestructure/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'The structure defines',
+      uk: 'The structure defines',
+      en: 'The structure defines'
+    },
     title: {
       ru: 'Файловая структура',
       uk: 'Файлова структура',
@@ -132,6 +157,11 @@ module.exports = [
   {
     url: '/methodology/redefinition-levels/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'The structure defines',
+      uk: 'The structure defines',
+      en: 'The structure defines'
+    },
     title: {
       ru: 'Уровни переопределения',
       uk: 'Рівень перевизначення',
@@ -148,6 +178,11 @@ module.exports = [
   {
     url: '/methodology/block-modification/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'The structure defines',
+      uk: 'The structure defines',
+      en: 'The structure defines'
+    },
     title: {
       ru: 'Модификация блока',
       uk: 'Модифікація блоку',
@@ -164,6 +199,11 @@ module.exports = [
   {
     url: '/methodology/build/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Build and Break',
+      uk: 'Build and Break',
+      en: 'Build and Break'
+    },
     title: {
       ru: 'Сборка',
       uk: 'Збірка',
@@ -180,6 +220,11 @@ module.exports = [
   {
     url: '/methodology/declarations/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Declare and Implement',
+      uk: 'Declare and Implement',
+      en: 'Declare and Implement'
+    },
     title: {
       ru: 'Декларации',
       uk: 'Декларації',
@@ -196,6 +241,11 @@ module.exports = [
   {
     url: '/methodology/solved-problems/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Not all, but many',
+      uk: 'Not all, but many',
+      en: 'Not all, but many'
+    },
     title: {
       ru: 'Какие проблемы решает',
       uk: 'Які проблеми вирішує',
@@ -212,6 +262,11 @@ module.exports = [
   {
     url: '/methodology/history/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'Of the Mankind',
+      uk: 'Of the Mankind',
+      en: 'Of the Mankind'
+    },
     title: {
       ru: 'История создания',
       uk: 'Історія створення',
@@ -228,6 +283,11 @@ module.exports = [
   {
     url: '/methodology/articles/',
     site: '/methodology/',
+    subtitle: {
+      ru: 'showing press badge',
+      uk: 'showing press badge',
+      en: 'showing press badge'
+    },
     title: {
       ru: 'Статьи',
       uk: 'Статті',
@@ -246,6 +306,11 @@ module.exports = [
     url: '/methodology/faq/',
     site: '/methodology/',
     title: 'FAQ',
+    subtitle: {
+      ru: 'All your questions answered',
+      uk: 'All your questions answered',
+      en: 'All your questions answered'
+    },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/faq/faq.ru.md',
       uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/faq/faq.uk.md',
@@ -1720,6 +1785,11 @@ module.exports = [
   {
     url: '/platform/tutorials/i-bem/modifiers/',
     site: '/platform/tutorials/i-bem/',
+    description: {
+      ru: 'Про модификацию блока',
+      uk: 'Про модификацию блока',
+      en: 'Про модификацию блока'
+    },
     title: {
       ru: 'Модификаторы блока',
       uk: 'Модифікатори блоку',
