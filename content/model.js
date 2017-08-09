@@ -35,7 +35,7 @@ module.exports = [
     url: '/methodology/quick-start/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Start quick, finish slow',
+      ru: 'Необходимый минимум для знакомства с БЭМ',
       en: 'Start quick, finish slow',
       uk: 'Start quick, finish slow'
     },
@@ -57,7 +57,7 @@ module.exports = [
     url: '/methodology/key-concepts/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Concepts and other stuff',
+      ru: 'Что есть что в мире БЭМ',
       uk: 'Concepts and other stuff',
       en: 'Concepts and other stuff'
     },
@@ -78,7 +78,7 @@ module.exports = [
     url: '/methodology/naming-convention/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Concepts and other stuff',
+      ru: 'Как вложить смысл в имена',
       uk: 'Concepts and other stuff',
       en: 'Concepts and other stuff'
     },
@@ -100,7 +100,7 @@ module.exports = [
     site: '/methodology/',
     title: 'CSS',
     subtitle: {
-      ru: 'Need more CSS',
+      ru: 'Верстка независимыми блоками',
       uk: 'Need more CSS',
       en: 'Need more CSS',
     },
@@ -116,7 +116,7 @@ module.exports = [
     url: '/methodology/js/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Client and Server',
+      ru: 'Декларативно, в БЭМ-терминах',
       uk: 'Client and Server',
       en: 'Client and Server'
     },
@@ -137,7 +137,7 @@ module.exports = [
     url: '/methodology/filestructure/',
     site: '/methodology/',
     subtitle: {
-      ru: 'The structure defines',
+      ru: 'Единые правила организации кода',
       uk: 'The structure defines',
       en: 'The structure defines'
     },
@@ -158,7 +158,7 @@ module.exports = [
     url: '/methodology/redefinition-levels/',
     site: '/methodology/',
     subtitle: {
-      ru: 'The structure defines',
+      ru: 'Расширение возможностей блоков',
       uk: 'The structure defines',
       en: 'The structure defines'
     },
@@ -179,7 +179,7 @@ module.exports = [
     url: '/methodology/block-modification/',
     site: '/methodology/',
     subtitle: {
-      ru: 'The structure defines',
+      ru: 'Множественное наследование, сделанное правильно',
       uk: 'The structure defines',
       en: 'The structure defines'
     },
@@ -200,7 +200,7 @@ module.exports = [
     url: '/methodology/build/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Build and Break',
+      ru: 'Оптимальный runtime',
       uk: 'Build and Break',
       en: 'Build and Break'
     },
@@ -221,7 +221,7 @@ module.exports = [
     url: '/methodology/declarations/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Declare and Implement',
+      ru: 'Абстракция над разметкой',
       uk: 'Declare and Implement',
       en: 'Declare and Implement'
     },
@@ -242,7 +242,7 @@ module.exports = [
     url: '/methodology/solved-problems/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Not all, but many',
+      ru: '',
       uk: 'Not all, but many',
       en: 'Not all, but many'
     },
@@ -263,7 +263,7 @@ module.exports = [
     url: '/methodology/history/',
     site: '/methodology/',
     subtitle: {
-      ru: 'Of the Mankind',
+      ru: 'Путь проб и ошибок',
       uk: 'Of the Mankind',
       en: 'Of the Mankind'
     },
@@ -284,7 +284,7 @@ module.exports = [
     url: '/methodology/articles/',
     site: '/methodology/',
     subtitle: {
-      ru: 'showing press badge',
+      ru: '',
       uk: 'showing press badge',
       en: 'showing press badge'
     },
@@ -307,7 +307,7 @@ module.exports = [
     site: '/methodology/',
     title: 'FAQ',
     subtitle: {
-      ru: 'All your questions answered',
+      ru: 'Возможно, мы уже ответили на твой вопрос',
       uk: 'All your questions answered',
       en: 'All your questions answered'
     },
