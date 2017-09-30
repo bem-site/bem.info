@@ -48,6 +48,8 @@
 
 .promo-menu__link
 {
+    display: table;
+
     text-decoration: none;
 
     outline: none;
@@ -57,7 +59,7 @@
 {
     font-size: 13px;
 
-    display: inline-block;
+    display: table-cell;
 
     padding: 2px 10px 0;
 
