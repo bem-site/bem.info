@@ -98,16 +98,16 @@ function compilePages(lang, bundle) {
 
 // Подготовка директорий output-*
 
-gulp.task('prepare-output', () => {
-    return new Promise((resolve) => {
-        fsExtra.remove(OUTPUT, () => {
-            fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () => LANGUAGES.map(lang => {
+gulp.task('prepare-output', () => new Promise(resolve =>
+    fsExtra.remove(OUTPUT, () =>
+        fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () =>
+            LANGUAGES.map(lang => {
                 gulp.src(path.join(CACHE, OUTPUT_ROOT, `nginx_${lang}.conf`)).pipe(gulp.dest(OUTPUT));
                 resolve();
-            }))
-        });
-    });
-});
+            })
+        )
+    )
+));
 
 gulp.task('prepare-static', () => {
     return Q.all(
