@@ -101,7 +101,10 @@ function compilePages(lang, bundle) {
 gulp.task('prepare-output', () => {
     return new Promise((resolve) => {
         fsExtra.remove(OUTPUT, () => {
-            fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () => resolve());
+            fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () => LANGUAGES.map(lang => {
+                gulp.src(path.join(CACHE, OUTPUT_ROOT, `nginx_${lang}.conf`)).pipe(gulp.dest(OUTPUT));
+                resolve();
+            }))
         });
     });
 });
@@ -130,13 +133,11 @@ function data() {
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
 
         if (preparedModel.redirects && preparedModel.redirects.length) {
-            const redirectsDir = path.join(CACHE, OUTPUT_ROOT, lang);
-            const redirectsJsonPath = path.join(redirectsDir, 'redirects.json');
-            const redirectsNginxPath = path.join(OUTPUT, `nginx_${lang}.conf`);
+            const redirectsDir = path.join(CACHE, OUTPUT_ROOT);
+            const redirectsNginxPath = path.join(redirectsDir, `nginx_${lang}.conf`);
 
             mkdirp.sync(redirectsDir);
             fs.writeFileSync(redirectsNginxPath, genNginxHostConf(lang, preparedModel.redirects));
-            fs.writeFileSync(redirectsJsonPath, JSON.stringify(preparedModel.redirects, null, 2));
         }
 
         return runSubProcess('./lib/data-builder.js', {
