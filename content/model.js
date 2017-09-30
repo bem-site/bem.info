@@ -1819,12 +1819,7 @@ module.exports = [
       uk: 'Спільнота',
       en: 'Community',
     },
-    source: {
-      ru: './content/community/community.ru.bemjson.js',
-      uk: './content/community/community.uk.bemjson.js',
-      en: './content/community/community.en.bemjson.js',
-    },
-    type: 'bemjson.js',
+    type: 'promo',
     bundle: 'community-index',
     nav: false
   },
