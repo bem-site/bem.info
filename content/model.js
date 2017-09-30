@@ -10,12 +10,7 @@ module.exports = [
       uk: 'БЕМ',
       en: 'BEM',
     },
-    source: {
-      ru: './content/index/index.ru.bemjson.js',
-      uk: './content/index/index.uk.bemjson.js',
-      en: './content/index/index.en.bemjson.js',
-    },
-    type: 'bemjson.js',
+    type: 'promo',
     bundle: 'index'
   },
 
