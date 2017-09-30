@@ -1,6 +1,5 @@
 ({
     shouldDeps: [
-        'index-title',
-        'promo-crossroad'
+        'promo-content'
     ]
 })

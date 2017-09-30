@@ -4,9 +4,7 @@ block('page').content()(function() {
 
     return [
         {
-            block: 'header',
-            // TODO: fix after deleting bemjson everywhere
-            mods: { 'nav-hidden': page.type === 'promo' }
+            block: 'header'
         },
         {
             block: 'sitemap'
