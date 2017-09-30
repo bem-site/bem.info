@@ -1,0 +1,60 @@
+.promo-article
+{
+    padding: 0 0 0 111px;
+}
+
+.promo-article__heading
+{
+    font: 300 150% 'OpenSans-SemiBold', Arial, sans-serif;
+
+    position: relative;
+    z-index: 1;
+
+    clear: left;
+
+    padding: 0;
+}
+
+.promo-article__heading .promo-article__link
+{
+    margin-left: 0;
+}
+
+.promo-article__link
+{
+    display: block;
+
+    margin-left: 2em;
+
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+@media screen {
+    .promo-article__link:link
+    {
+        color: #04b;
+    }
+
+    .promo-article__link:visited
+    {
+        color: #909;
+    }
+
+    .promo-article__link:hover
+    {
+        color: #c00;
+    }
+}
+
+@media print {
+    .promo-article__link
+    {
+        color: inherit;
+    }
+
+    .promo-article__link::after
+    {
+        content: ' (' attr(href) ')';
+    }
+}

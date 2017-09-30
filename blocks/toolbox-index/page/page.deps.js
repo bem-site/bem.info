@@ -1,10 +1,9 @@
 ({
     shouldDeps: [
         'promo-page',
-        'promo-header',
-        'promo-section',
         'promo-title',
+        'promo-content',
         'promo-footer',
-        'article'
+        'promo-article'
     ]
 })

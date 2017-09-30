@@ -329,12 +329,7 @@ module.exports = [
       uk: 'Інструментарій',
       en: 'Toolbox',
     },
-    source: {
-      ru: './content/toolbox/toolbox.ru.bemjson.js',
-      uk: './content/toolbox/toolbox.uk.bemjson.js',
-      en: './content/toolbox/toolbox.en.bemjson.js',
-    },
-    type: 'bemjson.js',
+    type: 'promo',
     bundle: 'toolbox-index'
   },
   {
