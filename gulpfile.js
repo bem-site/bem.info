@@ -259,20 +259,19 @@ gulp.task('browser-sync', () => {
     });
 });
 
-gulp.task('libs-build', function() {
-    // require('bem-lib-site-generator').data(path.resolve('path/to/library'));
-});
-
 gulp.task('csscomb', function() {
     return gulp.src('blocks/**/*.css', { base: './' })
         .pipe(csscomb())
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
     'is-data-exists',
     gulp.parallel('prepare-output', 'copy-static-images', 'enb-make'),
     gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml'),
-//    'csscomb',
+));
+
+gulp.task('default', gulp.series(
+    'build',
     gulp.parallel('watch', 'browser-sync')
 ));
