@@ -1,13 +1,11 @@
 ({
     shouldDeps: [
         'promo-page',
-        'promo-header',
-        'promo-section',
         'promo-title',
         'promo-text',
         'promo-highlight',
-        'promo-features',
         'promo-companies',
+        'promo-content',
         'promo-footer',
         'articles',
         'footer'

@@ -1247,12 +1247,7 @@ module.exports = [
       uk: 'Платформа',
       en: 'Platform',
     },
-    source: {
-      ru: './content/platform/platform.ru.bemjson.js',
-      uk: './content/platform/platform.uk.bemjson.js',
-      en: './content/platform/platform.en.bemjson.js',
-    },
-    type: 'bemjson.js',
+    type: 'promo',
     bundle: 'platform-index'
   },
 
