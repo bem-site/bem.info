@@ -268,7 +268,7 @@ gulp.task('csscomb', function() {
 gulp.task('build', gulp.series(
     'is-data-exists',
     gulp.parallel('prepare-output', 'copy-static-images', 'enb-make'),
-    gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml'),
+    gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml')
 ));
 
 gulp.task('default', gulp.series(
