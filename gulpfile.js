@@ -101,7 +101,7 @@ function compilePages(lang, bundle) {
 gulp.task('prepare-output', () => new Promise(resolve =>
     fsExtra.remove(OUTPUT, () =>
         fsExtra.copy(path.join(CACHE, OUTPUT), OUTPUT, () =>
-            LANGUAGES.map(lang => {
+            LANGUAGES.forEach(lang => {
                 gulp.src(path.join(CACHE, OUTPUT_ROOT, `nginx_${lang}.conf`)).pipe(gulp.dest(OUTPUT));
                 resolve();
             })
