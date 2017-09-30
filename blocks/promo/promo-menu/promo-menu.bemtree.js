@@ -21,7 +21,7 @@ block('promo-menu').content()(function(node, ctx) {
                             elem: 'item',
                             content: {
                                 elem: 'link',
-                                attrs: { href: data.root + value.url },
+                                attrs: { href: value.url },
                                 content: [
                                     { elem: 'number', content: index + 1 },
                                     {
