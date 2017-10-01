@@ -1,4 +1,29 @@
 .content
 {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+}
+
+.content_type_promo
+{
+    display: block;
+}
+
+.content__wrap
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.content__wrap .nav
+{
+    box-sizing: border-box;
+    width: 20%;
+}
+
+.content__wrap .article-wrap
+{
+    box-sizing: border-box;
+    width: 80%;
 }

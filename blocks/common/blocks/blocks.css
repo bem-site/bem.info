@@ -1,22 +1,19 @@
 .blocks
 {
     display: flex;
+    flex-direction: row;
+
+    width: 100%;
 }
 
-@media (min-width: 781px)
+.blocks__wide-menu
 {
-    .blocks__list
-    {
-        min-width: 220px;
-        margin-top: -41px;
-    }
+    background: #f3f1ed;
+}
 
-    .blocks__data
-    {
-        width: 100%;
-        margin: 0;
-        padding: 62px 20px 20px 50px;
-    }
+.blocks__wide-menu .nav__item .nav__link
+{
+    color: #000;
 }
 
 @media print

@@ -43,12 +43,7 @@ block('header').content()(function() {
                 {
                     block: 'breadcrumbs',
                     mix: { block: 'header', elem: 'breadcrumbs' }
-                },
-                url !== '/forum/' && url !== '/' ? {
-                    block: 'nav',
-                    // FIXME: это должно быть на уровне platform
-                    mods: page.type === 'lib' && { type: 'lib' }
-                } : undefined
+                }
             ]
         },
         {

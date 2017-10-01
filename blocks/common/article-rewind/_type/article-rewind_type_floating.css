@@ -4,6 +4,8 @@
     z-index: 0;
     top: 214px;
 
+    display: none;
+
     width: calc(100% - 111px); /* 111px padding-left in article-wrap */
 }
 

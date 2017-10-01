@@ -12,15 +12,27 @@ block('page').content()(function() {
         {
             block: 'content',
             content: function() {
-                if (page.type === 'bemjson.js') {
-                    return { html: page.content };
-                } else if (page.type === 'lib') {
-                    return { block: 'blocks' }
-                } else if (page.type === 'promo') {
+                if (page.type === 'promo') {
                     return { block: 'promo-content' };
-                } else {
-                    return { block: 'article-wrap' };
                 }
+
+                if (page.type === 'lib') {
+                    return { block: 'blocks' };
+                }
+
+                return [
+                    {
+                        elem: 'wrap',
+                        content: [
+                            { block: 'nav' },
+                            { block: 'article-wrap' }
+                        ]
+                    },
+                    {
+                        block: 'article-rewind',
+                        mods: { type: 'static', lang: data.lang }
+                    }
+                ];
             }()
         },
         {

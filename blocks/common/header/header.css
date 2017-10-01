@@ -88,9 +88,7 @@
         display: block;
         flex-wrap: wrap;
 
-        transform: translate3d(0, 100%, 0);
-
-        opacity: 0;
+        opacity: 1;
     }
 
     .header_opened.header_focused .header__menu
@@ -107,10 +105,9 @@
         height: auto;
         padding: 0 0 30px;
 
-        transition: all 0.3s ease-in-out;
         transform: translate3d(0, -120%, 0);
 
-        opacity: 0;
+        opacity: 1;
         border-top: 0;
     }
 
@@ -126,13 +123,6 @@
     .header_opened .header__layout
     {
         display: none;
-    }
-
-    .header_opened.header_focused + .sitemap
-    {
-        transform: none;
-
-        opacity: 1;
     }
 
     .header__layout

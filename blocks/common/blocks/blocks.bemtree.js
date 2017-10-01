@@ -14,8 +14,14 @@ block('blocks').content()(function() {
 
     return [
         {
-            block: 'block-list',
-            mix: { block: 'blocks', elem: 'list' }
+            elem: 'wide-menu',
+            content: [
+                { block: 'nav' },
+                {
+                    block: 'block-list',
+                    mix: { block: 'blocks', elem: 'list' }
+                }
+            ]
         },
         page.block ? {
             block: 'block-info',
@@ -30,8 +36,7 @@ block('blocks').content()(function() {
                     setName: page.setName
                 }, page.block)
         } : {
-            block: 'article-wrap',
-            mix: { block: 'blocks', elem: 'data' },
+            block: 'article-wrap'
         }
     ]
 });

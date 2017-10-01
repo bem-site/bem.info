@@ -1,7 +1,9 @@
 .article-wrap
 {
+    flex: 1 0;
+
     margin-bottom: -119px;
-    padding: 62px 32px 126px 111px;
+    padding: 62px 32px 126px 80px;
 
     background: url(article-wrap.png) repeat;
 }

@@ -15,8 +15,7 @@ block('article-wrap').mode('article')(
                 block: 'social-likes',
                 params: page.head.meta,
                 lang: data.lang
-            },
-            isShowRewind && { block: 'article-rewind', mods: { type: 'static', lang: data.lang } }
+            }
         ];
     })
 );
