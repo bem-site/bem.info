@@ -5,13 +5,11 @@
 }
 
 /* block level (begin) */
-.article p,
-.article ul,
-.article ol,
-.article hr,
-.article blockquote,
-.article pre,
-.article table
+.article__paragraph,
+.article__list,
+.article__thematic-break,
+.article__blockquote,
+.article__table
 {
     clear: left;
 
@@ -21,30 +19,25 @@
 
 @media print
 {
-    .article p,
-    .article ul,
-    .article ol,
-    .article hr,
-    .article blockquote,
-    .article pre,
-    .article table
+    .article__paragraph,
+    .article__list,
+    .article__thematic-break,
+    .article__blockquote,
+    .article__table
     {
         max-width: auto;
     }
 }
 
-.article li,
-.article ul ul,
-.article ul ol,
-.article ol ul,
-.article ol ol
+.article__list-item,
+.article__list .article__list
 {
     margin: 0;
 }
 
 @media print
 {
-    .article li
+    .article__list-item
     {
         margin-top: 8px;
     }
@@ -52,21 +45,20 @@
 
 @media screen
 {
-    .article p + ol,
-    .article p + ul
+    .article__paragraph + .article__list
     {
         margin-top: -16px;
     }
 }
 
-.article hr::before
+.article__thematic-break::before
 {
     visibility: hidden;
 
     content: '-';
 }
 
-.article hr
+.article__thematic-break
 {
     margin: -16px 0 16px;
     padding: 0;
@@ -81,8 +73,7 @@
 /* heading (begin) */
 .article__heading
 {
-    font-family: 'OpenSans-SemiBold', Arial, sans-serif;
-    font-weight: 300;
+    font: 300 100% 'OpenSans-SemiBold', Arial, sans-serif;
 
     position: relative;
     z-index: 1;
@@ -92,7 +83,7 @@
     padding: 0;
 }
 
-.article__heading_1
+.article__heading_level_1
 {
     font-size: 50px;
     line-height: 64px;
@@ -102,15 +93,7 @@
     margin: 0 0 43px -2px;
 }
 
-/*
-    .article__info
-    {
-        margin-bottom: 39px;
-
-        font-size: 14px;
-    }
-*/
-.article__heading_2
+.article__heading_level_2
 {
     font-size: 40px;
     line-height: 48px;
@@ -118,7 +101,7 @@
     margin: 48px 0 16px -1px;
 }
 
-.article__heading_3
+.article__heading_level_3
 {
     font-size: 34px;
     line-height: 48px;
@@ -126,7 +109,7 @@
     margin: 34px 0 14px;
 }
 
-.article__heading_4
+.article__heading_level_4
 {
     font-size: 28px;
     line-height: 32px;
@@ -134,7 +117,7 @@
     margin: 29px 0 19px;
 }
 
-.article__heading_5
+.article__heading_level_5
 {
     font-size: 24px;
     line-height: 32px;
@@ -142,7 +125,7 @@
     margin: 30px 0 18px;
 }
 
-.article__heading_6
+.article__heading_level_6
 {
     font-size: 20px;
     line-height: 32px;
@@ -150,7 +133,7 @@
     margin: 31px 0 17px;
 }
 
-.article__heading_1 + .article__heading_2
+.article__heading_level_1 + .article__heading_level_2
 {
     position: relative;
     top: -7px;
@@ -158,22 +141,22 @@
     margin-bottom: 9px;
 }
 
-.article__heading_1 + .article__heading_2 + .article__heading_3
+.article__heading_level_1 + .article__heading_level_2 + .article__heading_level_3
 {
     margin-top: 11px;
 }
 
-.article__heading_3 + .article__heading_4
+.article__heading_level_3 + .article__heading_level_4
 {
     margin-top: 27px;
 }
 
-.article__heading_4 + .article__heading_5
+.article__heading_level_4 + .article__heading_level_5
 {
     margin-top: -2px;
 }
 
-.article__heading_5 + .article__heading_6
+.article__heading_level_5 + .article__heading_level_6
 {
     margin-top: -1px;
 }
@@ -207,7 +190,7 @@
     display: inline-block;
 }
 
-.article__heading[class] code /* повышаю вес селектора, чтобы перебить .article code */
+.article__heading[class] .article__inline-code /* повышаю вес селектора, чтобы перебить .article code */
 {
     font: inherit;
 
@@ -217,7 +200,7 @@
 /* heading (end) */
 
 /* table (begin) */
-.article table
+.article__table
 {
     width: 100%;
 
@@ -228,7 +211,7 @@
     word-break: keep-all;
 }
 
-.article table::after
+.article__table::after
 {
     display: block;
 
@@ -237,8 +220,7 @@
     content: '\00a0';
 }
 
-.article th,
-.article td
+.article__table-cell
 {
     text-align: left;
     vertical-align: top;
@@ -246,8 +228,7 @@
     border-bottom: 1px solid rgb(233, 233, 233);
 }
 
-.article th::after,
-.article td::after
+.article__table-cell::after
 {
     height: 1px;
 
@@ -256,19 +237,19 @@
     border-bottom: 1px solid rgb(251, 251, 251);
 }
 
-.article th
+.article__table-cell_heading
 {
     font-weight: 600;
 
     padding: 0 16px 6px 0;
 }
 
-.article th:last-child
+.article__table-cell_heading:last-child
 {
     padding-right: 0;
 }
 
-.article td
+.article__table-cell
 {
     padding: 9px 16px 6px 0;
 }
@@ -276,45 +257,48 @@
 /* table (end) */
 
 /* blockquote and pre (begin) */
-.article blockquote,
-.article pre
+.article__blockquote
 {
     padding: 0 16px;
 
     border-left: 4px solid #e9e8e6;
+    background: rgba(240, 240, 235, 0.4);
 }
 
-/* Не используем цвета для print версии, см. https://github.com/bem-site/bem.info/issues/166*/
-@media screen
-{
-    .article blockquote,
-    .article pre
-    {
-        background: rgba(240, 240, 235, 0.4);
-    }
-}
-
-.article pre code
+.article__code
 {
     font: 16px/1.5 'Courier New', monospace;
 
-    display: block;
+    display: inline-block;
     overflow-x: auto;
+    clear: left;
 
-    width: 100%;
-    padding: 6px 0 2px;
+    box-sizing: border-box;
+    max-width: calc(100% - 60px);
+    margin: 0 0 3px;
+    padding: 6px 20px 5px 16px;
 
     white-space: pre;
 
     color: #657b83;
-    border: 0;
-    background: none;
+    border-left: 4px solid #e9e8e6;
+    background: rgba(240, 240, 235, 0.4);
 }
 
-.article blockquote pre
+.article__code_correctHeight
 {
-    border: 0;
-    background: none;
+    margin-bottom: 11px;
+}
+
+/* Не используем цвета для print версии, см. https://github.com/bem-site/bem.info/issues/166*/
+@media print
+{
+    .article__blockquote,
+    .article__code
+    {
+        border: 0;
+        background: none;
+    }
 }
 
 /* Copy/paste from //cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css
@@ -408,14 +392,14 @@
 /* blockquote and pre (end) */
 
 /* inline (begin) */
-.article strong
+.article__strong
 {
     font: 16px/1.9 'OpenSans-SemiBold', Arial, sans-serif;
 }
 
 @media print
 {
-    .article strong
+    .article__strong
     {
         font-size: inherit;
         line-height: inherit;
@@ -423,12 +407,12 @@
 }
 
 /* Image height MUST be multiple 16px */
-.article img
+.article__image
 {
     margin: 7px 0 -1px;
 }
 
-.article code
+.article__inline-code
 {
     font-family: 'Courier New', monospace;
     font-size: 16px;
@@ -444,20 +428,20 @@
 
 @media print
 {
-    .article code
+    .article__inline-code
     {
         line-height: inherit;
     }
 }
 
 /* links (begin) */
-.article a
+.article__link
 {
     transition: all 0.3s;
     text-decoration: none;
 }
 
-.article a[name]:empty
+.article__link[name]:empty
 {
     display: block;
 
@@ -467,17 +451,17 @@
 
 @media screen
 {
-    .article a:link
+    .article__link:link
     {
         color: #04b;
     }
 
-    .article a:visited
+    .article__link:visited
     {
         color: #909;
     }
 
-    .article a:hover
+    .article__link:hover
     {
         color: #c00;
     }
@@ -485,17 +469,17 @@
 
 @media print
 {
-    .article a
+    .article__link
     {
         color: inherit;
     }
 
-    .article a[name]
+    .article__link[name]
     {
         display: none;
     }
 
-    .article a::after
+    .article__link::after
     {
         content: ' (' attr(href) ')';
     }
@@ -535,7 +519,7 @@
         right: 0;
     }
 
-    .article img
+    .article__image
     {
         width: 100%;
     }
@@ -544,25 +528,25 @@
 /*mobile*/
 @media (max-width: 480px)
 {
-    .article__heading_1
+    .article__heading_level_1
     {
         font-size: 36px;
 
         margin-bottom: 0;
     }
 
-    .article__heading_2
+    .article__heading_level_2
     {
         font-size: 28px;
     }
 
-    .article__heading_3
+    .article__heading_level_3
     {
         font-size: 20px;
     }
 
-    .article blockquote,
-    .article pre
+    .article__blockquote,
+    .article__code
     {
         margin: 10px -10px;
         padding: 10px;
@@ -574,11 +558,11 @@
 /* Portrait */
 @media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait)
 {
-    .article pre code,
-    .article strong,
-    .article code,
-    .article p,
-    .article ul
+    .article__code,
+    .article__strong,
+    .article__inline-code,
+    .article__paragraph,
+    .article__list
     {
         font-size: 18px;
         line-height: 27px;
@@ -588,11 +572,11 @@
 /* Landscape */
 @media (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape)
 {
-    .article pre code,
-    .article strong,
-    .article code,
-    .article p,
-    .article ul
+    .article__code,
+    .article__strong,
+    .article__inline-code,
+    .article__paragraph,
+    .article__list
     {
         font-size: 10px;
     }
