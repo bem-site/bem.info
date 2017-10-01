@@ -14,9 +14,9 @@ block('blocks').content()(function() {
 
     return [
         {
-            elem: 'wide-menu',
+            elem: 'side-menu',
             content: [
-                { block: 'nav' },
+                { block: 'nav', type: 'side-menu' },
                 {
                     block: 'block-list',
                     mix: { block: 'blocks', elem: 'list' }

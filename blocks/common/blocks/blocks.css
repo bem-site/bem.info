@@ -6,14 +6,16 @@
     width: 100%;
 }
 
-.blocks__wide-menu
+.blocks__side-menu
 {
+    width: 20%;
+
     background: #f3f1ed;
 }
 
-.blocks__wide-menu .nav__item .nav__link
+.blocks__side-menu .nav
 {
-    color: #000;
+    width: 100%;
 }
 
 @media print

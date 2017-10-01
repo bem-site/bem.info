@@ -7,7 +7,7 @@
     box-sizing: border-box;
     width: 100%;
     min-height: 40px;
-    margin: 0 0 -35px 0;
+    margin: 0 0 -35px;
     padding: 40px 32px 40px 111px; /* 111px + 32px padding-left/right in article-wrap */
 
     background: #f3f1ed;

@@ -7,6 +7,9 @@
 
     display: block;
 
+    box-sizing: border-box;
+    width: 20%;
+
     margin: 0;
     padding: 0;
 
@@ -34,6 +37,11 @@
     color: #000;
 
     background-color: #e6e5e2;
+}
+
+.nav_side-menu .nav__link
+{
+    color: #000;
 }
 
 .nav__link

@@ -2,6 +2,9 @@
 {
     flex: 1 0;
 
+    box-sizing: border-box;
+    width: 80%;
+
     margin-bottom: -119px;
     padding: 62px 32px 126px 80px;
 
