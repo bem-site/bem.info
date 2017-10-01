@@ -1,4 +1,9 @@
 module.exports = `
+
+upstream bemforum_{LANG}_server {
+    server https://127.0.0.1:8079 fail_timeout=0;
+}
+
 server {
     listen 8080;
 
@@ -13,6 +18,9 @@ server {
 
     location / {
         try_files $uri $uri/ @redirects;
+    }
+    location /forum/ {
+        proxy_pass http://bemforum_{LANG}_server;
     }
     location @redirects {
         {REDIRECTS}
