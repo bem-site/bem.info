@@ -11,7 +11,7 @@ server {
 
     root /var/www/bem.info/{LANG};
 
-    location ~* \.svgd$ {
+    location ~* .svgd$ {
         add_header 'Content-Type' 'image/svg+xml';
         add_header 'Content-Encoding' 'deflate';
     }
