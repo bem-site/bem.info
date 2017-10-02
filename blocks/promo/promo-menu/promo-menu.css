@@ -19,9 +19,7 @@
 
 .promo-menu__menu_type_columns
 {
-    column-width: 200px;
-    column-count: 4;
-    column-gap: 30px;
+    columns: 200px 4 30px;
 }
 
 .promo-menu__item
