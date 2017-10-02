@@ -269,8 +269,8 @@
 {
     font: 16px/1.5 'Courier New', monospace;
 
-    display: inline-block;
     overflow-x: auto;
+    float: left;
     clear: left;
 
     box-sizing: border-box;
