@@ -28,18 +28,15 @@ const model = require(env.PATH_TO_MODEL || './content/model.js');
 const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru', 'uk'];
 
 const CACHE = './.cache';
+const STATIC = './static';
+const OUTPUT = './output';
 
+const CACHE_DIR_PREFIX = CACHE + '/gorshochek-cache-';
 const CACHE_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = CACHE + '/gorshochek-cache-' + language;
     return prev;
 }, {});
-const DATA_DIR_PREFIX = CACHE + '/gorshochek-data-';
-const DATA_DIRS = LANGUAGES.reduce((prev, language) => {
-    prev[language] = DATA_DIR_PREFIX + language;
-    return prev;
-}, {});
-const STATIC = './static';
-const OUTPUT = './output';
+
 const OUTPUT_ROOT = OUTPUT + '/bem.info/';
 const OUTPUT_DIRS = LANGUAGES.reduce((prev, language) => {
     prev[language] = OUTPUT_ROOT + language;
@@ -84,7 +81,7 @@ function compilePages(lang, bundle) {
             bemhtml: BEMHTML[lang][bundle],
             bundle,
             static: STATIC,
-            source: DATA_DIRS[lang],
+            source: CACHE_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
             destinationRoot: OUTPUT + (env.YENV === 'production' ? '/bem.info/static' : ''),
             langs: LANGUAGES,
@@ -147,7 +144,7 @@ function data() {
                 GORSHOCHEK_CACHE_FOLDER: CACHE_DIRS[lang],
                 modelPath: modelPath,
                 host: `https://${lang}.bem.info`,
-                dest: DATA_DIRS[lang],
+                dest: CACHE_DIRS[lang],
                 root: env.YENV === 'production' ? '' : '/bem.info/' + lang,
                 token: env.TOKEN,
                 DEBUG: env.DEBUG,
@@ -187,7 +184,7 @@ function copyStatic() {
 gulp.task('copy-static', copyStatic);
 
 gulp.task('copy-sitemap-xml', () => Q.all(LANGUAGES.map(lang => {
-    return gulp.src(path.join(DATA_DIRS[lang], 'sitemap.xml'))
+    return gulp.src(path.join(CACHE_DIRS[lang], 'sitemap.xml'))
         .pipe(gulp.dest(path.join(OUTPUT_DIRS[lang])));
 })));
 
@@ -197,7 +194,7 @@ gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
 
 gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
     // FIXME: use '/static/*' then https://github.com/bem-site/gorshochek/issues/49 would be resolved
-    return gulp.src(path.join(DATA_DIRS[lang], '/*.{gif,png,jpg,svg,svgz,svgd}'))
+    return gulp.src(path.join(CACHE_DIRS[lang], '/*.{gif,png,jpg,svg,svgz,svgd}'))
         .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
@@ -227,8 +224,8 @@ gulp.task('watch', () => {
             bemhtml = LANGUAGES.map(lang => path.join(cwd, BEMHTML[lang][bundle]));
 
         watch(bemtree.concat(bemhtml, [
-                path.join(DATA_DIR_PREFIX + '*', bundle, '**'),
-                path.join(DATA_DIR_PREFIX + '*', bundle + '.js')
+                path.join(CACHE_DIR_PREFIX + '*', bundle, '**'),
+                path.join(CACHE_DIR_PREFIX + '*', bundle + '.js')
             ]),
             batch((event, done) => {
                 bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
