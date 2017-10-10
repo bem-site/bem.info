@@ -108,6 +108,23 @@ module.exports = [
     bundle: 'methodology'
   },
   {
+    url: '/methodology/html/',
+    site: '/methodology/',
+    title: 'HTML',
+    subtitle: {
+      ru: 'Разметка в БЭМ-терминах',
+      uk: '',
+      en: '',
+    },
+    tags: ['methodology'],
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-html/bem-for-html.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-css/bem-for-js.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/bem-for-html/bem-for-html.en.md',
+    },
+    bundle: 'methodology'
+  },
+  {
     url: '/methodology/js/',
     site: '/methodology/',
     subtitle: {
@@ -166,7 +183,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.ru.md',
       // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.uk.md',
-      // en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/redefinition-levels/redefinition-levels.en.md',
     },
     bundle: 'methodology'
   },
@@ -187,7 +204,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.ru.md',
       // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.uk.md',
-      // en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/block-modification/block-modification.en.md',
     },
     bundle: 'methodology'
   },
@@ -1579,7 +1596,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/specification.ru.md',
       // uk: '',
-      // en: ''
+      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/specification.en.md',
     },
     tags: ['deps'],
     bundle: 'platform'
@@ -1723,9 +1740,9 @@ module.exports = [
     url: '/platform/tutorials/start-with-project-stub/',
     site: '/platform/tutorials/',
     title: {
-      ru: 'Создаём свой проект на БЭМ',
-      uk: 'Створюємо свій проект на БЕМ',
-      en: 'Starting your own BEM project',
+      ru: 'Создаём статический БЭМ-проект',
+      uk: 'Створюємо статичний БЕМ-проект',
+      en: 'Starting a static BEM project',
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.ru.md',
@@ -1736,11 +1753,27 @@ module.exports = [
     bundle: 'platform'
   },
   {
+    url: '/platform/tutorials/start-with-bem-express/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Создаём динамический БЭМ-проект',
+      uk: 'Створюємо динамічний БЕМ-проект',
+      en: 'Starting a dynamic BEM project',
+    },
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-bem-express/start-with-bem-express.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-bem-express/start-with-bem-express.en.md',
+    },
+    tags: ['tutorials'],
+    bundle: 'platform'
+  },
+  {
     url: '/platform/tutorials/i-bem/',
     site: '/platform/tutorials/i-bem/',
     title: {
-      ru: 'Справочное руководство по i-bem.js',
-      uk: 'Довідкове керівництво по i-bem.js',
+      ru: 'Справочное руководство i-bem.js',
+      uk: 'Довідкове керівництво i-bem.js',
       en: 'i-bem.js tutorial',
     },
     source: {
