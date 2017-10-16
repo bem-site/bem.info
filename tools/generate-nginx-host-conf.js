@@ -1,6 +1,5 @@
-const nginxServerSkel = require('./nginx-server-template');
 
-function genNginxRedirectDirectives(list) {
+module.exports = function genNginxRedirectDirectives(list) {
     return list.map(item => [
             'rewrite ',
             '"' + item.url.map(url => `^${url}`).join('|') + '"',
@@ -9,7 +8,3 @@ function genNginxRedirectDirectives(list) {
         ].join(' ') + ';'
     ).join('\n');
 }
-
-module.exports = (lang, redirects) => nginxServerSkel
-    .replace(/{LANG}/g, lang)
-    .replace(/{REDIRECTS}/g, genNginxRedirectDirectives(redirects));
