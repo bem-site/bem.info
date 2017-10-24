@@ -275,7 +275,7 @@
 
     box-sizing: border-box;
     max-width: calc(100% - 60px);
-    margin: 0 0 3px;
+    margin: 0 0 5px;
     padding: 6px 20px 5px 16px;
 
     white-space: pre;
@@ -287,7 +287,7 @@
 
 .article__code_correctHeight
 {
-    margin-bottom: 11px;
+    margin-bottom: 13px;
 }
 
 /* Не используем цвета для print версии, см. https://github.com/bem-site/bem.info/issues/166*/
