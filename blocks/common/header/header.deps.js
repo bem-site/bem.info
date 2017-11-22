@@ -1,5 +1,12 @@
 ({
+    mustDeps: ['i-bem-dom'],
     shouldDeps: [
+        'form',
+        {
+            block: 'keyboard',
+            elem: 'codes'
+        },
+        'input',
         'search',
         'breadcrumbs',
         'logo',

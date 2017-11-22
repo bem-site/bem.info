@@ -15,12 +15,14 @@ block('breadcrumbs').mode('dropdown')(function() {
 
         return {
             elem: 'item',
-            mix: { elem: 'version' },
+            mix: [
+                { elem: 'version', js: { url: data.root + site.replace(version + '/', '') } },
+                'i-bem' // TODO: get rid of mix with i-bem
+            ],
             content: {
                 block: 'select',
                 mods: { mode: 'radio-check', theme: 'islands', size: 'm' },
                 text: '',
-                js: { url: data.root + site.replace(version + '/', '') },
                 options: options.reverse()
             }
         };
