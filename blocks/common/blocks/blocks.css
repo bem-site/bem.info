@@ -1,22 +1,21 @@
 .blocks
 {
     display: flex;
+    flex-direction: row;
+
+    width: 100%;
 }
 
-@media (min-width: 781px)
+.blocks__side-menu
 {
-    .blocks__list
-    {
-        min-width: 220px;
-        margin-top: -41px;
-    }
+    width: 20%;
 
-    .blocks__data
-    {
-        width: 100%;
-        margin: 0;
-        padding: 62px 20px 20px 50px;
-    }
+    background: #f3f1ed;
+}
+
+.blocks__side-menu .nav
+{
+    width: 100%;
 }
 
 @media print
