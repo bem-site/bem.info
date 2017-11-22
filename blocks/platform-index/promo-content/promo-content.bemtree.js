@@ -1,4 +1,8 @@
 block('promo-content').content()(function() {
+    var data = this.data,
+        site = data.page.site,
+        lang = data.lang;
+
     return [
         {
             block: 'promo-header',
@@ -31,10 +35,34 @@ block('promo-content').content()(function() {
                     ]
                 }
             ]
-        }, {
+        },
+        {
             block: 'promo-section',
             mods: { color: 'black' },
             content: [
+                {
+                    block: 'promo-menu',
+                    title: 'platform',
+                    mods: { inverted: true },
+                    legos: false,
+                    data: data.pages.filter(function(page) {
+                        if (!new RegExp('^' + site).test(page.url) || page.nav === false) {
+                            return false;
+                        }
+
+                        return page.url.split('/').length === site.split('/').length + 1;
+                    }).map(function(item) {
+                        var title = typeof item.title === 'string' ? item.title : item.title[lang],
+                            subtitle = item.subtitle ?
+                                (typeof item.subtitle === 'string' ? item.subtitle : item.subtitle[lang]) : '';
+
+                        return {
+                            text: title,
+                            subtitle: subtitle,
+                            url: data.root + item.url
+                        }
+                    })
+                },
                 {
                     block: 'promo-features',
                     content: [

@@ -1,5 +1,6 @@
 module.exports = {
     'promo-menu': {
-        methodology: 'Методологiя'
+        methodology: 'Методологiя',
+        platform: 'Платформа'
     }
 };
