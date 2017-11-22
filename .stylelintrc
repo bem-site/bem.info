@@ -62,7 +62,14 @@
                 ]
             }
         ],
-        "declaration-block-no-redundant-longhand-properties": true,
+        "declaration-block-no-redundant-longhand-properties": [
+            true,
+            {
+                "ignoreShorthands": [
+                    "columns"
+                ]
+            }
+        ],
         "declaration-block-no-shorthand-property-overrides": true,
         "declaration-block-semicolon-newline-after": "always-multi-line",
         "declaration-block-semicolon-space-after": "always-single-line",
