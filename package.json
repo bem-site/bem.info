@@ -9,9 +9,9 @@
     "node": ">=4.1"
   },
   "devDependencies": {
-    "bem-components": "^3.1.3",
+    "bem-components": "^6.0.1",
     "bem-config": "^3.2.3",
-    "bem-core": "^3.2.0",
+    "bem-core": "^4.2.1",
     "bem-lib-site-view": "bem-site/bem-lib-site-view",
     "bem-naming": "^1.0.1",
     "bem-stat-counters": "^1.5.1",
@@ -24,8 +24,8 @@
     "enb": "^1.5.1",
     "enb-bem-i18n": "^1.1.1",
     "enb-bem-techs": "^2.2.2",
-    "enb-bemxjst": "7.7.6",
-    "enb-bemxjst-i18n": "tadatuta/enb-bemxjst-i18n#acd48e231ba6f23bf00274b56d403b18ec338a4c",
+    "enb-bemxjst": "8.6.7",
+    "enb-bemxjst-i18n": "tadatuta/enb-bemxjst-i18n#0dc65e72afaa7cc9282eddc0335d98de8193bed3",
     "enb-borschik": "^3.0.0",
     "enb-css": "^1.2.2",
     "enb-js": "^1.1.1",
