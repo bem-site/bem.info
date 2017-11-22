@@ -5,7 +5,7 @@ block('promo-menu').content()(function(node, ctx) {
         {
             elem: 'main',
             content: [
-                {
+                ctx.legos && {
                     block: 'legos',
                     mods: ctx.legosMods
                 },

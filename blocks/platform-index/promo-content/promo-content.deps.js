@@ -4,6 +4,7 @@
         'promo-action',
         'promo-section',
         'promo-features',
-        'bem'
+        'bem',
+        'promo-menu'
     ]
 })

@@ -19,12 +19,14 @@
 
 .promo-menu__menu_type_columns
 {
-    columns: 200px 4 30px;
+    column-width: 200px;
+    column-count: 4;
+    column-gap: 30px;
 }
 
 .promo-menu__item
 {
-    display: inline-block;
+    display: block;
 
     min-width: 200px;
 }
@@ -90,4 +92,36 @@
     padding: 0 0 20px;
 
     color: rgba(0, 0, 0, 0.6);
+}
+
+.promo-menu_inverted .promo-menu__menu-title,
+.promo-menu_inverted .promo-menu__title,
+.promo-menu_inverted .promo-menu__subtitle
+{
+    color: #fff;
+}
+
+.promo-menu_inverted .promo-menu__number,
+.promo-menu_inverted .promo-menu__menu-title
+{
+    display: none;
+}
+
+.promo-menu_inverted .promo-menu__menu_type_columns
+{
+    column-width: 200px;
+    column-count: 2;
+    column-gap: 30px;
+}
+
+.promo-menu_inverted.promo-menu
+{
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.promo-menu_inverted .promo-menu__main
+{
+    padding-bottom: 0;
 }
