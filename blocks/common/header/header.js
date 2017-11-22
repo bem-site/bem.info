@@ -1,20 +1,22 @@
-modules.define('header', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], function(provide, BEMDOM, Form, KeyCodes) {
+modules.define('header', ['i-bem-dom', 'form', 'keyboard__codes', 'input', 'search'],
+    function(provide, bemDom, Form, KeyCodes, Input, Search) {
 
-    provide(BEMDOM.decl(this.name, {
+    provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
                 inited: function() {
-                    this.input = this.findBlockInside('input');
-                    this.search = this.findBlockInside('search');
-                    this.toggle = this.findElem('toggle');
+                    this.input = this.findChildBlock(Input);
+                    this.search = this.findChildBlock(Search);
+                    this.toggle = this._elem('toggle');
                 }
             },
             opened: {
                 'true': function() {
                     var mq = window.matchMedia('all and (max-width: 780px)');
-                    this.search.setMod('opened', true);
-                    this.setMod(this.toggle, 'active', true);
-                    this.bindToDoc('keydown', function(e) {
+                    this.search.setMod('opened');
+                    this.toggle.setMod('active');
+
+                    this._domEvents(bemDom.doc).on('keydown', function(e) {
                         // Close search then ESC pressed
                         if (e.keyCode === KeyCodes.ESC) {
                             this.input.delMod('focused');
@@ -22,16 +24,16 @@ modules.define('header', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], fun
                         }
                     });
                     if (!mq.matches) {
-                        this.input.setMod('focused', true);
+                        this.input.setMod('focused');
                     }
 
                 },
                 '': function() {
                     var _this = this;
 
-                    _this.unbindFromDoc('keydown');
+                    _this._domEvents(bemDom.doc).un('keydown');
                     _this.search.delMod('opened');
-                    _this.delMod(_this.toggle, 'active', true);
+                    _this.toggle.delMod('active');
                     _this.delMod('opened').delMod('focused');
                     // setTimeout is used to have time to handle submit button on input's focus lost
                     setTimeout(function() {
@@ -42,22 +44,23 @@ modules.define('header', ['i-bem__dom', 'form', 'keyboard__codes', 'input'], fun
             }
         }
     }, {
-        live: function() {
-            this.liveBindTo('open', 'click', function() {
+        lazyInit: true,
+        onInit: function() {
+            this._domEvents('open').on('click', function() {
                 this.setMod('opened');
             });
-            this.liveBindTo('toggle', 'click', function() {
+            this._domEvents('toggle').on('click', function() {
                 this.toggleMod('opened');
             });
-            this.liveBindTo('submit', 'click', function() {
+            this._domEvents('submit').on('click', function() {
                 this.delMod('opened');
             });
-            this.liveBindTo('close', 'click', function() {
+            this._domEvents('close').on('click', function() {
                 this.delMod('opened');
             });
 
             // Если будет >1 инпута, их надо будет различать
-            this.liveInitOnBlockInsideEvent({ modName: 'focused', modVal: '*' }, 'input', function() {
+            this._events().on({ modName: 'focused', modVal: '*' }, 'input', function() {
                 this.setMod('focused');
             });
         }

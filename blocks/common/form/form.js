@@ -1,6 +1,6 @@
-modules.define('form', ['i-bem__dom', 'events'], function(provide, BEMDOM, events) {
+modules.define('form', ['i-bem-dom', 'events'], function(provide, bemDom, events) {
 
-provide(BEMDOM.decl(this.name, {
+provide(bemDom.declBlock(this.name, {
     onSubmit: function(e) {
         var event = new events.Event('submit');
 
@@ -8,8 +8,9 @@ provide(BEMDOM.decl(this.name, {
         event.isDefaultPrevented() && e.preventDefault();
     }
 }, {
-    live: function() {
-        this.liveBindTo('submit', this.prototype.onSubmit);
+    lazyInit: true,
+    onInit: function() {
+        this._events().on('submit', this.prototype.onSubmit);
     }
 }));
 
