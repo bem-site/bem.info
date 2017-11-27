@@ -1,6 +1,6 @@
 # Сайт bem.info
 
-Главный сайт по БЭМ методологии.
+Официальный сайт БЭМ.
 
 ## Установка
 
@@ -25,9 +25,8 @@ $ TOKEN={pass your github token here} gulp data
 $ gulp
 ```
 
-Пойти браузером на http://localhost:8008/bem.info/ru/
+Открыть в браузере [http://localhost:8008/bem.info/ru/](http://localhost:8008/bem.info/ru/).
 
 ## Модель данных
 
-* [Модель данных](./content/model.json) для сайта
-
+[Модель данных](./content/model.js) для сайта.
