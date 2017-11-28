@@ -3,7 +3,7 @@ block('footer')(
 
     elem('copyright-ya')(
         tag()('a'),
-        attrs()(function() {
+        addAttrs()(function() {
             return { href: this.ctx.url };
         })
     )

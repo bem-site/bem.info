@@ -5,5 +5,5 @@ block('promo-header')(
     elem('subtitle').tag()('span'),
     elem('text').tag()('p'),
     elem('link').tag()('a'),
-    mix()({ block: 'page-bg' })
+    addMix()({ block: 'page-bg' })
 );

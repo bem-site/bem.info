@@ -1,7 +1,7 @@
 block('promo-problems')(
     elem('img')(
         tag()('img'),
-        attrs()(function() {
+        addAttrs()(function() {
             var ctx = this.ctx;
 
             return this.extend(applyNext(), {

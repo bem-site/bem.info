@@ -8,7 +8,7 @@ block('article-rewind')(
     // TODO: use elems('prev-link', 'next-link'), see https://github.com/bem/bem-xjst/issues/184
     elem('*').match(function() { return ['prev-link', 'next-link'].indexOf(this.elem) !== -1 })(
         tag()('a'),
-        attrs()(function() { return { href: this.ctx.url }})
+        addAttrs()(function() { return { href: this.ctx.url }})
     )//,
 
     // elem('prev').content()('Предыдущая страница'), //TODO: i18n

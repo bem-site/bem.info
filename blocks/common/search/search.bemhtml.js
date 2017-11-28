@@ -1,7 +1,7 @@
 block('search')(
-    js()(true),
+    addJs()(true),
     elem('submit')(
         tag()('button'),
-        attrs()({ type: 'submit' })
+        addAttrs()({ type: 'submit' })
     )
 );

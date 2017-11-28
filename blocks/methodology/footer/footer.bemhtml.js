@@ -1,1 +1,1 @@
-block('footer').mix()({ block: 'page-bg' });
+block('footer').addMix()({ block: 'page-bg' });

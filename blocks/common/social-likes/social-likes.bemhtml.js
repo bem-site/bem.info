@@ -38,7 +38,7 @@ block('social-likes')(
     }),
     elem('service')(
         tag()('a'),
-        attrs()(function() {
+        addAttrs()(function() {
             var url = this.ctx.url,
                 lang = this.ctx.lang,
                 baseUrl = 'https://' + lang + '.bem.info',
