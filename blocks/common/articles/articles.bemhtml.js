@@ -8,7 +8,7 @@ block('articles')(
     elem('link').tag()('a'),
     elem('photo')(
         tag()('img'),
-        attrs()(function() {
+        addAttrs()(function() {
             return this.extend(applyNext(), {
                 alt: this.ctx.alt,
                 src: this.freeze(this.ctx.src)

@@ -1,7 +1,7 @@
 block('promo-features')(
     elem('image')(
         tag()('img'),
-        attrs()(function() {
+        addAttrs()(function() {
             return this.extend(applyNext(), {
                 src: this.freeze(this.ctx.url)
             });

@@ -5,7 +5,7 @@ block('promo-crossroad')(
 
     elem('title-link')(
         tag()('a'),
-        attrs()(function() {
+        addAttrs()(function() {
             return this.extend(applyNext(), {
                 href: this.ctx.url
             });
@@ -14,7 +14,7 @@ block('promo-crossroad')(
 
     elem('img')(
         tag()('img'),
-        attrs()(function() {
+        addAttrs()(function() {
             return this.extend(applyNext(), {
                 src: this.freeze(this.ctx.url)
             });
@@ -25,7 +25,7 @@ block('promo-crossroad')(
 
     elem('text-link')(
         tag()('a'),
-        attrs()(function() {
+        addAttrs()(function() {
             return this.extend(applyNext(), {
                 href: this.ctx.url
             });

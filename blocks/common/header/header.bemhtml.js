@@ -1,8 +1,8 @@
 block('header')(
-    js()(true),
+    addJs()(true),
 
     elem('toggle')(
-        mix()({ block: 'search-icon' }),
+        addMix()({ block: 'search-icon' }),
         content()(function() {
             return [
                 { elem: 'toggle-line' }

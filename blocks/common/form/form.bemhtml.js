@@ -1,7 +1,7 @@
 block('form')(
     tag()('form'),
-    js()(true),
-    attrs()(function() {
+    addJs()(true),
+    addAttrs()(function() {
         var ctx = this.ctx;
 
         return this.extend(

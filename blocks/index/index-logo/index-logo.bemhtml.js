@@ -1,6 +1,6 @@
 block('index-logo')(
     tag()('img'),
-    attrs()(function() {
+    addAttrs()(function() {
         return this.extend(applyNext(), {
             src: this.ctx.url
         });
