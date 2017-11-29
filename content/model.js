@@ -363,11 +363,155 @@ module.exports = [
     prev: false
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/api/',
+    site: '/toolbox/enb/',
+    title: {
+      ru: 'API',
+      uk: 'API',
+      en: 'API'
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/api.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/techs/',
+    site: '/toolbox/enb/',
+    title: {
+      ru: 'Технологии для работы с файлами',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/techs.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/cli/',
+    site: '/toolbox/enb/',
+    title: {
+      ru: 'Использование из командной строки',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/cli.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/terms/',
+    site: '/toolbox/enb/',
+    title: {
+      ru: 'Терминология',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/terms.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/guides/',
+    site: '/toolbox/enb/guides/',
+    title: {
+      ru: 'Как собрать проект',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/build-project.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/guides/build-project/',
+    site: '/toolbox/enb/guides/',
+    title: {
+      ru: 'Как собрать проект',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/build-project.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/guides/write-tech/',
+    site: '/toolbox/enb/guides/',
+    title: {
+      ru: 'Как написать технологию',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/write-tech.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/guides/express/',
+    site: '/toolbox/enb/guides/',
+    title: {
+      ru: 'Автоматизация с помощью express',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/express.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/packages/package-index/',
+    site: '/toolbox/enb/packages/',
+    title: {
+      ru: 'Пакеты ENB',
+      // uk: '',
+      // en: ''
+    },
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/tree/bem-info-data/tools/enb/enb-package-index/enb-package-index.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['enb'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-techs',
     description: {
-      ru: 'Пакет для сборки проектов, в основе которых лежит БЭМ методология',
+      ru: 'Пакет для сборки проектов, в основе которых лежит методология БЭМ',
       // uk: '',
       // en: '',
     },
@@ -380,15 +524,15 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/build-bundle/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/build-bundle/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Сборка бандла',
       uk: 'Збірка бандла',
       en: 'Build bundle',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle.ru.md',
       // uk: '',
       // en: '',
     },
@@ -396,15 +540,15 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/build-page/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/build-page/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Сборка страницы',
       uk: 'Збірка сторінки',
       en: 'Build page',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-page.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-page.ru.md',
       // uk: '',
       // en: '',
     },
@@ -412,15 +556,15 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/build-merged-bundle/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/build-merged-bundle/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Сборка merged-бандла',
       uk: 'Збірка merged-бандла',
       en: 'Build merged bundle',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle.ru.md',
       // uk: '',
       // en: '',
     },
@@ -428,15 +572,15 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/build-dist/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/build-dist/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Сборка дистрибутива',
       uk: 'Збірка дистрибутиву',
       en: 'Build distribution',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist.ru.md',
       // uk: '',
       // en: '',
     },
@@ -444,8 +588,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/api/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/api/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/api.ru.md',
@@ -456,8 +600,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/changelog/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -472,8 +616,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/migration-2/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/migration-2/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Миграция на 2.0',
       uk: 'Міграція на 2.0',
@@ -488,8 +632,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-techs/migration-1/',
-    site: '/toolbox/enb/enb-bem-techs/',
+    url: '/toolbox/enb/packages/enb-bem-techs/migration-1/',
+    site: '/toolbox/enb/packages/enb-bem-techs/',
     title: {
       ru: 'Миграция на 1.0',
       uk: 'Міграція на 1.0',
@@ -504,8 +648,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-js/',
-    site: '/toolbox/enb/enb-js/',
+    url: '/toolbox/enb/packages/enb-js/',
+    site: '/toolbox/enb/packages/enb-js/',
     title: 'enb-js',
     source: {
       ru: 'https://github.com/enb/enb-js/blob/master/README.md',
@@ -516,8 +660,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-js/api/',
-    site: '/toolbox/enb/enb-js/',
+    url: '/toolbox/enb/packages/enb-js/api/',
+    site: '/toolbox/enb/packages/enb-js/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-js/blob/master/api.ru.md',
@@ -528,8 +672,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-js/changelog/',
-    site: '/toolbox/enb/enb-js/',
+    url: '/toolbox/enb/packages/enb-js/changelog/',
+    site: '/toolbox/enb/packages/enb-js/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -544,8 +688,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-modules/',
-    site: '/toolbox/enb/enb-modules/',
+    url: '/toolbox/enb/packages/enb-modules/',
+    site: '/toolbox/enb/packages/enb-modules/',
     title: 'enb-modules',
     source: {
       ru: 'https://github.com/enb/enb-modules/blob/master/README.md',
@@ -556,8 +700,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-modules/changelog/',
-    site: '/toolbox/enb/enb-modules/',
+    url: '/toolbox/enb/packages/enb-modules/changelog/',
+    site: '/toolbox/enb/packages/enb-modules/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -572,8 +716,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-css/',
-    site: '/toolbox/enb/enb-css/',
+    url: '/toolbox/enb/packages/enb-css/',
+    site: '/toolbox/enb/packages/enb-css/',
     title: 'enb-css',
     description: {
       ru: 'Поддержка CSS для ENB',
@@ -589,8 +733,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-css/ie/',
-    site: '/toolbox/enb/enb-css/',
+    url: '/toolbox/enb/packages/enb-css/ie/',
+    site: '/toolbox/enb/packages/enb-css/',
     title: {
       ru: 'Сборка бандла для IE',
       uk: 'Збірка бандла для IE',
@@ -605,8 +749,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-css/api/',
-    site: '/toolbox/enb/enb-css/',
+    url: '/toolbox/enb/packages/enb-css/api/',
+    site: '/toolbox/enb/packages/enb-css/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-css/blob/master/docs/api.ru.md',
@@ -617,8 +761,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-css/changelog/',
-    site: '/toolbox/enb/enb-css/',
+    url: '/toolbox/enb/packages/enb-css/changelog/',
+    site: '/toolbox/enb/packages/enb-css/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -633,8 +777,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-stylus/',
-    site: '/toolbox/enb/enb-stylus/',
+    url: '/toolbox/enb/packages/enb-stylus/',
+    site: '/toolbox/enb/packages/enb-stylus/',
     title: 'enb-stylus',
     description: {
       ru: 'Поддержка Stylus для ENB',
@@ -650,8 +794,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-stylus/api/',
-    site: '/toolbox/enb/enb-stylus/',
+    url: '/toolbox/enb/packages/enb-stylus/api/',
+    site: '/toolbox/enb/packages/enb-stylus/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-stylus/blob/master/api.ru.md',
@@ -662,8 +806,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-stylus/changelog/',
-    site: '/toolbox/enb/enb-stylus/',
+    url: '/toolbox/enb/packages/enb-stylus/changelog/',
+    site: '/toolbox/enb/packages/enb-stylus/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -678,8 +822,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bemxjst/',
-    site: '/toolbox/enb/enb-bemxjst/',
+    url: '/toolbox/enb/packages/enb-bemxjst/',
+    site: '/toolbox/enb/packages/enb-bemxjst/',
     title: 'enb-bemxjst',
     description: {
       ru: 'Поддержка bem-xjst для ENB',
@@ -695,8 +839,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bemxjst/api/',
-    site: '/toolbox/enb/enb-bemxjst/',
+    url: '/toolbox/enb/packages/enb-bemxjst/api/',
+    site: '/toolbox/enb/packages/enb-bemxjst/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bemxjst/blob/master/api.ru.md',
@@ -707,8 +851,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bemxjst/changelog/',
-    site: '/toolbox/enb/enb-bemxjst/',
+    url: '/toolbox/enb/packages/enb-bemxjst/changelog/',
+    site: '/toolbox/enb/packages/enb-bemxjst/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -723,8 +867,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bh/',
-    site: '/toolbox/enb/enb-bh/',
+    url: '/toolbox/enb/packages/enb-bh/',
+    site: '/toolbox/enb/packages/enb-bh/',
     title: 'enb-bh',
     description: {
       ru: 'Поддержка BH для ENB',
@@ -740,8 +884,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bh/api/',
-    site: '/toolbox/enb/enb-bh/',
+    url: '/toolbox/enb/packages/enb-bh/api/',
+    site: '/toolbox/enb/packages/enb-bh/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bh/blob/master/api.ru.md',
@@ -752,8 +896,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bh/changelog/',
-    site: '/toolbox/enb/enb-bh/',
+    url: '/toolbox/enb/packages/enb-bh/changelog/',
+    site: '/toolbox/enb/packages/enb-bh/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -768,8 +912,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bh/migration-1/',
-    site: '/toolbox/enb/enb-bh/',
+    url: '/toolbox/enb/packages/enb-bh/migration-1/',
+    site: '/toolbox/enb/packages/enb-bh/',
     title: {
       ru: 'Миграция на 1.0',
       uk: 'Міграція на 1.0',
@@ -784,8 +928,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-i18n/',
-    site: '/toolbox/enb/enb-bem-i18n/',
+    url: '/toolbox/enb/packages/enb-bem-i18n/',
+    site: '/toolbox/enb/packages/enb-bem-i18n/',
     title: 'enb-bem-i18n',
     description: {
       ru: 'Поддержка i18n для ENB',
@@ -801,8 +945,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-i18n/api/',
-    site: '/toolbox/enb/enb-bem-i18n/',
+    url: '/toolbox/enb/packages/enb-bem-i18n/api/',
+    site: '/toolbox/enb/packages/enb-bem-i18n/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bem-i18n/blob/master/api.ru.md',
@@ -813,8 +957,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-i18n/changelog/',
-    site: '/toolbox/enb/enb-bem-i18n/',
+    url: '/toolbox/enb/packages/enb-bem-i18n/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-i18n/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -829,8 +973,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-borschik/',
-    site: '/toolbox/enb/enb-borschik/',
+    url: '/toolbox/enb/packages/enb-borschik/',
+    site: '/toolbox/enb/packages/enb-borschik/',
     title: 'enb-borschik',
     description: {
       ru: 'Поддержка borschik для ENB',
@@ -846,8 +990,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-borschik/api/',
-    site: '/toolbox/enb/enb-borschik/',
+    url: '/toolbox/enb/packages/enb-borschik/api/',
+    site: '/toolbox/enb/packages/enb-borschik/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-borschik/blob/master/api.ru.md',
@@ -858,8 +1002,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-borschik/changelog/',
-    site: '/toolbox/enb/enb-borschik/',
+    url: '/toolbox/enb/packages/enb-borschik/changelog/',
+    site: '/toolbox/enb/packages/enb-borschik/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -874,8 +1018,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-specs/',
-    site: '/toolbox/enb/enb-bem-specs/',
+    url: '/toolbox/enb/packages/enb-bem-specs/',
+    site: '/toolbox/enb/packages/enb-bem-specs/',
     title: 'enb-bem-specs',
     description: {
       ru: 'Поддержка bem-specs для ENB',
@@ -891,8 +1035,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-specs/changelog/',
-    site: '/toolbox/enb/enb-bem-specs/',
+    url: '/toolbox/enb/packages/enb-bem-specs/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-specs/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -907,8 +1051,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-tmpl-specs/',
-    site: '/toolbox/enb/enb-bem-tmpl-specs/',
+    url: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
+    site: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
     title: 'enb-bem-tmpl-specs',
     description: {
       ru: 'Поддержка bem-tmpl-specs для ENB',
@@ -924,8 +1068,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-tmpl-specs/changelog/',
-    site: '/toolbox/enb/enb-bem-tmpl-specs/',
+    url: '/toolbox/enb/packages/enb-bem-tmpl-specs/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -940,8 +1084,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-examples/',
-    site: '/toolbox/enb/enb-bem-examples/',
+    url: '/toolbox/enb/packages/enb-bem-examples/',
+    site: '/toolbox/enb/packages/enb-bem-examples/',
     title: 'enb-bem-examples',
     description: {
       ru: 'Поддержка bem-examples для ENB',
@@ -957,8 +1101,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-examples/changelog/',
-    site: '/toolbox/enb/enb-bem-examples/',
+    url: '/toolbox/enb/packages/enb-bem-examples/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-examples/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -973,8 +1117,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-docs/',
-    site: '/toolbox/enb/enb-bem-docs/',
+    url: '/toolbox/enb/packages/enb-bem-docs/',
+    site: '/toolbox/enb/packages/enb-bem-docs/',
     title: 'enb-bem-docs',
     description: {
       ru: 'Поддержка bem-docs для ENB',
@@ -990,8 +1134,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-bem-docs/changelog/',
-    site: '/toolbox/enb/enb-bem-docs/',
+    url: '/toolbox/enb/packages/enb-bem-docs/changelog/',
+    site: '/toolbox/enb/packages/enb-bem-docs/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -1006,8 +1150,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-magic-platform/',
-    site: '/toolbox/enb/enb-magic-platform/',
+    url: '/toolbox/enb/packages/enb-magic-platform/',
+    site: '/toolbox/enb/packages/enb-magic-platform/',
     title: 'enb-magic-platform',
     description: {
       ru: 'Поддержка magic-platform для ENB',
@@ -1023,8 +1167,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-magic-platform/changelog/',
-    site: '/toolbox/enb/enb-magic-platform/',
+    url: '/toolbox/enb/packages/enb-magic-platform/changelog/',
+    site: '/toolbox/enb/packages/enb-magic-platform/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -1039,8 +1183,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-magic-factory/',
-    site: '/toolbox/enb/enb-magic-factory/',
+    url: '/toolbox/enb/packages/enb-magic-factory/',
+    site: '/toolbox/enb/packages/enb-magic-factory/',
     title: 'enb-magic-factory',
     description: {
       ru: 'Поддержка magic-factory для ENB',
@@ -1056,8 +1200,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/enb-magic-factory/changelog/',
-    site: '/toolbox/enb/enb-magic-factory/',
+    url: '/toolbox/enb/packages/enb-magic-factory/changelog/',
+    site: '/toolbox/enb/packages/enb-magic-factory/',
     title: {
       ru: 'Изменения',
       uk: 'Змінення',
@@ -3847,4 +3991,418 @@ module.exports = [
       en: '/',
     }
   },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/',
+      en: '/toolbox/enb/packages/enb-bem-techs/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/build-bundle/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/build-bundle/',
+      en: '/toolbox/enb/packages/enb-bem-techs/build-bundle/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/build-page/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/build-page/',
+      en: '/toolbox/enb/packages/enb-bem-techs/build-page/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/build-merged-bundle/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/build-merged-bundle/',
+      en: '/toolbox/enb/packages/enb-bem-techs/build-merged-bundle/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/build-dist/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/build-dist/',
+      en: '/toolbox/enb/packages/enb-bem-techs/build-dist/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/api/',
+      en: '/toolbox/enb/packages/enb-bem-techs/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-techs/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/migration-2/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/migration-2/',
+      en: '/toolbox/enb/packages/enb-bem-techs/migration-2/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-techs/migration-1/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-techs/migration-1/',
+      en: '/toolbox/enb/packages/enb-bem-techs/migration-1/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-js/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-js/',
+      en: '/toolbox/enb/packages/enb-js/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-js/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-js/api/',
+      en: '/toolbox/enb/packages/enb-js/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-js/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-js/changelog/',
+      en: '/toolbox/enb/packages/enb-js/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-modules/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-modules/',
+      en: '/toolbox/enb/packages/enb-modules/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-modules/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-modules/changelog/',
+      en: '/toolbox/enb/packages/enb-modules/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-css/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-css/',
+      en: '/toolbox/enb/packages/enb-css/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-css/ie/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-css/ie/',
+      en: '/toolbox/enb/packages/enb-css/ie/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-css/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-css/api/',
+      en: '/toolbox/enb/packages/enb-css/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-css/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-css/changelog/',
+      en: '/toolbox/enb/packages/enb-css/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-stylus/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-stylus/',
+      en: '/toolbox/enb/packages/enb-stylus/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-stylus/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-stylus/api/',
+      en: '/toolbox/enb/packages/enb-stylus/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-stylus/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-stylus/changelog/',
+      en: '/toolbox/enb/packages/enb-stylus/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bemxjst/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bemxjst/',
+      en: '/toolbox/enb/packages/enb-bemxjst/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/packages/enb-bemxjst/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bemxjst/api/',
+      en: '/toolbox/enb/packages/enb-bemxjst/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bemxjst/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bemxjst/changelog/',
+      en: '/toolbox/enb/packages/enb-bemxjst/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bh/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bh/',
+      en: '/toolbox/enb/packages/enb-bh/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bh/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bh/api/',
+      en: '/toolbox/enb/packages/enb-bh/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bh/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bh/changelog/',
+      en: '/toolbox/enb/packages/enb-bh/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bh/migration-1/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bh/migration-1/',
+      en: '/toolbox/enb/packages/enb-bh/migration-1/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-i18n/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-i18n/',
+      en: '/toolbox/enb/packages/enb-bem-i18n/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-i18n/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-i18n/api/',
+      en: '/toolbox/enb/packages/enb-bem-i18n/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-i18n/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-i18n/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-i18n/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-borschik/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-borschik/',
+      en: '/toolbox/enb/packages/enb-borschik/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-borschik/api/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-borschik/api/',
+      en: '/toolbox/enb/packages/enb-borschik/api/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-borschik/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-borschik/changelog/',
+      en: '/toolbox/enb/packages/enb-borschik/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-specs/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-specs/',
+      en: '/toolbox/enb/packages/enb-bem-specs/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-specs/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-specs/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-specs/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-tmpl-specs/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
+      en: '/toolbox/enb/packages/enb-bem-tmpl-specs/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-tmpl-specs/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-tmpl-specs/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-tmpl-specs/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-examples/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-examples/',
+      en: '/toolbox/enb/packages/enb-bem-examples/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-examples/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-examples/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-examples/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-docs/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-docs/',
+      en: '/toolbox/enb/packages/enb-bem-docs/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-bem-docs/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-bem-docs/changelog/',
+      en: '/toolbox/enb/packages/enb-bem-docs/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-magic-platform/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-magic-platform/',
+      en: '/toolbox/enb/packages/enb-magic-platform/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-magic-platform/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-magic-platform/changelog/',
+      en: '/toolbox/enb/packages/enb-magic-platform/changelog/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-magic-factory/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-magic-factory/',
+      en: '/toolbox/enb/packages/enb-magic-factory/'
+    }
+  },
+  {
+    url: [
+      '/toolbox/enb/enb-magic-factory/changelog/'
+    ],
+    now: {
+      ru: '/toolbox/enb/packages/enb-magic-factory/changelog/',
+      en: '/toolbox/enb/packages/enb-magic-factory/changelog/'
+    }
+  }
 ]);
