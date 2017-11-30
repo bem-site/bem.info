@@ -30,7 +30,8 @@
 }
 
 .article__list-item,
-.article__list .article__list
+.article__list .article__list,
+.article__list-item .article__paragraph:only-child
 {
     margin: 0;
 }
