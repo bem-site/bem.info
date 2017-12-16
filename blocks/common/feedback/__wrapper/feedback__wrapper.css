@@ -1,0 +1,9 @@
+.feedback__wrapper {
+    display: none;
+
+    margin: 0 16px;
+}
+
+.feedback__wrapper_visible {
+    display: block;
+}

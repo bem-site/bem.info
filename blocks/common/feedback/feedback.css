@@ -1,0 +1,12 @@
+.feedback {
+    width: 360px;
+    height: 100%;
+}
+
+.feedback__heading.heading {
+    margin: 10px 0 50px;
+}
+
+.feedback__close.button {
+    margin: 10px 0 20px;
+}

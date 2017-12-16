@@ -231,6 +231,9 @@ gulp.task('watch', () => {
     });
 });
 
+var got = require('got'),
+    qs = require('querystring');
+
 gulp.task('browser-sync', () => {
     browserSync.create().init({
         files: OUTPUT + '/**',
@@ -242,6 +245,27 @@ gulp.task('browser-sync', () => {
         notify: false,
         ui: false,
         middleware: function(req, res, next) {
+            if (req.url.includes('/doc-feedback/')) {
+                var backendUrl = 'http://localhost:8090' + req.url.substr(req.url.indexOf('/doc-feedback/'));
+                if (req.method.toLowerCase() === 'get') {
+                    return got.stream(backendUrl)
+                        .pipe(res);
+                } else {
+                    var body = '';
+                    req
+                        .on('data', chunk => {
+                            body += chunk;
+                        })
+                        .on('end', () => {
+                            got.post(backendUrl, { query: qs.parse(body) })
+                                .then(() => res.end('ok'))
+                                .catch(console.error);
+                        });
+
+                    return;
+                }
+            }
+
             if (req.url.match(/svgd/)) {
                 res.setHeader('Content-Type', 'image/svg+xml');
                 res.setHeader('Content-Encoding', 'deflate')

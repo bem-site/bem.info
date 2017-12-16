@@ -1,0 +1,16 @@
+.doc-rating {
+    font-size: 20px;
+    line-height: 1.25;
+
+    display: none;
+}
+
+.doc-rating_js_inited {
+    display: block;
+}
+
+.doc-rating__stars {
+    display: inline-block;
+
+    vertical-align: middle;
+}

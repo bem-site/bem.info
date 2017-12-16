@@ -1,0 +1,13 @@
+.doc-rating__value {
+    font-size: 16px;
+
+    display: inline-block;
+
+    margin-right: 5px;
+
+    vertical-align: middle;
+}
+
+.doc-rating__value::after {
+    content: ' ';
+}

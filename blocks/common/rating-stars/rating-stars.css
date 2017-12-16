@@ -1,0 +1,37 @@
+.rating-stars {
+    position: relative;
+}
+
+.rating-stars__gray {
+    color: #c5c5c5;
+}
+
+.rating-stars__item {
+    cursor: pointer;
+}
+
+.rating-stars__item:hover .rating-stars__item {
+    color: #c5c5c5;
+}
+
+.rating-stars__gray .rating-stars__item:hover {
+    color: #f9b708;
+}
+
+.rating-stars__yellow {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+
+    overflow: hidden;
+
+    color: #f9b708;
+}
+
+.rating-stars__yellow::before {
+    content: '★★★★★';
+}
+
+.rating-stars:hover .rating-stars__yellow {
+    display: none;
+}

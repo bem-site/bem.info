@@ -1,0 +1,11 @@
+.feedback__body {
+    padding-bottom: 30px;
+}
+
+.feedback__textarea {
+    height: 200px;
+}
+
+.feedback__radio-group {
+    padding-bottom: 30px;
+}
