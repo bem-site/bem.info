@@ -1,84 +1,15 @@
 .lang-switcher
 {
     font-size: 14px;
-}
 
-.lang-switcher__item
-{
-    display: inline-block;
-
-    margin-right: 18px;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #fff;
-}
-
-.lang-switcher__item:last-child
-{
-    margin-right: 0;
-}
-
-.lang-switcher__link
-{
-    transition: all 0.3s;
-    text-decoration: none;
-
-    color: rgba(255, 255, 255, 0.55);
-}
-
-.lang-switcher__link:hover
-{
-    color: #fff;
-}
-
-/*
-.lang-switcher
-{
-    position: relative;
-    top: -18px;
-
-    display: inline-block;
-}
-
-.lang-switcher .select__button
-{
-    font: inherit;
     letter-spacing: 0.2em;
 
-    padding: 3px 3px 3px 1px;
-
-    color: #fff;
-    background: none;
-}
-
-.lang-switcher .select__button::before
-{
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: none;
-}
-
-.lang-switcher .select__button.button_hovered::before
-{
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.lang-switcher .select__button.button_pressed::before
-{
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.lang-switcher.select_theme_islands .select__tick
-{
-    top: 4px;
-    right: 4px;
-
     color: #fff;
 }
-*/
 
 /*tablet*/
+
+/*
 @media all and (max-width: 780px)
 {
     .lang-switcher
@@ -109,3 +40,4 @@
         display: none;
     }
 }
+*/
