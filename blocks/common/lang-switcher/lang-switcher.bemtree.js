@@ -1,25 +1,36 @@
 block('lang-switcher').content()(function() {
-    var data = this.data,
-        page = data.page;
+    var data = this.data;
 
-    return data.langs.reduce(function(result, lang) {
-        if (page.hidden && page.hidden.indexOf(lang) > -1) {
-            return result;
-        }
+    return [
+        data.lang.toUpperCase(),
+        {
+            elem: 'change',
+            js: { lang: data.lang },
+            mix: [
+                'i-bem' // TODO: get rid of mix with i-bem
+            ],
+            content: {
+                block: 'select',
+                mods: {
+                    header: true,
+                    mode: 'radio-check',
+                    theme: 'islands',
+                    size: 'm'
+                },
+                text: '',
+                options: data.langs.reduce(function(acc, lang) {
+                    (lang !== data.lang) && acc.push({
+                        val: lang,
+                        text: {
+                            en: 'English',
+                            ru: 'Русский',
+                            uk: 'Українська'
+                        }[lang]
+                    });
 
-        var host = process.env.YENV === 'production' ? '//' + lang + '.bem.info' : '/bem.info/' + lang,
-            isCurrent = data.lang === lang;
-
-        result.push({
-            elem: 'item',
-            elemMods: isCurrent && { current: true },
-            content: isCurrent ? lang : {
-                elem: 'link',
-                attrs: { href: host + page.url },
-                content: lang
+                    return acc;
+                }, [])
             }
-        });
-
-        return result;
-    }, [], this);
+        }
+    ];
 });

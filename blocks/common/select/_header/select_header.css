@@ -1,0 +1,32 @@
+.select_header .select__button
+{
+    font: inherit;
+
+    color: inherit;
+    background: inherit;
+}
+
+.select_header .select__button::before,
+.select_header .select__button.button_hovered::before,
+.select_header .select__button.button_hovered,
+.select_header .select__button.button_focused::before,
+.select_header .select__button.button_focused,
+.select_header .select__button.button_pressed::before,
+.select_header .select__button.button_pressed
+{
+    border: none;
+    background: inherit;
+}
+
+.select_header .select__button.button_theme_islands.button_size_m .button__text
+{
+    visibility: hidden;
+
+    width: 0;
+    margin: 0;
+}
+
+.select_header.select_theme_islands .select__tick
+{
+    background-image: url(select_header.svg);
+}
