@@ -1,0 +1,11 @@
+.feedback__feedback-done {
+    display: none;
+
+    margin: 16px;
+
+    text-align: center;
+}
+
+.feedback__feedback-done_visible {
+    display: block;
+}
