@@ -1,3 +1,0 @@
-block('breadcrumbs')(
-    addJs()(true)
-);
