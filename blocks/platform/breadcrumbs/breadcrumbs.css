@@ -15,12 +15,6 @@
     vertical-align: inherit;
 }
 
-.breadcrumbs__version .select__button.button_theme_islands.button_size_m
-{
-    font: inherit;
-    font-size: 17px;
-}
-
 .breadcrumbs__version .select__button
 {
     position: relative;

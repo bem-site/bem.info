@@ -1,29 +1,32 @@
 block('breadcrumbs').mode('dropdown')(function() {
     var data = this.data,
         page = data.page,
+        root = data.root,
         site = page.site;
 
     if (page.type === 'lib' || page.type === 'versioned') {
-        var version = page.version,
-            options = [];
-
-        data.libs[page.library].forEach(function(ver) {
-            if (ver !== version) {
-                options.push({ val: ver, text: ver });
-            }
-        });
+        var version = page.version;
 
         return {
             elem: 'item',
-            mix: [
-                { elem: 'version', js: { url: data.root + site.replace(version + '/', '') } },
-                'i-bem' // TODO: get rid of mix with i-bem
-            ],
+            mix: { elem: 'version' },
             content: {
                 block: 'select',
-                mods: { mode: 'radio-check', theme: 'islands', size: 'm' },
+                mods: {
+                    header: true,
+                    mode: 'radio-check',
+                    theme: 'islands',
+                    size: 'l'
+                },
                 text: '',
-                options: options.reverse()
+                options: data.libs[page.library].reduce(function(acc, ver) {
+                    (ver !== version) && acc.push({
+                        val: root + site.replace(version + '/', '') + ver + '/',
+                        text: ver
+                    });
+
+                    return acc;
+                }, []).reverse()
             }
         };
     }
