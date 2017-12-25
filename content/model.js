@@ -354,9 +354,9 @@ module.exports = [
       en: 'ENB — a tool for building web projects based on BEM methodology'
     },
     source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-overview/enb-overview.ru.md',
       // uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.ru.md', // TODO
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb-overview.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-overview/enb-overview.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox',
@@ -499,9 +499,9 @@ module.exports = [
       // en: ''
     },
     source: {
-      ru: 'https://github.com/bem-site/bem-method/tree/bem-info-data/tools/enb/enb-package-index/enb-package-index.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-packages-index/enb-packages-index.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-packages-index/enb-packages-index.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
