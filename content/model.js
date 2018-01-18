@@ -491,12 +491,12 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/packages/package-index/',
-    site: '/toolbox/enb/packages/',
+    url: '/toolbox/enb/packages/',
+    site: '/toolbox/enb/',
     title: {
       ru: 'Пакеты ENB',
       // uk: '',
-      // en: ''
+      // en: 'ENB packages'
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-packages-index/enb-packages-index.ru.md',
