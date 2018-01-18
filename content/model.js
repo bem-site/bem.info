@@ -293,28 +293,6 @@ module.exports = [
     bundle: 'methodology'
   },
   {
-    url: '/methodology/articles/',
-    site: '/methodology/',
-    subtitle: {
-      ru: '',
-      uk: 'showing press badge',
-      en: 'showing press badge'
-    },
-    title: {
-      ru: 'Статьи',
-      uk: 'Статті',
-      en: 'Articles',
-    },
-    source: {
-      ru: './content/methodology/articles.ru.js',
-      uk: './content/methodology/articles.uk.js',
-      en: './content/methodology/articles.en.js',
-    },
-    tags: ['methodology'],
-    type: 'articles',
-    bundle: 'methodology'
-  },
-  {
     url: '/methodology/faq/',
     site: '/methodology/',
     title: 'FAQ',
@@ -491,8 +469,8 @@ module.exports = [
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/packages/package-index/',
-    site: '/toolbox/enb/packages/',
+    url: '/toolbox/enb/packages/',
+    site: '/toolbox/enb/',
     title: {
       ru: 'Пакеты ENB',
       // uk: '',
