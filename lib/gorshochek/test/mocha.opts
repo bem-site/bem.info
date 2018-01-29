@@ -1,0 +1,5 @@
+--reporter spec
+--ui bdd
+--growl
+--require ./test/setup.js
+--timeout 1000

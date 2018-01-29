@@ -1,0 +1,101 @@
+{
+  "name": "gorshochek",
+  "version": "2.8.2",
+  "description": "Set of plugins for BEM site data generation",
+  "keywords": [
+    "BEM",
+    "bem",
+    "bem-site",
+    "website",
+    "data",
+    "generation",
+    "generator",
+    "plugins",
+    "gulp"
+  ],
+  "bugs": {
+    "url": "https://github.com/bem-site/gorshochek/issues",
+    "email": "andrey.kuznetsov48@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bem-site/gorshochek.git"
+  },
+  "author": "Andrey Kuznetsov <andrey.kuznetsov48@yandex.ru> (http://github.com/tormozz48)",
+  "maintainers": [
+    "Andrey Kuznetsov <andrey.kuznetsov48@yandex.ru> (http://github.com/tormozz48)"
+  ],
+  "contributors": [
+    "Andrey Kuznetsov <andrey.kuznetsov48@yandex.ru> (http://github.com/tormozz48)",
+    "Nikolay Ilchenko <tavria@yandex-team.ru> (http://github.com/tavriaforever)",
+    "Gela Konstantinova <gela-d@yandex-team.ru> (http://github.com/gela-d)",
+    "Vladimir Grinenko <tadatuta@yandex-team.ru> (http://github.com/tadatuta)"
+  ],
+  "engines": {
+    "node": ">= 4.x"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "eslint": "gulp eslint",
+    "jscs": "gulp jscs",
+    "lint": "gulp lint",
+    "jsdoc": "gulp esdoc",
+    "publish-doc": "gulp publish-doc",
+    "deps": "npm install && gulp compile",
+    "mocha": "NODE_ENV=testing mocha",
+    "test": "NODE_ENV=testing ./node_modules/.bin/istanbul cover _mocha",
+    "clean": "rm -rf ./.builder && rm -rf ./data"
+  },
+  "readmeFilename": "README.md",
+  "license": {
+    "type": "MPL-2.0",
+    "url": "https://github.com/bem-site/gorshochek/blob/master/LICENSE"
+  },
+  "dependencies": {
+    "bem-xjst": "^8.8.1",
+    "borschik-hash": "^1.1.1",
+    "cheerio": "^0.20.0",
+    "debug": "^2.2.0",
+    "deep-diff": "^0.3.x",
+    "freeze": "vithar/freeze",
+    "fs-extra": "^0.26.x",
+    "github": "^0.2.4",
+    "github-slugger": "^1.2.0",
+    "got": "^6.1.1",
+    "highlight.js": "^9.12.0",
+    "js2xmlparser": "^1.0.0",
+    "lodash": "^4.x",
+    "md-to-bemjson": "^0.7.1",
+    "node-eval": "^1.0.0",
+    "q": "^2.0.3",
+    "rsync-slim": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "esdoc": "^1.0.0",
+    "eslint-plugin-arrow-function": "^2.0.0",
+    "estraverse": "^4.x",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-esdoc": "0.x",
+    "gulp-eslint": "^1.0.0",
+    "gulp-gh-pages": "^0.5.2",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "istanbul": "^0.3.x",
+    "jscs": "^2.5.0",
+    "jshint-stylish": "^2.0.1",
+    "memorystream": "^0.3.1",
+    "mocha": "^2.3.4",
+    "mocha-lcov-reporter": "^1.0.0",
+    "nock": "^6.x",
+    "proxyquire": "^1.7.3",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
+}
