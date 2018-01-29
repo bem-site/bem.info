@@ -9,6 +9,7 @@
     "node": ">=4.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "bem-components": "^6.0.1",
     "bem-config": "^3.2.3",
     "bem-core": "^4.2.1",
@@ -32,8 +33,10 @@
     "enb-modules": "^0.4.1",
     "eslint": "^4.8.0",
     "eslint-config-pedant": "^0.10.0",
+    "eslint-plugin-arrow-function": "^2.0.0",
     "eslint-plugin-bem-xjst": "^2.2.0",
     "fs-extra": "^4.0.2",
+    "got": "^8.0.3",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.8",
@@ -51,7 +54,8 @@
     "ym": "^0.1.2"
   },
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run lint && cd lib/gorshochek && npm test",
+    "postinstall": "cd lib/gorshochek && npm i",
     "lint": "eslint . && jscs . && stylelint blocks/**/*.css",
     "docker-build": "docker build -t registry.yandex.net/bem/bem.info:$user$npm_package_version .",
     "docker-push": "docker push registry.yandex.net/bem/bem.info:$user$npm_package_version"

@@ -1,4 +1,5 @@
 **/*.deps.js
 libs/**
+lib/gorshochek
 *bundles/**
 output/**
