@@ -68,6 +68,7 @@ function configNodes(config, isProd, bundle, levels) {
             [techs.bemhtml, {
                 sourceSuffixes: ['bemhtml.js', 'bemhtml'],
                 target: '?.{lang}.bemhtml.js',
+                engineOptions: { escapeContent: false },
                 lang: '{lang}'
             }],
 
