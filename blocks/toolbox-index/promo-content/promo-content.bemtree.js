@@ -70,31 +70,29 @@ block('promo-content').content()(function() {
                             content: 'SDK'
                         }
                     },
-                    {
+                    [
+                        'bem-walk',
+                        'bem-config',
+                        'bem-bemjson-node',
+                        'bem-entity-name',
+                        'bem-naming-entity',
+                        'bem-naming-cell-stringify',
+                        'bem-naming-cell-pattern-parser',
+                        'bem-naming-file-stringify',
+                        'bem-decl',
+                        'bem-bemjson-to-decl',
+                        'bem-bemjson-to-decl',
+                        'bem-import-notation',
+                        'bem-graph',
+                        'bem-deps',
+                        'bem-cell',
+                        'bem-file',
+                        'bem-bundle'
+                    ].map(item => ({
                         elem: 'link',
-                        attrs: { href: 'sdk/bem-naming/' },
-                        content: 'bem-naming'
-                    },
-                    {
-                        elem: 'link',
-                        attrs: { href: 'sdk/bem-config/' },
-                        content: 'bem-config'
-                    },
-                    {
-                        elem: 'link',
-                        attrs: { href: 'sdk/bem-fs-scheme/' },
-                        content: 'bem-fs-scheme'
-                    },
-                    {
-                        elem: 'link',
-                        attrs: { href: 'sdk/bem-deps/' },
-                        content: 'bem-deps'
-                    },
-                    {
-                        elem: 'link',
-                        attrs: { href: 'sdk/bem-walk/' },
-                        content: 'bem-walk'
-                    }
+                        attrs: { href: 'sdk/' + item + '/' },
+                        content: item
+                    }))
                 ]
             }
         }
