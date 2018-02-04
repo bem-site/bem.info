@@ -28,7 +28,7 @@ modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'ratin
             var _this = this,
                 href = window.location.href,
                 // support dev mode on top of browser-sync
-                handlerPrefix = window.location.pathname.indexOf('.bem.info/') ? '/bem.info' : '';
+                handlerPrefix = window.location.host.indexOf('.bem.info') > -1 ? '' : '/bem.info';
 
             $.get(handlerPrefix + '/doc-feedback/?doc=' + encodeURIComponent(href))
                 .then(function(respond) {
