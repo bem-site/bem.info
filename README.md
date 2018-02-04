@@ -33,11 +33,11 @@ $ gulp
 
 ## Сборка библиотек для сайта
 
-```
+```sh
 cd ~
 mkdir bem
 cd bem
-# положить https://yadi.sk/d/dVbFge5n3RXyHJ в .bemrc
+curl https://gist.githubusercontent.com/tadatuta/8754de1e7eba5b6006c09beefe5be91a/raw/299c215d420de4db7615fb6ca3376cc269646fbe/.bemrc.js > .bemrc.js
 
 git clone git@github.com:bem-site/bem-lib-site-data.git
 cd bem-lib-site-data
@@ -49,7 +49,7 @@ git clone git@github.com:bem-site/bem.info-data.git
 
 ### bem-core
 
-```
+```sh
 git clone git@github.com:bem/bem-core.git bem-core-4.2.1 -b v4.2.1
 bem-lib-site-data/bin/bem-lib-site-data bem-core-4.2.1
 cd bem.info-data
