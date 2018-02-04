@@ -33,7 +33,7 @@ modules.define('feedback',
                     text: feedbackText,
                     rating: vote
                 },
-                handlerPrefix = window.location.pathname.indexOf('/bem.info/') ? '/bem.info' : '';
+                handlerPrefix = window.location.pathname.indexOf('.bem.info/') ? '/bem.info' : '';
 
             $.post(handlerPrefix + '/doc-feedback/', data)
                 .then(() => {
