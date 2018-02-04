@@ -1,6 +1,6 @@
 ({
-    mustDeps: ['i-bem-dom'],
-    shouldDeps: [
+    mustDeps: [
+        'i-bem-dom',
         'form',
         {
             block: 'keyboard',

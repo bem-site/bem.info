@@ -8,11 +8,10 @@
 
 .footer__layout
 {
-    font-size: 90%;
-
     display: flex;
     justify-content: center;
 
+    margin: 0 80px 0 220px;
     padding: 40px;
 
     color: #fff;
@@ -52,37 +51,18 @@
 }
 
 /*tablet*/
-@media (max-width: 780px)
+@media (max-width: 800px)
 {
     .footer__layout
     {
-        padding: 40px 10%;
-    }
-
-    .footer__community
-    {
-        font-size: 15px;
-    }
-}
-
-/*mobile*/
-@media (max-width: 480px)
-{
-    .footer__layout
-    {
-        display: block;
-
-        padding: 40px 12px;
-    }
-
-    .footer__community
-    {
-        display: flex;
-        justify-content: space-around;
+        margin: 0;
+        padding: 20px 15px;
     }
 
     .footer__channel
     {
-        margin-right: 0;
+        font-size: 14px;
+
+        margin-right: 15px;
     }
 }

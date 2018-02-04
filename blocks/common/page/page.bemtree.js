@@ -1,6 +1,12 @@
 block('page').content()(function() {
     var data = this.data,
-        page = data.page;
+        page = data.page,
+        content = page.type === 'promo' ? { block: 'promo-content' } :
+            page.type === 'lib' ? { block: 'blocks' } :
+            [
+                { block: 'nav' },
+                { block: 'article-wrap' }
+            ];
 
     return [
         {
@@ -9,32 +15,7 @@ block('page').content()(function() {
         {
             block: 'sitemap'
         },
-        {
-            block: 'content',
-            content: function() {
-                if (page.type === 'promo') {
-                    return { block: 'promo-content' };
-                }
-
-                if (page.type === 'lib') {
-                    return { block: 'blocks' };
-                }
-
-                return [
-                    {
-                        elem: 'wrap',
-                        content: [
-                            { block: 'nav' },
-                            { block: 'article-wrap' }
-                        ]
-                    },
-                    {
-                        block: 'article-rewind',
-                        mods: { type: 'static', lang: data.lang }
-                    }
-                ];
-            }()
-        },
+        content,
         {
             block: 'footer'
         },

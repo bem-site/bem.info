@@ -8,10 +8,7 @@ block('footer').content()(function() {
     }
 
     return [
-        {
-            block: 'legos',
-            mods: { inverted: apply('legos-color') }
-        },
+        apply('legos'),
         apply('promo'),
         {
             elem: 'layout',
@@ -19,15 +16,15 @@ block('footer').content()(function() {
                 {
                     elem: 'community',
                     content: [
-                        lang === 'ru' && {
-                            elem: 'channel',
-                            url: 'https://web-standards.slack.com/messages/bem/',
-                            content: 'Slack'
-                        },
                         {
                             elem: 'channel',
                             url: 'https://telegram.me/bem_' + lang,
                             content: 'Telegram'
+                        },
+                        lang === 'ru' && {
+                            elem: 'channel',
+                            url: 'https://web-standards.slack.com/messages/bem/',
+                            content: 'Slack'
                         },
                         {
                             elem: 'channel',
@@ -45,8 +42,4 @@ block('footer').content()(function() {
             ]
         }
     ];
-});
-
-block('footer').mode('legos-color')(function() {
-    return 'white';
 });

@@ -4,7 +4,6 @@
 
     width: 30px;
     height: 25px;
-    padding: 23px 20px 22px 30px;
 }
 
 .logo:hover .logo__logo
@@ -15,22 +14,4 @@
 .logo__logo
 {
     transition: fill 0.3s;
-}
-
-/*tablet*/
-@media all and (max-width: 780px)
-{
-    .logo
-    {
-        padding: 13px;
-    }
-
-    .logo__logo
-    {
-        width: 30px;
-        height: 25px;
-        padding: 0;
-
-        transition: fill 0.3s;
-    }
 }

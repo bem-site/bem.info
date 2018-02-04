@@ -1,8 +1,13 @@
 .promo-menu
 {
-    position: relative;
+    display: flex;
 
-    width: 95%;
+    padding: 0 60px 50px 80px;
+}
+
+.promo-menu__side
+{
+    margin-left: 50px;
 }
 
 .promo-menu__menu
@@ -10,90 +15,86 @@
     padding: 0;
 }
 
-.promo-menu__main
-{
-    padding: 20px 0 100px 5%;
-
-    vertical-align: top;
-}
-
 .promo-menu__menu_type_columns
 {
     column-width: 200px;
-    column-count: 4;
+    column-count: 3;
     column-gap: 30px;
-}
-
-.promo-menu__item
-{
-    display: block;
-
-    min-width: 200px;
 }
 
 .promo-menu__menu-title
 {
-    font-size: 13px;
+    font-size: 16px;
+
+    display: none;
 
     text-transform: uppercase;
 
-    opacity: 0.2;
-    color: #000;
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .promo-menu__main .promo-menu__menu-title
 {
-    padding-left: 5%;
+    margin-left: 20px;
+}
+
+.promo-menu__item
+{
+    font-size: 20px;
+    line-height: 1.2;
+
+    min-width: 200px;
+    margin: 0 0 20px;
+
+    list-style: none;
+}
+
+.promo-menu__main .promo-menu__item
+{
+    margin: 0 0 20px 20px;
+
+    list-style: decimal;
+
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .promo-menu__link
 {
-    display: table;
+    /* display: table; */
 
     text-decoration: none;
 
     outline: none;
 }
 
-.promo-menu__number
-{
-    font-size: 13px;
-
-    display: table-cell;
-
-    padding: 2px 10px 0;
-
-    vertical-align: top;
-
-    opacity: 0.2;
-    color: #000;
-}
-
-.promo-menu__link-text
-{
-    display: inline-block;
-}
-
 .promo-menu__title
 {
-    font-size: 15px;
-
-    display: block;
+    display: table-row;
 
     color: #04b;
 }
 
+.promo-menu__subtitle::before
+{
+    font-size: 4px;
+
+    display: table-row;
+    visibility: hidden;
+
+    content: '\00a0'; /* &nbsp; */
+}
+
 .promo-menu__subtitle
 {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.5;
 
-    display: block;
-
-    padding: 0 0 20px;
+    display: table-row;
 
     color: rgba(0, 0, 0, 0.6);
 }
 
+.promo-menu_inverted .promo-menu__main .promo-menu__item,
 .promo-menu_inverted .promo-menu__menu-title,
 .promo-menu_inverted .promo-menu__title,
 .promo-menu_inverted .promo-menu__subtitle
@@ -124,4 +125,19 @@
 .promo-menu_inverted .promo-menu__main
 {
     padding-bottom: 0;
+}
+
+@media (max-width: 800px)
+{
+    .promo-menu
+    {
+        display: block;
+
+        padding: 0 20px 60px;
+    }
+
+    .promo-menu__side
+    {
+        margin: 20px 0 0 20px;
+    }
 }

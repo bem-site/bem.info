@@ -27,12 +27,6 @@
     text-decoration: none;
 
     color: #000;
-    border-bottom: 1px solid transparent;
-}
-
-.promo-crossroad__item:hover .promo-crossroad__title-link
-{
-    border-bottom: 1px solid rgba(0, 0, 0, .75);
 }
 
 .promo-crossroad__img
@@ -59,6 +53,11 @@
     margin: 5px 0;
 }
 
+.promo-crossroad__text-link
+{
+    text-decoration: none;
+}
+
 /*
 .promo-crossroad__text-link
 {
@@ -67,7 +66,7 @@
 */
 
 /*tablet md*/
-@media all and (max-width: 1200px)
+@media (max-width: 1200px)
 {
     .promo-crossroad
     {
@@ -75,8 +74,7 @@
     }
 }
 
-/*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 800px)
 {
     .promo-crossroad
     {
@@ -87,7 +85,7 @@
 }
 
 /*mobile*/
-@media all and (max-width: 480px)
+@media (max-width: 480px)
 {
     .promo-crossroad
     {

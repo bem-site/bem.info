@@ -2124,7 +2124,7 @@ module.exports = [
     bundle: 'platform',
     next: false
   },
-
+/*
   {
     url: '/community/',
     site: '/community/',
@@ -2169,6 +2169,7 @@ module.exports = [
     level: 1,
     nav: false
   },
+*/
   {
     url: '/forum/',
     site: '/community/',

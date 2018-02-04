@@ -1,16 +1,30 @@
 .doc-rating {
-    font-size: 20px;
-    line-height: 1.25;
+    font-size: 14px;
+    line-height: 1.3;
 
-    display: none;
+    visibility: hidden;
+
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .doc-rating_js_inited {
-    display: block;
+    visibility: visible;
+}
+
+.doc-rating__title {
+    font-size: 15px;
 }
 
 .doc-rating__stars {
-    display: inline-block;
+    display: block;
 
-    vertical-align: middle;
+    margin: 8px 0 5px;
+}
+
+.doc-rating__total {
+    display: block;
+}
+
+.doc-rating__value {
+    display: block;
 }

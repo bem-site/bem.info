@@ -15,13 +15,13 @@ block('blocks').content()(function() {
     return [
         {
             elem: 'side-menu',
-            content: [
-                { block: 'nav', type: 'side-menu' },
-                {
+            content: {
+                block: 'nav',
+                items: {
                     block: 'block-list',
                     mix: { block: 'blocks', elem: 'list' }
                 }
-            ]
+            }
         },
         page.block ? {
             block: 'block-info',
