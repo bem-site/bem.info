@@ -31,7 +31,7 @@ block('blocks').content()(function() {
             ],
             data: Object.assign({
                     lang: data.lang,
-                    examplesUrlPrefix: '/_st_/' + page.library + '-examples/' + page.version,
+                    examplesUrlPrefix: '//' + data.lang + '.bem.info/_st_/' + page.library + '-examples/' + page.version,
                     outputLibFolder: outputLibFolder,
                     setName: page.setName
                 }, page.block)
