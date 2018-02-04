@@ -61,6 +61,7 @@ function configNodes(config, isProd, bundle, levels) {
             [techs.bemtree, {
                 sourceSuffixes: ['bemtree.js', 'bemtree'],
                 target: '?.{lang}.bemtree.js',
+                engineOptions: { escapeContent: false },
                 lang: '{lang}'
             }],
 
