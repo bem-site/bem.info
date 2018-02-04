@@ -44,27 +44,41 @@ block('promo-content').content()(function() {
             ]
         },
         {
-            block: 'promo-menu',
-            title: 'methodology',
-            legosMods: { color: 'white' },
-            data: data.pages.filter(function(page) {
-                if (!new RegExp('^' + site).test(page.url) || page.nav === false) {
-                    return false;
-                }
+            block: 'promo-section',
+            mods: { color: 'white' },
+            attrs: {
+                style: 'margin-top:40px'
+            },
+            content: {
+                block: 'promo-menu',
+                attrs: {
+                    style: 'margin-top:40px'
+                },
+                title: {
+                    main: 'methodology',
+                    side: 'additional'
+                },
+                data: data.pages.filter(function(page) {
+                    if (!new RegExp('^' + site).test(page.url) || page.nav === false) {
+                        return false;
+                    }
 
-                return page.url.split('/').length === site.split('/').length + 1;
-            }).map(function(item) {
-                var title = typeof item.title === 'string' ? item.title : item.title[lang],
-                    subtitle = item.subtitle ?
-                        (typeof item.subtitle === 'string' ? item.subtitle : item.subtitle[lang]) : '';
+                    return page.url.split('/').length === site.split('/').length + 1;
+                }).map(function(item) {
+                    var title = typeof item.title === 'string' ? item.title : item.title[lang],
+                        subtitle = item.subtitle ?
+                            (typeof item.subtitle === 'string' ? item.subtitle : item.subtitle[lang]) : '';
 
-                return {
-                    text: title,
-                    subtitle: subtitle,
-                    url: data.root + item.url
-                }
-            })
+                    return {
+                        text: title,
+                        subtitle: subtitle,
+                        url: data.root + item.url,
+                        additional: Boolean(item.url.match(/faq|history|articles|solved/)) //item.additional
+                    }
+                })
+            }
         },
+/*
         {
             block: 'promo-section',
             mods: { color: 'beige' },
@@ -388,7 +402,7 @@ block('promo-content').content()(function() {
         },
         {
             block: 'promo-section',
-            mods: { color: 'white' },
+            mods: { color: 'beige' },
             content: [
                 {
                     block: 'promo-title',
@@ -417,6 +431,7 @@ block('promo-content').content()(function() {
                 }
             ]
         },
+*/
         {
             block: 'promo-section',
             mods: { color: 'blue' },

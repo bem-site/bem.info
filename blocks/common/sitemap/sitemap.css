@@ -9,7 +9,7 @@
     box-sizing: border-box;
     width: 100%;
     min-height: calc(100% - 100px);
-    padding: 29px 80px 50px 110px;
+    padding: 29px 80px 50px 103px;
 
     transition: color 0.3s;
 
@@ -30,23 +30,25 @@
 
 .sitemap__section_site_methodology
 {
-    width: 22%;
+    width: 28%;
 }
 
 .sitemap__section_site_toolbox
 {
-    width: 19%;
+    width: 28%;
 }
 
 .sitemap__section_site_platform
 {
-    width: 26%;
+    width: 30%;
 }
 
+/*
 .sitemap__section_site_community
 {
     width: 12%;
 }
+*/
 
 .sitemap__title
 {
@@ -125,49 +127,30 @@
     color: rgb(180, 180, 180);
 }
 
-/*tablet*/
-@media all and (max-width: 780px)
+@media (max-width: 800px)
 {
     .sitemap
     {
-        padding: 0;
+        margin-top: -10px;
+        padding: 0 15px;
 
         border: 0;
+    }
+
+    .sitemap__section
+    {
+        width: auto;
+        margin: 0;
     }
 
     .sitemap__title
     {
-        margin: 0 0 0 -10px;
+        margin: 0;
         padding: 0;
-
-        border: 0;
     }
 
     .sitemap__tree
     {
-        margin: 0 20px;
-    }
-
-    .sitemap__tree-item-1
-    {
-        margin: 0;
-    }
-
-    .sitemap__current
-    {
-        margin: -5px 0 0 -6px;
-        padding: 5px 6px;
-    }
-}
-
-/*mobile*/
-@media all and (max-width: 480px)
-{
-    .sitemap .sitemap__section
-    {
-        box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        padding: 10px 13px;
+        margin: 20px 10px 40px;
     }
 }

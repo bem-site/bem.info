@@ -6,6 +6,11 @@
     }
 }
 
+.header_opened .header__logo
+{
+    position: static;
+}
+
 .header_opened + .sitemap
 {
     display: flex;
@@ -30,9 +35,9 @@
 
 .header__logo
 {
-    float: left;
+    position: fixed;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 23px 20px 22px 30px;
 }
 
 .header__breadcrumbs
@@ -67,87 +72,63 @@
 
     float: right;
 
-    margin: 20px 96px 0 40px;
+    margin: 20px 70px 0 46px;
 }
 
-@media all and (max-width: 780px)
+@media (max-width: 1200px)
 {
-    .header_opened
+    .header__logo
     {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        padding: 23px 20px 22px;
     }
 
-    .header_opened + .sitemap
+    .header__breadcrumbs
     {
-        top: 52px;
+        left: 90px;
+    }
+}
 
-        display: block;
-        flex-wrap: wrap;
-
-        opacity: 1;
+@media (max-width: 800px)
+{
+    .header__layout
+    {
+        height: auto;
     }
 
-    .header_opened.header_focused .header__menu
+    .header__logo
+    {
+        position: static;
+
+        padding: 13px 15px;
+    }
+
+    .header__breadcrumbs
     {
         display: none;
     }
 
-    .header__menu
+    .header__forum
     {
-        position: absolute;
-        z-index: 1;
-
-        width: 100%;
-        height: auto;
-        padding: 0 0 30px;
-
-        transform: translate3d(0, -120%, 0);
-
-        opacity: 1;
-        border-top: 0;
+        margin-top: 10px;
     }
 
-    .header_opened .header__menu
+    .header__lang
     {
-        top: 49px;
+        margin-top: 10px;
+    }
 
-        transform: none;
+    .header_opened
+    {
+        position: static;
+    }
 
-        opacity: 1;
+    .header_opened + .sitemap
+    {
+        display: block;
     }
 
     .header_opened .header__layout
     {
         display: none;
-    }
-
-    .header__layout
-    {
-        z-index: 2;
-
-        width: 100%;
-        height: 54px;
-
-        background: inherit;
-    }
-
-    .header__forum
-    {
-        font-size: 19px;
-
-        margin: 6px 150px 0 10px;
-
-        color: #fff;
-    }
-
-    .header__logo
-    {
-        z-index: 1;
-
-        border: 0;
     }
 }

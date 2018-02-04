@@ -38,13 +38,8 @@ block('header').content()(function() {
             mix: { block: 'header', elem: 'search' }
         },
         {
-            elem: 'menu',
-            content: [
-                {
-                    block: 'breadcrumbs',
-                    mix: { block: 'header', elem: 'breadcrumbs' }
-                }
-            ]
+            block: 'breadcrumbs',
+            mix: { block: 'header', elem: 'breadcrumbs' }
         },
         {
             elem: 'toggle'

@@ -1,6 +1,7 @@
 ({
-    shouldDeps: [
+    mustDeps: [
         'article-translation-missed',
-        'social-likes'
+        'social-likes',
+        'doc-rating'
     ]
 })

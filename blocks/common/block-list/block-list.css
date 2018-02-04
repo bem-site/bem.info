@@ -1,8 +1,6 @@
 .block-list
 {
     margin: 0;
-
-    background: #f3f1ed;
 }
 
 .block-list__set-list
@@ -18,27 +16,23 @@
 
     text-transform: uppercase;
 
-    color: #949391;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .block-list__blocks
 {
-    font-size: 13px;
-
     margin: 0 0 20px;
     padding: 0;
 }
 
 .block-list__block
 {
-    line-height: 30px;
-
-    padding: 0 20px;
+    padding: 0 20px 0 40px;
 }
 
 .block-list__block_current
 {
-    background: #e6e5e2;
+    background: #fc0;
 }
 
 .block-list__link
@@ -47,5 +41,5 @@
 
     text-decoration: none;
 
-    color: #000;
+    color: rgba(255, 255, 255, 0.8);
 }

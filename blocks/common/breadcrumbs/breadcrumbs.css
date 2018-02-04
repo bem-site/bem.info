@@ -4,7 +4,7 @@
 
     position: absolute;
     top: 1px;
-    left: 111px;
+    left: 100px;
 
     padding: 0;
 
@@ -31,7 +31,7 @@
 
     content: '/';
 
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs__item:first-child::before
@@ -44,7 +44,7 @@
     transition: color 0.3s;
     text-decoration: none;
 
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs__link:hover

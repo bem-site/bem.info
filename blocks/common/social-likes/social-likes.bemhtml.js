@@ -1,6 +1,7 @@
 block('social-likes')(
     content()(function() {
         return [
+/*
             {
                 elem: 'text',
                 content: [
@@ -8,6 +9,7 @@ block('social-likes')(
                     ': '
                 ]
             },
+*/
             {
                 elem: 'service',
                 elemMods: { type: 'facebook' },

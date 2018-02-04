@@ -1,8 +1,6 @@
 .article-tags
 {
-    display: inline-block;
-
-    margin-top: 16px !important; /* TODO: remove !important after mirgation to md2bemjson */
+    padding: 0;
 }
 
 @media print
@@ -16,6 +14,8 @@
 .article-tags__tag
 {
     display: inline-block;
+
+    margin: 0 10px 15px 0;
 }
 
 .article-tags__link
@@ -24,18 +24,13 @@
 
     display: inline-block;
 
-    margin: 1px 10px 0 0;
-    padding: 1px 10px 2px;
+    padding: 0 10px 2px;
 
     transition: all 0.3s;
     text-decoration: none;
 
-    color: rgba(0, 0, 0, 0.8) !important;  /* TODO: remove !important after mirgation to md2bemjson */
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 3px;
-    background: #f7f7f7;
-}
-
-.article-tags__link:hover
-{
-    color: #000 !important; /* TODO: remove !important after mirgation to md2bemjson */
+    background: rgba(255, 255, 255, 0.2);
 }

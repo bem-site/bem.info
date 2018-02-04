@@ -102,7 +102,7 @@ block('promo-content').content()(function() {
                             }
                         }
                     ]
-                },
+                }/*,
                 {
                     elem: 'item',
                     content: [
@@ -128,7 +128,7 @@ block('promo-content').content()(function() {
                             content: this.i18n(this.block, 'text8') // 'Люди и события'
                         }
                     ]
-                }
+                }*/
             ]
         }
     ]

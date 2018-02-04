@@ -48,8 +48,8 @@ modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'ratin
 
             var value = data.total / data.votes;
 
-            $value.text(value.toFixed(1));
-            $total.text(data.votes);
+            $total.text(data.votes + ' оценки'); // TODO: i18n
+            $value.text(value.toFixed(1) + ' средняя'); // TODO: i18n, склонения
             this._ratingStars._elem('yellow').domElem.css({ width: value * 20 + '%' });
         }
     }, {

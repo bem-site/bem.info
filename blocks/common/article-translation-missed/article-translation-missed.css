@@ -1,12 +1,18 @@
 .article-translation-missed
 {
-    position: absolute;
-
-    max-width: 760px;
-    margin: -53px 0 16px -10px;
-    padding: 0 10px;
+    width: 100%;
+    margin: -46px 0 14px -48px;
+    padding: 0 48px;
 
     background: rgba(255, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px)
+{
+    .article-translation-missed
+    {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 568px)

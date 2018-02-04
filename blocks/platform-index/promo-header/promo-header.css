@@ -9,8 +9,8 @@
     background: #fff;
 }
 
-.promo-header__text
+.promo-header__text[class] /* FIXME: very strange */
 {
-    max-width: 50em;
+    max-width: 60em;
     margin-left: 94px;
 }

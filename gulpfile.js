@@ -85,7 +85,7 @@ function compilePages(lang, bundle) {
             destination: OUTPUT_DIRS[lang],
             destinationRoot: OUTPUT + (env.YENV === 'production' ? '/bem.info/static' : ''),
             langs: LANGUAGES,
-            sites: env.SITES ? env.SITES.split(',') : ['methodology', 'toolbox', 'platform', 'community'],
+            sites: env.SITES ? env.SITES.split(',') : ['methodology', 'toolbox', 'platform'],
             lang,
             DEBUG: env.DEBUG,
             YENV: env.YENV
