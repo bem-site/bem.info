@@ -1933,6 +1933,7 @@ module.exports = [
       'node_modules/bem.info-data/bem-core-4.1.0',
       'node_modules/bem.info-data/bem-core-4.1.1',
       'node_modules/bem.info-data/bem-core-4.2.0',
+      'node_modules/bem.info-data/bem-core-4.2.1',
     ],
     current: '4.2.0',
     tags: ['libs', 'bem-core'],
