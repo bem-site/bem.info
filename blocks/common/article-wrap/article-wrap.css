@@ -4,6 +4,8 @@
 
     overflow: hidden;
 
+    box-sizing: border-box;
+    width: calc(100% - 170px - 270px);
     margin: 0 170px 0 270px;
     padding: 46px 48px 7px;
 
@@ -52,6 +54,7 @@
         display: flex;
         flex-direction: column;
 
+        width: calc(100% - 233px);
         margin: 0 0 0 233px;
 
         border-radius: 10px 0 0 10px;
@@ -180,6 +183,7 @@
 {
     .article-wrap
     {
+        width: 100%;
         margin-left: 0;
         padding-right: 15px;
         padding-left: 15px;
