@@ -20,12 +20,14 @@ block('root').replace()(function() {
     data.libs = libs;
     // libs extraction (end)
 
+    var staticVersion = Math.random().toString().substr(2, 4);
+
     return {
         block: 'page',
         title: page.head.title,
         head: [
             { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,600,700&subset=cyrillic' },
-            { elem: 'css', url: data.root + '/' + siteBundle + '.min.css' },
+            { elem: 'css', url: data.root + '/' + siteBundle + '.min.css?' + staticVersion },
             { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width,initial-scale=1' } },
             { elem: 'meta', attrs: { property: 'og:image', content: 'https://ru.bem.info/og_image/logo_theme_stripe.png' } }, // TODO: implement via block with images; implement random
             Object.keys(page.head.meta).reduce(function(prev, field) {
@@ -35,7 +37,7 @@ block('root').replace()(function() {
         ],
         favicon: data.root + '/favicon.ico',
         scripts: [
-            { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js' }
+            { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js?' + staticVersion }
         ]
     };
 });
