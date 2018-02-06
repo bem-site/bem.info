@@ -81,7 +81,7 @@ block('promo-content').content()(function() {
                         'bem-naming-file-stringify',
                         'bem-decl',
                         'bem-bemjson-to-decl',
-                        'bem-bemjson-to-decl',
+                        'bem-bemjson-to-jsx',
                         'bem-import-notation',
                         'bem-graph',
                         'bem-deps',
