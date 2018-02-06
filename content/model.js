@@ -1451,7 +1451,7 @@ module.exports = [
   {
     url: '/toolbox/sdk/bem-bemjson-to-jsx/',
     site: '/toolbox/sdk/bem-bemjson-to-jsx/',
-    title: 'bem-bemjson-to-decl',
+    title: 'bem-bemjson-to-jsx',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.uk.md',
