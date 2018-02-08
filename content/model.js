@@ -74,8 +74,8 @@ module.exports = [
     site: '/methodology/',
     subtitle: {
       ru: 'Как вложить смысл в имена',
-      uk: 'Concepts and other stuff',
-      en: 'Concepts and other stuff'
+      uk: 'Concepts of BEM naming',
+      en: 'Concepts of BEM naming'
     },
     title: {
       ru: 'Соглашение по именованию',
@@ -96,8 +96,8 @@ module.exports = [
     title: 'CSS',
     subtitle: {
       ru: 'Верстка независимыми блоками',
-      uk: 'Need more CSS',
-      en: 'Need more CSS',
+      uk: 'How to write CSS for a BEM project',
+      en: 'How to write CSS for a BEM project',
     },
     tags: ['methodology'],
     source: {
@@ -113,8 +113,8 @@ module.exports = [
     title: 'HTML',
     subtitle: {
       ru: 'Разметка в БЭМ-терминах',
-      uk: '',
-      en: '',
+      uk: 'How to write HTML for a BEM project',
+      en: 'How to write HTML for a BEM project',
     },
     tags: ['methodology'],
     source: {
@@ -192,8 +192,8 @@ module.exports = [
     site: '/methodology/',
     subtitle: {
       ru: 'Множественное наследование, сделанное правильно',
-      uk: 'The structure defines',
-      en: 'The structure defines'
+      uk: 'Multiple inheritance done right',
+      en: 'Multiple inheritance done right'
     },
     title: {
       ru: 'Модификация блока',
@@ -276,8 +276,8 @@ module.exports = [
     site: '/methodology/',
     subtitle: {
       ru: 'Путь проб и ошибок',
-      uk: 'Of the Mankind',
-      en: 'Of the Mankind'
+      uk: 'The history of formation',
+      en: 'The history of formation'
     },
     title: {
       ru: 'История создания',
@@ -371,9 +371,9 @@ module.exports = [
       en: 'API'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/api.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/api/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/api/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -384,12 +384,12 @@ module.exports = [
     title: {
       ru: 'Технологии для работы с файлами',
       // uk: '',
-      // en: ''
+      en: 'Technologies for working with files'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/techs.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/techs/techs.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/techs/techs.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -400,12 +400,12 @@ module.exports = [
     title: {
       ru: 'Использование из командной строки',
       // uk: '',
-      // en: ''
+      en: 'Using the command line'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/cli.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/cli/cli.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/cli/cli.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -416,76 +416,60 @@ module.exports = [
     title: {
       ru: 'Терминология',
       // uk: '',
-      // en: ''
+      en: 'Terminology'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/terms.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/terms/terms.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/terms/terms.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/guides/',
-    site: '/toolbox/enb/guides/',
+    url: '/toolbox/enb/build-project/',
+    site: '/toolbox/enb/',
     title: {
       ru: 'Как собрать проект',
       // uk: '',
-      // en: ''
+      en: 'How to build a project'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/guides/build-project.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/build-project/build-project.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/guides/build-project/build-project.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/guides/build-project/',
-    site: '/toolbox/enb/guides/',
-    title: {
-      ru: 'Как собрать проект',
-      // uk: '',
-      // en: ''
-    },
-    source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/guides/build-project.ru.md',
-      // uk: '',
-      // en: '',
-    },
-    tags: ['enb'],
-    bundle: 'toolbox'
-  },
-  {
-    url: '/toolbox/enb/guides/write-tech/',
-    site: '/toolbox/enb/guides/',
+    url: '/toolbox/enb/write-tech/',
+    site: '/toolbox/enb/',
     title: {
       ru: 'Как написать технологию',
       // uk: '',
-      // en: ''
+      en: 'How to write a technology'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/guides/write-tech.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/write-tech/write-tech.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/guides/write-tech/write-tech.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/enb/guides/express/',
-    site: '/toolbox/enb/guides/',
+    url: '/toolbox/enb/express/',
+    site: '/toolbox/enb/',
     title: {
       ru: 'Автоматизация с помощью express',
       // uk: '',
-      // en: ''
+      en: 'Automation with express'
     },
     source: {
-      ru: 'https://github.com/enb/enb/blob/master/docs/guides/express.ru.md',
+      ru: 'https://github.com/enb/enb/blob/master/docs/guides/express/express.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb/blob/master/docs/guides/express/express.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -513,12 +497,12 @@ module.exports = [
     description: {
       ru: 'Пакет для сборки проектов, в основе которых лежит методология БЭМ',
       // uk: '',
-      // en: '',
+      en: 'The main technology package for working with projects created with the BEM methodology',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/README.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/README.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/README.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -532,9 +516,9 @@ module.exports = [
       en: 'Build bundle',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle.ru.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle/build-bundle.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-bundle/build-bundle.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -548,9 +532,9 @@ module.exports = [
       en: 'Build page',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-page.ru.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-page/build-page.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-page/build-page.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -564,9 +548,9 @@ module.exports = [
       en: 'Build merged bundle',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle.ru.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle/build-merged-bundle.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-merged-bundle/build-merged-bundle.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -580,9 +564,9 @@ module.exports = [
       en: 'Build distribution',
     },
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist.ru.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist/build-dist.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/docs/build-dist/build-dist.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -592,9 +576,9 @@ module.exports = [
     site: '/toolbox/enb/packages/enb-bem-techs/',
     title: 'API',
     source: {
-      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/api.ru.md',
+      ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/api/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-techs/blob/master/docs/api/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
