@@ -22,6 +22,7 @@
     "bemhint-deps-specification": "^1.0.0",
     "bemhint-fs-naming": "^1.0.0",
     "browser-sync": "^2.18.13",
+    "doc-feedback": "github:bem-site/doc-feedback-handlers",
     "enb": "^1.5.1",
     "enb-bem-i18n": "^1.1.1",
     "enb-bem-techs": "^2.2.2",
@@ -54,8 +55,11 @@
     "ym": "^0.1.2"
   },
   "scripts": {
+    "start": "rm -rf output && gulp",
     "test": "npm run lint && cd lib/gorshochek && npm test",
-    "postinstall": "cd lib/gorshochek && npm i",
+    "postinstall": "npm run deps",
+    "deps": "cd lib/gorshochek && npm i && cd ../../node_modules/doc-feedback-handlers && npm i --production",
+    "feedback": "cd node_modules/doc-feedback-handlers && npm start",
     "lint": "eslint . && jscs . && stylelint blocks/**/*.css",
     "docker-build": "docker build -t registry.yandex.net/bem/bem.info:$user$npm_package_version .",
     "docker-push": "docker push registry.yandex.net/bem/bem.info:$user$npm_package_version"
