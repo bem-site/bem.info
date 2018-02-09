@@ -21,6 +21,8 @@ const genNginxHostConf = require('./tools/generate-nginx-host-conf');
 const prepareModel = require('./lib/prepare-model');
 const fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
 
+const docFeedbackHandlers = require('doc-feedback-handlers');
+
 const env = process.env;
 
 const model = require(env.PATH_TO_MODEL || './content/model.js');
@@ -235,43 +237,47 @@ var got = require('got'),
     qs = require('querystring');
 
 gulp.task('browser-sync', () => {
-    browserSync.create().init({
-        files: OUTPUT + '/**',
-        server: { baseDir: OUTPUT },
-        port: 8008,
-        open: false,
-        online: false,
-        logLevel: 'silent',
-        notify: false,
-        ui: false,
-        middleware: function(req, res, next) {
-            if (req.url.includes('/doc-feedback/')) {
-                var backendUrl = 'http://localhost:8090' + req.url.substr(req.url.indexOf('/doc-feedback/'));
-                if (req.method.toLowerCase() === 'get') {
-                    return got.stream(backendUrl)
-                        .pipe(res);
-                } else {
-                    var body = '';
-                    req
-                        .on('data', chunk => {
-                            body += chunk;
-                        })
-                        .on('end', () => {
-                            got.post(backendUrl, { query: qs.parse(body) })
-                                .then(() => res.end('ok'))
-                                .catch(console.error);
-                        });
+    const docFeedbackHandlersPort = 8090;
 
-                    return;
+    docFeedbackHandlers.listen(docFeedbackHandlersPort, () => {
+        browserSync.create().init({
+            files: OUTPUT + '/**',
+            server: { baseDir: OUTPUT },
+            port: 8008,
+            open: false,
+            online: false,
+            logLevel: 'silent',
+            notify: false,
+            ui: false,
+            middleware: function(req, res, next) {
+                if (req.url.includes('/doc-feedback/')) {
+                    var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
+                    if (req.method.toLowerCase() === 'get') {
+                        return got.stream(backendUrl)
+                            .pipe(res);
+                    } else {
+                        var body = '';
+                        req
+                            .on('data', chunk => {
+                                body += chunk;
+                            })
+                            .on('end', () => {
+                                got.post(backendUrl, { query: qs.parse(body) })
+                                    .then(() => res.end('ok'))
+                                    .catch(console.error);
+                            });
+
+                        return;
+                    }
                 }
-            }
 
-            if (req.url.match(/svgd/)) {
-                res.setHeader('Content-Type', 'image/svg+xml');
-                res.setHeader('Content-Encoding', 'deflate')
+                if (req.url.match(/svgd/)) {
+                    res.setHeader('Content-Type', 'image/svg+xml');
+                    res.setHeader('Content-Encoding', 'deflate')
+                }
+                next();
             }
-            next();
-        }
+        });
     });
 });
 
