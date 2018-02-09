@@ -3,7 +3,7 @@ block('feedback').elem('header').content()(function() {
         {
             block: 'heading',
             mods: { level: 3 },
-            content: 'Send feedback'
+            content: this.i18n('feedback', 'send') // 'Send feedback'
         }
     ];
 });

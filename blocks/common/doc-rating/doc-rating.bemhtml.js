@@ -10,7 +10,7 @@ block('doc-rating')(
         return [
             {
                 elem: 'title',
-                content: 'Оцените статью', // TODO: i18n
+                content: this.i18n('doc-rating', 'rate') // 'Оцените статью',
             },
             {
                 block: 'rating-stars',

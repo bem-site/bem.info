@@ -8,7 +8,7 @@ block('feedback').elem('footer').content()(function() {
                 view: 'plain'
             },
             mix: { block: this.block, elem: 'cancel', js: true },
-            text: 'Cancel'
+            text: this.i18n('feedback', 'cancel') // 'Cancel'
         },
         {
             block: 'button',
@@ -19,7 +19,7 @@ block('feedback').elem('footer').content()(function() {
                 disabled: true
             },
             mix: { block: this.block, elem: 'submit', js: true },
-            text: 'Send'
+            text: this.i18n('feedback', 'ok') // 'Send'
         }
     ];
 });
