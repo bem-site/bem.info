@@ -23,7 +23,7 @@ modules.define('quiz', ['i-bem-dom', 'modal', 'quiz-feedback'], function(provide
             this.delMod('visible');
         },
 
-        _onAccept(event) {
+        _onAccept() {
             this._modal.setMod('visible');
         }
     }, {

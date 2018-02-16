@@ -10,7 +10,7 @@ block('quiz-feedback').elem('question').content()(function() {
         {
             block: 'radio-group',
             mods: { theme: 'islands', size: 'm' },
-            mix: { block: this.block, elem: 'radio-group'},
+            mix: { block: this.block, elem: 'radio-group' },
             name: ctx.name,
             options: ctx.options
         }

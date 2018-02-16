@@ -12,9 +12,7 @@ modules.define('quiz-feedback', [
         onSetMod: {
             js: {
                 inited() {
-
                     this._button = this.findChildElem(FeedbackSubmit).findMixedBlock(Button);
-                    this._radios;
                 }
             }
         },

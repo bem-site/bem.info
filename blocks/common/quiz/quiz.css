@@ -5,7 +5,7 @@
 
     width: 100%;
 
-    border: 1px solid rgba(27,31,35,.075);
+    border: 1px solid rgba(27, 31, 35, .075);
     border-radius: 3px !important;
     background: url(quiz.svg);
 }
@@ -34,6 +34,7 @@
 }
 
 .quiz__title {
+    line-height: 1.4;
+
     margin: 0 0 20px;
-    line-height: 1.4
 }

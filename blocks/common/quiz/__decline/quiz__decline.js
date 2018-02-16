@@ -6,10 +6,10 @@ modules.define('quiz__decline', ['i-bem-dom', 'button'], function(provide, bemDo
         }
     }, {
         lazyInit: true,
-        onInit: function () {
+        onInit: function() {
             this._events(Button).on('click', this.prototype._onClick);
-            }
-        });
+        }
+    });
 
     provide(QuizDecline);
 

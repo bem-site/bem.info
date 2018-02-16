@@ -63,7 +63,7 @@ block('article-wrap').content()(function() {
         // page.isArticleNew && { block: 'quiz', mix: { block: 'article-wrap', elem: 'quiz'} },
         {
             block: 'quiz',
-            mix: { block: 'article-wrap', elem: 'quiz'},
+            mix: { block: 'article-wrap', elem: 'quiz' },
             questions: questions
         },
         apply('articles'),

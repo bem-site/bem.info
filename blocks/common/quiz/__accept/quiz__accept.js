@@ -6,7 +6,7 @@ modules.define('quiz__accept', ['i-bem-dom', 'button'], function(provide, bemDom
         }
     }, {
         lazyInit: true,
-        onInit: function () {
+        onInit: function() {
                 this._events(Button).on('click', this.prototype._onClick);
             }
         });
