@@ -3,9 +3,28 @@ block('quiz-feedback')(
     content()(function() {
         return [
             {
-                elem: 'wrapper',
+                elem: 'inner',
                 elemMods: { visible: true },
-                questions: this.ctx.questions
+                content: [
+                    {
+                        elem: 'header'
+                    },
+                    {
+                        elem: 'body',
+                        content: {
+                            elem: 'questions',
+                            content: this.ctx.questions.map(function(question) {
+                                question.block = 'quiz-feedback';
+                                question.elem = 'question';
+
+                                return question;
+                            })
+                        }
+                    },
+                    {
+                        elem: 'footer'
+                    }
+                ]
             },
             {
                 elem: 'done'

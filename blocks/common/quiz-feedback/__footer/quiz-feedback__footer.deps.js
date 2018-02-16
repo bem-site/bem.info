@@ -1,5 +1,5 @@
 ({
-    mustDeps: { block: 'i-bem-dom' },
+    mustDeps: ['i-bem-dom', 'i18n'],
     shouldDeps: [
         {
             block: 'button',

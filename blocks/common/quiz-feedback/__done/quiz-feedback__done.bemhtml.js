@@ -15,5 +15,5 @@ block('quiz-feedback').elem('done').content()(function() {
             mix: { block: this.block, elem: 'close', js: true },
             text: this.i18n(this.block, 'button-close')
         }
-    ]
+    ];
 });

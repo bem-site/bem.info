@@ -1,9 +1,9 @@
-.quiz-feedback__wrapper {
+.quiz-feedback__inner {
     display: none;
 
     margin: 15px;
 }
 
-.quiz-feedback__wrapper_visible {
+.quiz-feedback__inner_visible {
     display: block;
 }

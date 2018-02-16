@@ -1,7 +1,6 @@
 ({
     mustDeps: ['i-bem-dom', 'i18n'],
     shouldDeps: [
-        'heading',
         'quiz-feedback',
         {
             elems: ['inner', 'table', 'title', 'accept', 'decline', 'close']
