@@ -1,0 +1,9 @@
+.quiz-feedback__footer {
+    text-align: right;
+}
+
+.quiz-feedback__footer .quiz-feedback__cancel {
+    margin-right: 12px;
+
+    color: #c5c5c5;
+}

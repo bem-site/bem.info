@@ -1,9 +1,71 @@
 block('article-wrap').content()(function() {
     var data = this.data,
-        page = data.page;
+        page = data.page,
+        questions = [
+                {
+                    text: 'Насколько вам понятен документ?',
+                    name: 'q1',
+                    options: [
+                        {
+                            val: 'better',
+                            text: 'стало ли лучше?'
+                        },
+                        {
+                            val: 'worse',
+                            text: 'стало хуже'
+                        },
+                        {
+                            val: 'same',
+                            text: 'кому '
+                        }
+                    ]
+                },
+                {
+                    text: 'Кому?',
+                    name: 'q2',
+                    options: [
+                        {
+                            val: 'better',
+                            text: 'никому!'
+                        },
+                        {
+                            val: 'worse',
+                            text: 'никому :('
+                        },
+                        {
+                            val: 'same',
+                            text: 'никому...'
+                        }
+                    ]
+                },
+                {
+                    text: 'Как?',
+                    name: 'q2',
+                    options: [
+                        {
+                            val: 'better',
+                            text: 'никому!'
+                        },
+                        {
+                            val: 'worse',
+                            text: 'никому :('
+                        },
+                        {
+                            val: 'same',
+                            text: 'никому...'
+                        }
+                    ]
+                }
+            ];
 
     return [
         page.isTranslationMissed && { block: 'article-translation-missed' },
+        // page.isArticleNew && { block: 'quiz', mix: { block: 'article-wrap', elem: 'quiz'} },
+        {
+            block: 'quiz',
+            mix: { block: 'article-wrap', elem: 'quiz'},
+            questions: questions
+        },
         apply('articles'),
         apply('article'),
         {

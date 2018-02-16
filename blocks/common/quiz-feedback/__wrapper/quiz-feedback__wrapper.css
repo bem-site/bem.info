@@ -1,0 +1,9 @@
+.quiz-feedback__wrapper {
+    display: none;
+
+    margin: 15px;
+}
+
+.quiz-feedback__wrapper_visible {
+    display: block;
+}

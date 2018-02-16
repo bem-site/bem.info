@@ -2,6 +2,7 @@
     mustDeps: [
         'article-translation-missed',
         'social-likes',
-        'doc-rating'
+        'doc-rating',
+        'quiz'
     ]
 })

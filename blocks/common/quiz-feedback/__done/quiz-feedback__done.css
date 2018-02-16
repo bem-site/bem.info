@@ -1,0 +1,11 @@
+.quiz-feedback__done {
+    display: none;
+
+    margin: 16px;
+
+    text-align: center;
+}
+
+.quiz-feedback__done_visible {
+    display: block;
+}

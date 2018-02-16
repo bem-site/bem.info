@@ -1,0 +1,12 @@
+.quiz__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 14px;
+    height: 14px;
+
+    cursor: pointer;
+
+    background: url(quiz__close.svg) no-repeat;
+}
