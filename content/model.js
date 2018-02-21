@@ -650,7 +650,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-js/blob/master/api.ru.md',
       // uk: '',
-      // en: '',
+       en: 'https://github.com/enb/enb-js/blob/master/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -727,7 +727,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-css/blob/master/docs/ie.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-css/blob/master/docs/ie.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -739,7 +739,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-css/blob/master/docs/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-css/blob/master/docs/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -784,7 +784,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-stylus/blob/master/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-stylus/blob/master/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -829,7 +829,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-bemxjst/blob/master/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bemxjst/blob/master/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -874,7 +874,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-bh/blob/master/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bh/blob/master/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
@@ -935,7 +935,7 @@ module.exports = [
     source: {
       ru: 'https://github.com/enb/enb-bem-i18n/blob/master/api.ru.md',
       // uk: '',
-      // en: '',
+      en: 'https://github.com/enb/enb-bem-i18n/blob/master/api.en.md',
     },
     tags: ['enb'],
     bundle: 'toolbox'
