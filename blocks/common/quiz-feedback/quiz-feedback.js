@@ -27,7 +27,7 @@ modules.define('quiz-feedback', [
         },
 
         _onChange() {
-            this._submitButton.setMod('disabled', !this.getRadios().every(radio.getVal);
+            this._submitButton.setMod('disabled', !this.getRadios().every(radio => radio.getVal()));
         },
 
         getRadios() {
