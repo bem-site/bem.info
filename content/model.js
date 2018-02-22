@@ -480,7 +480,7 @@ module.exports = [
     title: {
       ru: 'Пакеты ENB',
       // uk: '',
-      // en: 'ENB packages'
+      en: 'ENB packages'
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/enb/enb-packages-index/enb-packages-index.ru.md',
