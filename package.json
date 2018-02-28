@@ -22,7 +22,7 @@
     "bemhint-deps-specification": "^1.0.0",
     "bemhint-fs-naming": "^1.0.0",
     "browser-sync": "^2.18.13",
-    "doc-feedback": "github:bem-site/doc-feedback-handlers",
+    "doc-feedback-handlers": "github:bem-site/doc-feedback-handlers",
     "enb": "^1.5.1",
     "enb-bem-i18n": "^1.1.1",
     "enb-bem-techs": "^2.2.2",
