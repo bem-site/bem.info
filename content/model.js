@@ -1280,9 +1280,9 @@ module.exports = [
     site: '/toolbox/bem-tools/',
     title: 'bem-tools',
     source: {
-      // ru: 'https://github.com/bem-archive/bem-tools/blob/newPluginSearchAlgo@WIP/README.ru.md', // TODO
+      // ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/bem-tools/bem-tools.ru.md', // TODO
       // uk: '',
-      en: 'https://github.com/bem-archive/bem-tools/blob/newPluginSearchAlgo@WIP/README.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/bem-tools/bem-tools.en.md',
     },
     tags: ['bem-tools'],
     bundle: 'toolbox'
@@ -1847,9 +1847,9 @@ module.exports = [
       en: 'deps.js — a technology to declare dependencies in BEM',
     },
     source: {
-      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.ru.md',
       // uk: '',
-      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/depsjs.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.en.md',
     },
     tags: ['deps'],
     bundle: 'platform'
@@ -1863,9 +1863,9 @@ module.exports = [
       en: 'DEPS specification'
     },
     source: {
-      ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/specification.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/specification.ru.md',
       // uk: '',
-      en: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/depsjs/specification.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/specification.en.md',
     },
     tags: ['deps'],
     bundle: 'platform'
