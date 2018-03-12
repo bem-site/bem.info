@@ -2108,6 +2108,22 @@ module.exports = [
     bundle: 'platform',
     next: false
   },
+  {
+    url: '/platform/tutorials/dist-quick-start/',
+    site: '/platform/tutorials/',
+    title: {
+      ru: 'Dist bem-components: подключаем блоки на страницу',
+      // uk: 'Збираємо статичну сторінку',
+      // en: 'Creating a static page',
+    },
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/dist-quick-start/dist-quick-start.ru.md',
+      // uk: '',
+      // en: '',
+    },
+    tags: ['tutorials', 'bem-components'],
+    bundle: 'platform'
+  },
 /*
   {
     url: '/community/',
