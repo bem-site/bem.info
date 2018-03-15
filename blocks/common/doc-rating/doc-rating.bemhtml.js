@@ -14,6 +14,7 @@ block('doc-rating')(
             },
             {
                 block: 'rating-stars',
+                mods: { active: true },
                 mix: { block: this.block, elem: 'stars' }
             },
             {

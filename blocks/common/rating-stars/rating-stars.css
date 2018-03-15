@@ -10,11 +10,11 @@
     cursor: pointer;
 }
 
-.rating-stars__item:hover .rating-stars__item {
+.rating-stars_active .rating-stars__item:hover .rating-stars__item {
     color: #c5c5c5;
 }
 
-.rating-stars__gray .rating-stars__item:hover {
+.rating-stars_active .rating-stars__gray .rating-stars__item:hover {
     color: #f9b708;
 }
 
@@ -32,6 +32,6 @@
     content: '★★★★★';
 }
 
-.rating-stars:hover .rating-stars__yellow {
+.rating-stars_active .rating-stars:hover .rating-stars__yellow {
     display: none;
 }

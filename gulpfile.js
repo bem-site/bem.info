@@ -239,44 +239,46 @@ var got = require('got'),
 gulp.task('browser-sync', () => {
     const docFeedbackHandlersPort = 8090;
 
-    docFeedbackHandlers.listen(docFeedbackHandlersPort, () => {
-        browserSync.create().init({
-            files: OUTPUT + '/**',
-            server: { baseDir: OUTPUT },
-            port: 8008,
-            open: false,
-            online: false,
-            logLevel: 'silent',
-            notify: false,
-            ui: false,
-            middleware: function(req, res, next) {
-                if (req.url.includes('/doc-feedback/')) {
-                    var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
-                    if (req.method.toLowerCase() === 'get') {
-                        return got.stream(backendUrl)
-                            .pipe(res);
-                    } else {
-                        var body = '';
-                        req
-                            .on('data', chunk => {
-                                body += chunk;
-                            })
-                            .on('end', () => {
-                                got.post(backendUrl, { query: qs.parse(body) })
-                                    .then(() => res.end('ok'))
-                                    .catch(console.error);
-                            });
+    return docFeedbackHandlers.then(app => {
+        app.listen(docFeedbackHandlersPort, () => {
+            browserSync.create().init({
+                files: OUTPUT + '/**',
+                server: { baseDir: OUTPUT },
+                port: 8008,
+                open: false,
+                online: false,
+                logLevel: 'silent',
+                notify: false,
+                ui: false,
+                middleware: function(req, res, next) {
+                    if (req.url.includes('/doc-feedback/')) {
+                        var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
+                        if (req.method.toLowerCase() === 'get') {
+                            return got.stream(backendUrl)
+                                .pipe(res);
+                        } else {
+                            var body = '';
+                            req
+                                .on('data', chunk => {
+                                    body += chunk;
+                                })
+                                .on('end', () => {
+                                    got.post(backendUrl, { query: qs.parse(body) })
+                                        .then(() => res.end('ok'))
+                                        .catch(console.error);
+                                });
 
-                        return;
+                            return;
+                        }
                     }
-                }
 
-                if (req.url.match(/svgd/)) {
-                    res.setHeader('Content-Type', 'image/svg+xml');
-                    res.setHeader('Content-Encoding', 'deflate')
+                    if (req.url.match(/svgd/)) {
+                        res.setHeader('Content-Type', 'image/svg+xml');
+                        res.setHeader('Content-Encoding', 'deflate')
+                    }
+                    next();
                 }
-                next();
-            }
+            });
         });
     });
 });
