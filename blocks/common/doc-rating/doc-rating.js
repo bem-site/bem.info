@@ -1,10 +1,16 @@
-modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'rating-stars', 'radio-group'],
-    function(provide, bemDom, $, Modal, Feedback, RatingStars, RadioGroup) {
+modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'rating-stars', 'radio-group', 'cookie'],
+    function(provide, bemDom, $, Modal, Feedback, RatingStars, RadioGroup, Cookie) {
 
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
             js: {
                 inited: function() {
+                    var href = window.location.href,
+                        // support dev mode on top of browser-sync
+                        handlerPrefix = window.location.host.indexOf('.bem.info') > -1 ? '' : '/bem.info',
+                        handlerUrl = handlerPrefix + '/doc-feedback/?doc=' + encodeURIComponent(href),
+                        cookies = JSON.parse(Cookie.get('bem.info')) || {};
+
                     this._modal = this.findChildBlock(Modal);
                     this._feedback = this.findChildBlock(Feedback);
                     this._ratingStars = this.findChildBlock(RatingStars);
@@ -17,21 +23,34 @@ modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'ratin
                     });
 
                     this._events(this._feedback).on('rate', function() {
-                        this.updateData();
+                        this.updateData(handlerUrl);
                     });
 
-                    this.updateData();
+                    this.updateData(handlerUrl);
+
+                    if (cookies.feedback && cookies.feedback[window.location.href]) {
+                        this._ratingStars.delMod('active');
+                        return;
+                    }
+
+                    this._events(RatingStars).on('rate', function(e, data) {
+                        this._modal.setMod('visible');
+
+                        this._feedback.findChildBlock(RadioGroup).setVal(data.val);
+                    });
                 }
             }
         },
-        updateData: function() {
+        updateData: function(handlerUrl) {
             var _this = this,
-                href = window.location.href,
-                // support dev mode on top of browser-sync
-                handlerPrefix = window.location.host.indexOf('.bem.info') > -1 ? '' : '/bem.info';
+                cookies = JSON.parse(Cookie.get('bem.info')) || {};
 
-            $.get(handlerPrefix + '/doc-feedback/?doc=' + encodeURIComponent(href))
+            cookies.feedback || (cookies.feedback = {});
+            cookies.feedback[window.location.href] = true;
+
+            $.get(handlerUrl)
                 .then(function(respond) {
+                    Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
                     _this.updateInterface(JSON.parse(respond));
                 })
                 .fail(err => console.log(err));
@@ -51,15 +70,6 @@ modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'ratin
             $total.text(data.votes + ' оценки'); // TODO: i18n
             $value.text(value.toFixed(1) + ' средняя'); // TODO: i18n, склонения
             this._ratingStars._elem('yellow').domElem.css({ width: value * 20 + '%' });
-        }
-    }, {
-        // should init automatically
-        onInit: function() {
-            this._events(RatingStars).on('rate', function(e, data) {
-                this._modal.setMod('visible');
-
-                this._feedback.findChildBlock(RadioGroup).setVal(data.val);
-            });
         }
     }));
 
