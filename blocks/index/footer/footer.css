@@ -1,21 +1,25 @@
 .footer__layout
 {
-    flex-wrap: wrap;
     justify-content: space-between;
 
-    margin: 0;
+    margin: 50px 31px 30px 20px;
+}
+
+.footer__community
+{
+    margin: 0 31px 20px 0;
 }
 
 .footer__domain
 {
     font-style: italic;
 
-    margin: 0 31px 0 0;
+    margin: 0 31px 20px 0;
 }
 
 .footer__copyright
 {
-    margin: 0;
+    margin: 0 0 20px;
 }
 
 .footer__copyright-ya
@@ -27,45 +31,26 @@
     color: #fff;
 }
 
-/*tablet*/
-@media all and (max-width: 780px)
+/* mobile */
+@media (max-width: 480px)
 {
     .footer__layout
     {
-        display: block;
-
-        padding: 40px 10%;
+        flex-direction: column;
 
         text-align: center;
+
+        margin: 20px 15px;
     }
 
-    .footer__copyright,
-    .footer__domain,
-    .footer__community
-    {
-        display: inline-block;
-
-        margin: 10px 0;
-    }
-}
-
-/*mobile*/
-@media all and (max-width: 480px)
-{
-    .footer__layout
-    {
-        display: block;
-
-        padding: 0 5% 40px;
-    }
-
+    .footer__community,
     .footer__domain
     {
-        font-size: 12px;
+        margin-right: 0;
     }
 
     .footer__channel
     {
-        margin: 0 15px;
+        margin-right: 20px;
     }
 }
