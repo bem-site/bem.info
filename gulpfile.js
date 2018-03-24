@@ -24,6 +24,7 @@ const fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
 const docFeedbackHandlers = require('doc-feedback-handlers');
 
 const env = process.env;
+const browserSyncPort = env.PORT || 8008;
 
 const model = require(env.PATH_TO_MODEL || './content/model.js');
 
@@ -239,48 +240,64 @@ var got = require('got'),
 gulp.task('browser-sync', () => {
     const docFeedbackHandlersPort = 8090;
 
-    return docFeedbackHandlers.then(app => {
-        app.listen(docFeedbackHandlersPort, () => {
-            browserSync.create().init({
-                files: OUTPUT + '/**',
-                server: { baseDir: OUTPUT },
-                port: 8008,
-                open: false,
-                online: false,
-                logLevel: 'silent',
-                notify: false,
-                ui: false,
-                middleware: function(req, res, next) {
-                    if (req.url.includes('/doc-feedback/')) {
-                        var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
-                        if (req.method.toLowerCase() === 'get') {
-                            return got.stream(backendUrl)
-                                .pipe(res);
-                        } else {
-                            var body = '';
-                            req
-                                .on('data', chunk => {
-                                    body += chunk;
-                                })
-                                .on('end', () => {
-                                    got.post(backendUrl, { query: qs.parse(body) })
-                                        .then(() => res.end('ok'))
-                                        .catch(console.error);
-                                });
+    let config;
 
-                            return;
-                        }
-                    }
+    try {
+        config = require('./secret-config');
+    } catch (err) {
+        console.log('warn: no config with DB credentials was found');
+        console.log('warn: feedback server will not be started');
+    }
 
-                    if (req.url.match(/svgd/)) {
-                        res.setHeader('Content-Type', 'image/svg+xml');
-                        res.setHeader('Content-Encoding', 'deflate')
-                    }
-                    next();
-                }
-            });
+    const isFeedbackEnabled = !!config;
+
+    function runBrowserSync() {
+        console.log('Starting browser-sync on', browserSyncPort);
+        return browserSync.create().init({
+            files: OUTPUT + '/**',
+            server: { baseDir: OUTPUT },
+            port: browserSyncPort,
+            open: false,
+            online: false,
+            logLevel: 'silent',
+            notify: false,
+            ui: false,
+            middleware: isFeedbackEnabled && feedbackMiddleware
         });
-    });
+    }
+
+    function feedbackMiddleware(req, res, next) {
+        if (req.url.includes('/doc-feedback/')) {
+            var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
+            if (req.method.toLowerCase() === 'get') {
+                return got.stream(backendUrl)
+                    .pipe(res);
+            } else {
+                var body = '';
+                req
+                    .on('data', chunk => {
+                        body += chunk;
+                    })
+                    .on('end', () => {
+                        got.post(backendUrl, { query: qs.parse(body) })
+                            .then(() => res.end('ok'))
+                            .catch(console.error);
+                    });
+
+                return;
+            }
+        }
+
+        if (req.url.match(/svgd/)) {
+            res.setHeader('Content-Type', 'image/svg+xml');
+            res.setHeader('Content-Encoding', 'deflate')
+        }
+        next();
+    }
+
+    return isFeedbackEnabled ? docFeedbackHandlers(config).then(app => {
+        app.listen(docFeedbackHandlersPort, runBrowserSync);
+    }) : runBrowserSync(isFeedbackEnabled);
 });
 
 gulp.task('csscomb', function() {
