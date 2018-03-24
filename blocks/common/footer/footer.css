@@ -6,13 +6,17 @@
     }
 }
 
+.footer
+{
+    font-size: 14px;
+}
+
 .footer__layout
 {
     display: flex;
     justify-content: center;
 
-    margin: 0 80px 0 220px;
-    padding: 40px;
+    margin: 100px 80px 100px 220px;
 
     color: #fff;
 }
@@ -55,8 +59,7 @@
 {
     .footer__layout
     {
-        margin: 0;
-        padding: 20px 15px;
+        margin: 20px 15px;
     }
 
     .footer__channel

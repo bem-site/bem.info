@@ -12,7 +12,7 @@ block('footer').mode('index')(function() {
                 },
                 ' ',
                 this.i18n(this.block, 'made'), // is proudly made by
-                ' ',
+                '\u00a0',
                 {
                     elem: 'copyright-ya',
                     url: this.i18n(this.block, 'yandex-url'),
