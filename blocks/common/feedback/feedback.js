@@ -1,10 +1,10 @@
 modules.define('feedback',
     ['i-bem-dom', 'jquery', 'feedback__cancel', 'feedback__close',
     'feedback__submit', 'textarea', 'button', 'radio-group', 'feedback__wrapper',
-    'feedback__feedback-done'],
+    'feedback__feedback-done', 'cookie'],
 
     function(provide, bemDom, $, FeedbackCancel, FeedbackClose, FeedbackSubmit, Textarea,
-         Button, RadioGroup, FeedbackWrapper, FeedbackDone) {
+         Button, RadioGroup, FeedbackWrapper, FeedbackDone, Cookie) {
 
     provide(bemDom.declBlock(this.name, {
         _onTextareaChange: function(e) {
@@ -25,6 +25,8 @@ modules.define('feedback',
             e.preventDefault();
 
             var _this = this,
+
+                cookies = JSON.parse(Cookie.get('bem.info')) || {},
                 href = window.location.href,
                 vote = this._elem('radio-group').findMixedBlock(RadioGroup).getVal(),
                 feedbackText = this._elem('textarea').findMixedBlock(Textarea).getVal(),
@@ -39,6 +41,11 @@ modules.define('feedback',
                 .then(() => {
                     _this._elem(FeedbackWrapper).delMod('visible');
                     _this._elem(FeedbackDone).setMod('visible');
+
+                    cookies.feedback || (cookies.feedback = {});
+                    cookies.feedback[window.location.href] = true;
+                    Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
+
                     _this._emit('rate', data);
                 })
                 .fail(err => {

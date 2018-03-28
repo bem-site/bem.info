@@ -7,7 +7,7 @@ block('feedback').elem('feedback-done').content()(function() {
             block: 'heading',
             mods: { level: 4 },
             mix: { block: this.block, elem: 'heading' },
-            content: 'Thank you!'
+            content: this.i18n(this.block, 'done')
         },
         {
             block: 'button',
