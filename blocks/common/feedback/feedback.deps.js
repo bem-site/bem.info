@@ -7,6 +7,7 @@
         'jquery',
         'radio-group',
         'textarea',
-        'button'
+        'button',
+        'cookie'
     ]
 })

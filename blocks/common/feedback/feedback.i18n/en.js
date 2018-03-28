@@ -2,6 +2,7 @@ module.exports = {
     'feedback': {
         send: 'Send feedback',
         ok: 'Send',
-        cancel: 'Cancel'
+        cancel: 'Cancel',
+        done: 'Thank you!'
     }
 };

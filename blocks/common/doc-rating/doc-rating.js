@@ -42,16 +42,11 @@ modules.define('doc-rating', ['i-bem-dom', 'jquery', 'modal', 'feedback', 'ratin
             }
         },
         updateData: function(handlerUrl) {
-            var _this = this,
-                cookies = JSON.parse(Cookie.get('bem.info')) || {};
-
-            cookies.feedback || (cookies.feedback = {});
-            cookies.feedback[window.location.href] = true;
+            var _this = this;
 
             $.get(handlerUrl)
                 .then(function(respond) {
-                    Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
-                    _this.updateInterface(JSON.parse(respond));
+                    _this.updateInterface(typeof respond === 'string' ? JSON.parse(respond) : respond);
                 })
                 .fail(err => console.log(err));
         },

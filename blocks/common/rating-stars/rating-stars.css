@@ -1,13 +1,11 @@
 .rating-stars {
     position: relative;
+
+    width: 70px;
 }
 
 .rating-stars__gray {
     color: #c5c5c5;
-}
-
-.rating-stars__item {
-    cursor: pointer;
 }
 
 .rating-stars_active .rating-stars__item:hover .rating-stars__item {
@@ -15,6 +13,8 @@
 }
 
 .rating-stars_active .rating-stars__gray .rating-stars__item:hover {
+    cursor: pointer;
+
     color: #f9b708;
 }
 
