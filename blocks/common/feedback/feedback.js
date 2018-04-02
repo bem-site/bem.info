@@ -1,10 +1,10 @@
 modules.define('feedback',
     ['i-bem-dom', 'jquery', 'feedback__cancel', 'feedback__close',
     'feedback__submit', 'textarea', 'button', 'radio-group', 'feedback__wrapper',
-    'feedback__feedback-done', 'cookie'],
+    'feedback__feedback-done', 'cookie', 'yandex-metrica-api'],
 
     function(provide, bemDom, $, FeedbackCancel, FeedbackClose, FeedbackSubmit, Textarea,
-         Button, RadioGroup, FeedbackWrapper, FeedbackDone, Cookie) {
+         Button, RadioGroup, FeedbackWrapper, FeedbackDone, Cookie, YandexMetricaApi) {
 
     provide(bemDom.declBlock(this.name, {
         _onTextareaChange: function(e) {
@@ -46,6 +46,7 @@ modules.define('feedback',
                     cookies.feedback[window.location.href] = true;
                     Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
 
+                    YandexMetricaApi.sendParams(data);
                     _this._emit('rate', data);
                 })
                 .fail(err => {
