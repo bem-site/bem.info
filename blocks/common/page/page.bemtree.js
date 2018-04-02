@@ -1,5 +1,6 @@
 block('page').content()(function() {
-    var data = this.data,
+    var metricaCounterId = '16972024',
+        data = this.data,
         page = data.page,
         content = page.type === 'promo' ? { block: 'promo-content' } :
             page.type === 'lib' ? { block: 'blocks' } :
@@ -22,12 +23,16 @@ block('page').content()(function() {
         {
             block: 'yandex-metrica',
             params: {
-                id: '16972024',
+                id: metricaCounterId,
                 webvisor: true,
                 clickmap: true,
                 trackLinks: true,
                 accurateTrackBounce: true
             }
+        },
+        {
+            block: 'yandex-metrica-api',
+            js: { counterId: metricaCounterId }
         }
     ];
 });

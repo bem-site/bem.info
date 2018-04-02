@@ -8,6 +8,7 @@
         'radio-group',
         'textarea',
         'button',
-        'cookie'
+        'cookie',
+        'yandex-metrica-api'
     ]
 })
