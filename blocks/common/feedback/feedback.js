@@ -46,7 +46,9 @@ modules.define('feedback',
                     cookies.feedback[window.location.href] = true;
                     Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
 
-                    YandexMetricaApi.sendParams(data);
+                    var yaParams = {};
+                    yaParams[data.doc] = data;
+                    YandexMetricaApi.sendParams(yaParams);
                     _this._emit('rate', data);
                 })
                 .fail(err => {
