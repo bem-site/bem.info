@@ -50,7 +50,7 @@ modules.define('feedback',
                         record = Object.keys(data)
                             .filter(function(key) { return key !== 'doc'; })
                             .map(function(key) { return data[key]; });
-                
+
                     record.push(new Date());
                     yaParams[data.doc] = record;
                     YandexMetricaApi.sendParams(yaParams);
