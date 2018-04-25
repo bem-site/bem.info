@@ -1314,208 +1314,208 @@ module.exports = [
   {
     url: '/toolbox/sdk/bem-walk/',
     site: '/toolbox/sdk/bem-walk/',
-    title: 'bem-walk',
+    title: '@bem/sdk.walk',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/walk/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/walk/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/walk/README.md',
     },
-    tags: ['bem-sdk', 'bem-walk'],
+    tags: ['bem-sdk', '@bem/sdk.walk'],
     bundle: 'toolbox',
     next: false
   },
   {
     url: '/toolbox/sdk/bem-config/',
     site: '/toolbox/sdk/bem-config/',
-    title: 'bem-config',
+    title: '@bem/sdk.config',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/config/README.ru.md', // TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/config/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/config/README.md',
     },
-    tags: ['bem-sdk', 'bem-config'],
-    bundle: 'toolbox'
-  },
-  {
-    url: '/toolbox/sdk/bem-bemjson-node/',
-    site: '/toolbox/sdk/bem-bemjson-node/',
-    title: 'bem-bemjson-node',
-    source: {
-      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.ru.md', //TODO
-      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.uk.md',
-      en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.md',
-    },
-    tags: ['bem-sdk', 'bem-bemjson-node'],
-    bundle: 'toolbox'
-  },
-  {
-    url: '/toolbox/sdk/bem-entity-name/',
-    site: '/toolbox/sdk/bem-entity-name/',
-    title: 'bem-entity-name',
-    source: {
-      // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.ru.md', // TODO
-      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.uk.md',
-      en: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.md',
-    },
-    tags: ['bem-sdk', 'bem-entity-name'],
+    tags: ['bem-sdk', '@bem/sdk.config'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-naming-entity/',
     site: '/toolbox/sdk/bem-naming-entity/',
-    title: 'bem-naming-entity',
+    title: '@bem/sdk.naming.entity ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.entity/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.entity/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.entity/README.md',
     },
-    tags: ['bem-sdk', 'bem-naming-entity'],
+    tags: ['bem-sdk', '@bem/sdk.naming.entity '],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-naming-cell-stringify/',
     site: '/toolbox/sdk/bem-naming-cell-stringify/',
-    title: 'bem-naming-cell-stringify',
+    title: '@bem/sdk.naming.cell.stringify ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.stringify/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.stringify/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.stringify/README.md',
     },
-    tags: ['bem-sdk', 'bem-naming-cell-stringify'],
-    bundle: 'toolbox'
-  },
-  {
-    url: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
-    site: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
-    title: 'bem-naming-cell-pattern-parser',
-    source: {
-      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.ru.md', //TODO
-      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.uk.md',
-      en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.md',
-    },
-    tags: ['bem-sdk', 'bem-naming-cell-pattern-parser'],
+    tags: ['bem-sdk', '@bem/sdk.naming.cell.stringify '],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-naming-file-stringify/',
     site: '/toolbox/sdk/bem-naming-file-stringify/',
-    title: 'bem-naming-file-stringify',
+    title: '@bem/sdk.naming.file.stringify',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.file.stringify/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.file.stringify/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.file.stringify/README.md',
     },
-    tags: ['bem-sdk', 'bem-naming-file-stringify'],
+    tags: ['bem-sdk', '@bem/sdk.naming.file.stringify'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-decl/',
     site: '/toolbox/sdk/bem-decl/',
-    title: 'bem-decl',
+    title: '@bem/sdk.decl ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/decl/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/decl/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/decl/README.md',
     },
-    tags: ['bem-sdk', 'bem-decl'],
+    tags: ['bem-sdk', '@bem/sdk.decl '],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-bemjson-to-decl/',
     site: '/toolbox/sdk/bem-bemjson-to-decl/',
-    title: 'bem-bemjson-to-decl',
+    title: '@bem/sdk.bemjson-to-decl',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-decl/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-decl/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-decl/README.md',
     },
-    tags: ['bem-sdk', 'bem-bemjson-to-decl'],
+    tags: ['bem-sdk', '@bem/sdk.bemjson-to-decl'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-bemjson-to-jsx/',
     site: '/toolbox/sdk/bem-bemjson-to-jsx/',
-    title: 'bem-bemjson-to-jsx',
+    title: '@bem/sdk.bemjson-to-jsx',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.md',
     },
-    tags: ['bem-sdk', 'bem-bemjson-to-jsx'],
+    tags: ['bem-sdk', '@bem/sdk.bemjson-to-jsx'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-import-notation/',
     site: '/toolbox/sdk/bem-import-notation/',
-    title: 'bem-import-notation',
+    title: '@bem/sdk.import-notation',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/import-notation/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/import-notation/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/import-notation/README.md',
     },
-    tags: ['bem-sdk', 'bem-import-notation'],
+    tags: ['bem-sdk', '@bem/sdk.import-notation'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-graph/',
     site: '/toolbox/sdk/bem-graph/',
-    title: 'bem-graph',
+    title: '@bem/sdk.graph',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/graph/README.ru.md', //TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/graph/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/graph/README.md',
     },
-    tags: ['bem-sdk', 'bem-graph'],
+    tags: ['bem-sdk', '@bem/sdk.graph'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-deps/',
     site: '/toolbox/sdk/bem-deps/',
-    title: 'bem-deps',
+    title: '@bem/sdk.deps',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/deps/README.ru.md', // TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/deps/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/deps/README.md',
     },
-    tags: ['bem-sdk', 'deps'],
+    tags: ['bem-sdk', '@bem/sdk.deps'],
     bundle: 'toolbox'
   },
   {
-    url: '/toolbox/sdk/bem-cell/',
-    site: '/toolbox/sdk/bem-cell/',
-    title: 'bem-cell',
+    url: '/toolbox/sdk/bem-entity-name/',
+    site: '/toolbox/sdk/bem-entity-name/',
+    title: '@bem/sdk.entity-name',
     source: {
-      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.ru.md', //TODO
-      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.uk.md',
-      en: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.md',
+      // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.ru.md', // TODO
+      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.uk.md',
+      en: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.md',
     },
-    tags: ['bem-sdk', 'bem-cell'],
+    tags: ['bem-sdk', '@bem/sdk.entity-name'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-file/',
     site: '/toolbox/sdk/bem-file/',
-    title: 'bem-file',
+    title: '@bem/sdk.file',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/file/README.ru.md', // TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/file/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/file/README.md',
     },
-    tags: ['bem-sdk', 'bem-file'],
+    tags: ['bem-sdk', '@bem/sdk.file'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/sdk/bem-cell/',
+    site: '/toolbox/sdk/bem-cell/',
+    title: '@bem/sdk.cell',
+    source: {
+      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.ru.md', //TODO
+      // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.uk.md',
+      en: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.md',
+    },
+    tags: ['bem-sdk', '@bem/sdk.cell'],
     bundle: 'toolbox'
   },
   {
     url: '/toolbox/sdk/bem-bundle/',
     site: '/toolbox/sdk/bem-bundle/',
-    title: 'bem-bundle',
+    title: '@bem/sdk.bundle',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bundle/README.ru.md', // TODO
       // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bundle/README.uk.md',
       en: 'https://github.com/bem/bem-sdk/blob/master/packages/bundle/README.md',
     },
-    tags: ['bem-sdk', 'bem-bundle'],
+    tags: ['bem-sdk', '@bem/sdk.bundle'],
     bundle: 'toolbox'
   },
+  // {
+  //   url: '/toolbox/sdk/bem-bemjson-node/',
+  //   site: '/toolbox/sdk/bem-bemjson-node/',
+  //   title: 'bem-bemjson-node',
+  //   source: {
+  //     //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.ru.md', //TODO
+  //     // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.uk.md',
+  //     en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.md',
+  //   },
+  //   tags: ['bem-sdk', 'bem-bemjson-node'],
+  //   bundle: 'toolbox'
+  // },
+  // {
+  //   url: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
+  //   site: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
+  //   title: 'bem-naming-cell-pattern-parser',
+  //   source: {
+  //     //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.ru.md', //TODO
+  //     // uk: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.uk.md',
+  //     en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.md',
+  //   },
+  //   tags: ['bem-sdk', 'bem-naming-cell-pattern-parser'],
+  //   bundle: 'toolbox'
+  // },
   {
     url: '/platform/',
     site: '/platform/',
@@ -1842,9 +1842,9 @@ module.exports = [
       en: 'Dependencies'
     },
     description: {
-      ru: 'deps.js — технология для декларирования зависимостей по БЭМ',
+      ru: 'Технология для описания зависимостей',
       // uk: '',
-      en: 'deps.js — a technology to declare dependencies in BEM',
+      en: 'Technology for declaring dependencies',
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.ru.md',
@@ -1886,7 +1886,6 @@ module.exports = [
     tags: ['project-stub'],
     bundle: 'platform'
   },
-
   {
     url: '/platform/libs/',
     site: '/platform/libs/',
@@ -1999,9 +1998,9 @@ module.exports = [
       en: 'Creating a static page',
     },
     source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.ru.md',
       // uk: '',
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/quick-start-static/quick-start-static.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.en.md',
     },
     tags: ['tutorials', 'project-stub'],
     bundle: 'platform'
@@ -2015,9 +2014,9 @@ module.exports = [
       en: 'Starting a static BEM project',
     },
     source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.ru.md',
       // uk: '',
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-project-stub/start-with-project-stub.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.en.md',
     },
     tags: ['tutorials', 'project-stub'],
     bundle: 'platform'
@@ -2031,9 +2030,9 @@ module.exports = [
       en: 'Starting a dynamic BEM project',
     },
     source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-bem-express/start-with-bem-express.ru.md',
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.ru.md',
       // uk: '',
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/start-with-bem-express/start-with-bem-express.en.md',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.en.md',
     },
     tags: ['tutorials'],
     bundle: 'platform'
