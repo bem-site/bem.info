@@ -46,8 +46,13 @@ modules.define('feedback',
                     cookies.feedback[window.location.href] = true;
                     Cookie.set('bem.info', JSON.stringify(cookies), { expires: 365 });
 
-                    var yaParams = {};
-                    yaParams[data.doc] = data;
+                    var yaParams = {},
+                        record = Object.keys(data)
+                            .filter(function(key) { return key !== 'doc'; })
+                            .map(function(key) { return data[key]; });
+
+                    record.push(new Date());
+                    yaParams[data.doc] = record;
                     YandexMetricaApi.sendParams(yaParams);
                     _this._emit('rate', data);
                 })
