@@ -5,7 +5,6 @@ provide(bemDom.declElem('rating-stars', 'item', {
     _onPointerClick: function(e) {
         this._emit('click', { val: e.bemTarget.params.val });
         e.stopPropagation();
-
     }
 }, {
     lazyInit: true,
