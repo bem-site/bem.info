@@ -545,3 +545,10 @@
         line-height: 1;
     }
 }
+
+@media (max-width: 1200px) {
+    .article.page__content
+    {
+        padding: 15px;
+    }
+}
