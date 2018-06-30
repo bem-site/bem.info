@@ -535,3 +535,10 @@
         width: calc(100% + 63px);
     }
 }
+
+@media (max-width: 1200px) {
+    .article.page__content
+    {
+        padding: 15px;
+    }
+}

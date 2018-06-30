@@ -22,3 +22,5 @@ npm-debug.log
 token
 output
 .cache
+
+secret-config.js
