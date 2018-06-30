@@ -2163,6 +2163,7 @@ module.exports = [
     ru: 'Форум',
     en: 'Forum',
   },
+  source: { ru: '', en: '' },
   level: 1,
   nav: false
 });
