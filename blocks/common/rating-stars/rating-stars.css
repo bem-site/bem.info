@@ -32,6 +32,6 @@
     content: '★★★★★';
 }
 
-.rating-stars_active .rating-stars:hover .rating-stars__yellow {
+.rating-stars_active:hover .rating-stars__yellow {
     display: none;
 }
