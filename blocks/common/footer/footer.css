@@ -14,11 +14,11 @@
 .footer__layout
 {
     display: flex;
-    justify-content: center;
 
-    margin: 100px 80px 100px 220px;
+    margin: 28px 0;
 
     color: #fff;
+    justify-content: center;
 }
 
 .footer__community

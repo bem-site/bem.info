@@ -1,8 +1,13 @@
+.footer
+{
+    width: 100vw;
+}
+
 .footer__layout
 {
-    justify-content: space-between;
 
     margin: 50px 31px 30px 20px;
+    justify-content: space-between;
 }
 
 .footer__community
@@ -38,9 +43,9 @@
     {
         flex-direction: column;
 
-        text-align: center;
-
         margin: 20px 15px;
+
+        text-align: center;
     }
 
     .footer__community,

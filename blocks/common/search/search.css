@@ -17,6 +17,8 @@
     z-index: 1;
 
     overflow: visible;
+
+    height: 0;
 }
 
 .search_opened .search__form
@@ -30,11 +32,10 @@
     right: 80px;
 
     background: #fc0;
-
-    stroke: #000;
 }
 
-.search_opened .search__submit:hover
+.search_opened .search__submit-icon,
+.search_opened .search__submit-icon:hover
 {
     stroke: #000;
 }
@@ -47,17 +48,14 @@
     right: -80px;
 
     margin: 0;
+    padding: 28px 31px 26px 32px;
 
+    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 
     border: 0;
     outline: none;
     background: transparent;
-}
-
-.search__submit:hover
-{
-    stroke: #fff;
 }
 
 .search__form
@@ -128,22 +126,21 @@
 {
     .search
     {
-        top: -20px;
-        left: 0;
-
         display: none;
-
-        width: calc(100% - 40px);
-
-        background: inherit;
     }
 
     .search_opened
     {
         position: absolute;
         z-index: 2;
+        top: -20px;
+        left: 0;
 
         display: block;
+
+        width: calc(100% - 40px);
+
+        background: inherit;
     }
 
     .search_opened .search__form
@@ -154,6 +151,27 @@
         background: inherit;
     }
 
+    .search_opened .search__submit
+    {
+        position: absolute;
+        top: 39px;
+        right: auto;
+        left: 15px;
+
+        padding: 0;
+
+        transition: none;
+
+        background: transparent;
+    }
+
+    .search_opened .search__submit-icon,
+    .search_opened .search__submit-icon:hover
+    {
+        stroke: #fff;
+        stroke-width: 1;
+    }
+
     .search__form
     {
         position: static;
@@ -162,7 +180,7 @@
 
         width: auto;
         height: 47px;
-        margin: 0 10px 0 13px;
+        margin: 0 10px 0 15px;
         padding: 12px 0 5px 30px;
 
         border-bottom: 1px solid #ccc;
@@ -172,21 +190,6 @@
     {
         width: 100%;
         margin: 18px 0 0;
-    }
-
-    .search_opened .search__submit
-    {
-        transition: none;
-
-        background: transparent;
-
-        stroke: #fff;
-        stroke-width: 1;
-    }
-
-    .search_opened .search__submit:hover
-    {
-        stroke: #fff;
     }
 
     .search__submit

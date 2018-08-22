@@ -1,17 +1,15 @@
 block('article-tags').content()(function() {
     var data = this.data,
-        page = data.page;
+        tags = data.page.tags;
 
-    return page.tags && [
-        page.tags.map(function(tag) {
-            return {
-                elem: 'tag',
-                content: {
-                    elem: 'link',
-                    // attrs: { href: data.root + '/tags/' + tag },
-                    content: tag
-                }
+    return tags && tags.map(function(tag) {
+        return {
+            elem: 'tag',
+            content: {
+                elem: 'link',
+                // attrs: { href: data.root + '/tags/' + tag },
+                content: tag
             }
-        })
-    ];
+        };
+    });
 });

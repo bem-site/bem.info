@@ -1,10 +1,10 @@
 .promo-crossroad
 {
     display: flex;
-    justify-content: space-around;
 
     margin: 0 0 100px;
     padding: 0 10%;
+    justify-content: space-around;
 }
 
 .promo-crossroad__item
@@ -78,9 +78,9 @@
 {
     .promo-crossroad
     {
-        flex-wrap: wrap;
 
         padding: 0 1%;
+        flex-wrap: wrap;
     }
 }
 

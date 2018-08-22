@@ -5,11 +5,11 @@
     left: 79px;
 
     display: flex;
-    justify-content: space-between;
 
     width: calc(100% - 109px);
     max-width: 1140px;
     height: 436px;
+    justify-content: space-between;
 }
 
 .promo-logo__logo

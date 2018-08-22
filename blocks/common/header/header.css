@@ -42,9 +42,9 @@
 
 .header__breadcrumbs
 {
-    flex-grow: 1;
 
     margin: 18px 0 0;
+    flex-grow: 1;
 }
 
 .header__forum
