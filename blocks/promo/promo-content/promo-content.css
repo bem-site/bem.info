@@ -1,4 +1,3 @@
-.promo-content
-{
-    flex-grow: 1;
+.promo-content {
+    border-radius: 0;
 }
