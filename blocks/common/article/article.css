@@ -4,6 +4,16 @@
     z-index: 1;
 } */
 
+/* .article > *
+{
+    display: none;
+}
+
+.article > h1
+{
+    display: block;
+} */
+
 /* block level (begin) */
 .article__paragraph,
 .article__list,
@@ -274,9 +284,7 @@
 
     overflow-x: auto;
 
-    box-sizing: border-box;
-    width: calc(100% + 96px);
-    margin: 0 0 16px -48px;
+    margin: 0 0 16px;
     padding: 16px 20px 16px 47px;
 
     white-space: pre;
@@ -421,8 +429,6 @@
 
     padding: 0 2px;
 
-    white-space: nowrap;
-
     border-radius: 3px;
     background: rgba(240, 240, 235, 0.5);
 }
@@ -531,7 +537,5 @@
     {
         font-size: 14px;
         line-height: 1;
-
-        width: calc(100% + 63px);
     }
 }

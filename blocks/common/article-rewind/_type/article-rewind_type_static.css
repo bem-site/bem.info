@@ -4,11 +4,13 @@
 
     display: flex;
 
-    box-sizing: border-box;
+    min-height: 140px;
+
+    /* box-sizing: border-box;
     width: calc(100% + 96px);
     min-height: 40px;
     margin: 42px 0 -8px -48px;
-    padding: 40px 32px 40px 111px; /* 111px + 32px padding-left/right in article-wrap */
+    padding: 40px 32px 40px 111px; 111px + 32px padding-left/right in article-wrap */
 
     background: #f3f1ed;
 }
@@ -19,13 +21,14 @@
 
     overflow: hidden;
 
-    align-self: center;
-
     width: 111px;
     height: 70px;
-    margin-left: -100px;
+
+    /* margin-left: -100px; */
 
     white-space: nowrap;
+
+    align-self: center;
 }
 
 .article-rewind_type_static .article-rewind__prev-link
@@ -57,12 +60,12 @@
 {
     position: relative;
 
-    flex-grow: 1;
-    align-self: center;
-
     margin-right: 88px;
 
     text-align: right;
+
+    flex-grow: 1;
+    align-self: center;
 }
 
 .article-rewind_type_static .article-rewind__next-text
@@ -106,28 +109,47 @@
 {
     .article-rewind_type_static
     {
-        width: calc(100% + 30px);
-        min-height: auto;
-        margin: 0 0 -7px -15px;
-        padding: 40px 15px 32px;
+        min-height: 100px;
+        padding: 0 15px;
     }
 
-    .article-rewind_type_static .article-rewind__prev,
-    .article-rewind_type_static .article-rewind__next-link::after
+    .article-rewind_type_static .article-rewind__prev
     {
         display: none;
     }
 
     .article-rewind_type_static .article-rewind__next
     {
+        position: static;
+
         margin: 0;
+    }
+
+    .article-rewind_type_static .article-rewind__next-text
+    {
+        right: 15px;
     }
 
     .article-rewind_type_static .article-rewind__next-link
     {
-        font-size: 30px;
+        font-size: 21px;
         line-height: 1.4;
 
         display: block;
+    }
+
+    /* Expand clickable area to all block */
+    .article-rewind_type_static .article-rewind__next-link::after
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: auto;
+
+        content: '';
+        transform: none;
     }
 }
