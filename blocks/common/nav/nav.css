@@ -21,6 +21,8 @@
 
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 .nav__item_current .nav__title,
@@ -103,11 +105,6 @@
 .nav__link:hover
 {
     color: #fff;
-}
-
-.nav__link:target
-{
-    background: red !important;
 }
 
 @media (max-width: 1200px)

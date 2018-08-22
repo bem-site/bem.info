@@ -5,10 +5,177 @@
     display: flex;
     flex-direction: column;
 
-    min-height: 100vh;
     margin: 0;
 
     text-size-adjust: 100%;
+}
+
+.page__sitemap
+{
+    display: none;
+
+    height: calc(100vh - 70px);
+}
+
+.page__nav
+{
+    position: fixed;
+    top: 80px;
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    width: 260px;
+    height: calc(100% - 100px);
+
+    mask-image: linear-gradient(to bottom, #000 90%, rgba(0, 0, 0, 0));
+}
+
+.page__main
+{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    margin-left: 260px;
+
+    border-bottom-left-radius: 10px;
+    background: #fff;
+    justify-content: space-between;
+}
+
+.page__head
+{
+    order: -2;
+}
+
+.page__side
+{
+
+    margin-left: 260px;
+    padding: 20px 10px 10px 20px;
+
+    border-top-left-radius: 10px;
+    background: #fff;
+    order: -1;
+}
+
+@media (max-width: 1200px)
+{
+    .page__nav
+    {
+        font-size: 14px;
+        line-height: 32px;
+
+        width: 233px;
+    }
+
+    .page__main,
+    .page__side
+    {
+        margin-left: 233px;
+    }
+}
+
+@media (max-width: 800px)
+{
+    .page__main,
+    .page__side
+    {
+        margin: 0;
+
+        border-radius: 0;
+    }
+
+    .page__sitemap
+    {
+        height: auto;
+        margin-top: 70px;
+    }
+
+    .page__menu
+    {
+        display: none;
+    }
+
+    .page__side
+    {
+        padding: 20px 15px 10px;
+    }
+}
+
+@supports (display: grid)
+{
+    @media (min-width: 1201px)
+    {
+        .page:not(.page_promo)
+        {
+            display: grid;
+
+            min-height: 100vh;
+            grid-template-rows: 70px 1fr auto;
+            grid-template-columns: 260px minmax(0, 900px) minmax(160px, 1fr);
+        }
+
+        .page__head
+        {
+            grid-column: 1 / 4;
+        }
+
+        .page__sitemap
+        {
+            grid-column: 1 / 4;
+        }
+
+        @supports (position: sticky) {
+            .page__nav
+            {
+                position: sticky;
+
+                height: auto;
+
+                mask-image: none;
+            }
+        }
+
+        .page__nav
+        {
+            width: auto;
+        }
+
+        .page__main
+        {
+
+            margin: 0;
+
+            border-radius: 10px;
+            grid-column: 2 / 3;
+        }
+
+        .page__content
+        {
+
+            background: #fff url(page__content.png) repeat;
+            flex-grow: 1;
+
+            /* background: #fff url(page__content_dark.gif) repeat; */
+        }
+
+        .page__side
+        {
+
+            margin: 0;
+
+            color: #000;
+            background: none;
+            order: initial;
+        }
+
+        .page__foot
+        {
+            grid-column: 2 / 3;
+        }
+    }
 }
 
 @media print
