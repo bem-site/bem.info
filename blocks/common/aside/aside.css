@@ -1,0 +1,164 @@
+.aside
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside__group
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside__tags,
+.aside__rating,
+.aside__social,
+.aside__amendments
+{
+    margin: 0 16px 8px 0;
+
+    color: #000 !important;
+}
+
+.aside__rating
+{
+    min-height: auto;
+    margin-right: 32px;
+
+    white-space: nowrap;
+}
+
+.aside__rating .doc-rating__total
+{
+    display: inline-block;
+}
+
+.aside__rating .doc-rating__total::after
+{
+    content: ',\00a0'; /* &nbsp; */
+}
+
+.aside__rating .doc-rating__stars
+{
+    display: inline-block;
+
+    margin: 0 10px 0 0;
+
+    vertical-align: top;
+}
+
+.aside__rating .doc-rating__value
+{
+    display: inline-block;
+}
+
+.aside__social
+{
+    margin: 42px 0 0;
+}
+
+.aside__amendments
+{
+    margin: 36px 0 0 -10px;
+}
+
+.aside__tags .article-tags__tag
+{
+    margin-bottom: 8px;
+}
+
+.aside__tags .article-tags__link
+{
+    color: #000;
+    border-color: #000;
+}
+
+.aside__social
+{
+    margin: 0 26px 0 0;
+
+    white-space: nowrap;
+}
+
+.aside__social .social-likes__service
+{
+    margin-right: 3px;
+}
+
+.aside__amendments
+{
+    width: 50%;
+    margin: 0;
+
+    background: #eee;
+}
+
+.aside__amendments .article-amendments__link
+{
+    color: inherit;
+}
+
+@media (max-width: 1024px)
+{
+    .aside
+    {
+        flex-wrap: wrap;
+    }
+
+    .aside__group
+    {
+        width: 100%;
+    }
+
+    .aside__amendments
+    {
+        width: 100%;
+        margin: 8px 0 0 -10px;
+    }
+}
+
+@media (max-width: 800px)
+{
+    .aside__group
+    {
+        flex-wrap: wrap;
+    }
+
+    .aside__tags,
+    .aside__rating
+    {
+        flex-grow: 0;
+    }
+
+    .aside__amendments
+    {
+        width: calc(100% - 33px);
+        margin-left: -15px;
+        padding-left: 15px;
+    }
+}
+
+/*
+@media (min-width: 1201px)
+{
+    @supports (display: grid)
+    {
+        .aside
+        {
+            flex-direction: column;
+        }
+
+        .aside__tags
+        {
+            margin: 63px 0 0;
+        }
+
+        .aside__rating
+        {
+            min-height: 86px;
+            margin: 33px 0 0;
+        }
+    }
+}
+*/

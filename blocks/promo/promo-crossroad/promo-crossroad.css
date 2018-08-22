@@ -78,9 +78,9 @@
 {
     .promo-crossroad
     {
-        flex-wrap: wrap;
 
         padding: 0 1%;
+        flex-wrap: wrap;
     }
 }
 

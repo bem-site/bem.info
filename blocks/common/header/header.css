@@ -42,10 +42,6 @@
 
 .header__breadcrumbs
 {
-    position: absolute;
-    top: 1px;
-    left: 90px;
-
     flex-grow: 1;
 
     margin: 18px 0 0;

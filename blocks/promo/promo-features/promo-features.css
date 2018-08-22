@@ -1,11 +1,11 @@
 .promo-features
 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
     max-width: 1000px;
     margin: -10px auto 120px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .promo-features__separator
@@ -77,9 +77,9 @@
 {
     .promo-features
     {
-        align-items: stretch;
 
         margin: -10px auto 80px;
+        align-items: stretch;
     }
 
     .promo-features__image
