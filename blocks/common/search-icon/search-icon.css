@@ -2,11 +2,13 @@
 {
     width: 17px;
     height: 17px;
-    padding: 23px 31px 30px 32px;
-
-    cursor: pointer;
 
     fill: none;
     stroke: rgba(255, 255, 255, 0.65);
     stroke-width: 2;
+}
+
+.search-icon:hover
+{
+    stroke: #fff;
 }

@@ -1,21 +1,11 @@
 .sitemap
 {
-    position: absolute;
-    z-index: 999;
-    top: 70px;
-
-    display: none;
-
-    box-sizing: border-box;
-    width: 100%;
-    min-height: calc(100% - 100px);
     padding: 29px 80px 50px 103px;
 
     transition: color 0.3s;
 
     color: #fff;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    background: #444;
 }
 
 .sitemap__section
@@ -131,7 +121,6 @@
 {
     .sitemap
     {
-        margin-top: -10px;
         padding: 0 15px;
 
         border: 0;

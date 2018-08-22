@@ -28,8 +28,12 @@ block('search').content()(function() {
                     tag: 'input', attrs: { type: 'hidden', name: 'l10n', value: lang }
                 },
                 {
-                    block: 'search-icon',
-                    mix: { block: this.block, elem: 'submit' }
+                    block: 'search',
+                    elem: 'submit',
+                    content: {
+                        block: 'search-icon',
+                        mix: { block: 'search', elem: 'submit-icon' }
+                    }
                 }
             ]
         }

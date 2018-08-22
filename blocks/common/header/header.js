@@ -12,7 +12,7 @@ modules.define('header', ['i-bem-dom', 'form', 'keyboard__codes', 'input', 'sear
             },
             opened: {
                 'true': function() {
-                    var mq = window.matchMedia('all and (max-width: 780px)');
+                    var mq = window.matchMedia('(max-width: 800px)');
                     this.search.setMod('opened');
                     this.toggle.setMod('active');
 

@@ -1,4 +1,12 @@
 .page
 {
     background: #000;
+    grid-template-columns: auto;
+}
+
+.page__head,
+.page__sitemap,
+.page__foot
+{
+    grid-column: 1 / 2;
 }
