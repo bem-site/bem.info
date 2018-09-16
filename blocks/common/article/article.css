@@ -293,6 +293,12 @@
     background: rgba(240, 240, 235, 0.4);
 }
 
+.article__blockquote .article__code
+{
+    width: auto;
+    margin: 0 -16px 16px;
+}
+
 .article__code_correctHeight
 {
     margin-bottom: 24px;
