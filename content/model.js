@@ -1509,85 +1509,85 @@ const toolbox = [
 ];
 
 const technologiesClassicBemxjst = versioned({
-    url: '/technologies/classic/bem-xjst/',
-    site: '/technologies/classic/bem-xjst/',
+  url: '/technologies/classic/bem-xjst/',
+  site: '/technologies/classic/bem-xjst/',
+  title: {
+      ru: 'Шаблоны (BEMHTML, BEMTREE)',
+      uk: 'Шаблони (BEMHTML, BEMTREE)',
+      en: 'Templates (BEMHTML, BEMTREE)',
+  },
+  tags: ['bem-xjst'],
+  bundle: 'platform',
+  library: 'bem-xjst',
+  type: 'versioned'
+}, [
+  {
+    url: '',
+    // title: version-will-be-here
+    source: {
+        ru: '1-about.md',
+        en: '1-about.md',
+    },
+    prev: '/technologies/classic/bemjson/'
+  },
+  {
+    url: 'quick-start/',
     title: {
-        ru: 'Шаблоны (BEMHTML, BEMTREE)',
-        uk: 'Шаблони (BEMHTML, BEMTREE)',
-        en: 'Templates (BEMHTML, BEMTREE)',
+      ru: 'Быстрый старт',
+      uk: 'Швидкий старт',
+      en: 'Quick start',
     },
-    tags: ['bem-xjst'],
-    bundle: 'platform',
-    library: 'bem-xjst',
-    type: 'versioned'
-  }, [
-    {
-      url: '',
-      // title: version-will-be-here
-      source: {
-          ru: '1-about.md',
-          en: '1-about.md',
-      },
-      prev: '/technologies/classic/bemjson/'
-    },
-    {
-      url: 'quick-start/',
-      title: {
-        ru: 'Быстрый старт',
-        uk: 'Швидкий старт',
-        en: 'Quick start',
-      },
-      source: {
-          ru: '2-quick-start.md',
-          en: '2-quick-start.md',
-      }
-    },
-    {
-      url: 'api/',
-      title: 'API',
-      source: {
-          ru: '3-api.md',
-          en: '3-api.md',
-      }
-    },
-    {
-      url: 'templates-syntax/',
-      title: {
-        ru: 'Синтаксис шаблонов',
-        uk: 'Синтаксис шаблонів',
-        en: 'Templates syntax',
-      },
-      source: {
-          ru: '5-templates-syntax.md',
-          en: '5-templates-syntax.md',
-      }
-    },
-    {
-      url: 'templates-context/',
-      title: {
-        ru: 'Контекст',
-        uk: 'Контекст',
-        en: 'Context',
-      },
-      source: {
-        ru: '6-templates-context.md',
-        en: '6-templates-context.md',
-      }
-    },
-    {
-      url: 'runtime/',
-      title: 'Runtime',
-      source: {
-        ru: '7-runtime.md',
-        en: '7-runtime.md',
-      },
-      next: '/technologies/classic/i-bem/'
+    source: {
+        ru: '2-quick-start.md',
+        en: '2-quick-start.md',
     }
-  ], [
-    { number: '6', text: '6.x', path: 'v6.x' },
-    { number: '7', text: '7.x', path: 'v7.x' },
-    { number: '8', text: '8.x', path: 'master' },
-  ], '8'
+  },
+  {
+    url: 'api/',
+    title: 'API',
+    source: {
+        ru: '3-api.md',
+        en: '3-api.md',
+    }
+  },
+  {
+    url: 'templates-syntax/',
+    title: {
+      ru: 'Синтаксис шаблонов',
+      uk: 'Синтаксис шаблонів',
+      en: 'Templates syntax',
+    },
+    source: {
+        ru: '5-templates-syntax.md',
+        en: '5-templates-syntax.md',
+    }
+  },
+  {
+    url: 'templates-context/',
+    title: {
+      ru: 'Контекст',
+      uk: 'Контекст',
+      en: 'Context',
+    },
+    source: {
+      ru: '6-templates-context.md',
+      en: '6-templates-context.md',
+    }
+  },
+  {
+    url: 'runtime/',
+    title: 'Runtime',
+    source: {
+      ru: '7-runtime.md',
+      en: '7-runtime.md',
+    },
+    next: '/technologies/classic/i-bem/'
+  }
+], [
+  { number: '6', text: '6.x', path: 'v6.x' },
+  { number: '7', text: '7.x', path: 'v7.x' },
+  { number: '8', text: '8.x', path: 'master' },
+], '8'
 );
 
 const technologies = [
@@ -1596,20 +1596,20 @@ const technologies = [
     site: '/technologies/',
     title: {
       ru: 'Технологии',
-      uk: 'TBD',
-      en: 'TBD'
+      uk: 'Технологія',
+      en: 'Techmology'
     },
     tags: ['technologies'],
     type: 'promo',
-    bundle: 'platform-index' // check me!
+    bundle: 'platform-index' // TODO: check me!
   },
   {
     url: '/technologies/classic/',
-    site: '/technologies/',
+    site: '/technologies/classic/',
     subtitle: {
-      ru: 'TBD',
-      en: 'TBD',
-      uk: 'TBD'
+      ru: 'Subtitle',
+      en: 'Subtitle',
+      uk: 'Subtitle'
     },
     title: {
       ru: 'Классический БЭМ-стек',
@@ -1626,30 +1626,8 @@ const technologies = [
     prev: false
   },
   {
-    url: '/technologies/react/',
-    site: '/technologies/',
-    subtitle: {
-      ru: 'TBD',
-      en: 'TBD',
-      uk: 'TBD'
-    },
-    title: {
-      ru: 'Классический БЭМ-стек',
-      uk: 'TBD',
-      en: 'TBD'
-    },
-    source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
-      // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
-      en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
-    },
-    tags: ['technologies', 'react'],
-    bundle: 'platform',
-    prev: false
-  },
-  {
     url: '/technologies/classic/bemjson/',
-    site: '/technologies/classic/bemjson/',
+    site: '/technologies/classic/',
     title: {
       ru: 'Данные (BEMJSON)',
       uk: 'Дані (BEMJSON)',
@@ -1661,16 +1639,14 @@ const technologies = [
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md',
     },
     tags: ['bemjson'],
-    bundle: 'platform',
-    prev: false
-  }]
-  .concat(
-    technologiesClassicBemxjst
-  )
-  .concat([
+    bundle: 'platform'
+  }
+].concat(
+  technologiesClassicBemxjst
+).concat([
     {
       url: '/technologies/classic/i-bem/',
-      site: '/technologies/classic/i-bem/',
+      site: '/technologies/classic/',
       title: {
         ru: 'Клиентский JavaScript (i-bem.js)',
         uk: 'Клієнтський JavaScript (i-bem.js)',
@@ -1878,7 +1854,7 @@ const technologies = [
     },
     {
       url: '/technologies/classic/deps/',
-      site: '/technologies/classic/deps/',
+      site: '/technologies/classic/',
       title: {
         ru: 'Зависимости',
         uk: 'Залежності',
@@ -1899,7 +1875,7 @@ const technologies = [
     },
     {
       url: '/technologies/classic/deps-spec/',
-      site: '/technologies/classic/deps-spec/',
+      site: '/technologies/classic/',
       title: {
         ru: 'Спецификация DEPS',
         uk: 'Специфікація DEPS',
@@ -1915,7 +1891,7 @@ const technologies = [
     },
     {
       url: '/technologies/classic/project-stub/',
-      site: '/technologies/classic/project-stub/',
+      site: '/technologies/classic/',
       title: {
         ru: 'Заготовка проекта',
         uk: 'Заготівля проекту',
@@ -1929,14 +1905,38 @@ const technologies = [
       tags: ['project-stub'],
       bundle: 'platform'
     }
+  ])
+  .concat([
+    {
+      url: '/technologies/react/',
+      site: '/technologies/react/',
+      subtitle: {
+        ru: 'Узнайте как совместить БЭМ и React',
+        en: 'TBD',
+        uk: 'TBD'
+      },
+      title: {
+        ru: 'БЭМ и React',
+        uk: 'TBD',
+        en: 'TBD'
+      },
+      source: {
+        ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
+        // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
+        en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
+      },
+      tags: ['technologies', 'react'],
+      bundle: 'platform',
+      prev: false
+    }
   ]);
 
 const libsClassic = [
   {
-    url: '/platform/libs/',
-    site: '/platform/libs/',
+    url: '/libraries/classic/',
+    site: '/libraries/classic/',
     title: {
-      ru: 'Библиотеки',
+      ru: 'Классический БЭМ-стек',
       uk: 'Бібліотеки',
       en: 'Libraries',
     },
@@ -1945,12 +1945,12 @@ const libsClassic = [
       uk: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.uk.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
-    tags: ['libs'],
+    tags: ['libs', 'classic', 'bem-core', 'bem-components'],
     bundle: 'platform'
   }].concat(
   lib({
-    url: '/platform/libs/bem-core/',
-    site: '/platform/libs/bem-core/',
+    url: '/libraries/classic/bem-core/',
+    site: '/libraries/classic/bem-core/',
     title: 'bem-core',
     library: 'bem-core',
     versions: [
@@ -1970,8 +1970,8 @@ const libsClassic = [
     type: 'lib'
   }),
   lib({
-    url: '/platform/libs/bem-components/',
-    site: '/platform/libs/bem-components/',
+    url: '/libraries/classic/bem-components/',
+    site: '/libraries/classic/bem-components/',
     title: 'bem-components',
     library: 'bem-components',
     versions: [
@@ -1987,8 +1987,8 @@ const libsClassic = [
     type: 'lib'
   }),
   lib({
-    url: '/platform/libs/bem-history/',
-    site: '/platform/libs/bem-history/',
+    url: '/libraries/classic/bem-history/',
+    site: '/libraries/classic/bem-history/',
     title: 'bem-history',
     library: 'bem-history',
     versions: [
@@ -2003,8 +2003,8 @@ const libsClassic = [
     type: 'lib'
   })).concat([
   {
-    url: '/platform/libs/principles/',
-    site: '/platform/libs/',
+    url: '/libraries/classic/principles/',
+    site: '/libraries/classic/principles/',
     title: {
       ru: 'Принципы разработки БЭМ-библиотек',
       uk: 'Принципи розробки БЕМ-бібліотек',
@@ -2020,27 +2020,66 @@ const libsClassic = [
   }
 ]);
 
+const libsReact = [
+  {
+    url: '/libraries/react/',
+    site: '/libraries/react/',
+    subtitle: {
+      ru: 'I am React',
+      en: 'TBD',
+      uk: 'TBD'
+    },
+    title: {
+      ru: 'БЭМ и React',
+      uk: 'TBD',
+      en: 'TBD'
+    },
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
+      // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
+      en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
+    },
+    tags: ['libraries', 'react', 'bem-react-core'],
+    bundle: 'platform',
+    prev: false
+  }
+].concat(
+  lib({
+    url: '/libraries/react/bem-react-core/',
+    site: '/libraries/react/bem-react-core/',
+    title: 'bem-react-core',
+    library: 'bem-react-core',
+    versions: [
+      'node_modules/bem.info-data/bem-core-2.9.0', // TODO: fix path
+      'node_modules/bem.info-data/bem-core-3.0.1', // TODO: fix path
+    ],
+    current: '3.0.1', // TODO: fix version
+    tags: ['libs', 'bem-react-core'],
+    bundle: 'platform',
+    type: 'lib'
+  })
+);
 
 const tutorialsClassic = [
   {
-    url: '/platform/tutorials/',
-    site: '/platform/tutorials/',
+    url: '/tutorials/classic/',
+    site: '/tutorials/',
     title: {
-      ru: 'Учебные материалы',
+      ru: 'Классический БЭМ-стек',
       uk: 'Навчальні матеріали',
-      en: 'Tutorials',
+      en: 'Classical BEM stack',
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
-    tags: ['tutorials'],
+    tags: ['tutorials', 'classic'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/quick-start-static/',
-    site: '/platform/tutorials/',
+    url: '/tutorials/classic/quick-start-static/',
+    site: '/tutorials/classic/',
     title: {
       ru: 'Собираем статическую страницу',
       uk: 'Збираємо статичну сторінку',
@@ -2051,12 +2090,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.en.md',
     },
-    tags: ['tutorials', 'project-stub'],
+    tags: ['tutorials', 'classic', 'project-stub'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/start-with-project-stub/',
-    site: '/platform/tutorials/',
+    url: '/tutorials/classic/start-with-project-stub/',
+    site: '/tutorials/classic/',
     title: {
       ru: 'Создаём статический БЭМ-проект',
       uk: 'Створюємо статичний БЕМ-проект',
@@ -2067,12 +2106,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.en.md',
     },
-    tags: ['tutorials', 'project-stub'],
+    tags: ['tutorials', 'classic', 'project-stub'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/start-with-bem-express/',
-    site: '/platform/tutorials/',
+    url: '/tutorials/classic/start-with-bem-express/',
+    site: '/tutorials/classic/',
     title: {
       ru: 'Создаём динамический БЭМ-проект',
       uk: 'Створюємо динамічний БЕМ-проект',
@@ -2083,12 +2122,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.en.md',
     },
-    tags: ['tutorials'],
+    tags: ['tutorials', 'classic', 'bem-express'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/i-bem/',
-    site: '/platform/tutorials/i-bem/',
+    url: '/tutorials/classic/i-bem/',
+    site: '/tutorials/classic/i-bem/',
     title: {
       ru: 'Справочное руководство i-bem.js',
       uk: 'Довідкове керівництво i-bem.js',
@@ -2099,12 +2138,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
-    tags: ['tutorials', 'i-bem.js'],
+    tags: ['tutorials', 'classic', 'i-bem.js'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/i-bem/block/',
-    site: '/platform/tutorials/i-bem/',
+    url: '/tutorials/classic/i-bem/block/',
+    site: '/tutorials/classic/i-bem/',
     title: {
       ru: 'Описание структуры блока',
       uk: 'Опис структури блоку',
@@ -2115,12 +2154,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
-    tags: ['tutorials', 'i-bem.js'],
+    tags: ['tutorials', 'classic', 'i-bem.js'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/i-bem/modifiers/',
-    site: '/platform/tutorials/i-bem/',
+    url: '/tutorials/classic/i-bem/modifiers/',
+    site: '/tutorials/classic/i-bem/',
     description: {
       ru: 'Про модификацию блока',
       uk: 'Про модификацию блока',
@@ -2136,12 +2175,12 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
-    tags: ['tutorials', 'i-bem.js'],
+    tags: ['tutorials', 'classic', 'i-bem.js'],
     bundle: 'platform'
   },
   {
-    url: '/platform/tutorials/i-bem/live-init/',
-    site: '/platform/tutorials/i-bem/',
+    url: '/tutorials/classic/i-bem/live-init/',
+    site: '/tutorials/classic/i-bem/',
     title: {
       ru: 'Живая (ленивая) инициализация',
       uk: 'Жива (лінива) ініціалізація',
@@ -2152,13 +2191,13 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
-    tags: ['tutorials', 'i-bem.js'],
+    tags: ['tutorials', 'classic', 'i-bem.js'],
     bundle: 'platform',
     next: false
   },
   {
-    url: '/platform/tutorials/dist-quick-start/',
-    site: '/platform/tutorials/',
+    url: '/tutorials/classic/dist-quick-start/',
+    site: '/tutorials/classic/',
     title: {
       ru: 'Dist bem-components: подключаем блоки на страницу',
       // uk: 'Збираємо статичну сторінку',
@@ -2169,16 +2208,68 @@ const tutorialsClassic = [
       // uk: '',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/dist-quick-start/dist-quick-start.en.md',
     },
-    tags: ['tutorials', 'bem-components'],
+    tags: ['tutorials', 'classic', 'bem-components'],
     bundle: 'platform'
   }
 ];
 
-const libs = []
-  .concat(libsClassic);
+const tutorialsReact = [
+  {
+    url: '/tutorials/react/',
+    site: '/tutorials/',
+    subtitle: {
+      ru: 'оаоао',
+      en: 'TBD',
+      uk: 'TBD'
+    },
+    title: {
+      ru: 'БЭМ и React',
+      uk: 'TBD',
+      en: 'TBD'
+    },
+    source: {
+      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
+      // uk: '',
+      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
+    },
+    tags: ['tutorials', 'react'],
+    bundle: 'platform',
+    prev: false
+  }
+];
 
-const tutorials = []
-  .concat(tutorialsClassic)
+const libs = [
+  {
+    url: '/libraries/',
+    site: '/libraries/',
+    title: {
+      ru: 'Библиотеки',
+      uk: 'Бібліотеки',
+      en: 'Libraries'
+    },
+    tags: ['libs'],
+    type: 'promo',
+    bundle: 'platform-index' // check me!
+  }
+]
+  .concat(libsClassic)
+  .concat(libsReact);
+
+const tutorials = [
+  {
+    url: '/tutorials/',
+    site: '/tutorials/',
+    title: {
+      ru: 'Учебные материалы',
+      uk: 'TBD',
+      en: 'TBD'
+    },
+    tags: ['tutorials'],
+    type: 'promo',
+    bundle: 'platform-index' // check me!
+  }
+] .concat(tutorialsClassic)
+  .concat(tutorialsReact)
 
 module.exports = [
   {

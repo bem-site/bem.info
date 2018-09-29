@@ -154,6 +154,7 @@
 
         .page__content
         {
+            padding: 40px;
 
             background: #fff url(page__content.png) repeat;
             flex-grow: 1;

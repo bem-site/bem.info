@@ -1809,7 +1809,7 @@ module.exports = [
 
   // tutorials
   {
-    url: '/tutorials/quick-start-static/',
+    url: '/technologies/classic/quick-start-static/',
     now: {
       ru: '/technologies/classic/tutorials/quick-start-static/',
       en: '/technologies/classic/tutorials/quick-start-static/',

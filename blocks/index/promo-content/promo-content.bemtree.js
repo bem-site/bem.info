@@ -77,7 +77,7 @@ block('promo-content').content()(function() {
                             content: [
                                 {
                                     elem: 'title-link',
-                                    url: 'platform/',
+                                    url: 'technologies/',
                                     content: [
                                         {
                                             elem: 'img',
@@ -91,13 +91,13 @@ block('promo-content').content()(function() {
                         },
                         {
                             elem: 'text',
-                            content: this.i18n(this.block, 'text6') // 'Готовая реализация'
+                            content: this.i18n(this.block, 'text6') // 'Классический БЭМ-стек и React'
                         },
                         {
                             elem: 'text',
                             content: {
                                 elem: 'text-link',
-                                url: 'platform/tutorials/quick-start-static/',
+                                url: 'technologies/classic/tutorials/quick-start-static/',
                                 content: this.i18n(this.block, 'text2') // 'Быстрый старт'
                             }
                         }
