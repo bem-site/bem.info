@@ -38,7 +38,7 @@
     "eslint-plugin-bem-xjst": "^2.2.0",
     "fs-extra": "^4.0.2",
     "got": "^8.0.3",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-batch": "^1.0.5",
     "gulp-csscomb": "^3.0.8",
     "gulp-watch": "^4.3.11",
