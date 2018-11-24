@@ -1508,86 +1508,90 @@ const toolbox = [
   // }
 ];
 
-const technologiesClassicBemxjst = versioned({
-  url: '/technologies/classic/bem-xjst/',
-  site: '/technologies/classic/bem-xjst/',
-  title: {
-      ru: 'Шаблоны (BEMHTML, BEMTREE)',
-      uk: 'Шаблони (BEMHTML, BEMTREE)',
-      en: 'Templates (BEMHTML, BEMTREE)',
-  },
-  tags: ['bem-xjst'],
-  bundle: 'platform',
-  library: 'bem-xjst',
-  type: 'versioned'
-}, [
+const technologiesClassicBemxjst = versioned(
   {
-    url: '',
-    // title: version-will-be-here
-    source: {
-        ru: '1-about.md',
-        en: '1-about.md',
-    },
-    prev: '/technologies/classic/bemjson/'
-  },
-  {
-    url: 'quick-start/',
+    url: '/technologies/classic/bem-xjst/',
+    site: '/technologies/classic/bem-xjst/',
     title: {
-      ru: 'Быстрый старт',
-      uk: 'Швидкий старт',
-      en: 'Quick start',
+        ru: 'Шаблоны (BEMHTML, BEMTREE)',
+        uk: 'Шаблони (BEMHTML, BEMTREE)',
+        en: 'Templates (BEMHTML, BEMTREE)',
     },
-    source: {
-        ru: '2-quick-start.md',
-        en: '2-quick-start.md',
-    }
+    tags: ['bem-xjst'],
+    bundle: 'platform',
+    library: 'bem-xjst',
+    type: 'versioned'
   },
-  {
-    url: 'api/',
-    title: 'API',
-    source: {
-        ru: '3-api.md',
-        en: '3-api.md',
-    }
-  },
-  {
-    url: 'templates-syntax/',
-    title: {
-      ru: 'Синтаксис шаблонов',
-      uk: 'Синтаксис шаблонів',
-      en: 'Templates syntax',
+  [
+    {
+      url: '',
+      // title: version-will-be-here
+      source: {
+          ru: '1-about.md',
+          en: '1-about.md',
+      },
+      prev: '/technologies/classic/bemjson/'
     },
-    source: {
-        ru: '5-templates-syntax.md',
-        en: '5-templates-syntax.md',
-    }
-  },
-  {
-    url: 'templates-context/',
-    title: {
-      ru: 'Контекст',
-      uk: 'Контекст',
-      en: 'Context',
+    {
+      url: 'quick-start/',
+      title: {
+        ru: 'Быстрый старт',
+        uk: 'Швидкий старт',
+        en: 'Quick start',
+      },
+      source: {
+          ru: '2-quick-start.md',
+          en: '2-quick-start.md',
+      }
     },
-    source: {
-      ru: '6-templates-context.md',
-      en: '6-templates-context.md',
-    }
-  },
-  {
-    url: 'runtime/',
-    title: 'Runtime',
-    source: {
-      ru: '7-runtime.md',
-      en: '7-runtime.md',
+    {
+      url: 'api/',
+      title: 'API',
+      source: {
+          ru: '3-api.md',
+          en: '3-api.md',
+      }
     },
-    next: '/technologies/classic/i-bem/'
-  }
-], [
-  { number: '6', text: '6.x', path: 'v6.x' },
-  { number: '7', text: '7.x', path: 'v7.x' },
-  { number: '8', text: '8.x', path: 'master' },
-], '8'
+    {
+      url: 'templates-syntax/',
+      title: {
+        ru: 'Синтаксис шаблонов',
+        uk: 'Синтаксис шаблонів',
+        en: 'Templates syntax',
+      },
+      source: {
+          ru: '5-templates-syntax.md',
+          en: '5-templates-syntax.md',
+      }
+    },
+    {
+      url: 'templates-context/',
+      title: {
+        ru: 'Контекст',
+        uk: 'Контекст',
+        en: 'Context',
+      },
+      source: {
+        ru: '6-templates-context.md',
+        en: '6-templates-context.md',
+      }
+    },
+    {
+      url: 'runtime/',
+      title: 'Runtime',
+      source: {
+        ru: '7-runtime.md',
+        en: '7-runtime.md',
+      },
+      next: '/technologies/classic/i-bem/'
+    }
+  ],
+  [
+    { number: '6', text: '6.x', path: 'v6.x' },
+    { number: '7', text: '7.x', path: 'v7.x' },
+    { number: '8', text: '8.x', path: 'master' },
+  ],
+  '8'
 );
 
 const technologies = [
@@ -1597,34 +1601,34 @@ const technologies = [
     title: {
       ru: 'Технологии',
       uk: 'Технологія',
-      en: 'Techmology'
+      en: 'Technology'
     },
     tags: ['technologies'],
     type: 'promo',
     bundle: 'platform-index' // TODO: check me!
   },
-  {
-    url: '/technologies/classic/',
-    site: '/technologies/classic/',
-    subtitle: {
-      ru: 'Subtitle',
-      en: 'Subtitle',
-      uk: 'Subtitle'
-    },
-    title: {
-      ru: 'Классический БЭМ-стек',
-      uk: 'TBD',
-      en: 'TBD'
-    },
-    source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/classic.ru.md',
-      // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/classic.uk.md',
-      en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/classic.en.md',
-    },
-    tags: ['technologies', 'classic', 'i-bem'],
-    bundle: 'platform',
-    prev: false
-  },
+  // {
+  //   url: '/technologies/classic/',
+  //   site: '/technologies/classic/',
+  //   subtitle: {
+  //     ru: 'Subtitle',
+  //     en: 'Subtitle',
+  //     uk: 'Subtitle'
+  //   },
+  //   title: {
+  //     ru: 'Классический БЭМ-стек',
+  //     uk: 'TBD',
+  //     en: 'TBD'
+  //   },
+  //   source: {
+  //     ru: 'https://github.com/bem-site/bem-method/blob/technologies/classic/classic.ru.md',
+  //     // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/classic.uk.md',
+  //     en: 'https://github.com/bem-site/bem-method/blob/technologies/classic/classic.en.md',
+  //   },
+  //   tags: ['technologies', 'classic', 'i-bem'],
+  //   bundle: 'platform',
+  //   prev: false
+  // },
   {
     url: '/technologies/classic/bemjson/',
     site: '/technologies/classic/',
@@ -1866,9 +1870,9 @@ const technologies = [
         en: 'Technology for declaring dependencies',
       },
       source: {
-        ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/depsjs/depsjs.ru.md',
+        ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.ru.md',
         // uk: '',
-        en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/depsjs/depsjs.en.md',
+        en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.en.md',
       },
       tags: ['deps'],
       bundle: 'platform'
@@ -1882,9 +1886,9 @@ const technologies = [
         en: 'DEPS specification'
       },
       source: {
-        ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/depsjs/specification.ru.md',
+        ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/specification.ru.md',
         // uk: '',
-        en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/depsjs/specification.en.md',
+        en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/specification.en.md',
       },
       tags: ['deps'],
       bundle: 'platform'
@@ -1907,27 +1911,114 @@ const technologies = [
     }
   ])
   .concat([
+    // {
+    //   url: '/technologies/react/',
+    //   site: '/technologies/react/',
+    //   subtitle: {
+    //     ru: 'Узнайте как совместить БЭМ и React',
+    //     en: 'TBD',
+    //     uk: 'TBD'
+    //   },
+    //   title: {
+    //     ru: 'БЭМ и React',
+    //     uk: 'TBD',
+    //     en: 'TBD'
+    //   },
+    //   source: {
+    //     ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
+    //     // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
+    //     en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
+    //   },
+    //   tags: ['technologies', 'react'],
+    //   bundle: 'platform',
+    //   prev: false
+    // }
+
     {
       url: '/technologies/react/',
       site: '/technologies/react/',
       subtitle: {
-        ru: 'Узнайте как совместить БЭМ и React',
-        en: 'TBD',
-        uk: 'TBD'
+        ru: 'Нейминг, модификаторы и переопределения',
+        en: 'Naming, modifiers and redefinitions in React',
+        uk: 'Naming, modifiers and redefinitions in React'
       },
       title: {
-        ru: 'БЭМ и React',
-        uk: 'TBD',
-        en: 'TBD'
+        ru: 'bem-react',
+        en: 'bem-react',
+        uk: 'bem-react'
       },
       source: {
-        ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
+        ru: 'https://github.com/bem/bem-react-core/blob/v3/docs/ru/README.md',
         // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
-        en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
+        en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
       },
       tags: ['technologies', 'react'],
       bundle: 'platform',
       prev: false
+    },
+    {
+      url: '/technologies/react/motivation/',
+      site: '/technologies/react/motivation/',
+      title: {
+        ru: 'Зачем БЭМ, если есть React?',
+        en: 'Why BEM?',
+        uk: 'Why BEM?'
+      },
+      source: {
+        ru: 'https://github.com/bem/bem-react-core/blob/v3/docs/ru/Introduction/Motivation.md',
+        // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
+        // en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
+      },
+      tags: ['technologies', 'react'],
+      bundle: 'platform'
+    },
+    {
+      url: '/technologies/react/bem-react/classname',
+      site: '/technologies/react/bem-react/classname',
+      title: {
+        ru: 'classname',
+        en: 'classname',
+        uk: 'classname'
+      },
+      source: {
+        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
+        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
+        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
+      },
+      tags: ['technologies', 'react'],
+      bundle: 'platform'
+    },
+    {
+      url: '/technologies/react/bem-react/core',
+      site: '/technologies/react/bem-react/core',
+      title: {
+        ru: 'core',
+        en: 'core',
+        uk: 'core'
+      },
+      source: {
+        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
+        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
+        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
+      },
+      tags: ['technologies', 'react'],
+      bundle: 'platform'
+    },
+    {
+      url: '/technologies/react/bem-react/di',
+      site: '/technologies/react/bem-react/di',
+      title: {
+        ru: 'di',
+        en: 'di',
+        uk: 'di'
+      },
+      source: {
+        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
+        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
+        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
+      },
+      tags: ['technologies', 'react'],
+      bundle: 'platform'
     }
   ]);
 
@@ -2021,43 +2112,43 @@ const libsClassic = [
 ]);
 
 const libsReact = [
-  {
-    url: '/libraries/react/',
-    site: '/libraries/react/',
-    subtitle: {
-      ru: 'I am React',
-      en: 'TBD',
-      uk: 'TBD'
-    },
-    title: {
-      ru: 'БЭМ и React',
-      uk: 'TBD',
-      en: 'TBD'
-    },
-    source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
-      // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
-      en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
-    },
-    tags: ['libraries', 'react', 'bem-react-core'],
-    bundle: 'platform',
-    prev: false
-  }
+  // {
+  //   url: '/libraries/react/',
+  //   site: '/libraries/react/',
+  //   subtitle: {
+  //     ru: 'I am React',
+  //     en: 'TBD',
+  //     uk: 'TBD'
+  //   },
+  //   title: {
+  //     ru: 'БЭМ и React',
+  //     uk: 'TBD',
+  //     en: 'TBD'
+  //   },
+  //   source: {
+  //     ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
+  //     // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
+  //     en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
+  //   },
+  //   tags: ['libraries', 'react', 'bem-react-core'],
+  //   bundle: 'platform',
+  //   prev: false
+  // }
 ].concat(
-  lib({
-    url: '/libraries/react/bem-react-core/',
-    site: '/libraries/react/bem-react-core/',
-    title: 'bem-react-core',
-    library: 'bem-react-core',
-    versions: [
-      'node_modules/bem.info-data/bem-core-2.9.0', // TODO: fix path
-      'node_modules/bem.info-data/bem-core-3.0.1', // TODO: fix path
-    ],
-    current: '3.0.1', // TODO: fix version
-    tags: ['libs', 'bem-react-core'],
-    bundle: 'platform',
-    type: 'lib'
-  })
+  // lib({
+  //   url: '/libraries/react/bem-react-core/',
+  //   site: '/libraries/react/bem-react-core/',
+  //   title: 'bem-react-core',
+  //   library: 'bem-react-core',
+  //   versions: [
+  //     'node_modules/bem.info-data/bem-core-2.9.0', // TODO: fix path
+  //     'node_modules/bem.info-data/bem-core-3.0.1', // TODO: fix path
+  //   ],
+  //   current: '3.0.1', // TODO: fix version
+  //   tags: ['libs', 'bem-react-core'],
+  //   bundle: 'platform',
+  //   type: 'lib'
+  // })
 );
 
 const tutorialsClassic = [
@@ -2214,28 +2305,28 @@ const tutorialsClassic = [
 ];
 
 const tutorialsReact = [
-  {
-    url: '/tutorials/react/',
-    site: '/tutorials/',
-    subtitle: {
-      ru: 'оаоао',
-      en: 'TBD',
-      uk: 'TBD'
-    },
-    title: {
-      ru: 'БЭМ и React',
-      uk: 'TBD',
-      en: 'TBD'
-    },
-    source: {
-      ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
-      // uk: '',
-      en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
-    },
-    tags: ['tutorials', 'react'],
-    bundle: 'platform',
-    prev: false
-  }
+  // {
+  //   url: '/tutorials/react/',
+  //   site: '/tutorials/',
+  //   subtitle: {
+  //     ru: 'оаоао',
+  //     en: 'TBD',
+  //     uk: 'TBD'
+  //   },
+  //   title: {
+  //     ru: 'БЭМ и React',
+  //     uk: 'TBD',
+  //     en: 'TBD'
+  //   },
+  //   source: {
+  //     ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.ru.md',
+  //     // uk: '',
+  //     en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
+  //   },
+  //   tags: ['tutorials', 'react'],
+  //   bundle: 'platform',
+  //   prev: false
+  // }
 ];
 
 const libs = [
@@ -2261,8 +2352,8 @@ const tutorials = [
     site: '/tutorials/',
     title: {
       ru: 'Учебные материалы',
-      uk: 'TBD',
-      en: 'TBD'
+      uk: 'Tutorials',
+      en: 'Tutorials'
     },
     tags: ['tutorials'],
     type: 'promo',
@@ -2271,25 +2362,7 @@ const tutorials = [
 ] .concat(tutorialsClassic)
   .concat(tutorialsReact)
 
-module.exports = [
-  {
-    url: '/',
-    site: '/',
-    title: {
-      ru: 'БЭМ',
-      uk: 'БЕМ',
-      en: 'BEM',
-    },
-    type: 'promo',
-    bundle: 'index'
-  }
-]
-.concat(methodology)
-.concat(toolbox)
-.concat(technologies)
-.concat(libs)
-.concat(tutorials)
-.concat([
+const community = [
 /*
   {
     url: '/community/',
@@ -2336,21 +2409,37 @@ module.exports = [
     nav: false
   },
 */
+];
+
+module.exports = [
   {
-    url: '/forum/',
-    site: '/community/',
+    url: '/',
+    site: '/',
     title: {
-      ru: 'Форум',
-      uk: 'Форум',
-      en: 'Forum',
+      ru: 'БЭМ',
+      uk: 'БЕМ',
+      en: 'BEM',
     },
-    source: {
-      ru: '',
-      uk: '',
-      en: '',
-    },
-    level: 1,
-    nav: false
+    type: 'promo',
+    bundle: 'index'
   }
-])
+]
+.concat(methodology)
+.concat(toolbox)
+.concat(technologies)
+.concat(libs)
+.concat(tutorials)
+.concat(community)
+.concat({
+  url: '/forum/',
+  site: '/community/',
+  title: {
+    ru: 'Форум',
+    uk: 'Форум',
+    en: 'Forum',
+  },
+  source: { ru: '', uk: '', en: ''},
+  level: 1,
+  nav: false
+})
 .concat(require('./redirects'));
