@@ -27,6 +27,7 @@
 
 .nav__link
 {
+    display: block;
     padding: 4px 20px;
 
     transition: color 0.3s;
