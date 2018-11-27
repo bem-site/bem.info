@@ -2358,5 +2358,27 @@ module.exports = [
       ru: '/toolbox/enb/packages/enb-magic-factory/changelog/',
       en: '/toolbox/enb/packages/enb-magic-factory/changelog/'
     }
-  }
-];
+  },
+
+  // platform
+  {
+    url: [
+      '/platform/'
+    ],
+    now: {
+      ru: '/technologies/',
+      en: '/technologies/'
+    }
+  },
+].concat(
+  ['bemjson', 'bem-xjst', 'i-bem', 'deps', 'deps-spec', 'project-stub']
+    .map(url => ({
+      url: [
+        '/platform/' + url + '/'
+      ],
+      now: {
+        ru: '/technologies/' + url + '/',
+        en: '/technologies/' + url + '/'
+      }
+    }))
+);
