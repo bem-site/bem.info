@@ -1948,9 +1948,9 @@ const technologies = [
         uk: 'bem-react'
       },
       source: {
-        ru: 'https://github.com/bem/bem-react-core/blob/v3/docs/ru/README.md',
+        ru: 'https://github.com/bem/bem-react/blob/master/docs/ru/README.md',
         // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
-        en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
+        en: 'https://github.com/bem/bem-react/blob/master/docs/en/README.md',
       },
       tags: ['technologies', 'react'],
       bundle: 'platform',
@@ -1965,7 +1965,7 @@ const technologies = [
         uk: 'Why BEM?'
       },
       source: {
-        ru: 'https://github.com/bem/bem-react-core/blob/v3/docs/ru/Introduction/Motivation.md',
+        ru: 'https://github.com/bem/bem-react/blob/master/docs/ru/Introduction/Motivation.md',
         // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.uk.md',
         // en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
       },
@@ -1981,9 +1981,9 @@ const technologies = [
         uk: 'classname'
       },
       source: {
-        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
-        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
-        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/classname/README.md',
+        ru: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md',
+        uk: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md',
+        en: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md',
       },
       tags: ['technologies', 'react'],
       bundle: 'platform'
@@ -1997,9 +1997,9 @@ const technologies = [
         uk: 'core'
       },
       source: {
-        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
-        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
-        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/core/README.md',
+        ru: 'https://github.com/bem/bem-react/blob/master/packages/core/README.md',
+        uk: 'https://github.com/bem/bem-react/blob/master/packages/core/README.md',
+        en: 'https://github.com/bem/bem-react/blob/master/packages/core/README.md',
       },
       tags: ['technologies', 'react'],
       bundle: 'platform'
@@ -2013,9 +2013,9 @@ const technologies = [
         uk: 'di'
       },
       source: {
-        ru: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
-        uk: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
-        en: 'https://github.com/bem/bem-react-core/blob/v3/packages/di/README.md',
+        ru: 'https://github.com/bem/bem-react/blob/master/packages/di/README.md',
+        uk: 'https://github.com/bem/bem-react/blob/master/packages/di/README.md',
+        en: 'https://github.com/bem/bem-react/blob/master/packages/di/README.md',
       },
       tags: ['technologies', 'react'],
       bundle: 'platform'
