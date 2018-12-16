@@ -2370,15 +2370,23 @@ module.exports = [
       en: '/technologies/'
     }
   },
+  {
+    url: '/platform/libs/(.*)',
+    isRegexp: true,
+    now: {
+      ru: '/libraries/classic/$1',
+      en: '/libraries/classic/$1',
+      uk: '/libraries/classic/$1'
+    }
+  }
 ].concat(
   ['bemjson', 'bem-xjst', 'i-bem', 'deps', 'deps-spec', 'project-stub']
     .map(url => ({
-      url: [
-        '/platform/' + url + '/'
-      ],
+      url: '/platform/' + url + '/(.*)',
+      isRegexp: true,
       now: {
-        ru: '/technologies/' + url + '/',
-        en: '/technologies/' + url + '/'
+        ru: '/technologies/' + url + '/$1',
+        en: '/technologies/' + url + '/$1'
       }
     }))
 );

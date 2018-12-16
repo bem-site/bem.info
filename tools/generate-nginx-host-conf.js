@@ -1,11 +1,16 @@
 
 module.exports = function genNginxRedirectDirectives(list) {
     return list.map(item => {
-        const urls = item.url.map(url => url.endsWith('/') ? url.substr(0, url.length - 1) : url);
+        const urls = Array.isArray(item.url) &&
+            item.url.map(url => url.endsWith('/') ? url.substr(0, url.length - 1) : url);
+
+        const oldUrl = item.isRegexp ?
+            `"${item.url}"` :
+            `"^(?:${urls.join('|')})/?$"`;
 
         return [
             'rewrite ',
-            `"^(?:${urls.join('|')})/?$"`,
+            oldUrl,
             item.now,
             item.code === 302 ? 'redirect' : 'permanent'
         ].join(' ') + ';';
