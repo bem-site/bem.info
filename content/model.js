@@ -2438,7 +2438,7 @@ module.exports = [
     uk: 'Форум',
     en: 'Forum',
   },
-  source: { ru: '', uk: '', en: ''},
+  source: { ru: '', uk: '', en: '' },
   level: 1,
   nav: false
 })
