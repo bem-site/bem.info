@@ -1811,8 +1811,8 @@ module.exports = [
   {
     url: '/technologies/classic/quick-start-static/',
     now: {
-      ru: '/technologies/classic/tutorials/quick-start-static/',
-      en: '/technologies/classic/tutorials/quick-start-static/',
+      ru: '/tutorials/classic/quick-start-static/',
+      en: '/tutorials/classic/quick-start-static/',
     }
   },
   {
@@ -1821,36 +1821,36 @@ module.exports = [
       '/articles/start-with-project-stub/',
     ],
     now: {
-      ru: '/technologies/classic/tutorials/start-with-project-stub/',
-      en: '/technologies/classic/tutorials/start-with-project-stub/',
+      ru: '/tutorials/classic/start-with-project-stub/',
+      en: '/tutorials/classic/start-with-project-stub/',
     }
   },
   {
     url: '/tutorials/bem-js-tutorial/01-block-structure/',
     now: {
-      ru: '/technologies/classic/tutorials/i-bem/block/',
-      en: '/technologies/classic/tutorials/i-bem/block/',
+      ru: '/tutorials/classic/i-bem/block/',
+      en: '/tutorials/classic/i-bem/block/',
     }
   },
   {
     url: '/tutorials/bem-js-tutorial/02-modifiers/',
     now: {
-      ru: '/technologies/classic/tutorials/i-bem/modifiers/',
-      en: '/technologies/classic/tutorials/i-bem/modifiers/',
+      ru: '/tutorials/classic/i-bem/modifiers/',
+      en: '/tutorials/classic/i-bem/modifiers/',
     }
   },
   {
     url: '/tutorials/bem-js-tutorial/03-live-initialization/',
     now: {
-      ru: '/technologies/classic/tutorials/i-bem/live-init/',
-      en: '/technologies/classic/tutorials/i-bem/live-init/',
+      ru: '/tutorials/classic/i-bem/live-init/',
+      en: '/tutorials/classic/i-bem/live-init/',
     }
   },
   {
     url: '/tutorials/bem-js-tutorial/',
     now: {
-      ru: '/technologies/classic/tutorials/i-bem/',
-      en: '/technologies/classic/tutorials/i-bem/',
+      ru: '/tutorials/classic/i-bem/',
+      en: '/tutorials/classic/i-bem/',
     }
   },
   {
@@ -1858,13 +1858,6 @@ module.exports = [
     now: {
       ru: '/technologies/classic/project-stub/',
       en: '/technologies/classic/project-stub/',
-    }
-  },
-  {
-    url: '/tutorials/',
-    now: {
-      ru: '/technologies/classic/tutorials/',
-      en: '/technologies/classic/tutorials/',
     }
   },
 
