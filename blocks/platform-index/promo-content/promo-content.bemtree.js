@@ -24,7 +24,7 @@ block('promo-content').content()(function() {
                 },
                 {
                     block: 'promo-action',
-                    attrs: { href: 'classic/tutorials/quick-start-static/' },
+                    attrs: { href: '/tutorials/classic/quick-start-static/' },
                     content: this.i18n(this.block, 'text1') // 'Быстрый старт'
                 },
                 {
