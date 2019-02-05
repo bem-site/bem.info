@@ -26,7 +26,6 @@ block('root').replace()(function() {
         block: 'page',
         title: page.head.title,
         head: [
-            { elem: 'css', url: '//fonts.googleapis.com/css?family=Open+Sans:300,600,700&subset=cyrillic' },
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css?' + staticVersion },
             { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width,initial-scale=1' } },
             { elem: 'meta', attrs: { property: 'og:image', content: 'https://ru.bem.info/og_image/logo_theme_stripe.png' } }, // TODO: implement via block with images; implement random
