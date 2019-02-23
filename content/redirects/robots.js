@@ -1,11 +1,10 @@
-module.export = [
+module.exports = [
     {
         exp: [
             '/wp-(.*)',
             '/xmlrpc.php(.*)',
-            '/(.*)/wp-includes/(.*)'
+            '/(.*)/wp-includes/(.*)',
         ],
-        now: '',
-        code: 418 // https://ru.wikipedia.org/wiki/Список_кодов_состояния_HTTP#418
+        now: 'https://www.google.com'
     }
 ];
