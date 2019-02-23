@@ -110,7 +110,7 @@ gulp.task('prepare-static', () => {
             .pipe(gulp.dest(OUTPUT))
             .pipe(gulp.dest(OUTPUT_ROOT)),
 
-        LANGUAGES.map(lang => gulp.src(path.join(STATIC, '{favicon.ico,robots.txt}'))
+        LANGUAGES.map(lang => gulp.src(path.join(STATIC, '{favicon.ico,robots.txt,.well-known/*}'))
             .pipe(gulp.dest(OUTPUT_DIRS[lang])))
     );
 });
@@ -311,7 +311,7 @@ gulp.task('csscomb', function() {
 
 gulp.task('build', gulp.series(
     'is-data-exists',
-    gulp.parallel('prepare-output', 'copy-static-images', 'enb-make'),
+    gulp.parallel('prepare-output', 'prepare-static', 'copy-static-images', 'enb-make'),
     gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml')
 ));
 
