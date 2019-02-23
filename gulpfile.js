@@ -198,6 +198,7 @@ gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
 
 gulp.task('compile-pages', gulp.series(
     'enb-make',
+    'prepare-static',
     'copy-static',
     'copy-static-images',
     'copy-sitemap-xml',
