@@ -2432,5 +2432,4 @@ module.exports = [
   source: { ru: '', uk: '', en: '' },
   level: 1,
   nav: false
-})
-.concat(require('./redirects'));
+});
