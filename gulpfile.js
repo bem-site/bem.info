@@ -262,18 +262,20 @@ gulp.task('browser-sync', () => {
             logLevel: 'silent',
             notify: false,
             ui: false,
-            middleware: isFeedbackEnabled && feedbackMiddleware
+            middleware: middleware
         });
     }
 
-    function feedbackMiddleware(req, res, next) {
-        if (req.url.includes('/doc-feedback/')) {
+    function middleware(req, res, next) {
+        if (isFeedbackEnabled && req.url.includes('/doc-feedback/')) {
             var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
+
             if (req.method.toLowerCase() === 'get') {
                 return got.stream(backendUrl)
                     .pipe(res);
             } else {
                 var body = '';
+
                 req
                     .on('data', chunk => {
                         body += chunk;
