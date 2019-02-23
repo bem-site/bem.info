@@ -122,10 +122,11 @@ function data() {
     mkdirp.sync(CACHE);
 
     return Q.all(LANGUAGES.map(lang => {
-        const preparedModel = prepareModel(model, lang);
+        const modelWithRedirects = model.concat(require('./content/redirects'));
+        const preparedModel = prepareModel(modelWithRedirects, lang);
 
         const modelPath = path.join(CACHE, `model.${lang}.json`);
-        fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model));
+        fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model, null, 2));
 
         if (preparedModel.redirects && preparedModel.redirects.length) {
             const redirectsDir = path.join(CACHE, OUTPUT_ROOT);
