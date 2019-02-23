@@ -1605,30 +1605,21 @@ const technologies = [
     },
     tags: ['technologies'],
     type: 'promo',
-    bundle: 'platform-index' // TODO: check me!
+    bundle: 'platform-index'
   },
-  // {
-  //   url: '/technologies/classic/',
-  //   site: '/technologies/classic/',
-  //   subtitle: {
-  //     ru: 'Subtitle',
-  //     en: 'Subtitle',
-  //     uk: 'Subtitle'
-  //   },
-  //   title: {
-  //     ru: 'Классический БЭМ-стек',
-  //     uk: 'TBD',
-  //     en: 'TBD'
-  //   },
-  //   source: {
-  //     ru: 'https://github.com/bem-site/bem-method/blob/technologies/classic/classic.ru.md',
-  //     // uk: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/classic/classic.uk.md',
-  //     en: 'https://github.com/bem-site/bem-method/blob/technologies/classic/classic.en.md',
-  //   },
-  //   tags: ['technologies', 'classic', 'i-bem'],
-  //   bundle: 'platform',
-  //   prev: false
-  // },
+  {
+    url: '/technologies/classic/',
+    site: '/technologies/classic/',
+    title: {
+      ru: 'Классический БЭМ-стек',
+      uk: 'TBD',
+      en: 'TBD'
+    },
+    tags: ['technologies', 'classic'],
+    type: 'promo',
+    bundle: 'platform-classic-index',
+    prev: false
+  },
   {
     url: '/technologies/classic/bemjson/',
     site: '/technologies/classic/',
@@ -1912,8 +1903,8 @@ const technologies = [
   ])
   .concat([
     // {
-    //   url: '/technologies/react/',
-    //   site: '/technologies/react/',
+    //   url: '/technologies/bem-react/',
+    //   site: '/technologies/bem-react/',
     //   subtitle: {
     //     ru: 'Узнайте как совместить БЭМ и React',
     //     en: 'TBD',
@@ -1935,8 +1926,8 @@ const technologies = [
     // }
 
     {
-      url: '/technologies/react/',
-      site: '/technologies/react/',
+      url: '/technologies/bem-react/',
+      site: '/technologies/bem-react/',
       subtitle: {
         ru: 'Нейминг, модификаторы и переопределения',
         en: 'Naming, modifiers and redefinitions in React',
@@ -1957,8 +1948,8 @@ const technologies = [
       prev: false
     },
     {
-      url: '/technologies/react/motivation/',
-      site: '/technologies/react/motivation/',
+      url: '/technologies/bem-react/motivation/',
+      site: '/technologies/bem-react/',
       title: {
         ru: 'Зачем БЭМ, если есть React?',
         en: 'Why BEM?',
@@ -1973,8 +1964,8 @@ const technologies = [
       bundle: 'platform'
     },
     {
-      url: '/technologies/react/bem-react/classname',
-      site: '/technologies/react/bem-react/classname',
+      url: '/technologies/bem-react/classname/',
+      site: '/technologies/bem-react/',
       title: {
         ru: 'classname',
         en: 'classname',
@@ -1989,8 +1980,8 @@ const technologies = [
       bundle: 'platform'
     },
     {
-      url: '/technologies/react/bem-react/core',
-      site: '/technologies/react/bem-react/core',
+      url: '/technologies/bem-react/core/',
+      site: '/technologies/bem-react/',
       title: {
         ru: 'core',
         en: 'core',
@@ -2005,8 +1996,8 @@ const technologies = [
       bundle: 'platform'
     },
     {
-      url: '/technologies/react/bem-react/di',
-      site: '/technologies/react/bem-react/di',
+      url: '/technologies/bem-react/di',
+      site: '/technologies/bem-react/',
       title: {
         ru: 'di',
         en: 'di',

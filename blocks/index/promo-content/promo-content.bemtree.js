@@ -97,7 +97,7 @@ block('promo-content').content()(function() {
                             elem: 'text',
                             content: {
                                 elem: 'text-link',
-                                url: '/tutorials/classic/quick-start-static/',
+                                url: 'tutorials/classic/quick-start-static/',
                                 content: this.i18n(this.block, 'text2') // 'Быстрый старт'
                             }
                         }
