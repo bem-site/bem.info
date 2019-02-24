@@ -1770,7 +1770,7 @@ const technologies = [
       bundle: 'platform'
     },
     {
-      url: '/technologies/bem-react/di',
+      url: '/technologies/bem-react/di/',
       site: '/technologies/bem-react/',
       title: {
         ru: 'di',
