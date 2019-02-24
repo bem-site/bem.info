@@ -2,8 +2,7 @@ block('nav').content()(function() {
     var data = this.data,
         site = data.page.site,
         lang = data.lang,
-        result,
-        slugger = new (require('github-slugger'))();
+        result;
 
     result = data.pages.filter(function(page) {
             if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
@@ -12,7 +11,8 @@ block('nav').content()(function() {
         }).map(function(item) {
             var isCurrent = this.data.page.url === item.url,
                 title = typeof item.title === 'string' ? item.title : item.title[lang],
-                contents = item.contents || [];
+                contents = item.contents || [],
+                slugger = new (require('github-slugger'))();
 
             return {
                 elem: 'item',
