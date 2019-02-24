@@ -52,6 +52,44 @@ block('promo-content').content()(function() {
                             content: [
                                 {
                                     elem: 'title-link',
+                                    url: 'technologies/',
+                                    content: [
+                                        {
+                                            elem: 'img',
+                                            elemMods: { type: 'round' },
+                                            url: 'promo-crossroad_technologies.svgd'
+                                        },
+                                        this.i18n(this.block, 'text5') // 'Технологии'
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            elem: 'text',
+                            content: [
+                                {
+                                    elem: 'text-link',
+                                    url: 'technologies/classic/',
+                                    content: this.i18n(this.block, 'text6') // Классический БЭМ-стек
+                                },
+                                { tag: 'br' },
+                                {
+                                    elem: 'text-link',
+                                    url: 'technologies/bem-react/',
+                                    content: this.i18n(this.block, 'text8') // React
+                                }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    elem: 'item',
+                    content: [
+                        {
+                            elem: 'title',
+                            content: [
+                                {
+                                    elem: 'title-link',
                                     url: 'toolbox/',
                                     content: [
                                         {
@@ -77,32 +115,24 @@ block('promo-content').content()(function() {
                             content: [
                                 {
                                     elem: 'title-link',
-                                    url: 'technologies/',
+                                    url: 'libraries/',
                                     content: [
                                         {
                                             elem: 'img',
                                             elemMods: { type: 'round' },
-                                            url: 'promo-crossroad_platform.svgd'
+                                            url: 'promo-crossroad_libraries.svgd'
                                         },
-                                        this.i18n(this.block, 'text5') // 'Платформа'
+                                        this.i18n(this.block, 'text9') // 'Библиотеки'
                                     ]
                                 }
                             ]
                         },
                         {
                             elem: 'text',
-                            content: this.i18n(this.block, 'text6') // 'Классический БЭМ-стек и React'
+                            content: this.i18n(this.block, 'text10') // TODO
                         },
-                        {
-                            elem: 'text',
-                            content: {
-                                elem: 'text-link',
-                                url: 'tutorials/classic/quick-start-static/',
-                                content: this.i18n(this.block, 'text2') // 'Быстрый старт'
-                            }
-                        }
                     ]
-                }/*,
+                },
                 {
                     elem: 'item',
                     content: [
@@ -111,24 +141,24 @@ block('promo-content').content()(function() {
                             content: [
                                 {
                                     elem: 'title-link',
-                                    url: 'community/',
+                                    url: 'tutorials/',
                                     content: [
                                         {
                                             elem: 'img',
-                                            elemMods: { type: 'out-of-box' },
-                                            url: 'promo-crossroad_community.svgd'
+                                            elemMods: { type: 'round' },
+                                            url: 'promo-crossroad_tutorials.svgd'
                                         },
-                                        this.i18n(this.block, 'text7') // 'Сообщество'
+                                        this.i18n(this.block, 'text11') // 'Учебные материалы'
                                     ]
                                 }
                             ]
                         },
                         {
                             elem: 'text',
-                            content: this.i18n(this.block, 'text8') // 'Люди и события'
-                        }
+                            content: this.i18n(this.block, 'text12') // TODO
+                        },
                     ]
-                }*/
+                },
             ]
         }
     ]

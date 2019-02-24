@@ -8,9 +8,12 @@ module.exports = {
         'index',
         'methodology',
         'methodology-index',
-        'platform',
+        'technologies',
+        'technologies-classic-index',
+        'technologies-index',
         'promo',
-        'tools'
+        'toolbox',
+        'toolbox-index'
     ],
 
     // список путей, которые будут проигнорированы при проверке

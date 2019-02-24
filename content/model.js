@@ -1344,7 +1344,7 @@ const technologiesClassicBemxjst = versioned(
         en: 'Templates (BEMHTML, BEMTREE)',
     },
     tags: ['bem-xjst'],
-    bundle: 'platform',
+    bundle: 'technologies',
     library: 'bem-xjst',
     type: 'versioned'
   },
@@ -1427,7 +1427,7 @@ const technologies = [
     },
     tags: ['technologies'],
     type: 'promo',
-    bundle: 'platform-index'
+    bundle: 'technologies-index'
   },
   {
     url: '/technologies/classic/',
@@ -1438,7 +1438,7 @@ const technologies = [
     },
     tags: ['technologies', 'classic'],
     type: 'promo',
-    bundle: 'platform-classic-index',
+    bundle: 'technologies-classic-index',
     prev: false
   },
   {
@@ -1453,7 +1453,7 @@ const technologies = [
       en: 'https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md',
     },
     tags: ['bemjson'],
-    bundle: 'platform'
+    bundle: 'technologies'
   }
 ].concat(
   technologiesClassicBemxjst
@@ -1470,7 +1470,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/overview/',
@@ -1484,7 +1484,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-common.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/html-binding/',
@@ -1498,7 +1498,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-html-binding.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/declaration/',
@@ -1512,7 +1512,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-decl.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/parameters/',
@@ -1526,7 +1526,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-params.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/dom/',
@@ -1540,7 +1540,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-dom.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/states/',
@@ -1554,7 +1554,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-states.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/collections/',
@@ -1568,7 +1568,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-collections.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/events/',
@@ -1582,7 +1582,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-events.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/init/',
@@ -1596,7 +1596,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-init.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/interaction/',
@@ -1610,7 +1610,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-interact.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/context/',
@@ -1624,7 +1624,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-context.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/i-bem/extras/',
@@ -1638,7 +1638,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-core/blob/v4/common.docs/i-bem-js/i-bem-js-extras.en.md',
       },
       tags: ['i-bem.js'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/deps/',
@@ -1656,7 +1656,7 @@ const technologies = [
         en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/depsjs.en.md',
       },
       tags: ['deps'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/deps-spec/',
@@ -1670,7 +1670,7 @@ const technologies = [
         en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/depsjs/specification.en.md',
       },
       tags: ['deps'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/classic/project-stub/',
@@ -1684,7 +1684,7 @@ const technologies = [
         en: 'https://github.com/bem/project-stub/blob/master/README.md',
       },
       tags: ['project-stub'],
-      bundle: 'platform'
+      bundle: 'technologies'
     }
   ])
   .concat([
@@ -1704,7 +1704,7 @@ const technologies = [
     //     en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
     //   },
     //   tags: ['technologies', 'react'],
-    //   bundle: 'platform',
+    //   bundle: 'technologies',
     //   prev: false
     // }
 
@@ -1724,7 +1724,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-react/blob/master/docs/en/README.md',
       },
       tags: ['technologies', 'react'],
-      bundle: 'platform',
+      bundle: 'technologies',
       prev: false
     },
     {
@@ -1739,7 +1739,7 @@ const technologies = [
         // en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
       },
       tags: ['technologies', 'react'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/bem-react/classname/',
@@ -1753,7 +1753,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md',
       },
       tags: ['technologies', 'react'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/bem-react/core/',
@@ -1767,7 +1767,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-react/blob/master/packages/core/README.md',
       },
       tags: ['technologies', 'react'],
-      bundle: 'platform'
+      bundle: 'technologies'
     },
     {
       url: '/technologies/bem-react/di/',
@@ -1781,7 +1781,7 @@ const technologies = [
         en: 'https://github.com/bem/bem-react/blob/master/packages/di/README.md',
       },
       tags: ['technologies', 'react'],
-      bundle: 'platform'
+      bundle: 'technologies'
     }
   ]);
 
@@ -1798,7 +1798,7 @@ const libsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
     tags: ['libs', 'classic', 'bem-core', 'bem-components'],
-    bundle: 'platform'
+    bundle: 'technologies'
   }].concat(
   lib({
     url: '/libraries/classic/bem-core/',
@@ -1818,7 +1818,7 @@ const libsClassic = [
     ],
     current: '4.2.0',
     tags: ['libs', 'bem-core'],
-    bundle: 'platform',
+    bundle: 'technologies',
     type: 'lib'
   }),
   lib({
@@ -1835,7 +1835,7 @@ const libsClassic = [
     ],
     current: '6.0.0',
     tags: ['libs', 'bem-components'],
-    bundle: 'platform',
+    bundle: 'technologies',
     type: 'lib'
   }),
   lib({
@@ -1851,7 +1851,7 @@ const libsClassic = [
     ],
     current: '4.0.0',
     tags: ['libs'],
-    bundle: 'platform',
+    bundle: 'technologies',
     type: 'lib'
   })).concat([
   {
@@ -1866,7 +1866,7 @@ const libsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.en.md',
     },
     tags: ['libs'],
-    bundle: 'platform'
+    bundle: 'technologies'
   }
 ]);
 
@@ -1887,7 +1887,7 @@ const libsReact = [
   //     en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
   //   },
   //   tags: ['libraries', 'react', 'bem-react-core'],
-  //   bundle: 'platform',
+  //   bundle: 'technologies',
   //   prev: false
   // }
 ].concat(
@@ -1902,7 +1902,7 @@ const libsReact = [
   //   ],
   //   current: '3.0.1', // TODO: fix version
   //   tags: ['libs', 'bem-react-core'],
-  //   bundle: 'platform',
+  //   bundle: 'technologies',
   //   type: 'lib'
   // })
 );
@@ -1920,7 +1920,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
     tags: ['tutorials', 'classic'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/quick-start-static/',
@@ -1934,7 +1934,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/start-with-project-stub/',
@@ -1948,7 +1948,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/start-with-bem-express/',
@@ -1962,7 +1962,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-express'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/i-bem/',
@@ -1976,7 +1976,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/i-bem/block/',
@@ -1990,7 +1990,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/i-bem/modifiers/',
@@ -2008,7 +2008,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'platform'
+    bundle: 'technologies'
   },
   {
     url: '/tutorials/classic/i-bem/live-init/',
@@ -2022,7 +2022,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'platform',
+    bundle: 'technologies',
     next: false
   },
   {
@@ -2037,7 +2037,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/dist-quick-start/dist-quick-start.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-components'],
-    bundle: 'platform'
+    bundle: 'technologies'
   }
 ];
 
@@ -2058,7 +2058,7 @@ const tutorialsReact = [
   //     en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
   //   },
   //   tags: ['tutorials', 'react'],
-  //   bundle: 'platform',
+  //   bundle: 'technologies',
   //   prev: false
   // }
 ];
@@ -2073,7 +2073,7 @@ const libs = [
     },
     tags: ['libs'],
     type: 'promo',
-    bundle: 'platform-index' // check me!
+    bundle: 'technologies-index' // check me!
   }
 ]
   .concat(libsClassic)
@@ -2089,7 +2089,7 @@ const tutorials = [
     },
     tags: ['tutorials'],
     type: 'promo',
-    bundle: 'platform-index' // check me!
+    bundle: 'technologies-index' // check me!
   }
 ] .concat(tutorialsClassic)
   .concat(tutorialsReact)

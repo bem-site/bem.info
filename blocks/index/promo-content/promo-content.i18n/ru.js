@@ -6,8 +6,12 @@ module.exports = {
         text3: 'Инструментарий',
         text4: 'Инструменты и SDK',
         text5: 'Технологии',
-        text6: 'Классический БЭМ-стек и React',
-        text7: 'Сообщество',
-        text8: 'Люди и события'
+        text6: 'Классический БЭМ-стек',
+        text7: ' и ',
+        text8: 'React',
+        text9: 'Библиотеки',
+        text10: '', // libraries description
+        text11: 'Учебные материалы',
+        text12: '', // tutorials description
     }
 };

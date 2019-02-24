@@ -35,7 +35,7 @@ block('promo-menu').content()(function(node, ctx) {
             content: [
                 {
                     elem: 'menu-title',
-                    content: this.i18n(this.block, ctx.title.side)
+                    content: this.i18n(this.block, ctx.title ? ctx.title.side : ctx.title)
                 },
                 {
                     elem: 'menu',
