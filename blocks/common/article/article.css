@@ -283,6 +283,7 @@
     font: 16px/1.5 'Courier New', monospace;
 
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     margin: 0 0 16px;
     padding: 16px 20px 16px 47px;
@@ -543,12 +544,9 @@
     {
         font-size: 14px;
         line-height: 1;
-    }
-}
 
-@media (max-width: 1200px) {
-    .article.page__content
-    {
-        padding: 15px;
+        margin-right: -15px;
+        margin-left: -15px;
+        padding: 8px 15px;
     }
 }
