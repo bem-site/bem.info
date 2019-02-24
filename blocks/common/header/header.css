@@ -37,11 +37,15 @@
 {
     position: fixed;
 
-    padding: 23px 20px 22px 30px;
+    padding: 23px 30px 22px;
 }
 
 .header__breadcrumbs
 {
+    position: absolute;
+    top: 1px;
+    left: 90px;
+
     flex-grow: 1;
 
     margin: 18px 0 0;
