@@ -110,7 +110,7 @@ gulp.task('prepare-static', () => {
             .pipe(gulp.dest(OUTPUT))
             .pipe(gulp.dest(OUTPUT_ROOT)),
 
-        LANGUAGES.map(lang => gulp.src(path.join(STATIC, '{favicon.ico,robots.txt,.well-known/*}'))
+        LANGUAGES.map(lang => gulp.src(path.join(STATIC, '{favicon.ico,robots.txt,.well-known/*,.og_image/*}'))
             .pipe(gulp.dest(OUTPUT_DIRS[lang])))
     );
 });
