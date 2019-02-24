@@ -4,7 +4,7 @@ block('blocks').content()(function() {
         page = data.page;
 
     // this page will be redirected to current library version
-    // e.g. /platform/libs/bem-components/ -> /platform/libs/bem-components/5.0.0/
+    // e.g. /libraries/classic/bem-components/ -> /libraries/classic/bem-components/5.0.0/
     if (!page.version) {
         return;
     }

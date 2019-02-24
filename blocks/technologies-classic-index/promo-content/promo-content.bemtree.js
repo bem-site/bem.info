@@ -22,11 +22,11 @@ block('promo-content').content()(function() {
                         }
                     ]
                 },
-                // {
-                //     block: 'promo-action',
-                //     attrs: { href: '/tutorials/classic/quick-start-static/' },
-                //     content: this.i18n(this.block, 'text1') // 'Быстрый старт'
-                // },
+                {
+                    block: 'promo-action',
+                    attrs: { href: '../../tutorials/classic/quick-start-static/' },
+                    content: this.i18n(this.block, 'text1') // 'Быстрый старт'
+                },
                 {
                     elem: 'text',
                     content: [
@@ -43,7 +43,7 @@ block('promo-content').content()(function() {
             content: [
                 {
                     block: 'promo-menu',
-                    title: 'platform',
+                    title: 'technologies',
                     mods: { inverted: true },
                     legos: false,
                     data: pages.filter(function(page) {
@@ -59,22 +59,6 @@ block('promo-content').content()(function() {
                             url: data.root + item.url
                         }
                     })
-                },
-                {
-                    block: 'promo-features',
-                    content: [
-                        {
-                            elem: 'image',
-                            url: 'promo-features__squirrel.svg'
-                        },
-                        {
-                            elem: 'separator'
-                        },
-                        {
-                            elem: 'image',
-                            url: 'promo-features__yogi.svg'
-                        }
-                    ]
                 }
             ]
         }
