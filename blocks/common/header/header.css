@@ -13,14 +13,16 @@
 
 .header_opened + .sitemap
 {
-    display: flex;
+    display: flex !important;
 }
 
+.header_opened .header__lang,
+.header_opened .header__forum,
 /* Hide all siblings then sitemap is shown */
 .header_opened ~ div,
 .header_opened ~ footer
 {
-    display: none;
+    display: none !important;
 }
 
 .header__layout
@@ -40,8 +42,23 @@
     padding: 23px 30px 22px;
 }
 
+@supports (position: sticky) and (display: grid)
+{
+    @media (min-width: 1201px)
+    {
+        .header__logo
+        {
+            position: static;
+        }
+    }
+}
+
 .header__breadcrumbs
 {
+    position: absolute;
+    top: 1px;
+    left: 90px;
+
     flex-grow: 1;
 
     margin: 18px 0 0;
@@ -124,7 +141,7 @@
 
     .header_opened + .sitemap
     {
-        display: block;
+        display: block !important;
     }
 
     .header_opened .header__layout

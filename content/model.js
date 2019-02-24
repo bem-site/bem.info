@@ -406,7 +406,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/',
-    site: '/toolbox/enb/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Пакеты ENB',
       en: 'ENB packages'
@@ -435,7 +435,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/build-bundle/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Сборка бандла',
       en: 'Build bundle',
@@ -449,7 +449,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/build-page/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Сборка страницы',
       en: 'Build page',
@@ -463,7 +463,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/build-merged-bundle/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Сборка merged-бандла',
       en: 'Build merged bundle',
@@ -477,7 +477,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/build-dist/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Сборка дистрибутива',
       en: 'Build distribution',
@@ -491,7 +491,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/api/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bem-techs/blob/master/docs/api/api.ru.md',
@@ -502,7 +502,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -516,7 +516,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/migration-2/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Миграция на 2.0',
       en: 'Migration to 2.0',
@@ -530,7 +530,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-techs/migration-1/',
-    site: '/toolbox/enb/packages/enb-bem-techs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Миграция на 1.0',
       en: 'Migration to 1.0',
@@ -544,7 +544,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-js/',
-    site: '/toolbox/enb/packages/enb-js/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-js',
     source: {
       ru: 'https://github.com/enb/enb-js/blob/master/README.md',
@@ -555,7 +555,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-js/api/',
-    site: '/toolbox/enb/packages/enb-js/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-js/blob/master/api.ru.md',
@@ -566,7 +566,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-js/changelog/',
-    site: '/toolbox/enb/packages/enb-js/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -580,7 +580,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-modules/',
-    site: '/toolbox/enb/packages/enb-modules/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-modules',
     source: {
       ru: 'https://github.com/enb/enb-modules/blob/master/README.md',
@@ -591,7 +591,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-modules/changelog/',
-    site: '/toolbox/enb/packages/enb-modules/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -605,7 +605,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-css/',
-    site: '/toolbox/enb/packages/enb-css/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-css',
     description: {
       ru: 'Поддержка CSS для ENB',
@@ -620,7 +620,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-css/ie/',
-    site: '/toolbox/enb/packages/enb-css/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Сборка бандла для IE',
       en: 'Build bundle for IE',
@@ -634,7 +634,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-css/api/',
-    site: '/toolbox/enb/packages/enb-css/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-css/blob/master/docs/api.ru.md',
@@ -645,7 +645,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-css/changelog/',
-    site: '/toolbox/enb/packages/enb-css/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -659,7 +659,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-stylus/',
-    site: '/toolbox/enb/packages/enb-stylus/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-stylus',
     description: {
       ru: 'Поддержка Stylus для ENB',
@@ -674,7 +674,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-stylus/api/',
-    site: '/toolbox/enb/packages/enb-stylus/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-stylus/blob/master/api.ru.md',
@@ -685,7 +685,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-stylus/changelog/',
-    site: '/toolbox/enb/packages/enb-stylus/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -699,7 +699,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bemxjst/',
-    site: '/toolbox/enb/packages/enb-bemxjst/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bemxjst',
     description: {
       ru: 'Поддержка bem-xjst для ENB',
@@ -714,7 +714,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bemxjst/api/',
-    site: '/toolbox/enb/packages/enb-bemxjst/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bemxjst/blob/master/api.ru.md',
@@ -725,7 +725,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bemxjst/changelog/',
-    site: '/toolbox/enb/packages/enb-bemxjst/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -739,7 +739,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bh/',
-    site: '/toolbox/enb/packages/enb-bh/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bh',
     description: {
       ru: 'Поддержка BH для ENB',
@@ -754,7 +754,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bh/api/',
-    site: '/toolbox/enb/packages/enb-bh/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bh/blob/master/api.ru.md',
@@ -765,7 +765,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bh/changelog/',
-    site: '/toolbox/enb/packages/enb-bh/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -779,7 +779,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bh/migration-1/',
-    site: '/toolbox/enb/packages/enb-bh/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Миграция на 1.0',
       en: 'Migration to 1.0',
@@ -793,7 +793,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-i18n/',
-    site: '/toolbox/enb/packages/enb-bem-i18n/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-i18n',
     description: {
       ru: 'Поддержка i18n для ENB',
@@ -808,7 +808,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-i18n/api/',
-    site: '/toolbox/enb/packages/enb-bem-i18n/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-bem-i18n/blob/master/api.ru.md',
@@ -819,7 +819,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-i18n/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-i18n/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -833,7 +833,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-borschik/',
-    site: '/toolbox/enb/packages/enb-borschik/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-borschik',
     description: {
       ru: 'Поддержка borschik для ENB',
@@ -848,7 +848,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-borschik/api/',
-    site: '/toolbox/enb/packages/enb-borschik/',
+    site: '/toolbox/enb/packages/',
     title: 'API',
     source: {
       ru: 'https://github.com/enb/enb-borschik/blob/master/api.ru.md',
@@ -859,7 +859,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-borschik/changelog/',
-    site: '/toolbox/enb/packages/enb-borschik/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -873,7 +873,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-specs/',
-    site: '/toolbox/enb/packages/enb-bem-specs/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-specs',
     description: {
       ru: 'Поддержка bem-specs для ENB',
@@ -888,7 +888,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-specs/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-specs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -902,7 +902,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
-    site: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-tmpl-specs',
     description: {
       ru: 'Поддержка bem-tmpl-specs для ENB',
@@ -917,7 +917,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-tmpl-specs/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-tmpl-specs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -931,7 +931,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-examples/',
-    site: '/toolbox/enb/packages/enb-bem-examples/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-examples',
     description: {
       ru: 'Поддержка bem-examples для ENB',
@@ -946,7 +946,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-examples/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-examples/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -960,7 +960,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-docs/',
-    site: '/toolbox/enb/packages/enb-bem-docs/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-bem-docs',
     description: {
       ru: 'Поддержка bem-docs для ENB',
@@ -975,7 +975,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-bem-docs/changelog/',
-    site: '/toolbox/enb/packages/enb-bem-docs/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -989,7 +989,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-magic-platform/',
-    site: '/toolbox/enb/packages/enb-magic-platform/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-magic-platform',
     description: {
       ru: 'Поддержка magic-platform для ENB',
@@ -1004,7 +1004,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-magic-platform/changelog/',
-    site: '/toolbox/enb/packages/enb-magic-platform/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -1018,7 +1018,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-magic-factory/',
-    site: '/toolbox/enb/packages/enb-magic-factory/',
+    site: '/toolbox/enb/packages/',
     title: 'enb-magic-factory',
     description: {
       ru: 'Поддержка magic-factory для ENB',
@@ -1033,7 +1033,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/enb-magic-factory/changelog/',
-    site: '/toolbox/enb/packages/enb-magic-factory/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Изменения',
       en: 'Changelog',
@@ -1058,7 +1058,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bemhint/css-naming/',
-    site: '/toolbox/bemhint/css-naming/',
+    site: '/toolbox/bemhint/',
     title: {
       ru: 'CSS именование',
       en: 'CSS naming',
@@ -1072,7 +1072,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bemhint/fs-naming/',
-    site: '/toolbox/bemhint/fs-naming/',
+    site: '/toolbox/bemhint/',
     title: {
       ru: 'Именование файлов',
       en: 'File naming',
@@ -1086,7 +1086,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bemhint/deps-schema/',
-    site: '/toolbox/bemhint/deps-schema/',
+    site: '/toolbox/bemhint/',
     title: {
       ru: 'DEPS схема',
       en: 'DEPS schema',
@@ -1100,7 +1100,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bemhint/deps-specification/',
-    site: '/toolbox/bemhint/deps-specification/',
+    site: '/toolbox/bemhint/',
     title: {
       ru: 'DEPS спецификация',
       en: 'DEPS specification',
@@ -1114,7 +1114,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bem-tools/',
-    site: '/toolbox/bem-tools/',
+    site: '/toolbox/',
     title: 'bem-tools',
     source: {
       // ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/tools/bem-tools/bem-tools.ru.md', // TODO
@@ -1125,7 +1125,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/bemmet/',
-    site: '/toolbox/bemmet/',
+    site: '/toolbox/',
     title: 'bemmet',
     source: {
       // ru: 'https://github.com/tadatuta/bemmet/blob/master/README.ru.md', // TODO
@@ -1147,7 +1147,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-walk/',
-    site: '/toolbox/sdk/bem-walk/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.walk',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/walk/README.ru.md', //TODO
@@ -1159,7 +1159,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-config/',
-    site: '/toolbox/sdk/bem-config/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.config',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/config/README.ru.md', // TODO
@@ -1170,7 +1170,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-naming-entity/',
-    site: '/toolbox/sdk/bem-naming-entity/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.naming.entity ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.entity/README.ru.md', //TODO
@@ -1181,7 +1181,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-naming-cell-stringify/',
-    site: '/toolbox/sdk/bem-naming-cell-stringify/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.naming.cell.stringify ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.stringify/README.ru.md', //TODO
@@ -1192,7 +1192,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-naming-file-stringify/',
-    site: '/toolbox/sdk/bem-naming-file-stringify/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.naming.file.stringify',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.file.stringify/README.ru.md', //TODO
@@ -1203,7 +1203,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-decl/',
-    site: '/toolbox/sdk/bem-decl/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.decl ',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/decl/README.ru.md', //TODO
@@ -1214,7 +1214,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-bemjson-to-decl/',
-    site: '/toolbox/sdk/bem-bemjson-to-decl/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.bemjson-to-decl',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-decl/README.ru.md', //TODO
@@ -1225,7 +1225,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-bemjson-to-jsx/',
-    site: '/toolbox/sdk/bem-bemjson-to-jsx/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.bemjson-to-jsx',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-to-jsx/README.ru.md', //TODO
@@ -1236,7 +1236,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-import-notation/',
-    site: '/toolbox/sdk/bem-import-notation/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.import-notation',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/import-notation/README.ru.md', //TODO
@@ -1247,7 +1247,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-graph/',
-    site: '/toolbox/sdk/bem-graph/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.graph',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/graph/README.ru.md', //TODO
@@ -1258,7 +1258,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-deps/',
-    site: '/toolbox/sdk/bem-deps/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.deps',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/deps/README.ru.md', // TODO
@@ -1269,7 +1269,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-entity-name/',
-    site: '/toolbox/sdk/bem-entity-name/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.entity-name',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/entity-name/README.ru.md', // TODO
@@ -1280,7 +1280,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-file/',
-    site: '/toolbox/sdk/bem-file/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.file',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/file/README.ru.md', // TODO
@@ -1291,7 +1291,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-cell/',
-    site: '/toolbox/sdk/bem-cell/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.cell',
     source: {
       //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/cell/README.ru.md', //TODO
@@ -1302,7 +1302,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/sdk/bem-bundle/',
-    site: '/toolbox/sdk/bem-bundle/',
+    site: '/toolbox/sdk/',
     title: '@bem/sdk.bundle',
     source: {
       // ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bundle/README.ru.md', // TODO
@@ -1311,28 +1311,28 @@ const toolbox = [
     tags: ['bem-sdk', '@bem/sdk.bundle'],
     bundle: 'toolbox'
   },
-  // {
-  //   url: '/toolbox/sdk/bem-bemjson-node/',
-  //   site: '/toolbox/sdk/bem-bemjson-node/',
-  //   title: 'bem-bemjson-node',
-  //   source: {
-  //     //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.ru.md', //TODO
-  //     en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.md',
-  //   },
-  //   tags: ['bem-sdk', 'bem-bemjson-node'],
-  //   bundle: 'toolbox'
-  // },
-  // {
-  //   url: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
-  //   site: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
-  //   title: 'bem-naming-cell-pattern-parser',
-  //   source: {
-  //     //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.ru.md', //TODO
-  //     en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.md',
-  //   },
-  //   tags: ['bem-sdk', 'bem-naming-cell-pattern-parser'],
-  //   bundle: 'toolbox'
-  // }
+  {
+    url: '/toolbox/sdk/bem-bemjson-node/',
+    site: '/toolbox/sdk/',
+    title: 'bem-bemjson-node',
+    source: {
+      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.ru.md', //TODO
+      en: 'https://github.com/bem/bem-sdk/blob/master/packages/bemjson-node/README.md',
+    },
+    tags: ['bem-sdk', 'bem-bemjson-node'],
+    bundle: 'toolbox'
+  },
+  {
+    url: '/toolbox/sdk/bem-naming-cell-pattern-parser/',
+    site: '/toolbox/sdk/',
+    title: 'bem-naming-cell-pattern-parser',
+    source: {
+      //ru: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.ru.md', //TODO
+      en: 'https://github.com/bem/bem-sdk/blob/master/packages/naming.cell.pattern-parser/README.md',
+    },
+    tags: ['bem-sdk', 'bem-naming-cell-pattern-parser'],
+    bundle: 'toolbox'
+  }
 ];
 
 const technologiesClassicBemxjst = versioned(
@@ -1434,7 +1434,7 @@ const technologies = [
     site: '/technologies/classic/',
     title: {
       ru: 'Классический БЭМ-стек',
-      en: 'TBD'
+      en: 'Classical BEM stack'
     },
     tags: ['technologies', 'classic'],
     type: 'promo',
@@ -1790,15 +1790,15 @@ const libsClassic = [
     url: '/libraries/classic/',
     site: '/libraries/classic/',
     title: {
-      ru: 'Классический БЭМ-стек',
-      en: 'Libraries',
+      ru: 'Классические БЭМ-библиотеки',
+      en: 'Classic BEM libraries',
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.ru.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
     tags: ['libs', 'classic', 'bem-core', 'bem-components'],
-    bundle: 'technologies'
+    bundle: 'libraries'
   }].concat(
   lib({
     url: '/libraries/classic/bem-core/',
@@ -1818,7 +1818,7 @@ const libsClassic = [
     ],
     current: '4.2.0',
     tags: ['libs', 'bem-core'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   }),
   lib({
@@ -1835,7 +1835,7 @@ const libsClassic = [
     ],
     current: '6.0.0',
     tags: ['libs', 'bem-components'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   }),
   lib({
@@ -1851,12 +1851,12 @@ const libsClassic = [
     ],
     current: '4.0.0',
     tags: ['libs'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   })).concat([
   {
     url: '/libraries/classic/principles/',
-    site: '/libraries/classic/principles/',
+    site: '/libraries/classic/',
     title: {
       ru: 'Принципы разработки БЭМ-библиотек',
       en: 'Principles of BEM library development',
@@ -1866,7 +1866,7 @@ const libsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.en.md',
     },
     tags: ['libs'],
-    bundle: 'technologies'
+    bundle: 'libraries'
   }
 ]);
 
@@ -1910,7 +1910,7 @@ const libsReact = [
 const tutorialsClassic = [
   {
     url: '/tutorials/classic/',
-    site: '/tutorials/',
+    site: '/tutorials/classic/',
     title: {
       ru: 'Классический БЭМ-стек',
       en: 'Classical BEM stack',
@@ -1920,7 +1920,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
     tags: ['tutorials', 'classic'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/quick-start-static/',
@@ -1934,7 +1934,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/start-with-project-stub/',
@@ -1948,7 +1948,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/start-with-bem-express/',
@@ -1962,7 +1962,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-express'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/',
@@ -1976,7 +1976,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/block/',
@@ -1990,7 +1990,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/modifiers/',
@@ -2008,7 +2008,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/live-init/',
@@ -2022,7 +2022,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies',
+    bundle: 'tutorials',
     next: false
   },
   {
@@ -2037,7 +2037,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/dist-quick-start/dist-quick-start.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-components'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   }
 ];
 
@@ -2073,7 +2073,7 @@ const libs = [
     },
     tags: ['libs'],
     type: 'promo',
-    bundle: 'technologies-index' // check me!
+    bundle: 'libraries-index'
   }
 ]
   .concat(libsClassic)
@@ -2089,7 +2089,7 @@ const tutorials = [
     },
     tags: ['tutorials'],
     type: 'promo',
-    bundle: 'technologies-index' // check me!
+    bundle: 'tutorials-index'
   }
 ] .concat(tutorialsClassic)
   .concat(tutorialsReact)

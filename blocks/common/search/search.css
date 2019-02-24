@@ -28,8 +28,8 @@
 
 .search_opened .search__submit
 {
-    position: fixed;
-    right: 80px;
+    position: absolute;
+    right: -81px;
 
     background: #fc0;
 }
@@ -51,7 +51,6 @@
     padding: 28px 31px 26px 32px;
 
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 
     border: 0;
     outline: none;
@@ -159,8 +158,6 @@
         left: 15px;
 
         padding: 0;
-
-        transition: none;
 
         background: transparent;
     }

@@ -115,13 +115,6 @@
     column-gap: 30px;
 }
 
-.promo-menu_inverted.promo-menu
-{
-    width: 100%;
-    max-width: 850px;
-    margin: auto;
-}
-
 .promo-menu_inverted .promo-menu__main
 {
     padding-bottom: 0;
