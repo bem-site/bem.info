@@ -1,4 +1,4 @@
 .page
 {
-    background: #25330a;
+    background: linear-gradient(hsl(80, 67%, 11%) 0%, hsl(80, 67%, 50%) 100%);
 }
