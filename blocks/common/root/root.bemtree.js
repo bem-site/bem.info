@@ -28,7 +28,7 @@ block('root').replace()(function() {
         head: [
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css?' + staticVersion },
             { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width,initial-scale=1' } },
-            { elem: 'meta', attrs: { property: 'og:image', content: 'https://ru.bem.info/og_image/logo_theme_stripe.png' } }, // TODO: implement via block with images; implement random
+            { elem: 'meta', attrs: { property: 'og:image', content: data.root + '/og_image/' } },
             Object.keys(page.head.meta).reduce(function(prev, field) {
                 (field.indexOf('og') !== -1) && prev.push({ elem: 'meta', attrs: { property: 'og:' + field.toLowerCase().replace('og', ''), content: page.head.meta[field] } });
                 return prev
