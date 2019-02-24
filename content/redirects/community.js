@@ -788,8 +788,19 @@ module.exports = [
         }
     },
     {
+        exp: '/forum/-(.*?)/(.+)',
+        now: '/forum/-$1/'
+    },
+    {
         exp: '/forum/issues/(.*)',
         now: '/forum/$1'
+    },
+    {
+        url: [
+            '/forum/null/',
+            '/forum/smacss.com/',
+        ],
+        now: '/forum/'
     },
     {
         exp: '/talks/(.*)',
@@ -801,8 +812,8 @@ module.exports = [
     },
     {
         exp: [
-            '/blog/(.*)',
-            '/news/(.*)'
+            '/blog(.*)',
+            '/news(.*)'
         ],
         now: '/forum/?labels=news&sort=created&direction=desc'
     }
