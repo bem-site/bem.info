@@ -1,6 +1,6 @@
 .sitemap
 {
-    padding: 29px 80px 50px 103px;
+    padding: 29px 30px 50px;
 
     transition: color 0.3s;
 
@@ -10,35 +10,13 @@
 
 .sitemap__section
 {
-    margin-right: 7%;
+    margin-right: 3%;
 }
 
 .sitemap__section:last-child
 {
     margin-right: 0;
 }
-
-.sitemap__section_site_methodology
-{
-    width: 28%;
-}
-
-.sitemap__section_site_toolbox
-{
-    width: 28%;
-}
-
-.sitemap__section_site_technologies
-{
-    width: 30%;
-}
-
-/*
-.sitemap__section_site_community
-{
-    width: 12%;
-}
-*/
 
 .sitemap__title
 {

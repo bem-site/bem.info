@@ -112,7 +112,11 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/technologies-classic-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index', 'blocks/technologies-classic-index' ]);
     configNodes(config, isProd, 'bundles/technologies', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/technologies/blocks', 'blocks/technologies' ]);
 
-    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
+    configNodes(config, isProd, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
+    configNodes(config, isProd, 'bundles/tutorials', [ 'blocks/common', 'bundles/tutorials/blocks', 'blocks/tutorials' ]);
+
+    configNodes(config, isProd, 'bundles/libraries-index', [ 'blocks/common', 'blocks/promo', 'blocks/libraries', 'blocks/libraries-index' ]);
+    configNodes(config, isProd, 'bundles/libraries', [ 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries' ]);
 
     configNodes(config, isProd, 'bundles/forum', [ 'blocks/common', 'blocks/forum' ]);
 };

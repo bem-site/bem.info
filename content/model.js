@@ -406,7 +406,7 @@ const toolbox = [
   },
   {
     url: '/toolbox/enb/packages/',
-    site: '/toolbox/enb/',
+    site: '/toolbox/enb/packages/',
     title: {
       ru: 'Пакеты ENB',
       en: 'ENB packages'
@@ -1789,15 +1789,15 @@ const libsClassic = [
     url: '/libraries/classic/',
     site: '/libraries/classic/',
     title: {
-      ru: 'Классический БЭМ-стек',
-      en: 'Libraries',
+      ru: 'Классические БЭМ-библиотеки',
+      en: 'Classic BEM libraries',
     },
     source: {
       ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.ru.md',
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/libs/index.en.md',
     },
     tags: ['libs', 'classic', 'bem-core', 'bem-components'],
-    bundle: 'technologies'
+    bundle: 'libraries'
   }].concat(
   lib({
     url: '/libraries/classic/bem-core/',
@@ -1817,7 +1817,7 @@ const libsClassic = [
     ],
     current: '4.2.0',
     tags: ['libs', 'bem-core'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   }),
   lib({
@@ -1834,7 +1834,7 @@ const libsClassic = [
     ],
     current: '6.0.0',
     tags: ['libs', 'bem-components'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   }),
   lib({
@@ -1850,7 +1850,7 @@ const libsClassic = [
     ],
     current: '4.0.0',
     tags: ['libs'],
-    bundle: 'technologies',
+    bundle: 'libraries',
     type: 'lib'
   })).concat([
   {
@@ -1865,7 +1865,7 @@ const libsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/guides/libs-dev-principles/libs-dev-principles.en.md',
     },
     tags: ['libs'],
-    bundle: 'technologies'
+    bundle: 'libraries'
   }
 ]);
 
@@ -1919,7 +1919,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/index.en.md',
     },
     tags: ['tutorials', 'classic'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/quick-start-static/',
@@ -1933,7 +1933,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/quick-start-static/quick-start-static.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/start-with-project-stub/',
@@ -1947,7 +1947,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-project-stub/start-with-project-stub.en.md',
     },
     tags: ['tutorials', 'classic', 'project-stub'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/start-with-bem-express/',
@@ -1961,7 +1961,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/start-with-bem-express/start-with-bem-express.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-express'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/',
@@ -1975,7 +1975,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/00-Intro/00-Intro.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/block/',
@@ -1989,7 +1989,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/01-Block-structure/01-Block-structure.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/modifiers/',
@@ -2007,7 +2007,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   },
   {
     url: '/tutorials/classic/i-bem/live-init/',
@@ -2021,7 +2021,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.en.md',
     },
     tags: ['tutorials', 'classic', 'i-bem.js'],
-    bundle: 'technologies',
+    bundle: 'tutorials',
     next: false
   },
   {
@@ -2036,7 +2036,7 @@ const tutorialsClassic = [
       en: 'https://github.com/bem-site/bem-method/blob/bem-info-data/platform/tutorials/dist-quick-start/dist-quick-start.en.md',
     },
     tags: ['tutorials', 'classic', 'bem-components'],
-    bundle: 'technologies'
+    bundle: 'tutorials'
   }
 ];
 
@@ -2072,7 +2072,7 @@ const libs = [
     },
     tags: ['libs'],
     type: 'promo',
-    bundle: 'technologies-index' // check me!
+    bundle: 'libraries-index'
   }
 ]
   .concat(libsClassic)
@@ -2088,7 +2088,7 @@ const tutorials = [
     },
     tags: ['tutorials'],
     type: 'promo',
-    bundle: 'technologies-index' // check me!
+    bundle: 'tutorials-index'
   }
 ] .concat(tutorialsClassic)
   .concat(tutorialsReact)
