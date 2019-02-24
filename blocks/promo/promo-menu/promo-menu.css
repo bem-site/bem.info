@@ -120,6 +120,8 @@
     width: 100%;
     max-width: 850px;
     margin: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .promo-menu_inverted .promo-menu__main
