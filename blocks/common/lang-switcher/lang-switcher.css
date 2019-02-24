@@ -5,37 +5,31 @@
     color: #fff;
 }
 
-/*tablet*/
-
-/*
-@media all and (max-width: 780px)
+.lang-switcher__link
 {
-    .lang-switcher
-    {
-        font-size: 19px;
+    text-decoration: none;
 
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 120px;
-
-        margin: 7px -72px 0 5px;
-    }
-
-    .lang-switcher__item,
-    .lang-switcher__item:last-child
-    {
-        margin-right: 12px;
-    }
-
-    .lang-switcher__link
-    {
-        color: #fff;
-    }
-
-    .lang-switcher__item_current
-    {
-        display: none;
-    }
+    color: rgba(255, 255, 255, 0.65);
 }
-*/
+
+.lang-switcher__link:hover
+{
+    color: #fff;
+}
+
+.lang-switcher__separator
+{
+    display: inline-block;
+
+    width: 1em;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.lang-switcher__separator::before
+{
+    position: relative;
+    left: 0.25em;
+
+    content: '/';
+}

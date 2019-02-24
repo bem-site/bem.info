@@ -1,3 +1,4 @@
 block('lang-switcher')(
-    elem('change').tag()('span')
-);
+    elem('link').tag()('a'),
+    elem('separator').tag()('span')
+)

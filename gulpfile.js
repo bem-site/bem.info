@@ -28,7 +28,7 @@ const browserSyncPort = env.PORT || 8008;
 
 const model = require(env.PATH_TO_MODEL || './content/model.js');
 
-const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru', 'uk'];
+const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru'];
 
 const CACHE = './.cache';
 const STATIC = './static';
