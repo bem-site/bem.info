@@ -120,8 +120,6 @@
     width: 100%;
     max-width: 850px;
     margin: auto;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .promo-menu_inverted .promo-menu__main
@@ -141,5 +139,10 @@
     .promo-menu__side
     {
         margin: 20px 0 0 20px;
+    }
+    .promo-menu_inverted.promo-menu
+    {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
 }
