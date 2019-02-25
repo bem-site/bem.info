@@ -45,7 +45,7 @@
     "js-beautify": "^1.7.3",
     "jscs": "^3.0.7",
     "lodash": "^4.17.4",
-    "md-to-bemjson": "^0.6.1",
+    "md-to-bemjson": "1.0.0",
     "mkdirp": "^0.5.1",
     "node-eval": "^1.1.1",
     "q": "^1.5.0",
