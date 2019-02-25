@@ -105,18 +105,18 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/common', 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
     configNodes(config, isProd, 'bundles/methodology', [ 'blocks/common', 'bundles/methodology/blocks', 'blocks/methodology' ]);
 
-    configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
-    configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/common', 'bundles/toolbox/blocks', 'blocks/toolbox' ]);
-
     configNodes(config, isProd, 'bundles/technologies-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index' ]);
     configNodes(config, isProd, 'bundles/technologies-classic-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index', 'blocks/technologies-classic-index' ]);
-    configNodes(config, isProd, 'bundles/technologies', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/technologies/blocks', 'blocks/technologies' ]);
+    configNodes(config, isProd, 'bundles/technologies', [ 'blocks/common', 'blocks/technologies' ]);
 
-    configNodes(config, isProd, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
-    configNodes(config, isProd, 'bundles/tutorials', [ 'blocks/common', 'bundles/tutorials/blocks', 'blocks/tutorials' ]);
+    configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
+    configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/common', 'blocks/toolbox' ]);
 
     configNodes(config, isProd, 'bundles/libraries-index', [ 'blocks/common', 'blocks/promo', 'blocks/libraries', 'blocks/libraries-index' ]);
-    configNodes(config, isProd, 'bundles/libraries', [ 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries' ]);
+    configNodes(config, isProd, 'bundles/libraries', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries' ]);
+
+    configNodes(config, isProd, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
+    configNodes(config, isProd, 'bundles/tutorials', [ 'blocks/common', 'blocks/tutorials' ]);
 
     configNodes(config, isProd, 'bundles/forum', [ 'blocks/common', 'blocks/forum' ]);
 };
