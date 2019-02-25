@@ -1,6 +1,6 @@
 ({
     shouldDeps: {
-        block: 'article-wrap',
+        block: 'article',
         elems: ['article']
     }
 })

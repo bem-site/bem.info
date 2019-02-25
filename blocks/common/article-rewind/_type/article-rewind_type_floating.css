@@ -4,7 +4,7 @@
     z-index: 0;
     top: 214px;
 
-    width: calc(100% - 111px); /* 111px padding-left in article-wrap */
+    width: calc(100% - 111px); /* 111px padding-left in article */
 }
 
 .article-rewind_type_floating:hover
@@ -20,7 +20,7 @@
 
 .article-rewind_type_floating .article-rewind__prev
 {
-    left: -114px; /* -(3px + 111px padding-left in article-wrap) */
+    left: -114px; /* -(3px + 111px padding-left in article) */
 }
 
 .article-rewind_type_floating .article-rewind__next

@@ -29,7 +29,7 @@ block('page')(
                             {
                                 block: 'article-rewind',
                                 mods: { type: 'static', lang: data.lang },
-                                mix: { block: 'article-wrap', elem: 'rewind' }
+                                mix: { block: 'article', elem: 'rewind' }
                             }
                         ]
                     },
