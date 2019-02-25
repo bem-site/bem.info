@@ -109,7 +109,7 @@ module.exports = [
         }
     },
     {
-        exp: '/articles/(.*)',
+        exp: '^/articles/(.*)',
         now: '/methodology/articles/'
     }
 ];

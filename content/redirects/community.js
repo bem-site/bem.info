@@ -788,11 +788,11 @@ module.exports = [
         }
     },
     {
-        exp: '/forum/-(.*?)/(.+)',
+        exp: '^/forum/-(.*?)/(.+)',
         now: '/forum/-$1/'
     },
     {
-        exp: '/forum/issues/(.*)',
+        exp: '^/forum/issues/(.*)',
         now: '/forum/$1'
     },
     {
@@ -803,17 +803,17 @@ module.exports = [
         now: '/forum/'
     },
     {
-        exp: '/talks/(.*)',
+        exp: '^/talks/(.*)',
         now: '/forum/?labels=news,talks&sort=created&direction=desc'
     },
     {
-        exp: '/events/(.*)',
+        exp: '^/events/(.*)',
         now: '/forum/?labels=news,events&sort=created&direction=desc'
     },
     {
         exp: [
-            '/blog(.*)',
-            '/news(.*)'
+            '^/blog(.*)',
+            '^/news(.*)'
         ],
         now: '/forum/?labels=news&sort=created&direction=desc'
     }

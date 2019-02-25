@@ -1,20 +1,20 @@
 module.exports = [
     // bemjson
     {
-        exp: '/technology/(.*)bemjson/',
+        exp: '^/technology/(.*)bemjson/',
         now: '/technologies/classic/bemjson/'
     },
 
     // xjst & bemxjst
     {
         exp: [
-            '/libs/bem-core/(.*)/bemhtml/(.*)',
-            '/libs/bem-core/(.*)/templating/(.*)',
-            '/technology/bemhtml/(.*)',
-            '/articles/bemhtml(.*)',
-            '/technology/bemtree/(.*)',
-            '/tools/templating-engines/(.*)',
-            '/libs/bem-core/bemhtml(.*)'
+            '^/libs/bem-core/(.*)/bemhtml/(.*)',
+            '^/libs/bem-core/(.*)/templating/(.*)',
+            '^/technology/bemhtml/(.*)',
+            '^/articles/bemhtml(.*)',
+            '^/technology/bemtree/(.*)',
+            '^/tools/templating-engines/(.*)',
+            '^/libs/bem-core/bemhtml(.*)'
         ],
         now: '/technologies/classic/bem-xjst/'
     },
@@ -22,10 +22,10 @@ module.exports = [
     // deps
     {
         exp: [
-            '/tools/bem/bem-tools/deps(.*)',
-            '/tools/bem/depsjs/',
-            '/articles/deps-js-syntax/',
-            '/technology/deps/(.*)',
+            '^/tools/bem/bem-tools/deps(.*)',
+            '^/tools/bem/depsjs/',
+            '^/articles/deps-js-syntax/',
+            '^/technology/deps/(.*)',
         ],
         now: '/technologies/classic/deps/'
     },
@@ -39,7 +39,7 @@ module.exports = [
         }
     },
     {
-        exp: '/technology/bh/v3/(.*)',
+        exp: '^/technology/bh/v3/(.*)',
         now: {
             ru: 'https://github.com/bem/bh/blob/v3.3.0/README.ru.md',
             en: 'https://github.com/bem/bh/blob/v3.3.0/README.md'
@@ -53,7 +53,7 @@ module.exports = [
         }
     },
     {
-        exp: '/technology/bh/v4/(.*)',
+        exp: '^/technology/bh/v4/(.*)',
         now: {
             ru: 'https://github.com/bem/bh/blob/v4.0.0/README.ru.md',
             en: 'https://github.com/bem/bh/blob/v4.0.0/README.md'
@@ -67,7 +67,7 @@ module.exports = [
         }
     },
     {
-        exp: '/technology/bh/v4.1.0/(.*)',
+        exp: '^/technology/bh/v4.1.0/(.*)',
         now: {
             ru: 'https://github.com/bem/bh/blob/v4.1.0/README.ru.md',
             en: 'https://github.com/bem/bh/blob/v4.1.0/README.md'
@@ -81,7 +81,7 @@ module.exports = [
         }
     },
     {
-        exp: '/technology/bh/(.*)',
+        exp: '^/technology/bh/(.*)',
         now: {
             ru: 'https://github.com/bem/bh/blob/v4.1.1/README.ru.md',
             en: 'https://github.com/bem/bh/blob/v4.1.1/README.md'
@@ -90,66 +90,66 @@ module.exports = [
 
     // i-bem
     {
-        exp: '/technology/i-bem/(.*)/i-bem-js-common/',
+        exp: '^/technology/i-bem/(.*)/i-bem-js-common/',
         now: '/technologies/classic/i-bem/common/'
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-html-binding/',
+        exp: '^/technology/i-bem/(.*)/i-bem-html-binding/',
         now: '/technologies/classic/i-bem/html-binding/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-decl/',
+        exp: '^/technology/i-bem/(.*)/i-bem-decl/',
         now: '/technologies/classic/i-bem/declaration/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-params/',
+        exp: '^/technology/i-bem/(.*)/i-bem-params/',
         now: '/technologies/classic/i-bem/parameters/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-dom/',
+        exp: '^/technology/i-bem/(.*)/i-bem-dom/',
         now: '/technologies/classic/i-bem/dom/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-mods/',
+        exp: '^/technology/i-bem/(.*)/i-bem-mods/',
         now: '/technologies/classic/i-bem/states/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-events/',
+        exp: '^/technology/i-bem/(.*)/i-bem-events/',
         now: '/technologies/classic/i-bem/events/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-init/',
+        exp: '^/technology/i-bem/(.*)/i-bem-init/',
         now: '/technologies/classic/i-bem/init/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-interaction/',
+        exp: '^/technology/i-bem/(.*)/i-bem-interaction/',
         now: '/technologies/classic/i-bem/interaction/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-context/',
+        exp: '^/technology/i-bem/(.*)/i-bem-context/',
         now: '/technologies/classic/i-bem/context/',
     },
     {
-        exp: '/technology/i-bem/(.*)/i-bem-context/',
+        exp: '^/technology/i-bem/(.*)/i-bem-context/',
         now: '/technologies/classic/i-bem/extras/',
     },
     {
         exp: [
-            '/technology/i-bem/(.*)',
-            '/libs/bem-core/(.*)i-bem-js/',
+            '^/technology/i-bem/(.*)',
+            '^/libs/bem-core/(.*)i-bem-js/',
         ],
         now: '/technologies/classic/i-bem/',
     },
 
     // technology
     {
-        exp: '/technology/(.*)',
+        exp: '^/technology/(.*)',
         now: '/technologies/classic/',
     },
 
     // platform
     {
-        exp: '/platform/libs/(.*)',
+        exp: '^/platform/libs/(.*)',
         now: '/libraries/classic/$1',
     },
 ].concat(
@@ -157,11 +157,11 @@ module.exports = [
         .reduce((acc, url) => {
             acc.push(
                 {
-                    exp: '/platform/' + url + '/(.*)',
+                    exp: '^/platform/' + url + '/(.*)',
                     now: '/technologies/classic/' + url + '/$1',
                 },
                 {
-                    exp: '/technologies/' + url + '/(.*)',
+                    exp: '^/technologies/' + url + '/(.*)',
                     now: '/technologies/classic/' + url + '/$1',
                 }
             );
@@ -170,7 +170,7 @@ module.exports = [
         }, [])
 ).concat([
     {
-        exp: '/platform/(.*)',
+        exp: '^/platform/(.*)',
         now: '/technologies/$1',
     }
 ]);

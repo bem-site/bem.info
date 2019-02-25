@@ -27,11 +27,11 @@ module.exports = [
         now: '/methodology/declarations/'
     },
     {
-        exp: '/faq/(.*)',
+        exp: '^/faq/(.*)',
         now: '/methodology/faq/$1'
     },
     {
-        exp: '/method/(.*)',
+        exp: '^/method/(.*)',
         now: '/methodology/$1'
     }
 ];
