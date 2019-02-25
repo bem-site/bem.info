@@ -27,7 +27,7 @@ block('blocks').content()(function() {
             block: 'block-info',
             mix: [
                 { block: 'blocks', elem: 'data' },
-                { block: 'article-wrap' }
+                { block: 'article' }
             ],
             data: Object.assign({
                     lang: data.lang,
@@ -36,7 +36,7 @@ block('blocks').content()(function() {
                     setName: page.setName
                 }, page.block)
         } : {
-            block: 'article-wrap'
+            block: 'article'
         }
     ]
 });

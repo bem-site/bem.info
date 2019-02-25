@@ -1,6 +1,6 @@
 ({
     mustDeps: [
-        'article-wrap'
+        'article'
     ],
     shouldDeps: [
         'block-list',
