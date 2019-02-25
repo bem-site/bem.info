@@ -4,7 +4,7 @@ block('breadcrumbs').mode('dropdown')(function() {
         root = data.root,
         site = page.site;
 
-    if (page.type === 'lib' || page.type === 'versioned') {
+    if ((page.type === 'lib' || page.type === 'versioned') && data.libs[page.library]) {
         var version = page.version;
 
         return {

@@ -7,7 +7,17 @@ block('nav').content()(function() {
     result = data.pages.filter(function(page) {
             if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
 
-            return page.url.split('/').length === site.split('/').length + 1;
+            const levelPage = page.url.split('/').length;
+            const levelSite = site.split('/').length;
+
+            if ((page.site === site || page.url === page.site) &&
+                    levelPage >= levelSite + 1) {
+                page.level = levelPage - levelSite;
+
+                return true;
+            }
+
+            return false;
         }).map(function(item) {
             var isCurrent = this.data.page.url === item.url,
                 title = typeof item.title === 'string' ? item.title : item.title[lang],
@@ -20,15 +30,21 @@ block('nav').content()(function() {
                 content: [
                     {
                         elem: 'title',
+                        attrs: {
+                            style: `margin-left:${item.level * 16}px`
+                        },
                         content: isCurrent ? title : {
                             elem: 'link',
                             attrs: { href: data.root + item.url },
                             content: title
                         }
                     },
-                    {
+                    contents.length > 0 && {
                         elem: 'content',
                         elemMods: { visible: isCurrent },
+                        attrs: {
+                            style: `margin-left:${item.level * 16}px`
+                        },
                         content: contents.map(unit => ({
                             elem: 'link',
                             mix: { block: 'nav', elem: 'chapter' },

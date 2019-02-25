@@ -18,6 +18,10 @@ module.exports = [
         ],
         now: '/technologies/classic/bem-xjst/'
     },
+    {
+        exp: '^/technologies/classic/bem-xjst/6/(.*)',
+        now: '/technologies/classic/bem-xjst/8/$1'
+    },
 
     // deps
     {
