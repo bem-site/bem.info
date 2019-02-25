@@ -66,7 +66,7 @@
     "github": "^0.2.4",
     "github-slugger": "^1.2.0",
     "got": "^6.1.1",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "9.15.4",
     "js2xmlparser": "^1.0.0",
     "lodash": "^4.x",
     "md-to-bemjson": "^0.8.0",
