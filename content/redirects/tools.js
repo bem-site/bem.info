@@ -256,20 +256,20 @@ module.exports = [
     },
     // bem-naming
     {
-        exp: '/tools/bem/bem-naming/(.*)',
+        exp: '^/tools/bem/bem-naming/(.*)',
         now: '/toolbox/sdk/bem-naming/$1'
     },
     // enb
     {
-        exp: '/tools/bem/enb-(.*)/(.*)',
+        exp: '^/tools/bem/enb-(.*)/(.*)',
         now: '/toolbox/enb/enb-$1/$2',
     },
     {
-        exp: '/tools/bem/(.*)',
+        exp: '^/tools/bem/(.*)',
         now: '/toolbox/enb/$1'
     },
     {
-        exp: '/tools/(.*)',
+        exp: '^/tools/(.*)',
         now: '/toolbox/'
     }
 ];

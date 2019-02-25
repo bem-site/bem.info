@@ -7,7 +7,7 @@ module.exports = [
         now: '/'
     },
     {
-        exp: '/(.+)/favicon.ico',
+        exp: '^/(.+)/favicon.ico',
         now: '/favicon.ico'
     },
     {
