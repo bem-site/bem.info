@@ -3,19 +3,26 @@ block('page')(
         mods: { promo: true }
     }),
     content()(function() {
-        var metricaCounterId = '16972024',
+        var path = require('path'),
+            metricaCounterId = '16972024',
             data = this.data,
             page = data.page,
             type = page.type,
-            content = type === 'promo' ? { block: 'promo-content', mix: { block: 'page', elem: 'main' } } :
-                type === 'lib' ? { block: 'blocks', mix: { block: 'page', elem: 'main' } } :
+            content = type === 'promo' ? {
+                    block: 'promo-content',
+                    mix: { block: 'page', elem: 'main' }
+                } :
                 [
                     {
                         block: 'page',
                         elem: 'menu',
                         content: {
                             block: 'nav',
-                            mix: { block: 'page', elem: 'nav' }
+                            mix: { block: 'page', elem: 'nav' },
+                            items: type === 'lib' ? {
+                                block: 'block-list',
+                                mix: { block: 'blocks', elem: 'list' }
+                            } : undefined
                         }
                     },
                     {
@@ -25,8 +32,24 @@ block('page')(
                             page.isTranslationMissed && { block: 'article-translation-missed' },
                             type === 'articles' ?
                                 { block: 'articles', mix: { block: 'page', elem: 'content' } } :
-                                { block: 'article', mix: { block: 'page', elem: 'content' } },
-                            {
+                                page.block ? {
+                                    block: 'block-info',
+                                    mix: [
+                                        { block: 'blocks', elem: 'data' },
+                                        { block: 'article' },
+                                        { block: 'page', elem: 'content' }
+                                    ],
+                                    data: Object.assign({
+                                            lang: data.lang,
+                                            examplesUrlPrefix: '//' + data.lang + '.bem.info/_st_/' + page.library + '-examples/' + page.version,
+                                            outputLibFolder: path.join('output', 'bem.info', page.library), // FIXME: адовый костыль
+                                            setName: page.setName
+                                        }, page.block)
+                                } : {
+                                    block: 'article',
+                                    mix: { block: 'page', elem: 'content' }
+                                },
+                            page.block || {
                                 block: 'article-rewind',
                                 mods: { type: 'static', lang: data.lang },
                                 mix: { block: 'article', elem: 'rewind' }

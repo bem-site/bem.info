@@ -1,6 +1,6 @@
 ({
-    shouldDeps: {
-        block: 'article',
-        elems: ['article']
-    }
+    shouldDeps: [
+        'block-list',
+        'block-info',
+    ]
 })

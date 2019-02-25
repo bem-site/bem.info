@@ -7,7 +7,6 @@
         'aside',
         'footer',
         'article',
-        'articles',
         'article-amendments',
         'article-translation-missed',
         'social-likes',
