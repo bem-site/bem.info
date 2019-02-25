@@ -39,7 +39,7 @@ block('sitemap').content()(function() {
                     elem: 'tree',
                     // TODO: generate nested tree instead of plain list
                     content: pages.map(function(page) {
-                        var level = page.level || page.url.split('/').length - 3,
+                        var level = page.url.split('/').length - 3,
                             title = page.sitemapTitle ?
                                 page.sitemapTitle[data.lang] : page.title;
 
