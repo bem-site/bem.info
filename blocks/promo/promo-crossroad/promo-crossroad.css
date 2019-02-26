@@ -1,6 +1,7 @@
 .promo-crossroad
 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     margin: 0 0 100px;
@@ -12,11 +13,17 @@
     font-size: 18px;
     line-height: 1.5;
 
-    margin-bottom: 0;
+    max-width: 220px;
+    margin: 0 40px 0 0;
 
     text-align: center;
 
     color: #000;
+}
+
+.promo-crossroad__item:last-child
+{
+    margin-right: 0;
 }
 
 .promo-crossroad__title-link
@@ -78,9 +85,7 @@
 {
     .promo-crossroad
     {
-
-        padding: 0 1%;
-        flex-wrap: wrap;
+        padding: 0 20px;
     }
 }
 
@@ -94,7 +99,7 @@
 
     .promo-crossroad__item
     {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .promo-crossroad__title-link
