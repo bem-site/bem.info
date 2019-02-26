@@ -118,5 +118,6 @@ module.exports = function(config) {
     configNodes(config, isProd, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
     configNodes(config, isProd, 'bundles/tutorials', [ 'blocks/common', 'blocks/tutorials' ]);
 
+    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
     configNodes(config, isProd, 'bundles/forum', [ 'blocks/common', 'blocks/forum' ]);
 };
