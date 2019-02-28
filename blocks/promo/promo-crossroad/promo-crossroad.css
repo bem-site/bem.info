@@ -88,14 +88,9 @@
 /*mobile*/
 @media (max-width: 480px)
 {
-    .promo-crossroad
-    {
-        display: block;
-    }
-
     .promo-crossroad__item
     {
-        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .promo-crossroad__title-link
