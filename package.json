@@ -6,7 +6,7 @@
     "url": "git@github.com:bem-site/bem.info.git"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
@@ -15,7 +15,7 @@
     "bem-core": "^4.2.1",
     "bem-lib-site-view": "bem-site/bem-lib-site-view",
     "bem-naming": "^1.0.1",
-    "bem-stat-counters": "^1.5.1",
+    "bem-stat-counters": "^3.0.0",
     "bem.info-data": "bem-site/bem.info-data",
     "bemhint": "^0.10.0",
     "bemhint-css-naming": "^1.0.1",
@@ -33,7 +33,7 @@
     "eslint": "^10.0.0",
     "fs-extra": "^11.3.0",
     "globals": "^17.0.0",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "js-beautify": "^1.15.0",
     "lodash": "^4.17.21",
     "md-to-bemjson": "1.0.0",
