@@ -4,7 +4,6 @@ module.exports = {
         'common',
         'community',
         'community-index',
-        'forum',
         'index',
         'methodology',
         'methodology-index',

@@ -1,1 +1,20 @@
-<meta http-equiv="REFRESH" content="0;URL=/bem.info/ru/">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BEM</title>
+<script>
+(function() {
+    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    var target = lang.indexOf('ru') === 0 || lang.indexOf('uk') === 0 ? '/ru/' : '/en/';
+    window.location.replace(target);
+})();
+</script>
+<noscript>
+<meta http-equiv="refresh" content="0; url=/en/">
+</noscript>
+</head>
+<body>
+<p><a href="/en/">English</a> | <a href="/ru/">Русский</a></p>
+</body>
+</html>

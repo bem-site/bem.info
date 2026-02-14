@@ -4,9 +4,6 @@ var langs = ['ru', 'uk', 'en'],
         fileProvider: require('enb/techs/file-provider'),
         fileMerge: require('enb/techs/file-merge'),
 
-        // optimization
-        borschik: require('enb-borschik/techs/borschik'),
-
         // css
         css: require('enb-css/techs/css'),
 
@@ -47,7 +44,7 @@ function configNodes(config, isProd, bundle, levels) {
             // css
             [techs.css, {
                 target: '?.css',
-                autoprefixer: { browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%'] }
+                autoprefixer: { browsers: ['defaults', 'not dead'] }
             }],
 
             // i18n
@@ -85,39 +82,33 @@ function configNodes(config, isProd, bundle, levels) {
             [techs.prependYm, {
                 source: '?.pre.{lang}.js',
                 target: '?.{lang}.js'
-            }],
-
-            // borschik
-            [techs.borschik, { sourceTarget: '?.{lang}.js', destTarget: '?.{lang}.min.js', minify: isProd }],
-            [techs.borschik, { sourceTarget: '?.css', destTarget: '?.min.css', minify: isProd }]
+            }]
         ]);
 
-        nodeConfig.addTargets(['?.{lang}.bemtree.js', '?.{lang}.bemhtml.js', '?.min.css', '?.{lang}.min.js']);
+        // ENB outputs raw files; minification is handled by esbuild post-build
+        nodeConfig.addTargets(['?.{lang}.bemtree.js', '?.{lang}.bemhtml.js', '?.css', '?.{lang}.js']);
     });
 }
 
 module.exports = function(config) {
-    var isProd = process.env.YENV === 'production';
-
     config.setLanguages(langs);
-    configNodes(config, isProd, 'bundles/index', [ 'blocks/common', 'blocks/promo/', 'blocks/index' ]);
+    configNodes(config, false, 'bundles/index', [ 'blocks/common', 'blocks/promo/', 'blocks/index' ]);
 
-    configNodes(config, isProd, 'bundles/methodology-index', [ 'blocks/common', 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
-    configNodes(config, isProd, 'bundles/methodology', [ 'blocks/common', 'bundles/methodology/blocks', 'blocks/methodology' ]);
+    configNodes(config, false, 'bundles/methodology-index', [ 'blocks/common', 'blocks/promo', 'blocks/methodology', 'blocks/methodology-index' ]);
+    configNodes(config, false, 'bundles/methodology', [ 'blocks/common', 'bundles/methodology/blocks', 'blocks/methodology' ]);
 
-    configNodes(config, isProd, 'bundles/technologies-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index' ]);
-    configNodes(config, isProd, 'bundles/technologies-classic-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index', 'blocks/technologies-classic-index' ]);
-    configNodes(config, isProd, 'bundles/technologies', [ 'blocks/common', 'blocks/technologies' ]);
+    configNodes(config, false, 'bundles/technologies-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index' ]);
+    configNodes(config, false, 'bundles/technologies-classic-index', [ 'blocks/common', 'blocks/promo', 'blocks/technologies', 'blocks/technologies-index', 'blocks/technologies-classic-index' ]);
+    configNodes(config, false, 'bundles/technologies', [ 'blocks/common', 'blocks/technologies' ]);
 
-    configNodes(config, isProd, 'bundles/toolbox-index', [ 'blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
-    configNodes(config, isProd, 'bundles/toolbox', [ 'blocks/common', 'blocks/toolbox' ]);
+    configNodes(config, false, 'bundles/toolbox-index', [ 'blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index' ]);
+    configNodes(config, false, 'bundles/toolbox', [ 'blocks/common', 'blocks/toolbox' ]);
 
-    configNodes(config, isProd, 'bundles/libraries-index', [ 'blocks/common', 'blocks/promo', 'blocks/libraries', 'blocks/libraries-index' ]);
-    configNodes(config, isProd, 'bundles/libraries', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries' ]);
+    configNodes(config, false, 'bundles/libraries-index', [ 'blocks/common', 'blocks/promo', 'blocks/libraries', 'blocks/libraries-index' ]);
+    configNodes(config, false, 'bundles/libraries', [ 'node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries' ]);
 
-    configNodes(config, isProd, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
-    configNodes(config, isProd, 'bundles/tutorials', [ 'blocks/common', 'blocks/tutorials' ]);
+    configNodes(config, false, 'bundles/tutorials-index', [ 'blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index' ]);
+    configNodes(config, false, 'bundles/tutorials', [ 'blocks/common', 'blocks/tutorials' ]);
 
-    configNodes(config, isProd, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
-    configNodes(config, isProd, 'bundles/forum', [ 'blocks/common', 'blocks/forum' ]);
+    configNodes(config, false, 'bundles/community-index', [ 'blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index' ]);
 };

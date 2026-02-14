@@ -1,0 +1,61 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+  schedule:
+    # Weekly rebuild to pick up content changes from upstream repos
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Fetch content data
+        run: npx gulp data
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LANGUAGES: en,ru
+          YENV: production
+
+      - name: Build static site
+        run: npm run build
+        env:
+          LANGUAGES: en,ru
+          YENV: production
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/bem.info/
+
+  deploy-github-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
