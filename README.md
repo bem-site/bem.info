@@ -119,8 +119,8 @@ bem.info/
 │   └── make.js              # Конфигурация сборщика ENB
 ├── gulpfile.js              # Gulp-задачи (оркестратор сборки)
 ├── vite.config.mjs          # Vite: dev-сервер и preview
-├── eslint.config.mjs        # ESLint 9+ flat config
-├── stylelint.config.mjs     # Stylelint 16+ конфигурация
+├── eslint.config.mjs        # ESLint 10 flat config
+├── stylelint.config.mjs     # Stylelint 17 конфигурация
 ├── .bemrc                   # Конфигурация BEM (языки, платформы)
 └── .bemhint.js              # Конфигурация bemhint
 ```
