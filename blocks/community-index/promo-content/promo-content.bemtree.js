@@ -70,13 +70,13 @@ block('promo-content').content()(function() {
                             content: [
                                 {
                                     elem: 'title-link',
-                                    url: '/forum/',
+                                    url: 'https://github.com/bem-site/bem.info/issues',
                                     content: [
                                         {
                                             elem: 'img',
                                             url: 'promo-crossroad_forum.svgd'
                                         },
-                                        this.i18n(this.block, 'text5') // 'Форум'
+                                        this.i18n(this.block, 'text5') // 'Issues'
                                     ]
                                 }
                             ]

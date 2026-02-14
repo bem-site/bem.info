@@ -10,7 +10,6 @@
         'article-amendments',
         'article-translation-missed',
         'social-likes',
-        'doc-rating',
         {
             block: 'article-rewind',
             mods: {

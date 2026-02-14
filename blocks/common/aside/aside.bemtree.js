@@ -21,13 +21,6 @@ block('aside').content()(function() {
                     },
                     params: page.head.meta,
                     lang: data.lang
-                },
-                {
-                    block: 'doc-rating',
-                    mix: {
-                        block: 'aside',
-                        elem: 'rating'
-                    }
                 }
             ]
         },

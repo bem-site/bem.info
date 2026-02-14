@@ -4,31 +4,25 @@ const path = require('path');
 const fs = require('fs');
 const fsExtra = require('fs-extra');
 const cp = require('child_process');
+const { build: esbuild } = require('esbuild');
 
 const Q = require('q');
 const enb = require('enb');
-const rimraf = require('rimraf');
-const mkdirp = require('mkdirp');
 
 const gulp = require('gulp');
-const batch = require('gulp-batch');
-const watch = require('gulp-watch');
-const browserSync = require('browser-sync');
-const csscomb = require('gulp-csscomb');
-
-const genNginxHostConf = require('./tools/generate-nginx-host-conf');
 
 const prepareModel = require('./lib/prepare-model');
 const fsHelpers = require('./node_modules/bem-lib-site-view/lib/fs-helpers');
 
-const docFeedbackHandlers = require('doc-feedback-handlers');
+const generateStaticRedirects = require('./tools/generate-static-redirects');
+const generate404Router = require('./tools/generate-404-router');
 
 const env = process.env;
-const browserSyncPort = env.PORT || 8008;
 
 const model = require(env.PATH_TO_MODEL || './content/model.js');
 
 const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru'];
+const IS_PROD = env.YENV === 'production';
 
 const CACHE = './.cache';
 const STATIC = './static';
@@ -86,7 +80,7 @@ function compilePages(lang, bundle) {
             static: STATIC,
             source: CACHE_DIRS[lang],
             destination: OUTPUT_DIRS[lang],
-            destinationRoot: OUTPUT + (env.YENV === 'production' ? '/bem.info/static' : ''),
+            destinationRoot: OUTPUT + (IS_PROD ? '/bem.info/static' : ''),
             langs: LANGUAGES,
             sites: env.SITES ? env.SITES.split(',') : ['methodology', 'technologies', 'toolbox', 'libraries', 'tutorials'],
             lang,
@@ -118,8 +112,8 @@ gulp.task('prepare-static', () => {
 // Сборка данных
 
 function data() {
-    rimraf.sync(CACHE);
-    mkdirp.sync(CACHE);
+    fsExtra.removeSync(CACHE);
+    fs.mkdirSync(CACHE, { recursive: true });
 
     return Q.all(LANGUAGES.map(lang => {
         const modelWithRedirects = model.concat(require('./content/redirects'));
@@ -127,14 +121,6 @@ function data() {
 
         const modelPath = path.join(CACHE, `model.${lang}.json`);
         fs.writeFileSync(modelPath, JSON.stringify(preparedModel.model, null, 2));
-
-        if (preparedModel.redirects && preparedModel.redirects.length) {
-            const redirectsDir = path.join(CACHE, OUTPUT_ROOT);
-            const redirectsNginxPath = path.join(redirectsDir, `bem_info_redirects_${lang}.conf`);
-
-            mkdirp.sync(redirectsDir);
-            fs.writeFileSync(redirectsNginxPath, genNginxHostConf(preparedModel.redirects || []));
-        }
 
         return runSubProcess('./lib/data-builder.js', {
             cwd: process.cwd(),
@@ -144,7 +130,7 @@ function data() {
                 modelPath: modelPath,
                 host: `https://${lang}.bem.info`,
                 dest: CACHE_DIRS[lang],
-                root: env.YENV === 'production' ? '' : '/bem.info/' + lang,
+                root: IS_PROD ? '' : '/bem.info/' + lang,
                 token: env.TOKEN,
                 DEBUG: env.DEBUG,
                 githubHosts: env.GITHUB_HOSTS
@@ -169,6 +155,50 @@ gulp.task('is-data-exists', () => {
 
 gulp.task('enb-make', enb.make);
 
+// Minify CSS/JS bundles with esbuild (replaces borschik)
+gulp.task('minify-bundles', async () => {
+    const tasks = [];
+
+    for (const bundle of BUNDLES) {
+        const bundleDir = path.join(BUNDLES_DIR, bundle);
+
+        // Minify CSS
+        const cssFile = path.join(bundleDir, bundle + '.css');
+        if (fs.existsSync(cssFile)) {
+            tasks.push(
+                esbuild({
+                    entryPoints: [cssFile],
+                    outfile: path.join(bundleDir, bundle + '.min.css'),
+                    minify: IS_PROD,
+                    bundle: false,
+                    allowOverwrite: true,
+                    loader: { '.css': 'css' },
+                    logLevel: 'warning'
+                })
+            );
+        }
+
+        // Minify JS per language
+        for (const lang of LANGUAGES) {
+            const jsFile = path.join(bundleDir, bundle + '.' + lang + '.js');
+            if (fs.existsSync(jsFile)) {
+                tasks.push(
+                    esbuild({
+                        entryPoints: [jsFile],
+                        outfile: path.join(bundleDir, bundle + '.' + lang + '.min.js'),
+                        minify: IS_PROD,
+                        bundle: false,
+                        allowOverwrite: true,
+                        logLevel: 'warning'
+                    })
+                );
+            }
+        }
+    }
+
+    await Promise.all(tasks);
+});
+
 function copyStatic() {
     return Q.all(LANGUAGES.map(lang => {
         const files = BUNDLES.map(bundle =>
@@ -192,13 +222,38 @@ gulp.task('build-html', () => Q.all(LANGUAGES.map(lang => {
 })));
 
 gulp.task('copy-static-images', () => Q.all(LANGUAGES.map(lang => {
-    // FIXME: use '/static/*' then https://github.com/bem-site/gorshochek/issues/49 would be resolved
     return gulp.src(path.join(CACHE_DIRS[lang], '/*.{gif,png,jpg,svg,svgz,svgd}'))
         .pipe(gulp.dest(OUTPUT_DIRS[lang]));
 })));
 
+gulp.task('generate-redirects', () => {
+    const allRegexRedirects = [];
+
+    return Q.all(LANGUAGES.map(lang => {
+        const modelWithRedirects = model.concat(require('./content/redirects'));
+        const preparedModel = prepareModel(modelWithRedirects, lang);
+
+        const { regexRedirects } = generateStaticRedirects(preparedModel.redirects, OUTPUT_DIRS[lang]);
+        generate404Router(regexRedirects, OUTPUT_DIRS[lang]);
+
+        // Collect regex redirects with language prefix for root 404.html
+        regexRedirects.forEach(r => {
+            const patterns = Array.isArray(r.exp) ? r.exp : [r.exp];
+            patterns.forEach(p => {
+                allRegexRedirects.push({ exp: '^/' + lang + p, now: r.now });
+            });
+        });
+
+        return Q.resolve();
+    })).then(() => {
+        // Generate root-level 404.html that routes /{lang}/... paths
+        generate404Router(allRegexRedirects, OUTPUT_ROOT);
+    });
+});
+
 gulp.task('compile-pages', gulp.series(
     'enb-make',
+    'minify-bundles',
     'prepare-static',
     'copy-static',
     'copy-static-images',
@@ -206,18 +261,23 @@ gulp.task('compile-pages', gulp.series(
     'build-html'
 ));
 
-// Наблюдатель
+// Наблюдатель (use `npm run dev` for Vite dev server)
 
 gulp.task('watch', () => {
-    watch(['content/**/*'], batch((event, done) => {
-        data().then(done);
-    }));
+    const { watch } = require('gulp');
 
-    watch(['blocks/**/*'], batch((event, done) => {
-        enb.make().then(() => copyStatic().then(done));
-    }));
+    watch(['content/**/*'], function contentChanged(done) {
+        data().then(() => done());
+    });
 
-    // compile pages then bemtree/bemhtml bundle or data changes
+    watch(['blocks/**/*'], function blocksChanged(done) {
+        enb.make().then(() => {
+            const minify = gulp.task('minify-bundles');
+            minify(() => copyStatic().then(done));
+        });
+    });
+
+    // compile pages when bemtree/bemhtml bundle or data changes
     BUNDLES.forEach(bundle => {
         var cwd = process.cwd(),
             bemtree = LANGUAGES.map(lang => path.join(cwd, BEMTREE[lang][bundle])),
@@ -227,96 +287,24 @@ gulp.task('watch', () => {
                 path.join(CACHE_DIR_PREFIX + '*', bundle, '**'),
                 path.join(CACHE_DIR_PREFIX + '*', bundle + '.js')
             ]),
-            batch((event, done) => {
+            function bundleChanged(done) {
                 bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
                 bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
                 Q.all(LANGUAGES.map(lang => compilePages(lang, bundle))).then(done);
             }
-        ));
+        );
     });
-});
-
-var got = require('got'),
-    qs = require('querystring');
-
-gulp.task('browser-sync', () => {
-    const docFeedbackHandlersPort = 8090;
-
-    let config;
-
-    try {
-        config = require('./secret-config');
-    } catch (err) {
-        console.log('warn: no config with DB credentials was found');
-        console.log('warn: feedback server will not be started');
-    }
-
-    const isFeedbackEnabled = !!config;
-
-    function runBrowserSync() {
-        console.log('Starting browser-sync on', browserSyncPort);
-        return browserSync.create().init({
-            files: OUTPUT + '/**',
-            server: { baseDir: OUTPUT },
-            port: browserSyncPort,
-            open: false,
-            online: false,
-            logLevel: 'silent',
-            notify: false,
-            ui: false,
-            middleware: middleware
-        });
-    }
-
-    function middleware(req, res, next) {
-        if (isFeedbackEnabled && req.url.includes('/doc-feedback/')) {
-            var backendUrl = 'http://localhost:' + docFeedbackHandlersPort + req.url.substr(req.url.indexOf('/doc-feedback/'));
-
-            if (req.method.toLowerCase() === 'get') {
-                return got.stream(backendUrl)
-                    .pipe(res);
-            } else {
-                var body = '';
-
-                req
-                    .on('data', chunk => {
-                        body += chunk;
-                    })
-                    .on('end', () => {
-                        got.post(backendUrl, { query: qs.parse(body) })
-                            .then(() => res.end('ok'))
-                            .catch(console.error);
-                    });
-
-                return;
-            }
-        }
-
-        if (req.url.match(/svgd/)) {
-            res.setHeader('Content-Type', 'image/svg+xml');
-            res.setHeader('Content-Encoding', 'deflate')
-        }
-        next();
-    }
-
-    return isFeedbackEnabled ? docFeedbackHandlers(config).then(app => {
-        app.listen(docFeedbackHandlersPort, runBrowserSync);
-    }) : runBrowserSync(isFeedbackEnabled);
-});
-
-gulp.task('csscomb', function() {
-    return gulp.src('blocks/**/*.css', { base: './' })
-        .pipe(csscomb())
-        .pipe(gulp.dest('./'));
 });
 
 gulp.task('build', gulp.series(
     'is-data-exists',
     gulp.parallel('prepare-output', 'prepare-static', 'copy-static-images', 'enb-make'),
-    gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml')
+    'minify-bundles',
+    gulp.parallel('build-html', 'copy-static', 'copy-sitemap-xml'),
+    'generate-redirects'
 ));
 
 gulp.task('default', gulp.series(
     'build',
-    gulp.parallel('watch', 'browser-sync')
+    'watch'
 ));

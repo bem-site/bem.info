@@ -2154,15 +2154,4 @@ module.exports = [
 .concat(technologies)
 .concat(libs)
 .concat(tutorials)
-.concat(community)
-.concat({
-  url: '/forum/',
-  site: '/community/',
-  title: {
-    ru: 'Форум',
-    en: 'Forum',
-  },
-  source: { ru: '', en: '' },
-  level: 1,
-  nav: false
-});
+.concat(community);

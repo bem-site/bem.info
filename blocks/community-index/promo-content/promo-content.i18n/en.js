@@ -5,7 +5,7 @@ module.exports = {
         text2: 'Whatʼs new?',
         text3: 'Events',
         text4: 'What, where, when',
-        text5: 'Forum',
-        text6: 'Questions and answers'
+        text5: 'Issues',
+        text6: 'Questions and discussions on GitHub'
     }
 };

@@ -12,44 +12,10 @@
 }
 
 .aside__tags,
-.aside__rating,
 .aside__social,
 .aside__amendments
 {
     margin: 0 16px 8px 0;
-}
-
-.aside__rating
-{
-    min-height: auto;
-    margin-top: -3px;
-    margin-right: 32px;
-
-    white-space: nowrap;
-}
-
-.aside__rating .doc-rating__total
-{
-    display: inline-block;
-}
-
-.aside__rating .doc-rating__total::after
-{
-    content: ',\00a0'; /* &nbsp; */
-}
-
-.aside__rating .doc-rating__stars
-{
-    display: inline-block;
-
-    margin: 0 10px 0 0;
-
-    vertical-align: top;
-}
-
-.aside__rating .doc-rating__value
-{
-    display: inline-block;
 }
 
 .aside__social
@@ -125,8 +91,7 @@
         flex-wrap: wrap;
     }
 
-    .aside__tags,
-    .aside__rating
+    .aside__tags
     {
         flex-grow: 0;
     }
@@ -160,13 +125,6 @@
         {
             color: #fff;
             border-color: #fff;
-        }
-
-        .aside__rating
-        {
-            margin: 24px 0;
-
-            color: #fff;
         }
 
         .aside__amendments

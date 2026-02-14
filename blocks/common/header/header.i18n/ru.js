@@ -1,5 +1,5 @@
 module.exports = {
     header: {
-        forum: 'Форум'
+        forum: 'Issues'
     }
 };
