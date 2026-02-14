@@ -21,7 +21,7 @@ block('promo-content').content()(function() {
                             content: this.i18n(this.block, 'text0') // 'технологии'
                         }
                     ]
-                },
+                }
                 // {
                 //     block: 'promo-action',
                 //     attrs: { href: '/tutorials/classic/quick-start-static/' },
@@ -68,9 +68,9 @@ block('promo-content').content()(function() {
                         text: title,
                         subtitle: subtitle,
                         url: data.root + item.url
-                    }
+                    };
                 })
             }
-        },
-    ]
+        }
+    ];
 });

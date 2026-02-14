@@ -27,6 +27,7 @@ export default [
                 // BEM XJST
                 block: 'readonly',
                 elem: 'readonly',
+                elemMod: 'readonly',
                 mod: 'readonly',
                 match: 'readonly',
                 oninit: 'readonly',
@@ -53,6 +54,7 @@ export default [
         rules: {
             'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
             'no-console': 'off',
+            'no-irregular-whitespace': ['error', { skipComments: true }],
             'quotes': ['error', 'single', { avoidEscape: true }],
             'semi': ['error', 'always'],
             'indent': ['error', 4, { SwitchCase: 1 }],
@@ -69,6 +71,12 @@ export default [
             'eqeqeq': ['error', 'always', { null: 'ignore' }],
             'no-var': 'off',
             'prefer-const': 'off'
+        }
+    },
+    {
+        files: ['**/*.mjs'],
+        languageOptions: {
+            sourceType: 'module'
         }
     }
 ];

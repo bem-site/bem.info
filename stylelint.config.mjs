@@ -23,8 +23,6 @@ export default {
         'shorthand-property-no-redundant-values': true,
         'declaration-block-single-line-max-declarations': 1,
         'length-zero-no-unit': true,
-        'max-empty-lines': 1,
-        'no-extra-semicolons': true,
 
         'order/order': [
             'custom-properties',

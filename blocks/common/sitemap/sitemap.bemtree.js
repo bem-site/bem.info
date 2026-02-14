@@ -53,7 +53,7 @@ block('sitemap').content()(function() {
                                 attrs: { href: page.disabled ? undefined : page.lang ? 'https://' + page.lang + '.bem.info' + page.url : data.root + page.url },
                                 content: title
                             }
-                        }
+                        };
                     })
                 }
             ]

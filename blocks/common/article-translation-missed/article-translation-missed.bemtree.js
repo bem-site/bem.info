@@ -8,5 +8,5 @@ block('article-translation-missed').content()(function() {
             attrs: { href: 'https://github.com/bem-site/translation' }
         },
         '.'
-    ]
+    ];
 });

@@ -32,7 +32,7 @@
     "Vladimir Grinenko <tadatuta@yandex-team.ru> (http://github.com/tadatuta)"
   ],
   "engines": {
-    "node": ">= 24.x"
+    "node": ">= 22.x"
   },
   "os": [
     "darwin",

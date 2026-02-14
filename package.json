@@ -6,7 +6,7 @@
     "url": "git@github.com:bem-site/bem.info.git"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=22.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
@@ -24,7 +24,7 @@
     "enb": "^1.5.1",
     "enb-bem-i18n": "^1.1.1",
     "enb-bem-techs": "^2.2.2",
-    "enb-bemxjst": "8.6.7",
+    "enb-bemxjst": "^8.10.6",
     "enb-bemxjst-i18n": "tadatuta/enb-bemxjst-i18n#0dc65e72afaa7cc9282eddc0335d98de8193bed3",
     "enb-css": "^1.2.2",
     "enb-js": "^1.1.1",

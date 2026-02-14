@@ -1,5 +1,5 @@
 block('page')(
-    match(function() { return this.data.page.type === 'promo'}).addMix()({
+    match(function() { return this.data.page.type === 'promo';}).addMix()({
         mods: { promo: true }
     }),
     content()(function() {
@@ -9,9 +9,9 @@ block('page')(
             page = data.page,
             type = page.type,
             content = type === 'promo' ? {
-                    block: 'promo-content',
-                    mix: { block: 'page', elem: 'main' }
-                } :
+                block: 'promo-content',
+                mix: { block: 'page', elem: 'main' }
+            } :
                 [
                     {
                         block: 'page',
@@ -40,11 +40,11 @@ block('page')(
                                         { block: 'page', elem: 'content' }
                                     ],
                                     data: Object.assign({
-                                            lang: data.lang,
-                                            examplesUrlPrefix: '//' + data.lang + '.bem.info/_st_/' + page.library + '-examples/' + page.version,
-                                            outputLibFolder: path.join('output', 'bem.info', page.library), // FIXME: адовый костыль
-                                            setName: page.setName
-                                        }, page.block)
+                                        lang: data.lang,
+                                        examplesUrlPrefix: '//' + data.lang + '.bem.info/_st_/' + page.library + '-examples/' + page.version,
+                                        outputLibFolder: path.join('output', 'bem.info', page.library), // FIXME: адовый костыль
+                                        setName: page.setName
+                                    }, page.block)
                                 } : {
                                     block: 'article',
                                     mix: { block: 'page', elem: 'content' }
@@ -63,7 +63,7 @@ block('page')(
                             block: 'aside',
                             mix: { block: 'page', elem: 'aside' }
                         }
-                    },
+                    }
                 ];
 
         return [
@@ -96,4 +96,4 @@ block('page')(
             }
         ];
     })
-)
+);

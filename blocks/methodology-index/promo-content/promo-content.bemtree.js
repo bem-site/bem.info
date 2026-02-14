@@ -74,11 +74,11 @@ block('promo-content').content()(function() {
                         subtitle: subtitle,
                         url: data.root + item.url,
                         additional: Boolean(item.url.match(/faq|history|articles|solved/)) //item.additional
-                    }
+                    };
                 })
             }
         },
-/*
+        /*
         {
             block: 'promo-section',
             mods: { color: 'beige' },
@@ -588,5 +588,5 @@ block('promo-content').content()(function() {
                 }
             ]
         }
-    ]
+    ];
 });

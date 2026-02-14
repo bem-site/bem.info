@@ -1,5 +1,5 @@
 block('legos')(
-	content()(function() {
+    content()(function() {
         var sizes = [
             [4, 2], [3, 2], [2, 2], [3, 2], [2, 6], [3, 6], [4, 6],
             [2, 4], [3, 2], [2, 4], [3, 7], [1, 4], [3, 3], [2, 2],
@@ -16,5 +16,5 @@ block('legos')(
             );
             return blocks;
         }, []);
-	})
+    })
 );

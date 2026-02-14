@@ -8,7 +8,7 @@
     overflow: hidden;
 
     min-height: 300px;
-    margin: -1px 0 -12px 0;
+    margin: -1px 0 -12px;
     padding-bottom: 100px;
 
     white-space: nowrap;
@@ -48,8 +48,9 @@
     margin-left: -21px;
     padding: 2px 18px 1px 25px;
 
-    letter-spacing: 6px;
     text-transform: uppercase;
+
+    letter-spacing: 6px;
 }
 
 .promo-header__subtitle::before

@@ -8,5 +8,5 @@ modules.define('select', function(provide, Select) {
                 window.location.href = e.target.getVal();
             });
         }
-    }))
+    }));
 });

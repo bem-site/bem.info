@@ -21,7 +21,7 @@
 
 ## Требования
 
-- Node.js >= 24
+- Node.js >= 22
 - npm
 - GitHub-токен (для загрузки контента с GitHub)
 
@@ -200,7 +200,7 @@ bem.info/
 
 | Инструмент | Версия | Назначение |
 |------------|--------|------------|
-| **Node.js** | 24+ LTS | Среда выполнения |
+| **Node.js** | 22+ LTS | Среда выполнения |
 | **Vite** | ^7.0.0 | Dev-сервер и preview (замена Browser-sync) |
 | **esbuild** | ^0.27.0 | Минификация CSS/JS (замена Borschik) |
 | **ESLint** | ^10.0.0 | Линтинг JS (flat config) |
@@ -318,7 +318,7 @@ npm test
 Проект автоматически собирается и деплоится в GitHub Pages через GitHub Actions:
 
 - **Триггеры**: push в `master`, еженедельный cron (понедельник 06:00 UTC), ручной запуск
-- **Node.js**: 24 с кешированием npm
+- **Node.js**: 22 LTS с кешированием npm
 - **Процесс**: `gulp data` → `npm run build` → deploy to GitHub Pages
 - **Результат**: статический сайт в `output/bem.info/` публикуется на GitHub Pages
 

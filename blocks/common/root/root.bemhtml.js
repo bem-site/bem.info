@@ -1,5 +1,5 @@
 block('root').replace()(function() {
-	this.freeze = this.ctx.freeze;
+    this.freeze = this.ctx.freeze;
 
-	return this.ctx.content;
+    return this.ctx.content;
 });

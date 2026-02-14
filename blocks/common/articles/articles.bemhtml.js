@@ -14,5 +14,5 @@ block('articles')(
                 src: this.freeze(this.ctx.src)
             });
         })
-	)
+    )
 );

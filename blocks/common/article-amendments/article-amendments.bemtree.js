@@ -14,5 +14,5 @@ block('article-amendments').content()(function() {
             content: 'prose.io.',
             url: this.data.page.source || ''
         }
-    ]
+    ];
 });

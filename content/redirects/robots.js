@@ -3,7 +3,7 @@ module.exports = [
         exp: [
             '^/wp-(.*)',
             '^/xmlrpc.php(.*)',
-            '^/(.*)/wp-includes/(.*)',
+            '^/(.*)/wp-includes/(.*)'
         ],
         now: 'https://www.google.com'
     }

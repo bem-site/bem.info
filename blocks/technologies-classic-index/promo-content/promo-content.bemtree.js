@@ -57,10 +57,10 @@ block('promo-content').content()(function() {
                         return {
                             text: title,
                             url: data.root + item.url
-                        }
+                        };
                     })
                 }
             ]
         }
-    ]
+    ];
 });

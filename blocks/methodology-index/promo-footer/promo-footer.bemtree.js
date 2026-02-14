@@ -26,5 +26,5 @@ block('promo-footer').content()(function() {
             attrs: { href: 'quick-start/' },
             content: this.i18n(this.block, 'doc') // 'Documentation'
         }
-    ]
+    ];
 });

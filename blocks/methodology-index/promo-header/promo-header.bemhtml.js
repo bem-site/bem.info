@@ -1,6 +1,6 @@
 block('promo-header')(
-	content()(function() {
-		return [
+    content()(function() {
+        return [
             {
                 block: 'promo-logo',
                 content: [
@@ -15,7 +15,7 @@ block('promo-header')(
                     }
                 ]
             },
-			applyNext()
+            applyNext()
         ];
-	})
+    })
 );
