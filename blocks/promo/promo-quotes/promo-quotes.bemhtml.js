@@ -6,12 +6,12 @@ block('promo-quotes')(
     elem('text').tag()('q'),
     elem('link').tag()('a'),
     elem('photo')(
-		tag()('img'),
+        tag()('img'),
         addAttrs()(function() {
             return this.extend(applyNext(), {
                 alt: this.ctx.alt,
                 src: this.freeze(this.ctx.src)
             });
         })
-	)
+    )
 );

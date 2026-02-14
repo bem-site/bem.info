@@ -12,6 +12,6 @@ module.exports = {
         text9: 'Библиотеки',
         text10: '', // libraries description
         text11: 'Учебные материалы',
-        text12: '', // tutorials description
+        text12: '' // tutorials description
     }
 };

@@ -1,6 +1,6 @@
 block('promo-footer')(
-	content()(function() {
-		return [
+    content()(function() {
+        return [
             {
                 block: 'promo-logo',
                 content: [1, 2, 3].map(function(i) {
@@ -9,7 +9,7 @@ block('promo-footer')(
                     };
                 })
             },
-			applyNext()
+            applyNext()
         ];
-	})
+    })
 );

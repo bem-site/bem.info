@@ -21,14 +21,14 @@
 
     overflow: hidden;
 
+    align-self: center;
+
     width: 111px;
     height: 70px;
 
     /* margin-left: -100px; */
 
     white-space: nowrap;
-
-    align-self: center;
 }
 
 .article-rewind_type_static .article-rewind__prev-link
@@ -60,12 +60,12 @@
 {
     position: relative;
 
+    flex-grow: 1;
+    align-self: center;
+
     margin-right: 88px;
 
     text-align: right;
-
-    flex-grow: 1;
-    align-self: center;
 }
 
 .article-rewind_type_static .article-rewind__next-text

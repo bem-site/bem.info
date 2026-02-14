@@ -284,14 +284,14 @@ gulp.task('watch', () => {
             bemhtml = LANGUAGES.map(lang => path.join(cwd, BEMHTML[lang][bundle]));
 
         watch(bemtree.concat(bemhtml, [
-                path.join(CACHE_DIR_PREFIX + '*', bundle, '**'),
-                path.join(CACHE_DIR_PREFIX + '*', bundle + '.js')
-            ]),
-            function bundleChanged(done) {
-                bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
-                bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
-                Q.all(LANGUAGES.map(lang => compilePages(lang, bundle))).then(done);
-            }
+            path.join(CACHE_DIR_PREFIX + '*', bundle, '**'),
+            path.join(CACHE_DIR_PREFIX + '*', bundle + '.js')
+        ]),
+        function bundleChanged(done) {
+            bemhtml.forEach(pathToBemhtml => delete require.cache[pathToBemhtml]);
+            bemtree.forEach(pathToBemtree => delete require.cache[pathToBemtree]);
+            Q.all(LANGUAGES.map(lang => compilePages(lang, bundle))).then(done);
+        }
         );
     });
 });

@@ -2,7 +2,7 @@ module.exports = [
     {
         url: [
             '/pages/acknowledgement/',
-            '/acknowledgement/',
+            '/acknowledgement/'
         ],
         now: '/'
     },
@@ -16,5 +16,5 @@ module.exports = [
             '/security.txt'
         ],
         now: '/.well-known/security.txt'
-    },
+    }
 ];

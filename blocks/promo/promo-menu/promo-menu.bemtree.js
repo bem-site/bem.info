@@ -5,16 +5,16 @@ block('promo-menu').content()(function(node, ctx) {
     ctx.data.forEach(function(value) {
         var isMain = !value.additional,
             item = {
-            elem: 'item',
-            content: {
-                elem: 'link',
-                attrs: { href: value.url },
-                content: [
-                    { elem: 'title', content: value.text },
-                    { elem: 'subtitle', content: value.subtitle }
-                ]
-            }
-        };
+                elem: 'item',
+                content: {
+                    elem: 'link',
+                    attrs: { href: value.url },
+                    content: [
+                        { elem: 'title', content: value.text },
+                        { elem: 'subtitle', content: value.subtitle }
+                    ]
+                }
+            };
 
         isMain ? main.push(item) : side.push(item);
     });
@@ -43,5 +43,5 @@ block('promo-menu').content()(function(node, ctx) {
                 }
             ]
         }
-    ]
+    ];
 });

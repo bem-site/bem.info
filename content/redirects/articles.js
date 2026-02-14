@@ -2,7 +2,7 @@ module.exports = [
     {
         url: '/articles/19-bem-principles/',
         now: {
-            ru: 'https://habrahabr.ru/company/yandex/blog/267875/',
+            ru: 'https://habrahabr.ru/company/yandex/blog/267875/'
         }
     },
     {
@@ -15,7 +15,7 @@ module.exports = [
     {
         url: '/articles/isomorphic-bem/',
         now: {
-            ru: 'https://habrahabr.ru/post/249653/',
+            ru: 'https://habrahabr.ru/post/249653/'
         }
     },
     {
@@ -28,7 +28,7 @@ module.exports = [
     {
         url: [
             '/articles/yamapsbem/',
-            '/tutorials/yamapsbem/',
+            '/tutorials/yamapsbem/'
         ],
         now: {
             ru: 'https://github.com/zloylos/ymapsbem/blob/master/README.ru.md',
@@ -38,7 +38,7 @@ module.exports = [
     {
         url: '/articles/bem-full-stack-site/',
         now: {
-            ru: 'https://habrahabr.ru/company/yandex/blog/251473/',
+            ru: 'https://habrahabr.ru/company/yandex/blog/251473/'
         }
     },
     {
@@ -51,7 +51,7 @@ module.exports = [
     {
         url: [
             '/articles/bem-js-main-terms/',
-            '/libs/bem-core/1.0.0/i-bem.js/bem-js-main-terms/',
+            '/libs/bem-core/1.0.0/i-bem.js/bem-js-main-terms/'
         ],
         now: {
             ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/articles/bem-js-main-terms/bem-js-main-terms.ru.md',
@@ -69,7 +69,7 @@ module.exports = [
         url: [
             '/articles/article/',
             '/articles/firm-card-story/',
-            '/tutorials/firm-card-story/',
+            '/tutorials/firm-card-story/'
         ],
         now: {
             ru: 'https://github.com/dab/firmCardStory/blob/master/docs/firm-card-story/firm-card-story.ru.md',

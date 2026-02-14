@@ -103,10 +103,10 @@
 ## Фаза 4: Апгрейд Node.js — ГОТОВО
 
 ### 4.1 Изменения
-- [x] `package.json` engines: `>=4.1` → `>=18.0.0`
-- [x] `lib/gorshochek/package.json` engines: `>= 4.x` → `>= 18.x`
+- [x] `package.json` engines: `>=4.1` → `>=22.0.0`
+- [x] `lib/gorshochek/package.json` engines: `>= 4.x` → `>= 22.x`
 - [x] Исправлен `new Buffer()` → `Buffer.from()` в `lib/gorshochek/src/tasks/docs/load-from-github.js`
-- [x] GitHub Actions workflow использует Node 18
+- [x] GitHub Actions workflow использует Node 22 LTS
 
 ### 4.2 Известные проблемы (низкий приоритет)
 - Q promises — устаревшие, но функциональные
@@ -146,8 +146,13 @@
 
 ## Фаза 7: Финальная валидация — ЧАСТИЧНО
 
-- [x] README.md обновлён
+- [x] README.md обновлён (Node 22 LTS, актуальные версии инструментов)
 - [x] i18n обновлён для всех заменённых компонентов
+- [x] ESLint 10 flat config — проходит без ошибок (добавлены elemMod global, .mjs override, skipComments для no-irregular-whitespace)
+- [x] Stylelint 17 — проходит без ошибок (удалены deprecated rules max-empty-lines, no-extra-semicolons)
+- [x] enb-bemxjst обновлён до ^8.10.6 (было 8.6.7)
+- [x] Pre-commit hook обновлён (удалена ссылка на jscs)
+- [x] Gorshochek unit-тесты: 252 passing, 5 failing (pre-existing: старый github 0.2.4 пакет)
 - [ ] Полный прогон `gulp build` в CI (требует настройки secrets)
 - [ ] Проверить все страницы на 404 (crawl output)
 - [ ] Проверить редиректы

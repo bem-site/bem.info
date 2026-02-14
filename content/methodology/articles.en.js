@@ -26,7 +26,7 @@ module.exports = [
         date: '03-03-2015',
         text: 'There are two types of problems in CSS: cosmetic problems and architectural problems. Cosmetic problems annoying, sure, but they don’t break the build. Architectural problems, on the other hand, can cripple development. I can remember distinct cases where we postponed developing a new feature because we were too afraid to make any changes to the CSS.'
     },
-/*
+    /*
     // https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
 
     // ???
