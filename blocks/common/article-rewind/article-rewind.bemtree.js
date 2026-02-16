@@ -1,10 +1,8 @@
-var _ = require('lodash');
-
 block('article-rewind').content()(function() {
     var data = this.data,
         page = data.page,
         pages = data.pages,
-        pageIndex = _.indexOf(pages, page),
+        pageIndex = pages.indexOf(page),
         prevPage,
         nextPage;
 
@@ -12,7 +10,7 @@ block('article-rewind').content()(function() {
         if (data.page.prev === undefined) {
             prevPage = pages[pageIndex - 1];
         } else {
-            prevPage = _.find(pages, { url: data.page.prev });
+            prevPage = pages.find(function(p) { return p.url === data.page.prev; });
         }
     }
 
@@ -20,7 +18,7 @@ block('article-rewind').content()(function() {
         if (data.page.next === undefined) {
             nextPage = pages[pageIndex + 1];
         } else {
-            nextPage = _.find(pages, { url: data.page.next });
+            nextPage = pages.find(function(p) { return p.url === data.page.next; });
         }
     }
 

@@ -2,7 +2,6 @@
 
 const path = require('path');
 const fs = require('fs');
-const mkdirp = require('mkdirp');
 
 /**
  * Generates a 404.html with a JavaScript router for regex-based redirects.
@@ -53,6 +52,6 @@ module.exports = function generate404Router(regexRedirects, outputDir) {
 </body>
 </html>`;
 
-    mkdirp.sync(outputDir);
+    fs.mkdirSync(outputDir, { recursive: true });
     fs.writeFileSync(path.join(outputDir, '404.html'), html);
 };
