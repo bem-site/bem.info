@@ -29,7 +29,7 @@ module.exports = [
             '^/tools/bem/bem-tools/deps(.*)',
             '^/tools/bem/depsjs/',
             '^/articles/deps-js-syntax/',
-            '^/technology/deps/(.*)',
+            '^/technology/deps/(.*)'
         ],
         now: '/technologies/classic/deps/'
     },
@@ -99,74 +99,74 @@ module.exports = [
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-html-binding/',
-        now: '/technologies/classic/i-bem/html-binding/',
+        now: '/technologies/classic/i-bem/html-binding/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-decl/',
-        now: '/technologies/classic/i-bem/declaration/',
+        now: '/technologies/classic/i-bem/declaration/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-params/',
-        now: '/technologies/classic/i-bem/parameters/',
+        now: '/technologies/classic/i-bem/parameters/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-dom/',
-        now: '/technologies/classic/i-bem/dom/',
+        now: '/technologies/classic/i-bem/dom/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-mods/',
-        now: '/technologies/classic/i-bem/states/',
+        now: '/technologies/classic/i-bem/states/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-events/',
-        now: '/technologies/classic/i-bem/events/',
+        now: '/technologies/classic/i-bem/events/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-init/',
-        now: '/technologies/classic/i-bem/init/',
+        now: '/technologies/classic/i-bem/init/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-interaction/',
-        now: '/technologies/classic/i-bem/interaction/',
+        now: '/technologies/classic/i-bem/interaction/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-context/',
-        now: '/technologies/classic/i-bem/context/',
+        now: '/technologies/classic/i-bem/context/'
     },
     {
         exp: '^/technology/i-bem/(.*)/i-bem-context/',
-        now: '/technologies/classic/i-bem/extras/',
+        now: '/technologies/classic/i-bem/extras/'
     },
     {
         exp: [
             '^/technology/i-bem/(.*)',
-            '^/libs/bem-core/(.*)i-bem-js/',
+            '^/libs/bem-core/(.*)i-bem-js/'
         ],
-        now: '/technologies/classic/i-bem/',
+        now: '/technologies/classic/i-bem/'
     },
 
     // technology
     {
         exp: '^/technology/(.*)',
-        now: '/technologies/classic/',
+        now: '/technologies/classic/'
     },
 
     // platform
     {
         exp: '^/platform/libs/(.*)',
-        now: '/libraries/classic/$1',
-    },
+        now: '/libraries/classic/$1'
+    }
 ].concat(
     ['bemjson', 'bem-xjst', 'i-bem', 'deps', 'deps-spec', 'project-stub']
         .reduce((acc, url) => {
             acc.push(
                 {
                     exp: '^/platform/' + url + '/(.*)',
-                    now: '/technologies/classic/' + url + '/$1',
+                    now: '/technologies/classic/' + url + '/$1'
                 },
                 {
                     exp: '^/technologies/' + url + '/(.*)',
-                    now: '/technologies/classic/' + url + '/$1',
+                    now: '/technologies/classic/' + url + '/$1'
                 }
             );
 
@@ -175,6 +175,6 @@ module.exports = [
 ).concat([
     {
         exp: '^/platform/(.*)',
-        now: '/technologies/$1',
+        now: '/technologies/$1'
     }
 ]);

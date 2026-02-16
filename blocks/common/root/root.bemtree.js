@@ -31,7 +31,7 @@ block('root').replace()(function() {
             { elem: 'meta', attrs: { property: 'og:image', content: data.root + '/og_image/logo_theme_generated.png' } },
             Object.keys(page.head.meta).reduce(function(prev, field) {
                 (field.indexOf('og') !== -1) && prev.push({ elem: 'meta', attrs: { property: 'og:' + field.toLowerCase().replace('og', ''), content: page.head.meta[field] } });
-                return prev
+                return prev;
             }, [])
         ],
         favicon: data.root + '/favicon.ico',

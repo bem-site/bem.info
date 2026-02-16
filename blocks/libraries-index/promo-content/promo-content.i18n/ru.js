@@ -1,5 +1,5 @@
 module.exports = {
     'promo-content': {
-        text0: 'библиотеки',
+        text0: 'библиотеки'
     }
 };

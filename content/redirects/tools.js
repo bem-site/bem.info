@@ -3,26 +3,26 @@ module.exports = [
     {
         url: '/tools/bem/enb-xjst/readme/',
         now: {
-            ru: 'https://github.com/enb/enb-xjst/blob/master/README.md',
+            ru: 'https://github.com/enb/enb-xjst/blob/master/README.md'
         }
     },
     {
         url: '/tools/bem/enb-xjst/api/',
         now: {
-            ru: 'https://github.com/enb/enb-xjst/blob/master/api.ru.md',
+            ru: 'https://github.com/enb/enb-xjst/blob/master/api.ru.md'
         }
     },
     {
         url: '/tools/bem/enb-xjst/changelog/',
         now: {
-            ru: 'https://github.com/enb/enb-xjst/blob/master/CHANGELOG.md',
+            ru: 'https://github.com/enb/enb-xjst/blob/master/CHANGELOG.md'
         }
     },
     // bem-tools
     {
         url: [
             '/tools/bem/bem-tools/installation/',
-            '/tools/bem/installation/',
+            '/tools/bem/installation/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/installation/installation.ru.md',
@@ -32,7 +32,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-tools/commands/',
-            '/tools/bem/commands/',
+            '/tools/bem/commands/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/commands/commands.ru.md',
@@ -42,7 +42,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-tools/levels/',
-            '/tools/bem/levels/',
+            '/tools/bem/levels/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/levels/levels.ru.md',
@@ -52,7 +52,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-tools/customization/',
-            '/tools/bem/customization/',
+            '/tools/bem/customization/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/customization/customization.ru.md',
@@ -63,7 +63,7 @@ module.exports = [
         url: [
             '/tools/bem/bem-tools/tech-modules/',
             '/tools/bem/tech-modules/',
-            '/tools/tech-modules/',
+            '/tools/tech-modules/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/tech-modules/tech-modules.ru.md',
@@ -73,7 +73,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-tools/api/',
-            '/tools/bem/api/',
+            '/tools/bem/api/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/api/api.ru.md',
@@ -90,7 +90,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-tools/contribute/',
-            '/tools/bem/contribute/',
+            '/tools/bem/contribute/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/bem-tools/blob/dev/docs/contribute/contribute.ru.md',
@@ -131,14 +131,14 @@ module.exports = [
         url: '/tools/testing/gemini/',
         now: {
             ru: 'https://gemini-testing.github.io/',
-            en: 'https://gemini-testing.github.io/',
+            en: 'https://gemini-testing.github.io/'
         }
     },
     // borschik
     {
         url: [
             '/tools/optimizers/borschik/freeze/',
-            '/tools/borschik/freeze/',
+            '/tools/borschik/freeze/'
         ],
         now: {
             ru: 'https://github.com/borschik/borschik/blob/master/docs/freeze/freeze.ru.md',
@@ -148,7 +148,7 @@ module.exports = [
     {
         url: [
             '/tools/optimizers/borschik/where-is-my-tech/',
-            '/tools/borschik/where-is-my-tech/',
+            '/tools/borschik/where-is-my-tech/'
         ],
         now: {
             ru: 'https://github.com/borschik/borschik/blob/master/docs/where-is-my-tech/where-is-my-tech.ru.md',
@@ -159,7 +159,7 @@ module.exports = [
         url: [
             '/tools/optimizers/borschik/borschik-server/',
             '/tools/borschik/borschik-server/',
-            '/tools/borschik-server/',
+            '/tools/borschik-server/'
         ],
         now: {
             ru: 'https://github.com/borschik/borschik/blob/master/docs/borschik-server/borschik-server.ru.md',
@@ -169,7 +169,7 @@ module.exports = [
     {
         url: [
             '/tools/optimizers/borschik/js-include/',
-            '/tools/borschik/js-include/',
+            '/tools/borschik/js-include/'
         ],
         now: {
             ru: 'https://github.com/borschik/borschik/blob/master/docs/js-include/js-include.ru.md',
@@ -179,7 +179,7 @@ module.exports = [
     {
         url: [
             '/tools/optimizers/borschik/changelog/',
-            '/tools/borschik/changelog/',
+            '/tools/borschik/changelog/'
         ],
         now: {
             ru: 'https://github.com/borschik/borschik/blob/master/CHANGELOG.ru.md',
@@ -201,22 +201,22 @@ module.exports = [
     {
         url: [
             '/tools/optimizers/csso/',
-            '/tools/csso/',
+            '/tools/csso/'
         ],
         now: {
             ru: 'https://github.com/css/csso/',
-            en: 'https://github.com/css/csso/',
+            en: 'https://github.com/css/csso/'
         }
     },
     // svgo
     {
         url: [
             '/tools/optimizers/svgo/',
-            '/tools/svgo/',
+            '/tools/svgo/'
         ],
         now: {
             ru: 'https://github.com/svg/svgo/',
-            en: 'https://github.com/svg/svgo/',
+            en: 'https://github.com/svg/svgo/'
         }
     },
     // coa
@@ -247,7 +247,7 @@ module.exports = [
     {
         url: [
             '/tools/bem/bem-stub/',
-            '/tools/bem/generator-bem-stub/',
+            '/tools/bem/generator-bem-stub/'
         ],
         now: {
             ru: 'https://github.com/bem-archive/generator-bem-stub/blob/master/README.ru.md',
@@ -262,7 +262,7 @@ module.exports = [
     // enb
     {
         exp: '^/tools/bem/enb-(.*)/(.*)',
-        now: '/toolbox/enb/enb-$1/$2',
+        now: '/toolbox/enb/enb-$1/$2'
     },
     {
         exp: '^/tools/bem/(.*)',

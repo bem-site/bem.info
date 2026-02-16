@@ -1,7 +1,7 @@
 module.exports = [
     {
         url: '/methodology/js-principles/',
-        now: '/methodology/js/',
+        now: '/methodology/js/'
     },
     {
         url: '/method/definitions/',
@@ -14,7 +14,7 @@ module.exports = [
     {
         url: [
             '/method/filesystem/',
-            '/methodology/filesystem/',
+            '/methodology/filesystem/'
         ],
         now: '/methodology/filestructure/'
     },

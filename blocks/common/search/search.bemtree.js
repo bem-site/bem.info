@@ -37,5 +37,5 @@ block('search').content()(function() {
                 }
             ]
         }
-    ]
+    ];
 });

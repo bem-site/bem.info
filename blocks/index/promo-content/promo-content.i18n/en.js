@@ -12,6 +12,6 @@ module.exports = {
         text9: 'Libraries',
         text10: '', // libraries description
         text11: 'Tutorials',
-        text12: '', // tutorials description
+        text12: '' // tutorials description
     }
 };

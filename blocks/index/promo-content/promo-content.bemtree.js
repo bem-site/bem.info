@@ -79,7 +79,7 @@ block('promo-content').content()(function() {
                                     content: this.i18n(this.block, 'text8') // React
                                 }
                             ]
-                        },
+                        }
                     ]
                 },
                 {
@@ -130,7 +130,7 @@ block('promo-content').content()(function() {
                         {
                             elem: 'text',
                             content: this.i18n(this.block, 'text10') // TODO
-                        },
+                        }
                     ]
                 },
                 {
@@ -156,10 +156,10 @@ block('promo-content').content()(function() {
                         {
                             elem: 'text',
                             content: this.i18n(this.block, 'text12') // TODO
-                        },
+                        }
                     ]
-                },
+                }
             ]
         }
-    ]
+    ];
 });

@@ -5,10 +5,10 @@ module.exports = [
     },
     {
         exp: '^/libs/bem-(.*)/(.*)',
-        now: '/libraries/classic/bem-$1/',
+        now: '/libraries/classic/bem-$1/'
     },
     {
         exp: '^/technologies/classic/libs/bem-(.*)/(.*)',
-        now: '/libraries/classic/bem-$1/$2',
-    },
+        now: '/libraries/classic/bem-$1/$2'
+    }
 ];

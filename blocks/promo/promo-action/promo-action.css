@@ -25,8 +25,8 @@
 
     transition: all 0.3s;
     text-decoration: none;
-    letter-spacing: 6px;
     text-transform: uppercase;
+    letter-spacing: 6px;
 
     color: #000;
     background: #fc0;

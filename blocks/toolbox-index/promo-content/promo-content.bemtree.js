@@ -96,5 +96,5 @@ block('promo-content').content()(function() {
                 ]
             }
         }
-    ]
+    ];
 });

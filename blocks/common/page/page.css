@@ -50,12 +50,12 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
+    justify-content: space-between;
 
     margin-left: 260px;
 
     border-bottom-left-radius: 10px;
     background: #fff;
-    justify-content: space-between;
 }
 
 .page__head
@@ -76,12 +76,13 @@
 
 .page__side
 {
+    order: -1;
+
     margin-left: 260px;
     padding: 20px 20px 10px 48px;
 
     border-top-left-radius: 10px;
     background: #fff;
-    order: -1;
 }
 
 @media (max-width: 1200px)
@@ -189,11 +190,12 @@
 
         .page__side
         {
+            order: initial;
+
             margin: 0;
             padding: 13px 10px 10px 20px;
 
             background: none;
-            order: initial;
         }
 
         @supports (position: sticky)

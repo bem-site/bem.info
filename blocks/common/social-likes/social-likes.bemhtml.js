@@ -1,7 +1,7 @@
 block('social-likes')(
     content()(function() {
         return [
-/*
+            /*
             {
                 elem: 'text',
                 content: [
@@ -36,7 +36,7 @@ block('social-likes')(
                 url: 'https://twitter.com/share?',
                 content: 'Twitter'
             }
-        ]
+        ];
     }),
     elem('service')(
         tag()('a'),
@@ -52,7 +52,7 @@ block('social-likes')(
 
             return {
                 href: url
-            }
+            };
         })
     ),
     elem('text').tag()('a')
