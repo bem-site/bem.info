@@ -42,7 +42,7 @@ npm i
 
 Данные загружаются из GitHub-репозиториев и локальных источников. Для этого нужен GitHub-токен:
 ```bash
-TOKEN={ваш_github_токен} gulp data
+TOKEN={ваш_github_токен} npm run data
 ```
 
 Этот шаг достаточно выполнить один раз. Данные кешируются в директорию `.cache/`. При изменении модели данных или источников контента нужно повторить.
@@ -55,12 +55,13 @@ npm start
 
 Эта команда:
 1. Очищает директорию `output/`
-2. Собирает данные (проверяет наличие кеша)
-3. Компилирует BEMTREE/BEMHTML-шаблоны, CSS и JS через ENB
-4. Минифицирует CSS/JS через esbuild
-5. Генерирует статические HTML-страницы
-6. Генерирует статические редиректы (HTML meta-refresh + 404.html JS-роутер)
-7. Запускает Vite dev-сервер на порту 8008
+2. Проверяет наличие кеша данных
+3. Разрешает BEM-зависимости и компилирует BEMTREE/BEMHTML-шаблоны с i18n через bem-xjst
+4. Собирает CSS (с autoprefixer через postcss) и клиентский JS
+5. Минифицирует CSS/JS через esbuild
+6. Генерирует статические HTML-страницы
+7. Генерирует статические редиректы (HTML meta-refresh + 404.html JS-роутер)
+8. Запускает Vite dev-сервер на порту 8008
 
 Открыть в браузере: [http://localhost:8008/bem.info/ru/](http://localhost:8008/bem.info/ru/)
 
@@ -68,6 +69,8 @@ npm start
 ```bash
 npm run dev       # Только Vite dev-сервер (если output/ уже собран)
 npm run preview   # Vite preview-сервер (для проверки продакшен-сборки)
+npm run compile   # Только BEM-сборка + минификация (без HTML)
+npm run watch     # Полная сборка + наблюдение за изменениями
 ```
 
 ## Структура проекта
@@ -93,7 +96,7 @@ bem.info/
 │   ├── tutorials-index/     # Лендинг «Руководства»
 │   ├── community/           # Раздел «Сообщество»
 │   └── community-index/     # Лендинг «Сообщество»
-├── bundles/                 # Бандлы ENB (по одному на каждый раздел)
+├── bundles/                 # Бандлы (по одному на каждый раздел)
 ├── content/                 # Модель данных и конфигурация контента
 │   ├── model.js             # Главная модель сайта (~2100 строк)
 │   ├── redirects/           # Конфигурация URL-редиректов
@@ -115,9 +118,9 @@ bem.info/
 ├── tools/                   # Инструменты сборки
 │   ├── generate-static-redirects.js  # Генерация HTML meta-refresh редиректов
 │   └── generate-404-router.js        # Генерация 404.html с JS-роутером
-├── .enb/
-│   └── make.js              # Конфигурация сборщика ENB
-├── gulpfile.js              # Gulp-задачи (оркестратор сборки)
+├── scripts/
+│   ├── build.mjs            # Оркестратор сборки (замена Gulp)
+│   └── bem-build.mjs        # BEM-сборка: зависимости, шаблоны, CSS, JS (замена ENB)
 ├── vite.config.mjs          # Vite: dev-сервер и preview
 ├── eslint.config.mjs        # ESLint 10 flat config
 ├── stylelint.config.mjs     # Stylelint 17 конфигурация
@@ -144,10 +147,10 @@ bem.info/
    ├─ Обработка ссылок и изображений
    └─ Генерация sitemap.xml
 
-3. Сборка ENB (.enb/make.js)
-   ├─ Разрешение зависимостей блоков
-   ├─ Компиляция BEMTREE/BEMHTML-шаблонов с i18n
-   ├─ Сборка CSS с autoprefixer
+3. BEM-сборка (scripts/bem-build.mjs)
+   ├─ Разрешение зависимостей блоков через .deps.js
+   ├─ Компиляция BEMTREE/BEMHTML-шаблонов с i18n через bem-xjst
+   ├─ Сборка CSS с autoprefixer через postcss
    └─ Сборка клиентского JavaScript
 
 4. Минификация (esbuild)
@@ -178,35 +181,25 @@ bem.info/
 |---------|----------|
 | `npm start` | Полная сборка → Vite dev-сервер |
 | `npm run build` | Полная сборка без dev-сервера |
+| `npm run data` | Загрузка и генерация данных из GitHub |
+| `npm run compile` | BEM-сборка + минификация (без генерации HTML) |
 | `npm run dev` | Vite dev-сервер (output/ уже собран) |
 | `npm run preview` | Vite preview-сервер |
+| `npm run watch` | Полная сборка + наблюдение за изменениями |
 | `npm test` | Линтинг + юнит-тесты Gorshochek |
 | `npm run lint` | ESLint + Stylelint |
-
-### Gulp-задачи
-
-| Задача | Описание |
-|--------|----------|
-| `gulp data` | Загрузка и генерация данных из GitHub и локальных источников |
-| `gulp enb-make` | Сборка ENB: шаблоны, CSS, JS, i18n |
-| `gulp minify-bundles` | Минификация CSS/JS через esbuild |
-| `gulp compile-pages` | Полная компиляция страниц (enb → minify → copy → html) |
-| `gulp build` | Полная сборка: данные → ENB → minify → HTML → редиректы |
-| `gulp generate-redirects` | Генерация статических HTML-редиректов и 404.html |
-| `gulp watch` | Автопересборка при изменениях в `content/`, `blocks/` |
-| `gulp default` | `build` → `watch` |
 
 ### Технологический стек
 
 | Инструмент | Версия | Назначение |
 |------------|--------|------------|
 | **Node.js** | 24+ | Среда выполнения |
-| **Vite** | ^7.0.0 | Dev-сервер и preview (замена Browser-sync) |
-| **esbuild** | ^0.27.0 | Минификация CSS/JS (замена Borschik) |
+| **Vite** | ^7.0.0 | Dev-сервер и preview |
+| **esbuild** | ^0.27.0 | Минификация CSS/JS |
+| **bem-xjst** | ^8.10.0 | Компиляция BEMTREE/BEMHTML-шаблонов |
+| **postcss** + **autoprefixer** | ^8.5 / ^10.4 | Обработка CSS с автопрефиксами |
 | **ESLint** | ^10.0.0 | Линтинг JS (flat config) |
 | **Stylelint** | ^17.0.0 | Линтинг CSS |
-| **ENB** | ^1.5.1 | Сборка BEM: BEMTREE, BEMHTML, CSS, JS, i18n |
-| **Gulp** | ^5.0.0 | Оркестратор сборки |
 | **Gorshochek** | 2.8.2 | Фреймворк генерации данных (встроен в `lib/`) |
 
 ## Переменные окружения
@@ -224,7 +217,7 @@ bem.info/
 
 ## Разделы сайта
 
-Каждый раздел состоит из **лендинга** (промо-страница) и **контентных страниц**. Каждому разделу соответствует отдельный бандл ENB.
+Каждый раздел состоит из **лендинга** (промо-страница) и **контентных страниц**. Каждому разделу соответствует отдельный бандл.
 
 | Раздел | Описание |
 |--------|----------|
@@ -252,7 +245,7 @@ bem.info/
         ru: 'https://github.com/bem-site/bem-method/blob/...',
         en: 'https://github.com/bem-site/bem-method/blob/...'
     },
-    bundle: 'methodology',               // Имя бандла ENB
+    bundle: 'methodology',               // Имя бандла
     type: 'page'                         // Тип: 'page', 'promo' и др.
 }
 ```
@@ -319,13 +312,13 @@ npm test
 
 - **Триггеры**: push в `master`, еженедельный cron (понедельник 06:00 UTC), ручной запуск
 - **Node.js**: 24 с кешированием npm
-- **Процесс**: `gulp data` → `npm run build` → deploy to GitHub Pages
+- **Процесс**: `npm run data` → `npm run build` → deploy to GitHub Pages
 - **Результат**: статический сайт в `output/bem.info/` публикуется на GitHub Pages
 
 Для ручной сборки:
 ```bash
 # 1. Собрать данные
-TOKEN={токен} gulp data
+TOKEN={токен} npm run data
 
 # 2. Собрать сайт для продакшена
 YENV=production npm run build

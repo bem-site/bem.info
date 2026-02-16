@@ -2,7 +2,6 @@
 
 const path = require('path');
 const fs = require('fs');
-const mkdirp = require('mkdirp');
 
 /**
  * Generates static HTML redirect files for GitHub Pages / static hosting.
@@ -46,7 +45,7 @@ module.exports = function generateStaticRedirects(redirects, outputDir) {
                 '</html>'
             ].join('\n');
 
-            mkdirp.sync(path.dirname(filePath));
+            fs.mkdirSync(path.dirname(filePath), { recursive: true });
             fs.writeFileSync(filePath, html);
         });
     });

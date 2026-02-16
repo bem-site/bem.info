@@ -26,13 +26,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm install
 
       - name: Fetch content data
-        run: npx gulp data
+        run: npm run data
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LANGUAGES: en,ru

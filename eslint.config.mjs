@@ -10,7 +10,7 @@ export default [
             '**/bundles/**',
             'output/**',
             '.cache/**',
-            '.enb/**',
+            'scripts/**',
             'node_modules/**'
         ]
     },
