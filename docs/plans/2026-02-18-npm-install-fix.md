@@ -47,7 +47,7 @@ Expected: No errors
 git add package.json
 git commit -m "fix: add npm overrides to suppress bem-core outdated deps
 
-Add overrides for gitbook-api, jsdoc, and mocha-phantomis that bem-core
+Add overrides for gitbook-api, jsdoc, and mocha-phantomjs that bem-core
 tries to install in postinstall but no longer exist in npm registry.
 
 Using reference syntax (\$package) which means 'use version from root if
