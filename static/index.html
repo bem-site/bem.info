@@ -6,15 +6,16 @@
 <script>
 (function() {
     var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    var target = lang.indexOf('ru') === 0 || lang.indexOf('uk') === 0 ? '/ru/' : '/en/';
+    var base = '/bem.info';
+    var target = lang.indexOf('ru') === 0 || lang.indexOf('uk') === 0 ? base + '/ru/' : base + '/en/';
     window.location.replace(target);
 })();
 </script>
 <noscript>
-<meta http-equiv="refresh" content="0; url=/en/">
+<meta http-equiv="refresh" content="0; url=/bem.info/en/">
 </noscript>
 </head>
 <body>
-<p><a href="/en/">English</a> | <a href="/ru/">Русский</a></p>
+<p><a href="/bem.info/en/">English</a> | <a href="/bem.info/ru/">Русский</a></p>
 </body>
 </html>
