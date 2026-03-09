@@ -269,7 +269,7 @@ export function collectKeysets(order, levels, lang) {
  * @param {string} outFile — output path
  */
 export async function compileTemplates(templateFiles, keysets, engine, outFile) {
-    const bemxjst = await import('bem-xjst');
+    const bemxjst = (await import('bem-xjst')).default;
     const compiler = engine === 'bemtree' ? bemxjst.bemtree : bemxjst.bemhtml;
 
     // Concatenate template sources
@@ -291,19 +291,27 @@ var __keysets = ${keysetsJson};
 
 ${compiled}
 
-var __orig = BEMHTML.apply || BEMTREE.apply;
 var __engine = typeof BEMHTML !== 'undefined' ? BEMHTML : BEMTREE;
 
 // Inject i18n method into BEM context
-var __origApply = __engine.apply.bind(__engine);
-__engine.oninit(function(exports, ctx) {
-    ctx.BEMContext.prototype.i18n = function(block, key) {
+if (__engine.BEMContext) {
+    __engine.BEMContext.prototype.i18n = function(block, key) {
         var ks = __keysets[block];
         return ks && ks[key] || '';
     };
-});
+} else if (__engine.oninit) {
+    __engine.oninit(function(exports, ctx) {
+        ctx.BEMContext.prototype.i18n = function(block, key) {
+            var ks = __keysets[block];
+            return ks && ks[key] || '';
+        };
+    });
+}
 
-if (typeof module !== 'undefined') module.exports = __engine;
+if (typeof module !== 'undefined') {
+    module.exports = { BEMHTML: __engine, BEMTREE: __engine };
+    module.exports.__engine = __engine;
+}
 })();
 `;
 
@@ -369,7 +377,7 @@ export async function buildBundle(bundle, langs, rootDir) {
         if (bemtreeFiles.length) {
             await compileTemplates(
                 bemtreeFiles, keysets, 'bemtree',
-                path.join(bundleDir, `${bundle}.${lang}.bemtree.js`)
+                path.join(bundleDir, `${bundle}.${lang}.bemtree.cjs`)
             );
         }
 
@@ -378,7 +386,7 @@ export async function buildBundle(bundle, langs, rootDir) {
         if (bemhtmlFiles.length) {
             await compileTemplates(
                 bemhtmlFiles, keysets, 'bemhtml',
-                path.join(bundleDir, `${bundle}.${lang}.bemhtml.js`)
+                path.join(bundleDir, `${bundle}.${lang}.bemhtml.cjs`)
             );
         }
 

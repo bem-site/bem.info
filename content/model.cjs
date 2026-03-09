@@ -1,5 +1,5 @@
-const versioned = require('../lib/model-versioned');
-const lib = require('../lib/model-lib');
+const versioned = require('../lib/model-versioned.cjs');
+const lib = require('../lib/model-lib.cjs');
 
 const methodology = [
     {

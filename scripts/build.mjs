@@ -91,16 +91,17 @@ async function buildData() {
     fs.rmSync(CACHE, { recursive: true, force: true });
     fs.mkdirSync(CACHE, { recursive: true });
 
-    // Clear require cache for model so it's reloaded fresh
-    const modelPath = env.PATH_TO_MODEL || path.join(ROOT, 'content', 'model.js');
-    delete require.cache?.[require.resolve?.(modelPath)];
+    const modelPath = env.PATH_TO_MODEL || path.join(ROOT, 'content', 'model.cjs');
 
     // We need to use createRequire since model.js is CommonJS
     const { createRequire } = await import('node:module');
     const require_ = createRequire(path.join(ROOT, 'package.json'));
+
+    // Clear require cache for model so it's reloaded fresh
+    delete require_.cache?.[require_.resolve?.(modelPath)];
     const model = require_(modelPath);
-    const redirects = require_(path.join(ROOT, 'content', 'redirects'));
-    const prepareModel = require_(path.join(ROOT, 'lib', 'prepare-model'));
+    const redirects = require_(path.join(ROOT, 'content', 'redirects', 'index.cjs'));
+    const prepareModel = require_(path.join(ROOT, 'lib', 'prepare-model.cjs'));
 
     await Promise.all(LANGUAGES.map(lang => {
         const modelWithRedirects = model.concat(redirects);
@@ -108,7 +109,7 @@ async function buildData() {
         const jsonPath = path.join(CACHE, `model.${lang}.json`);
         fs.writeFileSync(jsonPath, JSON.stringify(prepared.model, null, 2));
 
-        return runSubProcess(path.join(ROOT, 'lib', 'data-builder.js'), {
+        return runSubProcess(path.join(ROOT, 'lib', 'data-builder.cjs'), {
             cwd: ROOT,
             encoding: 'utf-8',
             env: {
@@ -302,14 +303,14 @@ async function buildHTML() {
     const tasks = [];
     for (const lang of LANGUAGES) {
         for (const bundle of bundles) {
-            tasks.push(runSubProcess(path.join(ROOT, 'lib', 'template.js'), {
+            tasks.push(runSubProcess(path.join(ROOT, 'lib', 'template.cjs'), {
                 cwd: ROOT,
                 encoding: 'utf-8',
                 env: {
                     ...process.env,
                     GORSHOCHEK_CACHE_FOLDER: cacheDirs[lang],
-                    bemtree: path.join('bundles', bundle, `${bundle}.${lang}.bemtree.js`),
-                    bemhtml: path.join('bundles', bundle, `${bundle}.${lang}.bemhtml.js`),
+                    bemtree: path.join('bundles', bundle, `${bundle}.${lang}.bemtree.cjs`),
+                    bemhtml: path.join('bundles', bundle, `${bundle}.${lang}.bemhtml.cjs`),
                     bundle,
                     static: 'static',
                     source: cacheDirs[lang],
@@ -338,11 +339,11 @@ async function generateRedirects() {
 
     const { createRequire } = await import('node:module');
     const require_ = createRequire(path.join(ROOT, 'package.json'));
-    const model = require_(env.PATH_TO_MODEL || path.join(ROOT, 'content', 'model.js'));
-    const redirects = require_(path.join(ROOT, 'content', 'redirects'));
-    const prepareModel = require_(path.join(ROOT, 'lib', 'prepare-model'));
-    const generateStaticRedirects = require_(path.join(ROOT, 'tools', 'generate-static-redirects'));
-    const generate404Router = require_(path.join(ROOT, 'tools', 'generate-404-router'));
+    const model = require_(env.PATH_TO_MODEL || path.join(ROOT, 'content', 'model.cjs'));
+    const redirects = require_(path.join(ROOT, 'content', 'redirects', 'index.cjs'));
+    const prepareModel = require_(path.join(ROOT, 'lib', 'prepare-model.cjs'));
+    const generateStaticRedirects = require_(path.join(ROOT, 'tools', 'generate-static-redirects.cjs'));
+    const generate404Router = require_(path.join(ROOT, 'tools', 'generate-404-router.cjs'));
 
     const allRegexRedirects = [];
 
