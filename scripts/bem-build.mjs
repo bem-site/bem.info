@@ -170,6 +170,21 @@ export function collectFiles(order, levels, suffix) {
     const files = [];
     const seen = new Set();
 
+    // When collecting plain .js files, exclude BEM-specific suffixes
+    const BEM_SUFFIXES = ['.bemhtml.js', '.bemtree.js', '.browser.js', '.deps.js', '.i18n.js'];
+    const excludeCompound = suffix === 'js';
+
+    function matches(name, blockName) {
+        if (!name.endsWith(`.${suffix}`)) return false;
+        // Exclude compound BEM suffixes when collecting plain .js
+        if (excludeCompound) {
+            for (const bs of BEM_SUFFIXES) {
+                if (name.endsWith(bs)) return false;
+            }
+        }
+        return true;
+    }
+
     for (const block of order) {
         for (const level of levels) {
             const blockDir = path.join(level, block);
@@ -178,8 +193,11 @@ export function collectFiles(order, levels, suffix) {
             // Collect block-level file
             const main = path.join(blockDir, `${block}.${suffix}`);
             if (fileExists(main) && !seen.has(main)) {
-                seen.add(main);
-                files.push(main);
+                // Check compound suffix exclusion for the main file too
+                if (!excludeCompound || !BEM_SUFFIXES.some(bs => main.endsWith(bs))) {
+                    seen.add(main);
+                    files.push(main);
+                }
             }
 
             // Collect element/modifier files within block directory
@@ -188,7 +206,7 @@ export function collectFiles(order, levels, suffix) {
                     if (!entry.isFile()) continue;
                     const name = entry.name;
                     if (name === `${block}.${suffix}`) continue; // already added
-                    if (name.startsWith(block) && name.endsWith(`.${suffix}`)) {
+                    if (name.startsWith(block) && matches(name, block)) {
                         const full = path.join(blockDir, name);
                         if (!seen.has(full)) {
                             seen.add(full);
@@ -205,7 +223,7 @@ export function collectFiles(order, levels, suffix) {
                     const subDir = path.join(blockDir, sub.name);
                     try {
                         for (const f of fs.readdirSync(subDir, { withFileTypes: true })) {
-                            if (!f.isFile() || !f.name.endsWith(`.${suffix}`)) continue;
+                            if (!f.isFile() || !matches(f.name)) continue;
                             const full = path.join(subDir, f.name);
                             if (!seen.has(full)) {
                                 seen.add(full);
