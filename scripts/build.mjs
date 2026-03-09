@@ -118,7 +118,7 @@ async function buildData() {
                 modelPath: jsonPath,
                 host: `https://${lang}.bem.info`,
                 dest: cacheDirs[lang],
-                root: IS_PROD ? '' : '/bem.info/' + lang,
+                root: '/bem.info/' + lang,
                 token: env.TOKEN,
                 DEBUG: env.DEBUG,
                 githubHosts: env.GITHUB_HOSTS
