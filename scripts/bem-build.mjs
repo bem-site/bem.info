@@ -334,6 +334,27 @@ export async function buildCSS(cssFiles, outFile) {
     fs.writeFileSync(outFile, result.css);
 }
 
+/**
+ * Copy CSS url() assets (images, fonts) from source CSS directories to output.
+ */
+export function copyCSSAssets(cssFiles, outDir) {
+    const assetExts = new Set(['.png', '.gif', '.jpg', '.jpeg', '.svg', '.svgz', '.svgd', '.woff', '.woff2', '.eot', '.ttf']);
+    for (const cssFile of cssFiles) {
+        const dir = path.dirname(cssFile);
+        try {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+                if (!entry.isFile()) continue;
+                if (assetExts.has(path.extname(entry.name))) {
+                    const dest = path.join(outDir, entry.name);
+                    if (!fs.existsSync(dest)) {
+                        fs.copyFileSync(path.join(dir, entry.name), dest);
+                    }
+                }
+            }
+        } catch { /* ignore */ }
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Client JS build (concatenation + ym module system prepend)
 // ---------------------------------------------------------------------------
@@ -390,10 +411,12 @@ export async function buildBundle(bundle, langs, rootDir) {
             );
         }
 
-        // Client JS
+        // Client JS — collect browser.js (v4 libs) and plain .js from project blocks only
         const browserJsFiles = collectFiles(order, levels, 'browser.js');
+        const projectLevels = levels.filter(l => !l.includes('node_modules'));
+        const plainJsFiles = collectFiles(order, projectLevels, 'js');
         const langJsFiles = collectFiles(order, levels, `lang.${lang}.js`);
-        const allJsFiles = langJsFiles.concat(browserJsFiles);
+        const allJsFiles = langJsFiles.concat(plainJsFiles, browserJsFiles);
 
         if (allJsFiles.length) {
             const ymPath = path.join(rootDir, 'node_modules', 'ym', 'modules.js');

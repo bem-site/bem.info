@@ -15,7 +15,7 @@ import path from 'node:path';
 import { fork } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { build as esbuild } from 'esbuild';
-import { buildAllBundles } from './bem-build.mjs';
+import { buildAllBundles, collectFiles, copyCSSAssets, resolveDeps } from './bem-build.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -251,11 +251,24 @@ function copyBundlesToOutput() {
             }
         }
 
-        // Copy frozen statics
-        const frozenDir = path.join(OUTPUT_ROOT, 'static');
+        // Copy CSS url() assets (images, etc.) to output
+        for (const bundle of bundles) {
+            const bundleDir = path.join(BUNDLES_DIR, bundle);
+            if (!fs.existsSync(bundleDir)) continue;
+            const cssFile = path.join(bundleDir, `${bundle}.css`);
+            if (fs.existsSync(cssFile)) {
+                const { order, levels } = resolveDeps(bundle, ROOT);
+                const cssFiles = collectFiles(order, levels, 'css');
+                copyCSSAssets(cssFiles, dest);
+            }
+        }
+
+        // Copy frozen statics (freeze writes to ROOT/static/)
+        const frozenDir = path.join(ROOT, 'static');
         if (fs.existsSync(frozenDir)) {
-            for (const f of fs.readdirSync(frozenDir)) {
-                fs.copyFileSync(path.join(frozenDir, f), path.join(dest, f));
+            for (const entry of fs.readdirSync(frozenDir, { withFileTypes: true })) {
+                if (!entry.isFile()) continue;
+                fs.copyFileSync(path.join(frozenDir, entry.name), path.join(dest, entry.name));
             }
         }
     }
@@ -315,7 +328,7 @@ async function buildHTML() {
                     static: 'static',
                     source: cacheDirs[lang],
                     destination: outputDirs[lang],
-                    destinationRoot: IS_PROD ? path.join(OUTPUT, 'bem.info', 'static') : '',
+                    destinationRoot: path.resolve(ROOT, 'static'),
                     langs: LANGUAGES.join(','),
                     sites: SITES.join(','),
                     lang,
