@@ -263,11 +263,12 @@ function copyBundlesToOutput() {
             }
         }
 
-        // Copy frozen statics (freeze writes to ROOT/static/)
+        // Copy static assets (images, SVGs) — skip files already handled by prepareStatic
+        const skipFiles = new Set(['index.html', '.nojekyll', '.htaccess', 'robots.txt', 'favicon.ico']);
         const frozenDir = path.join(ROOT, 'static');
         if (fs.existsSync(frozenDir)) {
             for (const entry of fs.readdirSync(frozenDir, { withFileTypes: true })) {
-                if (!entry.isFile()) continue;
+                if (!entry.isFile() || skipFiles.has(entry.name)) continue;
                 fs.copyFileSync(path.join(frozenDir, entry.name), path.join(dest, entry.name));
             }
         }
