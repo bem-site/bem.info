@@ -12,6 +12,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { fork } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { build as esbuild } from 'esbuild';
@@ -80,6 +81,17 @@ function copyGlob(srcDir, pattern, destDir) {
 function touch(filePath) {
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
     fs.writeFileSync(filePath, '');
+}
+
+/** Copy a file, converting .svgd (raw-deflated SVG) to .svg */
+function copyFileDeflate(src, destDir) {
+    if (path.extname(src) === '.svgd') {
+        const svg = zlib.inflateRawSync(fs.readFileSync(src));
+        const dest = path.join(destDir, path.basename(src, '.svgd') + '.svg');
+        fs.writeFileSync(dest, svg);
+    } else {
+        fs.copyFileSync(src, path.join(destDir, path.basename(src)));
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -269,7 +281,7 @@ function copyBundlesToOutput() {
         if (fs.existsSync(frozenDir)) {
             for (const entry of fs.readdirSync(frozenDir, { withFileTypes: true })) {
                 if (!entry.isFile() || skipFiles.has(entry.name)) continue;
-                fs.copyFileSync(path.join(frozenDir, entry.name), path.join(dest, entry.name));
+                copyFileDeflate(path.join(frozenDir, entry.name), dest);
             }
         }
     }
@@ -290,7 +302,7 @@ function copyStaticImages() {
 
         for (const f of fs.readdirSync(src)) {
             if (imgExts.has(path.extname(f))) {
-                fs.copyFileSync(path.join(src, f), path.join(dest, f));
+                copyFileDeflate(path.join(src, f), dest);
             }
         }
     }

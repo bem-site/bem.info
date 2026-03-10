@@ -358,7 +358,7 @@ export async function buildCSS(cssFiles, outFile) {
  * Copy CSS url() assets (images, fonts) from source CSS directories to output.
  */
 export function copyCSSAssets(cssFiles, outDir) {
-    const assetExts = new Set(['.png', '.gif', '.jpg', '.jpeg', '.svg', '.svgz', '.svgd', '.woff', '.woff2', '.eot', '.ttf']);
+    const assetExts = new Set(['.png', '.gif', '.jpg', '.jpeg', '.svg', '.svgz', '.woff', '.woff2', '.eot', '.ttf']);
     for (const cssFile of cssFiles) {
         const dir = path.dirname(cssFile);
         try {

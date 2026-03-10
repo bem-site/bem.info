@@ -23,7 +23,7 @@ block('promo-content').content()(function() {
                                     content: [
                                         {
                                             elem: 'img',
-                                            url: 'promo-crossroad_methodology.svgd'
+                                            url: 'promo-crossroad_methodology.svg'
                                         },
                                         this.i18n(this.block, 'text0') // 'Методология'
                                     ]
@@ -57,7 +57,7 @@ block('promo-content').content()(function() {
                                         {
                                             elem: 'img',
                                             elemMods: { type: 'round' },
-                                            url: 'promo-crossroad_technologies.svgd'
+                                            url: 'promo-crossroad_technologies.svg'
                                         },
                                         this.i18n(this.block, 'text5') // 'Технологии'
                                     ]
@@ -94,7 +94,7 @@ block('promo-content').content()(function() {
                                     content: [
                                         {
                                             elem: 'img',
-                                            url: 'promo-crossroad_toolbox.svgd'
+                                            url: 'promo-crossroad_toolbox.svg'
                                         },
                                         this.i18n(this.block, 'text3') //  'Инструментарий'
                                     ]
@@ -120,7 +120,7 @@ block('promo-content').content()(function() {
                                         {
                                             elem: 'img',
                                             elemMods: { type: 'round' },
-                                            url: 'promo-crossroad_libraries.svgd'
+                                            url: 'promo-crossroad_libraries.svg'
                                         },
                                         this.i18n(this.block, 'text9') // 'Библиотеки'
                                     ]
@@ -146,7 +146,7 @@ block('promo-content').content()(function() {
                                         {
                                             elem: 'img',
                                             elemMods: { type: 'round' },
-                                            url: 'promo-crossroad_tutorials.svgd'
+                                            url: 'promo-crossroad_tutorials.svg'
                                         },
                                         this.i18n(this.block, 'text11') // 'Учебные материалы'
                                     ]

@@ -98,7 +98,7 @@ block('promo-content').content()(function() {
                     content: [
                         {
                             elem: 'img',
-                            url: 'promo-problems.' + lang + '.svgd'
+                            url: 'promo-problems.' + lang + '.svg'
                         },
                         {
                             block: 'promo-text',
@@ -552,37 +552,37 @@ block('promo-content').content()(function() {
                             elem: 'company',
                             content: this.i18n(this.block, 'text44'), // 'Яндекс'
                             url: 'https://tech.yandex.ru/bem/',
-                            src: 'promo-companies__yandex.ru.svgd'
+                            src: 'promo-companies__yandex.ru.svg'
                         },
                         {
                             elem: 'company',
                             content: 'Google',
                             url: 'https://github.com/google/material-design-lite/wiki/Understanding-BEM',
-                            src: 'promo-companies__google.svgd'
+                            src: 'promo-companies__google.svg'
                         },
                         {
                             elem: 'company',
                             content: 'BBC',
                             url: 'http://www.integralist.co.uk/posts/bem.html',
-                            src: 'promo-companies__bbc.svgd'
+                            src: 'promo-companies__bbc.svg'
                         },
                         {
                             elem: 'company',
                             content: 'Aplha-Bank',
                             url: 'https://github.com/awinogradov/alfa-bank-ui',
-                            src: 'promo-companies__alpha-bank.svgd'
+                            src: 'promo-companies__alpha-bank.svg'
                         },
                         {
                             elem: 'company',
                             content: 'BuzzFeed',
                             url: 'http://www.buzzfeed.com/',
-                            src: 'promo-companies__buzzfeed.svgd'
+                            src: 'promo-companies__buzzfeed.svg'
                         },
                         {
                             elem: 'company',
                             content: 'EPAM',
                             url: 'http://www.epam.com/',
-                            src: 'promo-companies__epam.svgd'
+                            src: 'promo-companies__epam.svg'
                         }
                     ]
                 }

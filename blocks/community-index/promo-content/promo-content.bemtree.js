@@ -24,7 +24,7 @@ block('promo-content').content()(function() {
                                     content: [
                                         {
                                             elem: 'img',
-                                            url: 'promo-crossroad_blog.svgd'
+                                            url: 'promo-crossroad_blog.svg'
                                         },
                                         this.i18n(this.block, 'text1') // 'Блог'
                                     ]
@@ -49,7 +49,7 @@ block('promo-content').content()(function() {
                                     content: [
                                         {
                                             elem: 'img',
-                                            url: 'promo-crossroad_events.svgd'
+                                            url: 'promo-crossroad_events.svg'
                                         },
                                         this.i18n(this.block, 'text3') // 'События'
                                     ]
@@ -74,7 +74,7 @@ block('promo-content').content()(function() {
                                     content: [
                                         {
                                             elem: 'img',
-                                            url: 'promo-crossroad_forum.svgd'
+                                            url: 'promo-crossroad_forum.svg'
                                         },
                                         this.i18n(this.block, 'text5') // 'Issues'
                                     ]
