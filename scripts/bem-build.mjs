@@ -220,6 +220,8 @@ export function collectFiles(order, levels, suffix) {
             try {
                 for (const sub of fs.readdirSync(blockDir, { withFileTypes: true })) {
                     if (!sub.isDirectory()) continue;
+                    // Skip i18n directories — they contain CommonJS keysets, not client JS
+                    if (excludeCompound && sub.name.endsWith('.i18n')) continue;
                     const subDir = path.join(blockDir, sub.name);
                     try {
                         for (const f of fs.readdirSync(subDir, { withFileTypes: true })) {
