@@ -431,16 +431,12 @@ export async function buildBundle(bundle, langs, rootDir) {
             );
         }
 
-        // Client JS — collect browser.js (v4 libs) and plain .js from project blocks only
-        const browserJsFiles = collectFiles(order, levels, 'browser.js');
+        // Client JS — collect vanilla.js only from project blocks (not node_modules)
         const projectLevels = levels.filter(l => !l.includes('node_modules'));
-        const plainJsFiles = collectFiles(order, projectLevels, 'js');
-        const langJsFiles = collectFiles(order, levels, `lang.${lang}.js`);
-        const allJsFiles = langJsFiles.concat(plainJsFiles, browserJsFiles);
+        const vanillaJsFiles = collectFiles(order, projectLevels, 'vanilla.js');
 
-        if (allJsFiles.length) {
-            const ymPath = path.join(rootDir, 'node_modules', 'ym', 'modules.js');
-            buildJS(allJsFiles, ymPath, path.join(bundleDir, `${bundle}.${lang}.js`));
+        if (vanillaJsFiles.length) {
+            buildJS(vanillaJsFiles, null, path.join(bundleDir, `${bundle}.${lang}.js`));
         }
     }
 
