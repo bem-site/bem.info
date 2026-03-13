@@ -31,8 +31,8 @@
     "postcss": "^8.5.0",
     "stylelint": "^17.0.0",
     "stylelint-order": "^7.0.0",
-    "vite": "^7.0.0",
-    "ym": "^0.1.2"
+    "jquery": "^4.0.0",
+    "vite": "^7.0.0"
   },
   "scripts": {
     "start": "rm -rf output && node scripts/build.mjs && npm run dev",
