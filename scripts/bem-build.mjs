@@ -431,12 +431,10 @@ export async function buildBundle(bundle, langs, rootDir) {
             );
         }
 
-        // Client JS — collect vanilla.js only from project blocks (not node_modules)
-        const projectLevels = levels.filter(l => !l.includes('node_modules'));
-        const vanillaJsFiles = collectFiles(order, projectLevels, 'vanilla.js');
-
-        if (vanillaJsFiles.length) {
-            buildJS(vanillaJsFiles, null, path.join(bundleDir, `${bundle}.${lang}.js`));
+        // Client JS — copy the pre-built Vite bundle (same for all bundles/langs)
+        const clientJs = path.join(rootDir, '.build-client', 'client.js');
+        if (fs.existsSync(clientJs)) {
+            fs.copyFileSync(clientJs, path.join(bundleDir, `${bundle}.${lang}.js`));
         }
     }
 

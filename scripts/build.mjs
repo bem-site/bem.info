@@ -146,8 +146,18 @@ async function buildData() {
 // BEM build (templates, CSS, JS)
 // ---------------------------------------------------------------------------
 
+async function buildClientJS() {
+    console.log('Building client JS with Vite...');
+    const { build: viteBuild } = await import('vite');
+    await viteBuild({
+        configFile: path.join(__dirname, 'vite-client.config.mjs'),
+        logLevel: 'warn',
+    });
+}
+
 async function bemBuild() {
     console.log('Running BEM build...');
+    await buildClientJS();
     await buildAllBundles(LANGUAGES, ROOT);
 }
 

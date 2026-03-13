@@ -22,5 +22,6 @@ npm-debug.log
 token
 output
 .cache
+.build-client
 
 secret-config.js
