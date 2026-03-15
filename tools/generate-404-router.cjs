@@ -29,14 +29,21 @@ module.exports = function generate404Router(regexRedirects, outputDir) {
 (function() {
     var rules = ${rulesJson};
     var path = window.location.pathname;
+    // Strip base path prefix (e.g. /bem.info) for pattern matching
+    var base = '/bem.info';
+    var matchPath = path.startsWith(base) ? path.slice(base.length) : path;
 
     for (var i = 0; i < rules.length; i++) {
-        var match = path.match(new RegExp(rules[i].pattern));
+        var match = matchPath.match(new RegExp(rules[i].pattern));
         if (match) {
             var target = rules[i].target;
             // Support $1, $2, etc. backreferences
             for (var j = 1; j < match.length; j++) {
                 target = target.replace('$' + j, match[j] || '');
+            }
+            // Redirect with base path prefix
+            if (target.startsWith('/')) {
+                target = base + target;
             }
             window.location.replace(target);
             return;
