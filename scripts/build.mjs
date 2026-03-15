@@ -393,7 +393,9 @@ async function generateRedirects() {
             const patterns = Array.isArray(r.exp) ? r.exp : [r.exp];
             for (const p of patterns) {
                 const pattern = p.startsWith('^') ? p.slice(1) : p;
-                allRegexRedirects.push({ exp: `^/${lang}${pattern}`, now: r.now });
+                const target = typeof r.now === 'string' && r.now.startsWith('/')
+                    ? `/${lang}${r.now}` : r.now;
+                allRegexRedirects.push({ exp: `^/${lang}${pattern}`, now: target });
             }
         }
     }
