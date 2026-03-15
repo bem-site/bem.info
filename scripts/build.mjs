@@ -130,7 +130,7 @@ async function buildData() {
                 modelPath: jsonPath,
                 host: `https://${lang}.bem.info`,
                 dest: cacheDirs[lang],
-                root: '/bem.info/' + lang,
+                root: '',
                 token: env.TOKEN,
                 DEBUG: env.DEBUG,
                 githubHosts: env.GITHUB_HOSTS
@@ -367,6 +367,47 @@ async function buildHTML() {
 }
 
 // ---------------------------------------------------------------------------
+// Post-process HTML: convert absolute URLs to relative
+// ---------------------------------------------------------------------------
+
+function relativizeUrls() {
+    console.log('Relativizing URLs in HTML...');
+
+    for (const lang of LANGUAGES) {
+        const langDir = outputDirs[lang];
+        if (!fs.existsSync(langDir)) continue;
+        relativizeDir(langDir, langDir);
+    }
+
+    console.log('URL relativization complete.');
+}
+
+function relativizeDir(dir, langRoot) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+            relativizeDir(full, langRoot);
+        } else if (entry.isFile() && entry.name.endsWith('.html')) {
+            relativizeFile(full, langRoot);
+        }
+    }
+}
+
+function relativizeFile(filePath, langRoot) {
+    const html = fs.readFileSync(filePath, 'utf8');
+    const rel = path.relative(path.dirname(filePath), langRoot) || '.';
+
+    const result = html.replace(
+        /(href|src|action|content)="\/(?!\/)/g,
+        (match, attr) => attr + '="' + rel + '/'
+    );
+
+    if (result !== html) {
+        fs.writeFileSync(filePath, result);
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Redirect generation
 // ---------------------------------------------------------------------------
 
@@ -386,7 +427,7 @@ async function generateRedirects() {
     for (const lang of LANGUAGES) {
         const modelWithRedirects = model.concat(redirects);
         const prepared = prepareModel(modelWithRedirects, lang);
-        const { regexRedirects } = generateStaticRedirects(prepared.redirects, outputDirs[lang], '/bem.info', lang);
+        const { regexRedirects } = generateStaticRedirects(prepared.redirects, outputDirs[lang]);
         generate404Router(regexRedirects, outputDirs[lang]);
 
         for (const r of regexRedirects) {
@@ -429,6 +470,9 @@ async function fullBuild() {
         buildHTML(),
         (copyBundlesToOutput(), copySitemaps(), Promise.resolve()),
     ]);
+
+    // Phase 3.5: Post-process HTML to make URLs relative
+    relativizeUrls();
 
     // Phase 4: Redirects
     await generateRedirects();

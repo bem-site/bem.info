@@ -31,7 +31,7 @@ block('sitemap').content()(function() {
                         content: rootSitePage.title
                     } : {
                         elem: 'link',
-                        attrs: { href: rootSitePage.disabled ? undefined : rootSitePage.lang ? 'https://' + rootSitePage.lang + '.bem.info' + rootSitePage.url : data.root + rootSitePage.url },
+                        attrs: { href: rootSitePage.disabled ? undefined : data.root + rootSitePage.url },
                         content: rootSitePage.title
                     }
                 },
@@ -50,7 +50,7 @@ block('sitemap').content()(function() {
                                 content: title
                             } : {
                                 elem: 'link',
-                                attrs: { href: page.disabled ? undefined : page.lang ? 'https://' + page.lang + '.bem.info' + page.url : data.root + page.url },
+                                attrs: { href: page.disabled ? undefined : data.root + page.url },
                                 content: title
                             }
                         };

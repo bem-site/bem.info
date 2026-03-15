@@ -3,6 +3,10 @@ block('root').replace()(function() {
         page = data.page,
         siteBundle = page.bundle;
 
+    // Compute relative root from page depth
+    var segments = page.url.split('/').filter(Boolean);
+    data.root = segments.length === 0 ? '.' : segments.map(function() { return '..'; }).join('/');
+
     // libs extraction (begin)
     var libs = {};
     data.pages.forEach(function(pageData) {

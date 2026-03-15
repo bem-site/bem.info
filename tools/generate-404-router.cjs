@@ -6,6 +6,7 @@ const fs = require('fs');
 /**
  * Generates a 404.html with a JavaScript router for regex-based redirects.
  * GitHub Pages serves 404.html for any path that doesn't match a file.
+ * The base path is auto-detected at runtime from the URL.
  *
  * @param {Array} regexRedirects - Array of regex redirect objects (with exp/now fields)
  * @param {String} outputDir - Output directory (e.g. output/bem.info/en)
@@ -28,25 +29,31 @@ module.exports = function generate404Router(regexRedirects, outputDir) {
 <script>
 (function() {
     var rules = ${rulesJson};
-    var path = window.location.pathname;
-    // Strip base path prefix (e.g. /bem.info) for pattern matching
-    var base = '/bem.info';
-    var matchPath = path.startsWith(base) ? path.slice(base.length) : path;
+    var pathname = window.location.pathname;
 
-    for (var i = 0; i < rules.length; i++) {
-        var match = matchPath.match(new RegExp(rules[i].pattern));
-        if (match) {
-            var target = rules[i].target;
-            // Support $1, $2, etc. backreferences
-            for (var j = 1; j < match.length; j++) {
-                target = target.replace('$' + j, match[j] || '');
+    // Auto-detect base path by trying pattern matches from each slash position
+    var slashes = [0];
+    for (var s = 0; s < pathname.length; s++) {
+        if (pathname[s] === '/') slashes.push(s);
+    }
+
+    for (var si = 0; si < slashes.length; si++) {
+        var base = pathname.slice(0, slashes[si]);
+        var matchPath = pathname.slice(slashes[si]);
+
+        for (var i = 0; i < rules.length; i++) {
+            var match = matchPath.match(new RegExp(rules[i].pattern));
+            if (match) {
+                var target = rules[i].target;
+                for (var j = 1; j < match.length; j++) {
+                    target = target.replace('$' + j, match[j] || '');
+                }
+                if (target.startsWith('/')) {
+                    target = base + target;
+                }
+                window.location.replace(target);
+                return;
             }
-            // Redirect with base path prefix
-            if (target.startsWith('/')) {
-                target = base + target;
-            }
-            window.location.replace(target);
-            return;
         }
     }
 })();
@@ -55,7 +62,7 @@ module.exports = function generate404Router(regexRedirects, outputDir) {
 <body>
 <h1>Page not found</h1>
 <p>The page you are looking for does not exist.</p>
-<p><a href="/bem.info/">Go to homepage</a></p>
+<p><a href="./">Go to homepage</a></p>
 </body>
 </html>`;
 

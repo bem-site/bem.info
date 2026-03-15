@@ -3,7 +3,7 @@ block('lang-switcher').content()(function() {
         page = data.page;
 
     return data.langs.reduce(function(result, lang, index) {
-        var host = '/bem.info/' + lang,
+        var host = data.root + '/../' + lang,
             content = lang.toUpperCase();
 
         if (index !== 0) {
