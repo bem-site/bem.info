@@ -386,7 +386,7 @@ async function generateRedirects() {
     for (const lang of LANGUAGES) {
         const modelWithRedirects = model.concat(redirects);
         const prepared = prepareModel(modelWithRedirects, lang);
-        const { regexRedirects } = generateStaticRedirects(prepared.redirects, outputDirs[lang]);
+        const { regexRedirects } = generateStaticRedirects(prepared.redirects, outputDirs[lang], '/bem.info', lang);
         generate404Router(regexRedirects, outputDirs[lang]);
 
         for (const r of regexRedirects) {

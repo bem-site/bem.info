@@ -11,9 +11,13 @@ const fs = require('fs');
  *
  * @param {Array} redirects - Array of redirect objects from prepare-model
  * @param {String} outputDir - Output directory for the language (e.g. output/bem.info/en)
+ * @param {String} [basePath=''] - Base path prefix for GitHub Pages project sites (e.g. '/bem.info')
+ * @param {String} [lang=''] - Language prefix (e.g. 'ru', 'en')
  * @returns {{ regexRedirects: Array }} - Regex redirects that couldn't be expressed as static files
  */
-module.exports = function generateStaticRedirects(redirects, outputDir) {
+module.exports = function generateStaticRedirects(redirects, outputDir, basePath, lang) {
+    basePath = basePath || '';
+    var prefix = basePath + (lang ? '/' + lang : '');
     const regexRedirects = [];
 
     redirects.forEach(redirect => {
@@ -24,7 +28,10 @@ module.exports = function generateStaticRedirects(redirects, outputDir) {
         }
 
         const urls = Array.isArray(redirect.url) ? redirect.url : [redirect.url];
-        const target = redirect.now;
+        // Add base path + lang prefix for internal URLs (starting with /)
+        const rawTarget = redirect.now;
+        const target = (prefix && typeof rawTarget === 'string' && rawTarget.startsWith('/'))
+            ? prefix + rawTarget : rawTarget;
 
         urls.forEach(url => {
             // Normalize: ensure trailing slash, build file path
