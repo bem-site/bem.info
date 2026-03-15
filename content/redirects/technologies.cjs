@@ -151,6 +151,12 @@ module.exports = [
         now: '/technologies/classic/'
     },
 
+    // platform/tutorials → tutorials/classic
+    {
+        exp: '^/platform/tutorials/(.*)',
+        now: '/tutorials/classic/$1'
+    },
+
     // platform
     {
         exp: '^/platform/libs/(.*)',
