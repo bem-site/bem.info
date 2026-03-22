@@ -1,0 +1,720 @@
+<!DOCTYPE html><html class="ua_js_no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Migration / 4.1.1 / bem-core / Классические БЭМ-библиотеки / Библиотеки / БЭМ</title><script>(function(e,c){e[c]=e[c].replace(/(ua_js_)no/g,"$1yes");})(document.documentElement,"className");(function(d,n){d.documentElement.className+=" ua_svg_"+(d[n]&&d[n]("http://www.w3.org/2000/svg","svg").createSVGRect?"yes":"no");})(document,"createElementNS");</script><link rel="stylesheet" href="../../../../../libraries.min.css?3588"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:image" content="../../../../../og_image/logo_theme_generated.png"><meta property="og:url" content="../../../../../libraries/classic/bem-core/4.1.1/migration/"><meta property="og:type" content="article"><meta property="og:description" content="Migration"><meta property="og:keywords" content="libs, bem-core"><link rel="shortcut icon" href="../../../../../favicon.ico"></head><body class="page"><div class="header page__head i-bem" data-bem='{"header":{}}'><div class="header__layout"><a class="logo header__logo" href="../../../../../"><svg class="logo__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.7 84"><path d="M0 13h23.8v7H0zM0 0h23.8v7H0zm42.7 25.9H0v7h41.1c4.5 0 15 .1 18.9 6.4v-3.9c-1.9-6.2-7.5-9.5-17.3-9.5zm.1 13H0v7h41.1c10 0 16.3.4 18.9 1.8v-3.1c-2-4.9-10.4-5.7-17.2-5.7zm-.1 33H0v-7h41.1c4.5 0 15-.1 18.9-6.4v3.9c-1.9 6.2-7.5 9.5-17.3 9.5zm.1-13H0v-7h41.1c10 0 16.3-.4 18.9-1.8v3.1c-2 4.9-10.4 5.7-17.2 5.7zM70.4 84h31.4v-4.3H71.3c-2.7 0-9.1-.1-11.4-3.8v2.4C61 82 64.4 84 70.4 84zm-.1-7.9h31.4v-4.3H71.3c-6.1 0-9.9-.2-11.4-1.1v1.9c1.2 3 6.3 3.5 10.4 3.5z"/></svg></a><div class="lang-switcher header__lang"><a class="lang-switcher__link" href="../../../../../../en/libraries/classic/bem-core/4.1.1/migration/">EN</a><span class="lang-switcher__separator"> </span>RU</div><a class="header__forum" href="https://github.com/bem-site/bem.info/issues">Issues</a></div><div class="search header__search i-bem" data-bem='{"search":{}}'><form class="form search__form i-bem" data-bem='{"form":{}}' action="https://yandex.ru/sitesearch"><span class="input input_type_search i-bem" data-bem='{"input":{}}'><span class="input__box"><input class="input__control" name="text" placeholder="Искать" autocomplete="off" type="search"></span></span><input type="hidden" name="reqenc"><input type="hidden" name="searchid" value="1944806"><input type="hidden" name="l10n" value="ru"><button class="search__submit" type="submit"><div class="search-icon search__submit-icon"><svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6"/><path d="M11 11l5 5"/></svg></div></button></form></div><ul class="breadcrumbs header__breadcrumbs"><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../libraries/">Библиотеки</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../libraries/classic/bem-core/">bem-core</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../libraries/classic/bem-core/4.1.1/">4.1.1</a></li><li class="breadcrumbs__item breadcrumbs__version"><div class="select select_header select_mode_radio-check select_theme_islands select_size_l"></div></li></ul><div class="header__toggle"><span class="header__toggle-line"></span></div></div><div class="sitemap page__sitemap"><div class="sitemap__section sitemap__section_site_methodology"><h1 class="sitemap__title sitemap__title_site_methodology"><a class="sitemap__link" href="../../../../../methodology/">Методология</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/key-concepts/">Основные понятия</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/naming-convention/">Соглашение по именованию</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/css/">CSS</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/html/">HTML</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/js/">JavaScript</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/filestructure/">Файловая структура</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/redefinition-levels/">Уровни переопределения</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/block-modification/">Модификация блока</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/build/">Сборка</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/declarations/">Декларации</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/solved-problems/">Какие проблемы решает</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/history/">История создания</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/articles/">Статьи</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../methodology/faq/">FAQ</a></li></ul></div><div class="sitemap__section sitemap__section_site_technologies"><h1 class="sitemap__title sitemap__title_site_technologies"><a class="sitemap__link" href="../../../../../technologies/">Технологии</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../technologies/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/bemjson/">Данные (BEMJSON)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/bem-xjst/">Шаблоны (BEMHTML, BEMTREE)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/i-bem/">Клиентский JavaScript (i-bem.js)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/deps/">Зависимости</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/deps-spec/">Спецификация DEPS</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/classic/project-stub/">Заготовка проекта</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../technologies/bem-react/">bem-react</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/bem-react/motivation/">Зачем БЭМ, если есть React?</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/bem-react/classname/">classname</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/bem-react/core/">core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../technologies/bem-react/di/">di</a></li></ul></div><div class="sitemap__section sitemap__section_site_toolbox"><h1 class="sitemap__title sitemap__title_site_toolbox"><a class="sitemap__link" href="../../../../../toolbox/">Инструментарий</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../toolbox/enb/">ENB</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/api/">API</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/techs/">Технологии для работы с файлами</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/cli/">Использование из командной строки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/terms/">Терминология</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/build-project/">Как собрать проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/write-tech/">Как написать технологию</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/express/">Автоматизация с помощью express</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/enb/packages/">Пакеты ENB</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../toolbox/bemhint/">bemhint</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/bemhint/css-naming/">CSS именование</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/bemhint/fs-naming/">Именование файлов</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/bemhint/deps-schema/">DEPS схема</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/bemhint/deps-specification/">DEPS спецификация</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../toolbox/bem-tools/">bem-tools</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../toolbox/bemmet/">bemmet</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../toolbox/sdk/">SDK</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-walk/">@bem/sdk.walk</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-config/">@bem/sdk.config</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-naming-entity/">@bem/sdk.naming.entity </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-naming-cell-stringify/">@bem/sdk.naming.cell.stringify </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-naming-cell-pattern-parser/">@bem/sdk.naming.cell.pattern-parser</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-naming-file-stringify/">@bem/sdk.naming.file.stringify</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-decl/">@bem/sdk.decl </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-bemjson-to-decl/">@bem/sdk.bemjson-to-decl</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-bemjson-to-jsx/">@bem/sdk.bemjson-to-jsx</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-import-notation/">@bem/sdk.import-notation</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-graph/">@bem/sdk.graph</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-deps/">@bem/sdk.deps</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-entity-name/">@bem/sdk.entity-name</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-file/">@bem/sdk.file</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-cell/">@bem/sdk.cell</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-bundle/">@bem/sdk.bundle</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../toolbox/sdk/bem-bemjson-node/">@bem/sdk.bemjson-node</a></li></ul></div><div class="sitemap__section sitemap__section_site_libraries"><h1 class="sitemap__title sitemap__title_site_libraries"><a class="sitemap__link" href="../../../../../libraries/">Библиотеки</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../libraries/classic/bem-core/">bem-core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../libraries/classic/bem-components/">bem-components</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../libraries/classic/bem-history/">bem-history</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../libraries/classic/principles/">Принципы разработки БЭМ-библиотек</a></li></ul></div><div class="sitemap__section sitemap__section_site_tutorials"><h1 class="sitemap__title sitemap__title_site_tutorials"><a class="sitemap__link" href="../../../../../tutorials/">Учебные материалы</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../tutorials/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></li></ul></div></div><div class="page__menu"><ul class="nav page__nav"><li class="nav__item"><div class="block-list blocks__list"></div></li></ul></div><div class="page__main"><div class="article page__content"><html><head></head><body><h1 class="article__heading article__heading_level_1" id="миграция"><a class="article__heading-anchor" href="#миграция"></a>Миграция</h1><h2 class="article__heading article__heading_level_2" id="400"><a class="article__heading-anchor" href="#400"></a>4.0.0</h2><h3 class="article__heading article__heading_level_3" id="изменения-в-блоке-object-object"><a class="article__heading-anchor" href="#изменения-в-блоке-object-object"></a>Изменения в блоке <code class="article__inline-code">i-bem</code></h3><h4 class="article__heading article__heading_level_4" id="отдельный-блок-object-object"><a class="article__heading-anchor" href="#отдельный-блок-object-object"></a>Отдельный блок <code class="article__inline-code">i-bem-dom</code></h4><p class="article__paragraph">Элемент <code class="article__inline-code">dom</code> блока <code class="article__inline-code">i-bem</code> был перенесён в отдельный блок <code class="article__inline-code">i-bem-dom</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+    <span class="hljs-comment">/* ... */</span>
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+    <span class="hljs-comment">/* ... */</span>
+});
+</pre><p class="article__paragraph">Блоки <code class="article__inline-code">i-bem</code> и <code class="article__inline-code">i-bem-dom</code> больше не являются классами, представляя собой модули с методами для декларации
+БЭМ-сущностей, ссылками на классы БЭМ-сущностей и некоторыми дополнительными хелперами. Эти методы больше не являются методами класса для соответсвующих блоков.</p><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/413">#413</a>.</p><h4 class="article__heading article__heading_level_4" id="декларация"><a class="article__heading-anchor" href="#декларация"></a>Декларация</h4><h4 class="article__heading article__heading_level_4" id="декларация-блока"><a class="article__heading-anchor" href="#декларация-блока"></a>Декларация блока</h4><p class="article__paragraph">Для декларации блока, вместо метода <code class="article__inline-code">decl()</code>, следует использовать метод <code class="article__inline-code">declBlock()</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="декларация-модификатора"><a class="article__heading-anchor" href="#декларация-модификатора"></a>Декларация модификатора</h4><p class="article__paragraph">Для декларации модификатора, вместо статического метода <code class="article__inline-code">decl()</code>, следует использовать статический метод <code class="article__inline-code">declMod()</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'my-val'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">declMod</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'myVal'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="декларация-булевого-модификатора"><a class="article__heading-anchor" href="#декларация-булевого-модификатора"></a>Декларация булевого модификатора</h4><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'true'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">declMod</span>({ modName : <span class="hljs-string">'my-mod'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/1374">#1374</a>.</p><h4 class="article__heading article__heading_level_4" id="декларация-для-модификатора-с-любым-значением"><a class="article__heading-anchor" href="#декларация-для-модификатора-с-любым-значением"></a>Декларация для модификатора с любым значением</h4><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({ modName : <span class="hljs-string">'my-mod'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">declMod</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'*'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/pull/1376">#1376</a>.</p><h4 class="article__heading article__heading_level_4" id="доопределение-блока"><a class="article__heading-anchor" href="#доопределение-блока"></a>Доопределение блока</h4><p class="article__paragraph">Вместо метода <code class="article__inline-code">decl()</code> класса блока следует использовать метод <code class="article__inline-code">declBlock()</code> модуля <code class="article__inline-code">i-bem-dom</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({ <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-title class_">MyDomBlock</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="декларация-наследуемого-блока"><a class="article__heading-anchor" href="#декларация-наследуемого-блока"></a>Декларация наследуемого блока</h4><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>, <span class="hljs-string">'my-base-dom-block'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM, MyBaseDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>({ block : <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, baseBlock : <span class="hljs-title class_">MyBaseDomBlock</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'my-base-dom-block'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, MyBaseDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, <span class="hljs-title class_">MyBaseDomBlock</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="декларация-миксина"><a class="article__heading-anchor" href="#декларация-миксина"></a>Декларация миксина</h4><p class="article__paragraph">Метод <code class="article__inline-code">declMix</code> переименован в <code class="article__inline-code">declMixin</code>, чтобы отделить понятие
+<a class="article__link" href="../../../../../methodology/key-concepts/#%D0%9C%D0%B8%D0%BA%D1%81">миксов нескольких БЭМ-сущностей на одном DOM-узле</a> от миксинов на уровне JS.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-mix-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">declMix</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-mixin-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declMixin</span>({ <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="примешивание-миксина"><a class="article__heading-anchor" href="#примешивание-миксина"></a>Примешивание миксина</h4><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>, <span class="hljs-string">'my-mix-1'</span>, <span class="hljs-string">'my-mix-2'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>({ block : <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, baseMix : [<span class="hljs-string">'my-mix-1'</span>, <span class="hljs-string">'my-mix-2'</span>]}, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'my-mixin-1'</span>, <span class="hljs-string">'my-mixin-2'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, MyMixin1, MyMixin2</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, [<span class="hljs-title class_">MyMixin1</span>, <span class="hljs-title class_">MyMixin2</span>], { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="триггеры-для-изменения-модификаторов"><a class="article__heading-anchor" href="#триггеры-для-изменения-модификаторов"></a>Триггеры для изменения модификаторов</h4><p class="article__paragraph">При декларации определённого модификатора (например, <code class="article__inline-code">_my-mod_my-val</code>) невозможно было задекларировать поведение
+на удаление этого модификатора. Приходилось делать две декларации.</p><p class="article__paragraph">Было:</p><pre class="article__code"><span class="hljs-comment">// my-dom-block_my-mod_my-val.js</span>
+
+modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({
+    onSetMod : {
+        <span class="hljs-string">'my-mod'</span> : {
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> } <span class="hljs-comment">// декларация для удаления модификатора _my-mod_my-val</span>
+        }
+    }
+
+});
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">decl</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'my-val'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, MyDomBlock</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-title class_">MyDomBlock</span>.<span class="hljs-title function_">declMod</span>({ modName : <span class="hljs-string">'my-mod'</span>, modVal : <span class="hljs-string">'my-val'</span> }, {
+    onSetMod : {
+        <span class="hljs-string">'mod1'</span> : {
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> } <span class="hljs-comment">// декларация для удаления модификатора _my-mod_my-val</span>
+        }
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/1025">#1025</a>.</p><p class="article__paragraph">Появился сокращённый синтаксис для декларации поведения на изменение модификатора.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">onSetMod : {
+    <span class="hljs-string">'my-mod'</span> : {
+        <span class="hljs-string">'*'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params">modName, modVal, prevModVal</span>) {
+            <span class="hljs-keyword">if</span>(prevModVal === <span class="hljs-string">'my-val'</span>) {
+                <span class="hljs-comment">/* ... */</span> <span class="hljs-comment">// декларация для изменения _my-mod_my-val в любое другое значение</span>
+            }
+        }
+    }
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">onSetMod : {
+    <span class="hljs-string">'my-mod'</span> : {
+        <span class="hljs-string">'~my-val'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> } <span class="hljs-comment">// декларация для изменения значения my-mod из my-val в любое другое значение</span>
+        }
+    }
+}
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">onSetMod : {
+    <span class="hljs-string">'my-mod'</span> : {
+        <span class="hljs-string">'*'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params">modName, modVal</span>) {
+            <span class="hljs-keyword">if</span>(modVal !== <span class="hljs-string">'my-val'</span>) {
+                <span class="hljs-comment">/* ... */</span> <span class="hljs-comment">// декларация для изменения my-mod в любое значение, кроме my-val</span>
+            }
+        }
+    }
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">onSetMod : {
+    <span class="hljs-string">'my-mod'</span> : {
+        <span class="hljs-string">'!my-val'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> } <span class="hljs-comment">// декларация для изменения my-mod в любое значение, кроме my-val</span>
+        }
+    }
+}
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/1072">#1072</a>.</p><h4 class="article__heading article__heading_level_4" id="ленивая-инициализация"><a class="article__heading-anchor" href="#ленивая-инициализация"></a>Ленивая инициализация</h4><p class="article__paragraph">Функциональность поля <code class="article__inline-code">live</code> была разделена на две части: поле <code class="article__inline-code">lazyInit</code> и метод <code class="article__inline-code">onInit()</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-literal">true</span>
+}));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    lazyInit : <span class="hljs-literal">true</span>
+}));
+
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">/* ... */</span>
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    lazyInit : <span class="hljs-literal">true</span>,
+
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">/* ... */</span>
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">/* ... */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">/* ... */</span>
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code">{
+    block : <span class="hljs-string">'b1'</span>,
+    js : { live : <span class="hljs-literal">false</span> }
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">{
+    block : <span class="hljs-string">'b1'</span>,
+    js : { lazyInit : <span class="hljs-literal">false</span> }
+}
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/877">#877</a>.</p><h4 class="article__heading article__heading_level_4" id="экземпляры-для-элементов"><a class="article__heading-anchor" href="#экземпляры-для-элементов"></a>Экземпляры для элементов</h4><p class="article__paragraph">Удалены элемент <code class="article__inline-code">elem-instances</code> блока <code class="article__inline-code">i-bem</code> и модификатор <code class="article__inline-code">elem-instances</code> элемента <code class="article__inline-code">dom</code> блока <code class="article__inline-code">i-bem</code>.
+Теперь соответствующая функциональность является частью <code class="article__inline-code">i-bem</code> и <code class="article__inline-code">i-bem-dom</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block__my-elem'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>({ block : <span class="hljs-string">'my-dom-block'</span>, elem : <span class="hljs-string">'my-elem'</span> }, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-dom-block__my-elem'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'my-dom-block'</span>, <span class="hljs-string">'my-elem'</span>, { <span class="hljs-comment">/* ... */</span> }));
+
+});
+</pre><p class="article__paragraph">Теперь метод <code class="article__inline-code">_elem(elemName)</code> экземпляра блока (бывший <code class="article__inline-code">elem(elemName)</code>) возвращает не jQuery-объект со всеми элементами
+с именем <code class="article__inline-code">elemName</code>, а экземпляр класса элемента.</p><p class="article__paragraph">Для того, чтобы получить коллекцию экземпляров класса элемента, используйте метод <code class="article__inline-code">_elems()</code>.</p><h5 class="article__heading article__heading_level_5" id="cпособы-взаимодействия-с-элементами"><a class="article__heading-anchor" href="#cпособы-взаимодействия-с-элементами"></a>Cпособы взаимодействия с элементами</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'my-elem'</span>), <span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'my-elem'</span>).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+</pre><p class="article__paragraph">Аналогично для методов <code class="article__inline-code">getMod()</code>, <code class="article__inline-code">hasMod()</code>, <code class="article__inline-code">toggleMod()</code>, <code class="article__inline-code">delMod()</code>.</p><h5 class="article__heading article__heading_level_5" id="удалённые-методы-и-поля"><a class="article__heading-anchor" href="#удалённые-методы-и-поля"></a>Удалённые методы и поля</h5><p class="article__paragraph">Удалён метод <code class="article__inline-code">dropElemCache()</code>, теперь инвалидация кэшей осуществляется автоматически при модификациях DOM. Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/1352">#1352</a>.</p><p class="article__paragraph">Из API блока удалены методы: <code class="article__inline-code">elemify()</code>, <code class="article__inline-code">elemParams()</code> и поле <code class="article__inline-code">onElemSetMod</code>. Соответствующая
+им функциональность выражается через экземпляры элементов .</p><p class="article__paragraph">См. также изменения про <a class="article__link" href="#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0">методы поиска</a>.</p><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/581">#581</a>.</p><h4 class="article__heading article__heading_level_4" id="методы-поиска"><a class="article__heading-anchor" href="#методы-поиска"></a>Методы поиска</h4><p class="article__paragraph">Переименованы следующие методы:</p><ul class="article__list"><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlockInside()</code> в <code class="article__inline-code">findChildBlock()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlocksInside()</code> в <code class="article__inline-code">findChildBlocks()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlockOutside()</code> в <code class="article__inline-code">findParentBlock()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlocksOutside()</code> в <code class="article__inline-code">findParentBlocks()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlockOn()</code> в <code class="article__inline-code">findMixedBlock()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">findBlocksOn()</code> в <code class="article__inline-code">findMixedBlocks()</code></p></li></ul><p class="article__paragraph">Из этих методов удален опциональный первый параметр про элемент.</p><p class="article__paragraph">Добавлены методы: <code class="article__inline-code">findChildElem()</code>, <code class="article__inline-code">findChildElems()</code>, <code class="article__inline-code">findParentElem()</code>, <code class="article__inline-code">findParentElems()</code>, <code class="article__inline-code">findMixedElem()</code>, <code class="article__inline-code">findMixedElems()</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findBlockInside</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'my-elem'</span>), <span class="hljs-string">'my-block-2'</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildElem</span>(<span class="hljs-string">'my-elem'</span>).<span class="hljs-title function_">findChildBlock</span>(<span class="hljs-title class_">MyBlock2</span>);
+</pre><p class="article__paragraph">Удалены методы: <code class="article__inline-code">findElem()</code>, <code class="article__inline-code">closestElem()</code>, вместо них следует использовать методы <code class="article__inline-code">findChildElem()</code>
+и <code class="article__inline-code">findParentElem()</code>, соответсвенно.</p><p class="article__paragraph">Методы <code class="article__inline-code">findChildBlocks()</code>, <code class="article__inline-code">findParentBlocks()</code>, <code class="article__inline-code">findMixedBlocks()</code>, <code class="article__inline-code">findChildElems()</code>, <code class="article__inline-code">findParentElems()</code>,
+<code class="article__inline-code">findMixedElems()</code> возвращают <a class="article__link" href="#%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8">коллекции БЭМ-сущностей</a>.</p><p class="article__paragraph">Методы <code class="article__inline-code">findChildElem()</code> и <code class="article__inline-code">findChildElems()</code> (в отличие от предыдущего аналога <code class="article__inline-code">findElem</code>) не выполняют поиск на собственных DOM-узлах экземпляра.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findElem</span>(<span class="hljs-string">'my-elem'</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildElems</span>(<span class="hljs-string">'my-elem'</span>).<span class="hljs-title function_">concat</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findMixedElems</span>(<span class="hljs-string">'my-elem'</span>));
+</pre><p class="article__paragraph">Но рекомендуется обратить внимание, действительно ли необходимы оба поиска:
+в большинстве случаев достаточно использовать или <code class="article__inline-code">this.findChildElems('my-elem')</code> или <code class="article__inline-code">this.findMixedElems('my-elem')</code>.</p><h5 class="article__heading article__heading_level_5" id="проверка-вложенности"><a class="article__heading-anchor" href="#проверка-вложенности"></a>Проверка вложенности</h5><p class="article__paragraph">Вместо удаленного метода <code class="article__inline-code">containsDomElem()</code>, следует использовать метод <code class="article__inline-code">containsEntity()</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">containsDomElem</span>(someElem);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">containsEntity</span>(someElem);
+</pre><h4 class="article__heading article__heading_level_4" id="коллекции"><a class="article__heading-anchor" href="#коллекции"></a>Коллекции</h4><p class="article__paragraph">Функциональность элемента <code class="article__inline-code">collection</code> блока <code class="article__inline-code">i-bem</code> перестала быть опциональной.</p><p class="article__paragraph">Все методы возвращавшие массив БЭМ-сущностей, теперь возвращают коллекции.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findBlocksInside</span>(<span class="hljs-string">'my-block-2'</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildBlocks</span>(<span class="hljs-title class_">MyBlock2</span>).<span class="hljs-title function_">get</span>(<span class="hljs-number">0</span>).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findBlocksInside</span>(<span class="hljs-string">'my-block-2'</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">myBlock2</span>) {
+    <span class="hljs-keyword">return</span> myBlock2.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildBlocks</span>(<span class="hljs-title class_">MyBlock2</span>).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'my-mod'</span>, <span class="hljs-string">'my-val'</span>);
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/582">#582</a>.</p><h4 class="article__heading article__heading_level_4" id="события"><a class="article__heading-anchor" href="#события"></a>События</h4><p class="article__paragraph">API работы с событиями значильно упрощено. Удалены методы экземпляра блока: <code class="article__inline-code">on()</code>, <code class="article__inline-code">un()</code>, <code class="article__inline-code">once()</code>, <code class="article__inline-code">bindTo()</code>,
+<code class="article__inline-code">unbindFrom()</code>, <code class="article__inline-code">bindToDoc()</code>, <code class="article__inline-code">bindToWin()</code>, <code class="article__inline-code">unbindFromDoc()</code>, <code class="article__inline-code">unbindFromWin()</code> и методы класса: <code class="article__inline-code">liveBindTo()</code>,
+<code class="article__inline-code">liveUnbindFrom()</code>, <code class="article__inline-code">on()</code>, <code class="article__inline-code">un()</code>, <code class="article__inline-code">once()</code>, <code class="article__inline-code">liveInitOnBlockEvent()</code>, <code class="article__inline-code">liveInitOnBlockInsideEvent()</code>.
+Вместо них добавлены методы <code class="article__inline-code">_domEvents()</code> и <code class="article__inline-code">_events()</code>, возвращающие экземпляр класса менеджера событий, с методами
+<code class="article__inline-code">on()</code>, <code class="article__inline-code">un()</code> и <code class="article__inline-code">one()</code>;</p><h5 class="article__heading article__heading_level_5" id="dom-события-на-экземплярах"><a class="article__heading-anchor" href="#dom-события-на-экземплярах"></a>DOM-события на экземплярах</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">bindTo</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onClick</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onClick</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">bindToDoc</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onDocClick</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(bemDom.<span class="hljs-property">doc</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onDocClick</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">bindToWin</span>(<span class="hljs-string">'resize'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onWinResize</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(bemDom.<span class="hljs-property">win</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'resize'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onWinResize</span>);
+            }
+        }
+    }
+});
+</pre><h5 class="article__heading article__heading_level_5" id="бэм-события-на-экземплярах"><a class="article__heading-anchor" href="#бэм-события-на-экземплярах"></a>БЭМ-события на экземплярах</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findBlockOutside</span>(<span class="hljs-string">'my-block-2'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>, <span class="hljs-variable language_">this</span>);
+            },
+
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findBlockOutside</span>(<span class="hljs-string">'my-block-2'</span>).<span class="hljs-title function_">un</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>, <span class="hljs-variable language_">this</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findParentBlock</span>(<span class="hljs-string">'my-block-2'</span>)).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Следует обратить внимание, что теперь, отписка от событий происходит автоматически во время уничтожения экземпляра.</p><h5 class="article__heading article__heading_level_5" id="делегированные-dom-события"><a class="article__heading-anchor" href="#делегированные-dom-события"></a>Делегированные DOM-события</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">liveBindTo</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+    }
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">liveBindTo</span>(<span class="hljs-string">'my-elem'</span>, <span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMyElemClick</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'my-elem'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMyElemClick</span>);
+    }
+});
+</pre><h5 class="article__heading article__heading_level_5" id="делегированные-бэм-события"><a class="article__heading-anchor" href="#делегированные-бэм-события"></a>Делегированные БЭМ-события</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">liveInitOnBlockInsideEvent</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-string">'my-block-2'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMyBlock2MyEvent</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">MyBlock2</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMyBlock2MyEvent</span>);
+    }
+});
+</pre><p class="article__paragraph">Следует обратить внимание, что параметр с функцией обработчиком события теперь обязательный.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-block'</span>, [<span class="hljs-string">'i-bem__dom'</span>, <span class="hljs-string">'my-block-2'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    live : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">liveInitOnBlockInsideEvent</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-string">'my-block-2'</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'my-block-2'</span>, <span class="hljs-string">'functions'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, MyBlock2, functions</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, { <span class="hljs-comment">/* ... */</span> }, {
+    onInit : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">MyBlock2</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, functions.<span class="hljs-property">noop</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-title class_">MyBlock2</span>.<span class="hljs-title function_">on</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">domElem</span>, <span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>, <span class="hljs-variable language_">this</span>);
+            },
+
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-title class_">MyBlock2</span>.<span class="hljs-title function_">un</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">domElem</span>, <span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>, <span class="hljs-variable language_">this</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'my-block'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">MyBlock2</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onMyBlock2MyEvent</span>);
+            }
+        }
+    }
+});
+</pre><p class="article__paragraph">Следует обратить внимание, что теперь, отписка от событий происходит автоматически во время уничтожения экземпляра.</p><h4 class="article__heading article__heading_level_4" id="взаимодействие-стороннего-кода-с-бэм-блоками"><a class="article__heading-anchor" href="#взаимодействие-стороннего-кода-с-бэм-блоками"></a>Взаимодействие стороннего кода с БЭМ-блоками</h4><h5 class="article__heading article__heading_level_5" id="получение-экземпляра-бэм-блока"><a class="article__heading-anchor" href="#получение-экземпляра-бэм-блока"></a>Получение экземпляра БЭМ-блока</h5><p class="article__paragraph">Теперь, метод jQuery-объекта <code class="article__inline-code">bem()</code> принимает БЭМ-класс, вместо строки.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-built_in">require</span>([<span class="hljs-string">'jquery'</span>, <span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">$, BEMDOM</span>) {
+
+<span class="hljs-keyword">var</span> myBlock = $(<span class="hljs-string">'.my-block'</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-string">'my-block'</span>);
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-built_in">require</span>([<span class="hljs-string">'jquery'</span>, <span class="hljs-string">'my-block'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">$, MyBlock</span>) {
+
+<span class="hljs-keyword">var</span> myBlock = $(<span class="hljs-string">'.my-block'</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-title class_">MyBlock</span>);
+
+});
+</pre><h5 class="article__heading article__heading_level_5" id="подписка-на-бэм-события-из-стороннего-кода"><a class="article__heading-anchor" href="#подписка-на-бэм-события-из-стороннего-кода"></a>Подписка на БЭМ-события из стороннего кода</h5><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-built_in">require</span>([<span class="hljs-string">'jquery'</span>, <span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">$, BEMDOM</span>) {
+
+$(<span class="hljs-string">'.my-block'</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-string">'my-block'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> });
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">modules.<span class="hljs-built_in">require</span>([<span class="hljs-string">'jquery'</span>, <span class="hljs-string">'my-block'</span>, <span class="hljs-string">'events__observable'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">$, MyBlock, observable</span>) {
+
+<span class="hljs-title function_">observable</span>($(<span class="hljs-string">'.my-block'</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-title class_">MyBlock</span>))
+    .<span class="hljs-title function_">on</span>(<span class="hljs-string">'my-event'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> });
+
+});
+</pre><p class="article__paragraph">При этом в зависимости нужно добавить <code class="article__inline-code">{ block : 'events', elem : 'observable', mods : { type : 'bem-dom' } }</code>.</p><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/394">#394</a>.</p><h4 class="article__heading article__heading_level_4" id="имена-protected-методов-начинаются-с-object-object"><a class="article__heading-anchor" href="#имена-protected-методов-начинаются-с-object-object"></a>Имена protected-методов начинаются с <code class="article__inline-code">_</code></h4><p class="article__paragraph">Переименованы protected-методы:</p><ul class="article__list"><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">emit()</code> в <code class="article__inline-code">_emit()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">elem()</code> в <code class="article__inline-code">_elem()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">buildClass()</code> в <code class="article__inline-code">_buildClassName()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">buildSelector()</code> в <code class="article__inline-code">_buildSelector()</code></p></li><li class="article__list-item"><p class="article__paragraph"><code class="article__inline-code">getDefaultParams()</code> в <code class="article__inline-code">_getDefaultParams()</code></p></li></ul><p class="article__paragraph">Задачи: <a class="article__link" href="https://github.com/bem/bem-core/issues/586">#586</a>, <a class="article__link" href="https://github.com/bem/bem-core/issues/1359">#1359</a>.</p><h4 class="article__heading article__heading_level_4" id="удалённые-методы"><a class="article__heading-anchor" href="#удалённые-методы"></a>Удалённые методы</h4><p class="article__paragraph">Удалён метод <code class="article__inline-code">getMods()</code>.</p><h3 class="article__heading article__heading_level_3" id="изменения-в-блоке-object-object-1"><a class="article__heading-anchor" href="#изменения-в-блоке-object-object-1"></a>Изменения в блоке <code class="article__inline-code">querystring</code></h3><p class="article__paragraph">Элемент <code class="article__inline-code">querystring__uri</code> стал блоком <code class="article__inline-code">uri</code>. Блок <code class="article__inline-code">querystring</code> стал элементом <code class="article__inline-code">uri__querystring</code>.</p><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/967">#967</a>.</p><h3 class="article__heading article__heading_level_3" id="изменения-в-блоке-object-object-2"><a class="article__heading-anchor" href="#изменения-в-блоке-object-object-2"></a>Изменения в блоке <code class="article__inline-code">page</code></h3><p class="article__paragraph">Элемент <code class="article__inline-code">page__css</code> больше не поддреживает поле <code class="article__inline-code">ie</code>. Используйте элемент <code class="article__inline-code">page__conditional-comment</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code">{
+    block : <span class="hljs-string">'page'</span>,
+    head : [
+        { elem : <span class="hljs-string">'css'</span>, url : <span class="hljs-string">'my-css.css'</span>, ie : false },
+        { elem : <span class="hljs-string">'css'</span>, url : <span class="hljs-string">'my-css'</span>, ie : true }
+    ],
+    <span class="hljs-attribute">content</span> : <span class="hljs-string">'Page content'</span>
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">{
+    block : '<span class="hljs-attribute">page',
+    head </span>: [
+        {
+            <span class="hljs-attribute">elem </span>: <span class="hljs-string">'conditional-comment'</span>,
+            <span class="hljs-attribute">condition </span>: <span class="hljs-string">'! IE'</span>,
+            <span class="hljs-attribute">content </span>: { <span class="hljs-attribute">elem </span>: <span class="hljs-string">'css'</span>, <span class="hljs-attribute">url </span>: <span class="hljs-string">'my-css.css'</span> }
+        },
+        {
+            elem : 'conditional-comment',
+            condition : '&gt; IE 8',
+            <span class="hljs-attribute">content </span>: { <span class="hljs-attribute">elem </span>: <span class="hljs-string">'css'</span>, <span class="hljs-attribute">url </span>: <span class="hljs-string">'my-css.ie.css'</span> }
+        }
+        <span class="hljs-comment">// и т.д. для других нужных версий IE</span>
+    ],
+    <span class="hljs-attribute">content </span>: <span class="hljs-string">'Page content'</span>
+}
+</pre><p class="article__paragraph">Задача: <a class="article__link" href="https://github.com/bem/bem-core/issues/379">#379</a>.</p><h2 class="article__heading article__heading_level_2" id="300"><a class="article__heading-anchor" href="#300"></a>3.0.0</h2><p class="article__paragraph">Для миграции на версию 3.0.0 достаточно ознакомиться с <a class="article__link" href="../../../../../libs/bem-core/v3/changelog/#300">историей изменений</a>.</p><h2 class="article__heading article__heading_level_2" id="200"><a class="article__heading-anchor" href="#200"></a>2.0.0</h2><p class="article__paragraph">Для миграции на версию 2.0.0 достаточно ознакомиться с <a class="article__link" href="../../../../../libs/bem-core/v2/changelog/#200">историей изменений</a>.</p><h2 class="article__heading article__heading_level_2" id="100"><a class="article__heading-anchor" href="#100"></a>1.0.0</h2><p class="article__paragraph">Для версии 1.0.0 миграция подразумевается с использования <a class="article__link" href="https://github.com/bem/bem-bl/">bem-bl</a> на использование <a class="article__link" href="https://github.com/bem/bem-core/">bem-core</a>.</p><h3 class="article__heading article__heading_level_3" id="модули"><a class="article__heading-anchor" href="#модули"></a>Модули</h3><p class="article__paragraph">Весь код теперь пишется в терминах модульной системы <a class="article__link" href="https://github.com/ymaps/modules">https://github.com/ymaps/modules</a>.
+Все зависимости должны явно указываться в коде, обращения к глобальным объектам необходимо минимизировать, а, по возможности, и полностью исключить.</p><p class="article__paragraph">Пример:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(
+    <span class="hljs-string">'my-module'</span>, <span class="hljs-comment">// имя модуля</span>
+    [<span class="hljs-string">'module-from-library'</span>, <span class="hljs-string">'my-another-module'</span>], <span class="hljs-comment">// зависимости модуля</span>
+    <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, moduleFromLibrary, myAnotherModule</span>) { <span class="hljs-comment">// декларация модуля, вызывается когда все зависимости "разрезолвлены"</span>
+
+<span class="hljs-comment">// предоставление модуля</span>
+<span class="hljs-title function_">provide</span>({
+    myModuleMethod : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {}
+});
+
+});
+</pre><p class="article__paragraph">TODO: дописать про изменение сборки (использование специальных технологий для js и как быть с кастомными сборщиками)</p><h3 class="article__heading article__heading_level_3" id="jquery-и-jquery-плагины"><a class="article__heading-anchor" href="#jquery-и-jquery-плагины"></a>jQuery и jQuery-плагины</h3><p class="article__paragraph">jQuery представлен модулем-оберткой <code class="article__inline-code">jquery</code>, который использует глобальный объект jQuery,
+в случае если он уже присутствует на странице, в противном случае загружая его самостоятельно.
+jQuery теперь используется только для операций, связанных непосредственно с DOM
+(поиск элементов, подписка на события, установка/получение атрибутов элементов, и т.д.).</p><p class="article__paragraph">Для всех остальных операций написаны соответствующие модули,
+предоставляющие аналогичный функционал, но, при этом, не зависящие от jQuery:</p><ul class="article__list"><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">objects</code> для работы с объектами (с методами <code class="article__inline-code">extend</code>, <code class="article__inline-code">isEmpty</code>, <code class="article__inline-code">each</code>)</p></li><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">functions</code> для работы с функциями (с методами <code class="article__inline-code">isFunction</code> и <code class="article__inline-code">noop</code>)</p></li></ul><p class="article__paragraph">Также, все jQuery-плагины, не связанные непосредственно с jQuery
+(<code class="article__inline-code">$.observable</code>, <code class="article__inline-code">$.inherit</code>, <code class="article__inline-code">$.cookie</code>, <code class="article__inline-code">$.identify</code>, <code class="article__inline-code">$.throttle</code>) стали модулями:</p><ul class="article__list"><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">events</code> вместо <code class="article__inline-code">$.observable</code> для работы с событиями, предоставляющий "классы" <code class="article__inline-code">EventsEmitter</code> и <code class="article__inline-code">Event</code></p></li><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">inherit</code> вместо <code class="article__inline-code">$.inherit</code> для работы с "классами" и наследованием</p></li><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">cookie</code> вместо <code class="article__inline-code">$.cookie</code></p></li><li class="article__list-item"><p class="article__paragraph">модуль <code class="article__inline-code">identify</code> вместо <code class="article__inline-code">$.identify</code></p></li><li class="article__list-item"><p class="article__paragraph">модули <code class="article__inline-code">functions__throttle</code>, <code class="article__inline-code">functions__debounce</code> вместо <code class="article__inline-code">$.throttle</code> и <code class="article__inline-code">$.debounce</code>, соответственно</p></li></ul><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-comment">// код блока</span>
+$.<span class="hljs-title function_">throttle</span>()
+<span class="hljs-comment">// код блока</span>
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">module</span>.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-module'</span>, [<span class="hljs-string">'functions__throttle'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, throttle</span>) {
+<span class="hljs-comment">// код модуля</span>
+<span class="hljs-title function_">throttle</span>()
+<span class="hljs-comment">// код модуля</span>
+});
+</pre><h3 class="article__heading article__heading_level_3" id="bemdom-блоки"><a class="article__heading-anchor" href="#bemdom-блоки"></a>BEM.DOM-блоки</h3><h4 class="article__heading article__heading_level_4" id="декларация-1"><a class="article__heading-anchor" href="#декларация-1"></a>Декларация</h4><p class="article__paragraph">Вместо декларации через BEM.DOM.decl необходимо доопределять модуль <code class="article__inline-code">i-bem__dom</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, <span class="hljs-comment">/* ... */</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem__dom'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, <span class="hljs-comment">/* ... */</span>);
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>);
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="конструктор"><a class="article__heading-anchor" href="#конструктор"></a>Конструктор</h4><p class="article__paragraph">Необходимо использовать полную нотацию для обработчика установки модификатора <code class="article__inline-code">js</code> в значение <code class="article__inline-code">inited</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">onSetMod : {
+  js : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-comment">// код конструктора</span>
+    }
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">onSetMod : {
+    <span class="hljs-string">'js'</span> : {
+        <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-comment">// код конструктора</span>
+        }
+    }
+}
+</pre><h4 class="article__heading article__heading_level_4" id="деструктор"><a class="article__heading-anchor" href="#деструктор"></a>Деструктор</h4><p class="article__paragraph">Вместо метода <code class="article__inline-code">destruct</code> необходимо использовать обработчик установки модификатора <code class="article__inline-code">js</code> в пустое значение (удаление модификатора).
+Вызывать <code class="article__inline-code">__base</code> для того, чтобы у блоков работал базовый деструктор, определенный в <code class="article__inline-code">i-bem__dom</code>, больше не нужно.</p><p class="article__paragraph">Было:</p><pre class="article__code">destruct : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">__base</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>, <span class="hljs-variable language_">arguments</span>);
+    <span class="hljs-comment">// код деструктора</span>
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">onSetMod : {
+    js : {
+        <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-comment">// код деструктора</span>
+        }
+    }
+}
+</pre><h4 class="article__heading article__heading_level_4" id="метод-object-object"><a class="article__heading-anchor" href="#метод-object-object"></a>Метод <code class="article__inline-code">changeThis</code></h4><p class="article__paragraph">Вместо метода <code class="article__inline-code">changeThis</code> необходимо использовать либо соответствующий параметр, либо нативный метод <code class="article__inline-code">bind</code>, если такой параметр отсутствует.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-comment">// код блока</span>
+obj.<span class="hljs-title function_">on</span>(<span class="hljs-string">'event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">changeThis</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">_method</span>));
+<span class="hljs-comment">// код блока</span>
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">obj.<span class="hljs-title function_">on</span>(<span class="hljs-string">'event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_method</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>));
+<span class="hljs-comment">// или лучше</span>
+obj.<span class="hljs-title function_">on</span>(<span class="hljs-string">'event'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_method</span>, <span class="hljs-variable language_">this</span>);
+</pre><h4 class="article__heading article__heading_level_4" id="метод-object-object-1"><a class="article__heading-anchor" href="#метод-object-object-1"></a>Метод <code class="article__inline-code">afterCurrentEvent</code></h4><p class="article__paragraph">Вместо метода <code class="article__inline-code">afterCurrentEvent</code> необходимо использовать метод <code class="article__inline-code">nextTick</code>,
+который гарантирует, что блок еще существует в момент исполнения callback'а
+(если блок уже уничтожен к этому моменту, то callback не исполняется).</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">afterCurrentEvent</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-comment">/* ... */</span>
+        });
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem__dom'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) {
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">nextTick</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-comment">/* ... */</span>
+            });
+        }
+    });
+});
+</pre><h4 class="article__heading article__heading_level_4" id="метод-object-object-2"><a class="article__heading-anchor" href="#метод-object-object-2"></a>Метод <code class="article__inline-code">findElem</code></h4><p class="article__paragraph">Контекст для поиска элемента больше не задается строкой, вместо нее следует передавать jQuery-объект.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-keyword">var</span> nestedElem = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findElem</span>(<span class="hljs-string">'parent-elem'</span>, <span class="hljs-string">'nested-elem'</span>);
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code"><span class="hljs-keyword">var</span> nestedElem = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findElem</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findElem</span>(<span class="hljs-string">'parent-elem'</span>), <span class="hljs-string">'nested-elem'</span>),
+    oneMoreElem = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findElem</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'another-elem'</span>), <span class="hljs-string">'nested-elem'</span>);
+</pre><h4 class="article__heading article__heading_level_4" id="метод-object-object-3"><a class="article__heading-anchor" href="#метод-object-object-3"></a>Метод <code class="article__inline-code">liveBindTo</code></h4><p class="article__paragraph">Метод <code class="article__inline-code">liveBindTo</code> больше не поддерживает поле <code class="article__inline-code">elemName</code> для передачи имени элемента. Вместо него следует использовать поле <code class="article__inline-code">elem</code>.</p><h4 class="article__heading article__heading_level_4" id="доступ-до-dom-элемента-в-обработчике-события"><a class="article__heading-anchor" href="#доступ-до-dom-элемента-в-обработчике-события"></a>Доступ до DOM-элемента в обработчике события</h4><p class="article__paragraph">DOM-элемент, к которому был подвешен обработчик события теперь доступен
+как <code class="article__inline-code">$(e.currentTarget)</code>вместо <code class="article__inline-code">e.data.domElem</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight">onClick : <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+    e.<span class="hljs-property">data</span>.<span class="hljs-property">domElem</span>.<span class="hljs-title function_">attr</span>(<span class="hljs-comment">/* ... */</span>);
+}
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">onClick : <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+    $(e.<span class="hljs-property">currentTarget</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-comment">/* ... */</span>);
+}
+</pre><h4 class="article__heading article__heading_level_4" id="каналы-channels"><a class="article__heading-anchor" href="#каналы-channels"></a>Каналы (channels)</h4><p class="article__paragraph">Каналы больше не являются встроенными в BEM, теперь они являются самостоятельным модулем <code class="article__inline-code">events__channels</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'channel-name'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-comment">/* ... */</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem__dom'</span>, [<span class="hljs-string">'events__channels'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, channels, BEMDOM</span>) {
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-title function_">channels</span>(<span class="hljs-string">'channel-name'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-comment">/* ... */</span>);
+
+        }
+    });
+});
+</pre><h4 class="article__heading article__heading_level_4" id="блок-object-object-и-канал-object-object-событий-object-object-object-object-object-object"><a class="article__heading-anchor" href="#блок-object-object-и-канал-object-object-событий-object-object-object-object-object-object"></a>Блок <code class="article__inline-code">i-system</code> и канал <code class="article__inline-code">sys</code> событий <code class="article__inline-code">tick</code>, <code class="article__inline-code">idle</code>, <code class="article__inline-code">wakeup</code></h4><p class="article__paragraph">Этот блок и канал перестали существовать, вместо них появились отдельные модули: <code class="article__inline-code">tick</code> с событием tick  и <code class="article__inline-code">idle</code> с событиями idle и wakeup.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-comment">/* ... */</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem__dom'</span>, [<span class="hljs-string">'tick'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, tick, BEMDOM</span>) {
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        tick.<span class="hljs-title function_">on</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-comment">/* ... */</span>);
+
+        }
+    });
+
+});
+</pre><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'wakeup'</span>, <span class="hljs-comment">/* ... */</span>);
+    }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem__dom'</span>, [<span class="hljs-string">'idle'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, idle, BEMDOM</span>) {
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'block'</span>, {
+    method : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        idle.<span class="hljs-title function_">on</span>(<span class="hljs-string">'wakeup'</span>, <span class="hljs-comment">/* ... */</span>);
+
+        }
+    });
+});
+</pre><h3 class="article__heading article__heading_level_3" id="bem-блоки"><a class="article__heading-anchor" href="#bem-блоки"></a>BEM-блоки</h3><p class="article__paragraph">Те BEM-блоки, которые использовались как хранилище для каких-то методов, при этом никак не использующие BEM-методологию, теперь
+могут быть написаны как модули.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'i-router'</span>, {
+    route : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> }
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'router'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide</span>) {
+
+<span class="hljs-title function_">provide</span>({
+    route : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">/* ... */</span> }
+});
+
+});
+</pre><p class="article__paragraph">Если же, по каким-то причинам, нужны именно BEM-блоки (не BEM.DOM-блоки), то их можно объявлять, доопределяя модуль <code class="article__inline-code">i-bem</code>.</p><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> });
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'i-bem'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEM</span>) {
+
+<span class="hljs-variable constant_">BEM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'my-block'</span>, { <span class="hljs-comment">/* ... */</span> });
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEM</span>);
+
+});
+</pre><h4 class="article__heading article__heading_level_4" id="рефакторинг-на-примере-блока-object-object"><a class="article__heading-anchor" href="#рефакторинг-на-примере-блока-object-object"></a>Рефакторинг на примере блока <code class="article__inline-code">b-spin</code></h4><p class="article__paragraph">Было:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable constant_">BEM</span>.<span class="hljs-property">DOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'b-spin'</span>, {
+
+    onSetMod : {
+
+        <span class="hljs-string">'js'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">_size</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getMod</span>(<span class="hljs-string">'size'</span>) || <span class="hljs-regexp">/[\d]+/</span>.<span class="hljs-title function_">exec</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getMod</span>(<span class="hljs-string">'theme'</span>))[<span class="hljs-number">0</span>];
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">_bgProp</span> = <span class="hljs-string">'background-position'</span>;
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">_posPrefix</span> = <span class="hljs-string">'0 -'</span>;
+
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'icon'</span>).<span class="hljs-title function_">css</span>(<span class="hljs-string">'background-position-y'</span>)) { <span class="hljs-comment">/* В IE нельзя получить свойство background-position, только background-position-y, поэтому костыляем */</span>
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_bgProp</span> = <span class="hljs-string">'background-position-y'</span>;
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_posPrefix</span> = <span class="hljs-string">'-'</span>;
+            }
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> = <span class="hljs-number">0</span>;
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">hasMod</span>(<span class="hljs-string">'progress'</span>) &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+
+        },
+
+        <span class="hljs-string">'progress'</span> : {
+
+            <span class="hljs-string">'yes'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+
+            },
+
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">un</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+
+            }
+
+        }
+    },
+
+    <span class="hljs-attr">_onTick</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+
+        <span class="hljs-keyword">var</span> y = ++<span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> * <span class="hljs-variable language_">this</span>.<span class="hljs-property">_size</span>;
+
+        (y &gt;= <span class="hljs-variable language_">this</span>.<span class="hljs-property">_size</span> * <span class="hljs-number">36</span>) &amp;&amp; (<span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> = y = <span class="hljs-number">0</span>);
+
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'icon'</span>).<span class="hljs-title function_">css</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">_bgProp</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_posPrefix</span> + y +<span class="hljs-string">'px'</span>);
+
+    },
+
+    destruct : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">channel</span>(<span class="hljs-string">'sys'</span>).<span class="hljs-title function_">un</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">__base</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>, <span class="hljs-variable language_">arguments</span>);
+
+    }
+
+});
+</pre><p class="article__paragraph">Стало:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(
+    <span class="hljs-string">'i-bem__dom'</span>,
+    [<span class="hljs-string">'tick'</span>],
+    <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, tick, BEMDOM</span>) {
+
+<span class="hljs-keyword">var</span> <span class="hljs-variable constant_">FRAME_COUNT</span> = <span class="hljs-number">36</span>;
+
+<span class="hljs-variable constant_">BEMDOM</span>.<span class="hljs-title function_">decl</span>(<span class="hljs-string">'b-spin'</span>, {
+    onSetMod : {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">// конструктор</span>
+                <span class="hljs-keyword">var</span> hasBackgroundPositionY = !!<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'icon'</span>).<span class="hljs-title function_">css</span>(<span class="hljs-string">'background-position-y'</span>)); <span class="hljs-comment">/* В IE нельзя получить свойство background-position, только background-position-y */</span>
+
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_bgProp</span> = hasBackgroundPositionY? <span class="hljs-string">'background-position-y'</span> : <span class="hljs-string">'background-position'</span>;
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_posPrefix</span> = hasBackgroundPositionY? <span class="hljs-string">'-'</span> : <span class="hljs-string">'0 -'</span>;
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> = <span class="hljs-number">0</span>;
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_size</span> = <span class="hljs-title class_">Number</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getMod</span>(<span class="hljs-string">'size'</span>) || <span class="hljs-regexp">/[\d]+/</span>.<span class="hljs-title function_">exec</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getMod</span>(<span class="hljs-string">'theme'</span>))[<span class="hljs-number">0</span>]);
+
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">hasMod</span>(<span class="hljs-string">'progress'</span>) &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_bindToTick</span>();
+            },
+
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">// деструктор</span>
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_unbindFromTick</span>();
+            }
+        },
+
+        <span class="hljs-string">'progress'</span> : {
+            <span class="hljs-string">'true'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_bindToTick</span>();
+            },
+
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_unbindFromTick</span>();
+            }
+        }
+    },
+
+    _bindToTick : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        tick.<span class="hljs-title function_">on</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+    },
+
+    _unbindFromTick : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        tick.<span class="hljs-title function_">un</span>(<span class="hljs-string">'tick'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_onTick</span>, <span class="hljs-variable language_">this</span>);
+    },
+
+    _onTick : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">var</span> offset;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span>++ &gt;= <span class="hljs-variable constant_">FRAME_COUNT</span>?
+            offset = <span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> * <span class="hljs-variable language_">this</span>.<span class="hljs-property">_size</span> :
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">_curFrame</span> = offset = <span class="hljs-number">0</span>;
+
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">elem</span>(<span class="hljs-string">'icon'</span>).<span class="hljs-title function_">css</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">_bgProp</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">_posPrefix</span> + offset + <span class="hljs-string">'px'</span>);
+    }
+});
+
+<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">BEMDOM</span>);
+
+});
+</pre></body></html></div><ul class="article-rewind article-rewind_type_static article-rewind_lang_ru article__rewind"><li class="article-rewind__prev"><a class="article-rewind__prev-link" href="../../../../../libraries/classic/bem-core/4.1.1/changelog/">Changelog</a></li> <li class="article-rewind__next"><div class="article-rewind__next-text"></div><a class="article-rewind__next-link" href="../../../../../libraries/classic/bem-core/4.1.1/desktop/">desktop</a></li></ul></div><div class="page__side"><aside class="aside page__aside"><div class="aside__group"><ul class="article-tags aside__tags"><li class="article-tags__tag"><a class="article-tags__link">libs</a></li><li class="article-tags__tag"><a class="article-tags__link">bem-core</a></li></ul><div class="social-likes aside__social"><a class="social-likes__service social-likes__service_type_facebook" href="https://www.facebook.com/sharer.php?s=100&amp;url=https%3A%2F%2Fru.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F4.1.1%2Fmigration%2F&amp;title=Migration&amp;image=">Facebook</a> <a class="social-likes__service social-likes__service_type_vk" href="http://vk.com/share.php?&amp;url=https%3A%2F%2Fru.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F4.1.1%2Fmigration%2F&amp;title=Migration&amp;image=">VKontakte</a> <a class="social-likes__service social-likes__service_type_twitter" href="https://twitter.com/share?&amp;url=https%3A%2F%2Fru.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F4.1.1%2Fmigration%2F&amp;title=Migration&amp;image=">Twitter</a></div></div><div class="article-amendments aside__amendments">Сообщить об ошибке на <a class="article-amendments__issue article-amendments__link" href="../../../../../Users/veged/Documents/bem.info/node_modules/bem.info-data/bem-core-4.1.1/migration.ru.md/issues/new">Гитхабе</a> или исправить в <a class="article-amendments__edit article-amendments__link" href="../../../../../Users/veged/Documents/bem.info/node_modules/bem.info-data/bem-core-4.1.1/migration.ru.md">prose.io.</a></div></aside></div><footer class="footer page__foot"><div class="footer__layout"><ul class="footer__community"><li class="footer__channel"><a class="footer__channel-link" href="https://telegram.me/bem_ru">Telegram</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://web-standards.slack.com/messages/bem/">Slack</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://www.facebook.com/groups/bem.info/">Facebook</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://twitter.com/bem_ru/">Twitter</a></li></ul></div></footer><script>(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16972024 = new Ya.Metrika({"id":"16972024","webvisor":true,"clickmap":true,"trackLinks":true,"accurateTrackBounce":true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16972024" style="position:absolute; left:-9999px;"></div></noscript><div class="yandex-metrica-api i-bem" data-bem='{"yandex-metrica-api":{"counterId":"16972024"}}'></div><script src="../../../../../libraries.ru.min.js?3588"></script></body></html>

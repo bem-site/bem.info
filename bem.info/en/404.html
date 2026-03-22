@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page not found</title>
+<script>
+(function() {
+    var rules = [
+  {
+    "pattern": "^/faq/(.*)",
+    "target": "/methodology/faq/$1"
+  },
+  {
+    "pattern": "^/method/(.*)",
+    "target": "/methodology/$1"
+  },
+  {
+    "pattern": "^/forum/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/blog(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/news(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/talks/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/events/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/articles/(.*)",
+    "target": "/methodology/articles/"
+  },
+  {
+    "pattern": "^/technology/(.*)bemjson/",
+    "target": "/technologies/classic/bemjson/"
+  },
+  {
+    "pattern": "^/libs/bem-core/(.*)/bemhtml/(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/libs/bem-core/(.*)/templating/(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/technology/bemhtml/(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/articles/bemhtml(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/technology/bemtree/(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/tools/templating-engines/(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/libs/bem-core/bemhtml(.*)",
+    "target": "/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/technologies/classic/bem-xjst/6/(.*)",
+    "target": "/technologies/classic/bem-xjst/8/$1"
+  },
+  {
+    "pattern": "^/tools/bem/bem-tools/deps(.*)",
+    "target": "/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/tools/bem/depsjs/",
+    "target": "/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/articles/deps-js-syntax/",
+    "target": "/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/technology/deps/(.*)",
+    "target": "/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/technology/bh/v3/(.*)",
+    "target": "https://github.com/bem/bh/blob/v3.3.0/README.md"
+  },
+  {
+    "pattern": "^/technology/bh/v4/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.0.0/README.md"
+  },
+  {
+    "pattern": "^/technology/bh/v4.1.0/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.0/README.md"
+  },
+  {
+    "pattern": "^/technology/bh/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.1/README.md"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-js-common/",
+    "target": "/technologies/classic/i-bem/common/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-html-binding/",
+    "target": "/technologies/classic/i-bem/html-binding/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-decl/",
+    "target": "/technologies/classic/i-bem/declaration/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-params/",
+    "target": "/technologies/classic/i-bem/parameters/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-dom/",
+    "target": "/technologies/classic/i-bem/dom/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-mods/",
+    "target": "/technologies/classic/i-bem/states/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-events/",
+    "target": "/technologies/classic/i-bem/events/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-init/",
+    "target": "/technologies/classic/i-bem/init/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-interaction/",
+    "target": "/technologies/classic/i-bem/interaction/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/technologies/classic/i-bem/context/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/technologies/classic/i-bem/extras/"
+  },
+  {
+    "pattern": "^/technology/i-bem/(.*)",
+    "target": "/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/libs/bem-core/(.*)i-bem-js/",
+    "target": "/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/technology/(.*)",
+    "target": "/technologies/classic/"
+  },
+  {
+    "pattern": "^/platform/tutorials/(.*)",
+    "target": "/tutorials/classic/$1"
+  },
+  {
+    "pattern": "^/platform/libs/(.*)",
+    "target": "/libraries/classic/$1"
+  },
+  {
+    "pattern": "^/platform/bemjson/(.*)",
+    "target": "/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/technologies/bemjson/(.*)",
+    "target": "/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/platform/bem-xjst/(.*)",
+    "target": "/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/technologies/bem-xjst/(.*)",
+    "target": "/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/platform/i-bem/(.*)",
+    "target": "/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/technologies/i-bem/(.*)",
+    "target": "/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/platform/deps/(.*)",
+    "target": "/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/technologies/deps/(.*)",
+    "target": "/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/platform/deps-spec/(.*)",
+    "target": "/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/technologies/deps-spec/(.*)",
+    "target": "/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/platform/project-stub/(.*)",
+    "target": "/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/technologies/project-stub/(.*)",
+    "target": "/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/platform/(.*)",
+    "target": "/technologies/$1"
+  },
+  {
+    "pattern": "^/tools/bem/bem-naming/(.*)",
+    "target": "/toolbox/sdk/bem-naming/$1"
+  },
+  {
+    "pattern": "^/tools/bem/enb-(.*)/(.*)",
+    "target": "/toolbox/enb/enb-$1/$2"
+  },
+  {
+    "pattern": "^/tools/bem/(.*)",
+    "target": "/toolbox/enb/$1"
+  },
+  {
+    "pattern": "^/tools/(.*)",
+    "target": "/toolbox/"
+  },
+  {
+    "pattern": "^/toolbox/sdk/bem-naming/(.*)",
+    "target": "/toolbox/sdk/bem-naming-entity/$1"
+  },
+  {
+    "pattern": "^/toolbox/enb/enb-(.*)/(.*)",
+    "target": "/toolbox/enb/packages/enb-$1/$2"
+  },
+  {
+    "pattern": "^/libs/bem-mvc/(.*)",
+    "target": "https://github.com/bem/bem-mvc"
+  },
+  {
+    "pattern": "^/libs/bem-(.*)/(.*)",
+    "target": "/libraries/classic/bem-$1/"
+  },
+  {
+    "pattern": "^/technologies/classic/libs/bem-(.*)/(.*)",
+    "target": "/libraries/classic/bem-$1/$2"
+  },
+  {
+    "pattern": "^/(.+)/favicon.ico",
+    "target": "/favicon.ico"
+  },
+  {
+    "pattern": "^/wp-(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/xmlrpc.php(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/(.*)/wp-includes/(.*)",
+    "target": "https://www.google.com"
+  }
+];
+    var pathname = window.location.pathname;
+
+    // Auto-detect base path by trying pattern matches from each slash position
+    var slashes = [0];
+    for (var s = 0; s < pathname.length; s++) {
+        if (pathname[s] === '/') slashes.push(s);
+    }
+
+    for (var si = 0; si < slashes.length; si++) {
+        var base = pathname.slice(0, slashes[si]);
+        var matchPath = pathname.slice(slashes[si]);
+
+        for (var i = 0; i < rules.length; i++) {
+            var match = matchPath.match(new RegExp(rules[i].pattern));
+            if (match) {
+                var target = rules[i].target;
+                for (var j = 1; j < match.length; j++) {
+                    target = target.replace('$' + j, match[j] || '');
+                }
+                if (target.startsWith('/')) {
+                    target = base + target;
+                }
+                window.location.replace(target);
+                return;
+            }
+        }
+    }
+})();
+</script>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>The page you are looking for does not exist.</p>
+<p><a href="./">Go to homepage</a></p>
+</body>
+</html>

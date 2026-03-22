@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page not found</title>
+<script>
+(function() {
+    var rules = [
+  {
+    "pattern": "^/en/faq/(.*)",
+    "target": "/en/methodology/faq/$1"
+  },
+  {
+    "pattern": "^/en/method/(.*)",
+    "target": "/en/methodology/$1"
+  },
+  {
+    "pattern": "^/en/forum/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/en/blog(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/en/news(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/en/talks/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/en/events/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/en/articles/(.*)",
+    "target": "/en/methodology/articles/"
+  },
+  {
+    "pattern": "^/en/technology/(.*)bemjson/",
+    "target": "/en/technologies/classic/bemjson/"
+  },
+  {
+    "pattern": "^/en/libs/bem-core/(.*)/bemhtml/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/libs/bem-core/(.*)/templating/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/technology/bemhtml/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/articles/bemhtml(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/technology/bemtree/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/tools/templating-engines/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/libs/bem-core/bemhtml(.*)",
+    "target": "/en/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/en/technologies/classic/bem-xjst/6/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/8/$1"
+  },
+  {
+    "pattern": "^/en/tools/bem/bem-tools/deps(.*)",
+    "target": "/en/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/en/tools/bem/depsjs/",
+    "target": "/en/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/en/articles/deps-js-syntax/",
+    "target": "/en/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/en/technology/deps/(.*)",
+    "target": "/en/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/en/technology/bh/v3/(.*)",
+    "target": "https://github.com/bem/bh/blob/v3.3.0/README.md"
+  },
+  {
+    "pattern": "^/en/technology/bh/v4/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.0.0/README.md"
+  },
+  {
+    "pattern": "^/en/technology/bh/v4.1.0/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.0/README.md"
+  },
+  {
+    "pattern": "^/en/technology/bh/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.1/README.md"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-js-common/",
+    "target": "/en/technologies/classic/i-bem/common/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-html-binding/",
+    "target": "/en/technologies/classic/i-bem/html-binding/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-decl/",
+    "target": "/en/technologies/classic/i-bem/declaration/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-params/",
+    "target": "/en/technologies/classic/i-bem/parameters/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-dom/",
+    "target": "/en/technologies/classic/i-bem/dom/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-mods/",
+    "target": "/en/technologies/classic/i-bem/states/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-events/",
+    "target": "/en/technologies/classic/i-bem/events/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-init/",
+    "target": "/en/technologies/classic/i-bem/init/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-interaction/",
+    "target": "/en/technologies/classic/i-bem/interaction/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/en/technologies/classic/i-bem/context/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/en/technologies/classic/i-bem/extras/"
+  },
+  {
+    "pattern": "^/en/technology/i-bem/(.*)",
+    "target": "/en/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/en/libs/bem-core/(.*)i-bem-js/",
+    "target": "/en/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/en/technology/(.*)",
+    "target": "/en/technologies/classic/"
+  },
+  {
+    "pattern": "^/en/platform/tutorials/(.*)",
+    "target": "/en/tutorials/classic/$1"
+  },
+  {
+    "pattern": "^/en/platform/libs/(.*)",
+    "target": "/en/libraries/classic/$1"
+  },
+  {
+    "pattern": "^/en/platform/bemjson/(.*)",
+    "target": "/en/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/en/technologies/bemjson/(.*)",
+    "target": "/en/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/en/platform/bem-xjst/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/en/technologies/bem-xjst/(.*)",
+    "target": "/en/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/en/platform/i-bem/(.*)",
+    "target": "/en/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/en/technologies/i-bem/(.*)",
+    "target": "/en/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/en/platform/deps/(.*)",
+    "target": "/en/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/en/technologies/deps/(.*)",
+    "target": "/en/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/en/platform/deps-spec/(.*)",
+    "target": "/en/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/en/technologies/deps-spec/(.*)",
+    "target": "/en/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/en/platform/project-stub/(.*)",
+    "target": "/en/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/en/technologies/project-stub/(.*)",
+    "target": "/en/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/en/platform/(.*)",
+    "target": "/en/technologies/$1"
+  },
+  {
+    "pattern": "^/en/tools/bem/bem-naming/(.*)",
+    "target": "/en/toolbox/sdk/bem-naming/$1"
+  },
+  {
+    "pattern": "^/en/tools/bem/enb-(.*)/(.*)",
+    "target": "/en/toolbox/enb/enb-$1/$2"
+  },
+  {
+    "pattern": "^/en/tools/bem/(.*)",
+    "target": "/en/toolbox/enb/$1"
+  },
+  {
+    "pattern": "^/en/tools/(.*)",
+    "target": "/en/toolbox/"
+  },
+  {
+    "pattern": "^/en/toolbox/sdk/bem-naming/(.*)",
+    "target": "/en/toolbox/sdk/bem-naming-entity/$1"
+  },
+  {
+    "pattern": "^/en/toolbox/enb/enb-(.*)/(.*)",
+    "target": "/en/toolbox/enb/packages/enb-$1/$2"
+  },
+  {
+    "pattern": "^/en/libs/bem-mvc/(.*)",
+    "target": "https://github.com/bem/bem-mvc"
+  },
+  {
+    "pattern": "^/en/libs/bem-(.*)/(.*)",
+    "target": "/en/libraries/classic/bem-$1/"
+  },
+  {
+    "pattern": "^/en/technologies/classic/libs/bem-(.*)/(.*)",
+    "target": "/en/libraries/classic/bem-$1/$2"
+  },
+  {
+    "pattern": "^/en/(.+)/favicon.ico",
+    "target": "/en/favicon.ico"
+  },
+  {
+    "pattern": "^/en/wp-(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/en/xmlrpc.php(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/en/(.*)/wp-includes/(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/ru/faq/(.*)",
+    "target": "/ru/methodology/faq/$1"
+  },
+  {
+    "pattern": "^/ru/method/(.*)",
+    "target": "/ru/methodology/$1"
+  },
+  {
+    "pattern": "^/ru/forum/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/ru/blog(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/ru/news(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/ru/talks/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/ru/events/(.*)",
+    "target": "https://github.com/bem-site/bem.info/issues"
+  },
+  {
+    "pattern": "^/ru/articles/(.*)",
+    "target": "/ru/methodology/articles/"
+  },
+  {
+    "pattern": "^/ru/technology/(.*)bemjson/",
+    "target": "/ru/technologies/classic/bemjson/"
+  },
+  {
+    "pattern": "^/ru/libs/bem-core/(.*)/bemhtml/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/libs/bem-core/(.*)/templating/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/technology/bemhtml/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/articles/bemhtml(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/technology/bemtree/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/tools/templating-engines/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/libs/bem-core/bemhtml(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/"
+  },
+  {
+    "pattern": "^/ru/technologies/classic/bem-xjst/6/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/8/$1"
+  },
+  {
+    "pattern": "^/ru/tools/bem/bem-tools/deps(.*)",
+    "target": "/ru/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/ru/tools/bem/depsjs/",
+    "target": "/ru/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/ru/articles/deps-js-syntax/",
+    "target": "/ru/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/ru/technology/deps/(.*)",
+    "target": "/ru/technologies/classic/deps/"
+  },
+  {
+    "pattern": "^/ru/technology/bh/v3/(.*)",
+    "target": "https://github.com/bem/bh/blob/v3.3.0/README.ru.md"
+  },
+  {
+    "pattern": "^/ru/technology/bh/v4/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.0.0/README.ru.md"
+  },
+  {
+    "pattern": "^/ru/technology/bh/v4.1.0/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.0/README.ru.md"
+  },
+  {
+    "pattern": "^/ru/technology/bh/(.*)",
+    "target": "https://github.com/bem/bh/blob/v4.1.1/README.ru.md"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-js-common/",
+    "target": "/ru/technologies/classic/i-bem/common/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-html-binding/",
+    "target": "/ru/technologies/classic/i-bem/html-binding/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-decl/",
+    "target": "/ru/technologies/classic/i-bem/declaration/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-params/",
+    "target": "/ru/technologies/classic/i-bem/parameters/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-dom/",
+    "target": "/ru/technologies/classic/i-bem/dom/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-mods/",
+    "target": "/ru/technologies/classic/i-bem/states/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-events/",
+    "target": "/ru/technologies/classic/i-bem/events/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-init/",
+    "target": "/ru/technologies/classic/i-bem/init/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-interaction/",
+    "target": "/ru/technologies/classic/i-bem/interaction/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/ru/technologies/classic/i-bem/context/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)/i-bem-context/",
+    "target": "/ru/technologies/classic/i-bem/extras/"
+  },
+  {
+    "pattern": "^/ru/technology/i-bem/(.*)",
+    "target": "/ru/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/ru/libs/bem-core/(.*)i-bem-js/",
+    "target": "/ru/technologies/classic/i-bem/"
+  },
+  {
+    "pattern": "^/ru/technology/(.*)",
+    "target": "/ru/technologies/classic/"
+  },
+  {
+    "pattern": "^/ru/platform/tutorials/(.*)",
+    "target": "/ru/tutorials/classic/$1"
+  },
+  {
+    "pattern": "^/ru/platform/libs/(.*)",
+    "target": "/ru/libraries/classic/$1"
+  },
+  {
+    "pattern": "^/ru/platform/bemjson/(.*)",
+    "target": "/ru/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/bemjson/(.*)",
+    "target": "/ru/technologies/classic/bemjson/$1"
+  },
+  {
+    "pattern": "^/ru/platform/bem-xjst/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/bem-xjst/(.*)",
+    "target": "/ru/technologies/classic/bem-xjst/$1"
+  },
+  {
+    "pattern": "^/ru/platform/i-bem/(.*)",
+    "target": "/ru/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/i-bem/(.*)",
+    "target": "/ru/technologies/classic/i-bem/$1"
+  },
+  {
+    "pattern": "^/ru/platform/deps/(.*)",
+    "target": "/ru/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/deps/(.*)",
+    "target": "/ru/technologies/classic/deps/$1"
+  },
+  {
+    "pattern": "^/ru/platform/deps-spec/(.*)",
+    "target": "/ru/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/deps-spec/(.*)",
+    "target": "/ru/technologies/classic/deps-spec/$1"
+  },
+  {
+    "pattern": "^/ru/platform/project-stub/(.*)",
+    "target": "/ru/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/ru/technologies/project-stub/(.*)",
+    "target": "/ru/technologies/classic/project-stub/$1"
+  },
+  {
+    "pattern": "^/ru/platform/(.*)",
+    "target": "/ru/technologies/$1"
+  },
+  {
+    "pattern": "^/ru/tools/bem/bem-naming/(.*)",
+    "target": "/ru/toolbox/sdk/bem-naming/$1"
+  },
+  {
+    "pattern": "^/ru/tools/bem/enb-(.*)/(.*)",
+    "target": "/ru/toolbox/enb/enb-$1/$2"
+  },
+  {
+    "pattern": "^/ru/tools/bem/(.*)",
+    "target": "/ru/toolbox/enb/$1"
+  },
+  {
+    "pattern": "^/ru/tools/(.*)",
+    "target": "/ru/toolbox/"
+  },
+  {
+    "pattern": "^/ru/toolbox/sdk/bem-naming/(.*)",
+    "target": "/ru/toolbox/sdk/bem-naming-entity/$1"
+  },
+  {
+    "pattern": "^/ru/toolbox/enb/enb-(.*)/(.*)",
+    "target": "/ru/toolbox/enb/packages/enb-$1/$2"
+  },
+  {
+    "pattern": "^/ru/libs/bem-mvc/(.*)",
+    "target": "https://github.com/bem/bem-mvc"
+  },
+  {
+    "pattern": "^/ru/libs/bem-(.*)/(.*)",
+    "target": "/ru/libraries/classic/bem-$1/"
+  },
+  {
+    "pattern": "^/ru/technologies/classic/libs/bem-(.*)/(.*)",
+    "target": "/ru/libraries/classic/bem-$1/$2"
+  },
+  {
+    "pattern": "^/ru/(.+)/favicon.ico",
+    "target": "/ru/favicon.ico"
+  },
+  {
+    "pattern": "^/ru/wp-(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/ru/xmlrpc.php(.*)",
+    "target": "https://www.google.com"
+  },
+  {
+    "pattern": "^/ru/(.*)/wp-includes/(.*)",
+    "target": "https://www.google.com"
+  }
+];
+    var pathname = window.location.pathname;
+
+    // Auto-detect base path by trying pattern matches from each slash position
+    var slashes = [0];
+    for (var s = 0; s < pathname.length; s++) {
+        if (pathname[s] === '/') slashes.push(s);
+    }
+
+    for (var si = 0; si < slashes.length; si++) {
+        var base = pathname.slice(0, slashes[si]);
+        var matchPath = pathname.slice(slashes[si]);
+
+        for (var i = 0; i < rules.length; i++) {
+            var match = matchPath.match(new RegExp(rules[i].pattern));
+            if (match) {
+                var target = rules[i].target;
+                for (var j = 1; j < match.length; j++) {
+                    target = target.replace('$' + j, match[j] || '');
+                }
+                if (target.startsWith('/')) {
+                    target = base + target;
+                }
+                window.location.replace(target);
+                return;
+            }
+        }
+    }
+})();
+</script>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>The page you are looking for does not exist.</p>
+<p><a href="./">Go to homepage</a></p>
+</body>
+</html>
