@@ -15,7 +15,8 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { fork } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { build as esbuild } from 'esbuild';
+import { build as viteBuild } from 'vite';
+import { transform as cssMinify } from 'lightningcss';
 import { buildAllBundles, collectFiles, copyCSSAssets, resolveDeps } from './bem-build.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -148,7 +149,6 @@ async function buildData() {
 
 async function buildClientJS() {
     console.log('Building client JS with Vite...');
-    const { build: viteBuild } = await import('vite');
     await viteBuild({
         configFile: path.join(__dirname, 'vite-client.config.mjs'),
         logLevel: 'warn',
@@ -162,7 +162,7 @@ async function bemBuild() {
 }
 
 // ---------------------------------------------------------------------------
-// Minification (esbuild)
+// Minification (Vite/Rolldown for JS, lightningcss for CSS)
 // ---------------------------------------------------------------------------
 
 async function minifyBundles() {
@@ -173,31 +173,28 @@ async function minifyBundles() {
     for (const bundle of bundles) {
         const bundleDir = path.join(BUNDLES_DIR, bundle);
 
-        // Minify CSS
+        // Minify CSS via lightningcss
         const cssFile = path.join(bundleDir, `${bundle}.css`);
         if (fs.existsSync(cssFile)) {
-            tasks.push(esbuild({
-                entryPoints: [cssFile],
-                outfile: path.join(bundleDir, `${bundle}.min.css`),
-                minify: IS_PROD,
-                bundle: false,
-                allowOverwrite: true,
-                loader: { '.css': 'css' },
-                logLevel: 'warning'
-            }));
+            const code = fs.readFileSync(cssFile);
+            const result = cssMinify({ filename: cssFile, code, minify: IS_PROD });
+            fs.writeFileSync(path.join(bundleDir, `${bundle}.min.css`), result.code);
         }
 
-        // Minify JS per language
+        // Minify JS per language via Vite/Rolldown
         for (const lang of LANGUAGES) {
             const jsFile = path.join(bundleDir, `${bundle}.${lang}.js`);
             if (fs.existsSync(jsFile)) {
-                tasks.push(esbuild({
-                    entryPoints: [jsFile],
-                    outfile: path.join(bundleDir, `${bundle}.${lang}.min.js`),
-                    minify: IS_PROD,
-                    bundle: false,
-                    allowOverwrite: true,
-                    logLevel: 'warning'
+                tasks.push(viteBuild({
+                    configFile: false,
+                    logLevel: 'warn',
+                    build: {
+                        write: true,
+                        minify: IS_PROD,
+                        emptyOutDir: false,
+                        lib: { entry: jsFile, formats: ['es'], fileName: `${bundle}.${lang}.min` },
+                        outDir: bundleDir,
+                    },
                 }));
             }
         }
