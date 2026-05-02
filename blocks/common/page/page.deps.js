@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'ua',
         'header',
         'sitemap',
         'nav',
