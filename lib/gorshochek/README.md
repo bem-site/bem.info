@@ -11,7 +11,7 @@
 
 Модуль сборки данных для bem сайтов.
 
-Закоммичено внутрь bem.info из https://github.com/bem-site/gorshochek на https://github.com/bem-site/gorshochek/commit/e93ca74be133caa880a1f9bd090efe1dd5200d1d.
+
 
 ![GitHub Logo](./.logo.jpg)
 
