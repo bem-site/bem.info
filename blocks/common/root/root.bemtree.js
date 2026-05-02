@@ -40,7 +40,7 @@ block('root').replace()(function() {
         ],
         favicon: data.root + '/favicon.ico',
         scripts: [
-            { elem: 'js', url: data.root + '/' + siteBundle + '.' + data.lang + '.min.js?' + staticVersion }
+            { elem: 'js', url: data.root + '/_client/client.js?' + staticVersion }
         ]
     };
 });

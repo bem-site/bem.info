@@ -431,11 +431,9 @@ export async function buildBundle(bundle, langs, rootDir) {
             );
         }
 
-        // Client JS — copy the pre-built Vite bundle (same for all bundles/langs)
-        const clientJs = path.join(rootDir, '.build-client', 'client.js');
-        if (fs.existsSync(clientJs)) {
-            fs.copyFileSync(clientJs, path.join(bundleDir, `${bundle}.${lang}.js`));
-        }
+        // Client JS is built once into .build-client/ and shipped per-language
+        // as output/bem.info/<lang>/_client/ — see scripts/build.mjs
+        // copyClientToOutput(). It is no longer duplicated per bundle.
     }
 
     console.log(`  ✓ ${bundle}`);
