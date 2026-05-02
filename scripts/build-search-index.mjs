@@ -20,6 +20,11 @@ import { stemmer as stemmerRu } from '@orama/stemmers/russian';
 const TOKENIZER_LANG = { en: 'english', ru: 'russian' };
 const STEMMERS = { en: stemmerEn, ru: stemmerRu };
 
+// Cap body length per record so the published index stays reasonably small
+// over the wire. 4000 chars covers most articles end-to-end; longer ones get
+// the head — usually where the most relevant terms (intro, headings) live.
+const BODY_MAX_CHARS = 4000;
+
 export const SEARCH_SCHEMA = {
     url: 'string',
     title: 'string',
@@ -54,23 +59,46 @@ function isIndexable(page) {
     if (!page || !page.url) return false;
     if (page.published === false) return false;
     if (page.type === 'redirect') return false;
-    return Boolean(page.contentFile);
+    return true;
 }
 
-function buildRecord(page, lang) {
-    let body = '';
-    try {
-        const html = fs.readFileSync(page.contentFile, 'utf8');
-        body = stripHtml(html);
-    } catch {
+function buildRecord(page, lang, stats, cacheDir) {
+    const title = pickLang(page.title, lang);
+    const subtitle = pickLang(page.subtitle, lang);
+    if (!title && !subtitle) {
+        stats.noTitle++;
         return null;
     }
-    if (!body) return null;
+
+    let body = '';
+    if (page.contentFile) {
+        // gorshochek's contentFile is always inside its cache folder; the
+        // value is a leading-slash relative path like "/foo/bar/index.html".
+        // Always join with cacheDir — `path.isAbsolute` returns true on Unix
+        // for any leading-slash string and would point at the FS root.
+        const abs = path.join(cacheDir, page.contentFile);
+        // Only HTML output yields useful searchable text. Skip leftover .md
+        // or .bemjson.js (when the transform pipeline didn't reach html).
+        if (abs.endsWith('.html')) {
+            try {
+                const text = fs.readFileSync(abs, 'utf8');
+                body = stripHtml(text);
+                if (body.length > BODY_MAX_CHARS) body = body.slice(0, BODY_MAX_CHARS);
+            } catch {
+                stats.unreadable++;
+            }
+        } else {
+            stats.unreadable++;
+        }
+    } else {
+        stats.noContentFile++;
+    }
+
     return {
         id: page.url,
         url: page.url,
-        title: pickLang(page.title, lang),
-        subtitle: pickLang(page.subtitle, lang),
+        title,
+        subtitle,
         site: page.site || '',
         tags: Array.isArray(page.tags) ? page.tags : [],
         body
@@ -85,10 +113,16 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     }
 
     const pages = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    const records = pages
-        .filter(isIndexable)
-        .map(p => buildRecord(p, lang))
+    const stats = { total: pages.length, filtered: 0, noTitle: 0, noContentFile: 0, unreadable: 0 };
+    const indexable = pages.filter(p => {
+        const ok = isIndexable(p);
+        if (!ok) stats.filtered++;
+        return ok;
+    });
+    const records = indexable
+        .map(p => buildRecord(p, lang, stats, cacheDir))
         .filter(Boolean);
+    const withBody = records.filter(r => r.body).length;
 
     const db = create({
         schema: SEARCH_SCHEMA,
@@ -105,7 +139,12 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     fs.writeFileSync(outFile, json);
 
     const sizeKB = (Buffer.byteLength(json, 'utf8') / 1024).toFixed(1);
-    console.log(`Search: indexed ${records.length} ${lang}-pages → ${outFile} (${sizeKB} KB)`);
+    console.log(
+        `Search [${lang}]: ${records.length} indexed of ${stats.total} ` +
+        `(${withBody} with body; filtered ${stats.filtered}, no-title ${stats.noTitle}, ` +
+        `no-content-file ${stats.noContentFile}, unreadable ${stats.unreadable}) → ` +
+        `${outFile} (${sizeKB} KB)`
+    );
 }
 
 export async function buildAllSearchIndexes({ languages, cacheDirs, outputDirs }) {
