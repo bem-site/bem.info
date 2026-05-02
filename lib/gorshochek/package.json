@@ -46,8 +46,8 @@
     "jsdoc": "gulp esdoc",
     "publish-doc": "gulp publish-doc",
     "deps": "npm install && gulp compile",
-    "mocha": "NODE_ENV=testing mocha",
-    "test": "NODE_ENV=testing ./node_modules/.bin/istanbul cover _mocha",
+    "mocha": "NODE_ENV=testing mocha test/index.js",
+    "test": "NODE_ENV=testing ./node_modules/.bin/istanbul cover _mocha -- test/index.js",
     "clean": "rm -rf ./.builder && rm -rf ./data"
   },
   "readmeFilename": "README.md",
