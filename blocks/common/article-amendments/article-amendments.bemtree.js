@@ -1,6 +1,9 @@
 block('article-amendments').content()(function() {
     var url = this.data.page.source || '';
 
+    // No useful prose.io / GitHub-issues link when source isn't on GitHub.
+    if (!/^https?:\/\/github\.com\//.test(url)) return;
+
     return [
         {
             elem: 'edit',

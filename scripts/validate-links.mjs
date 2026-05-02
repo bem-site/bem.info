@@ -89,9 +89,13 @@ function exists(abs) {
     return false;
 }
 
-function relPathFromOutput(abs) {
+function relPathFromOutput(abs, trailingSlash) {
     const rel = path.relative(OUTPUT, abs);
-    return '/' + rel.replace(/\\/g, '/').replace(/\/index\.html$/, '/');
+    let p = '/' + rel.replace(/\\/g, '/').replace(/\/index\.html$/, '/');
+    // Preserve the trailing slash from the original href so route rules
+    // like `^/forum/(.*)` match references such as `../../forum/`.
+    if (trailingSlash && !p.endsWith('/')) p += '/';
+    return p;
 }
 
 const broken = [];
@@ -111,7 +115,8 @@ for (const file of files) {
         const abs = targetPath(href, fileDir);
         if (!abs || !abs.startsWith(OUTPUT)) continue;
         if (exists(abs)) continue;
-        const reqPath = relPathFromOutput(abs);
+        const trailingSlash = noFragment.endsWith('/');
+        const reqPath = relPathFromOutput(abs, trailingSlash);
         if (rulesMatch(reqPath)) continue;
         broken.push({ file: path.relative(OUTPUT, file), href });
     }
