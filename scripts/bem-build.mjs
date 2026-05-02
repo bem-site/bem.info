@@ -36,7 +36,7 @@ const BUNDLE_LEVELS = {
     'toolbox-index':              ['blocks/common', 'blocks/promo', 'blocks/toolbox', 'blocks/toolbox-index'],
     'toolbox':                    ['blocks/common', 'blocks/toolbox'],
     'libraries-index':            ['blocks/common', 'blocks/promo', 'blocks/libraries', 'blocks/libraries-index'],
-    'libraries':                  ['node_modules/bem-lib-site-view/lib-view.blocks', 'blocks/common', 'bundles/libraries/blocks', 'blocks/libraries'],
+    'libraries':                  ['blocks/common', 'bundles/libraries/blocks', 'blocks/libraries'],
     'tutorials-index':            ['blocks/common', 'blocks/promo', 'blocks/tutorials', 'blocks/tutorials-index'],
     'tutorials':                  ['blocks/common', 'blocks/tutorials'],
     'community-index':            ['blocks/common', 'blocks/promo', 'blocks/community', 'blocks/community-index'],

@@ -125,7 +125,6 @@ bem.info/
 ├── vite.config.mjs          # Vite: dev-сервер и preview
 ├── eslint.config.mjs        # ESLint 10 flat config
 ├── stylelint.config.mjs     # Stylelint 17 конфигурация
-├── .bemrc                   # Конфигурация BEM (языки, платформы)
 └── .bemhint.js              # Конфигурация bemhint
 ```
 

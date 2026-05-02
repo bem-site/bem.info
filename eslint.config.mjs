@@ -10,6 +10,8 @@ export default [
             '**/bundles/**',
             'output/**',
             '.cache/**',
+            '.build-client/**',
+            '.claude/**',
             'scripts/**',
             'node_modules/**'
         ]
@@ -71,6 +73,12 @@ export default [
             'eqeqeq': ['error', 'always', { null: 'ignore' }],
             'no-var': 'off',
             'prefer-const': 'off'
+        }
+    },
+    {
+        files: ['blocks/**/*.js'],
+        languageOptions: {
+            sourceType: 'module'
         }
     },
     {
