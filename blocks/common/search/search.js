@@ -188,6 +188,15 @@ export default bemDom.declBlock('search', {
             'true': function() { this._renderState('loading'); },
             'error': function() { this._renderState('error'); },
             '': function() { /* clear handled per-render */ }
+        },
+        opened: {
+            'true': function() {
+                // Whoever opens the panel (header__toggle, our submit click,
+                // …) leaves focus to us. Defer past the click so the
+                // bubbling pointerup doesn't immediately blur the input.
+                if (!this._inputDom) return;
+                setTimeout(() => this._inputDom.focus(), 0);
+            }
         }
     },
 
