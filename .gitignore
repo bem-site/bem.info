@@ -4,6 +4,7 @@ node_modules/
 .idea
 .project
 .svn
+.claude/
 npm-debug.log
 *.swp
 
