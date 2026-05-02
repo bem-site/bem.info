@@ -18,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { build as viteBuild } from 'vite';
 import { transform as cssMinify } from 'lightningcss';
 import { buildAllBundles, collectFiles, copyCSSAssets, resolveDeps } from './bem-build.mjs';
+import { buildAllSearchIndexes } from './build-search-index.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -162,46 +163,40 @@ async function bemBuild() {
 }
 
 // ---------------------------------------------------------------------------
-// Minification (Vite/Rolldown for JS, lightningcss for CSS)
+// CSS minification (lightningcss). Client JS is already minified by Vite
+// when YENV=production, see scripts/vite-client.config.mjs.
 // ---------------------------------------------------------------------------
 
 async function minifyBundles() {
-    console.log('Minifying bundles...');
+    console.log('Minifying bundle CSS...');
     const bundles = fs.readdirSync(BUNDLES_DIR);
-    const tasks = [];
 
     for (const bundle of bundles) {
         const bundleDir = path.join(BUNDLES_DIR, bundle);
-
-        // Minify CSS via lightningcss
         const cssFile = path.join(bundleDir, `${bundle}.css`);
         if (fs.existsSync(cssFile)) {
             const code = fs.readFileSync(cssFile);
             const result = cssMinify({ filename: cssFile, code, minify: IS_PROD });
             fs.writeFileSync(path.join(bundleDir, `${bundle}.min.css`), result.code);
         }
-
-        // Minify JS per language via Vite/Rolldown
-        for (const lang of LANGUAGES) {
-            const jsFile = path.join(bundleDir, `${bundle}.${lang}.js`);
-            if (fs.existsSync(jsFile)) {
-                tasks.push(viteBuild({
-                    configFile: false,
-                    logLevel: 'warn',
-                    build: {
-                        write: true,
-                        minify: IS_PROD,
-                        emptyOutDir: false,
-                        lib: { entry: jsFile, formats: ['es'], fileName: `${bundle}.${lang}.min` },
-                        outDir: bundleDir,
-                    },
-                }));
-            }
-        }
     }
 
-    await Promise.all(tasks);
     console.log('Minification complete.');
+}
+
+// ---------------------------------------------------------------------------
+// Copy the shared client.js bundle (entry + lazy chunks) into each language
+// root as `_client/`. The script tag in root.bemtree references this path.
+// ---------------------------------------------------------------------------
+
+function copyClientToOutput() {
+    const src = path.join(ROOT, '.build-client');
+    if (!fs.existsSync(src)) return;
+    for (const lang of LANGUAGES) {
+        const dest = path.join(outputDirs[lang], '_client');
+        fs.rmSync(dest, { recursive: true, force: true });
+        copyDir(src, dest);
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -483,10 +478,11 @@ async function fullBuild() {
     // Phase 2: Minify
     await minifyBundles();
 
-    // Phase 3: HTML + copy (parallel)
+    // Phase 3: HTML + copy + search index (parallel)
     await Promise.all([
         buildHTML(),
-        (copyBundlesToOutput(), copySitemaps(), Promise.resolve()),
+        (copyBundlesToOutput(), copySitemaps(), copyClientToOutput(), Promise.resolve()),
+        buildAllSearchIndexes({ languages: LANGUAGES, cacheDirs, outputDirs })
     ]);
 
     // Phase 3.5: Post-process HTML to make URLs relative
@@ -509,10 +505,11 @@ async function watchMode() {
 
     const { watch } = await import('node:fs');
 
-    // Watch content/ → rebuild data
+    // Watch content/ → rebuild data + search index
     fs.watch(path.join(ROOT, 'content'), { recursive: true }, debounce(async () => {
         console.log('\nContent changed, rebuilding data...');
         await buildData();
+        await buildAllSearchIndexes({ languages: LANGUAGES, cacheDirs, outputDirs });
     }, 500));
 
     // Watch blocks/ → rebuild BEM + minify + copy
@@ -521,6 +518,7 @@ async function watchMode() {
         await bemBuild();
         await minifyBundles();
         copyBundlesToOutput();
+        copyClientToOutput();
     }, 500));
 }
 
@@ -546,6 +544,9 @@ try {
         case 'compile':
             await bemBuild();
             await minifyBundles();
+            break;
+        case 'search-index':
+            await buildAllSearchIndexes({ languages: LANGUAGES, cacheDirs, outputDirs });
             break;
         case 'watch':
             await watchMode();

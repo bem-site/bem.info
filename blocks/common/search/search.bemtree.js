@@ -4,28 +4,17 @@ block('search').content()(function() {
 
     return [
         {
-            block: 'form',
-            mix: [
-                { block: 'search', elem: 'form', elemMods: { site: siteMod } }
-            ],
-            action: 'https://yandex.' + (lang === 'ru' ? 'ru' : 'com') + '/sitesearch',
+            block: 'search',
+            elem: 'form',
+            elemMods: { site: siteMod },
             content: [
                 {
                     block: 'input',
                     mods: { type: 'search' },
-                    name: 'text',
+                    name: 'q',
                     autocomplete: false,
                     // TODO i18n
-                    placeholder: lang === 'ru' ? 'Искать' : 'Search'
-                },
-                {
-                    tag: 'input', attrs: { type: 'hidden', name: 'reqenc' }
-                },
-                {
-                    tag: 'input', attrs: { type: 'hidden', name: 'searchid', value: '1944806' }
-                },
-                {
-                    tag: 'input', attrs: { type: 'hidden', name: 'l10n', value: lang }
+                    placeholder: lang === 'ru' ? 'Поиск по сайту' : 'Search the docs'
                 },
                 {
                     block: 'search',
@@ -34,7 +23,8 @@ block('search').content()(function() {
                         block: 'search-icon',
                         mix: { block: 'search', elem: 'submit-icon' }
                     }
-                }
+                },
+                { block: 'search', elem: 'results' }
             ]
         }
     ];

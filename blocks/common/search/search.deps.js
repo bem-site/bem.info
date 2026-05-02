@@ -1,6 +1,5 @@
 ({
     shouldDeps: [
-        'form',
         'events',
         'header',
         'search-icon',
@@ -12,9 +11,8 @@
             block: 'input',
             mods: {
                 type: 'search'
-                // 'has-clear': true
             }
         },
-        { elems: ['submit', 'open', 'close'] }
+        { elems: ['submit', 'open', 'close', 'results'] }
     ]
 })
