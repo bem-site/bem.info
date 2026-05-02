@@ -1,6 +1,0 @@
-{
-  "reporter": "spec",
-  "ui": "bdd",
-  "require": ["./test/setup.js"],
-  "timeout": 1000
-}

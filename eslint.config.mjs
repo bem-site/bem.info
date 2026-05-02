@@ -6,7 +6,6 @@ export default [
         ignores: [
             '**/*.deps.js',
             'libs/**',
-            'lib/gorshochek/**',
             '**/bundles/**',
             'output/**',
             '.cache/**',

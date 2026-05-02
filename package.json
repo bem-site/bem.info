@@ -27,6 +27,7 @@
     "eslint": "^10.0.0",
     "github-slugger": "^1.5.0",
     "globals": "^17.0.0",
+    "gorshochek": "github:bem-site/gorshochek#master",
     "jquery": "^4.0.0",
     "md-to-bemjson": "1.0.0",
     "postcss": "^8.5.0",
@@ -42,8 +43,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "watch": "node scripts/build.mjs watch",
-    "test": "node --test test/*.test.mjs && npm run lint && cd lib/gorshochek && npm test",
-    "postinstall": "cd lib/gorshochek && npm i",
+    "test": "node --test test/*.test.mjs && npm run lint",
     "lint": "eslint . && stylelint 'blocks/**/*.css'"
   },
   "private": true
