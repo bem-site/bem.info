@@ -393,10 +393,22 @@ function relativizeDir(dir, langRoot) {
 function relativizeFile(filePath, langRoot) {
     const html = fs.readFileSync(filePath, 'utf8');
     const rel = path.relative(path.dirname(filePath), langRoot) || '.';
+    // Path from current file to the bem.info root — used for cross-language
+    // refs like `https://ru.bem.info/foo/` from an /en/ page.
+    const relRoot = path.relative(path.dirname(filePath), OUTPUT_ROOT) || '.';
 
-    const result = html.replace(
+    // 1. Legacy subdomains (`https://{ru,en}.bem.info/foo/`) — rewrite as
+    //    a relative path that climbs out to the site root and into the
+    //    target language directory.
+    let result = html.replace(
+        /(href|src|action|content)="https?:\/\/(ru|en)\.bem\.info\//g,
+        (_, attr, otherLang) => `${attr}="${relRoot}/${otherLang}/`
+    );
+
+    // 2. Lang-less absolute paths emitted by templates → relative to langRoot.
+    result = result.replace(
         /(href|src|action|content)="\/(?!\/)/g,
-        (match, attr) => attr + '="' + rel + '/'
+        (_, attr) => `${attr}="${rel}/`
     );
 
     if (result !== html) {
