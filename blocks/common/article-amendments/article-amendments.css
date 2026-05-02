@@ -2,18 +2,26 @@
 {
     font-size: 14px;
     line-height: 1.2;
-
-    padding: 10px;
-
-    color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .article-amendments__link
 {
-    text-decoration: underline;
+    display: inline-block;
 
-    color: rgba(255, 255, 255, 0.8);
+    margin: 0 6px 6px 0;
+    padding: 4px 10px;
+
+    transition: all 0.2s;
+    text-decoration: none;
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.article-amendments__link:hover
+{
+    border-color: #000;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 @media print
