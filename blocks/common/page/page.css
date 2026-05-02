@@ -154,6 +154,10 @@
 {
     @media (min-width: 1201px)
     {
+        /* Named areas pin our grid items so any stray DOM node
+           (browser extension, Google Translate wrappers, …) inserted
+           into <body> falls into auto-generated cells without shifting
+           menu/main/side/head/foot. See #373. */
         .page:not(.page_promo)
         {
             display: grid;
@@ -161,16 +165,21 @@
             min-height: 100vh;
             grid-template-rows: 70px 1fr auto;
             grid-template-columns: 260px minmax(0, 900px) minmax(160px, 1fr);
+            grid-template-areas:
+                'head head head'
+                'menu main side'
+                'menu foot side';
         }
 
-        .page__head
-        {
-            grid-column: 1 / 4;
-        }
-
+        .page__head,
         .page__sitemap
         {
-            grid-column: 1 / 4;
+            grid-area: head;
+        }
+
+        .page__menu
+        {
+            grid-area: menu;
         }
 
         .page:not(.page_promo) .page__main
@@ -178,7 +187,7 @@
             margin: 0;
 
             border-radius: 10px;
-            grid-column: 2 / 3;
+            grid-area: main;
         }
 
         .page__content
@@ -195,6 +204,7 @@
             margin: 0;
             padding: 13px 10px 10px 20px;
 
+            grid-area: side;
             background: none;
         }
 
@@ -211,7 +221,7 @@
 
         .page__foot
         {
-            grid-column: 2 / 3;
+            grid-area: foot;
         }
     }
 }

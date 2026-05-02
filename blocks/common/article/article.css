@@ -291,8 +291,8 @@
 
     white-space: pre;
 
-    color: #657b83;
-    background: rgba(240, 240, 235, 0.4);
+    color: #2d3338;
+    background: #f4f3ee;
 }
 
 .article__blockquote .article__code
@@ -322,11 +322,14 @@
  * Не используем цвета для print версии, см. https://github.com/bem-site/bem.info/issues/166*/
 @media screen
 {
+    /* Higher-contrast palette over the light code background.
+       Each pair below meets WCAG AA on #f4f3ee. See #363, #365. */
+
     .hljs-comment,
     .hljs-doctype,
     .hljs-pi
     {
-        color: #93a1a1;
+        color: #6a737d;
     }
 
     .hljs-keyword,
@@ -337,7 +340,7 @@
     .hljs-request,
     .hljs-status
     {
-        color: #859900;
+        color: #4a6a00;
     }
 
     .hljs-number,
@@ -350,7 +353,7 @@
     .hljs-hexcolor,
     .hljs-link_url
     {
-        color: #2aa198;
+        color: #036a6a;
     }
 
     .hljs-title,
@@ -363,7 +366,7 @@
     .css .hljs-function,
     .hljs-name
     {
-        color: #268bd2;
+        color: #1962a3;
     }
 
     .hljs-attribute,
@@ -374,7 +377,7 @@
     .hljs-type,
     .hljs-link_reference
     {
-        color: #b58900;
+        color: #8a5800;
     }
 
     .hljs-preprocessor,
@@ -390,18 +393,18 @@
     .css .hljs-pseudo,
     .hljs-header
     {
-        color: #cb4b16;
+        color: #b13a0e;
     }
 
     .hljs-deletion,
     .hljs-important
     {
-        color: #dc322f;
+        color: #b51d1d;
     }
 
     .hljs-link_label
     {
-        color: #6c71c4;
+        color: #4a4eaa;
     }
 }
 
@@ -435,10 +438,10 @@
     font-size: 16px;
     line-height: 1.8;
 
-    padding: 0 2px;
+    padding: 0 4px;
 
     border-radius: 3px;
-    background: rgba(240, 240, 235, 0.5);
+    background: rgba(0, 0, 0, 0.06);
 }
 
 @media print
