@@ -10,8 +10,6 @@ const SEARCH_SCHEMA = {
     url: 'string',
     title: 'string',
     subtitle: 'string',
-    site: 'string',
-    tags: 'string[]',
     body: 'string'
 };
 
@@ -35,22 +33,29 @@ function indexUrl(lang) {
 
 async function loadDb() {
     const lang = pageLang();
-    const [orama, stemmerMod, res] = await Promise.all([
+    const [orama, stemmerMod, stopwordsMod, res] = await Promise.all([
         import('@orama/orama'),
         lang === 'ru'
             ? import('@orama/stemmers/russian')
             : import('@orama/stemmers/english'),
+        lang === 'ru'
+            ? import('@orama/stopwords/russian')
+            : import('@orama/stopwords/english'),
         fetch(indexUrl(lang))
     ]);
     if (!res.ok) throw new Error(`search index ${res.status}`);
     const raw = await res.json();
 
+    // Tokenizer config has to match the indexer's exactly so query and
+    // index tokens stay symmetric.
     const db = orama.create({
         schema: SEARCH_SCHEMA,
+        sort: { enabled: false },
         components: {
             tokenizer: {
                 language: lang === 'ru' ? 'russian' : 'english',
-                stemmer: stemmerMod.stemmer
+                stemmer: stemmerMod.stemmer,
+                stopWords: stopwordsMod.stopwords
             }
         }
     });

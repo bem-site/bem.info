@@ -16,21 +16,25 @@ import path from 'node:path';
 import { create, insertMultiple, save } from '@orama/orama';
 import { stemmer as stemmerEn } from '@orama/stemmers/english';
 import { stemmer as stemmerRu } from '@orama/stemmers/russian';
+import { stopwords as stopwordsEn } from '@orama/stopwords/english';
+import { stopwords as stopwordsRu } from '@orama/stopwords/russian';
 
 const TOKENIZER_LANG = { en: 'english', ru: 'russian' };
 const STEMMERS = { en: stemmerEn, ru: stemmerRu };
+const STOPWORDS = { en: stopwordsEn, ru: stopwordsRu };
 
-// Cap body length per record so the published index stays reasonably small
-// over the wire. 4000 chars covers most articles end-to-end; longer ones get
-// the head — usually where the most relevant terms (intro, headings) live.
-const BODY_MAX_CHARS = 4000;
+// Cap body length per record. Most articles fit, longer ones get the head —
+// where the most relevant terms (intro, headings) sit. 2500 vs 4000 cuts the
+// gzipped index roughly in half with a marginal recall hit.
+const BODY_MAX_CHARS = 2500;
 
+// Stripped to the minimum the runtime actually uses. `site` and `tags` were
+// indexed by the previous version but never queried or filtered against;
+// removing them shrinks both the index payload and the per-document store.
 export const SEARCH_SCHEMA = {
     url: 'string',
     title: 'string',
     subtitle: 'string',
-    site: 'string',
-    tags: 'string[]',
     body: 'string'
 };
 
@@ -105,15 +109,7 @@ function buildRecord(page, lang, stats, cacheDir) {
     }
 
     const url = langUrl(page.url, lang);
-    return {
-        id: url,
-        url,
-        title,
-        subtitle,
-        site: page.site || '',
-        tags: Array.isArray(page.tags) ? page.tags : [],
-        body
-    };
+    return { id: url, url, title, subtitle, body };
 }
 
 export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
@@ -137,8 +133,13 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
 
     const db = create({
         schema: SEARCH_SCHEMA,
+        sort: { enabled: false },
         components: {
-            tokenizer: { language: TOKENIZER_LANG[lang], stemmer: STEMMERS[lang] }
+            tokenizer: {
+                language: TOKENIZER_LANG[lang],
+                stemmer: STEMMERS[lang],
+                stopWords: STOPWORDS[lang]
+            }
         }
     });
 
