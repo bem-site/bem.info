@@ -236,7 +236,7 @@ function prepareStatic() {
         }
 
         // Copy directories
-        for (const dir of ['.well-known', 'og_image']) {
+        for (const dir of ['.well-known', 'og_image', 'people']) {
             const srcDir = path.join(STATIC, dir);
             if (fs.existsSync(srcDir)) copyDir(srcDir, path.join(dest, dir));
         }
