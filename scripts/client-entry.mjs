@@ -46,3 +46,45 @@ import 'bem:search';
 import 'bem:form';
 import 'bem:header';
 import 'bem:yandex-metrica-api';
+
+// "Copy code" buttons on .article__code blocks. See #226.
+(function() {
+    const labels = {
+        ru: { copy: 'Скопировать', done: 'Скопировано' },
+        en: { copy: 'Copy', done: 'Copied' }
+    };
+    const lang = (document.documentElement.lang || 'ru').slice(0, 2);
+    const t = labels[lang] || labels.en;
+
+    function init() {
+        document.querySelectorAll('.article__code').forEach(function(pre) {
+            if (pre.querySelector('.article__code-copy')) return;
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'article__code-copy';
+            btn.textContent = t.copy;
+            btn.addEventListener('click', async function() {
+                const clone = pre.cloneNode(true);
+                clone.querySelectorAll('.article__code-copy').forEach(function(b) { b.remove(); });
+                try {
+                    await navigator.clipboard.writeText(clone.innerText);
+                    btn.textContent = t.done;
+                    btn.classList.add('article__code-copy_done');
+                    setTimeout(function() {
+                        btn.textContent = t.copy;
+                        btn.classList.remove('article__code-copy_done');
+                    }, 1500);
+                } catch (e) {
+                    btn.textContent = '×';
+                }
+            });
+            pre.appendChild(btn);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

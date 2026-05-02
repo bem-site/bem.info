@@ -283,6 +283,8 @@
 {
     font: 16px/1.5 'Courier New', monospace;
 
+    position: relative;
+
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -293,6 +295,53 @@
 
     color: #2d3338;
     background: #f4f3ee;
+}
+
+/* Copy-to-clipboard button injected client-side. See #226. */
+.article__code-copy
+{
+    font: 13px/1 Arial, sans-serif;
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    padding: 4px 10px;
+
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+
+    opacity: 0;
+    color: #57606a;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.article__code:hover .article__code-copy,
+.article__code-copy:focus
+{
+    opacity: 1;
+}
+
+.article__code-copy:hover
+{
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+.article__code-copy_done
+{
+    color: #1a7f37;
+    border-color: #1a7f37;
+}
+
+@media print
+{
+    .article__code-copy
+    {
+        display: none;
+    }
 }
 
 .article__blockquote .article__code
