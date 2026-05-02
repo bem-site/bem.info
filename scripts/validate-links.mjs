@@ -103,7 +103,11 @@ const files = listHtml(OUTPUT);
 let totalChecked = 0;
 
 for (const file of files) {
-    const html = fs.readFileSync(file, 'utf-8');
+    let html = fs.readFileSync(file, 'utf-8');
+    // Strip code blocks — they contain HTML-escaped examples whose
+    // `href="..."` would otherwise be mis-detected as real anchors.
+    html = html.replace(/<pre\b[^>]*>[\s\S]*?<\/pre>/gi, '')
+        .replace(/<code\b[^>]*>[\s\S]*?<\/code>/gi, '');
     const fileDir = path.dirname(file);
     let m;
     while ((m = HREF_RE.exec(html)) !== null) {

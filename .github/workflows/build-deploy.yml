@@ -44,7 +44,7 @@ jobs:
           YENV: production
 
       - name: Validate internal links
-        run: node scripts/validate-links.mjs
+        run: node scripts/validate-links.mjs --strict
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
