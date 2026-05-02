@@ -43,6 +43,9 @@ jobs:
           LANGUAGES: en,ru
           YENV: production
 
+      - name: Validate internal links
+        run: node scripts/validate-links.mjs
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
