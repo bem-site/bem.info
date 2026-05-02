@@ -62,6 +62,16 @@ function isIndexable(page) {
     return true;
 }
 
+function langUrl(url, lang) {
+    // gorshochek's `page.url` is language-agnostic ("/methodology/...");
+    // on the live site every page lives under "/<lang>/..." instead, so we
+    // must prefix the index with the language so result links navigate to
+    // the correct page (and stay within the same language as the viewer).
+    if (!url) return url;
+    if (url === '/') return `/${lang}/`;
+    return url.startsWith('/') ? `/${lang}${url}` : url;
+}
+
 function buildRecord(page, lang, stats, cacheDir) {
     const title = pickLang(page.title, lang);
     const subtitle = pickLang(page.subtitle, lang);
@@ -94,9 +104,10 @@ function buildRecord(page, lang, stats, cacheDir) {
         stats.noContentFile++;
     }
 
+    const url = langUrl(page.url, lang);
     return {
-        id: page.url,
-        url: page.url,
+        id: url,
+        url,
         title,
         subtitle,
         site: page.site || '',
