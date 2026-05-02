@@ -18,7 +18,13 @@ const SEARCH_SCHEMA = {
 let dbPromise = null;
 
 function pageLang() {
-    const code = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+    // Prefer <html lang>; fall back to the /<lang>/ URL prefix so the search
+    // never grabs the wrong index if the lang attribute is missing.
+    let code = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
+    if (!code) {
+        const m = location.pathname.match(/^\/(ru|en)\b/);
+        code = m ? m[1] : 'en';
+    }
     return code === 'ru' ? 'ru' : 'en';
 }
 
@@ -161,13 +167,20 @@ export default bemDom.declBlock('search', {
         js: {
             inited: function() {
                 this._input = this.findChildBlock(Input);
+                this._submit = this.findChildElem('submit');
                 this._results = this.findChildElem('results');
                 this._resultsDom = this._results.domElem[0];
+                this._inputDom = this._input.domElem.find('.input__control')[0];
                 this._activeIndex = -1;
                 this._lastTerm = '';
 
-                this._events(this._input).on('change', this._onInputChange, this);
+                // Listen to native DOM events on the underlying <input>: the
+                // bem 'change' event from desktop.input depends on a tick
+                // loop that may miss programmatic / fast input. Native
+                // 'input' fires on every keystroke and on paste.
+                this._domEvents(this._input).on('input', this._onInputChange, this);
                 this._domEvents(this._input).on('keydown', this._onInputKey, this);
+                this._domEvents(this._submit).on('click', this._onSubmitClick, this);
                 this._domEvents(this._results).on('mousedown', '.search__hit', this._onHitMouseDown, this);
             }
         },
@@ -179,7 +192,9 @@ export default bemDom.declBlock('search', {
     },
 
     _onInputChange: function() {
-        const term = this._input.getVal().trim();
+        // Read the value directly from the DOM — bem input's `_val` is only
+        // updated by the desktop tick loop, which can lag a frame or two.
+        const term = (this._inputDom ? this._inputDom.value : this._input.getVal()).trim();
         if (term === this._lastTerm) return;
         this._lastTerm = term;
 
@@ -201,7 +216,8 @@ export default bemDom.declBlock('search', {
             getDb()
         ]);
         // Term may have changed while we were loading
-        if (this._input.getVal().trim() !== term) return;
+        const current = (this._inputDom ? this._inputDom.value : this._input.getVal()).trim();
+        if (current !== term) return;
 
         const result = await search(db, {
             term,
@@ -229,7 +245,7 @@ export default bemDom.declBlock('search', {
     _renderHits: function(hits, hl) {
         this._activeIndex = -1;
         if (!hits.length) {
-            const term = this._input.getVal().trim();
+            const term = (this._inputDom ? this._inputDom.value : this._input.getVal()).trim();
             if (term.length >= MIN_QUERY) {
                 const lang = pageLang();
                 const msg = lang === 'ru' ? 'Ничего не найдено' : 'No results';
@@ -282,5 +298,16 @@ export default bemDom.declBlock('search', {
     _onHitMouseDown: function() {
         // Default click → href works fine; mousedown handler kept as a hook
         // for future analytics or to prevent input-blur cancelling navigation.
+    },
+
+    _onSubmitClick: function() {
+        // Make the magnifying-glass icon a real toggle: open the panel and
+        // focus the input on first click; collapse on second click.
+        if (this.hasMod('opened')) {
+            this.delMod('opened');
+        } else {
+            this.setMod('opened');
+            if (this._inputDom) this._inputDom.focus();
+        }
     }
 });

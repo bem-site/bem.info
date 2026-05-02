@@ -28,6 +28,7 @@ block('root').replace()(function() {
 
     return {
         block: 'page',
+        lang: data.lang,
         title: page.head.title,
         head: [
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css?' + staticVersion },
