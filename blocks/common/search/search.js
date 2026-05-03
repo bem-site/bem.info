@@ -71,11 +71,21 @@ function buildTokenizer(lang, stemmer, stopWords) {
             const n = this.normalizeToken(prop || '', input, withCache);
             return n ? [n] : [];
         }
-        const tokens = input.toLowerCase()
+        const words = input.toLowerCase()
             .split(COMPOUND_SPLITTER)
             .map(t => t.replace(TRIM_PUNCT, ''))
             .map(t => this.normalizeToken(prop || '', t, withCache))
             .filter(Boolean);
+
+        // Phrase bigrams for `headings` (where the inverted-index entry
+        // exists) and for query strings (prop undefined). Multi-word
+        // queries gain a strong signal when the same phrase appears in
+        // a section heading, without inflating the body inverted index.
+        const wantBigrams = !prop || prop === 'headings';
+        const tokens = wantBigrams && words.length > 1
+            ? words.concat(words.slice(0, -1).map((w, i) => `${w}_${words[i + 1]}`))
+            : words;
+
         return this.allowDuplicates ? tokens : Array.from(new Set(tokens));
     }.bind(tk);
     return tk;
@@ -293,7 +303,12 @@ export default bemDom.declBlock('search', {
             // most. Headings name a section of the doc and are far more
             // likely to match a user's query than a random body sentence,
             // so they outweigh title fragments and body text.
-            boost: { keywords: 8, headings: 6, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
+            // Headings get the same boost as title — single-word headings
+            // (e.g. block-block-name as h1 of every library page) shouldn't
+            // outweigh canonical landings, but bigram tokens from multi-word
+            // headings still give a strong phrase signal when the query is
+            // a phrase too.
+            boost: { keywords: 8, title: 4, headings: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
             // Pull more candidates than we display so the post-Orama
             // rerank by `doc.rank` (URL-pattern authority signal baked in
             // at build time — see RANK_RULES in build-search-index.mjs)

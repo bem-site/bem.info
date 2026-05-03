@@ -74,11 +74,24 @@ export function buildTokenizer({ lang }) {
             const n = this.normalizeToken(prop ?? '', input, withCache);
             return n ? [n] : [];
         }
-        const tokens = input.toLowerCase()
+        const words = input.toLowerCase()
             .split(COMPOUND_SPLITTER)
             .map(t => t.replace(TRIM_PUNCT, ''))
             .map(t => this.normalizeToken(prop ?? '', t, withCache))
             .filter(Boolean);
+
+        // Bigram tokens turn "элементы элементов" / "block modification" /
+        // "файловая структура" into single inverted-index entries when
+        // the user actually queried the phrase. Applied to `headings`
+        // (the property where they matter most) and to anything tokenised
+        // outside of a specific property — i.e. query strings: Orama
+        // tokenises the query without `prop`, so query-side bigrams will
+        // align with heading-side ones.
+        const wantBigrams = !prop || prop === 'headings';
+        const tokens = wantBigrams && words.length > 1
+            ? words.concat(words.slice(0, -1).map((w, i) => `${w}_${words[i + 1]}`))
+            : words;
+
         return this.allowDuplicates ? tokens : [...new Set(tokens)];
     }.bind(tk);
     return tk;
