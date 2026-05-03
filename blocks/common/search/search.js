@@ -10,6 +10,8 @@ const SEARCH_SCHEMA = {
     url: 'string',
     title: 'string',
     subtitle: 'string',
+    breadcrumbs: 'string[]',
+    keywords: 'string[]',
     body: 'string'
 };
 
@@ -143,17 +145,25 @@ function makeExcerpt(text, hl) {
 function renderItem(hit, hl) {
     const doc = hit.document;
     const titleHtml = highlight(doc.title || '', hl);
+
+    // Parent context above the title (small grey). Empty for top-level.
+    const crumbs = Array.isArray(doc.breadcrumbs) ? doc.breadcrumbs : [];
+    const contextHtml = crumbs.length
+        ? `<span class="search__hit-context">${crumbs.map(c => highlight(c, hl)).join(' › ')}</span>`
+        : '';
+
     const subtitleHtml = doc.subtitle
         ? `<span class="search__hit-subtitle">${highlight(doc.subtitle, hl)}</span>`
         : '';
 
+    // Excerpt: only when match is in body (not title/subtitle/breadcrumbs).
     let excerptHtml = '';
     if (hl && doc.body) {
-        const inTitle = hl.find.test(doc.title || '');
+        const inTop = hl.find.test(doc.title || '')
+            || (doc.subtitle && (hl.find.lastIndex = 0, hl.find.test(doc.subtitle)))
+            || (crumbs.length && (hl.find.lastIndex = 0, crumbs.some(c => hl.find.test(c))));
         hl.find.lastIndex = 0;
-        const inSubtitle = doc.subtitle ? hl.find.test(doc.subtitle) : false;
-        hl.find.lastIndex = 0;
-        if (!inTitle && !inSubtitle) {
+        if (!inTop) {
             const snippet = makeExcerpt(doc.body, hl);
             if (snippet) {
                 excerptHtml = `<span class="search__hit-excerpt">${highlight(snippet, hl)}</span>`;
@@ -162,6 +172,7 @@ function renderItem(hit, hl) {
     }
 
     return `<a class="search__hit" role="option" href="${escapeHtml(doc.url)}">
+        ${contextHtml}
         <span class="search__hit-title">${titleHtml}</span>
         ${subtitleHtml}
         ${excerptHtml}
@@ -236,8 +247,8 @@ export default bemDom.declBlock('search', {
 
         const result = await search(db, {
             term,
-            properties: ['title', 'subtitle', 'body'],
-            boost: { title: 4, subtitle: 2, body: 1 },
+            properties: ['title', 'subtitle', 'keywords', 'breadcrumbs', 'body'],
+            boost: { title: 4, keywords: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
             limit: RESULT_LIMIT,
             tolerance: 1
         });
