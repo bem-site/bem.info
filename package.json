@@ -17,6 +17,7 @@
     "autoprefixer": "^10.4.0",
     "bem-components": "^6.0.1",
     "bem-core": "github:bem/bem-core#v5",
+    "bem-lib-site-view": "bem-site/bem-lib-site-view",
     "bem-naming": "^1.0.1",
     "bem-stat-counters": "^3.0.0",
     "bem-xjst": "^8.10.0",
