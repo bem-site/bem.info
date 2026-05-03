@@ -68,6 +68,13 @@ function isIndexable(page) {
     // for any common query and crowds out the actual article. Already
     // reachable via /methodology/.
     if (page.type === 'articles') return false;
+    // Only index pages that actually have something to display:
+    //  - anything with a contentFile (markdown was loaded for it)
+    //  - promo landing pages (rendered from a custom block)
+    // Many lib pages exist in the model without a markdown source — they
+    // render as blank on the live site. Indexing them by title-only would
+    // surface dead-end results in suggest.
+    if (!page.contentFile && page.type !== 'promo') return false;
     return true;
 }
 
