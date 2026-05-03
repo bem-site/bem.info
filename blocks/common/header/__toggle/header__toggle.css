@@ -116,3 +116,20 @@
         cursor: pointer;
     }
 }
+
+/*
+ * On desktop the burger toggle is invisible (no lines rendered) but still
+ * sits as a 70x70 hit-target in the top-right corner, intercepting every
+ * click meant for the magnifying-glass icon next to it. The site has had
+ * no hamburger menu on desktop since the layout switched to a permanent
+ * sidebar; the toggle is purely a mobile control. Hide it here so clicks
+ * land on .search__submit, where search.js opens the panel and focuses
+ * the input directly.
+ */
+@media (min-width: 801px)
+{
+    .header__toggle
+    {
+        display: none;
+    }
+}

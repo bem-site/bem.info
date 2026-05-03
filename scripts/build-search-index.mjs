@@ -63,7 +63,62 @@ function isIndexable(page) {
     if (!page || !page.url) return false;
     if (page.published === false) return false;
     if (page.type === 'redirect') return false;
+    // The "Articles" TOC page is a navigational listing whose content is
+    // every other article's title concatenated. It scores spuriously high
+    // for any common query and crowds out the actual article. Already
+    // reachable via /methodology/.
+    if (page.type === 'articles') return false;
     return true;
+}
+
+// Strip the version segment from a versioned library URL so we can dedup
+// across versions. Returns null if the URL is not versioned.
+//   /libraries/classic/bem-core/4.2.0/desktop/i-bem-dom/
+//      → key: /libraries/classic/bem-core/desktop/i-bem-dom/, ver: '4.2.0'
+//   /libraries/classic/bem-core/4.2.0/
+//      → key: /libraries/classic/bem-core/, ver: '4.2.0'
+const VERSIONED_LIB_RE = /^(\/libraries\/[^/]+\/[^/]+\/)(\d[\w.-]*?)(\/.*)?$/;
+function splitVersionedUrl(url) {
+    const m = VERSIONED_LIB_RE.exec(url || '');
+    if (!m) return null;
+    const [, libBase, version, rest = '/'] = m;
+    return { key: libBase + rest.replace(/^\//, ''), version };
+}
+
+function compareSemver(a, b) {
+    const pa = a.split(/[.-]/).map(s => /^\d+$/.test(s) ? parseInt(s, 10) : s);
+    const pb = b.split(/[.-]/).map(s => /^\d+$/.test(s) ? parseInt(s, 10) : s);
+    const n = Math.max(pa.length, pb.length);
+    for (let i = 0; i < n; i++) {
+        const ai = pa[i], bi = pb[i];
+        if (ai === bi) continue;
+        if (ai === undefined) return -1;
+        if (bi === undefined) return 1;
+        if (typeof ai !== typeof bi) return typeof ai === 'number' ? 1 : -1;
+        return ai < bi ? -1 : 1;
+    }
+    return 0;
+}
+
+// Replaces every set of versioned library pages with the entry from the
+// latest version. The remaining pages are unchanged. Reduces index size
+// dramatically for repos like bem-core that ship 10+ versioned snapshots.
+function dedupVersioned(pages) {
+    const latest = new Map();
+    const out = [];
+    for (const p of pages) {
+        const v = splitVersionedUrl(p.url);
+        if (!v) {
+            out.push(p);
+            continue;
+        }
+        const prev = latest.get(v.key);
+        if (!prev || compareSemver(v.version, prev.version) > 0) {
+            latest.set(v.key, { page: p, version: v.version });
+        }
+    }
+    for (const { page } of latest.values()) out.push(page);
+    return out;
 }
 
 function langUrl(url, lang) {
@@ -119,8 +174,13 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
         return;
     }
 
-    const pages = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    const stats = { total: pages.length, filtered: 0, noTitle: 0, noContentFile: 0, unreadable: 0 };
+    const allPages = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    const pages = dedupVersioned(allPages);
+    const stats = {
+        total: allPages.length,
+        dedupedOut: allPages.length - pages.length,
+        filtered: 0, noTitle: 0, noContentFile: 0, unreadable: 0
+    };
     const indexable = pages.filter(p => {
         const ok = isIndexable(p);
         if (!ok) stats.filtered++;
@@ -138,7 +198,12 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
             tokenizer: {
                 language: TOKENIZER_LANG[lang],
                 stemmer: STEMMERS[lang],
-                stopWords: STOPWORDS[lang]
+                stopWords: STOPWORDS[lang],
+                // Don't tokenize the URL into the inverted index — query
+                // terms accidentally matching path segments ("articles",
+                // "naming") would otherwise inflate scores on the catalog
+                // pages that just have the term in their slug.
+                tokenizeSkipProperties: ['url']
             }
         }
     });
@@ -153,7 +218,8 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     const sizeKB = (Buffer.byteLength(json, 'utf8') / 1024).toFixed(1);
     console.log(
         `Search [${lang}]: ${records.length} indexed of ${stats.total} ` +
-        `(${withBody} with body; filtered ${stats.filtered}, no-title ${stats.noTitle}, ` +
+        `(${withBody} with body; deduped-versions ${stats.dedupedOut}, ` +
+        `filtered ${stats.filtered}, no-title ${stats.noTitle}, ` +
         `no-content-file ${stats.noContentFile}, unreadable ${stats.unreadable}) → ` +
         `${outFile} (${sizeKB} KB)`
     );
