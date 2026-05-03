@@ -57,6 +57,8 @@ export const SEARCH_SCHEMA = {
 // page wins the ranking for short / cross-language queries
 // ("mod" → /methodology/block-modification/, etc.).
 const PAGE_KEYWORDS = {
+    // Methodology (article pages — usually have content already, but the
+    // keywords act as a precise cross-language anchor for query → page)
     '/methodology/':                     ['methodology', 'методология'],
     '/methodology/quick-start/':         ['quick start', 'quickstart', 'tutorial', 'быстрый старт'],
     '/methodology/key-concepts/':        ['block', 'element', 'modifier', 'mix', 'concepts',
@@ -76,11 +78,60 @@ const PAGE_KEYWORDS = {
     '/methodology/history/':             ['history', 'origin', 'история'],
     '/methodology/faq/':                 ['faq', 'questions', 'вопросы'],
     '/methodology/articles/':            ['articles', 'статьи'],
+
+    // Section landings
     '/technologies/':                    ['technologies', 'tech', 'stack', 'технологии'],
     '/libraries/':                       ['libraries', 'library', 'lib', 'библиотеки'],
     '/toolbox/':                         ['toolbox', 'tools', 'tool', 'инструменты'],
     '/tutorials/':                       ['tutorials', 'tutorial', 'руководства'],
-    '/community/':                       ['community', 'сообщество']
+    '/community/':                       ['community', 'сообщество'],
+
+    // Technologies — these are key navigation pages without their own
+    // content; without explicit keywords they would be invisible to search.
+    //
+    // IMPORTANT: avoid keywords that contain a bare "bem" token after
+    // tokenisation (e.g. "bem-xjst" splits into ["bem", "xjst"]) — the
+    // tokeniser sees them as two separate tokens and the bare "bem" then
+    // matches every "i-bem"/"bem-foo" query, polluting other pages.
+    // Keep only the distinguishing suffix instead.
+    '/technologies/classic/':            ['classic', 'classical stack', 'классический стек'],
+    '/technologies/classic/bemjson/':    ['bemjson', 'данные', 'data'],
+    '/technologies/classic/bem-xjst/':   ['xjst', 'bemhtml', 'bemtree', 'templates', 'шаблоны'],
+    '/technologies/classic/i-bem/':      ['i-bem', 'i-bem.js', 'ibem',
+                                          'client javascript',
+                                          'клиентский javascript', 'клиентский js'],
+    '/technologies/classic/deps/':       ['deps', 'dependencies', 'зависимости'],
+    '/technologies/classic/deps-spec/':  ['deps spec', 'deps specification', 'спецификация deps'],
+    '/technologies/classic/project-stub/': ['project stub', 'project starter', 'заготовка проекта'],
+    '/technologies/bem-react/':          ['react', 'реакт'],
+    '/technologies/bem-react/motivation/': ['motivation', 'why react', 'мотивация'],
+    '/technologies/bem-react/classname/': ['classname', 'class name'],
+    '/technologies/bem-react/core/':     ['react core'],
+    '/technologies/bem-react/di/':       ['di', 'dependency injection', 'внедрение зависимостей'],
+
+    // Toolbox tools — short titles ("ENB", "bemhint", "SDK") need keyword
+    // hints so cross-language and longform queries find them.
+    '/toolbox/enb/':                     ['enb', 'build tool', 'сборщик'],
+    '/toolbox/bemhint/':                 ['bemhint', 'lint', 'linter', 'линтер'],
+    '/toolbox/bem-tools/':               ['cli', 'tools'],
+    '/toolbox/bemmet/':                  ['bemmet', 'emmet', 'shorthand'],
+    '/toolbox/sdk/':                     ['sdk', 'developer kit'],
+
+    // Library landings (without version) — top-level entry to each lib's
+    // history of versions.
+    '/libraries/classic/':               ['classic libraries', 'классические библиотеки'],
+    '/libraries/classic/bem-core/':      ['core'],
+    '/libraries/classic/bem-components/': ['components', 'компоненты'],
+    '/libraries/classic/bem-history/':   ['router', 'history'],
+    '/libraries/classic/principles/':    ['principles', 'принципы'],
+
+    // Tutorials section landings
+    '/tutorials/classic/':               ['classic tutorials', 'классические туториалы'],
+    '/tutorials/classic/quick-start-static/': ['static page tutorial', 'статическая страница'],
+    '/tutorials/classic/start-with-project-stub/': ['project stub tutorial', 'статический проект'],
+    '/tutorials/classic/start-with-bem-express/': ['bem express', 'dynamic project', 'динамический проект'],
+    '/tutorials/classic/i-bem/':         ['i-bem.js tutorial', 'руководство i-bem.js'],
+    '/tutorials/classic/dist-quick-start/': ['dist', 'bem-components dist', 'подключаем блоки']
 };
 
 function pageKeywords(url) {
@@ -128,9 +179,13 @@ function isIndexable(page) {
     //    HTML straight into the model, bypassing gorshochek md→html —
     //    every bem-components / bem-core block gets indexed this way)
     //  - promo landing pages (rendered from a custom cross-roads block)
+    //  - explicitly curated in PAGE_KEYWORDS (key navigation pages
+    //    like /technologies/classic/i-bem/ have no content of their
+    //    own but are the right destination for short queries)
     if (page.contentFile) return true;
     if (hasBlockContent(page)) return true;
     if (page.type === 'promo') return true;
+    if (PAGE_KEYWORDS[page.url]) return true;
     return false;
 }
 

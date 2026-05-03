@@ -248,7 +248,9 @@ export default bemDom.declBlock('search', {
         const result = await search(db, {
             term,
             properties: ['title', 'subtitle', 'keywords', 'breadcrumbs', 'body'],
-            boost: { title: 4, keywords: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
+            // Curated keywords are hand-tagged to a single page and weigh
+            // more than the title — they're the intent we're encoding.
+            boost: { keywords: 8, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
             limit: RESULT_LIMIT,
             tolerance: 1
         });
