@@ -55,7 +55,8 @@ async function loadDb() {
             tokenizer: {
                 language: lang === 'ru' ? 'russian' : 'english',
                 stemmer: stemmerMod.stemmer,
-                stopWords: stopwordsMod.stopwords
+                stopWords: stopwordsMod.stopwords,
+                tokenizeSkipProperties: ['url']
             }
         }
     });
