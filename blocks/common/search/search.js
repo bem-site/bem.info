@@ -6,11 +6,6 @@ const MIN_QUERY = 2;
 const DEBOUNCE_MS = 100;
 const RESULT_LIMIT = 8;
 
-// Pull more candidates than we display so the post-Orama rerank can
-// promote pages whose title/keyword contains the literal query string
-// even when Orama's prefix matching scored them lower.
-const RERANK_POOL = 50;
-
 const SEARCH_SCHEMA = {
     url: 'string',
     title: 'string',
@@ -118,30 +113,6 @@ function getDb() {
         });
     }
     return dbPromise;
-}
-
-// Boost results whose title or keyword contains the query as a literal
-// substring. Orama tokenises "i-bem" into ["i", "bem"]; the bare "bem"
-// token then prefix-matches every "bem*" word in the index ("bemmet",
-// "bemhint", "bemhtml", …) and drowns the page that actually has
-// "i-bem" in its name. Re-ranking by raw substring presence rescues
-// the obvious answers without losing the long tail Orama still gives us.
-function rerankBySubstring(hits, term) {
-    const needle = String(term || '').toLowerCase().trim();
-    if (!needle) return hits;
-    return hits
-        .map(h => {
-            const doc = h.document;
-            const title = (doc.title || '').toLowerCase();
-            const kws = (doc.keywords || []).map(k => (k || '').toLowerCase());
-            let bonus = 0;
-            if (title === needle) bonus += 100;
-            if (title.includes(needle)) bonus += 50;
-            if (kws.includes(needle)) bonus += 80;
-            else if (kws.some(k => k.includes(needle))) bonus += 50;
-            return bonus ? { ...h, score: h.score + bonus } : h;
-        })
-        .sort((a, b) => b.score - a.score);
 }
 
 function escapeHtml(str) {
@@ -319,13 +290,12 @@ export default bemDom.declBlock('search', {
             // Curated keywords are hand-tagged to a single page and weigh
             // more than the title — they're the intent we're encoding.
             boost: { keywords: 8, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
-            limit: RERANK_POOL,
+            limit: RESULT_LIMIT,
             tolerance: 1
         });
 
         this.delMod('loading');
-        const hits = rerankBySubstring(result.hits || [], term).slice(0, RESULT_LIMIT);
-        this._renderHits(hits, buildHighlighter(term));
+        this._renderHits(result.hits || [], buildHighlighter(term));
     },
 
     _renderState: function(state) {
