@@ -23,6 +23,67 @@ const TOKENIZER_LANG = { en: 'english', ru: 'russian' };
 const STEMMERS = { en: stemmerEn, ru: stemmerRu };
 const STOPWORDS = { en: stopwordsEn, ru: stopwordsRu };
 
+// Default per-language splitters in Orama strip non-letter punctuation,
+// which here means "i-bem" → ["i", "bem"], "4.2.1" → ["4", "2", "1"],
+// "i-bem.js" → ["i", "bem", "js"]. Once "bem" is a standalone token,
+// prefix matching pulls every "bem*" word in the index and BM25 ranks
+// them above the page actually named "i-bem".
+//
+// We keep punctuation that's load-bearing inside identifiers in the
+// bem-domain — `-` `_` `'` `.` `@` `+` — and split on everything else
+// (whitespace, slash, brackets, sentence punctuation). Trailing/leading
+// punctuation is then trimmed off each token so "БЭМ-стек." indexes as
+// "бэм-стек" and "Это блок. И элемент." still splits into separate words.
+const COMPOUND_SPLITTER = /[^a-z0-9а-яё._'@+-]+/gi;
+const TRIM_PUNCT = /^[._'-]+|[._'-]+$/g;
+
+// Build a tokenizer object compatible with @orama/orama internals. Mirrors
+// the shape of the one createTokenizer() returns; we substitute our split
+// rule but keep stopwords + stemmer wired the same way.
+export function buildTokenizer({ lang }) {
+    const tk = {
+        language: TOKENIZER_LANG[lang],
+        stemmer: STEMMERS[lang],
+        stopWords: STOPWORDS[lang],
+        stemmerSkipProperties: new Set(),
+        tokenizeSkipProperties: new Set(['url']),
+        allowDuplicates: false,
+        normalizationCache: new Map()
+    };
+    tk.normalizeToken = function(prop, token, withCache = true) {
+        const key = `${this.language}:${prop}:${token}`;
+        if (withCache && this.normalizationCache.has(key)) return this.normalizationCache.get(key);
+        // Yo-fold: Russian ё/Ё are commonly written as е/Е — normalise both
+        // to "е" so "вёрстка" and "верстка" share an inverted-index entry.
+        if (lang === 'ru') token = token.replace(/ё/g, 'е');
+        if (this.stopWords?.includes(token)) {
+            if (withCache) this.normalizationCache.set(key, '');
+            return '';
+        }
+        if (this.stemmer && !this.stemmerSkipProperties.has(prop)) token = this.stemmer(token);
+        // Drop single-character noise (`i` from "i", `и` already in stop-words,
+        // page-numbering chars). Keeps the index tighter and the ranking
+        // saner on short ambiguous queries.
+        if (token.length < 2) return '';
+        if (withCache) this.normalizationCache.set(key, token);
+        return token;
+    }.bind(tk);
+    tk.tokenize = function(input, _language, prop, withCache = true) {
+        if (typeof input !== 'string') return [input];
+        if (prop && this.tokenizeSkipProperties.has(prop)) {
+            const n = this.normalizeToken(prop ?? '', input, withCache);
+            return n ? [n] : [];
+        }
+        const tokens = input.toLowerCase()
+            .split(COMPOUND_SPLITTER)
+            .map(t => t.replace(TRIM_PUNCT, ''))
+            .map(t => this.normalizeToken(prop ?? '', t, withCache))
+            .filter(Boolean);
+        return this.allowDuplicates ? tokens : [...new Set(tokens)];
+    }.bind(tk);
+    return tk;
+}
+
 // Cap body length per record. Most articles fit, longer ones get the head —
 // where the most relevant terms (intro, headings) sit. 2500 vs 4000 cuts the
 // gzipped index roughly in half with a marginal recall hit.
@@ -88,41 +149,37 @@ const PAGE_KEYWORDS = {
 
     // Technologies — these are key navigation pages without their own
     // content; without explicit keywords they would be invisible to search.
-    //
-    // IMPORTANT: avoid keywords that contain a bare "bem" token after
-    // tokenisation (e.g. "bem-xjst" splits into ["bem", "xjst"]) — the
-    // tokeniser sees them as two separate tokens and the bare "bem" then
-    // matches every "i-bem"/"bem-foo" query, polluting other pages.
-    // Keep only the distinguishing suffix instead.
-    '/technologies/classic/':            ['classic', 'classical stack', 'классический стек'],
+    // The custom tokenizer (buildTokenizer) preserves '-' inside tokens
+    // so "bem-react" / "i-bem" are single tokens — no bare "bem" pollution.
+    '/technologies/classic/':            ['classic stack', 'классический стек'],
     '/technologies/classic/bemjson/':    ['bemjson', 'данные', 'data'],
-    '/technologies/classic/bem-xjst/':   ['xjst', 'bemhtml', 'bemtree', 'templates', 'шаблоны'],
+    '/technologies/classic/bem-xjst/':   ['bem-xjst', 'bemhtml', 'bemtree', 'templates', 'шаблоны'],
     '/technologies/classic/i-bem/':      ['i-bem', 'i-bem.js', 'ibem',
                                           'client javascript',
                                           'клиентский javascript', 'клиентский js'],
     '/technologies/classic/deps/':       ['deps', 'dependencies', 'зависимости'],
-    '/technologies/classic/deps-spec/':  ['deps spec', 'deps specification', 'спецификация deps'],
-    '/technologies/classic/project-stub/': ['project stub', 'project starter', 'заготовка проекта'],
-    '/technologies/bem-react/':          ['react', 'реакт'],
+    '/technologies/classic/deps-spec/':  ['deps-spec', 'deps specification', 'спецификация deps'],
+    '/technologies/classic/project-stub/': ['project-stub', 'project starter', 'заготовка проекта'],
+    '/technologies/bem-react/':          ['bem-react', 'react', 'реакт'],
     '/technologies/bem-react/motivation/': ['motivation', 'why react', 'мотивация'],
-    '/technologies/bem-react/classname/': ['classname', 'class name'],
-    '/technologies/bem-react/core/':     ['react core'],
+    '/technologies/bem-react/classname/': ['classname', 'class-name'],
+    '/technologies/bem-react/core/':     ['bem-react-core', 'core'],
     '/technologies/bem-react/di/':       ['di', 'dependency injection', 'внедрение зависимостей'],
 
     // Toolbox tools — short titles ("ENB", "bemhint", "SDK") need keyword
     // hints so cross-language and longform queries find them.
     '/toolbox/enb/':                     ['enb', 'build tool', 'сборщик'],
     '/toolbox/bemhint/':                 ['bemhint', 'lint', 'linter', 'линтер'],
-    '/toolbox/bem-tools/':               ['cli', 'tools'],
+    '/toolbox/bem-tools/':               ['bem-tools', 'cli'],
     '/toolbox/bemmet/':                  ['bemmet', 'emmet', 'shorthand'],
     '/toolbox/sdk/':                     ['sdk', 'developer kit'],
 
     // Library landings (without version) — top-level entry to each lib's
     // history of versions.
     '/libraries/classic/':               ['classic libraries', 'классические библиотеки'],
-    '/libraries/classic/bem-core/':      ['core'],
-    '/libraries/classic/bem-components/': ['components', 'компоненты'],
-    '/libraries/classic/bem-history/':   ['router', 'history'],
+    '/libraries/classic/bem-core/':      ['bem-core', 'core'],
+    '/libraries/classic/bem-components/': ['bem-components', 'components', 'компоненты'],
+    '/libraries/classic/bem-history/':   ['bem-history', 'router', 'history'],
     '/libraries/classic/principles/':    ['principles', 'принципы'],
 
     // Tutorials section landings
@@ -330,18 +387,7 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     const db = create({
         schema: SEARCH_SCHEMA,
         sort: { enabled: false },
-        components: {
-            tokenizer: {
-                language: TOKENIZER_LANG[lang],
-                stemmer: STEMMERS[lang],
-                stopWords: STOPWORDS[lang],
-                // Don't tokenize the URL into the inverted index — query
-                // terms accidentally matching path segments ("articles",
-                // "naming") would otherwise inflate scores on the catalog
-                // pages that just have the term in their slug.
-                tokenizeSkipProperties: ['url']
-            }
-        }
+        components: { tokenizer: buildTokenizer({ lang }) }
     });
 
     await insertMultiple(db, records);
