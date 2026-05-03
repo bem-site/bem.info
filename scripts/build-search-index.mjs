@@ -103,6 +103,7 @@ export const SEARCH_SCHEMA = {
     subtitle: 'string',
     breadcrumbs: 'string[]',
     keywords: 'string[]',
+    headings: 'string[]',
     body: 'string',
     // Static authority signal computed from the URL pattern at build time
     // (see RANK_RULES). Added to the BM25 score on the client before
@@ -255,6 +256,32 @@ function stripHtml(html) {
         .trim();
 }
 
+// Pull h1..h4 inner text into a separate searchable field. Headings name
+// the section a paragraph belongs to and a query is far more likely to
+// match the section title than a random sentence inside the section, so
+// they deserve a heavier boost than body. They are not capped — there
+// are rarely more than a few dozen per page and each is short.
+function extractHeadings(html) {
+    if (!html) return [];
+    const out = [];
+    const re = /<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi;
+    let m;
+    while ((m = re.exec(html)) !== null) {
+        const text = m[1]
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/&nbsp;/g, ' ')
+            .replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, "'")
+            .replace(/\s+/g, ' ')
+            .trim();
+        if (text) out.push(text);
+    }
+    return out;
+}
+
 function hasBlockContent(page) {
     const c = page.block?.content;
     return Boolean(c && (c.ru || c.en || c.uk));
@@ -353,6 +380,8 @@ function buildRecord(page, lang, stats, cacheDir) {
     }
 
     let body = '';
+    let headings = [];
+    let rawHtml = '';
     if (page.contentFile) {
         // gorshochek's contentFile is always inside its cache folder; the
         // value is a leading-slash relative path like "/foo/bar/index.html".
@@ -363,7 +392,7 @@ function buildRecord(page, lang, stats, cacheDir) {
         // or .bemjson.js (when the transform pipeline didn't reach html).
         if (abs.endsWith('.html')) {
             try {
-                body = stripHtml(fs.readFileSync(abs, 'utf8'));
+                rawHtml = fs.readFileSync(abs, 'utf8');
             } catch {
                 stats.unreadable++;
             }
@@ -375,13 +404,17 @@ function buildRecord(page, lang, stats, cacheDir) {
         // pre-rendered HTML straight into the model under block.content.
         const inline = pickLang(page.block?.content, lang);
         if (inline) {
-            body = stripHtml(inline);
+            rawHtml = inline;
             stats.fromBlockContent++;
         } else {
             stats.noContentFile++;
         }
     }
-    if (body.length > BODY_MAX_CHARS) body = body.slice(0, BODY_MAX_CHARS);
+    if (rawHtml) {
+        headings = extractHeadings(rawHtml);
+        body = stripHtml(rawHtml);
+        if (body.length > BODY_MAX_CHARS) body = body.slice(0, BODY_MAX_CHARS);
+    }
 
     const url = langUrl(page.url, lang);
 
@@ -397,7 +430,7 @@ function buildRecord(page, lang, stats, cacheDir) {
     const keywords = pageKeywords(page.url);
     const rank = computeRank(page.url);
 
-    return { id: url, url, title, subtitle, breadcrumbs, keywords, body, rank };
+    return { id: url, url, title, subtitle, breadcrumbs, keywords, headings, body, rank };
 }
 
 export async function buildSearchIndex({ lang, cacheDir, outputDir }) {

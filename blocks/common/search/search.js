@@ -12,6 +12,7 @@ const SEARCH_SCHEMA = {
     subtitle: 'string',
     breadcrumbs: 'string[]',
     keywords: 'string[]',
+    headings: 'string[]',
     body: 'string',
     rank: 'number'
 };
@@ -287,10 +288,12 @@ export default bemDom.declBlock('search', {
 
         const result = await search(db, {
             term,
-            properties: ['title', 'subtitle', 'keywords', 'breadcrumbs', 'body'],
+            properties: ['title', 'subtitle', 'keywords', 'breadcrumbs', 'headings', 'body'],
             // Curated keywords are hand-tagged to a single page and weigh
-            // more than the title — they're the intent we're encoding.
-            boost: { keywords: 8, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
+            // most. Headings name a section of the doc and are far more
+            // likely to match a user's query than a random body sentence,
+            // so they outweigh title fragments and body text.
+            boost: { keywords: 8, headings: 6, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
             // Pull more candidates than we display so the post-Orama
             // rerank by `doc.rank` (URL-pattern authority signal baked in
             // at build time — see RANK_RULES in build-search-index.mjs)
