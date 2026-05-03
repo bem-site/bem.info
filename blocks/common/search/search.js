@@ -262,8 +262,23 @@ export default bemDom.declBlock('search', {
                 // Whoever opens the panel (header__toggle, our submit click,
                 // …) leaves focus to us. Defer past the click so the
                 // bubbling pointerup doesn't immediately blur the input.
-                if (!this._inputDom) return;
-                setTimeout(() => this._inputDom.focus(), 0);
+                if (this._inputDom) setTimeout(() => this._inputDom.focus(), 0);
+                // Close the panel when the user clicks anywhere outside
+                // the search container — standard suggest UX. Listen on
+                // the next tick so the very click that opened us doesn't
+                // immediately close us back.
+                setTimeout(() => {
+                    this._docCloseHandler = this._onDocPointerDown.bind(this);
+                    document.addEventListener('mousedown', this._docCloseHandler, true);
+                    document.addEventListener('touchstart', this._docCloseHandler, true);
+                }, 0);
+            },
+            '': function() {
+                if (this._docCloseHandler) {
+                    document.removeEventListener('mousedown', this._docCloseHandler, true);
+                    document.removeEventListener('touchstart', this._docCloseHandler, true);
+                    this._docCloseHandler = null;
+                }
             }
         }
     },
@@ -404,5 +419,12 @@ export default bemDom.declBlock('search', {
             this.setMod('opened');
             if (this._inputDom) this._inputDom.focus();
         }
+    },
+
+    _onDocPointerDown: function(e) {
+        // Click inside the search container (input, results, submit) — keep
+        // the panel open. Any other click on the page collapses it.
+        if (this.domElem[0].contains(e.target)) return;
+        this.delMod('opened');
     }
 });
