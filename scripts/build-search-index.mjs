@@ -280,20 +280,70 @@ function extractHeadings(html) {
     const re = /<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi;
     let m;
     while ((m = re.exec(html)) !== null) {
-        const text = m[1]
-            .replace(/<[^>]+>/g, ' ')
-            .replace(/&nbsp;/g, ' ')
-            .replace(/&amp;/g, '&')
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, "'")
-            .replace(/\s+/g, ' ')
-            .trim();
+        const text = headingInnerText(m[1]);
         if (text) out.push(text);
     }
     return out;
 }
+
+function headingInnerText(raw) {
+    return raw
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+// Split the page HTML into h2-anchored sections. Long Q&A pages like
+// /methodology/faq/ have ~30 headings — each is conceptually a separate
+// document with its own URL fragment, and the user's query is much more
+// likely to match a single Q than the page-as-a-whole. Returns one
+// entry per h2 with at least MIN_SECTION_BODY chars of body, preserving
+// the heading's id for the URL fragment.
+function extractSections(html) {
+    if (!html) return [];
+    // Find all h1..h3 with an id, in document order.
+    const re = /<h([1-3])\b[^>]*?\bid="([^"]+)"[^>]*?>([\s\S]*?)<\/h\1>/gi;
+    const headings = [];
+    let m;
+    while ((m = re.exec(html)) !== null) {
+        headings.push({
+            level: parseInt(m[1], 10),
+            id: m[2],
+            text: headingInnerText(m[3]),
+            tagStart: m.index,
+            tagEnd: m.index + m[0].length
+        });
+    }
+    const sections = [];
+    for (let i = 0; i < headings.length; i++) {
+        const h = headings[i];
+        // Only h2 — h1 is the page title (covered by the parent record),
+        // h3 nests under h2 and would explode the index. Splitting at h2
+        // is the standard granularity for section-level search.
+        if (h.level !== 2) continue;
+        // Body runs from end of this h2 until the next h1 or h2 (its
+        // own scope). h3 inside the section stays as part of the body.
+        let bodyEnd = html.length;
+        for (let j = i + 1; j < headings.length; j++) {
+            if (headings[j].level <= 2) {
+                bodyEnd = headings[j].tagStart;
+                break;
+            }
+        }
+        const body = stripHtml(html.slice(h.tagEnd, bodyEnd));
+        sections.push({ anchor: h.id, heading: h.text, body });
+    }
+    return sections;
+}
+
+const MIN_SECTION_BODY = 200;
+const MIN_SECTIONS_TO_SPLIT = 3;
 
 function hasBlockContent(page) {
     const c = page.block?.content;
@@ -389,7 +439,7 @@ function buildRecord(page, lang, stats, cacheDir) {
     const subtitle = pickLang(page.subtitle, lang);
     if (!title && !subtitle) {
         stats.noTitle++;
-        return null;
+        return [];
     }
 
     let body = '';
@@ -443,7 +493,40 @@ function buildRecord(page, lang, stats, cacheDir) {
     const keywords = pageKeywords(page.url);
     const rank = computeRank(page.url);
 
-    return { id: url, url, title, subtitle, breadcrumbs, keywords, headings, body, rank };
+    const records = [{ id: url, url, title, subtitle, breadcrumbs, keywords, headings, body, rank }];
+
+    // For long h2-rich pages (FAQ, key-concepts, …) emit one extra record
+    // per section. Each section becomes its own document with the
+    // anchor in the URL and the heading as the title — the user sees a
+    // result like "Методология › FAQ / Почему не стоит создавать
+    // элементы элементов" and clicking jumps straight to the anchor.
+    if (rawHtml) {
+        const sections = extractSections(rawHtml).filter(s =>
+            s.heading && s.body.length >= MIN_SECTION_BODY);
+        if (sections.length >= MIN_SECTIONS_TO_SPLIT) {
+            const sectionBreadcrumbs = title ? [...breadcrumbs, title] : breadcrumbs;
+            for (const sec of sections) {
+                const secUrl = `${url}#${sec.anchor}`;
+                const secBody = sec.body.length > BODY_MAX_CHARS
+                    ? sec.body.slice(0, BODY_MAX_CHARS)
+                    : sec.body;
+                records.push({
+                    id: secUrl,
+                    url: secUrl,
+                    title: sec.heading,
+                    subtitle: '',
+                    breadcrumbs: sectionBreadcrumbs,
+                    keywords: [],
+                    headings: [sec.heading],
+                    body: secBody,
+                    rank
+                });
+                stats.sectionsAdded++;
+            }
+        }
+    }
+
+    return records;
 }
 
 export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
@@ -458,16 +541,15 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     const stats = {
         total: allPages.length,
         dedupedOut: allPages.length - pages.length,
-        filtered: 0, noTitle: 0, noContentFile: 0, unreadable: 0, fromBlockContent: 0
+        filtered: 0, noTitle: 0, noContentFile: 0, unreadable: 0,
+        fromBlockContent: 0, sectionsAdded: 0
     };
     const indexable = pages.filter(p => {
         const ok = isIndexable(p);
         if (!ok) stats.filtered++;
         return ok;
     });
-    const records = indexable
-        .map(p => buildRecord(p, lang, stats, cacheDir))
-        .filter(Boolean);
+    const records = indexable.flatMap(p => buildRecord(p, lang, stats, cacheDir));
     const withBody = records.filter(r => r.body).length;
 
     const db = create({
@@ -486,7 +568,8 @@ export async function buildSearchIndex({ lang, cacheDir, outputDir }) {
     const sizeKB = (Buffer.byteLength(json, 'utf8') / 1024).toFixed(1);
     console.log(
         `Search [${lang}]: ${records.length} indexed of ${stats.total} ` +
-        `(${withBody} with body, ${stats.fromBlockContent} from block.content; ` +
+        `(${withBody} with body, ${stats.fromBlockContent} from block.content, ` +
+        `+${stats.sectionsAdded} section sub-records; ` +
         `deduped-versions ${stats.dedupedOut}, filtered ${stats.filtered}, ` +
         `no-title ${stats.noTitle}, no-content-file ${stats.noContentFile}, ` +
         `unreadable ${stats.unreadable}) → ${outFile} (${sizeKB} KB)`
