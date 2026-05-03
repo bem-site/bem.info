@@ -103,8 +103,47 @@ export const SEARCH_SCHEMA = {
     subtitle: 'string',
     breadcrumbs: 'string[]',
     keywords: 'string[]',
-    body: 'string'
+    body: 'string',
+    // Static authority signal computed from the URL pattern at build time
+    // (see RANK_RULES). Added to the BM25 score on the client before
+    // sorting hits — enough to break ties between authoritative articles
+    // and version-specific library stubs without overpowering strong
+    // term matches.
+    rank: 'number'
 };
+
+// Authority shift applied per-URL. Typical BM25 scores fall in 5–50;
+// ±10 is meaningful but doesn't override a strong term match.
+//
+// Order matters: first match wins. Most specific patterns first.
+const RANK_RULES = [
+    // Library version-specific block stubs — short reference cards that
+    // forward the reader to the canonical doc on /technologies/.../
+    [/^\/libraries\/classic\/[^/]+\/[^/]+\/[^/]+\/[^/]+\/$/, -10],
+
+    // Library service pages (changelog, migration) — useful but rarely
+    // the first thing a search query is after.
+    [/^\/libraries\/classic\/[^/]+\/[^/]+\/(changelog|migration)\//, -5],
+
+    // Methodology — the canonical body of BEM documentation. Top-level
+    // article pages get the strongest promotion; sub-pages still
+    // promoted but less.
+    [/^\/methodology\/[^/]+\/$/, 10],
+    [/^\/methodology\//, 5],
+
+    // Section landings: technologies / toolbox top-level docs.
+    [/^\/technologies\/classic\/[^/]+\/$/, 5],
+    [/^\/technologies\/bem-react\/$/, 5],
+    [/^\/toolbox\/[^/]+\/$/, 5],
+
+    // Practical guides — useful but task-specific, mid-tier promote.
+    [/^\/tutorials\/classic\//, 3]
+];
+
+function computeRank(url) {
+    for (const [re, r] of RANK_RULES) if (re.test(url)) return r;
+    return 0;
+}
 
 // Hand-curated cross-language glossary so users can find pages by the
 // abbreviation or by the term in the other language. Each entry is a
@@ -356,8 +395,9 @@ function buildRecord(page, lang, stats, cacheDir) {
         : [];
 
     const keywords = pageKeywords(page.url);
+    const rank = computeRank(page.url);
 
-    return { id: url, url, title, subtitle, breadcrumbs, keywords, body };
+    return { id: url, url, title, subtitle, breadcrumbs, keywords, body, rank };
 }
 
 export async function buildSearchIndex({ lang, cacheDir, outputDir }) {

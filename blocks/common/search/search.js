@@ -12,7 +12,8 @@ const SEARCH_SCHEMA = {
     subtitle: 'string',
     breadcrumbs: 'string[]',
     keywords: 'string[]',
-    body: 'string'
+    body: 'string',
+    rank: 'number'
 };
 
 let dbPromise = null;
@@ -290,12 +291,21 @@ export default bemDom.declBlock('search', {
             // Curated keywords are hand-tagged to a single page and weigh
             // more than the title — they're the intent we're encoding.
             boost: { keywords: 8, title: 4, subtitle: 2, breadcrumbs: 1, body: 1 },
-            limit: RESULT_LIMIT,
+            // Pull more candidates than we display so the post-Orama
+            // rerank by `doc.rank` (URL-pattern authority signal baked in
+            // at build time — see RANK_RULES in build-search-index.mjs)
+            // can promote authoritative pages even when their BM25 score
+            // is a few points below a verbose library stub.
+            limit: RESULT_LIMIT * 4,
             tolerance: 1
         });
 
         this.delMod('loading');
-        this._renderHits(result.hits || [], buildHighlighter(term));
+        const hits = (result.hits || [])
+            .map(h => ({ ...h, score: h.score + (h.document.rank || 0) }))
+            .sort((a, b) => b.score - a.score)
+            .slice(0, RESULT_LIMIT);
+        this._renderHits(hits, buildHighlighter(term));
     },
 
     _renderState: function(state) {
