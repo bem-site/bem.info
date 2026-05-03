@@ -23,12 +23,19 @@ const TOKENIZER_LANG = { en: 'english', ru: 'russian' };
 const STEMMERS = { en: stemmerEn, ru: stemmerRu };
 const STOPWORDS = { en: stopwordsEn, ru: stopwordsRu };
 
-// Default Russian splitter `[^a-z0-9а-яё]+` strips hyphens and underscores,
-// turning "i-bem" into ["i", "bem"] — and the bare "bem" then prefix-matches
-// every "bem*" word in the index, completely killing rank quality. The
-// English splitter already preserves "-" / "_" / "'", so we replicate that
-// behaviour for both languages with a unified custom splitter.
-const COMPOUND_SPLITTER = /[^a-z0-9а-яё_'-]+/gi;
+// Default per-language splitters in Orama strip non-letter punctuation,
+// which here means "i-bem" → ["i", "bem"], "4.2.1" → ["4", "2", "1"],
+// "i-bem.js" → ["i", "bem", "js"]. Once "bem" is a standalone token,
+// prefix matching pulls every "bem*" word in the index and BM25 ranks
+// them above the page actually named "i-bem".
+//
+// We keep punctuation that's load-bearing inside identifiers in the
+// bem-domain — `-` `_` `'` `.` `@` `+` — and split on everything else
+// (whitespace, slash, brackets, sentence punctuation). Trailing/leading
+// punctuation is then trimmed off each token so "БЭМ-стек." indexes as
+// "бэм-стек" and "Это блок. И элемент." still splits into separate words.
+const COMPOUND_SPLITTER = /[^a-z0-9а-яё._'@+-]+/gi;
+const TRIM_PUNCT = /^[._'-]+|[._'-]+$/g;
 
 // Build a tokenizer object compatible with @orama/orama internals. Mirrors
 // the shape of the one createTokenizer() returns; we substitute our split
@@ -46,11 +53,18 @@ export function buildTokenizer({ lang }) {
     tk.normalizeToken = function(prop, token, withCache = true) {
         const key = `${this.language}:${prop}:${token}`;
         if (withCache && this.normalizationCache.has(key)) return this.normalizationCache.get(key);
+        // Yo-fold: Russian ё/Ё are commonly written as е/Е — normalise both
+        // to "е" so "вёрстка" and "верстка" share an inverted-index entry.
+        if (lang === 'ru') token = token.replace(/ё/g, 'е');
         if (this.stopWords?.includes(token)) {
             if (withCache) this.normalizationCache.set(key, '');
             return '';
         }
         if (this.stemmer && !this.stemmerSkipProperties.has(prop)) token = this.stemmer(token);
+        // Drop single-character noise (`i` from "i", `и` already in stop-words,
+        // page-numbering chars). Keeps the index tighter and the ranking
+        // saner on short ambiguous queries.
+        if (token.length < 2) return '';
         if (withCache) this.normalizationCache.set(key, token);
         return token;
     }.bind(tk);
@@ -62,6 +76,7 @@ export function buildTokenizer({ lang }) {
         }
         const tokens = input.toLowerCase()
             .split(COMPOUND_SPLITTER)
+            .map(t => t.replace(TRIM_PUNCT, ''))
             .map(t => this.normalizeToken(prop ?? '', t, withCache))
             .filter(Boolean);
         return this.allowDuplicates ? tokens : [...new Set(tokens)];

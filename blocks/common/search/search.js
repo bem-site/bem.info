@@ -39,9 +39,11 @@ function indexUrl(lang) {
 }
 
 // Mirror of scripts/build-search-index.mjs — must stay symmetric or
-// query tokens won't match indexed tokens. Default Russian splitter
-// strips '-' / '_' which breaks "i-bem"-style queries; we keep them.
-const COMPOUND_SPLITTER = /[^a-z0-9а-яё_'-]+/gi;
+// query tokens won't match indexed tokens. We keep punctuation that's
+// load-bearing inside identifiers (`-` `_` `'` `.` `@` `+`) so
+// "i-bem", "4.2.1", "i-bem.js", "@bem" survive as single tokens.
+const COMPOUND_SPLITTER = /[^a-z0-9а-яё._'@+-]+/gi;
+const TRIM_PUNCT = /^[._'-]+|[._'-]+$/g;
 
 function buildTokenizer(lang, stemmer, stopWords) {
     const tk = {
@@ -56,11 +58,13 @@ function buildTokenizer(lang, stemmer, stopWords) {
     tk.normalizeToken = function(prop, token, withCache = true) {
         const key = `${this.language}:${prop}:${token}`;
         if (withCache && this.normalizationCache.has(key)) return this.normalizationCache.get(key);
+        if (lang === 'ru') token = token.replace(/ё/g, 'е');
         if (this.stopWords && this.stopWords.includes(token)) {
             if (withCache) this.normalizationCache.set(key, '');
             return '';
         }
         if (this.stemmer && !this.stemmerSkipProperties.has(prop)) token = this.stemmer(token);
+        if (token.length < 2) return '';
         if (withCache) this.normalizationCache.set(key, token);
         return token;
     }.bind(tk);
@@ -72,6 +76,7 @@ function buildTokenizer(lang, stemmer, stopWords) {
         }
         const tokens = input.toLowerCase()
             .split(COMPOUND_SPLITTER)
+            .map(t => t.replace(TRIM_PUNCT, ''))
             .map(t => this.normalizeToken(prop || '', t, withCache))
             .filter(Boolean);
         return this.allowDuplicates ? tokens : Array.from(new Set(tokens));
