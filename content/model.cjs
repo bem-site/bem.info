@@ -1687,26 +1687,6 @@ const technologies = [
     }
 ])
     .concat([
-    // {
-    //   url: '/technologies/bem-react/',
-    //   site: '/technologies/bem-react/',
-    //   subtitle: {
-    //     ru: 'Узнайте как совместить БЭМ и React',
-    //     en: 'TBD',
-    //   },
-    //   title: {
-    //     ru: 'БЭМ и React',
-    //     en: 'TBD'
-    //   },
-    //   source: {
-    //     ru: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.ru.md',
-    //     en: 'https://github.com/bem-site/bem-method/blob/migrateFromPlatformToTechnologies/technologies/react/react.en.md',
-    //   },
-    //   tags: ['technologies', 'react'],
-    //   bundle: 'technologies',
-    //   prev: false
-    // }
-
         {
             url: '/technologies/bem-react/',
             site: '/technologies/bem-react/',
@@ -1719,8 +1699,8 @@ const technologies = [
                 en: 'bem-react'
             },
             source: {
-                ru: 'https://github.com/bem/bem-react/blob/master/docs/ru/README.md',
-                en: 'https://github.com/bem/bem-react/blob/master/docs/en/README.md'
+                ru: 'https://github.com/bem/bem-react/blob/master/README.ru.md',
+                en: 'https://github.com/bem/bem-react/blob/master/README.md'
             },
             tags: ['technologies', 'react'],
             bundle: 'technologies',
@@ -1731,11 +1711,53 @@ const technologies = [
             site: '/technologies/bem-react/',
             title: {
                 ru: 'Зачем БЭМ, если есть React?',
-                en: 'Why BEM?'
+                en: 'Why BEM if there\'s React?'
             },
             source: {
-                ru: 'https://github.com/bem/bem-react/blob/master/docs/ru/Introduction/Motivation.md'
-                // en: 'https://github.com/bem/bem-react-core/blob/v3/docs/en/README.md',
+                ru: 'https://github.com/bem/bem-react/blob/master/website/i18n/ru/docusaurus-plugin-content-docs/current/introduction/motivation.md',
+                en: 'https://github.com/bem/bem-react/blob/master/website/docs/introduction/motivation.md'
+            },
+            tags: ['technologies', 'react'],
+            bundle: 'technologies'
+        },
+        {
+            url: '/technologies/bem-react/quick-start/',
+            site: '/technologies/bem-react/',
+            title: {
+                ru: 'Быстрый старт',
+                en: 'Quick start'
+            },
+            source: {
+                ru: 'https://github.com/bem/bem-react/blob/master/website/i18n/ru/docusaurus-plugin-content-docs/current/introduction/quick-start.md',
+                en: 'https://github.com/bem/bem-react/blob/master/website/docs/introduction/quick-start.md'
+            },
+            tags: ['technologies', 'react'],
+            bundle: 'technologies'
+        },
+        {
+            url: '/technologies/bem-react/structure/',
+            site: '/technologies/bem-react/',
+            title: {
+                ru: 'Структура компонента',
+                en: 'Component structure'
+            },
+            source: {
+                ru: 'https://github.com/bem/bem-react/blob/master/website/i18n/ru/docusaurus-plugin-content-docs/current/guides/structure.md',
+                en: 'https://github.com/bem/bem-react/blob/master/website/docs/guides/structure.md'
+            },
+            tags: ['technologies', 'react'],
+            bundle: 'technologies'
+        },
+        {
+            url: '/technologies/bem-react/lazy/',
+            site: '/technologies/bem-react/',
+            title: {
+                ru: 'Ленивые модификаторы',
+                en: 'Lazy modifiers'
+            },
+            source: {
+                ru: 'https://github.com/bem/bem-react/blob/master/website/i18n/ru/docusaurus-plugin-content-docs/current/guides/lazy.md',
+                en: 'https://github.com/bem/bem-react/blob/master/website/docs/guides/lazy.md'
             },
             tags: ['technologies', 'react'],
             bundle: 'technologies'
@@ -1750,6 +1772,20 @@ const technologies = [
             source: {
                 ru: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md',
                 en: 'https://github.com/bem/bem-react/blob/master/packages/classname/README.md'
+            },
+            tags: ['technologies', 'react'],
+            bundle: 'technologies'
+        },
+        {
+            url: '/technologies/bem-react/classnames/',
+            site: '/technologies/bem-react/',
+            title: {
+                ru: 'classnames',
+                en: 'classnames'
+            },
+            source: {
+                ru: 'https://github.com/bem/bem-react/blob/master/packages/classnames/README.md',
+                en: 'https://github.com/bem/bem-react/blob/master/packages/classnames/README.md'
             },
             tags: ['technologies', 'react'],
             bundle: 'technologies'
