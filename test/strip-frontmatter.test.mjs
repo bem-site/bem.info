@@ -34,3 +34,8 @@ test('frontmatter без title просто срезается', () => {
     const result = stripFrontmatter('---\nid: x\n---\nbody');
     assert.equal(result, 'body');
 });
+
+test('CRLF-frontmatter обрабатывается', () => {
+    const result = stripFrontmatter('---\r\nid: x\r\ntitle: Title\r\n---\r\nbody');
+    assert.ok(result.startsWith('# Title\n'));
+});
