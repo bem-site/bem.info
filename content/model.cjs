@@ -22,7 +22,7 @@ const methodology = [
         },
         title: {
             ru: 'Быстрый старт',
-            en: 'Quick start'
+            en: 'Quick Start'
         },
         source: {
             ru: 'https://github.com/bem-site/bem-method/blob/bem-info-data/method/quick-start/quick-start.ru.md',
@@ -1362,7 +1362,7 @@ const technologiesClassicBemxjst = versioned(
             url: 'quick-start/',
             title: {
                 ru: 'Быстрый старт',
-                en: 'Quick start'
+                en: 'Quick Start'
             },
             source: {
                 ru: '2-quick-start.md',
@@ -1725,7 +1725,7 @@ const technologies = [
             site: '/technologies/bem-react/',
             title: {
                 ru: 'Быстрый старт',
-                en: 'Quick start'
+                en: 'Quick Start'
             },
             source: {
                 ru: 'https://github.com/bem/bem-react/blob/master/website/i18n/ru/docusaurus-plugin-content-docs/current/introduction/quick-start.md',
