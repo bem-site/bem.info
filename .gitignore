@@ -26,3 +26,5 @@ output
 .build-client
 
 secret-config.js
+
+.worktrees/
