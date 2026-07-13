@@ -29,14 +29,12 @@
 
 ### Первоначальная настройка
 
-Склонировать репозиторий и установить зависимости:
+Склонировать репозиторий и воспроизводимо установить зависимости из lockfile:
 ```bash
 git clone https://github.com/bem-site/bem.info.git
 cd bem.info
-npm i
+npm ci
 ```
-
-`npm i` автоматически выполнит `postinstall`-скрипт, который установит зависимости для встроенной библиотеки Gorshochek.
 
 ### Сборка данных
 
@@ -58,7 +56,7 @@ npm start
 2. Проверяет наличие кеша данных
 3. Разрешает BEM-зависимости и компилирует BEMTREE/BEMHTML-шаблоны с i18n через bem-xjst
 4. Собирает CSS (с autoprefixer через postcss) и клиентский JS
-5. Минифицирует CSS/JS через esbuild
+5. Минифицирует CSS через Lightning CSS, а клиентский JS — через Vite 8
 6. Генерирует статические HTML-страницы
 7. Генерирует статические редиректы (HTML meta-refresh + 404.html JS-роутер)
 8. Запускает Vite dev-сервер на порту 8008
@@ -99,28 +97,30 @@ bem.info/
 │   └── community-index/     # Лендинг «Сообщество»
 ├── bundles/                 # Бандлы (по одному на каждый раздел)
 ├── content/                 # Модель данных и конфигурация контента
-│   ├── model.js             # Главная модель сайта (~2100 строк)
+│   ├── model.cjs            # Главная модель сайта
 │   ├── redirects/           # Конфигурация URL-редиректов
 │   ├── methodology/         # Контент для раздела «Методология»
 │   └── platform/            # Платформо-зависимый контент
 ├── lib/                     # Утилиты и вспомогательные библиотеки
-│   ├── data-builder.js      # Оркестратор сборки данных
-│   ├── template.js          # Оркестратор компиляции шаблонов
-│   ├── prepare-model.js     # Подготовка модели (фильтрация по языку)
-│   ├── model-lib.js         # Генерация страниц библиотек
-│   ├── model-versioned.js   # Обработка версионированного контента
-│   └── article.bemhtml.js   # Шаблоны статей
+│   ├── data-builder.cjs     # Оркестратор сборки данных
+│   ├── template.cjs         # Генератор HTML
+│   ├── search-config.mjs    # Общий контракт URL и языков поиска
+│   ├── prepare-model.cjs    # Подготовка модели (фильтрация по языку)
+│   ├── model-lib.cjs        # Генерация страниц библиотек
+│   ├── model-versioned.cjs  # Обработка версионированного контента
+│   └── article.bemhtml.cjs  # Шаблоны статей
 ├── static/                  # Статические ресурсы
 │   ├── favicon.ico
 │   ├── robots.txt
 │   ├── og_image/            # Open Graph изображения
 │   └── people/              # Фотографии участников
 ├── tools/                   # Инструменты сборки
-│   ├── generate-static-redirects.js  # Генерация HTML meta-refresh редиректов
-│   └── generate-404-router.js        # Генерация 404.html с JS-роутером
+│   ├── generate-static-redirects.cjs # Генерация HTML meta-refresh редиректов
+│   └── generate-404-router.cjs       # Генерация 404.html с JS-роутером
 ├── scripts/
 │   ├── build.mjs            # Оркестратор сборки (замена Gulp)
-│   └── bem-build.mjs        # BEM-сборка: зависимости, шаблоны, CSS, JS (замена ENB)
+│   ├── build-search-index.mjs # Генерация индексов Orama
+│   └── bem-build.mjs        # BEM-сборка: зависимости, шаблоны, CSS, JS
 ├── vite.config.mjs          # Vite: dev-сервер и preview
 ├── eslint.config.mjs        # ESLint 10 flat config
 ├── stylelint.config.mjs     # Stylelint 17 конфигурация
@@ -134,10 +134,10 @@ bem.info/
 ### Конвейер обработки данных
 
 ```
-1. Модель данных (content/model.js)
+1. Модель данных (content/model.cjs)
    └─ Определяет все страницы сайта, их заголовки, источники контента, метаданные
 
-2. Сборка данных (lib/data-builder.js через Gorshochek)
+2. Сборка данных (lib/data-builder.cjs через Gorshochek)
    ├─ Загрузка Markdown-документов из GitHub-репозиториев
    ├─ Загрузка локальных файлов
    ├─ Преобразование Markdown → BEMJSON
@@ -150,13 +150,14 @@ bem.info/
    ├─ Разрешение зависимостей блоков через .deps.js
    ├─ Компиляция BEMTREE/BEMHTML-шаблонов с i18n через bem-xjst
    ├─ Сборка CSS с autoprefixer через postcss
-   └─ Сборка клиентского JavaScript
+   └─ Сборка клиентского JavaScript через Vite 8
 
-4. Минификация (esbuild)
-   ├─ CSS → *.min.css
-   └─ JS → *.min.js
+4. Минификация и поиск
+   ├─ CSS → *.min.css через Lightning CSS
+   ├─ клиентский JS → _client/client.js через Vite 8
+   └─ Orama → {lang}/_search/index.json
 
-5. Компиляция страниц (lib/template.js)
+5. Компиляция страниц (lib/template.cjs)
    ├─ Применение BEMTREE/BEMHTML-шаблонов к данным
    └─ Генерация статических HTML-страниц
 
@@ -185,7 +186,9 @@ bem.info/
 | `npm run dev` | Vite dev-сервер (output/ уже собран) |
 | `npm run preview` | Vite preview-сервер |
 | `npm run watch` | Полная сборка + наблюдение за изменениями |
-| `npm test` | Линтинг + юнит-тесты Gorshochek |
+| `npm run search-index` | Пересборка поисковых индексов из готового кеша |
+| `npm run validate-links` | Строгая проверка внутренних ссылок в собранном сайте |
+| `npm test` | Поведенческие тесты + ESLint + Stylelint |
 | `npm run lint` | ESLint + Stylelint |
 
 ### Технологический стек
@@ -193,13 +196,14 @@ bem.info/
 | Инструмент | Версия | Назначение |
 |------------|--------|------------|
 | **Node.js** | 24+ | Среда выполнения |
-| **Vite** | ^7.0.0 | Dev-сервер и preview |
-| **esbuild** | ^0.27.0 | Минификация CSS/JS |
+| **Vite** | ^8.0.1 | Сборка клиентского JS, dev-сервер и preview |
+| **Orama** | ^3.1.18 | Клиентский полнотекстовый поиск и сериализация индекса |
+| **Lightning CSS** | ^1.32.0 | Минификация CSS |
 | **bem-xjst** | ^8.10.0 | Компиляция BEMTREE/BEMHTML-шаблонов |
 | **postcss** + **autoprefixer** | ^8.5 / ^10.4 | Обработка CSS с автопрефиксами |
 | **ESLint** | ^10.0.0 | Линтинг JS (flat config) |
 | **Stylelint** | ^17.0.0 | Линтинг CSS |
-| **Gorshochek** | 2.8.2 | Фреймворк генерации данных (встроен в `lib/`) |
+| **Gorshochek** | 2.8.2 | Фреймворк генерации данных из GitHub и локальных источников |
 
 ## Переменные окружения
 
@@ -210,7 +214,7 @@ bem.info/
 | `LANGUAGES` | Языки через запятую | `en,ru` |
 | `SITES` | Разделы сайта через запятую | `methodology,technologies,toolbox,libraries,tutorials` |
 | `PORT` | Порт dev-сервера (Vite) | `8008` |
-| `PATH_TO_MODEL` | Путь к кастомной модели данных | `./content/model.js` |
+| `PATH_TO_MODEL` | Путь к кастомной модели данных | `./content/model.cjs` |
 | `GITHUB_HOSTS` | Поддержка приватных GitHub-инстансов | — |
 | `DEBUG` | Режим отладки | — |
 
@@ -230,7 +234,7 @@ bem.info/
 
 ## Модель данных
 
-[Модель данных](./content/model.js) — основной файл, описывающий все страницы сайта. Каждая запись содержит:
+[Модель данных](./content/model.cjs) — основной файл, описывающий все страницы сайта. Каждая запись содержит:
 
 ```javascript
 {
@@ -286,7 +290,7 @@ bem.info/
 - **article** — стилизация контентных статей
 - **article-amendments** — ссылка «сообщить об ошибке» на GitHub
 - **breadcrumbs** — хлебные крошки
-- **search** — поиск
+- **search** — клиентский поиск по индексам Orama
 - **social-likes** — кнопки социальных сетей
 - **yandex-metrica-api** — интеграция с Яндекс.Метрикой
 
@@ -330,8 +334,9 @@ output/
 └── bem.info/
     ├── ru/                            # Русская версия
     │   ├── **/*.html                  # Статические HTML-страницы
-    │   ├── *.min.css                  # Минифицированные стили (esbuild)
-    │   ├── *.min.js                   # Минифицированные скрипты (esbuild)
+    │   ├── *.min.css                  # Минифицированные стили
+    │   ├── _client/                   # Клиентский JS, собранный Vite
+    │   ├── _search/index.json         # Сериализованный индекс Orama
     │   ├── 404.html                   # JS-роутер для regex-редиректов
     │   └── sitemap.xml
     └── en/                            # Английская версия
