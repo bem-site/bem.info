@@ -18,10 +18,10 @@ import { stemmer as stemmerEn } from '@orama/stemmers/english';
 import { stemmer as stemmerRu } from '@orama/stemmers/russian';
 import { stopwords as stopwordsEn } from '@orama/stopwords/english';
 import { stopwords as stopwordsRu } from '@orama/stopwords/russian';
+import { searchLanguage } from '../lib/search-config.mjs';
 
-const TOKENIZER_LANG = { en: 'english', ru: 'russian' };
-const STEMMERS = { en: stemmerEn, ru: stemmerRu };
-const STOPWORDS = { en: stopwordsEn, ru: stopwordsRu };
+const STEMMERS = { english: stemmerEn, russian: stemmerRu };
+const STOPWORDS = { english: stopwordsEn, russian: stopwordsRu };
 
 // Default per-language splitters in Orama strip non-letter punctuation,
 // which here means "i-bem" → ["i", "bem"], "4.2.1" → ["4", "2", "1"],
@@ -41,10 +41,11 @@ const TRIM_PUNCT = /^[._'-]+|[._'-]+$/g;
 // the shape of the one createTokenizer() returns; we substitute our split
 // rule but keep stopwords + stemmer wired the same way.
 export function buildTokenizer({ lang }) {
+    const language = searchLanguage(lang);
     const tk = {
-        language: TOKENIZER_LANG[lang],
-        stemmer: STEMMERS[lang],
-        stopWords: STOPWORDS[lang],
+        language,
+        stemmer: STEMMERS[language],
+        stopWords: STOPWORDS[language],
         stemmerSkipProperties: new Set(),
         tokenizeSkipProperties: new Set(['url']),
         allowDuplicates: false,
@@ -55,7 +56,7 @@ export function buildTokenizer({ lang }) {
         if (withCache && this.normalizationCache.has(key)) return this.normalizationCache.get(key);
         // Yo-fold: Russian ё/Ё are commonly written as е/Е — normalise both
         // to "е" so "вёрстка" and "верстка" share an inverted-index entry.
-        if (lang === 'ru') token = token.replace(/ё/g, 'е');
+        if (language === 'russian') token = token.replace(/ё/g, 'е');
         if (this.stopWords?.includes(token)) {
             if (withCache) this.normalizationCache.set(key, '');
             return '';

@@ -1,6 +1,7 @@
 import bemDom from 'bem:i-bem-dom';
 import Input from 'bem:input';
 import KeyCodes from 'bem:keyboard__codes';
+import { searchIndexUrl, searchLanguage } from '../../../lib/search-config.mjs';
 
 const MIN_QUERY = 2;
 const DEBOUNCE_MS = 100;
@@ -24,15 +25,10 @@ function pageLang() {
     // never grabs the wrong index if the lang attribute is missing.
     let code = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
     if (!code) {
-        const m = location.pathname.match(/^\/(ru|en)\b/);
+        const m = location.pathname.match(/(?:^|\/)(ru|uk|en)(?:\/|$)/);
         code = m ? m[1] : 'en';
     }
-    return code === 'ru' ? 'ru' : 'en';
-}
-
-function indexUrl(lang) {
-    const base = document.documentElement.dataset.langRoot || `/${lang}`;
-    return `${base}/_search/index.json`;
+    return ['ru', 'uk', 'en'].includes(code) ? code : 'en';
 }
 
 // Mirror of scripts/build-search-index.mjs — must stay symmetric or
@@ -43,8 +39,9 @@ const COMPOUND_SPLITTER = /[^a-z0-9а-яё._'@+-]+/gi;
 const TRIM_PUNCT = /^[._'-]+|[._'-]+$/g;
 
 function buildTokenizer(lang, stemmer, stopWords) {
+    const language = searchLanguage(lang);
     const tk = {
-        language: lang === 'ru' ? 'russian' : 'english',
+        language,
         stemmer,
         stopWords,
         stemmerSkipProperties: new Set(),
@@ -55,7 +52,7 @@ function buildTokenizer(lang, stemmer, stopWords) {
     tk.normalizeToken = function(prop, token, withCache = true) {
         const key = `${this.language}:${prop}:${token}`;
         if (withCache && this.normalizationCache.has(key)) return this.normalizationCache.get(key);
-        if (lang === 'ru') token = token.replace(/ё/g, 'е');
+        if (language === 'russian') token = token.replace(/ё/g, 'е');
         if (this.stopWords && this.stopWords.includes(token)) {
             if (withCache) this.normalizationCache.set(key, '');
             return '';
@@ -93,15 +90,16 @@ function buildTokenizer(lang, stemmer, stopWords) {
 
 async function loadDb() {
     const lang = pageLang();
+    const language = searchLanguage(lang);
     const [orama, stemmerMod, stopwordsMod, res] = await Promise.all([
         import('@orama/orama'),
-        lang === 'ru'
+        language === 'russian'
             ? import('@orama/stemmers/russian')
             : import('@orama/stemmers/english'),
-        lang === 'ru'
+        language === 'russian'
             ? import('@orama/stopwords/russian')
             : import('@orama/stopwords/english'),
-        fetch(indexUrl(lang))
+        fetch(searchIndexUrl(location.pathname, lang))
     ]);
     if (!res.ok) throw new Error(`search index ${res.status}`);
     const raw = await res.json();
