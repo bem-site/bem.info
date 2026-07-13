@@ -139,7 +139,11 @@ async function buildData() {
                 ...process.env,
                 GORSHOCHEK_CACHE_FOLDER: cacheDirs[lang],
                 modelPath: jsonPath,
+                // host — легаси-поддомен, по нему overrideDocLinks распознаёт
+                // и срезает «свои» абсолютные ссылки в контенте;
+                // sitemapHost — публичный канонический адрес для <loc> в sitemap.xml.
                 host: `https://${lang}.bem.info`,
+                sitemapHost: `https://bem.info/${lang}`,
                 dest: cacheDirs[lang],
                 root: '',
                 token: env.TOKEN,
