@@ -41,11 +41,20 @@ const outputDirs = Object.fromEntries(LANGUAGES.map(l => [l, path.join(OUTPUT_RO
 // Helpers
 // ---------------------------------------------------------------------------
 
-function runSubProcess(file, options) {
+function runSubProcess(file, options, forkProcess = fork) {
     return new Promise((resolve, reject) => {
-        const proc = fork(file, [], options);
-        proc.on('error', reject);
-        proc.on('close', code => code ? reject(new Error(`Process exited with ${code}`)) : resolve());
+        const proc = forkProcess(file, [], options);
+        let settled = false;
+        const settle = callback => value => {
+            if (settled) return;
+            settled = true;
+            callback(value);
+        };
+        const succeed = settle(resolve);
+        const fail = settle(reject);
+
+        proc.once('error', fail);
+        proc.once('close', code => code === 0 ? succeed() : fail(new Error(`Process exited with ${code}`)));
     });
 }
 
@@ -324,12 +333,15 @@ function copySitemaps() {
 // HTML generation (page compilation)
 // ---------------------------------------------------------------------------
 
-async function buildHTML() {
+export async function buildHTML({
+    forkProcess = fork,
+    bundles = fs.readdirSync(BUNDLES_DIR),
+    languages = LANGUAGES
+} = {}) {
     console.log('Generating HTML pages...');
-    const bundles = fs.readdirSync(BUNDLES_DIR);
 
     const tasks = [];
-    for (const lang of LANGUAGES) {
+    for (const lang of languages) {
         for (const bundle of bundles) {
             tasks.push(runSubProcess(path.join(ROOT, 'lib', 'template.cjs'), {
                 cwd: ROOT,
@@ -344,13 +356,13 @@ async function buildHTML() {
                     source: cacheDirs[lang],
                     destination: outputDirs[lang],
                     destinationRoot: path.resolve(ROOT, 'static'),
-                    langs: LANGUAGES.join(','),
+                    langs: languages.join(','),
                     sites: SITES.join(','),
                     lang,
                     DEBUG: env.DEBUG || '',
                     YENV: env.YENV || ''
                 }
-            }));
+            }, forkProcess));
         }
     }
 
@@ -534,9 +546,7 @@ function debounce(fn, ms) {
 // CLI
 // ---------------------------------------------------------------------------
 
-const command = process.argv[2] || 'build';
-
-try {
+export async function main(command = process.argv[2] || 'build') {
     switch (command) {
         case 'data':
             await buildData();
@@ -556,7 +566,14 @@ try {
             await fullBuild();
             break;
     }
-} catch (err) {
-    console.error(err);
-    process.exit(1);
+}
+
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) {
+    try {
+        await main();
+    } catch (err) {
+        console.error(err);
+        process.exitCode = 1;
+    }
 }
