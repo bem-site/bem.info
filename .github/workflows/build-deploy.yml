@@ -3,22 +3,42 @@ name: Build & Deploy
 on:
   push:
     branches: [master]
+  pull_request:
   workflow_dispatch:
+    inputs:
+      deployment_environment:
+        description: Domain configuration
+        type: choice
+        options: [configured, staging, production]
+        default: configured
+      publish_target:
+        description: Publish languages first during the initial production cutover
+        type: choice
+        options: [all, languages, redirects, none]
+        default: all
+      artifact_run_id:
+        description: Reuse generated-sites from this workflow run instead of rebuilding
+        type: string
+        default: ''
   schedule:
     # Weekly rebuild to pick up content changes from upstream repos
     - cron: '0 6 * * 1'
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  actions: read
+
+env:
+  DEPLOY_ENV: ${{ (inputs.deployment_environment != 'configured' && inputs.deployment_environment) || vars.PAGES_DEPLOY_ENV || 'staging' }}
+  PUBLISH_TARGET: ${{ inputs.publish_target || 'all' }}
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && github.ref || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
+    if: inputs.artifact_run_id == ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,18 +69,76 @@ jobs:
       - name: Validate internal links
         run: npm run validate-links
 
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: output/bem.info/
+      - name: Generate publication repositories
+        run: node scripts/prepare-publications.mjs
 
-  deploy-github-pages:
+      - name: Upload generated sites
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-sites
+          path: |
+            output/bem.info/ru/
+            output/bem.info/en/
+            output/generated-bem-info/
+          include-hidden-files: true
+          retention-days: 7
+
+  publish:
+    if: >-
+      always() && github.event_name != 'pull_request' && inputs.publish_target != 'none' &&
+      (needs.build.result == 'success' || (needs.build.result == 'skipped' && inputs.artifact_run_id != ''))
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: ru
+            repository: bem-site/generated-bem-info-ru
+            directory: output/bem.info/ru
+            deploy_key: PAGES_RU_DEPLOY_KEY
+            target: languages
+          - name: en
+            repository: bem-site/generated-bem-info-en
+            directory: output/bem.info/en
+            deploy_key: PAGES_EN_DEPLOY_KEY
+            target: languages
+          - name: redirects
+            repository: bem-site/generated-bem-info
+            directory: output/generated-bem-info
+            deploy_key: PAGES_REDIRECTS_DEPLOY_KEY
+            target: redirects
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download generated sites
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
+        uses: actions/download-artifact@v4
+        with:
+          name: generated-sites
+          path: output
+          run-id: ${{ inputs.artifact_run_id || github.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Check artifact environment and revision
+        id: metadata
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
+        env:
+          PUBLICATION_DIR: ${{ matrix.directory }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const assert = require('node:assert/strict');
+          const metadata = JSON.parse(fs.readFileSync(process.env.PUBLICATION_DIR + '/deployment.json', 'utf8'));
+          assert.equal(metadata.environment, process.env.DEPLOY_ENV, 'Artifact uses a different domain configuration');
+          assert.match(metadata.revision, /^[a-f0-9]{40}$/);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'revision=' + metadata.revision + '\n');
+          NODE
+
+      - name: Publish generated repository
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
+        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
+        with:
+          deploy_key: ${{ secrets[matrix.deploy_key] }}
+          external_repository: ${{ matrix.repository }}
+          publish_branch: gh-pages
+          publish_dir: ${{ matrix.directory }}
+          full_commit_message: 'Generate ${{ matrix.name }} publication from ${{ steps.metadata.outputs.revision }}'

@@ -20,7 +20,8 @@ block('aside').content()(function() {
                         elem: 'social'
                     },
                     params: page.head.meta,
-                    lang: data.lang
+                    lang: data.lang,
+                    origin: data.siteConfig.origins[data.lang]
                 }
             ]
         },

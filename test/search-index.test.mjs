@@ -47,5 +47,5 @@ test('украинский индекс ищется с русским stemming 
         properties: ['body']
     });
     assert.equal(result.count, 1);
-    assert.equal(result.hits[0].document.url, '/uk/methodology/elements/');
+    assert.equal(result.hits[0].document.url, '/methodology/elements/');
 });

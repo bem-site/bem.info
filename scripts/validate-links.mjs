@@ -53,16 +53,16 @@ for (const lang of fs.readdirSync(OUTPUT, { withFileTypes: true })) {
 function rulesMatch(reqPath) {
     const langPrefix = reqPath.match(/^\/([^/]+)\//);
     const langSpecific = langPrefix && langRules[langPrefix[1]] ? langRules[langPrefix[1]] : [];
-    for (const r of [...langSpecific, ...rootRules]) {
-        if (r.re.test(reqPath)) return true;
-    }
+    const langPath = langPrefix ? reqPath.slice(langPrefix[0].length - 1) : reqPath;
+    if (langSpecific.some(r => r.re.test(langPath))) return true;
+    if (rootRules.some(r => r.re.test(reqPath))) return true;
     return false;
 }
 
 function isInternalUrl(href) {
     if (SKIP_PROTOCOL.test(href)) return false;
-    if (/^https?:\/\//i.test(href)) {
-        return /^https?:\/\/(?:[^/]*\.)?bem\.info(?:\/|$)/i.test(href);
+    if (/^(?:https?:)?\/\//i.test(href)) {
+        return /(?:^|\.)bem\.info$/.test(new URL(href, 'https://bem.info').hostname);
     }
     return true;
 }
@@ -70,16 +70,26 @@ function isInternalUrl(href) {
 function targetPath(href, currentFileDir) {
     let stripped = href.split('#')[0].split('?')[0];
     if (!stripped) return null;
-    if (/^https?:\/\//i.test(stripped)) {
-        stripped = stripped.replace(/^https?:\/\/(?:[^/]*\.)?bem\.info/, '');
+    const currentLang = path.relative(OUTPUT, currentFileDir).split(path.sep)[0];
+    let targetLang = currentLang;
+    if (/^(?:https?:)?\/\//i.test(stripped)) {
+        const url = new URL(stripped, 'https://bem.info');
+        const hostLang = url.hostname.match(/^(ru|en)(?:-test)?(?:\.beta)?\.bem\.info$/);
+        stripped = url.pathname;
+        if (hostLang) targetLang = hostLang[1];
+        else {
+            const prefix = stripped.match(/^\/(ru|en)(?=\/|$)/);
+            if (prefix) {
+                targetLang = prefix[1];
+                stripped = stripped.slice(prefix[0].length) || '/';
+            }
+        }
     }
-    let abs;
-    if (stripped.startsWith('/')) {
-        abs = path.join(OUTPUT, stripped);
-    } else {
-        abs = path.resolve(currentFileDir, stripped);
-    }
-    return abs;
+    const languageRoot = path.join(OUTPUT, targetLang);
+    if (stripped.startsWith('/')) return path.join(languageRoot, stripped);
+    const abs = path.resolve(currentFileDir, stripped);
+    const relative = path.relative(path.join(OUTPUT, currentLang), abs);
+    return relative === '..' || relative.startsWith('..' + path.sep) ? null : abs;
 }
 
 function exists(abs) {
@@ -117,7 +127,10 @@ for (const file of files) {
         if (!noFragment) continue;
         totalChecked++;
         const abs = targetPath(href, fileDir);
-        if (!abs || !abs.startsWith(OUTPUT)) continue;
+        if (!abs || (abs !== OUTPUT && !abs.startsWith(OUTPUT + path.sep))) {
+            broken.push({ file: path.relative(OUTPUT, file), href });
+            continue;
+        }
         if (exists(abs)) continue;
         const trailingSlash = noFragment.endsWith('/');
         const reqPath = relPathFromOutput(abs, trailingSlash);

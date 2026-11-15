@@ -33,6 +33,14 @@ block('root').replace()(function() {
         head: [
             { elem: 'css', url: data.root + '/' + siteBundle + '.min.css?' + staticVersion },
             { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width,initial-scale=1' } },
+            { elem: 'meta', attrs: { name: 'bem-site-root', content: data.root + '/' } },
+            { tag: 'link', attrs: { rel: 'canonical', href: data.siteConfig.origins[data.lang] + page.url } },
+            data.langs.filter(function(lang) {
+                return (data.translationMisses[lang] || []).indexOf(page.url) === -1;
+            }).map(function(lang) {
+                return { tag: 'link', attrs: { rel: 'alternate', hreflang: lang, href: data.siteConfig.origins[lang] + page.url } };
+            }),
+            data.siteConfig.environment === 'staging' && { elem: 'meta', attrs: { name: 'robots', content: 'noindex' } },
             { elem: 'meta', attrs: { property: 'og:image', content: data.root + '/og_image/logo_theme_generated.png' } },
             Object.keys(page.head.meta).reduce(function(prev, field) {
                 (field.indexOf('og') !== -1) && prev.push({ elem: 'meta', attrs: { property: 'og:' + field.toLowerCase().replace('og', ''), content: page.head.meta[field] } });

@@ -15,6 +15,7 @@ block('social-likes')(
                 elemMods: { type: 'facebook' },
                 params: this.ctx.params,
                 lang: this.ctx.lang,
+                origin: this.ctx.origin,
                 url: 'https://www.facebook.com/sharer.php?s=100',
                 content: 'Facebook'
             },
@@ -24,6 +25,7 @@ block('social-likes')(
                 elemMods: { type: 'vk' },
                 params: this.ctx.params,
                 lang: this.ctx.lang,
+                origin: this.ctx.origin,
                 url: 'http://vk.com/share.php?',
                 content: 'VKontakte'
             },
@@ -33,6 +35,7 @@ block('social-likes')(
                 elemMods: { type: 'twitter' },
                 params: this.ctx.params,
                 lang: this.ctx.lang,
+                origin: this.ctx.origin,
                 url: 'https://twitter.com/share?',
                 content: 'Twitter'
             }
@@ -42,8 +45,7 @@ block('social-likes')(
         tag()('a'),
         addAttrs()(function() {
             var url = this.ctx.url,
-                lang = this.ctx.lang,
-                baseUrl = 'https://' + lang + '.bem.info',
+                baseUrl = this.ctx.origin || 'https://' + this.ctx.lang + '.bem.info',
                 params = this.ctx.params;
 
             url += '&url=' + encodeURIComponent(baseUrl + params.ogUrl || '');
