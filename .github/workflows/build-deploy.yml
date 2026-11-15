@@ -9,8 +9,8 @@ on:
       deployment_environment:
         description: Domain configuration
         type: choice
-        options: [staging, production]
-        default: staging
+        options: [configured, staging, production]
+        default: configured
       publish_target:
         description: Publish languages first during the initial production cutover
         type: choice
@@ -29,7 +29,7 @@ permissions:
   actions: read
 
 env:
-  DEPLOY_ENV: ${{ inputs.deployment_environment || vars.PAGES_DEPLOY_ENV || 'staging' }}
+  DEPLOY_ENV: ${{ (inputs.deployment_environment != 'configured' && inputs.deployment_environment) || vars.PAGES_DEPLOY_ENV || 'staging' }}
   PUBLISH_TARGET: ${{ inputs.publish_target || 'all' }}
 
 concurrency:

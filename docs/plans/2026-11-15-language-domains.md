@@ -15,7 +15,7 @@ their `gh-pages` branches using one write-enabled deploy key per repository.
 `DEPLOY_ENV=staging` selects the test domains; `DEPLOY_ENV=production` selects
 the original public domains. The default for local builds is production. CI uses
 the `PAGES_DEPLOY_ENV` repository variable, falling back to staging. Manual
-workflow runs can explicitly select the environment.
+workflow runs default to configured (the repository variable) and can explicitly select staging or production.
 
 The build produces language-root pages, relative local assets, absolute
 cross-language links and canonical/hreflang URLs. Search indexes contain paths
