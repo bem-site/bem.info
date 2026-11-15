@@ -19,11 +19,14 @@ import { build as viteBuild } from 'vite';
 import { transform as cssMinify } from 'lightningcss';
 import { buildAllBundles, collectFiles, copyCSSAssets, resolveDeps } from './bem-build.mjs';
 import { buildAllSearchIndexes } from './build-search-index.mjs';
+import siteConfig from '../lib/site-config.cjs';
+import { rewriteSiteUrls } from './site-urls.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
 const env = process.env;
+const config = siteConfig();
 const LANGUAGES = env.LANGUAGES ? env.LANGUAGES.split(',') : ['en', 'ru'];
 const IS_PROD = env.YENV === 'production';
 const SITES = env.SITES ? env.SITES.split(',') : ['methodology', 'technologies', 'toolbox', 'libraries', 'tutorials'];
@@ -143,7 +146,7 @@ async function buildData() {
                 // и срезает «свои» абсолютные ссылки в контенте;
                 // sitemapHost — публичный канонический адрес для <loc> в sitemap.xml.
                 host: `https://${lang}.bem.info`,
-                sitemapHost: `https://bem.info/${lang}`,
+                sitemapHost: config.origins[lang],
                 dest: cacheDirs[lang],
                 root: '',
                 token: env.TOKEN,
@@ -363,6 +366,7 @@ export async function buildHTML({
                     langs: languages.join(','),
                     sites: SITES.join(','),
                     lang,
+                    siteConfig: JSON.stringify(config),
                     DEBUG: env.DEBUG || '',
                     YENV: env.YENV || ''
                 }
@@ -404,32 +408,9 @@ function relativizeDir(dir, langRoot) {
 function relativizeFile(filePath, langRoot) {
     const html = fs.readFileSync(filePath, 'utf8');
     const rel = path.relative(path.dirname(filePath), langRoot) || '.';
-    // Path from current file to the bem.info root — used for cross-language
-    // refs like `https://ru.bem.info/foo/` from an /en/ page.
-    const relRoot = path.relative(path.dirname(filePath), OUTPUT_ROOT) || '.';
-    // Current page language is the basename of langRoot (en|ru|…).
-    const currentLang = path.basename(langRoot);
-
-    // 1. Legacy language-tagged subdomains (`{ru,en}[.beta].bem.info`) —
-    //    rewrite as a relative path that climbs to the site root and into
-    //    the target language directory.
-    let result = html.replace(
-        /(href|src|action|content)="https?:\/\/(ru|en)(?:\.beta)?\.bem\.info\//g,
-        (_, attr, otherLang) => `${attr}="${relRoot}/${otherLang}/`
-    );
-
-    // 2. Subdomain-less / www refs (`(www.)?bem.info/foo/`) — keep the
-    //    user on the current language path.
-    result = result.replace(
-        /(href|src|action|content)="https?:\/\/(?:www\.)?bem\.info\//g,
-        (_, attr) => `${attr}="${relRoot}/${currentLang}/`
-    );
-
-    // 3. Lang-less absolute paths emitted by templates → relative to langRoot.
-    result = result.replace(
-        /(href|src|action|content)="\/(?!\/)/g,
-        (_, attr) => `${attr}="${rel}/`
-    );
+    const result = rewriteSiteUrls(html, {
+        lang: path.basename(langRoot), relativeRoot: rel, config
+    });
 
     if (result !== html) {
         fs.writeFileSync(filePath, result);

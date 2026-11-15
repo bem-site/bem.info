@@ -448,16 +448,6 @@ function dedupVersioned(pages) {
     return out;
 }
 
-function langUrl(url, lang) {
-    // gorshochek's `page.url` is language-agnostic ("/methodology/...");
-    // on the live site every page lives under "/<lang>/..." instead, so we
-    // must prefix the index with the language so result links navigate to
-    // the correct page (and stay within the same language as the viewer).
-    if (!url) return url;
-    if (url === '/') return `/${lang}/`;
-    return url.startsWith('/') ? `/${lang}${url}` : url;
-}
-
 function buildRecord(page, lang, stats, cacheDir) {
     const title = pickLang(page.title, lang);
     const subtitle = pickLang(page.subtitle, lang);
@@ -503,7 +493,7 @@ function buildRecord(page, lang, stats, cacheDir) {
         if (body.length > BODY_MAX_CHARS) body = body.slice(0, BODY_MAX_CHARS);
     }
 
-    const url = langUrl(page.url, lang);
+    const url = page.url;
 
     // Parent context, without the root and without the page itself —
     // shown as a small caption above the title in suggest.

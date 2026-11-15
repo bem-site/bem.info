@@ -3,15 +3,28 @@ name: Build & Deploy
 on:
   push:
     branches: [master]
+  pull_request:
   workflow_dispatch:
+    inputs:
+      deployment_environment:
+        description: Domain configuration
+        type: choice
+        options: [staging, production]
+        default: staging
+      publish_target:
+        description: Publish languages first during the initial production cutover
+        type: choice
+        options: [all, languages, redirects]
+        default: all
   schedule:
     # Weekly rebuild to pick up content changes from upstream repos
     - cron: '0 6 * * 1'
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+
+env:
+  DEPLOY_ENV: ${{ inputs.deployment_environment || vars.PAGES_DEPLOY_ENV || 'staging' }}
 
 concurrency:
   group: pages
@@ -49,18 +62,46 @@ jobs:
       - name: Validate internal links
         run: npm run validate-links
 
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: output/bem.info/
+      - name: Generate publication repositories
+        run: node scripts/prepare-publications.mjs
 
-  deploy-github-pages:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Upload generated sites
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-sites
+          path: |
+            output/bem.info/ru/
+            output/bem.info/en/
+            output/generated-bem-info/
+          include-hidden-files: true
+          retention-days: 7
+
+      - name: Publish Russian site
+        if: github.event_name != 'pull_request' && inputs.publish_target != 'redirects'
+        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
+        with:
+          deploy_key: ${{ secrets.PAGES_RU_DEPLOY_KEY }}
+          external_repository: bem-site/generated-bem-info-ru
+          publish_branch: gh-pages
+          publish_dir: output/bem.info/ru
+          commit_message: 'Generate Russian site from'
+
+      - name: Publish English site
+        if: github.event_name != 'pull_request' && inputs.publish_target != 'redirects'
+        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
+        with:
+          deploy_key: ${{ secrets.PAGES_EN_DEPLOY_KEY }}
+          external_repository: bem-site/generated-bem-info-en
+          publish_branch: gh-pages
+          publish_dir: output/bem.info/en
+          commit_message: 'Generate English site from'
+
+      - name: Publish apex redirects
+        if: github.event_name != 'pull_request' && inputs.publish_target != 'languages'
+        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
+        with:
+          deploy_key: ${{ secrets.PAGES_REDIRECTS_DEPLOY_KEY }}
+          external_repository: bem-site/generated-bem-info
+          publish_branch: gh-pages
+          publish_dir: output/generated-bem-info
+          commit_message: 'Generate language-domain redirects from'

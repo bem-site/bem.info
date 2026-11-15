@@ -1,7 +1,7 @@
 import bemDom from 'bem:i-bem-dom';
 import Input from 'bem:input';
 import KeyCodes from 'bem:keyboard__codes';
-import { searchIndexUrl, searchLanguage } from '../../../lib/search-config.mjs';
+import { searchIndexUrl, searchLanguage, searchResultUrl } from '../../../lib/search-config.mjs';
 
 const MIN_QUERY = 2;
 const DEBOUNCE_MS = 100;
@@ -19,6 +19,11 @@ const SEARCH_SCHEMA = {
 };
 
 let dbPromise = null;
+
+function siteRoot() {
+    const meta = document.querySelector('meta[name="bem-site-root"]');
+    return new URL(meta ? meta.content : '/', document.baseURI).href;
+}
 
 function pageLang() {
     // Prefer <html lang>; fall back to the /<lang>/ URL prefix so the search
@@ -99,7 +104,7 @@ async function loadDb() {
         language === 'russian'
             ? import('@orama/stopwords/russian')
             : import('@orama/stopwords/english'),
-        fetch(searchIndexUrl(location.pathname, lang))
+        fetch(searchIndexUrl(siteRoot()))
     ]);
     if (!res.ok) throw new Error(`search index ${res.status}`);
     const raw = await res.json();
@@ -220,7 +225,7 @@ function renderItem(hit, hl) {
         }
     }
 
-    return `<a class="search__hit" role="option" href="${escapeHtml(doc.url)}">
+    return `<a class="search__hit" role="option" href="${escapeHtml(searchResultUrl(doc.url, siteRoot()))}">
         ${contextHtml}
         <span class="search__hit-title">${titleHtml}</span>
         ${subtitleHtml}

@@ -41,7 +41,7 @@ block('page')(
                                     ],
                                     data: Object.assign({
                                         lang: data.lang,
-                                        examplesUrlPrefix: '//' + data.lang + '.bem.info/_st_/' + page.library + '-examples/' + page.version,
+                                        examplesUrlPrefix: data.siteConfig.origins[data.lang] + '/_st_/' + page.library + '-examples/' + page.version,
                                         outputLibFolder: path.join('output', 'bem.info', page.library), // FIXME: адовый костыль
                                         setName: page.setName
                                     }, page.block)

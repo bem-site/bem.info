@@ -212,6 +212,7 @@ bem.info/
 | `TOKEN` | GitHub API-токен для загрузки контента | — |
 | `YENV` | Окружение (`production` / другое). Влияет на корневой URL и минификацию | development |
 | `LANGUAGES` | Языки через запятую | `en,ru` |
+| `DEPLOY_ENV` | Домены публикации: `staging` или `production` | `production` локально, `staging` в CI |
 | `SITES` | Разделы сайта через запятую | `methodology,technologies,toolbox,libraries,tutorials` |
 | `PORT` | Порт dev-сервера (Vite) | `8008` |
 | `PATH_TO_MODEL` | Путь к кастомной модели данных | `./content/model.cjs` |
@@ -315,8 +316,13 @@ npm test
 
 - **Триггеры**: push в `master`, еженедельный cron (понедельник 06:00 UTC), ручной запуск
 - **Node.js**: 24
-- **Процесс**: `npm run data` → `npm run build` → deploy to GitHub Pages
-- **Результат**: статический сайт в `output/bem.info/` публикуется на GitHub Pages
+- **Процесс**: тесты → `npm run data` → `npm run build` → проверка ссылок → `node scripts/prepare-publications.mjs` → коммиты в три репозитория публикации
+- **Результат**: `generated-bem-info-ru` и `generated-bem-info-en` содержат языковые сайты; `generated-bem-info` содержит редиректы с `/ru/...` и `/en/...` на языковые домены
+- **Домены**: `DEPLOY_ENV=staging` использует `ru-test.bem.info`, `en-test.bem.info`, `test.bem.info`; `production` — исходные домены
+- **CI**: переменная репозитория `PAGES_DEPLOY_ENV` задаёт окружение автоматических сборок; ручной запуск позволяет выбрать окружение и публикацию `all`, `languages` или `redirects`
+- **Проверка опубликованного сайта**: `DEPLOY_ENV=staging npm run test:deployed` (после `npx playwright install chromium`)
+
+Порядок настройки ключей, проверки и переключения доменов описан в [плане переезда](docs/plans/2026-11-15-language-domains.md).
 
 Для ручной сборки:
 ```bash
