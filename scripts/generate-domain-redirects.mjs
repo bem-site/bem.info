@@ -6,12 +6,12 @@ function escapeHtml(value) {
         .replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-export function redirectHtml(target) {
+export function redirectHtml(target, staging = false) {
     const safe = escapeHtml(target);
     return `<!doctype html>
 <html><head><meta charset="utf-8">
 <title>Redirecting</title>
-<meta name="robots" content="noindex">
+${staging ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${safe}">
 <script>
 (function () {
@@ -31,7 +31,7 @@ export function rootRedirectHtml(config) {
     const en = config.origins.en + '/';
     return `<!doctype html>
 <html><head><meta charset="utf-8"><title>BEM</title>
-<meta name="robots" content="noindex">
+${config.environment === 'staging' ? '<meta name="robots" content="noindex">' : ''}
 <script>
 (function () {
     var lang = (navigator.language || 'en').toLowerCase();
@@ -81,7 +81,7 @@ export function generateDomainRedirects({ languageDirs, outputDir, config }) {
                     const pathname = '/' + relative.split(path.sep).join('/').replace(/index\.html$/, '');
                     const destination = path.join(outputDir, lang, relative);
                     fs.mkdirSync(path.dirname(destination), { recursive: true });
-                    fs.writeFileSync(destination, redirectHtml(config.origins[lang] + pathname));
+                    fs.writeFileSync(destination, redirectHtml(config.origins[lang] + pathname, config.environment === 'staging'));
                     count++;
                 }
             }
@@ -91,6 +91,8 @@ export function generateDomainRedirects({ languageDirs, outputDir, config }) {
     }
     fs.writeFileSync(path.join(outputDir, 'index.html'), rootRedirectHtml(config));
     fs.writeFileSync(path.join(outputDir, '404.html'), fallbackRedirectHtml(config));
-    fs.writeFileSync(path.join(outputDir, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+    fs.writeFileSync(path.join(outputDir, 'robots.txt'), config.environment === 'staging'
+        ? 'User-agent: *\nDisallow: /\n'
+        : 'User-agent: *\nDisallow:\n' + Object.values(config.origins).map(origin => 'Sitemap: ' + origin + '/sitemap.xml\n').join(''));
     return count;
 }

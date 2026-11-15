@@ -25,6 +25,7 @@ permissions:
 
 env:
   DEPLOY_ENV: ${{ inputs.deployment_environment || vars.PAGES_DEPLOY_ENV || 'staging' }}
+  PUBLISH_TARGET: ${{ inputs.publish_target || 'all' }}
 
 concurrency:
   group: pages
@@ -76,32 +77,43 @@ jobs:
           include-hidden-files: true
           retention-days: 7
 
-      - name: Publish Russian site
-        if: github.event_name != 'pull_request' && inputs.publish_target != 'redirects'
-        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
+  publish:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: ru
+            repository: bem-site/generated-bem-info-ru
+            directory: output/bem.info/ru
+            deploy_key: PAGES_RU_DEPLOY_KEY
+            target: languages
+          - name: en
+            repository: bem-site/generated-bem-info-en
+            directory: output/bem.info/en
+            deploy_key: PAGES_EN_DEPLOY_KEY
+            target: languages
+          - name: redirects
+            repository: bem-site/generated-bem-info
+            directory: output/generated-bem-info
+            deploy_key: PAGES_REDIRECTS_DEPLOY_KEY
+            target: redirects
+    steps:
+      - name: Download generated sites
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
+        uses: actions/download-artifact@v4
         with:
-          deploy_key: ${{ secrets.PAGES_RU_DEPLOY_KEY }}
-          external_repository: bem-site/generated-bem-info-ru
-          publish_branch: gh-pages
-          publish_dir: output/bem.info/ru
-          commit_message: 'Generate Russian site from'
+          name: generated-sites
+          path: output
 
-      - name: Publish English site
-        if: github.event_name != 'pull_request' && inputs.publish_target != 'redirects'
+      - name: Publish generated repository
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
         uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
         with:
-          deploy_key: ${{ secrets.PAGES_EN_DEPLOY_KEY }}
-          external_repository: bem-site/generated-bem-info-en
+          deploy_key: ${{ secrets[matrix.deploy_key] }}
+          external_repository: ${{ matrix.repository }}
           publish_branch: gh-pages
-          publish_dir: output/bem.info/en
-          commit_message: 'Generate English site from'
-
-      - name: Publish apex redirects
-        if: github.event_name != 'pull_request' && inputs.publish_target != 'languages'
-        uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # v4
-        with:
-          deploy_key: ${{ secrets.PAGES_REDIRECTS_DEPLOY_KEY }}
-          external_repository: bem-site/generated-bem-info
-          publish_branch: gh-pages
-          publish_dir: output/generated-bem-info
-          commit_message: 'Generate language-domain redirects from'
+          publish_dir: ${{ matrix.directory }}
+          commit_message: 'Generate ${{ matrix.name }} publication from'
