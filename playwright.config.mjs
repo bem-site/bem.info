@@ -7,6 +7,7 @@ export default defineConfig({
     timeout: 60000,
     use: {
         browserName: 'chromium',
+        channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
         ignoreHTTPSErrors: process.env.ALLOW_INVALID_CERTIFICATES === '1',
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure'

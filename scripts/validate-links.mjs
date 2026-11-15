@@ -127,7 +127,7 @@ for (const file of files) {
         if (!noFragment) continue;
         totalChecked++;
         const abs = targetPath(href, fileDir);
-        if (!abs || !abs.startsWith(OUTPUT + path.sep)) {
+        if (!abs || (abs !== OUTPUT && !abs.startsWith(OUTPUT + path.sep))) {
             broken.push({ file: path.relative(OUTPUT, file), href });
             continue;
         }
