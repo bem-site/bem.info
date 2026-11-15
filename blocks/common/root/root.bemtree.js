@@ -35,7 +35,9 @@ block('root').replace()(function() {
             { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width,initial-scale=1' } },
             { elem: 'meta', attrs: { name: 'bem-site-root', content: data.root + '/' } },
             { tag: 'link', attrs: { rel: 'canonical', href: data.siteConfig.origins[data.lang] + page.url } },
-            data.langs.map(function(lang) {
+            data.langs.filter(function(lang) {
+                return (data.translationMisses[lang] || []).indexOf(page.url) === -1;
+            }).map(function(lang) {
                 return { tag: 'link', attrs: { rel: 'alternate', hreflang: lang, href: data.siteConfig.origins[lang] + page.url } };
             }),
             data.siteConfig.environment === 'staging' && { elem: 'meta', attrs: { name: 'robots', content: 'noindex' } },

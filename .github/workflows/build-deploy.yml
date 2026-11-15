@@ -28,8 +28,8 @@ env:
   PUBLISH_TARGET: ${{ inputs.publish_target || 'all' }}
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && github.ref || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:

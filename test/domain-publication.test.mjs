@@ -102,3 +102,34 @@ test('generator mirrors every known HTML path under its language prefix', t => {
         'https://ru-test.bem.info/methodology/quick-start/');
     assert.ok(!fs.existsSync(path.join(outputDir, 'ru/404.html')));
 });
+
+test('hreflang omits a missing translation while canonical stays on the current domain', () => {
+    let render;
+    vm.runInNewContext(fs.readFileSync(new URL('../blocks/common/root/root.bemtree.js', import.meta.url), 'utf8'), {
+        block: () => ({ replace: () => fn => { render = fn; } })
+    });
+    const url = '/methodology/quick-start/';
+    const result = render.call({ ctx: { data: {
+        lang: 'ru', langs: ['en', 'ru'], siteConfig: config, pages: [],
+        translationMisses: { en: [url], ru: [] },
+        page: { url, bundle: 'methodology', head: { title: 'Test', meta: {} } }
+    } } });
+    const links = result.head.flat().filter(item => item && item.tag === 'link');
+    assert.equal(links.find(item => item.attrs.rel === 'canonical').attrs.href, config.origins.ru + url);
+    assert.deepEqual(Array.from(links.filter(item => item.attrs.rel === 'alternate'), item => item.attrs.hreflang), ['ru']);
+});
+
+test('production redirects are crawlable and point to the original language domains', t => {
+    const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'bem-production-redirects-'));
+    t.after(() => fs.rmSync(fixture, { recursive: true, force: true }));
+    const ru = path.join(fixture, 'ru');
+    fs.mkdirSync(ru);
+    fs.writeFileSync(path.join(ru, 'index.html'), 'home');
+    const production = siteConfig('production');
+    const outputDir = path.join(fixture, 'redirects');
+    generateDomainRedirects({ languageDirs: { ru }, outputDir, config: production });
+    const html = fs.readFileSync(path.join(outputDir, 'ru/index.html'), 'utf8');
+    assert.equal(navigate(html, 'https://bem.info/ru/?q=1#x'), 'https://ru.bem.info/?q=1#x');
+    assert.ok(!html.includes('noindex'));
+    assert.ok(!fs.readFileSync(path.join(outputDir, 'robots.txt'), 'utf8').includes('Disallow: /'));
+});

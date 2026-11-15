@@ -346,6 +346,11 @@ export async function buildHTML({
     languages = LANGUAGES
 } = {}) {
     console.log('Generating HTML pages...');
+    const translationMisses = Object.fromEntries(languages.map(lang => {
+        const dataFile = path.join(CACHE, 'gorshochek-cache-' + lang, 'data.json');
+        const pages = fs.existsSync(dataFile) ? JSON.parse(fs.readFileSync(dataFile, 'utf8')) : [];
+        return [lang, pages.filter(page => page.isTranslationMissed).map(page => page.url)];
+    }));
 
     const tasks = [];
     for (const lang of languages) {
@@ -367,6 +372,7 @@ export async function buildHTML({
                     sites: SITES.join(','),
                     lang,
                     siteConfig: JSON.stringify(config),
+                    translationMisses: JSON.stringify(translationMisses),
                     DEBUG: env.DEBUG || '',
                     YENV: env.YENV || ''
                 }
