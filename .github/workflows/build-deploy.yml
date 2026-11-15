@@ -14,14 +14,19 @@ on:
       publish_target:
         description: Publish languages first during the initial production cutover
         type: choice
-        options: [all, languages, redirects]
+        options: [all, languages, redirects, none]
         default: all
+      artifact_run_id:
+        description: Reuse generated-sites from this workflow run instead of rebuilding
+        type: string
+        default: ''
   schedule:
     # Weekly rebuild to pick up content changes from upstream repos
     - cron: '0 6 * * 1'
 
 permissions:
   contents: read
+  actions: read
 
 env:
   DEPLOY_ENV: ${{ inputs.deployment_environment || vars.PAGES_DEPLOY_ENV || 'staging' }}
@@ -33,6 +38,7 @@ concurrency:
 
 jobs:
   build:
+    if: inputs.artifact_run_id == ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -78,7 +84,9 @@ jobs:
           retention-days: 7
 
   publish:
-    if: github.event_name != 'pull_request'
+    if: >-
+      always() && github.event_name != 'pull_request' && inputs.publish_target != 'none' &&
+      (needs.build.result == 'success' || (needs.build.result == 'skipped' && inputs.artifact_run_id != ''))
     needs: build
     runs-on: ubuntu-latest
     strategy:
@@ -107,6 +115,23 @@ jobs:
         with:
           name: generated-sites
           path: output
+          run-id: ${{ inputs.artifact_run_id || github.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Check artifact environment and revision
+        id: metadata
+        if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
+        env:
+          PUBLICATION_DIR: ${{ matrix.directory }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const assert = require('node:assert/strict');
+          const metadata = JSON.parse(fs.readFileSync(process.env.PUBLICATION_DIR + '/deployment.json', 'utf8'));
+          assert.equal(metadata.environment, process.env.DEPLOY_ENV, 'Artifact uses a different domain configuration');
+          assert.match(metadata.revision, /^[a-f0-9]{40}$/);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'revision=' + metadata.revision + '\n');
+          NODE
 
       - name: Publish generated repository
         if: env.PUBLISH_TARGET == 'all' || env.PUBLISH_TARGET == matrix.target
@@ -116,4 +141,4 @@ jobs:
           external_repository: ${{ matrix.repository }}
           publish_branch: gh-pages
           publish_dir: ${{ matrix.directory }}
-          commit_message: 'Generate ${{ matrix.name }} publication from'
+          full_commit_message: 'Generate ${{ matrix.name }} publication from ${{ steps.metadata.outputs.revision }}'

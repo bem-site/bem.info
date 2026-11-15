@@ -319,7 +319,7 @@ npm test
 - **Процесс**: тесты → `npm run data` → `npm run build` → проверка ссылок → `node scripts/prepare-publications.mjs` → коммиты в три репозитория публикации
 - **Результат**: `generated-bem-info-ru` и `generated-bem-info-en` содержат языковые сайты; `generated-bem-info` содержит редиректы с `/ru/...` и `/en/...` на языковые домены
 - **Домены**: `DEPLOY_ENV=staging` использует `ru-test.bem.info`, `en-test.bem.info`, `test.bem.info`; `production` — исходные домены
-- **CI**: переменная репозитория `PAGES_DEPLOY_ENV` задаёт окружение автоматических сборок; ручной запуск позволяет выбрать окружение и публикацию `all`, `languages` или `redirects`
+- **CI**: переменная репозитория `PAGES_DEPLOY_ENV` задаёт окружение автоматических сборок; ручной запуск позволяет выбрать окружение и публикацию `all`, `languages`, `redirects` или `none` (только сборка); `artifact_run_id` позволяет опубликовать ранее собранный комплект без повторной загрузки контента
 - **Проверка опубликованного сайта**: `DEPLOY_ENV=staging npm run test:deployed` (после `npx playwright install chromium`)
 
 Порядок настройки ключей, проверки и переключения доменов описан в [плане переезда](docs/plans/2026-11-15-language-domains.md).

@@ -53,16 +53,20 @@ The old redirect repositories are not publication targets.
 
 ## Production cutover
 
-Only proceed after staging has passed.
+Only proceed after staging has passed. First run Build & Deploy with
+production and publish_target=none. This generates the complete production
+artifact without changing any public site. Record that run ID, then use the
+same artifact_run_id for both scoped publication runs below. Metadata validation
+rejects artifacts built for a different environment.
 
 1. Disable Pages on ru-bem-info-to-bem-info-redirect and
    en-bem-info-to-bem-info-redirect to release ru.bem.info and en.bem.info.
    Preserve their repository files and histories.
-2. Run Build & Deploy with environment=production and publish_target=languages.
+2. Run Build & Deploy with environment=production, publish_target=languages and the saved artifact_run_id.
    Bind the language domains to the new language repositories, wait for valid
    HTTPS, and check real pages and search on both domains.
 3. Disable Pages on the source repository to release bem.info.
-4. Run Build & Deploy with environment=production and publish_target=redirects.
+4. Run Build & Deploy with environment=production, publish_target=redirects and the same artifact_run_id.
    Bind bem.info to generated-bem-info and verify HTTPS and the complete
    /ru/... -> ru.bem.info/... and /en/... -> en.bem.info/... chains.
 5. Set PAGES_DEPLOY_ENV=production for future push/scheduled builds.
